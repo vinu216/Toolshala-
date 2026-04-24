@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tool | ToolShala</title>
+    <meta
+      name="description"
+      content="Use practical AI and career tools on ToolShala for students, freshers, and creators. Generate useful outputs instantly."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ToolShala Working Tool" />
+    <meta
+      property="og:description"
+      content="Generate practical outputs for resume, applications, captions, career paths, and productivity in seconds."
+    />
+    <meta property="og:url" content="https://toolshala.in/tool.html" />
+    <meta property="og:site_name" content="ToolShala" />
+    <meta property="og:image" content="https://toolshala.in/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ToolShala Working Tool" />
+    <meta
+      name="twitter:description"
+      content="Use ToolShala tools to generate resumes, applications, content ideas, and more with practical outputs."
+    />
+    <meta name="twitter:image" content="https://toolshala.in/og-cover.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <div class="nav-dropdown">
+            <a class="nav-link nav-active" href="./tools.html">Tools</a>
+            <div class="nav-dropdown-menu"><a href="./tools.html">All AI Tools</a><a href="./tools.html#writing">Writing Tools</a><a href="./tools.html#career">Career Tools</a><a href="./tools.html#study">Study Tools</a></div>
+          </div>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a><a class="nav-link" href="./career.html">Career</a><a class="nav-link" href="./templates.html">Templates</a><a class="nav-link" href="./about.html">About</a><a class="nav-link" href="./contact.html">Contact</a><a href="./tools.html" class="btn-primary ml-1">Explore Tools</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel><div class="space-y-1 px-4 py-4"><a class="nav-link mobile-nav-link" href="./index.html">Home</a><a class="nav-link nav-active mobile-nav-link" href="./tools.html">Tools</a><a class="nav-link mobile-nav-link" href="./opportunities.html">Opportunities</a><a class="nav-link mobile-nav-link" href="./career.html">Career</a><a class="nav-link mobile-nav-link" href="./templates.html">Templates</a><a class="nav-link mobile-nav-link" href="./about.html">About</a><a class="nav-link mobile-nav-link" href="./contact.html">Contact</a><a href="./tools.html" class="btn-primary mt-2 w-full text-center">Explore Tools</a></div></div>
+    </header>
+
+    <main data-tool-detail>
+      <section class="page-hero border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <p class="reveal text-sm font-semibold text-indigo-700" data-tool-category>AI Tool</p>
+          <h1 class="reveal mt-2 text-4xl font-extrabold tracking-tight text-slate-900" data-tool-title>ToolShala Tool</h1>
+          <p class="reveal mt-4 max-w-2xl text-slate-600" data-tool-description>Use practical generated outputs built for students, freshers, and creators.</p>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="tool-layout">
+          <article class="tool-panel reveal">
+            <h2>Enter your details</h2>
+            <form id="tool-generator-form" class="mt-4" data-tool-form novalidate></form>
+            <div class="tool-error hidden" data-tool-error></div>
+            <div class="tool-loading hidden" data-tool-loading>Generating your result...</div>
+            <div class="tool-actions">
+              <button class="btn-primary" type="submit" form="tool-generator-form" data-tool-submit>Generate</button>
+              <button class="btn-secondary hidden" type="button" data-tool-generate-more>Generate More</button>
+              <button class="btn-secondary" type="button" data-tool-reset>Reset</button>
+            </div>
+            <div class="tool-tips mt-4">
+              <p class="tool-tips-title">Quick tips</p>
+              <ul data-tool-tips></ul>
+            </div>
+          </article>
+
+          <article class="tool-panel reveal">
+            <h3>Generated Output</h3>
+            <div class="mt-4" data-tool-output></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script src="./data/content.js"></script>
+    <script src="./data/tool-definitions.js"></script>
+    <script src="./script.js"></script>
+    <script src="./tools-engine.js"></script>
+  </body>
+</html>
