@@ -527,22 +527,118 @@
         }
       };
     },
-    'scholarship-recommendation-tool': (values) => {
-      const incomeAdvice = {
-        'below-2': 'Prioritize need-based and government scholarships first.',
-        '2-5': 'Target merit-cum-means and state scholarship portals.',
-        '5-8': 'Look for private foundation and institution merit scholarships.',
-        '8+': 'Focus on merit scholarships, grants, and competition-based funding.'
+    'scholarship-recommendation-tool': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const state = String(values.stateOrRegion || '').trim();
+      const field = String(values.fieldOfStudy || '').trim();
+      const category = String(values.category || '').trim();
+      const education = values.currentEducationLevel || 'undergraduate';
+      const needType = values.needType || 'general';
+      const performance = values.academicPerformance || 'good';
+
+      const educationProfiles = {
+        school: 'school students with strong basics and consistent academics',
+        'after-12th': 'students transitioning from class 12 to higher studies',
+        undergraduate: 'undergraduate students pursuing degree programs',
+        postgraduate: 'postgraduate students pursuing advanced or research-focused programs',
+        'professional-course': 'students enrolled in professional or technical programs'
       };
+
+      const scholarshipTypes = [
+        {
+          scholarshipType: 'State Government Scholarship Schemes',
+          tags: ['general', 'need-based', 'category-based'],
+          suitableFor: `learners from ${state} who match domicile and education-level criteria`,
+          prepare: ['Domicile certificate', 'Previous marksheets', 'Income certificate', 'Bank account details'],
+            nextStep: `Check ${state} state scholarship portal and shortlist active schemes by eligibility.`
+        },
+        {
+          scholarshipType: 'National Merit Scholarship Programs',
+          tags: ['merit-based', 'general'],
+          suitableFor: 'students with strong academic records and exam performance',
+          prepare: ['Latest marksheets', 'Merit proof/test score', 'Identity proof', 'Application essay'],
+          nextStep: 'Track National Scholarship Portal updates and apply early in the cycle.'
+        },
+        {
+          scholarshipType: 'Need-cum-Merit Scholarships',
+          tags: ['need-based', 'merit-based'],
+          suitableFor: 'students needing financial support with fair-to-strong academics',
+          prepare: ['Family income documents', 'Academic transcripts', 'Bonafide/admission proof', 'Fee receipts'],
+          nextStep: 'Prepare an income + academics folder and apply to both government and private schemes.'
+        },
+        {
+          scholarshipType: 'Category Support Scholarships',
+          tags: ['category-based'],
+          suitableFor: 'eligible SC/ST/OBC/EWS/Minority/PwD students under notified schemes',
+          prepare: ['Valid category certificate', 'Income proof (if required)', 'Aadhaar/ID', 'Institution details'],
+          nextStep: 'Validate certificate format and upload-ready scans before portal deadlines.'
+        },
+        {
+          scholarshipType: `${field || 'Domain'}-Specific Foundation Scholarships`,
+          tags: ['general', 'merit-based', 'need-based'],
+          suitableFor: `${field ? `${field} students` : 'students in focused fields'} with project or career intent`,
+          prepare: ['Statement of purpose', 'Portfolio/projects (if applicable)', 'Recommendation letter', 'Academic records'],
+          nextStep: 'Identify 3-5 trusted NGOs/foundations and align applications to their theme.'
+        }
+      ];
+
+      const prioritized = scholarshipTypes
+        .map((item) => {
+          let score = item.tags.includes(needType) ? 3 : 1;
+          if (performance === 'excellent' && item.tags.includes('merit-based')) {
+            score += 2;
+          }
+          if ((performance === 'average' || performance === 'improving') && item.tags.includes('need-based')) {
+            score += 2;
+          }
+          if (needType === 'category-based' && category && item.tags.includes('category-based')) {
+            score += 2;
+          }
+          if (field && item.scholarshipType.toLowerCase().includes('specific')) {
+            score += 1;
+          }
+          return { ...item, score };
+        })
+        .sort((a, b) => b.score - a.score);
+
+      const selected = prioritized.slice(variant % 2, (variant % 2) + 4);
+      const finalItems = (selected.length >= 3 ? selected : prioritized.slice(0, 4)).map((item, index) => ({
+        label: index === 0 ? 'Best Match' : `Scholarship Option ${index + 1}`,
+        title: item.scholarshipType,
+        text: `Suitable for: ${item.suitableFor}. Profile context: ${educationProfiles[education] || educationProfiles.undergraduate}.`,
+        rows: [
+          `What to prepare: ${item.prepare.join(', ')}`,
+          `Suggested next step: ${item.nextStep}`
+        ],
+        bestPick: index === 0,
+        copyText: `${item.scholarshipType}\nSuitable for: ${item.suitableFor}\nWhat to prepare: ${item.prepare.join(', ')}\nSuggested next step: ${item.nextStep}`
+      }));
+
+      const checklistItems = [
+        'Aadhaar / government-issued ID',
+        'Latest marksheets and admission proof',
+        'Income certificate (for need-based schemes)',
+        'Category certificate (if applicable)',
+        'Bank passbook or account details',
+        'Calendar reminder for last date and correction window'
+      ];
+
+      const checklistCard = {
+        label: 'Quick Preparation Checklist',
+        title: 'Before You Apply',
+        rows: checklistItems
+      };
+      
       return {
         type: 'cards',
-        items: [
-          `Recommended scholarship buckets for ${values.educationLevel}: government schemes, private foundation grants, and institution-based aid.`,
-          `Field fit: prioritize ${values.field} scholarships and allied domain grants.`,
-          `State strategy: check ${values.state} state education portal + national scholarship portal weekly.`,
-          incomeAdvice[values.incomeBracket] || 'Track all high-fit options in a deadline sheet.',
-          'Application checklist: income proof, marksheets, ID documents, admission proof, bank details.'
-        ]
+        items: [...finalItems, checklistCard],
+        copyText: finalItems.map((item) => item.copyText).join('\n\n'),
+        disclaimer: 'Always verify final eligibility and deadlines from the official scholarship source.',
+        cta: {
+          href: './opportunities.html',
+          label: 'Browse Scholarships',
+          text: 'Explore updated opportunities and scholarship listings in one place.'
+        }
       };
     },
     'professional-email-generator': (values) => {
