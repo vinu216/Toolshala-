@@ -2573,6 +2573,16 @@ footer {
   color: #334155;
 }
 
+.field-required {
+  color: #dc2626;
+}
+
+.field-helper {
+  margin-top: 0.38rem;
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
 .field-input,
 .field-textarea,
 .field-select {
@@ -2607,7 +2617,7 @@ footer {
 }
 
 .field-error {
-  margin-top: 0.35rem;
+  margin-top: 0.3rem;
   font-size: 0.78rem;
   color: #b91c1c;
   font-weight: 600;
