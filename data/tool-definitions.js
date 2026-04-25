@@ -348,39 +348,81 @@ window.ToolShalaToolDefinitions = [
     id: 'scholarship-recommendation-tool',
     title: 'Scholarship Recommendation Tool',
     category: 'AI Tool',
-    description: 'Find scholarship categories and application priorities based on your profile.',
+    description: 'Find realistic scholarship categories and preparation steps based on your education profile.',
     ctaLabel: 'Find Scholarships',
     outputType: 'cards',
+    enableGenerateMore: true,
     tips: [
-      'Always verify details on official scholarship portals.',
-      'Use generated checklist before applying.',
-      'Apply to multiple relevant scholarships, not just one.'
+      'Use correct education level and need type for higher-fit recommendations.',
+      'Keep documents ready early to avoid deadline stress.',
+      'Apply to multiple matching categories instead of depending on one scholarship.'
     ],
     fields: [
       {
-        key: 'educationLevel',
-        label: 'Education Level',
+        key: 'currentEducationLevel',
+        label: 'Current Education Level',
         type: 'select',
         required: true,
         options: [
+          { value: 'school', label: 'School Student' },
           { value: 'after-12th', label: 'After 12th' },
           { value: 'undergraduate', label: 'Undergraduate' },
-          { value: 'postgraduate', label: 'Postgraduate' }
+          { value: 'postgraduate', label: 'Postgraduate' },
+          { value: 'professional-course', label: 'Professional Course' }
         ]
       },
-      { key: 'field', label: 'Field of Study', type: 'text', placeholder: 'e.g. Engineering', required: true },
-      { key: 'state', label: 'State', type: 'text', placeholder: 'e.g. Maharashtra', required: true },
       {
-        key: 'incomeBracket',
-        label: 'Family Income Bracket',
+        key: 'stateOrRegion',
+        label: 'State / Region',
+        type: 'text',
+        placeholder: 'e.g. Maharashtra, Karnataka, Delhi',
+        required: true
+      },
+      {
+        key: 'category',
+        label: 'Category (optional)',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'general', label: 'General' },
+          { value: 'obc', label: 'OBC' },
+          { value: 'sc', label: 'SC' },
+          { value: 'st', label: 'ST' },
+          { value: 'ews', label: 'EWS' },
+          { value: 'minority', label: 'Minority' },
+          { value: 'pwd', label: 'PwD' }
+        ]
+      },
+      {
+        key: 'academicPerformance',
+        label: 'Academic Performance',
         type: 'select',
         required: true,
         options: [
-          { value: 'below-2', label: 'Below 2 LPA' },
-          { value: '2-5', label: '2 - 5 LPA' },
-          { value: '5-8', label: '5 - 8 LPA' },
-          { value: '8+', label: 'Above 8 LPA' }
+          { value: 'excellent', label: 'Excellent (85%+)' },
+          { value: 'good', label: 'Good (70%-84%)' },
+          { value: 'average', label: 'Average (55%-69%)' },
+          { value: 'improving', label: 'Improving (<55%)' }
         ]
+   },
+      {
+        key: 'needType',
+        label: 'Need Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'merit-based', label: 'Merit-based' },
+          { value: 'need-based', label: 'Need-based' },
+          { value: 'category-based', label: 'Category-based' },
+          { value: 'general', label: 'General' }
+        ]
+      },
+      {
+        key: 'fieldOfStudy',
+        label: 'Field of Study (optional)',
+        type: 'text',
+        placeholder: 'e.g. Engineering, Commerce, Medicine, Arts',
+        required: false
       }
     ]
   },
