@@ -473,17 +473,18 @@ window.ToolShalaToolDefinitions = [
   {
     id: 'content-idea-generator',
     title: 'Content Idea Generator for Creators',
-    category: 'Social Tool',
-    description: 'Generate practical content ideas with hooks and format suggestions for creators.',
-    ctaLabel: 'Try Tool',
+    category: 'Creator Tool',
+    description: 'Generate 10 platform-ready content ideas for creators, freelancers, and personal brands.',
+    ctaLabel: 'Generate Ideas',
     outputType: 'cards',
+    enableGenerateMore: true,
     tips: [
-      'Use niche-specific topic for better idea quality.',
-      'Pick platform before generating content ideas.',
-      'Test ideas in batches and track engagement.'
+      'Be specific with niche and audience for more relevant ideas.',
+      'Pick a clear goal: growth, education, engagement, or promotion.',
+      'Use regenerate to get a fresh angle and test what performs best.'
     ],
     fields: [
-      { key: 'niche', label: 'Content Niche', type: 'text', placeholder: 'e.g. Student productivity', required: true },
+      { key: 'niche', label: 'Niche / Topic', type: 'text', placeholder: 'e.g. Student productivity', required: true },
       {
         key: 'platform',
         label: 'Platform',
@@ -493,7 +494,7 @@ window.ToolShalaToolDefinitions = [
           { value: 'instagram', label: 'Instagram' },
           { value: 'youtube', label: 'YouTube' },
           { value: 'linkedin', label: 'LinkedIn' },
-          { value: 'x', label: 'X / Threads' }
+          { value: 'blog', label: 'Blog' }
         ]
       },
       {
@@ -503,11 +504,13 @@ window.ToolShalaToolDefinitions = [
         required: true,
         options: [
           { value: 'growth', label: 'Audience Growth' },
+          { value: 'education', label: 'Education' },
           { value: 'engagement', label: 'Engagement' },
-          { value: 'authority', label: 'Build Authority' },
-          { value: 'leads', label: 'Get Leads / Clients' }
+          { value: 'promotion', label: 'Promotion' }
         ]
-      }
+      },
+      { key: 'audienceType', label: 'Audience Type', type: 'text', placeholder: 'e.g. College students, early freelancers', required: true },
+      { key: 'keywords', label: 'Optional Keywords', type: 'text', placeholder: 'e.g. reels strategy, hooks, productivity', required: false }
     ]
   }
 ];
