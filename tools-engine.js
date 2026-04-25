@@ -641,15 +641,126 @@
         }
       };
     },
-    'professional-email-generator': (values) => {
-      const openingByType = {
-        'internship-application': `I am writing to apply for the ${values.subjectFocus} opportunity.`,
-        'follow-up': `I am writing to follow up regarding ${values.subjectFocus}.`,
-        networking: `I am reaching out to connect regarding ${values.subjectFocus}.`,
-        'correction-request': `I am writing to request support regarding ${values.subjectFocus}.`
+    'professional-email-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const purpose = values.emailPurpose || 'internship-application';
+      const tone = values.tone || 'professional';
+      const recipient = values.recipientName || 'Hiring Team';
+      const sender = values.senderName || 'Your Name';
+      const context = values.roleContext || 'the opportunity';
+      const message = values.mainMessage || '';
+
+      const subjectBanks = {
+        'internship-application': [
+          `Application for ${context}`,
+          `Internship Application - ${context}`,
+          `Interest in ${context}`
+        ],
+        'job-application': [
+          `Application for ${context}`,
+          `Job Application - ${context}`,
+          `Applying for ${context}`
+        ],
+        'follow-up': [
+          `Follow-up regarding ${context}`,
+          `Checking in on ${context}`,
+          `Follow-up: ${context}`
+        ],
+       request: [
+          `Request regarding ${context}`,
+          `Support request: ${context}`,
+          `Request for guidance - ${context}`
+        ],
+        leave: [
+          `Leave request for ${context}`,
+          `Application for leave - ${context}`,
+          `Leave approval request: ${context}`
+        ]
       };
-      const email = `Subject: ${values.subjectFocus} - ${values.name}\n\nDear ${values.recipient},\n\n${openingByType[values.emailType] || openingByType['internship-application']}\n\nA quick context from my side: ${values.highlights}.\n\nI would appreciate your guidance on next steps and am happy to share additional details if required.\n\nThank you for your time and consideration.\n\nBest regards,\n${values.name}`;
-      return { type: 'text', text: email };
+
+      const openingsByPurpose = {
+        'internship-application': [
+          `I am writing to express my interest in the ${context}.`,
+          `I would like to submit my application for the ${context}.`,
+          `I am reaching out to apply for the ${context}.`
+        ],
+        'job-application': [
+          `I am writing to apply for the ${context} role.`,
+          `Please consider my application for ${context}.`,
+          `I would like to express my interest in the ${context} position.`
+        ],
+        'follow-up': [
+          `I am writing to follow up on ${context}.`,
+          `This is a polite follow-up regarding ${context}.`,
+          `I wanted to check in regarding ${context}.`
+        ],
+        request: [
+          `I am writing to request your support regarding ${context}.`,
+          `I would like to request your guidance on ${context}.`,
+          `Please accept this request related to ${context}.`
+        ],
+        leave: [
+          `I am writing to request leave in relation to ${context}.`,
+          `I would like to formally request leave for ${context}.`,
+          `Please consider my leave request regarding ${context}.`
+        ]
+      };
+
+      const toneClosings = {
+        formal: [
+          'Thank you for your time and consideration.',
+          'I appreciate your attention to this matter.',
+          'Thank you for reviewing my request.'
+        ],
+        polite: [
+          'Thank you for your support and guidance.',
+          'I appreciate your help and consideration.',
+          'Thank you for your valuable time.'
+        ],
+        professional: [
+          'Thank you for your time and consideration. I look forward to your response.',
+          'I appreciate your review and would be grateful for the next steps.',
+          'Thank you for considering my email. I am happy to share further details if needed.'
+        ]
+      };
+
+      const signOffs = {
+        formal: 'Sincerely',
+        polite: 'Warm regards',
+        professional: 'Best regards'
+      };
+
+      const subjects = subjectBanks[purpose] || subjectBanks['internship-application'];
+      const openings = openingsByPurpose[purpose] || openingsByPurpose['internship-application'];
+      const closingSet = toneClosings[tone] || toneClosings.professional;
+      const subject = pick(subjects, variant);
+
+      const bodyParts = [
+        `Dear ${recipient},`,
+        '',
+        pick(openings, variant),
+        '',
+        message,
+        '',
+        pick(closingSet, variant),
+        '',
+        `${signOffs[tone] || signOffs.professional},`,
+        sender
+      ];
+
+      return {
+        type: 'email',
+        subject,
+        subjectVariations: [pick(subjects, variant + 1), pick(subjects, variant + 2)],
+        sections: {
+          greeting: `Dear ${recipient},`,
+          opening: pick(openings, variant),
+          body: message,
+          closing: `${pick(closingSet, variant)}\n\n${signOffs[tone] || signOffs.professional},\n${sender}`
+        },
+        bodyText: bodyParts.join('\n'),
+        note: 'Always review names, role details, and attachments before sending.'
+      }; 
     },
     'content-idea-generator': (values) => {
       const hooks = {
@@ -830,6 +941,66 @@
       return;
     }
 
+        if (result.type === 'email') {
+      const subjectWrap = document.createElement('div');
+      subjectWrap.className = 'rounded-xl border border-indigo-100 bg-indigo-50 p-4';
+      const subjectLabel = document.createElement('p');
+      subjectLabel.className = 'text-xs font-semibold uppercase tracking-wide text-indigo-700';
+      subjectLabel.textContent = 'Subject';
+      const subjectValue = document.createElement('p');
+      subjectValue.className = 'mt-2 text-sm font-semibold text-slate-800';
+      subjectValue.textContent = result.subject || '';
+      subjectWrap.appendChild(subjectLabel);
+      subjectWrap.appendChild(subjectValue);
+      outputNode.appendChild(subjectWrap);
+
+      if (Array.isArray(result.subjectVariations) && result.subjectVariations.length) {
+        const variantWrap = document.createElement('div');
+        variantWrap.className = 'mt-4 rounded-xl border border-slate-200 bg-white p-4';
+        variantWrap.innerHTML = '<p class="text-xs font-semibold uppercase tracking-wide text-slate-700">Subject Variations</p>';
+        const list = document.createElement('ul');
+        list.className = 'mt-2 item-card-list';
+        result.subjectVariations.forEach((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+        variantWrap.appendChild(list);
+        outputNode.appendChild(variantWrap);
+      }
+
+      const bodyBox = document.createElement('pre');
+      bodyBox.className = 'tool-output-text mt-4';
+      bodyBox.textContent = result.bodyText || '';
+      outputNode.appendChild(bodyBox);
+
+      if (result.note) {
+        const note = document.createElement('p');
+        note.className = 'no-results-inline mt-3';
+        note.textContent = result.note;
+        outputNode.appendChild(note);
+      }
+
+      const actions = document.createElement('div');
+      actions.className = 'tool-actions';
+      const copyButton = document.createElement('button');
+      copyButton.type = 'button';
+      copyButton.className = 'btn-secondary';
+      copyButton.textContent = 'Copy Email';
+      copyButton.addEventListener('click', async () => {
+     try {
+          const payload = `Subject: ${result.subject || ''}\n\n${result.bodyText || ''}`;
+          await copyText(payload);
+          showToast('success', 'Copied to clipboard.');
+        } catch (error) {
+          showToast('error', 'Could not copy right now.', 'Please copy manually.');
+        }
+      });
+      actions.appendChild(copyButton);
+      outputNode.appendChild(actions);
+      return;
+        }  
+    
     if (result.type === 'text') {
       const pre = document.createElement('pre');
       pre.className = `tool-output-text ${result.className || ''}`.trim();
