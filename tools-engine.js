@@ -762,25 +762,112 @@
         note: 'Always review names, role details, and attachments before sending.'
       }; 
     },
-    'content-idea-generator': (values) => {
-      const hooks = {
-        growth: ['5 mistakes I made in', 'How I improved results in', 'Beginner roadmap for'],
-        engagement: ['Unpopular opinion on', 'This changed my approach to', 'If you are stuck with'],
-        authority: ['Framework I use for', 'Step-by-step guide to', 'What most people miss in'],
-        leads: ['Before you hire for', 'Checklist to improve', 'Case study: how we fixed']
+    'content-idea-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const niche = String(values.niche || '').trim();
+      const platform = values.platform || 'instagram';
+      const goal = values.contentGoal || 'growth';
+      const audience = String(values.audienceType || '').trim();
+      const keywords = normalizeCommaList(values.keywords).slice(0, 4);
+      const keywordText = keywords.length ? ` Include: ${keywords.join(', ')}.` : '';
+
+      const platformFormats = {
+        instagram: {
+          list: 'Carousel post with a strong first slide hook',
+          tutorial: 'Reel + caption with steps and CTA',
+          opinion: 'Talking-head Reel or text carousel',
+          personal: 'Photo dump + story-led caption',
+          trend: 'Trend audio Reel adapted to your niche'
+        },
+        youtube: {
+          list: 'Listicle-style YouTube video with chapters',
+          tutorial: 'Step-by-step tutorial video',
+          opinion: 'Commentary video with examples',
+          personal: 'Storytime video with lessons learned',
+          trend: 'Reaction/analysis video on current trend'
+        },
+        linkedin: {
+          list: 'Structured text post using numbered points',
+          tutorial: 'How-to post with a simple framework',
+          opinion: 'POV post with practical argument',
+          personal: 'Founder/creator journey post',
+          trend: 'Topical insight post tied to market trend'
+        },
+        blog: {
+          list: 'SEO-friendly list blog article',
+          tutorial: 'Long-form step-by-step guide',
+          opinion: 'Opinion editorial with examples',
+          personal: 'Personal journey blog with takeaways',
+          trend: 'Trend breakdown article with predictions'
+        }
       };
-      const formats = {
-        instagram: 'Carousel + Reel combo',
-        youtube: 'Short + long breakdown',
-        linkedin: 'Text post + mini framework',
-        x: 'Thread + single hook post'
+      
+      const goalAngles = {
+        growth: 'focus on discoverability and shareability',
+        education: 'focus on practical learning and clarity',
+        engagement: 'focus on interaction and comments',
+        promotion: 'focus on conversion and offers'
       };
-      const leadHooks = hooks[values.contentGoal] || hooks.growth;
-      const items = Array.from({ length: 6 }, (_, index) => {
-        const idea = `${pick(leadHooks, index)} ${values.niche.toLowerCase()} (${formats[values.platform] || formats.instagram}).`;
-        return `${idea} Include one practical example and one quick action step.`;
+
+      const templatesByType = {
+        list: [
+          `7 common mistakes in ${niche} and how ${audience} can avoid them`,
+          `10 tools every ${audience} should use for ${niche}`,
+          `5 myths about ${niche} that slow down ${audience}`
+        ],
+        tutorial: [
+          `Beginner guide: How ${audience} can start with ${niche} in 7 days`,
+          `Step-by-step workflow for ${niche} that saves time for ${audience}`,
+          `How to get your first result in ${niche} (simple tutorial)`
+        ],
+        opinion: [
+          `Hot take: Most advice on ${niche} is outdated for ${audience}`,
+          `Why consistency matters more than perfection in ${niche}`,
+          `What people misunderstand about growing in ${niche}`
+        ],
+        personal: [
+          `My journey in ${niche}: 3 lessons I wish I knew earlier`,
+          `From confusion to clarity: my personal system for ${niche}`,
+          `What changed when I started creating consistently in ${niche}`
+        ],
+        trend: [
+          `Trend watch: What’s changing in ${niche} this month`,
+          `Should ${audience} follow this ${niche} trend? Pros and cons`,
+          `How to use current trends in ${niche} without losing authenticity`
+        ]
+      };
+      
+      const ideaTypes = ['list', 'tutorial', 'opinion', 'personal', 'trend', 'list', 'tutorial', 'opinion', 'personal', 'trend'];
+      const formatMap = platformFormats[platform] || platformFormats.instagram;
+      const angleText = goalAngles[goal] || goalAngles.growth;
+
+      const items = ideaTypes.map((ideaType, index) => {
+        const title = pick(templatesByType[ideaType], variant + index);
+        const format = formatMap[ideaType];
+        const starter = index === (variant % 10);
+        return {
+          label: `Idea ${index + 1}`,
+          title,
+          text: `${format}. Goal angle: ${angleText}.${keywordText}`,
+          note: starter ? 'Start with this one for quick execution and audience relevance.' : `Designed for ${audience}.`,
+          bestPick: starter,
+          copyText: `${title}\nPlatform: ${platform}\nFormat: ${format}\nAudience: ${audience}\nGoal: ${goal}\n${angleText}${keywordText}`
+        };
       });
-      return { type: 'cards', items };
+      
+      return {
+        type: 'cards',
+        items,
+        copyText: items.map((item) => `${item.label}: ${item.title}\n${item.text}`).join('\n\n'),
+        disclaimer: 'Choose ideas that match your audience’s questions, not just trends.',
+        cta: platform === 'instagram'
+          ? {
+            href: './tool.html?tool=instagram-caption-generator',
+            label: 'Generate Instagram Captions',
+            text: 'Turn your selected Instagram idea into ready-to-post captions in one click.'
+          }
+          : null
+      };
     }
   };
 
@@ -941,6 +1028,66 @@
       return;
     }
 
+    if (result.type === 'email') {
+      const subjectWrap = document.createElement('div');
+      subjectWrap.className = 'rounded-xl border border-indigo-100 bg-indigo-50 p-4';
+      const subjectLabel = document.createElement('p');
+      subjectLabel.className = 'text-xs font-semibold uppercase tracking-wide text-indigo-700';
+      subjectLabel.textContent = 'Subject';
+      const subjectValue = document.createElement('p');
+      subjectValue.className = 'mt-2 text-sm font-semibold text-slate-800';
+      subjectValue.textContent = result.subject || '';
+      subjectWrap.appendChild(subjectLabel);
+      subjectWrap.appendChild(subjectValue);
+      outputNode.appendChild(subjectWrap);
+
+      if (Array.isArray(result.subjectVariations) && result.subjectVariations.length) {
+        const variantWrap = document.createElement('div');
+        variantWrap.className = 'mt-4 rounded-xl border border-slate-200 bg-white p-4';
+        variantWrap.innerHTML = '<p class="text-xs font-semibold uppercase tracking-wide text-slate-700">Subject Variations</p>';
+        const list = document.createElement('ul');
+        list.className = 'mt-2 item-card-list';
+        result.subjectVariations.forEach((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+        variantWrap.appendChild(list);
+        outputNode.appendChild(variantWrap);
+      }
+
+      const bodyBox = document.createElement('pre');
+      bodyBox.className = 'tool-output-text mt-4';
+      bodyBox.textContent = result.bodyText || '';
+      outputNode.appendChild(bodyBox);
+
+      if (result.note) {
+        const note = document.createElement('p');
+        note.className = 'no-results-inline mt-3';
+        note.textContent = result.note;
+        outputNode.appendChild(note);
+      }
+
+      const actions = document.createElement('div');
+      actions.className = 'tool-actions';
+      const copyButton = document.createElement('button');
+      copyButton.type = 'button';
+      copyButton.className = 'btn-secondary';
+      copyButton.textContent = 'Copy Email';
+      copyButton.addEventListener('click', async () => {
+        try {
+          const payload = `Subject: ${result.subject || ''}\n\n${result.bodyText || ''}`;
+          await copyText(payload);
+          showToast('success', 'Copied to clipboard.');
+        } catch (error) {
+          showToast('error', 'Could not copy right now.', 'Please copy manually.');
+        }
+      });
+      actions.appendChild(copyButton);
+      outputNode.appendChild(actions);
+      return;
+    }
+    
         if (result.type === 'email') {
       const subjectWrap = document.createElement('div');
       subjectWrap.className = 'rounded-xl border border-indigo-100 bg-indigo-50 p-4';
