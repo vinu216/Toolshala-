@@ -41,6 +41,23 @@
     document.body.removeChild(helper);
     return copied;
   };
+  
+  const shareText = async (title, text) => {
+    if (!text) {
+      return false;
+    }
+
+    if (navigator.share) {
+      await navigator.share({
+        title: title || 'ToolShala Result',
+        text
+      });
+      return true;
+    }
+
+    await copyText(text);
+    return false;
+  };
 
   const toDateLabel = (value) =>
     new Date(value).toLocaleDateString('en-IN', {
@@ -383,37 +400,131 @@
         fileName: `study-timetable-${String(values.level || 'plan').trim().replace(/\s+/g, '-').toLowerCase()}.txt`
       };
     },
-    'ai-career-path-suggestor': (values) => {
-      const pathByInterest = {
-        marketing: ['Digital Marketing Associate', 'Content Strategist', 'Growth Intern'],
-        design: ['UI Designer', 'Graphic Designer', 'Brand Design Intern'],
-        data: ['Data Analyst Intern', 'Business Analyst Trainee', 'Reporting Associate'],
-        development: ['Frontend Intern', 'QA Analyst', 'Product Support Associate']
+    'ai-career-path-suggestor': (values, options = {}) => {
+      const interests = `${values.interests || ''}`.toLowerCase();
+      const strengths = normalizeCommaList(values.strengths || values.interests);
+      const workStyle = values.workStyle || 'creative';
+      const codingPreference = values.codingPreference || '';
+      const stage = values.stage || 'college';
+      const variant = Number(options.variant || 0);
+
+      const roleLibrary = [
+        {
+          title: 'UI/UX Designer',
+          tags: ['design', 'creative', 'visual', 'user', 'ui', 'ux', 'canva', 'figma'],
+          styles: ['creative', 'independent'],
+          coding: 'optional',
+          why: 'You seem to enjoy visual thinking and creating user-friendly experiences.',
+          skillsToLearn: ['Figma', 'Design thinking', 'User research basics', 'Wireframing'],
+          nextStep: 'Redesign one app screen each week and publish your portfolio on Behance/Dribbble.'
+        },
+                {
+          title: 'Digital Marketing Specialist',
+          tags: ['marketing', 'content', 'social', 'brand', 'growth', 'storytelling', 'seo'],
+          styles: ['creative', 'analytical', 'people-focused'],
+          coding: 'no',
+          why: 'Your interests align with communication, audience growth, and campaign execution.',
+          skillsToLearn: ['SEO fundamentals', 'Performance marketing basics', 'Copywriting', 'Analytics dashboards'],
+          nextStep: 'Run a 30-day campaign for a small page or project and document outcomes.'
+        },
+        {
+          title: 'Data Analyst',
+          tags: ['data', 'analysis', 'excel', 'numbers', 'statistics', 'business', 'research'],
+          styles: ['analytical', 'independent'],
+          coding: 'yes',
+          why: 'You show signs of structured thinking and interest in problem-solving with data.',
+          skillsToLearn: ['Excel/Sheets', 'SQL', 'Python basics', 'Power BI/Tableau'],
+          nextStep: 'Build 2 portfolio dashboards from public datasets and share insights on LinkedIn.'
+        },
+                {
+          title: 'Customer Success Associate',
+          tags: ['people', 'communication', 'support', 'client', 'relationship', 'service'],
+          styles: ['people-focused', 'analytical'],
+          coding: 'no',
+          why: 'Your strengths suggest empathy, communication, and ability to handle real user problems.',
+          skillsToLearn: ['Business communication', 'CRM basics', 'Problem diagnosis', 'Product walkthroughs'],
+          nextStep: 'Practice mock support scenarios and create a one-page customer issue-resolution framework.'
+        },
+        {
+          title: 'Frontend Developer',
+          tags: ['coding', 'development', 'web', 'react', 'javascript', 'frontend', 'tech'],
+          styles: ['creative', 'analytical', 'independent'],
+          coding: 'yes',
+          why: 'You may enjoy building real digital products with logic and creativity.',
+          skillsToLearn: ['HTML/CSS/JavaScript', 'React basics', 'Git/GitHub', 'API integration'],
+          nextStep: 'Build 3 responsive projects and host them in a public GitHub portfolio.'
+        },
+                {
+          title: 'HR & Talent Acquisition Coordinator',
+          tags: ['people', 'hiring', 'interview', 'hr', 'organization', 'management'],
+          styles: ['people-focused', 'analytical'],
+          coding: 'no',
+          why: 'Your profile indicates strong people interaction and coordination capability.',
+          skillsToLearn: ['Interview screening', 'LinkedIn sourcing', 'Communication templates', 'Hiring workflows'],
+          nextStep: 'Create sample JD + screening sheet and assist in campus/community hiring drives.'
+        },
+        {
+          title: 'Business Analyst Trainee',
+          tags: ['analysis', 'business', 'process', 'operations', 'problem-solving', 'documentation'],
+          styles: ['analytical', 'people-focused'],
+          coding: 'optional',
+          why: 'You appear to enjoy understanding processes and improving decision quality.',
+          skillsToLearn: ['Requirement gathering', 'Process mapping', 'SQL basics', 'Presentation storytelling'],
+          nextStep: 'Analyze one real process (college club/startup) and present improvement ideas.'
+        }
+              ];
+
+      const stagePrefix = {
+        school: 'As a school student,',
+        college: 'As a college student,',
+        graduate: 'As a graduate,',
+        fresher: 'As a fresher,'
       };
-      const stagePlan = {
-        school: 'Start with career awareness + one foundational skill project.',
-        college: 'Build portfolio projects + internship-ready resume in 60 days.',
-        fresher: 'Target entry-level roles + weekly interview prep and applications.',
-        creator: 'Combine personal brand output with service-based skill offers.'
-      };
-      const lowerInterest = values.interest.toLowerCase();
-      const roles = lowerInterest.includes('market')
-        ? pathByInterest.marketing
-        : lowerInterest.includes('design')
-          ? pathByInterest.design
-          : lowerInterest.includes('data') || lowerInterest.includes('anal')
-            ? pathByInterest.data
-            : lowerInterest.includes('dev') || lowerInterest.includes('tech')
-              ? pathByInterest.development
-              : ['Operations Executive', 'Customer Success Associate', 'Project Coordinator'];
+
+      const scored = roleLibrary
+        .map((role) => {
+          const keywordHits = role.tags.reduce((score, tag) => (interests.includes(tag) ? score + 2 : score), 0);
+          const styleFit = role.styles.includes(workStyle) ? 3 : 0;
+          const codingFit = codingPreference
+            ? ((codingPreference === 'yes' && role.coding !== 'no') || (codingPreference === 'no' && role.coding !== 'yes') ? 2 : -1)
+            : 1;
+          const strengthFit = strengths.reduce((score, skill) => (role.tags.some((tag) => skill.toLowerCase().includes(tag)) ? score + 1 : score), 0);
+          return {
+            ...role,
+            totalScore: keywordHits + styleFit + codingFit + strengthFit
+          };
+        })
+        .sort((a, b) => b.totalScore - a.totalScore);
+
+      const shift = variant % 2;
+      const picks = scored.slice(shift, shift + 4);
+      const chosen = picks.length >= 3 ? picks : scored.slice(0, 4);
+
+        const items = chosen.map((role, index) => {
+        const skillsToLearn = role.skillsToLearn.slice(0, 4).join(', ');
+        return {
+          label: index === 0 ? 'Best Match' : `Career Path ${index + 1}`,
+          title: role.title,
+          text: `${stagePrefix[stage] || 'Based on your profile,'} ${role.why}`,
+          rows: [`Useful skills to learn: ${skillsToLearn}`, `Next step recommendation: ${role.nextStep}`],
+          note: `Profile signals used: ${values.workStyle} work style, interests and strengths.`,
+          bestPick: index === 0,
+          copyText: `${role.title}\nWhy it fits: ${role.why}\nUseful skills to learn: ${skillsToLearn}\nNext step recommendation: ${role.nextStep}`
+        };
+      });
+
+      const compiledText = items.map((item) => item.copyText).join('\n\n');
       return {
         type: 'cards',
-        items: [
-          `Suggested roles: ${roles.join(', ')}.`,
-          `Your strengths (${values.strengths}) align with ${values.interest}.`,
-          `90-day action: ${stagePlan[values.stage] || stagePlan.college}`,
-          `12-month target fit: ${values.goal}. Build monthly proof of work to stay on track.`
-        ]
+        items,
+        copyText: compiledText,
+        shareText: compiledText,
+        disclaimer: 'This tool gives direction, not a final decision. Use it as a starting point.',
+        cta: {
+          href: './career.html',
+          label: 'Explore Career Guides',
+          text: 'Want deeper guidance? Explore role roadmaps and practical planning resources.'
+        }
       };
     },
     'scholarship-recommendation-tool': (values) => {
@@ -758,6 +869,24 @@
         }
       });
       actions.appendChild(copy);
+
+        const shareButton = document.createElement('button');
+      shareButton.type = 'button';
+      shareButton.className = 'btn-secondary';
+      shareButton.textContent = 'Share';
+      shareButton.addEventListener('click', async () => {
+        try {
+          const sharePayload = content.copyText
+            || [content.label, content.title, content.text, Array.isArray(content.rows) ? content.rows.join('\n') : '', content.note]
+              .filter(Boolean)
+              .join('\n');
+          const shared = await shareText(content.title || tool.title, sharePayload);
+          showToast('success', shared ? 'Share dialog opened.' : 'Copied to clipboard.', shared ? '' : 'Share is unavailable. Content copied instead.');
+        } catch (error) {
+          showToast('error', 'Could not share right now.', 'Please try again.');
+        }
+      });
+      actions.appendChild(shareButton);
       card.appendChild(actions);
       grid.appendChild(card);
     });
@@ -783,6 +912,22 @@
         actions.appendChild(copyAll);
       }
 
+        if (result.shareText) {
+        const shareAll = document.createElement('button');
+        shareAll.type = 'button';
+        shareAll.className = 'btn-secondary';
+        shareAll.textContent = 'Share All';
+        shareAll.addEventListener('click', async () => {
+          try {
+            const shared = await shareText(tool.title, result.shareText);
+            showToast('success', shared ? 'Share dialog opened.' : 'Copied to clipboard.', shared ? '' : 'Share is unavailable. Content copied instead.');
+          } catch (error) {
+            showToast('error', 'Could not share right now.', 'Please try again.');
+          }
+        });
+        actions.appendChild(shareAll);
+            }
+      
       if (result.downloadable) {
         const downloadButton = document.createElement('button');
         downloadButton.type = 'button';
@@ -819,6 +964,30 @@
       outputNode.appendChild(actions);
     }
 
+    if (result.disclaimer) {
+      const disclaimerNode = document.createElement('p');
+      disclaimerNode.className = 'mt-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900';
+      disclaimerNode.textContent = result.disclaimer;
+      outputNode.appendChild(disclaimerNode);
+    }
+
+    if (result.cta?.href && result.cta?.label) {
+      const ctaWrap = document.createElement('div');
+      ctaWrap.className = 'mt-5 rounded-2xl border border-indigo-100 bg-indigo-50 p-4';
+
+      const ctaText = document.createElement('p');
+      ctaText.className = 'text-sm text-indigo-900';
+      ctaText.textContent = result.cta.text || 'Explore more guidance on ToolShala career resources.';
+      ctaWrap.appendChild(ctaText);
+
+      const ctaLink = document.createElement('a');
+      ctaLink.className = 'btn-primary mt-3 inline-flex';
+      ctaLink.href = result.cta.href;
+      ctaLink.textContent = result.cta.label;
+      ctaWrap.appendChild(ctaLink);
+      outputNode.appendChild(ctaWrap);
+    }
+    
     if (tool.id === 'linkedin-bio-generator') {
       const helper = document.createElement('p');
       helper.className = 'no-results-inline';
@@ -870,6 +1039,8 @@
       generateMoreButton.classList.toggle('hidden', !tool.enableGenerateMore);
       generateMoreButton.textContent = tool.id === 'study-timetable-generator'
         ? 'Regenerate Plan'
+        : tool.id === 'ai-career-path-suggestor'
+          ? 'Regenerate Suggestions'
         : tool.outputType === 'text'
           ? 'Regenerate'
           : 'Generate More';
