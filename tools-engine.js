@@ -20,6 +20,19 @@
 
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+  const TOOL_ENGINE_CONFIG = {
+    apiProviderGlobal: 'ToolShalaAIProvider',
+    defaultLoadingMessages: ['Generating your result...', 'Preparing your content...', 'Just a moment...']
+  };
+
+  const getApiProvider = () => {
+    const provider = window[TOOL_ENGINE_CONFIG.apiProviderGlobal];
+    if (provider && typeof provider.generate === 'function') {
+      return provider;
+    }
+    return null;
+  };
+
   const copyText = async (text) => {
     if (!text) {
       return false;
@@ -76,6 +89,30 @@
       .map((part) => part.trim())
       .filter(Boolean);
 
+  const getFieldHelperText = (field) => {
+    if (field.helperText) {
+      return field.helperText;
+    }
+
+    if (field.type === 'textarea') {
+      return 'Tip: keep it clear and specific for better results.';
+    }
+
+    if (field.type === 'date') {
+      return 'Use a valid date format before generating.';
+    }
+
+    if (field.type === 'number') {
+      return 'Enter numeric values only.';
+    }
+
+    if (field.type === 'select') {
+      return 'Choose the most relevant option to improve output quality.';
+    }
+
+    return 'Use short, specific details for smarter suggestions.';
+  };
+  
   // This registry is intentionally isolated so each tool can be migrated
   // from local template logic to API-backed generation without UI rewrites.
   const generators = {
@@ -871,6 +908,33 @@
     }
   };
 
+  const generateResult = async (toolId, values, options = {}) => {
+    const localGenerator = generators[toolId];
+    const provider = getApiProvider();
+    const mode = options.mode || 'hybrid';
+
+    if (provider && mode !== 'local') {
+      try {
+        const remoteResult = await provider.generate({
+          toolId,
+          values,
+          variant: options.variant || 0
+        });
+        if (remoteResult && typeof remoteResult === 'object') {
+          return remoteResult;
+        }
+      } catch (error) {
+        console.warn('[ToolShala] API provider failed, falling back to local generator.', error);
+      }
+    }
+
+    if (typeof localGenerator === 'function') {
+      return localGenerator(values, options);
+    }
+
+    return { type: 'text', text: 'This tool is under maintenance.' };
+  };
+  
   const validate = (tool, values) => {
     const fieldErrors = {};
 
@@ -979,7 +1043,7 @@
     const label = document.createElement('label');
     label.className = 'field-label';
     label.setAttribute('for', `tool-field-${field.key}`);
-    label.textContent = field.label;
+    label.innerHTML = `${escapeHtml(field.label)}${field.required ? ' <span class="field-required">*</span>' : ''}`;
 
     let input;
     if (field.type === 'select') {
@@ -1013,6 +1077,14 @@
     wrapper.appendChild(label);
     wrapper.appendChild(input);
 
+    const helperText = getFieldHelperText(field);
+    if (helperText) {
+      const helper = document.createElement('p');
+      helper.className = 'field-helper';
+      helper.textContent = helperText;
+      wrapper.appendChild(helper);
+    }
+    
     const error = document.createElement('p');
     error.className = 'field-error hidden';
     error.setAttribute('data-field-error', 'true');
@@ -1087,67 +1159,6 @@
       outputNode.appendChild(actions);
       return;
     }
-    
-        if (result.type === 'email') {
-      const subjectWrap = document.createElement('div');
-      subjectWrap.className = 'rounded-xl border border-indigo-100 bg-indigo-50 p-4';
-      const subjectLabel = document.createElement('p');
-      subjectLabel.className = 'text-xs font-semibold uppercase tracking-wide text-indigo-700';
-      subjectLabel.textContent = 'Subject';
-      const subjectValue = document.createElement('p');
-      subjectValue.className = 'mt-2 text-sm font-semibold text-slate-800';
-      subjectValue.textContent = result.subject || '';
-      subjectWrap.appendChild(subjectLabel);
-      subjectWrap.appendChild(subjectValue);
-      outputNode.appendChild(subjectWrap);
-
-      if (Array.isArray(result.subjectVariations) && result.subjectVariations.length) {
-        const variantWrap = document.createElement('div');
-        variantWrap.className = 'mt-4 rounded-xl border border-slate-200 bg-white p-4';
-        variantWrap.innerHTML = '<p class="text-xs font-semibold uppercase tracking-wide text-slate-700">Subject Variations</p>';
-        const list = document.createElement('ul');
-        list.className = 'mt-2 item-card-list';
-        result.subjectVariations.forEach((item) => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          list.appendChild(li);
-        });
-        variantWrap.appendChild(list);
-        outputNode.appendChild(variantWrap);
-      }
-
-      const bodyBox = document.createElement('pre');
-      bodyBox.className = 'tool-output-text mt-4';
-      bodyBox.textContent = result.bodyText || '';
-      outputNode.appendChild(bodyBox);
-
-      if (result.note) {
-        const note = document.createElement('p');
-        note.className = 'no-results-inline mt-3';
-        note.textContent = result.note;
-        outputNode.appendChild(note);
-      }
-
-      const actions = document.createElement('div');
-      actions.className = 'tool-actions';
-      const copyButton = document.createElement('button');
-      copyButton.type = 'button';
-      copyButton.className = 'btn-secondary';
-      copyButton.textContent = 'Copy Email';
-      copyButton.addEventListener('click', async () => {
-     try {
-          const payload = `Subject: ${result.subject || ''}\n\n${result.bodyText || ''}`;
-          await copyText(payload);
-          showToast('success', 'Copied to clipboard.');
-        } catch (error) {
-          showToast('error', 'Could not copy right now.', 'Please copy manually.');
-        }
-      });
-      actions.appendChild(copyButton);
-      outputNode.appendChild(actions);
-      return;
-        }  
-    
     if (result.type === 'text') {
       const pre = document.createElement('pre');
       pre.className = `tool-output-text ${result.className || ''}`.trim();
@@ -1438,6 +1449,7 @@
 
     let variantCount = 0;
     let lastValues = null;
+    let loadingMessageIndex = 0;
 
     document.title = `${tool.title} | ToolShala`;
     titleNode.textContent = tool.title;
@@ -1500,11 +1512,12 @@
       submitButton.disabled = true;
       submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
       submitButton.textContent = 'Generating...';
+      loadingNode.textContent = TOOL_ENGINE_CONFIG.defaultLoadingMessages[loadingMessageIndex % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingMessageIndex += 1;
       loadingNode.classList.remove('hidden');
 
       await wait(700);
-      const generator = generators[tool.id];
-      const result = generator ? generator(values, { variant: variantCount }) : { type: 'text', text: 'This tool is under maintenance.' };
+      const result = await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
       lastValues = values;
       renderOutput({ outputNode, result, tool });
       loadingNode.classList.add('hidden');
@@ -1519,17 +1532,14 @@
           showToast('error', 'Please fill in all required fields.');
           return;
         }
-
-        const generator = generators[tool.id];
-        if (!generator) {
-          return;
-        }
-
+        
         variantCount += 1;
         generateMoreButton.disabled = true;
+        loadingNode.textContent = TOOL_ENGINE_CONFIG.defaultLoadingMessages[loadingMessageIndex % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+        loadingMessageIndex += 1;
         loadingNode.classList.remove('hidden');
         await wait(500);
-        const result = generator(lastValues, { variant: variantCount });
+        const result = await generateResult(tool.id, lastValues, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
         renderOutput({ outputNode, result, tool });
         loadingNode.classList.add('hidden');
         generateMoreButton.disabled = false;
