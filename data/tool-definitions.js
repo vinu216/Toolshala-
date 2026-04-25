@@ -284,13 +284,14 @@ window.ToolShalaToolDefinitions = [
     id: 'ai-career-path-suggestor',
     title: 'AI Career Path Suggestor',
     category: 'AI Tool',
-    description: 'Get role suggestions, skill roadmap, and action plan based on your interests and profile.',
+    description: 'Discover realistic career directions with role-fit reasons, skill roadmap, and practical next steps.',
     ctaLabel: 'Explore Path',
     outputType: 'cards',
+    enableGenerateMore: true,
     tips: [
-      'Choose your current stage honestly for better path fit.',
-      'Add interest area you can pursue consistently.',
-      'Use suggested path as direction and validate with mentors.'
+      'Be specific with your interests and strengths for better matches.',
+      'Use the suggestions to shortlist 1-2 roles and test them through mini projects.',
+      'Treat this as direction, then validate by talking to mentors and professionals.'
     ],
     fields: [
       {
@@ -301,13 +302,46 @@ window.ToolShalaToolDefinitions = [
         options: [
           { value: 'school', label: 'School Student' },
           { value: 'college', label: 'College Student' },
-          { value: 'fresher', label: 'Fresher' },
-          { value: 'creator', label: 'Creator / Freelancer' }
+          { value: 'graduate', label: 'Graduate' },
+          { value: 'fresher', label: 'Fresher' }
         ]
       },
-      { key: 'interest', label: 'Interest Area', type: 'text', placeholder: 'e.g. Marketing and content', required: true },
-      { key: 'strengths', label: 'Your Strengths', type: 'text', placeholder: 'e.g. Communication, creativity, consistency', required: true },
-      { key: 'goal', label: 'Goal in 12 Months', type: 'text', placeholder: 'e.g. Get my first internship', required: true }
+      {
+        key: 'interests',
+        label: 'Interests',
+        type: 'textarea',
+        placeholder: 'e.g. Storytelling, psychology, marketing, technology, helping people',
+        required: true
+      },
+      {
+        key: 'workStyle',
+        label: 'Preferred Work Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'creative', label: 'Creative' },
+          { value: 'analytical', label: 'Analytical' },
+          { value: 'people-focused', label: 'People-focused' },
+          { value: 'independent', label: 'Independent' }
+        ]
+      },
+      {
+        key: 'strengths',
+        label: 'Skills / Strengths',
+        type: 'textarea',
+        placeholder: 'e.g. Communication, Canva, presentation, problem-solving, consistency',
+        required: true
+      },
+      {
+        key: 'codingPreference',
+        label: 'Do you prefer coding? (optional)',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'yes', label: 'Yes' },
+          { value: 'no', label: 'No' }
+        ]
+      }
     ]
   },
   {
