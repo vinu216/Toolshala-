@@ -430,31 +430,44 @@ window.ToolShalaToolDefinitions = [
     id: 'professional-email-generator',
     title: 'Professional Email Generator',
     category: 'Writing Tool',
-    description: 'Generate role-specific professional emails for internships, networking, follow-ups, and requests.',
-    ctaLabel: 'Generate Now',
-    outputType: 'text',
+    description: 'Create polished professional emails for internships, jobs, follow-ups, requests, and leave applications.',
+    ctaLabel: 'Generate Email',
+    outputType: 'email',
+    enableGenerateMore: true,
     tips: [
-      'Keep subject line specific and role-focused.',
-      'Use concise and polite tone.',
-      'Review recipient and company names before sending.'
+      'Select a clear purpose and match it with the right tone.',
+      'Use specific role/context details for better-quality drafts.',
+      'Always review names, role details, and attachments before sending.'
     ],
     fields: [
       {
-        key: 'emailType',
-        label: 'Email Type',
+        key: 'emailPurpose',
+        label: 'Email Purpose',
         type: 'select',
         required: true,
         options: [
           { value: 'internship-application', label: 'Internship Application' },
-          { value: 'follow-up', label: 'Follow-up Email' },
-          { value: 'networking', label: 'Networking Request' },
-          { value: 'correction-request', label: 'Correction / Support Request' }
+          { value: 'job-application', label: 'Job Application' },
+          { value: 'follow-up', label: 'Follow-up' },
+          { value: 'request', label: 'Request' },
+          { value: 'leave', label: 'Leave' }
         ]
       },
-      { key: 'name', label: 'Your Name', type: 'text', placeholder: 'e.g. Muskan Khan', required: true },
-      { key: 'recipient', label: 'Recipient Name / Team', type: 'text', placeholder: 'e.g. Hiring Manager', required: true },
-      { key: 'subjectFocus', label: 'Role or Purpose', type: 'text', placeholder: 'e.g. Digital Marketing Internship', required: true },
-      { key: 'highlights', label: 'Key Highlights', type: 'textarea', placeholder: 'e.g. Worked on 2 campaign projects, SEO basics', required: true }
+      { key: 'recipientName', label: 'Recipient Name', type: 'text', placeholder: 'e.g. Ms. Sharma', required: true },
+      { key: 'senderName', label: 'Sender Name', type: 'text', placeholder: 'e.g. Riya Verma', required: true },
+      { key: 'roleContext', label: 'Role / Context', type: 'text', placeholder: 'e.g. Frontend Internship - Summer 2026', required: true },
+      { key: 'mainMessage', label: 'Main Message', type: 'textarea', placeholder: 'Share your key intent, highlights, or request in 1-3 lines.', required: true },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'professional', label: 'Professional' }
+        ]
+      }
     ]
   },
   {
