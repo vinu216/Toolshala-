@@ -13,8 +13,12 @@
   ]);
 
   const normalizeResumeResult = (payload) => {
-    const items = Array.isArray(payload?.headlines)
-      ? payload.headlines
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const items = Array.isArray(root?.headlines)
+      ? root.headlines
           .map((entry, index) => {
             const text = String(entry?.text || '').trim();
             if (!text) return null;
@@ -23,8 +27,8 @@
           })
           .filter(Boolean)
           .slice(0, 5)
-      : Array.isArray(payload?.items)
-        ? payload.items
+      : Array.isArray(root?.items)
+        ? root.items
         : [];
 
     return items.length ? { type: 'cards', items } : null;
