@@ -304,7 +304,12 @@ Suggested next step: ${nextStep}`
 
       const configuredBase = typeof window !== 'undefined' ? String(window.TOOLSHALA_API_BASE || '').trim() : '';
       const host = typeof window !== 'undefined' ? window.location.hostname : '';
-      const fallbackBase = host.endsWith('github.io') ? 'https://toolshala.in' : '';
+      const fallbackBase = (
+        host.endsWith('github.io')
+        || host === 'localhost'
+        || host === '127.0.0.1'
+        || host === '0.0.0.0'
+      ) ? 'https://toolshala.in' : '';
       const apiBase = configuredBase || fallbackBase;
       const apiUrl = `${apiBase}/api/generate-tool`;
 
