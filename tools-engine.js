@@ -926,11 +926,42 @@
       } catch (error) {
         console.warn('[ToolShala] API provider failed, falling back to local generator.', error);
 
-        if (toolId === 'resume-headline-generator' && typeof localGenerator === 'function') {
+        if (typeof localGenerator === 'function' && (
+          toolId === 'resume-headline-generator'
+          || toolId === 'leave-application-generator'
+          || toolId === 'instagram-caption-generator'
+          || toolId === 'linkedin-bio-generator'
+          || toolId === 'cover-letter-generator'
+          || toolId === 'study-timetable-generator'
+          || toolId === 'ai-career-path-suggestor'
+          || toolId === 'scholarship-recommendation-tool'
+          || toolId === 'professional-email-generator'
+          || toolId === 'content-idea-generator'
+        )) {
           const fallback = localGenerator(values, options);
+          const fallbackMessage = toolId === 'leave-application-generator'
+            ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback leave letter.'
+            : toolId === 'instagram-caption-generator'
+              ? 'Live AI caption generation is temporarily unavailable. Showing a reliable fallback caption set.'
+            : toolId === 'linkedin-bio-generator'
+                ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback LinkedIn bio set.'
+            : toolId === 'cover-letter-generator'
+                ? 'Live AI cover letter generation is temporarily unavailable. Showing a reliable fallback cover letter.'
+            : toolId === 'study-timetable-generator'
+                ? 'Live AI timetable generation is temporarily unavailable. Showing a reliable fallback weekly plan.'
+            : toolId === 'ai-career-path-suggestor'
+                ? 'Live AI career guidance is temporarily unavailable. Showing a reliable fallback career path set.'
+            : toolId === 'scholarship-recommendation-tool'
+                ? 'Live AI scholarship recommendations are temporarily unavailable. Showing a reliable fallback recommendation set.'
+            : toolId === 'professional-email-generator'
+                ? 'Live AI email generation is temporarily unavailable. Showing a reliable fallback email draft.'
+            : toolId === 'content-idea-generator'
+                ? 'Live AI content idea generation is temporarily unavailable. Showing a reliable fallback idea set.'
+                        : 'Live AI generation is temporarily unavailable. Showing reliable fallback headlines you can still use.';
+
           return {
             ...fallback,
-            disclaimer: 'Live AI generation is temporarily unavailable. Showing reliable fallback headlines you can still use.',
+            disclaimer: fallbackMessage,
             usedFallback: true
           };
         }
