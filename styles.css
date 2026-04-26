@@ -2630,6 +2630,13 @@ footer {
   gap: 0.7rem;
 }
 
+.tool-helper-text {
+  margin-top: 0.7rem;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .tool-error {
   margin-top: 0.8rem;
   border-radius: 0.75rem;
