@@ -43,6 +43,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Generate Now',
     outputType: 'text',
     enableGenerateMore: true,
+    helperText: 'Always review names, dates, and reason before submitting.',
     tips: [
       'Always review names, dates, and reason before submitting.',
       'Keep reason short and professional.',
@@ -87,6 +88,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Generate Captions',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Best captions are short, clear, and aligned with your post intent.',
     tips: [
       'Best captions are short, clear, and aligned with your post intent.',
       'Add optional keywords to improve relevance.',
@@ -135,6 +137,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Build Bio',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Edit the final version to match your real background and voice.',
     tips: [
       'Keep your summary clear and role-focused for better recruiter visibility.',
       'Use 3 to 5 relevant skills instead of listing everything.',
@@ -178,6 +181,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Generate Cover Letter',
     outputType: 'text',
     enableGenerateMore: true,
+    helperText: 'Personalizing your cover letter for each company improves your chances.',
     tips: [
       'Personalizing your cover letter for each company improves your chances.',
       'Keep your skills and interest section specific and practical.',
@@ -223,6 +227,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Plan My Week',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Treat this as a flexible plan, not a rigid rule.',
     tips: [
       'Treat this as a flexible plan, not a rigid rule. Adjust based on your energy and deadlines.',
       'Keep daily hours realistic so you can stay consistent.',
@@ -353,6 +358,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Find Scholarships',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Always verify final eligibility and deadlines from the official scholarship source.',
     tips: [
       'Use correct education level and need type for higher-fit recommendations.',
       'Keep documents ready early to avoid deadline stress.',
@@ -435,6 +441,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Generate Email',
     outputType: 'email',
     enableGenerateMore: true,
+    helperText: 'Always review names, attachments, and company details before sending.',
     tips: [
       'Select a clear purpose and match it with the right tone.',
       'Use specific role/context details for better-quality drafts.',
@@ -479,6 +486,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Generate Ideas',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Choose ideas that answer your audience’s real questions.',
     tips: [
       'Be specific with niche and audience for more relevant ideas.',
       'Pick a clear goal: growth, education, engagement, or promotion.',
