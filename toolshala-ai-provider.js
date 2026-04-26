@@ -302,7 +302,13 @@ Suggested next step: ${nextStep}`
     async generate({ toolId, values }) {
       if (!SUPPORTED_TOOLS.has(toolId)) throw new Error('Unsupported remote tool.');
 
-      const response = await fetch('/api/generate-tool', {
+      const configuredBase = typeof window !== 'undefined' ? String(window.TOOLSHALA_API_BASE || '').trim() : '';
+      const host = typeof window !== 'undefined' ? window.location.hostname : '';
+      const fallbackBase = host.endsWith('github.io') ? 'https://toolshala.in' : '';
+      const apiBase = configuredBase || fallbackBase;
+      const apiUrl = `${apiBase}/api/generate-tool`;
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
