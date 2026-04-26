@@ -5,12 +5,64 @@ const definitions = {
     schema: {
       name: 'resume_headline_response',
       strict: true,
-      schema: { type: 'object', additionalProperties: false, properties: { headlines: { type: 'array', minItems: 3, maxItems: 5, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, tone: { type: 'string' } }, required: ['text', 'tone'] } } }, required: ['headlines'] }
+      schema: {
+        type: 'object',
+        additionalProperties: false,
+        properties: {
+          tool: { type: 'string', const: 'resume_headline_generator' },
+          inputSummary: {
+            type: 'object',
+            additionalProperties: false,
+            properties: {
+              targetRole: { type: 'string' },
+              experienceLevel: { type: 'string' },
+              skills: { type: 'array', minItems: 2, items: { type: 'string' } }
+            },
+            required: ['targetRole', 'experienceLevel', 'skills']
+          },
+          headlines: {
+            type: 'array',
+            minItems: 3,
+            maxItems: 5,
+            items: {
+              type: 'object',
+              additionalProperties: false,
+              properties: {
+                text: { type: 'string' },
+                tone: { type: 'string' }
+              },
+              required: ['text', 'tone']
+            }
+          },
+          tips: {
+            type: 'array',
+            minItems: 1,
+            maxItems: 4,
+            items: { type: 'string' }
+          }
+        },
+        required: ['tool', 'inputSummary', 'headlines', 'tips']
+      }
     },
     validate: (v) => v.name && v.role && v.experience && v.skills,
     prompt: (v) => ({
       system: 'You are a resume writing assistant for students and freshers. Keep headlines concise, truthful, and role-relevant.',
-      user: `Generate 3-5 resume headlines in JSON.\nName: ${v.name}\nTarget Role: ${v.role}\nExperience: ${v.experience}\nSkills: ${v.skills}\nStrength: ${v.strength || 'Not provided'}`
+      user: `Generate 3-5 resume headlines in JSON using this exact schema:
+{
+  "tool": "resume_headline_generator",
+  "inputSummary": {
+    "targetRole": "string",
+    "experienceLevel": "string",
+    "skills": ["string", "string"]
+  },
+  "headlines": [{ "text": "string", "tone": "string" }],
+  "tips": ["string"]
+}
+Name: ${v.name}
+Target Role: ${v.role}
+Experience: ${v.experience}
+Skills: ${v.skills}
+Strength: ${v.strength || 'Not provided'}`
     })
   },
   'leave-application-generator': {
