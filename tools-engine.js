@@ -925,6 +925,15 @@
         }
       } catch (error) {
         console.warn('[ToolShala] API provider failed, falling back to local generator.', error);
+
+        if (toolId === 'resume-headline-generator' && typeof localGenerator === 'function') {
+          const fallback = localGenerator(values, options);
+          return {
+            ...fallback,
+            disclaimer: 'Live AI generation is temporarily unavailable. Showing reliable fallback headlines you can still use.',
+            usedFallback: true
+          };
+        }
       }
     }
 
@@ -1437,6 +1446,7 @@
     const tipsNode = root.querySelector('[data-tool-tips]');
     const formNode = root.querySelector('[data-tool-form]');
     const outputNode = root.querySelector('[data-tool-output]');
+    const helperTextNode = root.querySelector('[data-tool-helper-text]');
     const errorNode = root.querySelector('[data-tool-error]');
     const loadingNode = root.querySelector('[data-tool-loading]');
     const resetButton = root.querySelector('[data-tool-reset]');
@@ -1461,6 +1471,10 @@
       tipsNode.innerHTML = (tool.tips || []).map((tip) => `<li>${escapeHtml(tip)}</li>`).join('');
     }
 
+    if (helperTextNode) {
+      helperTextNode.textContent = tool.helperText || 'Tip: add clear and truthful details to get practical, role-ready output.';
+    }
+    
     if (generateMoreButton) {
       generateMoreButton.classList.toggle('hidden', !tool.enableGenerateMore);
       generateMoreButton.textContent = tool.id === 'study-timetable-generator'
@@ -1523,7 +1537,11 @@
       loadingNode.classList.add('hidden');
       submitButton.disabled = false;
       submitButton.textContent = submitButton.dataset.defaultLabel;
-      showToast('success', 'Your result is ready.');
+      if (result?.usedFallback) {
+        showToast('error', 'AI service issue.', 'Showing fallback headlines for now.');
+      } else {
+        showToast('success', 'Your result is ready.');
+      }
     });
 
     if (generateMoreButton) {
@@ -1543,6 +1561,11 @@
         renderOutput({ outputNode, result, tool });
         loadingNode.classList.add('hidden');
         generateMoreButton.disabled = false;
+        if (result?.usedFallback) {
+          showToast('error', 'AI service issue.', 'Showing fallback headlines for now.');
+        } else {
+          showToast('success', 'New result generated.');
+        }
       });
     }
 
