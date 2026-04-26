@@ -7,6 +7,7 @@ window.ToolShalaToolDefinitions = [
     ctaLabel: 'Use Tool',
     outputType: 'cards',
     enableGenerateMore: true,
+    helperText: 'Student tip: add real skills and your genuine focus area for better internship-ready headlines.',
     tips: [
       'Keep your resume headline clear, skill-focused, and aligned with the role you want.'
     ],
