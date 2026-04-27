@@ -1,6 +1,16 @@
 (function () {
   const SUPPORTED_TOOLS = new Set([
     'resume-headline-generator',
+    'resume-summary-generator',
+    'interview-answer-generator',
+    'study-notes-summarizer',
+    'assignment-rewriter',
+    'sop-generator',
+    'linkedin-networking-message-generator',
+    'job-description-analyzer',
+    'scholarship-finder',
+    'career-path-quiz',
+    'youtube-shorts-script-generator',
     'leave-application-generator',
     'instagram-caption-generator',
     'linkedin-bio-generator',
@@ -32,6 +42,405 @@
         : [];
 
     return items.length ? { type: 'cards', items } : null;
+  };
+
+  const normalizeResumeSummaryResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const items = Array.isArray(root?.summaries)
+      ? root.summaries
+          .map((entry, index) => {
+            const text = String(entry?.text || '').trim();
+            if (!text) return null;
+            const isBest = Boolean(entry?.bestPick) || index === 0;
+            const tags = Array.isArray(entry?.tags)
+              ? entry.tags.map((tag) => String(tag || '').trim()).filter(Boolean).slice(0, 4)
+              : [];
+            return {
+              label: isBest ? 'Best Pick' : `Summary Option ${index + 1}`,
+              text,
+              hashtags: tags,
+              bestPick: isBest,
+              copyText: text
+            };
+          })
+          .filter(Boolean)
+          .slice(0, 5)
+      : [];
+
+    if (items.length < 3) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+    return { type: 'cards', items };
+  };
+
+  const normalizeInterviewAnswerResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+    const answers = Array.isArray(root?.answers) ? root.answers : [];
+
+    const items = answers
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        if (!text) return null;
+        const style = String(entry?.style || '').trim() || `Answer ${index + 1}`;
+        const tags = Array.isArray(entry?.tags)
+          ? entry.tags.map((tag) => String(tag || '').trim()).filter(Boolean).slice(0, 4)
+          : [];
+        const isBest = Boolean(entry?.bestPick) || index === 0;
+        return {
+          label: isBest ? 'Best Pick' : style,
+          text,
+          hashtags: tags,
+          bestPick: isBest,
+          copyText: text
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 4);
+
+    if (items.length < 2) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: ['Keep answers specific', 'Don’t over-explain', 'Use real examples']
+    };
+  };
+
+  const normalizeStudyNotesResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const summary = String(root?.summary || '').trim();
+    const bulletPoints = Array.isArray(root?.bulletPoints) ? root.bulletPoints.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const keywords = Array.isArray(root?.keywords) ? root.keywords.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const quickRevision = Array.isArray(root?.quickRevision) ? root.quickRevision.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const mnemonic = String(root?.mnemonic || '').trim();
+
+    if (!summary || !bulletPoints.length || !keywords.length || !quickRevision.length) return null;
+
+    const items = [
+      {
+        label: 'Summary',
+        text: summary,
+        hashtags: ['Summary', 'Best Pick'],
+        bestPick: true,
+        copyText: summary
+      },
+      {
+        label: 'Bullet Points',
+        rows: bulletPoints.slice(0, 6),
+        hashtags: ['Bullet Summary'],
+        copyText: bulletPoints.slice(0, 6).join('\n')
+      },
+      {
+        label: 'Important Keywords',
+        text: keywords.slice(0, 10).join(', '),
+        hashtags: ['Keywords'],
+        copyText: keywords.slice(0, 10).join(', ')
+      },
+      {
+        label: 'Quick Revision',
+        rows: quickRevision.slice(0, 5),
+        hashtags: ['Quick Revision'],
+        copyText: quickRevision.slice(0, 5).join('\n')
+      }
+    ];
+
+    if (mnemonic) {
+      items.push({
+        label: 'Optional Mnemonic',
+        text: mnemonic,
+        hashtags: ['Memory Aid'],
+        copyText: mnemonic
+      });
+    }
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: ['Read once after summarizing', 'Highlight formulas or terms', 'Revise with short bullet points']
+    };
+  };
+
+  const normalizeAssignmentRewriterResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const rewrittenVersion = String(root?.rewrittenVersion || '').trim();
+    const shortVersion = String(root?.shortVersion || '').trim();
+    const improvementTips = Array.isArray(root?.improvementTips)
+      ? root.improvementTips.map((item) => String(item || '').trim()).filter(Boolean).slice(0, 5)
+      : [];
+
+    if (!rewrittenVersion || !shortVersion || !improvementTips.length) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        {
+          label: 'Rewritten Version',
+          text: rewrittenVersion,
+          bestPick: true,
+          hashtags: ['Best Pick', 'Meaning Preserved'],
+          copyText: rewrittenVersion
+        },
+        {
+          label: 'Short Version',
+          text: shortVersion,
+          hashtags: ['Short Version'],
+          copyText: shortVersion
+        },
+        {
+          label: 'Improvement Tips',
+          rows: improvementTips,
+          hashtags: ['Review Tips'],
+          copyText: improvementTips.join('\n')
+        }
+      ],
+      outputTips: ['Check facts', 'Add your own understanding', 'Keep citations if needed']
+    };
+  };
+
+  const normalizeSopResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const sopDraft = String(root?.sopDraft || '').trim();
+    const breakdown = Array.isArray(root?.sectionBreakdown)
+      ? root.sectionBreakdown.map((item) => String(item || '').trim()).filter(Boolean).slice(0, 6)
+      : [];
+
+    if (!sopDraft) return null;
+
+    const items = [
+      {
+        label: 'Full SOP Draft',
+        text: sopDraft,
+        bestPick: true,
+        hashtags: ['SOP Draft', 'Best Pick'],
+        copyText: sopDraft
+      }
+    ];
+
+    if (breakdown.length) {
+      items.push({
+        label: 'Section-wise Breakdown',
+        rows: breakdown,
+        hashtags: ['Structure'],
+        copyText: breakdown.join('\n')
+      });
+    }
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: ['Be specific', 'Mention relevant projects', 'Keep it genuine']
+    };
+  };
+
+  const normalizeLinkedinNetworkingMessageResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+    const connectionRequest = String(root?.connectionRequest || '').trim();
+    const followUp = String(root?.followUp || '').trim();
+    const networkingMessage = String(root?.networkingMessage || '').trim();
+    if (!connectionRequest || !followUp || !networkingMessage) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        {
+          label: 'Best Pick',
+          text: connectionRequest,
+          bestPick: true,
+          hashtags: ['Connection Request', 'Best Pick'],
+          copyText: connectionRequest
+        },
+        {
+          label: 'Follow-Up',
+          text: followUp,
+          hashtags: ['Follow-Up'],
+          copyText: followUp
+        },
+        {
+          label: 'Networking Message',
+          text: networkingMessage,
+          hashtags: ['Networking Message'],
+          copyText: networkingMessage
+        }
+      ],
+      outputTips: ['Mention why you’re reaching out', 'Keep it under 300 characters if possible', 'Personalize with a shared point']
+    };
+  };
+
+  const normalizeJobDescriptionAnalyzerResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const fitScore = String(root?.fitScore || '').trim();
+    const matchLevel = String(root?.matchLevel || '').trim();
+    const matchedSkills = Array.isArray(root?.matchedSkills) ? root.matchedSkills.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const missingSkills = Array.isArray(root?.missingSkills) ? root.missingSkills.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const resumeKeywords = Array.isArray(root?.resumeKeywords) ? root.resumeKeywords.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const tailoringTips = Array.isArray(root?.tailoringTips) ? root.tailoringTips.map((item) => String(item || '').trim()).filter(Boolean) : [];
+    const verdict = String(root?.verdict || '').trim();
+
+    if (!fitScore || !matchLevel) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        {
+          label: 'Fit Score',
+          title: `${fitScore} - ${matchLevel}`,
+          text: verdict || 'Review detailed matching signals before applying.',
+          bestPick: true,
+          hashtags: ['Fit Score', 'Best Pick'],
+          copyText: `${fitScore} - ${matchLevel}\n${verdict}`
+        },
+        {
+          label: 'Matched Skills',
+          rows: matchedSkills.length ? matchedSkills : ['No clear matched skills identified.'],
+          hashtags: ['Matched Skills']
+        },
+        {
+          label: 'Missing Skills',
+          rows: missingSkills.length ? missingSkills : ['No major missing skills identified.'],
+          hashtags: ['Missing Skills']
+        },
+        {
+          label: 'Resume Keywords',
+          text: resumeKeywords.join(', '),
+          hashtags: ['Resume Keywords']
+        },
+        {
+          label: 'Application Tips',
+          rows: tailoringTips.length ? tailoringTips : ['Tailor your resume headline and projects to the role responsibilities.'],
+          hashtags: ['Application Tips']
+        }
+      ],
+      outputTips: ['Tailor resume keywords', 'Match relevant skills first', 'Check responsibilities carefully']
+    };
+  };
+
+  const normalizeScholarshipFinderResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+    const recommendations = Array.isArray(root?.recommendations) ? root.recommendations : [];
+    if (!recommendations.length) return null;
+
+    const items = recommendations
+      .map((entry, index) => {
+        const scholarshipType = String(entry?.scholarshipType || '').trim();
+        const suitableFor = String(entry?.suitableFor || '').trim();
+        const whatToPrepare = Array.isArray(entry?.whatToPrepare)
+          ? entry.whatToPrepare.map((item) => String(item || '').trim()).filter(Boolean).slice(0, 6)
+          : [];
+        const nextStep = String(entry?.nextStep || '').trim();
+        if (!scholarshipType || !suitableFor || !whatToPrepare.length || !nextStep) return null;
+        return {
+          label: index === 0 ? 'Best Pick' : `Scholarship Type ${index + 1}`,
+          title: scholarshipType,
+          text: `Suitable for: ${suitableFor}`,
+          rows: [
+            `What to prepare: ${whatToPrepare.join(', ')}`,
+            `Next step: ${nextStep}`
+          ],
+          bestPick: index === 0,
+          copyText: `${scholarshipType}\nSuitable for: ${suitableFor}\nWhat to prepare: ${whatToPrepare.join(', ')}\nNext step: ${nextStep}`
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 4);
+
+    if (!items.length) return null;
+    return {
+      type: 'cards',
+      items,
+      disclaimer: String(root?.verificationReminder || 'Always verify eligibility and deadlines from official sources.').trim(),
+      outputTips: ['Prepare documents', 'Check official portal', 'Review eligibility carefully']
+    };
+  };
+
+  const normalizeCareerPathQuizResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+    const paths = Array.isArray(root?.paths) ? root.paths : [];
+    if (paths.length < 3) return null;
+
+    const items = paths
+      .map((entry, index) => {
+        const title = String(entry?.careerTitle || '').trim();
+        const why = String(entry?.whyItFits || '').trim();
+        const skills = Array.isArray(entry?.skillsToLearn) ? entry.skillsToLearn.map((item) => String(item || '').trim()).filter(Boolean).slice(0, 5) : [];
+        const nextStep = String(entry?.nextStep || '').trim();
+        if (!title || !why || !skills.length || !nextStep) return null;
+        return {
+          label: index === 0 ? 'Best Match' : index === 1 ? 'Suitable Path' : 'Beginner Friendly',
+          title,
+          text: `Why it fits: ${why}`,
+          rows: [`Skills to learn: ${skills.join(', ')}`, `Suggested next step: ${nextStep}`],
+          bestPick: index === 0,
+          copyText: `${title}\nWhy it fits: ${why}\nSkills to learn: ${skills.join(', ')}\nSuggested next step: ${nextStep}`
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length < 3) return null;
+    return {
+      type: 'cards',
+      items,
+      disclaimer: 'This tool gives direction, not a final decision. Use it as a starting point.',
+      outputTips: ['Explore one path at a time', 'Learn core skills first', 'Try a small project before deciding']
+    };
+  };
+
+  const normalizeYoutubeScriptResult = (payload) => {
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+    const scripts = Array.isArray(root?.scripts) ? root.scripts : [];
+    if (scripts.length < 3) return null;
+
+    const items = scripts
+      .map((entry, index) => {
+        const title = String(entry?.titleIdea || '').trim();
+        const hook = String(entry?.hook || '').trim();
+        const mainPoints = Array.isArray(entry?.mainPoints) ? entry.mainPoints.map((p) => String(p || '').trim()).filter(Boolean).slice(0, 5) : [];
+        const cta = String(entry?.cta || '').trim();
+        const shot = String(entry?.shotSuggestion || '').trim();
+        if (!title || !hook || !mainPoints.length || !cta) return null;
+        return {
+          label: index === 0 ? 'Best Starter Idea' : index === 1 ? 'Hook Strong' : 'Suitable Script',
+          title,
+          text: `Hook: ${hook}`,
+          rows: [`Main points: ${mainPoints.join(' | ')}`, `CTA: ${cta}`, shot ? `Shot/Scene: ${shot}` : ''],
+          bestPick: index === 0,
+          copyText: `${title}\nHook: ${hook}\n${mainPoints.join('\n')}\nCTA: ${cta}${shot ? `\nShot/Scene: ${shot}` : ''}`
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length < 3) return null;
+    return {
+      type: 'cards',
+      items,
+      outputTips: ['Start with a question or bold statement', 'Keep the first line engaging', 'End with one clear CTA']
+    };
   };
 
   const normalizeLeaveResult = (payload) => {
@@ -286,6 +695,16 @@ Suggested next step: ${nextStep}`
 
   const normalizeResult = (toolId, payload, values = {}) => {
     if (toolId === 'resume-headline-generator') return normalizeResumeResult(payload);
+    if (toolId === 'resume-summary-generator') return normalizeResumeSummaryResult(payload);
+    if (toolId === 'interview-answer-generator') return normalizeInterviewAnswerResult(payload);
+    if (toolId === 'study-notes-summarizer') return normalizeStudyNotesResult(payload);
+    if (toolId === 'assignment-rewriter') return normalizeAssignmentRewriterResult(payload);
+    if (toolId === 'sop-generator') return normalizeSopResult(payload);
+    if (toolId === 'linkedin-networking-message-generator') return normalizeLinkedinNetworkingMessageResult(payload);
+    if (toolId === 'job-description-analyzer') return normalizeJobDescriptionAnalyzerResult(payload);
+    if (toolId === 'scholarship-finder') return normalizeScholarshipFinderResult(payload);
+    if (toolId === 'career-path-quiz') return normalizeCareerPathQuizResult(payload);
+    if (toolId === 'youtube-shorts-script-generator') return normalizeYoutubeScriptResult(payload);
     if (toolId === 'leave-application-generator') return normalizeLeaveResult(payload);
     if (toolId === 'instagram-caption-generator') return normalizeInstagramResult(payload);
     if (toolId === 'linkedin-bio-generator') return normalizeLinkedinResult(payload);

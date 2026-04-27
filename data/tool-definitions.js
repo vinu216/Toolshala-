@@ -36,6 +36,142 @@ window.ToolShalaToolDefinitions = [
     ]
   },
   {
+    id: 'resume-summary-generator',
+    title: 'Resume Summary Generator',
+    category: 'Career Tool',
+    description: 'Generate ATS-friendly, role-aligned resume summary options for internships, fresher jobs, and entry-level roles.',
+    ctaLabel: 'Generate Summaries',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep your summary aligned with the role you want.',
+    tips: [
+      'Keep it concise and easy to scan.',
+      'Match your summary to the exact target role.',
+      'Mention your strongest, most relevant skills first.'
+    ],
+    fields: [
+      { key: 'name', label: 'Full Name', type: 'text', placeholder: 'e.g. Aanya Mehta', required: true },
+      { key: 'role', label: 'Target Role', type: 'text', placeholder: 'e.g. Data Analyst Intern', required: true },
+      {
+        key: 'experience',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Fresher', label: 'Fresher' },
+          { value: '0–1 Years', label: '0–1 Years' },
+          { value: '1–3 Years', label: '1–3 Years' }
+        ]
+      },
+      {
+        key: 'skills',
+        label: 'Key Skills',
+        type: 'text',
+        placeholder: 'e.g. Excel, SQL, Python, Data Visualization',
+        required: true
+      },
+      {
+        key: 'achievement',
+        label: 'Optional Achievement / Strength',
+        type: 'textarea',
+        placeholder: 'e.g. Built a dashboard project that improved reporting clarity in college club work.',
+        required: false
+      },
+      {
+        key: 'industry',
+        label: 'Optional Industry / Domain',
+        type: 'text',
+        placeholder: 'e.g. FinTech, EdTech, E-commerce',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Optional Tone',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'simple', label: 'Simple' },
+          { value: 'ats-friendly', label: 'ATS-Friendly' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'interview-answer-generator',
+    title: 'Interview Answer Generator',
+    category: 'Career Tool',
+    description: 'Generate natural interview answer variations in short, detailed, and STAR formats for students and freshers.',
+    ctaLabel: 'Generate Answers',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep your answer honest, structured, and role-relevant.',
+    tips: [
+      'Keep answers specific and connected to the asked question.',
+      'Do not over-explain. Keep focus on role-relevant outcomes.',
+      'Use real examples from projects, internships, academics, or teamwork.'
+    ],
+    fields: [
+      {
+        key: 'question',
+        label: 'Interview Question',
+        type: 'textarea',
+        placeholder: 'e.g. Tell me about a time you handled a difficult deadline.',
+        required: true
+      },
+      { key: 'role', label: 'Target Role', type: 'text', placeholder: 'e.g. Frontend Developer Intern', required: true },
+      {
+        key: 'experience',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Fresher', label: 'Fresher' },
+          { value: '0–1 Years', label: '0–1 Years' },
+          { value: '1–3 Years', label: '1–3 Years' }
+        ]
+      },
+      {
+        key: 'skill',
+        label: 'Key Skill / Strength',
+        type: 'text',
+        placeholder: 'e.g. problem-solving, communication, JavaScript debugging',
+        required: true
+      },
+      {
+        key: 'achievement',
+        label: 'Optional Achievement / Project',
+        type: 'textarea',
+        placeholder: 'e.g. Built a team project that reduced manual reporting effort by 30%.',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'simple', label: 'Simple' }
+        ]
+      },
+      {
+        key: 'answerStyle',
+        label: 'Answer Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'short', label: 'Short Answer' },
+          { value: 'detailed', label: 'Detailed Answer' },
+          { value: 'star', label: 'STAR Method' }
+        ]
+      }
+    ]
+  },
+  {
     id: 'leave-application-generator',
     title: 'Leave Application Generator',
     category: 'Writing Tool',
@@ -284,6 +420,545 @@ window.ToolShalaToolDefinitions = [
         placeholder: 'e.g. Physics, Chemistry',
         required: false
       }
+    ]
+  },
+  {
+    id: 'study-notes-summarizer',
+    title: 'Study Notes Summarizer',
+    category: 'Student Tool',
+    description: 'Convert long notes and chapters into concise, exam-ready summaries with key points and revision aids.',
+    ctaLabel: 'Summarize Notes',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Always review the summary once and adjust it for your exam needs.',
+    tips: [
+      'Read once after summarizing to check accuracy.',
+      'Highlight formulas, terms, and definitions while revising.',
+      'Revise using short bullet points for faster recall.'
+    ],
+    fields: [
+      {
+        key: 'topic',
+        label: 'Topic / Chapter Name',
+        type: 'text',
+        placeholder: 'e.g. Photosynthesis, Trigonometry Basics, Indian Polity',
+        required: true
+      },
+      {
+        key: 'notes',
+        label: 'Notes / Text',
+        type: 'textarea',
+        placeholder: 'Paste your long notes or chapter text here for summarization...',
+        required: true
+      },
+      {
+        key: 'educationLevel',
+        label: 'Education Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'school', label: 'School' },
+          { value: 'college', label: 'College' },
+          { value: 'competitive-exam', label: 'Competitive Exam' }
+        ]
+      },
+      {
+        key: 'outputStyle',
+        label: 'Output Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'bullet-summary', label: 'Bullet Summary' },
+          { value: 'short-notes', label: 'Short Notes' },
+          { value: 'exam-revision-points', label: 'Exam Revision Points' }
+        ]
+      },
+      {
+        key: 'focus',
+        label: 'Optional Focus',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'definitions', label: 'Definitions' },
+          { value: 'important-facts', label: 'Important Facts' },
+          { value: 'formula-concepts', label: 'Formula / Concepts' },
+          { value: 'full-revision', label: 'Full Revision' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Optional Tone',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'simple', label: 'Simple' },
+          { value: 'academic', label: 'Academic' },
+          { value: 'exam-friendly', label: 'Exam Friendly' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'assignment-rewriter',
+    title: 'Assignment Rewriter / Paraphraser',
+    category: 'Writing Tool',
+    description: 'Rewrite assignment drafts into clearer, polished, and original wording while preserving meaning.',
+    ctaLabel: 'Rewrite Assignment',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Use this as a rewriting helper, then review it in your own words.',
+    tips: [
+      'Check facts after rewriting.',
+      'Add your own understanding and class context.',
+      'Keep citations and references if your assignment needs them.'
+    ],
+    fields: [
+      {
+        key: 'originalText',
+        label: 'Original Text',
+        type: 'textarea',
+        placeholder: 'Paste your assignment paragraph or draft here...',
+        required: true
+      },
+      {
+        key: 'topic',
+        label: 'Subject / Topic',
+        type: 'text',
+        placeholder: 'e.g. Climate Change, DBMS Normalization, Shakespearean Drama',
+        required: true
+      },
+      {
+        key: 'tone',
+        label: 'Desired Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'simple', label: 'Simple' },
+          { value: 'academic', label: 'Academic' },
+          { value: 'professional', label: 'Professional' }
+        ]
+      },
+      {
+        key: 'targetLength',
+        label: 'Target Length',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'same', label: 'Same Length' },
+          { value: 'shorter', label: 'Shorter' },
+          { value: 'longer', label: 'Longer' }
+        ]
+      },
+      {
+        key: 'keyPoints',
+        label: 'Optional Key Points',
+        type: 'textarea',
+        placeholder: 'e.g. Include impact on students, mention one real example',
+        required: false
+      },
+      {
+        key: 'audience',
+        label: 'Optional Audience',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'school', label: 'School' },
+          { value: 'college', label: 'College' },
+          { value: 'university', label: 'University' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'sop-generator',
+    title: 'SOP Generator',
+    category: 'Career Tool',
+    description: 'Generate a polished Statement of Purpose draft for university admissions, scholarships, and academic programs.',
+    ctaLabel: 'Generate SOP',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Customize the SOP for each university or program.',
+    tips: [
+      'Be specific about your learning journey and motivation.',
+      'Mention relevant projects and measurable outcomes.',
+      'Keep it genuine and aligned with your real profile.'
+    ],
+    fields: [
+      { key: 'program', label: 'Program / Course', type: 'text', placeholder: 'e.g. MSc Data Science', required: true },
+      { key: 'university', label: 'University / Institution', type: 'text', placeholder: 'e.g. University of Melbourne', required: true },
+      {
+        key: 'academicBackground',
+        label: 'Academic Background',
+        type: 'textarea',
+        placeholder: 'e.g. B.Tech in Computer Science with focus on analytics and applied ML.',
+        required: true
+      },
+      {
+        key: 'careerGoals',
+        label: 'Career Goals',
+        type: 'textarea',
+        placeholder: 'e.g. Build expertise in data-driven product strategy and work in healthcare analytics.',
+        required: true
+      },
+      {
+        key: 'achievements',
+        label: 'Achievements / Projects',
+        type: 'textarea',
+        placeholder: 'e.g. Built capstone model, internship outcomes, published paper, major project results.',
+        required: true
+      },
+      {
+        key: 'whyProgram',
+        label: 'Why This Program / University',
+        type: 'textarea',
+        placeholder: 'e.g. Curriculum fit, faculty interest, labs, research ecosystem, scholarship alignment.',
+        required: true
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'motivated', label: 'Motivated' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'academic', label: 'Academic' }
+        ]
+      },
+      {
+        key: 'wordCount',
+        label: 'Optional Word Count',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'short', label: 'Short' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'long', label: 'Long' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'linkedin-networking-message-generator',
+    title: 'LinkedIn Networking Message Generator',
+    category: 'Career Tool',
+    description: 'Generate short, polite, and effective LinkedIn connection and follow-up messages for networking.',
+    ctaLabel: 'Generate Messages',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep messages short, respectful, and specific.',
+    tips: [
+      'Mention why you’re reaching out.',
+      'Keep it under 300 characters if possible.',
+      'Personalize with a shared point.'
+    ],
+    fields: [
+      {
+        key: 'recipientType',
+        label: 'Recipient Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'recruiter', label: 'Recruiter' },
+          { value: 'alumni', label: 'Alumni' },
+          { value: 'founder', label: 'Founder' },
+          { value: 'professional', label: 'Professional' }
+        ]
+      },
+      {
+        key: 'purpose',
+        label: 'Purpose',
+        type: 'text',
+        placeholder: 'e.g. Seek guidance for internships, ask for role insights, request a brief chat',
+        required: true
+      },
+      {
+        key: 'background',
+        label: 'Your Background',
+        type: 'textarea',
+        placeholder: 'e.g. Final-year BBA student with internship in growth marketing.',
+        required: true
+      },
+      {
+        key: 'targetRole',
+        label: 'Target Role',
+        type: 'text',
+        placeholder: 'e.g. Product Analyst Intern',
+        required: true
+      },
+      {
+        key: 'sharedReference',
+        label: 'Shared Interest / Reference (optional)',
+        type: 'text',
+        placeholder: 'e.g. We are from the same university / I liked your post on hiring tips',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'polite', label: 'Polite' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'confident', label: 'Confident' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'job-description-analyzer',
+    title: 'Job Description Analyzer',
+    category: 'Career Tool',
+    description: 'Analyze job descriptions to estimate fit, identify missing skills, and improve your application strategy.',
+    ctaLabel: 'Analyze Job',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Always read the full job description carefully before applying.',
+    tips: [
+      'Tailor resume keywords to the role.',
+      'Match relevant skills first in your profile.',
+      'Check responsibilities carefully before applying.'
+    ],
+    fields: [
+      {
+        key: 'jobDescription',
+        label: 'Job Description Text',
+        type: 'textarea',
+        placeholder: 'Paste the full job description here...',
+        required: true
+      },
+      {
+        key: 'userSkills',
+        label: 'User Skills',
+        type: 'text',
+        placeholder: 'e.g. JavaScript, React, SQL, Problem Solving',
+        required: true
+      },
+      {
+        key: 'experienceLevel',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'fresher', label: 'Fresher' },
+          { value: '0-1 years', label: '0-1 Years' },
+          { value: '1-3 years', label: '1-3 Years' }
+        ]
+      },
+      {
+        key: 'targetRole',
+        label: 'Target Role',
+        type: 'text',
+        placeholder: 'e.g. Frontend Developer Intern',
+        required: true
+      },
+      {
+        key: 'resumeSummary',
+        label: 'Optional Resume Summary',
+        type: 'textarea',
+        placeholder: 'Paste your current summary if available.',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Optional Tone',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'clear', label: 'Clear' },
+          { value: 'detailed', label: 'Detailed' },
+          { value: 'beginner-friendly', label: 'Beginner Friendly' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'scholarship-finder',
+    title: 'Scholarship Finder / Scholarship Recommender',
+    category: 'Student Tool',
+    description: 'Get scholarship category recommendations based on your profile, need type, and academic context.',
+    ctaLabel: 'Find Scholarships',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Always verify eligibility and deadlines from official sources.',
+    tips: [
+      'Prepare documents in advance.',
+      'Check official portal before applying.',
+      'Review eligibility criteria carefully.'
+    ],
+    fields: [
+      {
+        key: 'educationLevel',
+        label: 'Current Education Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'school', label: 'School' },
+          { value: 'undergraduate', label: 'Undergraduate' },
+          { value: 'postgraduate', label: 'Postgraduate' }
+        ]
+      },
+      { key: 'state', label: 'State / Region', type: 'text', placeholder: 'e.g. Maharashtra, Karnataka, Delhi', required: true },
+      { key: 'category', label: 'Category (optional)', type: 'text', placeholder: 'e.g. SC, ST, OBC, EWS, General', required: false },
+      {
+        key: 'academicPerformance',
+        label: 'Academic Performance',
+        type: 'text',
+        placeholder: 'e.g. 8.2 CGPA / 85% in Class 12',
+        required: true
+      },
+      {
+        key: 'needType',
+        label: 'Need Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'merit-based', label: 'Merit-based' },
+          { value: 'need-based', label: 'Need-based' },
+          { value: 'general', label: 'General' }
+        ]
+      },
+      { key: 'fieldOfStudy', label: 'Field of Study (optional)', type: 'text', placeholder: 'e.g. Engineering, Commerce, Arts', required: false },
+      {
+        key: 'specialInterest',
+        label: 'Optional Special Interest',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'sports', label: 'Sports' },
+          { value: 'women', label: 'Women' },
+          { value: 'research', label: 'Research' },
+          { value: 'financial-support', label: 'Financial Support' },
+          { value: 'stem', label: 'STEM' },
+          { value: 'arts', label: 'Arts' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'career-path-quiz',
+    title: 'Career Path Quiz / Career Path Suggestor',
+    category: 'Career Tool',
+    description: 'Find likely career directions based on your interests, strengths, work style, and coding preference.',
+    ctaLabel: 'Suggest Career Paths',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'This tool gives direction, not a final decision. Use it as a starting point.',
+    tips: [
+      'Explore one path at a time.',
+      'Learn core skills first.',
+      'Try a small project before deciding.'
+    ],
+    fields: [
+      {
+        key: 'stage',
+        label: 'Current Stage',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'school', label: 'School Student' },
+          { value: 'college', label: 'College Student' },
+          { value: 'graduate', label: 'Graduate' },
+          { value: 'fresher', label: 'Fresher' }
+        ]
+      },
+      { key: 'interests', label: 'Interests', type: 'textarea', placeholder: 'e.g. storytelling, business, design, data, helping people', required: true },
+      {
+        key: 'workStyle',
+        label: 'Preferred Work Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'creative', label: 'Creative' },
+          { value: 'analytical', label: 'Analytical' },
+          { value: 'people-focused', label: 'People-focused' },
+          { value: 'independent', label: 'Independent' }
+        ]
+      },
+      { key: 'strengths', label: 'Skills / Strengths', type: 'textarea', placeholder: 'e.g. communication, planning, problem-solving, Canva, Excel', required: true },
+      {
+        key: 'codingPreference',
+        label: 'Coding Preference',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'yes', label: 'Yes' },
+          { value: 'no', label: 'No' }
+        ]
+      },
+      {
+        key: 'goal',
+        label: 'Optional Goal',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'job', label: 'Job' },
+          { value: 'freelancing', label: 'Freelancing' },
+          { value: 'higher-studies', label: 'Higher Studies' },
+          { value: 'entrepreneurship', label: 'Entrepreneurship' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'youtube-shorts-script-generator',
+    title: 'YouTube / Shorts Script Generator',
+    category: 'Social Tool',
+    description: 'Generate engaging script ideas for YouTube videos, Shorts, Reels, and creator content.',
+    ctaLabel: 'Generate Scripts',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'A strong hook in the first few seconds matters most.',
+    tips: [
+      'Start with a question or bold statement.',
+      'Keep the first line engaging.',
+      'End with one clear CTA.'
+    ],
+    fields: [
+      { key: 'topic', label: 'Niche / Topic', type: 'text', placeholder: 'e.g. Productivity for Students, AI Tools, Fitness Myths', required: true },
+      {
+        key: 'platform',
+        label: 'Platform',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'youtube-long', label: 'YouTube Long Video' },
+          { value: 'youtube-shorts', label: 'YouTube Shorts' },
+          { value: 'instagram-reels', label: 'Instagram Reels' },
+          { value: 'linkedin-video', label: 'LinkedIn Video' }
+        ]
+      },
+      {
+        key: 'contentGoal',
+        label: 'Content Goal',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'growth', label: 'Growth' },
+          { value: 'education', label: 'Education' },
+          { value: 'engagement', label: 'Engagement' },
+          { value: 'promotion', label: 'Promotion' }
+        ]
+      },
+      { key: 'audienceType', label: 'Audience Type', type: 'text', placeholder: 'e.g. college students, beginner creators, founders', required: true },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'energetic', label: 'Energetic' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'casual', label: 'Casual' },
+          { value: 'motivational', label: 'Motivational' }
+        ]
+      },
+      { key: 'keywords', label: 'Optional Keywords', type: 'text', placeholder: 'e.g. hacks, beginner mistakes, tools', required: false },
+      { key: 'videoLength', label: 'Optional Video Length', type: 'text', placeholder: 'e.g. 30 sec, 60 sec, 5 min, 10 min', required: false }
     ]
   },
   {
