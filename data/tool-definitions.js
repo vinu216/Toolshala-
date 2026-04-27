@@ -426,7 +426,7 @@ window.ToolShalaToolDefinitions = [
     id: 'study-notes-summarizer',
     title: 'Study Notes Summarizer',
     category: 'Student Tool',
-    description: 'Convert long notes and chapters into concise, exam-ready summaries with key points and revision aids.',
+    description: 'Convert long notes and chapters into concise revision blocks: summary, bullets, keywords, quick revision, and optional memory aid.',
     ctaLabel: 'Summarize Notes',
     outputType: 'cards',
     enableGenerateMore: true,
@@ -449,7 +449,8 @@ window.ToolShalaToolDefinitions = [
         label: 'Notes / Text',
         type: 'textarea',
         placeholder: 'Paste your long notes or chapter text here for summarization...',
-        required: true
+        required: true,
+        rows: 10
       },
       {
         key: 'educationLevel',
@@ -518,7 +519,8 @@ window.ToolShalaToolDefinitions = [
         label: 'Original Text',
         type: 'textarea',
         placeholder: 'Paste your assignment paragraph or draft here...',
-        required: true
+        required: true,
+        rows: 10
       },
       {
         key: 'topic',
@@ -555,7 +557,8 @@ window.ToolShalaToolDefinitions = [
         label: 'Optional Key Points',
         type: 'textarea',
         placeholder: 'e.g. Include impact on students, mention one real example',
-        required: false
+        required: false,
+        rows: 4
       },
       {
         key: 'audience',
@@ -592,28 +595,32 @@ window.ToolShalaToolDefinitions = [
         label: 'Academic Background',
         type: 'textarea',
         placeholder: 'e.g. B.Tech in Computer Science with focus on analytics and applied ML.',
-        required: true
+        required: true,
+        rows: 6
       },
       {
         key: 'careerGoals',
         label: 'Career Goals',
         type: 'textarea',
         placeholder: 'e.g. Build expertise in data-driven product strategy and work in healthcare analytics.',
-        required: true
+        required: true,
+        rows: 6
       },
       {
         key: 'achievements',
         label: 'Achievements / Projects',
         type: 'textarea',
         placeholder: 'e.g. Built capstone model, internship outcomes, published paper, major project results.',
-        required: true
+        required: true,
+        rows: 6
       },
       {
         key: 'whyProgram',
         label: 'Why This Program / University',
         type: 'textarea',
         placeholder: 'e.g. Curriculum fit, faculty interest, labs, research ecosystem, scholarship alignment.',
-        required: true
+        required: true,
+        rows: 6
       },
       {
         key: 'tone',
@@ -729,7 +736,8 @@ window.ToolShalaToolDefinitions = [
         label: 'Job Description Text',
         type: 'textarea',
         placeholder: 'Paste the full job description here...',
-        required: true
+        required: true,
+        rows: 10
       },
       {
         key: 'userSkills',
@@ -866,7 +874,7 @@ window.ToolShalaToolDefinitions = [
           { value: 'fresher', label: 'Fresher' }
         ]
       },
-      { key: 'interests', label: 'Interests', type: 'textarea', placeholder: 'e.g. storytelling, business, design, data, helping people', required: true },
+      { key: 'interests', label: 'Interests', type: 'textarea', placeholder: 'e.g. storytelling, business, design, data, helping people', required: true, rows: 5 },
       {
         key: 'workStyle',
         label: 'Preferred Work Style',
@@ -879,7 +887,7 @@ window.ToolShalaToolDefinitions = [
           { value: 'independent', label: 'Independent' }
         ]
       },
-      { key: 'strengths', label: 'Skills / Strengths', type: 'textarea', placeholder: 'e.g. communication, planning, problem-solving, Canva, Excel', required: true },
+      { key: 'strengths', label: 'Skills / Strengths', type: 'textarea', placeholder: 'e.g. communication, planning, problem-solving, Canva, Excel', required: true, rows: 5 },
       {
         key: 'codingPreference',
         label: 'Coding Preference',
