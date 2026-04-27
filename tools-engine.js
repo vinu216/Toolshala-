@@ -89,6 +89,68 @@
       .map((part) => part.trim())
       .filter(Boolean);
 
+  const splitSentences = (value = '') =>
+    String(value)
+      .replace(/\s+/g, ' ')
+      .split(/(?<=[.!?])\s+/)
+      .map((sentence) => sentence.trim())
+      .filter((sentence) => sentence.length > 20);
+
+  const STOP_WORDS = new Set([
+    'the', 'is', 'are', 'a', 'an', 'and', 'to', 'of', 'in', 'on', 'for', 'with', 'that', 'this', 'from', 'by', 'as',
+    'be', 'was', 'were', 'or', 'it', 'at', 'can', 'will', 'into', 'about', 'than', 'their', 'them', 'which', 'also'
+  ]);
+
+  const extractKeywords = (text = '', limit = 8) => {
+    const words = String(text)
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, ' ')
+      .split(/\s+/)
+      .map((word) => word.trim())
+      .filter((word) => word.length > 3 && !STOP_WORDS.has(word));
+
+    const frequency = words.reduce((acc, word) => {
+      acc[word] = (acc[word] || 0) + 1;
+      return acc;
+    }, {});
+
+    return Object.entries(frequency)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, limit)
+      .map(([word]) => word);
+  };
+
+  const rewriteSentence = (sentence = '', tone = 'formal') => {
+    let output = String(sentence).trim();
+    const replacements = [
+      [/\bvery\b/gi, 'highly'],
+      [/\ba lot of\b/gi, 'many'],
+      [/\bget\b/gi, 'obtain'],
+      [/\bshows\b/gi, 'demonstrates'],
+      [/\bimportant\b/gi, 'significant'],
+      [/\bgood\b/gi, 'effective']
+    ];
+    replacements.forEach(([pattern, replacement]) => {
+      output = output.replace(pattern, replacement);
+    });
+
+    if (tone === 'simple') {
+      output = output
+        .replace(/\btherefore\b/gi, 'so')
+        .replace(/\bhowever\b/gi, 'but');
+    }
+
+    if (tone === 'academic') {
+      output = output.replace(/\bso\b/gi, 'therefore');
+    }
+
+    if (tone === 'professional') {
+      output = output.replace(/\bI think\b/gi, 'It can be observed');
+    }
+
+    return output;
+  };
+
   const getFieldHelperText = (field) => {
     if (field.helperText) {
       return field.helperText;
@@ -149,6 +211,703 @@
       return {
         type: 'cards',
         items: headlines.slice(0, 5)
+      };
+    },
+    'resume-summary-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const skills = normalizeCommaList(values.skills);
+      const topSkills = skills.slice(0, 4);
+      const tone = String(values.tone || 'professional').toLowerCase();
+      const experience = String(values.experience || 'Fresher').trim();
+      const achievement = String(values.achievement || '').trim();
+      const industry = String(values.industry || '').trim();
+      const role = String(values.role || '').trim();
+      const name = String(values.name || '').trim();
+
+      const experienceLine = experience === 'Fresher'
+        ? 'fresher focused on practical learning and consistent execution'
+        : `early-career ${role} profile with ${experience.toLowerCase()} experience`;
+
+      const toneOpener = {
+        professional: `${name} is a ${experienceLine}`,
+        confident: `${name} is a driven ${role} candidate with a ${experience === 'Fresher' ? 'strong fresher mindset' : `solid ${experience.toLowerCase()} foundation`}`,
+        simple: `${name} is building a career as a ${role}`,
+        'ats-friendly': `${role} candidate with ${experience.toLowerCase()} exposure and role-relevant skills`
+      };
+
+      const strengthLine = achievement
+        ? `Key strength: ${achievement}.`
+        : 'Known for being reliable, detail-focused, and quick to learn in team environments.';
+
+      const industryLine = industry
+        ? `Interested in contributing to ${industry} roles with practical, job-ready execution.`
+        : 'Open to internship and entry-level opportunities where impact and growth go together.';
+
+      const templates = [
+        {
+          label: 'Best Pick',
+          text: `${toneOpener[tone] || toneOpener.professional}. Skilled in ${topSkills.join(', ')}. ${strengthLine} ${industryLine}`,
+          hashtags: ['Best Pick', 'ATS-Friendly', 'Skills Focused', 'Professional'],
+          bestPick: true
+        },
+        {
+          label: 'Summary Option 2',
+          text: `Aspiring ${role} with strengths in ${topSkills.join(', ')} and a clear focus on delivering structured outcomes. ${industry ? `Focused on ${industry} use-cases and business impact.` : 'Focused on internship and fresher-level impact.'}`,
+          hashtags: ['ATS-Friendly', 'Skills Focused']
+        },
+        {
+          label: 'Summary Option 3',
+          text: `${experience === 'Fresher' ? 'Motivated fresher' : `Early-career professional (${experience})`} targeting ${role} opportunities. Brings practical ability in ${topSkills.slice(0, 3).join(', ')} with a learning-first, ownership-driven approach.`,
+          hashtags: ['Professional', 'Entry-Level Ready']
+        },
+        {
+          label: 'Summary Option 4',
+          text: `${role} profile with role-aligned skills in ${topSkills.join(', ')} and strong communication, collaboration, and execution habits. ${achievement ? `Notable strength: ${achievement}.` : 'Committed to continuous improvement and measurable contribution.'}`,
+          hashtags: ['Professional', 'ATS-Friendly']
+        },
+        {
+          label: 'Summary Option 5',
+          text: `Career-focused ${role} candidate prepared for internships and entry-level roles. Combines ${topSkills.slice(0, 3).join(', ')} with discipline, adaptability, and a result-oriented mindset.`,
+          hashtags: ['Simple', 'Job-Ready']
+        }
+      ];
+
+      const rotated = templates.map((item, index) => templates[(index + variant) % templates.length]).slice(0, 5);
+      const finalItems = rotated.map((item, index) => ({
+        ...item,
+        label: index === 0 ? 'Best Pick' : `Summary Option ${index + 1}`,
+        bestPick: index === 0,
+        copyText: item.text
+      }));
+
+      return {
+        type: 'cards',
+        items: finalItems
+      };
+    },
+    'interview-answer-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const question = String(values.question || '').trim();
+      const role = String(values.role || '').trim();
+      const experience = String(values.experience || 'Fresher').trim();
+      const skill = String(values.skill || '').trim();
+      const achievement = String(values.achievement || '').trim();
+      const tone = String(values.tone || 'professional').toLowerCase();
+      const preferredStyle = String(values.answerStyle || 'short').toLowerCase();
+      const loweredQuestion = question.toLowerCase();
+
+      const behavioralSignals = ['tell me about a time', 'example of', 'situation', 'challenge', 'conflict', 'deadline', 'teamwork', 'leadership', 'mistake', 'pressure'];
+      const technicalSignals = ['how do you', 'what is', 'difference', 'algorithm', 'debug', 'api', 'database', 'javascript', 'react', 'sql', 'performance', 'architecture'];
+      const isBehavioral = behavioralSignals.some((signal) => loweredQuestion.includes(signal));
+      const isTechnical = technicalSignals.some((signal) => loweredQuestion.includes(signal));
+
+      const toneLead = {
+        professional: 'I approach this in a structured and practical way.',
+        confident: 'I am confident in my approach and focus on measurable outcomes.',
+        friendly: 'I like to keep my approach practical and collaborative.',
+        simple: 'I keep the approach clear and easy to follow.'
+      };
+
+      const projectLine = achievement
+        ? `A relevant example is: ${achievement}`
+        : `In my recent learning/project work for ${role}, I applied ${skill} in practical tasks.`;
+
+      const shortAnswer = {
+        label: 'Short Answer',
+        text: `${toneLead[tone]} For a ${role} role, I rely on ${skill} to solve problems quickly and clearly. ${projectLine}`,
+        hashtags: ['Short Answer', 'Role-Relevant', 'Professional'],
+        copyText: `${question}\n\n${toneLead[tone]} For a ${role} role, I rely on ${skill} to solve problems quickly and clearly. ${projectLine}`
+      };
+
+      const detailedAnswer = {
+        label: 'Detailed Answer',
+        text: `For this question, I would answer with context, action, and result. I am currently at the ${experience} stage and I focus on ${skill} to deliver reliable work as a ${role}. ${projectLine} This taught me how to prioritize, communicate updates, and improve outcomes without overcomplicating the solution.`,
+        hashtags: ['Detailed Answer', 'Skills Focused', 'Interview Ready'],
+        copyText: `${question}\n\nFor this question, I would answer with context, action, and result. I am currently at the ${experience} stage and I focus on ${skill} to deliver reliable work as a ${role}. ${projectLine} This taught me how to prioritize, communicate updates, and improve outcomes without overcomplicating the solution.`
+      };
+
+      const starAnswer = {
+        label: 'STAR Answer',
+        text: `Situation: During a learning/project phase linked to ${role}, I faced a practical challenge.\nTask: I needed to use ${skill} to move the work forward on time.\nAction: I broke the task into steps, coordinated with stakeholders, and implemented a focused solution.${achievement ? ` I used this project context: ${achievement}` : ''}\nResult: The task was completed with better clarity, smoother execution, and a stronger final outcome.`,
+        hashtags: ['STAR Answer', 'Behavioral Ready', 'Structured'],
+        copyText: `${question}\n\nSituation: During a learning/project phase linked to ${role}, I faced a practical challenge.\nTask: I needed to use ${skill} to move the work forward on time.\nAction: I broke the task into steps, coordinated with stakeholders, and implemented a focused solution.${achievement ? ` I used this project context: ${achievement}` : ''}\nResult: The task was completed with better clarity, smoother execution, and a stronger final outcome.`
+      };
+
+      const technicalAnswer = {
+        label: 'Detailed Answer',
+        text: `For technical questions, I first clarify the requirement, then apply ${skill} to build a practical solution for ${role}-level expectations. I explain trade-offs, test edge cases, and share what I would improve next. ${achievement ? `Example: ${achievement}` : 'I keep the explanation concise and focused on real implementation.'}`,
+        hashtags: ['Technical', 'Practical', 'Detailed Answer'],
+        copyText: `${question}\n\nFor technical questions, I first clarify the requirement, then apply ${skill} to build a practical solution for ${role}-level expectations. I explain trade-offs, test edge cases, and share what I would improve next. ${achievement ? `Example: ${achievement}` : 'I keep the explanation concise and focused on real implementation.'}`
+      };
+
+      let variants = [shortAnswer, detailedAnswer, starAnswer];
+      if (isBehavioral) {
+        variants = [starAnswer, detailedAnswer, shortAnswer];
+      } else if (isTechnical) {
+        variants = [shortAnswer, technicalAnswer, detailedAnswer];
+      }
+
+      if (preferredStyle === 'short') variants = [shortAnswer, ...variants.filter((entry) => entry.label !== 'Short Answer')];
+      if (preferredStyle === 'detailed') variants = [detailedAnswer, ...variants.filter((entry) => entry.label !== 'Detailed Answer')];
+      if (preferredStyle === 'star') variants = [starAnswer, ...variants.filter((entry) => entry.label !== 'STAR Answer')];
+
+      const rotated = variants.map((_, index) => variants[(index + (variant % variants.length)) % variants.length]).slice(0, 4);
+      const items = rotated.map((entry, index) => ({
+        ...entry,
+        bestPick: index === 0,
+        label: index === 0 ? 'Best Pick' : entry.label
+      }));
+
+      return {
+        type: 'cards',
+        items,
+        outputTips: ['Keep answers specific', 'Don’t over-explain', 'Use real examples']
+      };
+    },
+    'study-notes-summarizer': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const topic = String(values.topic || '').trim();
+      const notes = String(values.notes || '').trim();
+      const educationLevel = String(values.educationLevel || 'school').trim();
+      const outputStyle = String(values.outputStyle || 'bullet-summary').trim();
+      const focus = String(values.focus || 'full-revision').trim();
+      const tone = String(values.tone || 'simple').trim();
+
+      const sentences = splitSentences(notes);
+      const sortedByLength = [...sentences].sort((a, b) => b.length - a.length);
+      const summarySentences = sortedByLength.slice(variant % 2, (variant % 2) + 2).length
+        ? sortedByLength.slice(variant % 2, (variant % 2) + 2)
+        : sentences.slice(0, 2);
+      const summaryText = summarySentences.join(' ');
+
+      const keywordList = extractKeywords(`${topic} ${notes}`, 8);
+      const bulletBase = sentences.slice(0, 6).map((sentence) => sentence.replace(/^[•\-]\s*/, ''));
+      const revisionPoints = bulletBase.slice(0, 4).map((point, index) => `Point ${index + 1}: ${point}`);
+
+      const focusLine = focus === 'definitions'
+        ? 'Focus on term meanings and exact definitions.'
+        : focus === 'important-facts'
+          ? 'Focus on dates, facts, and high-value exam statements.'
+          : focus === 'formula-concepts'
+            ? 'Focus on formulas, methods, and concept application.'
+            : 'Focus on complete revision flow from concept to recall.';
+
+      const styleLine = outputStyle === 'short-notes'
+        ? 'Structured as compact short notes for last-minute revision.'
+        : outputStyle === 'exam-revision-points'
+          ? 'Structured as exam-ready revision points with quick recall intent.'
+          : 'Structured in bullet summary format for easy scanning.';
+
+      const toneLine = tone === 'academic'
+        ? 'Language tone: academic and concept-driven.'
+        : tone === 'exam-friendly'
+          ? 'Language tone: exam-friendly and recall-oriented.'
+          : 'Language tone: simple and easy to understand.';
+
+      const mnemonicSource = keywordList.slice(0, 4);
+      const mnemonic = mnemonicSource.length >= 3
+        ? `Mnemonic (${mnemonicSource.map((word) => word[0]?.toUpperCase()).join('')}): Remember ${mnemonicSource.join(', ')}.`
+        : '';
+
+      const cards = [
+        {
+          label: 'Summary',
+          title: topic,
+          text: summaryText || `This topic covers key ideas related to ${topic}.`,
+          note: `${styleLine} ${toneLine}`,
+          hashtags: ['Summary', 'Exam Ready', 'Best Pick'],
+          bestPick: true
+        },
+        {
+          label: 'Bullet Points',
+          text: 'Important bullet points from your notes:',
+          rows: bulletBase.slice(0, 5),
+          hashtags: ['Bullet Summary', educationLevel.replace('-', ' ')],
+          copyText: bulletBase.slice(0, 5).join('\n')
+        },
+        {
+          label: 'Important Keywords',
+          text: keywordList.length ? keywordList.join(', ') : 'Keywords could not be extracted clearly. Try adding more content.',
+          hashtags: ['Keywords', 'Revision']
+        },
+        {
+          label: 'Quick Revision',
+          rows: revisionPoints.length ? revisionPoints : ['Revise core definitions', 'Review main concept flow', 'Practice one related question'],
+          note: focusLine,
+          hashtags: ['Quick Revision', 'Exam Friendly']
+        }
+      ];
+
+      if (mnemonic) {
+        cards.push({
+          label: 'Optional Mnemonic',
+          text: mnemonic,
+          hashtags: ['Memory Aid']
+        });
+      }
+
+      return {
+        type: 'cards',
+        items: cards.map((card, index) => ({
+          ...card,
+          bestPick: index === 0,
+          copyText: card.copyText || [card.title, card.text, Array.isArray(card.rows) ? card.rows.join('\n') : '', card.note].filter(Boolean).join('\n')
+        })),
+        outputTips: ['Read once after summarizing', 'Highlight formulas or terms', 'Revise with short bullet points']
+      };
+    },
+    'assignment-rewriter': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const originalText = String(values.originalText || '').trim();
+      const topic = String(values.topic || '').trim();
+      const tone = String(values.tone || 'formal').toLowerCase();
+      const targetLength = String(values.targetLength || 'same').toLowerCase();
+      const keyPoints = String(values.keyPoints || '').trim();
+      const audience = String(values.audience || '').trim();
+
+      const sentences = splitSentences(originalText);
+      const rewrittenSentences = sentences.map((sentence, index) => {
+        const base = rewriteSentence(sentence, tone);
+        if (variant % 2 === 1 && index % 2 === 0) {
+          return base.replace(/\bIn conclusion\b/gi, 'Overall');
+        }
+        return base;
+      });
+
+      let rewrittenText = rewrittenSentences.join(' ');
+      if (!rewrittenText) {
+        rewrittenText = rewriteSentence(originalText, tone);
+      }
+
+      if (keyPoints) {
+        rewrittenText = `${rewrittenText} Key focus included: ${keyPoints}.`;
+      }
+
+      if (audience) {
+        rewrittenText = `${rewrittenText} This version is adjusted for a ${audience} audience.`;
+      }
+
+      if (targetLength === 'shorter') {
+        rewrittenText = splitSentences(rewrittenText).slice(0, Math.max(2, Math.ceil(splitSentences(rewrittenText).length * 0.7))).join(' ');
+      }
+
+      if (targetLength === 'longer') {
+        rewrittenText = `${rewrittenText} This topic, ${topic}, can also be understood through practical examples and real-world relevance for better academic clarity.`;
+      }
+
+      const shortVersion = splitSentences(rewrittenText).slice(0, 2).join(' ') || rewrittenText.slice(0, 220);
+      const tips = [
+        'Check whether the rewritten version still matches your original meaning.',
+        'Keep subject terms and references accurate for your assignment requirements.',
+        'Add one personal understanding line to make the final submission authentic.'
+      ];
+
+      return {
+        type: 'cards',
+        items: [
+          {
+            label: 'Rewritten Version',
+            title: topic,
+            text: rewrittenText,
+            bestPick: true,
+            hashtags: ['Clarity Improved', 'Meaning Preserved', 'Best Pick'],
+            copyText: rewrittenText
+          },
+          {
+            label: 'Short Version',
+            text: shortVersion,
+            hashtags: ['Short Version', 'Revision Friendly'],
+            copyText: shortVersion
+          },
+          {
+            label: 'Improvement Tips',
+            rows: tips,
+            hashtags: ['Review Tips'],
+            copyText: tips.join('\n')
+          }
+        ],
+        outputTips: ['Check facts', 'Add your own understanding', 'Keep citations if needed']
+      };
+    },
+    'sop-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const program = String(values.program || '').trim();
+      const university = String(values.university || '').trim();
+      const background = String(values.academicBackground || '').trim();
+      const careerGoals = String(values.careerGoals || '').trim();
+      const achievements = String(values.achievements || '').trim();
+      const whyProgram = String(values.whyProgram || '').trim();
+      const tone = String(values.tone || 'formal').toLowerCase();
+      const wordCount = String(values.wordCount || 'medium').toLowerCase();
+
+      const toneLine = tone === 'motivated'
+        ? 'I am deeply motivated to continue this journey with purpose and discipline.'
+        : tone === 'confident'
+          ? 'I am confident that my preparation and intent align strongly with this opportunity.'
+          : tone === 'academic'
+            ? 'My academic intent is grounded in structured inquiry, applied learning, and scholarly growth.'
+            : 'I respectfully present this statement to express my academic purpose and long-term commitment.';
+
+      const intro = `I am applying for the ${program} at ${university} to strengthen my academic and professional foundation. ${toneLine}`;
+      const academicSection = `Academic Background: ${background}`;
+      const motivationSection = `Motivation: ${whyProgram}`;
+      const goalsSection = `Goals: ${careerGoals}`;
+      const achievementsSection = `Relevant Achievements / Projects: ${achievements}`;
+      const conclusion = `Conclusion: I believe ${program} at ${university} is the right next step to help me contribute meaningfully in my domain through responsible and practical impact.`;
+
+      let sopDraft = [intro, academicSection, achievementsSection, motivationSection, goalsSection, conclusion].join('\n\n');
+      if (variant % 2 === 1) {
+        sopDraft = [intro, motivationSection, academicSection, achievementsSection, goalsSection, conclusion].join('\n\n');
+      }
+
+      if (wordCount === 'short') {
+        sopDraft = [intro, academicSection, goalsSection, conclusion].join('\n\n');
+      } else if (wordCount === 'long') {
+        sopDraft = `${sopDraft}\n\nI am eager to collaborate with peers, contribute to project-driven learning, and use this academic exposure to build lasting social and professional value.`;
+      }
+
+      const sectionRows = [
+        `Introduction: Why you are applying to ${program}.`,
+        'Academic Background: Relevant academic preparation and learning trajectory.',
+        'Motivation: Why this university/program is a strong fit.',
+        'Goals: Short-term and long-term direction.',
+        'Conclusion: Readiness, fit, and contribution intent.'
+      ];
+
+      return {
+        type: 'cards',
+        items: [
+          {
+            label: 'Full SOP Draft',
+            title: `${program} - ${university}`,
+            text: sopDraft,
+            bestPick: true,
+            hashtags: ['SOP Draft', 'Best Pick', 'Application Ready'],
+            copyText: sopDraft
+          },
+          {
+            label: 'Section-wise Breakdown',
+            rows: sectionRows,
+            hashtags: ['Introduction', 'Motivation', 'Goals'],
+            copyText: sectionRows.join('\n')
+          }
+        ],
+        outputTips: ['Be specific', 'Mention relevant projects', 'Keep it genuine']
+      };
+    },
+    'linkedin-networking-message-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const recipientType = String(values.recipientType || 'professional').toLowerCase();
+      const purpose = String(values.purpose || '').trim();
+      const background = String(values.background || '').trim();
+      const targetRole = String(values.targetRole || '').trim();
+      const sharedReference = String(values.sharedReference || '').trim();
+      const tone = String(values.tone || 'polite').toLowerCase();
+
+      const greetingMap = {
+        recruiter: 'Hello',
+        alumni: 'Hi',
+        founder: 'Hello',
+        professional: 'Hi'
+      };
+      const recipientContext = {
+        recruiter: 'your hiring insights',
+        alumni: 'your alumni journey',
+        founder: 'your startup journey',
+        professional: 'your professional experience'
+      };
+      const toneTail = {
+        polite: 'Thank you for your time.',
+        professional: 'Appreciate your consideration.',
+        friendly: 'Thanks a lot for your time!',
+        confident: 'I would value a quick response when convenient.'
+      };
+
+      const sharedLine = sharedReference ? ` ${sharedReference}.` : '';
+      const connectionRequest = `${greetingMap[recipientType]}, I am exploring ${targetRole} opportunities. ${background} I reached out because I value ${recipientContext[recipientType]}.${sharedLine} Would love to connect.`;
+      const followUp = `${greetingMap[recipientType]}, following up on my earlier note regarding ${purpose}. I am actively preparing for ${targetRole} roles and would appreciate any brief guidance.${sharedLine} ${toneTail[tone]}`;
+      const networkingIntro = `${greetingMap[recipientType]}, I am currently focused on ${targetRole}. ${background} I am reaching out for networking and to learn from your experience related to ${purpose}.${sharedLine} ${toneTail[tone]}`;
+
+      const optionsList = [
+        {
+          label: 'Connection Request',
+          text: connectionRequest,
+          hashtags: ['Connection Request', 'Best Pick'],
+          bestPick: true
+        },
+        {
+          label: 'Follow-Up',
+          text: followUp,
+          hashtags: ['Follow-Up', 'Polite']
+        },
+        {
+          label: 'Networking Message',
+          text: networkingIntro,
+          hashtags: ['Networking Message', 'Concise']
+        }
+      ];
+
+      const rotated = optionsList.map((_, index) => optionsList[(index + (variant % optionsList.length)) % optionsList.length]);
+
+      return {
+        type: 'cards',
+        items: rotated.map((item, index) => ({
+          ...item,
+          label: index === 0 ? 'Best Pick' : item.label,
+          bestPick: index === 0,
+          copyText: item.text
+        })),
+        outputTips: ['Mention why you’re reaching out', 'Keep it under 300 characters if possible', 'Personalize with a shared point']
+      };
+    },
+    'job-description-analyzer': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const jobDescription = String(values.jobDescription || '').toLowerCase();
+      const userSkills = normalizeCommaList(values.userSkills).map((skill) => skill.toLowerCase());
+      const experienceLevel = String(values.experienceLevel || 'fresher').trim();
+      const targetRole = String(values.targetRole || '').trim();
+      const resumeSummary = String(values.resumeSummary || '').trim();
+      const tone = String(values.tone || 'clear').toLowerCase();
+
+      const jdKeywords = extractKeywords(jobDescription, 18);
+      const matchedSkills = userSkills.filter((skill) => jdKeywords.some((keyword) => keyword.includes(skill) || skill.includes(keyword)));
+      const missingSkills = jdKeywords.filter((keyword) => !matchedSkills.some((skill) => skill.includes(keyword))).slice(0, 7);
+      const resumeKeywords = jdKeywords.slice(0, 10);
+
+      const rawScore = Math.min(95, Math.max(25, Math.round((matchedSkills.length / Math.max(1, matchedSkills.length + missingSkills.length)) * 100)));
+      const fitLevel = rawScore >= 75 ? 'Strong Match' : rawScore >= 55 ? 'Moderate Match' : 'Low Match';
+      const verdict = rawScore >= 75
+        ? 'You appear to be a strong fit. Focus on role-specific examples and outcomes.'
+        : rawScore >= 55
+          ? 'You are a partial fit. Improve missing skills and tailor your resume to responsibilities.'
+          : 'Current match is weak. Build core skills first and apply strategically.';
+
+      const tailoringTips = [
+        `Place ${matchedSkills.slice(0, 3).join(', ') || 'your strongest relevant skills'} near the top of your resume.`,
+        `Add job-specific keywords like ${resumeKeywords.slice(0, 4).join(', ')} in projects and summary.`,
+        missingSkills.length
+          ? `Upskill on: ${missingSkills.slice(0, 3).join(', ')} before applying broadly.`
+          : 'You already cover most visible skill signals from this job description.'
+      ];
+
+      const toneNote = tone === 'detailed'
+        ? `Analysis depth: detailed. Experience level considered: ${experienceLevel}.`
+        : tone === 'beginner-friendly'
+          ? `Analysis depth: beginner friendly. Start with one core skill gap at a time.`
+          : `Analysis depth: clear and concise.`;
+
+      const cards = [
+        {
+          label: 'Fit Score',
+          title: `${rawScore}% - ${fitLevel}`,
+          text: `Target role: ${targetRole}. ${verdict}`,
+          note: toneNote,
+          hashtags: ['Fit Score', 'Best Pick'],
+          bestPick: true
+        },
+        {
+          label: 'Matched Skills',
+          rows: matchedSkills.length ? matchedSkills.slice(variant % 2, (variant % 2) + 6) : ['No strong direct matches found from current skills input.'],
+          hashtags: ['Matched Skills']
+        },
+        {
+          label: 'Missing Skills',
+          rows: missingSkills.length ? missingSkills : ['No major missing skills detected from visible job keywords.'],
+          hashtags: ['Missing Skills']
+        },
+        {
+          label: 'Resume Keywords',
+          text: resumeKeywords.join(', '),
+          hashtags: ['Keywords', 'Resume Tailoring']
+        },
+        {
+          label: 'Application Tips',
+          rows: tailoringTips,
+          note: resumeSummary ? 'Resume summary detected. Update it using matched + missing-skill insights.' : 'Add a role-focused resume summary before applying.',
+          hashtags: ['Practical Tips']
+        }
+      ];
+
+      return {
+        type: 'cards',
+        items: cards.map((item) => ({
+          ...item,
+          copyText: [item.title, item.text, Array.isArray(item.rows) ? item.rows.join('\n') : '', item.note].filter(Boolean).join('\n')
+        })),
+        outputTips: ['Tailor resume keywords', 'Match relevant skills first', 'Check responsibilities carefully']
+      };
+    },
+    'scholarship-finder': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const educationLevel = String(values.educationLevel || 'undergraduate').trim();
+      const state = String(values.state || '').trim();
+      const category = String(values.category || '').trim();
+      const academicPerformance = String(values.academicPerformance || '').trim();
+      const needType = String(values.needType || 'general').trim();
+      const fieldOfStudy = String(values.fieldOfStudy || '').trim();
+      const specialInterest = String(values.specialInterest || '').trim();
+
+      const baseTypes = [
+        {
+          scholarshipType: `${needType === 'merit-based' ? 'Merit Scholarship' : needType === 'need-based' ? 'Need-Based Financial Aid' : 'General Academic Scholarship'} (${educationLevel})`,
+          suitableFor: `${educationLevel} students in ${state}${fieldOfStudy ? ` with interest in ${fieldOfStudy}` : ''}.`,
+          prepare: ['Academic transcripts', 'Identity and address proof', 'Income certificate (if required)', 'Personal statement'],
+          nextStep: 'Search state scholarship portals and official institution aid pages.'
+        },
+        {
+          scholarshipType: `${state} State Support Schemes`,
+          suitableFor: `Students studying in or domiciled in ${state}${category ? ` under ${category} category criteria` : ''}.`,
+          prepare: ['Domicile certificate', 'Category certificate (if applicable)', 'Bank account details', 'Recent marksheets'],
+          nextStep: 'Check your state government scholarship portal and verify eligibility filters.'
+        },
+        {
+          scholarshipType: `${specialInterest ? `${specialInterest.toUpperCase()}-Focused Scholarship Categories` : 'Field and Profile-Based Scholarship Categories'}`,
+          suitableFor: specialInterest
+            ? `Students with profile focus in ${specialInterest} and consistent academic record (${academicPerformance}).`
+            : `Students with relevant achievements and consistent performance (${academicPerformance}).`,
+          prepare: ['Proof of achievements/projects', 'Recommendation letter', 'Resume/CV', 'Statement of purpose'],
+          nextStep: 'Shortlist official scholarship categories from trusted portals and compare document requirements.'
+        }
+      ];
+
+      const rotated = baseTypes.map((_, index) => baseTypes[(index + (variant % baseTypes.length)) % baseTypes.length]);
+      const items = rotated.map((entry, index) => ({
+        label: index === 0 ? 'Best Pick' : `Scholarship Type ${index + 1}`,
+        title: entry.scholarshipType,
+        text: `Suitable for: ${entry.suitableFor}`,
+        rows: [
+          `What to prepare: ${entry.prepare.join(', ')}`,
+          `Next step: ${entry.nextStep}`
+        ],
+        bestPick: index === 0,
+        copyText: `${entry.scholarshipType}\nSuitable for: ${entry.suitableFor}\nWhat to prepare: ${entry.prepare.join(', ')}\nNext step: ${entry.nextStep}`
+      }));
+
+      return {
+        type: 'cards',
+        items,
+        disclaimer: 'Verification reminder: Always check final eligibility and deadlines from official scholarship sources.',
+        outputTips: ['Prepare documents', 'Check official portal', 'Review eligibility carefully']
+      };
+    },
+    'career-path-quiz': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const stage = String(values.stage || 'college').trim();
+      const interests = String(values.interests || '').toLowerCase();
+      const workStyle = String(values.workStyle || 'creative').trim();
+      const strengths = normalizeCommaList(values.strengths);
+      const codingPreference = String(values.codingPreference || 'no').trim();
+      const goal = String(values.goal || 'job').trim();
+
+      const codingPaths = [
+        { title: 'Frontend Developer', why: 'You show problem-solving and digital product interest.', skills: ['HTML/CSS', 'JavaScript', 'React basics'], step: 'Build 2 UI projects and publish on GitHub.' },
+        { title: 'Data Analyst', why: 'Your analytical signals align with structured insight work.', skills: ['Excel', 'SQL', 'Data visualization'], step: 'Create one dashboard-based portfolio project.' },
+        { title: 'QA / Test Engineer', why: 'Detail orientation and structured thinking fit quality roles.', skills: ['Testing basics', 'Bug reporting', 'Automation fundamentals'], step: 'Test one live app and write bug reports.' }
+      ];
+
+      const nonCodingPaths = [
+        { title: 'Digital Marketing Associate', why: 'Creative + audience-focused interest fits growth roles.', skills: ['Content strategy', 'SEO basics', 'Campaign analytics'], step: 'Run a mini campaign and track results.' },
+        { title: 'Business Development Executive', why: 'People-focused and communication strengths map well here.', skills: ['Lead qualification', 'Pitching', 'CRM basics'], step: 'Practice outreach scripts and mock calls.' },
+        { title: 'Operations Coordinator', why: 'Independent execution and process thinking are valuable here.', skills: ['Process mapping', 'Spreadsheet workflows', 'Reporting'], step: 'Document and optimize one workflow project.' }
+      ];
+
+      const hybridPaths = [
+        { title: 'Product Management Trainee', why: 'Interest + structured thinking fit product planning paths.', skills: ['User research', 'PRD writing', 'Roadmap basics'], step: 'Draft PRD for one simple app idea.' },
+        { title: 'UI/UX Designer', why: 'Creative work style and user empathy fit this path.', skills: ['Figma', 'Wireframing', 'User testing'], step: 'Design one case study from problem to prototype.' },
+        { title: 'Research Assistant', why: 'Good for learners targeting higher studies and analysis-heavy roles.', skills: ['Literature review', 'Documentation', 'Presentation'], step: 'Summarize one research paper weekly.' }
+      ];
+
+      let pool = codingPreference === 'yes' ? [...codingPaths, ...hybridPaths] : [...nonCodingPaths, ...hybridPaths];
+      if (workStyle === 'analytical') pool = pool.sort((a, b) => Number(a.title.includes('Data')) - Number(b.title.includes('Data'))).reverse();
+      if (interests.includes('design')) pool = pool.sort((a, b) => Number(a.title.includes('Designer')) - Number(b.title.includes('Designer'))).reverse();
+      if (goal === 'entrepreneurship') {
+        pool.unshift({ title: 'Startup Generalist', why: 'Broad ownership mindset fits early-stage entrepreneurship goals.', skills: ['Problem validation', 'Basic marketing', 'Execution discipline'], step: 'Solve one local problem with a simple MVP.' });
+      }
+
+      const selected = pool.slice(0, 5).map((path, index) => {
+        const strengthText = strengths.slice(0, 3).join(', ') || 'your current strengths';
+        return {
+          label: index === 0 ? 'Best Match' : index === 1 ? 'Suitable Path' : 'Beginner Friendly',
+          title: path.title,
+          text: `Why it fits: ${path.why} Profile signals considered: ${workStyle} style, ${stage} stage, strengths like ${strengthText}.`,
+          rows: [
+            `Skills to learn: ${path.skills.join(', ')}`,
+            `Suggested next step: ${path.step}`
+          ],
+          bestPick: index === 0,
+          copyText: `${path.title}\nWhy it fits: ${path.why}\nSkills to learn: ${path.skills.join(', ')}\nSuggested next step: ${path.step}`
+        };
+      });
+
+      const rotated = selected.map((_, index) => selected[(index + (variant % selected.length)) % selected.length]).slice(0, 5);
+      if (rotated.length) {
+        rotated[0].bestPick = true;
+        rotated[0].label = 'Best Match';
+      }
+
+      return {
+        type: 'cards',
+        items: rotated,
+        disclaimer: 'This tool gives direction, not a final decision. Use it as a starting point.',
+        outputTips: ['Explore one path at a time', 'Learn core skills first', 'Try a small project before deciding']
+      };
+    },
+    'youtube-shorts-script-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const topic = String(values.topic || '').trim();
+      const platform = String(values.platform || 'youtube-shorts').trim();
+      const goal = String(values.contentGoal || 'engagement').trim();
+      const audience = String(values.audienceType || '').trim();
+      const tone = String(values.tone || 'energetic').trim();
+      const keywords = normalizeCommaList(values.keywords);
+      const length = String(values.videoLength || '').trim();
+
+      const isShort = platform === 'youtube-shorts' || platform === 'instagram-reels';
+      const formatLabel = isShort ? 'Short Form' : 'Long Form';
+      const hookTemplates = [
+        `Stop scrolling if you care about ${topic}.`,
+        `Most people get ${topic} wrong—here’s why.`,
+        `If you are ${audience}, this will save you time.`
+      ];
+      const ctas = [
+        'Comment your biggest takeaway.',
+        'Follow for more practical creator strategies.',
+        'Save this and test it today.'
+      ];
+
+      const makeScript = (index) => {
+        const hook = hookTemplates[(index + variant) % hookTemplates.length];
+        const mainPoints = isShort
+          ? [`Point 1: Quick insight on ${topic}.`, `Point 2: One mistake to avoid for ${audience}.`, `Point 3: Action step you can apply today.`]
+          : [`Intro: Why ${topic} matters for ${audience}.`, `Body 1: Core concept and common mistake.`, `Body 2: Real example or mini framework.`, `Outro: Summary + next action.`];
+        const title = isShort
+          ? `${topic}: ${goal} Script Idea ${index + 1}`
+          : `${topic} Explained for ${audience} (${goal})`;
+        const shot = isShort
+          ? 'Shot idea: Fast jump cuts + on-screen text for each key point.'
+          : 'Scene idea: Hook face-cam intro, then supporting visuals/slides for body.';
+
+        return {
+          label: index === 0 ? 'Best Starter Idea' : index === 1 ? 'Hook Strong' : formatLabel,
+          title,
+          text: `Hook: ${hook}`,
+          rows: [
+            `Main points: ${mainPoints.join(' | ')}`,
+            `CTA: ${ctas[(index + variant) % ctas.length]}`,
+            `Shot/Scene: ${shot}`,
+            `Thumbnail/Title variant: ${keywords[0] ? `${topic} + ${keywords[0]} = Better Results` : `${topic}: Do This Instead`}`
+          ],
+          bestPick: index === 0,
+          copyText: `${title}\nHook: ${hook}\n${mainPoints.join('\n')}\nCTA: ${ctas[(index + variant) % ctas.length]}\n${shot}${length ? `\nLength target: ${length}` : ''}`
+        };
+      };
+
+      const count = isShort ? 3 : 4;
+      const items = Array.from({ length: count }, (_, i) => makeScript(i));
+      return {
+        type: 'cards',
+        items,
+        outputTips: ['Start with a question or bold statement', 'Keep the first line engaging', 'End with one clear CTA']
       };
     },
     'leave-application-generator': (values, options = {}) => {
@@ -928,6 +1687,16 @@
 
         if (typeof localGenerator === 'function' && (
           toolId === 'resume-headline-generator'
+          || toolId === 'resume-summary-generator'
+          || toolId === 'interview-answer-generator'
+          || toolId === 'study-notes-summarizer'
+          || toolId === 'assignment-rewriter'
+          || toolId === 'sop-generator'
+          || toolId === 'linkedin-networking-message-generator'
+          || toolId === 'job-description-analyzer'
+          || toolId === 'scholarship-finder'
+          || toolId === 'career-path-quiz'
+          || toolId === 'youtube-shorts-script-generator'
           || toolId === 'leave-application-generator'
           || toolId === 'instagram-caption-generator'
           || toolId === 'linkedin-bio-generator'
@@ -941,6 +1710,26 @@
           const fallback = localGenerator(values, options);
           const fallbackMessage = toolId === 'leave-application-generator'
             ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback leave letter.'
+            : toolId === 'resume-summary-generator'
+              ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback summary set.'
+            : toolId === 'interview-answer-generator'
+              ? 'Live AI interview answer generation is temporarily unavailable. Showing a reliable fallback answer set.'
+            : toolId === 'study-notes-summarizer'
+              ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback notes summary set.'
+            : toolId === 'assignment-rewriter'
+              ? 'Live AI rewriting is temporarily unavailable. Showing a reliable fallback rewritten version.'
+            : toolId === 'sop-generator'
+              ? 'Live AI SOP generation is temporarily unavailable. Showing a reliable fallback SOP draft.'
+            : toolId === 'linkedin-networking-message-generator'
+              ? 'Live AI message generation is temporarily unavailable. Showing a reliable fallback message set.'
+            : toolId === 'job-description-analyzer'
+              ? 'Live AI analysis is temporarily unavailable. Showing a reliable fallback JD analysis.'
+            : toolId === 'scholarship-finder'
+              ? 'Live AI scholarship finder is temporarily unavailable. Showing reliable scholarship category guidance.'
+            : toolId === 'career-path-quiz'
+              ? 'Live AI career path analysis is temporarily unavailable. Showing reliable career direction guidance.'
+            : toolId === 'youtube-shorts-script-generator'
+              ? 'Live AI script generation is temporarily unavailable. Showing reliable fallback script ideas.'
             : toolId === 'instagram-caption-generator'
               ? 'Live AI caption generation is temporarily unavailable. Showing a reliable fallback caption set.'
             : toolId === 'linkedin-bio-generator'
@@ -999,6 +1788,136 @@
             skills: 'Please add at least 2 comma-separated skills.'
           },
           formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'resume-summary-generator') {
+      const skills = normalizeCommaList(values.skills);
+      if (skills.length < 2) {
+        return {
+          fieldErrors: {
+            skills: 'Please add at least 2 key skills separated by commas.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'interview-answer-generator') {
+      const question = String(values.question || '').trim();
+      if (question.length < 12) {
+        return {
+          fieldErrors: {
+            question: 'Please enter a slightly more detailed question.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'study-notes-summarizer') {
+      const notes = String(values.notes || '').trim();
+      if (notes.length < 120) {
+        return {
+          fieldErrors: {
+            notes: 'Please add a bit more notes text (at least 120 characters) for better summarization.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'assignment-rewriter') {
+      const text = String(values.originalText || '').trim();
+      if (text.length < 80) {
+        return {
+          fieldErrors: {
+            originalText: 'Please add at least 80 characters so the rewriting stays meaningful.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'sop-generator') {
+      const background = String(values.academicBackground || '').trim();
+      const goals = String(values.careerGoals || '').trim();
+      if (background.length < 40 || goals.length < 30) {
+        return {
+          fieldErrors: {
+            academicBackground: 'Please add a slightly more detailed academic background.',
+            careerGoals: 'Please add clearer career goals (at least one concrete direction).'
+          },
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'linkedin-networking-message-generator') {
+      const purpose = String(values.purpose || '').trim();
+      if (purpose.length < 10) {
+        return {
+          fieldErrors: {
+            purpose: 'Please add a clearer purpose so the message sounds specific.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'job-description-analyzer') {
+      const jd = String(values.jobDescription || '').trim();
+      const skills = normalizeCommaList(values.userSkills);
+      if (jd.length < 150 || skills.length < 2) {
+        return {
+          fieldErrors: {
+            jobDescription: 'Please add more job description details (at least 150 characters).',
+            userSkills: 'Please add at least 2 skills separated by commas.'
+          },
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'scholarship-finder') {
+      const state = String(values.state || '').trim();
+      const performance = String(values.academicPerformance || '').trim();
+      if (state.length < 2 || performance.length < 4) {
+        return {
+          fieldErrors: {
+            state: 'Please enter a valid state/region.',
+            academicPerformance: 'Please add your academic performance in a clear format.'
+          },
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'career-path-quiz') {
+      const interests = String(values.interests || '').trim();
+      const strengths = String(values.strengths || '').trim();
+      if (interests.length < 12 || strengths.length < 8) {
+        return {
+          fieldErrors: {
+            interests: 'Please add clearer interests so suggestions are meaningful.',
+            strengths: 'Please add at least 2 strengths or skills.'
+          },
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'youtube-shorts-script-generator') {
+      const topic = String(values.topic || '').trim();
+      const audience = String(values.audienceType || '').trim();
+      if (topic.length < 3 || audience.length < 3) {
+        return {
+          fieldErrors: {
+            topic: 'Please enter a clearer topic.',
+            audienceType: 'Please enter your target audience type.'
+          },
+          formError: 'Please correct the highlighted fields.'
         };
       }
     }
@@ -1436,6 +2355,25 @@
       outputNode.appendChild(disclaimerNode);
     }
 
+    if (Array.isArray(result.outputTips) && result.outputTips.length) {
+      const tipWrap = document.createElement('div');
+      tipWrap.className = 'mt-5 rounded-2xl border border-slate-200 bg-white p-4';
+      const tipTitle = document.createElement('p');
+      tipTitle.className = 'tool-tips-title';
+      tipTitle.textContent = 'Answer tips';
+      tipWrap.appendChild(tipTitle);
+
+      const tipList = document.createElement('ul');
+      tipList.className = 'item-card-list mt-2';
+      result.outputTips.forEach((tip) => {
+        const item = document.createElement('li');
+        item.textContent = tip;
+        tipList.appendChild(item);
+      });
+      tipWrap.appendChild(tipList);
+      outputNode.appendChild(tipWrap);
+    }
+
     if (result.cta?.href && result.cta?.label) {
       const ctaWrap = document.createElement('div');
       ctaWrap.className = 'mt-5 rounded-2xl border border-indigo-100 bg-indigo-50 p-4';
@@ -1512,6 +2450,26 @@
         ? 'Regenerate Plan'
         : tool.id === 'ai-career-path-suggestor'
           ? 'Regenerate Suggestions'
+        : tool.id === 'resume-summary-generator'
+          ? 'Regenerate Summaries'
+        : tool.id === 'interview-answer-generator'
+          ? 'Regenerate Answers'
+        : tool.id === 'study-notes-summarizer'
+          ? 'Regenerate Summary'
+        : tool.id === 'assignment-rewriter'
+          ? 'Regenerate Rewrite'
+        : tool.id === 'sop-generator'
+          ? 'Regenerate SOP'
+        : tool.id === 'linkedin-networking-message-generator'
+          ? 'Regenerate Messages'
+        : tool.id === 'job-description-analyzer'
+          ? 'Reanalyze'
+        : tool.id === 'scholarship-finder'
+          ? 'Regenerate Recommendations'
+        : tool.id === 'career-path-quiz'
+          ? 'Regenerate Paths'
+        : tool.id === 'youtube-shorts-script-generator'
+          ? 'Regenerate Scripts'
         : tool.outputType === 'text'
           ? 'Regenerate'
           : 'Generate More';
