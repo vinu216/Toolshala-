@@ -298,65 +298,84 @@
       const loweredQuestion = question.toLowerCase();
 
       const behavioralSignals = ['tell me about a time', 'example of', 'situation', 'challenge', 'conflict', 'deadline', 'teamwork', 'leadership', 'mistake', 'pressure'];
-      const technicalSignals = ['how do you', 'what is', 'difference', 'algorithm', 'debug', 'api', 'database', 'javascript', 'react', 'sql', 'performance', 'architecture'];
+      const technicalSignals = ['how do you', 'what is', 'difference', 'algorithm', 'debug', 'api', 'database', 'javascript', 'react', 'sql', 'performance', 'architecture', 'optimize'];
       const isBehavioral = behavioralSignals.some((signal) => loweredQuestion.includes(signal));
       const isTechnical = technicalSignals.some((signal) => loweredQuestion.includes(signal));
 
       const toneLead = {
-        professional: 'I approach this in a structured and practical way.',
-        confident: 'I am confident in my approach and focus on measurable outcomes.',
-        friendly: 'I like to keep my approach practical and collaborative.',
-        simple: 'I keep the approach clear and easy to follow.'
+        professional: 'I answer this with a clear structure and practical focus.',
+        confident: 'I answer this confidently with clear steps and measurable thinking.',
+        friendly: 'I keep the answer practical and easy to connect with.',
+        simple: 'I keep the answer clear, direct, and relevant.'
       };
 
-      const projectLine = achievement
-        ? `A relevant example is: ${achievement}`
-        : `In my recent learning/project work for ${role}, I applied ${skill} in practical tasks.`;
+      const exampleLine = achievement
+        ? `A quick example is ${achievement}.`
+        : `In project work related to ${role}, I used ${skill} to solve practical tasks.`;
+
+      const shortAnswerText = `${toneLead[tone]} For a ${role} position, I focus on ${skill} and keep my approach outcome-oriented. ${exampleLine}`;
+      const detailedAnswerText = `My approach is to explain context, action, and outcome in simple language. At the ${experience} level, I use ${skill} to deliver reliable work in ${role} responsibilities. ${exampleLine} This helps me prioritize, communicate clearly, and improve results with each iteration.`;
+      const starAnswerText = `Situation: In a role-relevant project, I faced a challenge that affected progress.\nTask: I needed to resolve it while keeping quality and deadlines in check.\nAction: I used ${skill} to break the work into clear steps, aligned with team expectations, and implemented a practical fix.${achievement ? ` Example: ${achievement}.` : ''}\nResult: We achieved a smoother workflow, better clarity, and a stronger final output.`;
+      const technicalAnswerText = `For technical questions, I first clarify requirements, then choose a practical solution using ${skill}. I explain trade-offs, test edge cases, and keep the implementation aligned to ${role} expectations. ${achievement ? `One relevant example is ${achievement}.` : 'I keep the explanation concise and focused on what works in real scenarios.'}`;
 
       const shortAnswer = {
         label: 'Short Answer',
-        text: `${toneLead[tone]} For a ${role} role, I rely on ${skill} to solve problems quickly and clearly. ${projectLine}`,
+        text: shortAnswerText,
         hashtags: ['Short Answer', 'Role-Relevant', 'Professional'],
-        copyText: `${question}\n\n${toneLead[tone]} For a ${role} role, I rely on ${skill} to solve problems quickly and clearly. ${projectLine}`
+        copyText: `${question}\n\n${shortAnswerText}`
       };
 
       const detailedAnswer = {
         label: 'Detailed Answer',
-        text: `For this question, I would answer with context, action, and result. I am currently at the ${experience} stage and I focus on ${skill} to deliver reliable work as a ${role}. ${projectLine} This taught me how to prioritize, communicate updates, and improve outcomes without overcomplicating the solution.`,
+        text: detailedAnswerText,
         hashtags: ['Detailed Answer', 'Skills Focused', 'Interview Ready'],
-        copyText: `${question}\n\nFor this question, I would answer with context, action, and result. I am currently at the ${experience} stage and I focus on ${skill} to deliver reliable work as a ${role}. ${projectLine} This taught me how to prioritize, communicate updates, and improve outcomes without overcomplicating the solution.`
+         copyText: `${question}\n\n${detailedAnswerText}`
       };
 
       const starAnswer = {
         label: 'STAR Answer',
-        text: `Situation: During a learning/project phase linked to ${role}, I faced a practical challenge.\nTask: I needed to use ${skill} to move the work forward on time.\nAction: I broke the task into steps, coordinated with stakeholders, and implemented a focused solution.${achievement ? ` I used this project context: ${achievement}` : ''}\nResult: The task was completed with better clarity, smoother execution, and a stronger final outcome.`,
+        text: starAnswerText,
         hashtags: ['STAR Answer', 'Behavioral Ready', 'Structured'],
-        copyText: `${question}\n\nSituation: During a learning/project phase linked to ${role}, I faced a practical challenge.\nTask: I needed to use ${skill} to move the work forward on time.\nAction: I broke the task into steps, coordinated with stakeholders, and implemented a focused solution.${achievement ? ` I used this project context: ${achievement}` : ''}\nResult: The task was completed with better clarity, smoother execution, and a stronger final outcome.`
+        copyText: `${question}\n\n${starAnswerText}`
       };
 
       const technicalAnswer = {
         label: 'Detailed Answer',
-        text: `For technical questions, I first clarify the requirement, then apply ${skill} to build a practical solution for ${role}-level expectations. I explain trade-offs, test edge cases, and share what I would improve next. ${achievement ? `Example: ${achievement}` : 'I keep the explanation concise and focused on real implementation.'}`,
+        text: technicalAnswerText,
         hashtags: ['Technical', 'Practical', 'Detailed Answer'],
-        copyText: `${question}\n\nFor technical questions, I first clarify the requirement, then apply ${skill} to build a practical solution for ${role}-level expectations. I explain trade-offs, test edge cases, and share what I would improve next. ${achievement ? `Example: ${achievement}` : 'I keep the explanation concise and focused on real implementation.'}`
+        copyText: `${question}\n\n${technicalAnswerText}`
+      };
+
+      const stylePriority = {
+        short: 'Short Answer',
+        detailed: 'Detailed Answer',
+        star: 'STAR Answer'
+      };
+
+      const sortByStylePriority = (entries) => {
+        const preferredLabel = stylePriority[preferredStyle];
+        if (!preferredLabel) {
+          return entries;
+        }
+        return [entries.find((entry) => entry.label === preferredLabel), ...entries.filter((entry) => entry.label !== preferredLabel)].filter(Boolean);
       };
 
       let variants = [shortAnswer, detailedAnswer, starAnswer];
       if (isBehavioral) {
-        variants = [starAnswer, detailedAnswer, shortAnswer];
+        variants = [starAnswer, detailedAnswer, shortAnswer, technicalAnswer];
       } else if (isTechnical) {
-        variants = [shortAnswer, technicalAnswer, detailedAnswer];
+        variants = [technicalAnswer, shortAnswer, detailedAnswer, starAnswer];
+      } else {
+        variants = [shortAnswer, detailedAnswer, starAnswer, technicalAnswer];
       }
 
-      if (preferredStyle === 'short') variants = [shortAnswer, ...variants.filter((entry) => entry.label !== 'Short Answer')];
-      if (preferredStyle === 'detailed') variants = [detailedAnswer, ...variants.filter((entry) => entry.label !== 'Detailed Answer')];
-      if (preferredStyle === 'star') variants = [starAnswer, ...variants.filter((entry) => entry.label !== 'STAR Answer')];
-
-      const rotated = variants.map((_, index) => variants[(index + (variant % variants.length)) % variants.length]).slice(0, 4);
+      variants = sortByStylePriority(variants);
+      const maxItems = isTechnical ? 3 : 4;
+      const rotated = variants.map((_, index) => variants[(index + (variant % variants.length)) % variants.length]).slice(0, maxItems);
       const items = rotated.map((entry, index) => ({
         ...entry,
         bestPick: index === 0,
-        label: index === 0 ? 'Best Pick' : entry.label
+        hashtags: index === 0 ? ['Best Pick', ...(entry.hashtags || [])] : entry.hashtags
       }));
 
       return {
@@ -375,15 +394,23 @@
       const tone = String(values.tone || 'simple').trim();
 
       const sentences = splitSentences(notes);
-      const sortedByLength = [...sentences].sort((a, b) => b.length - a.length);
-      const summarySentences = sortedByLength.slice(variant % 2, (variant % 2) + 2).length
-        ? sortedByLength.slice(variant % 2, (variant % 2) + 2)
-        : sentences.slice(0, 2);
+      const normalizedSentences = sentences.length
+        ? sentences
+        : String(notes)
+          .replace(/\s+/g, ' ')
+          .split(/[.?!]\s+/)
+          .map((entry) => entry.trim())
+          .filter(Boolean);
+
+      const summarySentences = normalizedSentences.slice(variant % 2, (variant % 2) + 2).length
+        ? normalizedSentences.slice(variant % 2, (variant % 2) + 2)
+        : normalizedSentences.slice(0, 2);
       const summaryText = summarySentences.join(' ');
 
       const keywordList = extractKeywords(`${topic} ${notes}`, 8);
-      const bulletBase = sentences.slice(0, 6).map((sentence) => sentence.replace(/^[•\-]\s*/, ''));
-      const revisionPoints = bulletBase.slice(0, 4).map((point, index) => `Point ${index + 1}: ${point}`);
+      const bulletBase = normalizedSentences.slice(0, 6).map((sentence) => sentence.replace(/^[•\-]\s*/, ''));
+      const keywordRevision = keywordList.slice(0, 4).map((word, index) => `Point ${index + 1}: Revise ${word} and its practical use-case.`);
+      const revisionPoints = (bulletBase.slice(0, 4).map((point, index) => `Point ${index + 1}: ${point}`)).concat(keywordRevision).slice(0, 4);
 
       const focusLine = focus === 'definitions'
         ? 'Focus on term meanings and exact definitions.'
@@ -405,30 +432,44 @@
           ? 'Language tone: exam-friendly and recall-oriented.'
           : 'Language tone: simple and easy to understand.';
 
+      const levelLine = educationLevel === 'competitive-exam'
+        ? 'Prepared for competitive exam revision with high-value recall points.'
+        : educationLevel === 'college'
+          ? 'Prepared for college-level concept clarity and faster revision.'
+          : 'Prepared for school-level understanding and quick recall.';
+      
       const mnemonicSource = keywordList.slice(0, 4);
       const mnemonic = mnemonicSource.length >= 3
         ? `Mnemonic (${mnemonicSource.map((word) => word[0]?.toUpperCase()).join('')}): Remember ${mnemonicSource.join(', ')}.`
         : '';
 
+      const shortNotesRows = summarySentences
+        .map((entry, index) => `Note ${index + 1}: ${entry}`)
+        .slice(0, 3);
+
+      const bulletRows = outputStyle === 'short-notes'
+        ? shortNotesRows
+        : bulletBase.slice(0, 5);
+      
       const cards = [
         {
           label: 'Summary',
           title: topic,
           text: summaryText || `This topic covers key ideas related to ${topic}.`,
-          note: `${styleLine} ${toneLine}`,
+          note: `${styleLine} ${toneLine} ${levelLine}`,
           hashtags: ['Summary', 'Exam Ready', 'Best Pick'],
           bestPick: true
         },
         {
           label: 'Bullet Points',
           text: 'Important bullet points from your notes:',
-          rows: bulletBase.slice(0, 5),
+          rows: bulletRows.length ? bulletRows : ['Review the first concept and its meaning.', 'Connect the idea to one example.', 'Revise important terms once.'],
           hashtags: ['Bullet Summary', educationLevel.replace('-', ' ')],
-          copyText: bulletBase.slice(0, 5).join('\n')
+          copyText: bulletRows.join('\n')
         },
         {
           label: 'Important Keywords',
-          text: keywordList.length ? keywordList.join(', ') : 'Keywords could not be extracted clearly. Try adding more content.',
+          rows: keywordList.length ? keywordList.slice(0, 8).map((word) => word) : ['Keywords could not be extracted clearly. Try adding more content.'],
           hashtags: ['Keywords', 'Revision']
         },
         {
@@ -467,10 +508,18 @@
       const audience = String(values.audience || '').trim();
 
       const sentences = splitSentences(originalText);
-      const rewrittenSentences = sentences.map((sentence, index) => {
+      const normalizedSentences = sentences.length
+        ? sentences
+        : originalText
+          .replace(/\s+/g, ' ')
+          .split(/[.?!]\s+/)
+          .map((entry) => entry.trim())
+          .filter(Boolean);
+
+      const rewrittenSentences = normalizedSentences.map((sentence, index) => {
         const base = rewriteSentence(sentence, tone);
         if (variant % 2 === 1 && index % 2 === 0) {
-          return base.replace(/\bIn conclusion\b/gi, 'Overall');
+          return base.replace(/\bIn conclusion\b/gi, 'Overall').replace(/\bFirstly\b/gi, 'First');
         }
         return base;
       });
@@ -481,19 +530,20 @@
       }
 
       if (keyPoints) {
-        rewrittenText = `${rewrittenText} Key focus included: ${keyPoints}.`;
+        rewrittenText = `${rewrittenText} Key focus included: ${keyPoints}`;
       }
 
       if (audience) {
-        rewrittenText = `${rewrittenText} This version is adjusted for a ${audience} audience.`;
+        rewrittenText = `${rewrittenText} This version is adjusted for a ${audience} audience while keeping the original intent intact.`;
       }
 
       if (targetLength === 'shorter') {
-        rewrittenText = splitSentences(rewrittenText).slice(0, Math.max(2, Math.ceil(splitSentences(rewrittenText).length * 0.7))).join(' ');
+        const shortened = splitSentences(rewrittenText);
+        rewrittenText = shortened.slice(0, Math.max(2, Math.ceil(shortened.length * 0.7))).join(' ');
       }
 
       if (targetLength === 'longer') {
-        rewrittenText = `${rewrittenText} This topic, ${topic}, can also be understood through practical examples and real-world relevance for better academic clarity.`;
+        rewrittenText = `${rewrittenText} In ${topic}, adding one practical example and one cause-effect explanation can improve clarity and depth for evaluators.`;
       }
 
       const shortVersion = splitSentences(rewrittenText).slice(0, 2).join(' ') || rewrittenText.slice(0, 220);
@@ -510,6 +560,7 @@
             label: 'Rewritten Version',
             title: topic,
             text: rewrittenText,
+            note: 'Use this as a rewriting helper, then review it in your own words.',
             bestPick: true,
             hashtags: ['Clarity Improved', 'Meaning Preserved', 'Best Pick'],
             copyText: rewrittenText
@@ -542,35 +593,39 @@
       const wordCount = String(values.wordCount || 'medium').toLowerCase();
 
       const toneLine = tone === 'motivated'
-        ? 'I am deeply motivated to continue this journey with purpose and discipline.'
+        ? 'I am strongly motivated to build deeper expertise through focused learning and contribution.'
         : tone === 'confident'
-          ? 'I am confident that my preparation and intent align strongly with this opportunity.'
+          ? 'I am confident that my preparation and intent align with the outcomes of this program.'
           : tone === 'academic'
-            ? 'My academic intent is grounded in structured inquiry, applied learning, and scholarly growth.'
-            : 'I respectfully present this statement to express my academic purpose and long-term commitment.';
+            ? 'My academic intent is centered on rigorous inquiry, practical application, and long-term scholarly growth.'
+            : 'I respectfully submit this statement to present my academic intent and readiness for this opportunity.';
 
-      const intro = `I am applying for the ${program} at ${university} to strengthen my academic and professional foundation. ${toneLine}`;
+      const intro = `Introduction: I am applying for ${program} at ${university} to strengthen my domain foundation and pursue meaningful academic growth. ${toneLine}`;
       const academicSection = `Academic Background: ${background}`;
       const motivationSection = `Motivation: ${whyProgram}`;
       const goalsSection = `Goals: ${careerGoals}`;
-      const achievementsSection = `Relevant Achievements / Projects: ${achievements}`;
-      const conclusion = `Conclusion: I believe ${program} at ${university} is the right next step to help me contribute meaningfully in my domain through responsible and practical impact.`;
+      const achievementsSection = `Achievements / Projects: ${achievements}`;
+      const conclusion = `Conclusion: I believe ${program} at ${university} is the right next step for my academic and professional journey, and I am prepared to contribute responsibly to the university community.`;
 
-      let sopDraft = [intro, academicSection, achievementsSection, motivationSection, goalsSection, conclusion].join('\n\n');
+      const mediumDraftSections = [intro, academicSection, achievementsSection, motivationSection, goalsSection, conclusion];
+      const longDraftExtra = 'I am eager to contribute to project-driven learning, collaborate with peers from diverse backgrounds, and apply classroom learning to practical outcomes.';
+
+      let sopDraft = mediumDraftSections.join('\n\n');
       if (variant % 2 === 1) {
         sopDraft = [intro, motivationSection, academicSection, achievementsSection, goalsSection, conclusion].join('\n\n');
       }
 
       if (wordCount === 'short') {
-        sopDraft = [intro, academicSection, goalsSection, conclusion].join('\n\n');
+        sopDraft = [intro, academicSection, motivationSection, conclusion].join('\n\n');
       } else if (wordCount === 'long') {
-        sopDraft = `${sopDraft}\n\nI am eager to collaborate with peers, contribute to project-driven learning, and use this academic exposure to build lasting social and professional value.`;
+        sopDraft = `${sopDraft}\n\n${longDraftExtra}`;
       }
 
       const sectionRows = [
-        `Introduction: Why you are applying to ${program}.`,
+        `Introduction: Why you are applying to ${program} at ${university}.`,
         'Academic Background: Relevant academic preparation and learning trajectory.',
-        'Motivation: Why this university/program is a strong fit.',
+        'Motivation: Why this university/program is a fit for your profile.',
+        'Achievements / Projects: Mention real projects, outcomes, and learning.',
         'Goals: Short-term and long-term direction.',
         'Conclusion: Readiness, fit, and contribution intent.'
       ];
@@ -582,6 +637,8 @@
             label: 'Full SOP Draft',
             title: `${program} - ${university}`,
             text: sopDraft,
+            multiline: true,
+            note: 'Customize the SOP for each university or program.',
             bestPick: true,
             hashtags: ['SOP Draft', 'Best Pick', 'Application Ready'],
             copyText: sopDraft
@@ -624,10 +681,19 @@
         confident: 'I would value a quick response when convenient.'
       };
 
-      const sharedLine = sharedReference ? ` ${sharedReference}.` : '';
-      const connectionRequest = `${greetingMap[recipientType]}, I am exploring ${targetRole} opportunities. ${background} I reached out because I value ${recipientContext[recipientType]}.${sharedLine} Would love to connect.`;
-      const followUp = `${greetingMap[recipientType]}, following up on my earlier note regarding ${purpose}. I am actively preparing for ${targetRole} roles and would appreciate any brief guidance.${sharedLine} ${toneTail[tone]}`;
-      const networkingIntro = `${greetingMap[recipientType]}, I am currently focused on ${targetRole}. ${background} I am reaching out for networking and to learn from your experience related to ${purpose}.${sharedLine} ${toneTail[tone]}`;
+      const compact = (value = '', limit = 290) => {
+        const cleaned = String(value).replace(/\s+/g, ' ').trim();
+        if (cleaned.length <= limit) {
+          return cleaned;
+        }
+        return `${cleaned.slice(0, limit - 1).trimEnd()}…`;
+      };
+
+      const trimmedBackground = compact(background, 110);
+      const sharedLine = sharedReference ? ` Shared point: ${sharedReference}.` : '';
+      const connectionRequest = compact(`${greetingMap[recipientType]}, I am exploring ${targetRole} opportunities. ${trimmedBackground} I reached out because I value ${recipientContext[recipientType]}.${sharedLine} Would love to connect.`, 300);
+      const followUp = compact(`${greetingMap[recipientType]}, following up on my earlier note regarding ${purpose}. I am preparing for ${targetRole} roles and would appreciate brief guidance.${sharedLine} ${toneTail[tone]}`, 300);
+      const networkingIntro = compact(`${greetingMap[recipientType]}, I am focused on ${targetRole}. ${trimmedBackground} I am reaching out to learn from your experience around ${purpose}.${sharedLine} ${toneTail[tone]}`, 300);
 
       const optionsList = [
         {
@@ -654,7 +720,6 @@
         type: 'cards',
         items: rotated.map((item, index) => ({
           ...item,
-          label: index === 0 ? 'Best Pick' : item.label,
           bestPick: index === 0,
           copyText: item.text
         })),
@@ -663,39 +728,48 @@
     },
     'job-description-analyzer': (values, options = {}) => {
       const variant = Number(options.variant || 0);
-      const jobDescription = String(values.jobDescription || '').toLowerCase();
-      const userSkills = normalizeCommaList(values.userSkills).map((skill) => skill.toLowerCase());
+      const jobDescription = String(values.jobDescription || '').trim().toLowerCase();
+      const userSkillsRaw = normalizeCommaList(values.userSkills);
+      const userSkills = userSkillsRaw.map((skill) => skill.toLowerCase());
       const experienceLevel = String(values.experienceLevel || 'fresher').trim();
       const targetRole = String(values.targetRole || '').trim();
       const resumeSummary = String(values.resumeSummary || '').trim();
       const tone = String(values.tone || 'clear').toLowerCase();
 
       const jdKeywords = extractKeywords(jobDescription, 18);
-      const matchedSkills = userSkills.filter((skill) => jdKeywords.some((keyword) => keyword.includes(skill) || skill.includes(keyword)));
-      const missingSkills = jdKeywords.filter((keyword) => !matchedSkills.some((skill) => skill.includes(keyword))).slice(0, 7);
+      const matchedSkills = userSkillsRaw.filter((skill, index) => {
+        const lowered = userSkills[index];
+        return jdKeywords.some((keyword) => keyword.includes(lowered) || lowered.includes(keyword));
+      });
+      const missingSkills = jdKeywords
+        .filter((keyword) => !userSkills.some((skill) => skill.includes(keyword) || keyword.includes(skill)))
+        .slice(0, 7);
       const resumeKeywords = jdKeywords.slice(0, 10);
 
-      const rawScore = Math.min(95, Math.max(25, Math.round((matchedSkills.length / Math.max(1, matchedSkills.length + missingSkills.length)) * 100)));
+      const baseScore = Math.round((matchedSkills.length / Math.max(1, matchedSkills.length + missingSkills.length)) * 100);
+      const experienceBonus = experienceLevel === '1-3 years' ? 8 : experienceLevel === '0-1 years' ? 4 : 0;
+      const roleBoost = targetRole && jobDescription.includes(targetRole.toLowerCase()) ? 4 : 0;
+      const rawScore = Math.min(92, Math.max(22, baseScore + experienceBonus + roleBoost));
       const fitLevel = rawScore >= 75 ? 'Strong Match' : rawScore >= 55 ? 'Moderate Match' : 'Low Match';
       const verdict = rawScore >= 75
-        ? 'You appear to be a strong fit. Focus on role-specific examples and outcomes.'
+        ? 'You appear to be a strong fit for this role. Keep your application specific and evidence-based.'
         : rawScore >= 55
-          ? 'You are a partial fit. Improve missing skills and tailor your resume to responsibilities.'
-          : 'Current match is weak. Build core skills first and apply strategically.';
+          ? 'You are a partial fit. Improve key gaps and tailor your resume before applying.'
+          : 'Current fit appears weak. Build missing skills first, then apply strategically to similar roles.';
 
       const tailoringTips = [
         `Place ${matchedSkills.slice(0, 3).join(', ') || 'your strongest relevant skills'} near the top of your resume.`,
-        `Add job-specific keywords like ${resumeKeywords.slice(0, 4).join(', ')} in projects and summary.`,
+        `Add role keywords such as ${resumeKeywords.slice(0, 4).join(', ')} in your summary and project bullets.`,
         missingSkills.length
-          ? `Upskill on: ${missingSkills.slice(0, 3).join(', ')} before applying broadly.`
-          : 'You already cover most visible skill signals from this job description.'
+          ? `Prioritize these gaps first: ${missingSkills.slice(0, 3).join(', ')}.`
+          : 'You cover most visible skill signals from this job description. Focus on outcomes and evidence.'
       ];
 
       const toneNote = tone === 'detailed'
-        ? `Analysis depth: detailed. Experience level considered: ${experienceLevel}.`
+         ? `Detailed analysis mode. Experience level considered: ${experienceLevel}.`
         : tone === 'beginner-friendly'
-          ? `Analysis depth: beginner friendly. Start with one core skill gap at a time.`
-          : `Analysis depth: clear and concise.`;
+          ? 'Beginner-friendly mode. Work on one skill gap at a time and apply in focused batches.'
+          : 'Clear mode. Quick, practical analysis for faster decisions.';
 
       const cards = [
         {
@@ -748,6 +822,15 @@
       const fieldOfStudy = String(values.fieldOfStudy || '').trim();
       const specialInterest = String(values.specialInterest || '').trim();
 
+      const interestLabelMap = {
+        sports: 'Sports',
+        women: 'Women',
+        research: 'Research',
+        'financial-support': 'Financial Support',
+        stem: 'STEM',
+        arts: 'Arts'
+      };
+      
       const baseTypes = [
         {
           scholarshipType: `${needType === 'merit-based' ? 'Merit Scholarship' : needType === 'need-based' ? 'Need-Based Financial Aid' : 'General Academic Scholarship'} (${educationLevel})`,
@@ -762,9 +845,9 @@
           nextStep: 'Check your state government scholarship portal and verify eligibility filters.'
         },
         {
-          scholarshipType: `${specialInterest ? `${specialInterest.toUpperCase()}-Focused Scholarship Categories` : 'Field and Profile-Based Scholarship Categories'}`,
+          scholarshipType: `${specialInterest ? `${interestLabelMap[specialInterest] || specialInterest}-Focused Scholarship Categories` : 'Field and Profile-Based Scholarship Categories'}`,
           suitableFor: specialInterest
-            ? `Students with profile focus in ${specialInterest} and consistent academic record (${academicPerformance}).`
+            ? `Students with profile focus in ${interestLabelMap[specialInterest] || specialInterest} and consistent academic record (${academicPerformance}).`
             : `Students with relevant achievements and consistent performance (${academicPerformance}).`,
           prepare: ['Proof of achievements/projects', 'Recommendation letter', 'Resume/CV', 'Statement of purpose'],
           nextStep: 'Shortlist official scholarship categories from trusted portals and compare document requirements.'
@@ -773,15 +856,20 @@
 
       const rotated = baseTypes.map((_, index) => baseTypes[(index + (variant % baseTypes.length)) % baseTypes.length]);
       const items = rotated.map((entry, index) => ({
-        label: index === 0 ? 'Best Pick' : `Scholarship Type ${index + 1}`,
+        label: `Recommendation ${index + 1}`,
         title: entry.scholarshipType,
-        text: `Suitable for: ${entry.suitableFor}`,
+        text: needType === 'need-based'
+          ? 'Funding-first recommendation based on your profile context.'
+          : needType === 'merit-based'
+            ? 'Merit-first recommendation based on your academic profile.'
+            : 'Balanced recommendation based on your profile and context.',
         rows: [
+          `Who it suits: ${entry.suitableFor}`,
           `What to prepare: ${entry.prepare.join(', ')}`,
           `Next step: ${entry.nextStep}`
         ],
         bestPick: index === 0,
-        copyText: `${entry.scholarshipType}\nSuitable for: ${entry.suitableFor}\nWhat to prepare: ${entry.prepare.join(', ')}\nNext step: ${entry.nextStep}`
+        copyText: `${entry.scholarshipType}\nWho it suits: ${entry.suitableFor}\nWhat to prepare: ${entry.prepare.join(', ')}\nNext step: ${entry.nextStep}`
       }));
 
       return {
@@ -824,13 +912,20 @@
       if (goal === 'entrepreneurship') {
         pool.unshift({ title: 'Startup Generalist', why: 'Broad ownership mindset fits early-stage entrepreneurship goals.', skills: ['Problem validation', 'Basic marketing', 'Execution discipline'], step: 'Solve one local problem with a simple MVP.' });
       }
+      if (goal === 'freelancing') {
+        pool.unshift({ title: 'Freelance Content & Growth Specialist', why: 'Freelancing goal aligns with service-based execution and portfolio building.', skills: ['Client communication', 'Proposal writing', 'Delivery systems'], step: 'Create 2 sample client projects and one profile page.' });
+      }
+      if (goal === 'higher-studies') {
+        pool.unshift({ title: 'Research Preparation Track', why: 'Higher-studies goal aligns with structured academic exploration.', skills: ['Literature review', 'Academic writing', 'Problem framing'], step: 'Shortlist target programs and build one mini research portfolio.' });
+      }
 
       const selected = pool.slice(0, 5).map((path, index) => {
         const strengthText = strengths.slice(0, 3).join(', ') || 'your current strengths';
+        const stageLabel = stage === 'school' ? 'school stage' : stage === 'college' ? 'college stage' : stage === 'graduate' ? 'graduate stage' : 'fresher stage';
         return {
-          label: index === 0 ? 'Best Match' : index === 1 ? 'Suitable Path' : 'Beginner Friendly',
+          label: 'Suitable Path',
           title: path.title,
-          text: `Why it fits: ${path.why} Profile signals considered: ${workStyle} style, ${stage} stage, strengths like ${strengthText}.`,
+          text: `Why it fits: ${path.why} Profile signals considered: ${workStyle} style, ${stageLabel}, strengths like ${strengthText}.`,
           rows: [
             `Skills to learn: ${path.skills.join(', ')}`,
             `Suggested next step: ${path.step}`
@@ -842,8 +937,10 @@
 
       const rotated = selected.map((_, index) => selected[(index + (variant % selected.length)) % selected.length]).slice(0, 5);
       if (rotated.length) {
-        rotated[0].bestPick = true;
-        rotated[0].label = 'Best Match';
+        rotated.forEach((item, index) => {
+          item.bestPick = index === 0;
+          item.label = index === 0 ? 'Best Match' : index <= 2 ? 'Suitable Path' : 'Beginner Friendly';
+        });
       }
 
       return {
@@ -866,9 +963,9 @@
       const isShort = platform === 'youtube-shorts' || platform === 'instagram-reels';
       const formatLabel = isShort ? 'Short Form' : 'Long Form';
       const hookTemplates = [
-        `Stop scrolling if you care about ${topic}.`,
-        `Most people get ${topic} wrong—here’s why.`,
-        `If you are ${audience}, this will save you time.`
+        `Stop scrolling—${topic} is easier than you think.`,
+        `Most creators get ${topic} wrong. Here’s the fix.`,
+        `${audience ? `${audience},` : 'Quick one:'} this can save you time today.`
       ];
       const ctas = [
         'Comment your biggest takeaway.',
@@ -879,7 +976,7 @@
       const makeScript = (index) => {
         const hook = hookTemplates[(index + variant) % hookTemplates.length];
         const mainPoints = isShort
-          ? [`Point 1: Quick insight on ${topic}.`, `Point 2: One mistake to avoid for ${audience}.`, `Point 3: Action step you can apply today.`]
+          ? [`Point 1: Quick insight on ${topic}.`, `Point 2: One mistake to avoid for ${audience || 'your audience'}.`, `Point 3: Action step you can apply today.`]
           : [`Intro: Why ${topic} matters for ${audience}.`, `Body 1: Core concept and common mistake.`, `Body 2: Real example or mini framework.`, `Outro: Summary + next action.`];
         const title = isShort
           ? `${topic}: ${goal} Script Idea ${index + 1}`
@@ -896,14 +993,16 @@
             `Main points: ${mainPoints.join(' | ')}`,
             `CTA: ${ctas[(index + variant) % ctas.length]}`,
             `Shot/Scene: ${shot}`,
-            `Thumbnail/Title variant: ${keywords[0] ? `${topic} + ${keywords[0]} = Better Results` : `${topic}: Do This Instead`}`
+            `Thumbnail text: ${keywords[0] ? `${keywords[0]} Mistakes to Avoid` : `${topic}: Start Here`}`,
+            `Title variant: ${keywords[0] ? `${topic} for ${audience} (${keywords[0]} Edition)` : `${topic}: Do This Instead`}`
           ],
           bestPick: index === 0,
+          note: length ? `Length target: ${length}` : '',
           copyText: `${title}\nHook: ${hook}\n${mainPoints.join('\n')}\nCTA: ${ctas[(index + variant) % ctas.length]}\n${shot}${length ? `\nLength target: ${length}` : ''}`
         };
       };
 
-      const count = isShort ? 3 : 4;
+      const count = isShort ? 3 : (keywords.length ? 5 : 4);
       const items = Array.from({ length: count }, (_, i) => makeScript(i));
       return {
         type: 'cards',
@@ -1857,12 +1956,22 @@
 
     if (tool.id === 'linkedin-networking-message-generator') {
       const purpose = String(values.purpose || '').trim();
-      if (purpose.length < 10) {
+      const background = String(values.background || '').trim();
+      const role = String(values.targetRole || '').trim();
+      if (purpose.length < 10 || background.length < 12 || role.length < 3) {
+        const fieldErrors = {};
+        if (purpose.length < 10) {
+          fieldErrors.purpose = 'Please add a clearer purpose so the message sounds specific.';
+        }
+        if (background.length < 12) {
+          fieldErrors.background = 'Please add a little more background so your message feels credible.';
+        }
+        if (role.length < 3) {
+          fieldErrors.targetRole = 'Please enter your target role.';
+        }
         return {
-          fieldErrors: {
-            purpose: 'Please add a clearer purpose so the message sounds specific.'
-          },
-          formError: 'Please correct the highlighted field.'
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
         };
       }
     }
@@ -2015,7 +2124,7 @@
     } else if (field.type === 'textarea') {
       input = document.createElement('textarea');
       input.className = 'field-textarea';
-      input.rows = 4;
+      input.rows = Number(field.rows) > 0 ? Number(field.rows) : 4;
       if (field.placeholder) {
         input.placeholder = field.placeholder;
       }
@@ -2197,8 +2306,8 @@
       }
 
       if (content.text) {
-        const textNode = document.createElement('p');
-        textNode.className = 'mt-2 text-sm text-slate-700';
+        const textNode = document.createElement(content.multiline ? 'pre' : 'p');
+        textNode.className = content.multiline ? 'tool-output-text mt-2' : 'mt-2 text-sm text-slate-700';
         textNode.textContent = content.text;
         card.appendChild(textNode);
       }
