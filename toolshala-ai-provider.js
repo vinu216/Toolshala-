@@ -13,8 +13,12 @@
   ]);
 
   const normalizeResumeResult = (payload) => {
-    const items = Array.isArray(payload?.headlines)
-      ? payload.headlines
+    const root = payload?.result && typeof payload.result === 'object'
+      ? payload.result
+      : payload;
+
+    const items = Array.isArray(root?.headlines)
+      ? root.headlines
           .map((entry, index) => {
             const text = String(entry?.text || '').trim();
             if (!text) return null;
@@ -23,8 +27,8 @@
           })
           .filter(Boolean)
           .slice(0, 5)
-      : Array.isArray(payload?.items)
-        ? payload.items
+      : Array.isArray(root?.items)
+        ? root.items
         : [];
 
     return items.length ? { type: 'cards', items } : null;
@@ -298,7 +302,13 @@ Suggested next step: ${nextStep}`
     async generate({ toolId, values }) {
       if (!SUPPORTED_TOOLS.has(toolId)) throw new Error('Unsupported remote tool.');
 
-      const response = await fetch('/api/generate-tool', {
+      const configuredBase = typeof window !== 'undefined' ? String(window.TOOLSHALA_API_BASE || '').trim() : '';
+      const host = typeof window !== 'undefined' ? window.location.hostname : '';
+      const fallbackBase = host.endsWith('github.io') ? 'https://toolshala.in' : '';
+      const apiBase = configuredBase || fallbackBase;
+      const apiUrl = `${apiBase}/api/generate-tool`;
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
