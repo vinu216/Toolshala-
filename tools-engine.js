@@ -217,72 +217,73 @@
       const variant = Number(options.variant || 0);
       const skills = normalizeCommaList(values.skills);
       const topSkills = skills.slice(0, 4);
+      const skillSnippet = topSkills.join(', ');
       const tone = String(values.tone || 'professional').toLowerCase();
       const experience = String(values.experience || 'Fresher').trim();
       const achievement = String(values.achievement || '').trim();
       const industry = String(values.industry || '').trim();
       const role = String(values.role || '').trim();
-      const name = String(values.name || '').trim();
 
-      const experienceLine = experience === 'Fresher'
-        ? 'fresher focused on practical learning and consistent execution'
-        : `early-career ${role} profile with ${experience.toLowerCase()} experience`;
+      const careerStage = experience === 'Fresher'
+        ? `Fresher ${role} candidate`
+        : `${role} candidate with ${experience.toLowerCase()} exposure`;
 
-      const toneOpener = {
-        professional: `${name} is a ${experienceLine}`,
-        confident: `${name} is a driven ${role} candidate with a ${experience === 'Fresher' ? 'strong fresher mindset' : `solid ${experience.toLowerCase()} foundation`}`,
-        simple: `${name} is building a career as a ${role}`,
-        'ats-friendly': `${role} candidate with ${experience.toLowerCase()} exposure and role-relevant skills`
+      const toneOpeners = {
+        professional: `${careerStage} with a strong foundation in ${skillSnippet}`,
+        confident: `Motivated ${careerStage.toLowerCase()} focused on ${skillSnippet}`,
+        simple: `${careerStage} skilled in ${skillSnippet}`,
+        'ats-friendly': `${careerStage}; key skills: ${skillSnippet}`
       };
 
-      const strengthLine = achievement
-        ? `Key strength: ${achievement}.`
-        : 'Known for being reliable, detail-focused, and quick to learn in team environments.';
+      const achievementLine = achievement
+        ? `Strength highlight: ${achievement}.`
+        : 'Brings a learning-first mindset, ownership, and consistent execution.';
 
-      const industryLine = industry
-        ? `Interested in contributing to ${industry} roles with practical, job-ready execution.`
-        : 'Open to internship and entry-level opportunities where impact and growth go together.';
+      const domainLine = industry
+        ? `Interested in ${industry} opportunities where practical contribution matters from day one.`
+        : 'Open to internship and entry-level opportunities with real project impact.';
 
       const templates = [
         {
-          label: 'Best Pick',
-          text: `${toneOpener[tone] || toneOpener.professional}. Skilled in ${topSkills.join(', ')}. ${strengthLine} ${industryLine}`,
-          hashtags: ['Best Pick', 'ATS-Friendly', 'Skills Focused', 'Professional'],
-          bestPick: true
+          text: `${toneOpeners[tone] || toneOpeners.professional}. ${achievementLine} ${domainLine}`,
+          hashtags: ['Best Pick', 'ATS-Friendly', 'Skills Focused', 'Professional']
         },
         {
-          label: 'Summary Option 2',
-          text: `Aspiring ${role} with strengths in ${topSkills.join(', ')} and a clear focus on delivering structured outcomes. ${industry ? `Focused on ${industry} use-cases and business impact.` : 'Focused on internship and fresher-level impact.'}`,
+          text: `Aspiring ${role} with skills in ${skillSnippet}. Focused on delivering clean, role-aligned outcomes and growing through hands-on work.`,
           hashtags: ['ATS-Friendly', 'Skills Focused']
         },
         {
-          label: 'Summary Option 3',
-          text: `${experience === 'Fresher' ? 'Motivated fresher' : `Early-career professional (${experience})`} targeting ${role} opportunities. Brings practical ability in ${topSkills.slice(0, 3).join(', ')} with a learning-first, ownership-driven approach.`,
+          text: `${experience === 'Fresher' ? 'Career starter' : `Early-career profile (${experience})`} targeting ${role} roles. Combines ${topSkills.slice(0, 3).join(', ')} with communication, adaptability, and attention to detail.`,
           hashtags: ['Professional', 'Entry-Level Ready']
         },
         {
-          label: 'Summary Option 4',
-          text: `${role} profile with role-aligned skills in ${topSkills.join(', ')} and strong communication, collaboration, and execution habits. ${achievement ? `Notable strength: ${achievement}.` : 'Committed to continuous improvement and measurable contribution.'}`,
+          text: `${role} profile with practical strengths in ${skillSnippet}. ${achievement ? `Notable strength: ${achievement}.` : 'Known for reliability and quick learning in collaborative environments.'}`,
           hashtags: ['Professional', 'ATS-Friendly']
         },
         {
-          label: 'Summary Option 5',
-          text: `Career-focused ${role} candidate prepared for internships and entry-level roles. Combines ${topSkills.slice(0, 3).join(', ')} with discipline, adaptability, and a result-oriented mindset.`,
+          text: `Prepared for internship and fresher-level ${role} opportunities with working knowledge of ${topSkills.slice(0, 3).join(', ')} and a problem-solving approach.`,
           hashtags: ['Simple', 'Job-Ready']
         }
       ];
 
-      const rotated = templates.map((item, index) => templates[(index + variant) % templates.length]).slice(0, 5);
-      const finalItems = rotated.map((item, index) => ({
-        ...item,
-        label: index === 0 ? 'Best Pick' : `Summary Option ${index + 1}`,
-        bestPick: index === 0,
-        copyText: item.text
-      }));
+      const finalItems = templates
+        .map((_, index) => templates[(index + variant) % templates.length])
+        .slice(0, 5)
+        .map((item, index) => ({
+          ...item,
+          label: index === 0 ? 'Best Pick' : `Summary Option ${index + 1}`,
+          bestPick: index === 0,
+          copyText: item.text
+        }));
 
       return {
         type: 'cards',
-        items: finalItems
+        items: finalItems,
+        outputTips: [
+          'Keep it concise.',
+          'Match the target role.',
+          'Mention strongest skills first.'
+        ]
       };
     },
     'interview-answer-generator': (values, options = {}) => {
