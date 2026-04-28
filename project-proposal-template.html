@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Proposal Template for Students & Freelancers | ToolShala</title>
+    <meta
+      name="description"
+      content="Use this structured project proposal template for freelance, academic, internship, and internal projects. Edit, copy, print, and reset quickly."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+          <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a>
+          <a class="nav-link" href="./career.html">Career</a>
+          <a class="nav-link nav-active" href="./templates.html">Templates</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
+          <a href="./templates.html" class="btn-primary ml-1">Back to Library</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel>
+        <div class="space-y-1 px-4 py-4">
+          <a class="nav-link mobile-nav-link" href="./index.html">Home</a>
+          <a class="nav-link mobile-nav-link" href="./templates.html">Templates</a>
+          <a class="nav-link mobile-nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link mobile-nav-link" href="./career.html">Career</a>
+          <a class="nav-link mobile-nav-link" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-wrap">
+      <section class="proposal-template-hero reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Template by ToolShala</p>
+        <h1>Project Proposal Template</h1>
+        <p>
+          Build a clear and convincing proposal for freelance work, academic projects, internships, or internal ideas.
+          Pick a version, edit the sections, and share a professional proposal in minutes.
+        </p>
+      </section>
+
+      <div class="proposal-template-layout">
+        <aside class="feature-card reveal">
+          <h2>How to use this template</h2>
+          <ol class="how-to-list">
+            <li>Select the version that best fits your use case.</li>
+            <li>Start with project title, problem statement, and objective.</li>
+            <li>Define timeline, deliverables, and scope in practical terms.</li>
+            <li>Keep budget/resources transparent where needed.</li>
+            <li>Review once before sharing with client, mentor, or team.</li>
+          </ol>
+
+          <div class="tips-block">
+            <h3>Proposal Tips</h3>
+            <ul>
+              <li>Be specific about the problem and expected outcome.</li>
+              <li>Define deliverables clearly.</li>
+              <li>Keep the proposal short but complete.</li>
+              <li>Mention timeline and value upfront.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="feature-card reveal">
+          <div class="template-toolbar">
+            <button type="button" class="btn-secondary" id="copyProposalTemplate">Copy Proposal</button>
+            <button type="button" class="btn-primary" id="printProposalTemplate">Download / Print</button>
+            <button type="button" class="btn-secondary" id="resetProposalTemplate">Reset</button>
+          </div>
+          <p class="copy-feedback hidden" id="proposalTemplateFeedback"></p>
+
+          <div class="example-switcher" id="proposalVersionSwitcher" aria-label="Project proposal versions"></div>
+
+          <article class="proposal-preview" aria-live="polite">
+            <section class="proposal-block">
+              <h2>Project Title</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="title"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Problem Statement</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="problem"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Objective</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="objective"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Scope of Work</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="scope"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Timeline</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="timeline"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Deliverables</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="deliverables"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Budget / Resources</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="budget"></div>
+            </section>
+            <section class="proposal-block">
+              <h2>Conclusion</h2>
+              <div class="editable-block" contenteditable="true" data-proposal-field="conclusion"></div>
+            </section>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./project-proposal-template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

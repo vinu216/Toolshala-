@@ -118,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const copySopText = async () => {
+    if (!buildSopText().trim()) {
+      setFeedback('Please add SOP content before copying.', true);
+      return;
+    }
     try {
       await navigator.clipboard.writeText(buildSopText());
       setFeedback('SOP copied. Customize it for your target application.');
@@ -129,6 +133,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetActiveStyle = () => {
     hydrateFields(getActiveStyle().values);
     setFeedback('Template reset to selected style defaults.');
+  };
+
+  const setSopData = (payload) => {
+    if (!payload || typeof payload !== 'object') return false;
+    const target = getActiveStyle();
+    if (!target) return false;
+    let updated = false;
+
+    ['introduction', 'background', 'motivation', 'achievements', 'goals', 'whyUniversity', 'conclusion'].forEach((key) => {
+      if (typeof payload[key] === 'string' && payload[key].trim()) {
+        target.values[key] = payload[key].trim();
+        updated = true;
+      }
+    });
+
+    if (updated) hydrateFields(target.values);
+    return updated;
+  };
+
+  window.ToolShalaSOPTemplateAPI = {
+    getActiveStyle,
+    getSopText: buildSopText,
+    setSopData
   };
 
   renderSwitcher();
