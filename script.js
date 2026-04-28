@@ -611,7 +611,11 @@ document.addEventListener('DOMContentLoaded', () => {
           'data-preview': template.preview
         });
 
-        return `<article class="template-card reveal"${attrs}><span class="template-badge">${escapeHtml(template.categoryLabel)}</span><h3>${escapeHtml(template.title)}</h3><p>${escapeHtml(template.description)}</p><p class="card-helper-text">Use as a starting point and customize to fit your needs.</p><p class="template-meta">${Number(template.downloads || 0).toLocaleString('en-IN')}+ downloads • Updated ${formatPublishedDate(template.publishedAt)}</p><div class="template-actions"><button type="button" class="btn-secondary" data-template-preview>View Template</button><button type="button" class="btn-primary" data-template-download>Download Template</button></div><pre class="hidden" data-template-body>${escapeHtml(template.content || template.preview || '')}</pre></article>`;
+        const templateLink = template.pageUrl
+          ? `<a href="${escapeHtml(template.pageUrl)}" class="btn-secondary">Open Template</a>`
+          : `<button type="button" class="btn-secondary" data-template-preview>View Template</button>`;
+
+        return `<article class="template-card reveal"${attrs}><span class="template-badge">${escapeHtml(template.categoryLabel)}</span><h3>${escapeHtml(template.title)}</h3><p>${escapeHtml(template.description)}</p><p class="card-helper-text">Use as a starting point and customize to fit your needs.</p><p class="template-meta">${Number(template.downloads || 0).toLocaleString('en-IN')}+ downloads • Updated ${formatPublishedDate(template.publishedAt)}</p><div class="template-actions">${templateLink}<button type="button" class="btn-primary" data-template-download>Download Template</button></div><pre class="hidden" data-template-body>${escapeHtml(template.content || template.preview || '')}</pre></article>`;
       }
     });
   };

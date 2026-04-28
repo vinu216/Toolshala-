@@ -3314,3 +3314,343 @@ select:focus-visible {
     opacity: 1;
   }
 }
+
+/* ATS resume template page */
+.resume-template-hero {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 62%);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.resume-template-hero h1 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.resume-template-hero p {
+  margin-top: 0.8rem;
+  max-width: 70ch;
+  color: #475569;
+}
+
+.resume-template-layout {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.how-to-list {
+  margin-top: 0.85rem;
+  padding-left: 1.1rem;
+  color: #475569;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.tips-block {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #dbeafe;
+  background: #f8faff;
+  padding: 0.9rem;
+}
+
+.tips-block h3 {
+  color: #3730a3;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tips-block ul {
+  margin-top: 0.55rem;
+  padding-left: 1rem;
+  color: #475569;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.template-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.resume-preview {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.resume-section + .resume-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.resume-section h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.editable-block {
+  margin-top: 0.45rem;
+  white-space: pre-wrap;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  min-height: 3.4rem;
+  padding: 0.7rem 0.8rem;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
+.editable-block:focus {
+  outline: 2px solid #c7d2fe;
+  border-color: #818cf8;
+}
+
+.section-guidance {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+@media (min-width: 1024px) {
+  .resume-template-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .template-toolbar,
+  .how-to-list,
+  .tips-block,
+  .copy-feedback,
+  .section-guidance,
+  .resume-template-hero {
+    display: none !important;
+  }
+
+  .feature-card,
+  .resume-preview,
+  .resume-section,
+  .editable-block {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-section + .resume-section {
+    margin-top: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    border-top: 1px solid #e2e8f0 !important;
+  }
+}
+
+/* Professional email format template page */
+.email-template-hero {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(130deg, #eef2ff 0%, #ffffff 65%);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+}
+
+.email-template-hero h1 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.email-template-hero p {
+  margin-top: 0.75rem;
+  max-width: 72ch;
+  color: #475569;
+}
+
+.email-template-layout {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.example-switcher {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.email-preview {
+  margin-top: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.email-block + .email-block {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.email-block h2 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (min-width: 1024px) {
+  .email-template-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+@media print {
+  .email-template-hero,
+  .example-switcher {
+    display: none !important;
+  }
+}
+
+/* Internship cover letter template page */
+.cover-template-hero {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(130deg, #eef2ff 0%, #ffffff 66%);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+}
+
+.cover-template-hero h1 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.cover-template-hero p {
+  margin-top: 0.75rem;
+  max-width: 72ch;
+  color: #475569;
+}
+
+.cover-template-layout {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.cover-preview {
+  margin-top: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.cover-block + .cover-block {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cover-block h2 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (min-width: 1024px) {
+  .cover-template-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+@media print {
+  .cover-template-hero,
+  #coverExampleSwitcher {
+    display: none !important;
+  }
+}
+
+/* SOP template page */
+.sop-template-hero {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: linear-gradient(130deg, #eef2ff 0%, #ffffff 66%);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+}
+
+.sop-template-hero h1 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.sop-template-hero p {
+  margin-top: 0.75rem;
+  max-width: 72ch;
+  color: #475569;
+}
+
+.sop-template-layout {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.sop-preview {
+  margin-top: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.sop-block + .sop-block {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.sop-block h2 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (min-width: 1024px) {
+  .sop-template-layout {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+@media print {
+  .sop-template-hero,
+  #sopStyleSwitcher {
+    display: none !important;
+  }
+}

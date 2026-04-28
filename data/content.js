@@ -477,58 +477,66 @@ window.ToolShalaContent = {
       {
         id: 'tpl-ats-resume-template',
         slug: 'ats-resume-template',
-        title: 'ATS Resume Template',
+        title: 'ATS-Friendly Resume Template',
         category: 'resume',
         categoryLabel: 'Resume',
-        description: 'One-page format with internship, project, and skill sections optimized for recruiter scans.',
-        preview: 'ATS-focused one-page resume for students and freshers.',
-        content: 'NAME\nPhone | Email | LinkedIn | City\n\nSUMMARY\nMotivated fresher targeting [Role], skilled in [Skill 1], [Skill 2], [Skill 3].',
+        description: 'Premium one-page structure for students and freshers with practical sections and ATS-safe formatting.',
+        preview: 'Clean single-column resume starter for internships, fresher jobs, and entry-level roles.',
+        content:
+          'NAME\nPhone | Email | LinkedIn | City\n\nCAREER OBJECTIVE\nEntry-level applicant targeting [Role] with strengths in [Skill 1], [Skill 2], and [Skill 3].\n\nEDUCATION\n[Degree], [College], [Year], CGPA/Percentage\n\nSKILLS\nTechnical: ...\nSoft Skills: ...\n\nPROJECTS\n- [Project Name]: [Problem solved + measurable result]',
         publishedAt: '2026-03-20',
         featured: true,
         downloads: 13200,
+        pageUrl: './ats-friendly-resume-template.html',
         tags: ['resume', 'ats', 'fresher']
       },
       {
         id: 'tpl-professional-email-template',
         slug: 'professional-email-template',
-        title: 'Professional Email Template',
+        title: 'Professional Email Format',
         category: 'email',
         categoryLabel: 'Email',
-        description: 'Ready structure for reaching recruiters, mentors, and internship hiring managers.',
-        preview: 'Formal email format for internships and networking.',
-        content: 'Subject: Application for [Role] - [Your Name]\n\nDear [Recipient Name],\n\nI hope you are doing well. I am [Name]...',
+        description: 'Polished email structure for internship outreach, job applications, follow-ups, and professional requests.',
+        preview: 'Editable professional email format with subject, greeting, body, and signature blocks.',
+        content:
+          'Subject: Application for [Role] Internship - [Your Name]\n\nDear [Recipient Name],\n\nI hope you are doing well. I am [Your Name], a [Year/Program] student at [College Name]. I am writing to apply for the [Role] position at [Company Name].\n\nThank you for your time and consideration.\n\nBest regards,\n[Your Name]',
         publishedAt: '2026-03-22',
         featured: false,
         downloads: 9800,
-        tags: ['email', 'internship']
+        pageUrl: './professional-email-format-template.html',
+        tags: ['email', 'internship', 'follow-up', 'request']
       },
       {
         id: 'tpl-internship-cover-letter',
         slug: 'internship-cover-letter-template',
-        title: 'Internship Cover Letter',
+        title: 'Internship Cover Letter Template',
         category: 'cover-letter',
         categoryLabel: 'Cover Letter',
-        description: 'Clear intro, role alignment, and project proof format for internship applications.',
-        preview: 'Role-specific cover letter with impact-focused paragraphs.',
-        content: 'Dear Hiring Manager,\n\nI am excited to apply for the [Role] internship at [Company]...',
+        description: 'Structured and beginner-friendly cover letter layout for internship applications with strong personalization prompts.',
+        preview: 'Editable internship cover letter format with applicant, recipient, project, and closing sections.',
+        content:
+          'Dear [Recipient Name],\n\nI am excited to apply for the [Role] Internship at [Company Name]. I am a [Year] student at [College Name] with hands-on experience in [skills].\n\nIn my [project/internship], I [specific work] and achieved [result].\n\nThank you for your time and consideration.\n\nSincerely,\n[Your Name]',
         publishedAt: '2026-03-24',
         featured: false,
         downloads: 8700,
-        tags: ['cover-letter', 'jobs']
+        pageUrl: './internship-cover-letter-template.html',
+        tags: ['cover-letter', 'internship', 'fresher']
       },
       {
         id: 'tpl-sop-template',
         slug: 'sop-template-higher-studies',
-        title: 'SOP Template for Higher Studies',
+        title: 'Statement of Purpose (SOP) Template',
         category: 'sop',
         categoryLabel: 'SOP',
-        description: 'Guided flow for purpose, academic journey, goals, and course alignment.',
-        preview: 'Structured SOP with story, motivation, and future plan.',
-        content: '1. Introduction\n2. Academic background\n3. Projects and outcomes\n4. Why this program\n5. Career goals\n6. Closing',
+        description: 'Professional SOP structure for university, scholarship, and academic program applications.',
+        preview: 'Editable SOP layout with introduction, background, goals, and university-fit sections.',
+        content:
+          'Introduction: [Who you are and what you are applying for]\n\nAcademic Background: [Degree, key subjects, learning foundation]\n\nMotivation: [Why this field and why now]\n\nAchievements/Projects: [Relevant proof of work and outcomes]\n\nCareer Goals: [Short-term and long-term direction]\n\nWhy this University/Program: [Specific fit and value]\n\nConclusion: [Confident close and readiness]',
         publishedAt: '2026-03-25',
         featured: false,
         downloads: 7600,
-        tags: ['sop', 'higher-studies']
+        pageUrl: './statement-of-purpose-template.html',
+        tags: ['sop', 'scholarship', 'university']
       },
       {
         id: 'tpl-weekly-study-planner',
