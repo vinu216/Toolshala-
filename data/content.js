@@ -507,6 +507,70 @@ window.ToolShalaContent = {
         tags: ['email', 'internship', 'follow-up', 'request']
       },
       {
+        id: 'tpl-leave-application-template',
+        slug: 'leave-application-template',
+        title: 'Leave Application Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Respectful leave application format for school, college, and office use with quick personalization prompts.',
+        preview: 'Editable leave application layout with sender, recipient, subject, duration, and approval request sections.',
+        content:
+          'To,\n[Recipient Name/Designation]\n\nSubject: Request for Leave from [Start Date] to [End Date]\n\nRespected Sir/Madam,\nI request leave from [Start Date] to [End Date] due to [Reason].\nKindly approve my leave request.\n\nSincerely,\n[Your Name]',
+        publishedAt: '2026-03-23',
+        featured: false,
+        downloads: 9100,
+        pageUrl: './leave-application-template.html',
+        tags: ['leave', 'application', 'school', 'office']
+      },
+      {
+        id: 'tpl-apology-letter-template',
+        slug: 'apology-letter-template',
+        title: 'Apology Letter Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Respectful apology letter format for school, college, and office communication with editable sections.',
+        preview: 'Editable apology letter layout with opening apology, explanation, responsibility, and assurance sections.',
+        content:
+          'To,\n[Recipient Name/Designation]\n\nSubject: Apology for [Issue]\n\nRespected Sir/Madam,\nI sincerely apologize for [Issue]. It happened due to [Reason].\nI take responsibility and assure you this will not happen again.\n\nSincerely,\n[Your Name]',
+        publishedAt: '2026-03-23',
+        featured: false,
+        downloads: 7800,
+        pageUrl: './apology-letter-template.html',
+        tags: ['apology', 'formal', 'school', 'office']
+      },
+      {
+        id: 'tpl-salary-negotiation-email-template',
+        slug: 'salary-negotiation-email-template',
+        title: 'Salary Negotiation Email Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Professional salary negotiation email format for freshers and job seekers after receiving an offer.',
+        preview: 'Editable salary negotiation email with appreciation, offer discussion, justification, and polite close.',
+        content:
+          'Subject: Offer Discussion for [Role] - [Your Name]\n\nDear [Hiring Manager Name],\n\nThank you for the offer. I am excited about the role.\nI wanted to discuss the compensation package and request consideration for [Expected Range], based on my skills and market benchmarks.\n\nI look forward to your guidance.\n\nBest regards,\n[Your Name]',
+        publishedAt: '2026-03-24',
+        featured: false,
+        downloads: 7300,
+        pageUrl: './salary-negotiation-email-template.html',
+        tags: ['salary', 'negotiation', 'email', 'offer']
+      },
+      {
+        id: 'tpl-project-proposal-template',
+        slug: 'project-proposal-template',
+        title: 'Project Proposal Template',
+        category: 'cover-letter',
+        categoryLabel: 'Cover Letter',
+        description: 'Structured and practical project proposal template for freelance, internship, and academic use cases.',
+        preview: 'Editable proposal format with title, scope, timeline, deliverables, budget/resources, and conclusion sections.',
+        content:
+          'Project Title: [Title]\n\nProblem Statement: [What problem are you solving?]\nObjective: [What outcome do you want to achieve?]\nScope of Work: [Tasks included]\nTimeline: [Milestones and dates]\nDeliverables: [Final outputs]\nBudget/Resources: [Cost or resources needed]\nConclusion: [Why this proposal should be approved]',
+        publishedAt: '2026-03-24',
+        featured: false,
+        downloads: 7100,
+        pageUrl: './project-proposal-template.html',
+        tags: ['proposal', 'freelance', 'academic', 'project']
+      },
+      {
         id: 'tpl-internship-cover-letter',
         slug: 'internship-cover-letter-template',
         title: 'Internship Cover Letter Template',
@@ -550,6 +614,7 @@ window.ToolShalaContent = {
         publishedAt: '2026-03-26',
         featured: false,
         downloads: 8200,
+        pageUrl: './weekly-study-planner-template.html',
         tags: ['planner', 'study']
       },
       {
@@ -564,6 +629,7 @@ window.ToolShalaContent = {
         publishedAt: '2026-03-27',
         featured: true,
         downloads: 8400,
+        pageUrl: './linkedin-summary-template.html',
         tags: ['linkedin', 'profile']
       },
       {

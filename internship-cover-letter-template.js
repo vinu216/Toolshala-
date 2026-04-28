@@ -120,6 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const copyCoverText = async () => {
+    if (!buildCoverText().trim()) {
+      setFeedback('Please add letter content before copying.', true);
+      return;
+    }
     try {
       await navigator.clipboard.writeText(buildCoverText());
       setFeedback('Cover letter copied. Personalize it before sending.');
@@ -131,6 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetActiveVersion = () => {
     hydrateFields(getActiveVersion().values);
     setFeedback('Template reset to selected version defaults.');
+  };
+
+  const setCoverData = (payload) => {
+    if (!payload || typeof payload !== 'object') return false;
+    const target = getActiveVersion();
+    if (!target) return false;
+    let updated = false;
+
+    ['applicant', 'date', 'recipient', 'subject', 'opening', 'interest', 'skills', 'closing', 'signature'].forEach((key) => {
+      if (typeof payload[key] === 'string' && payload[key].trim()) {
+        target.values[key] = payload[key].trim();
+        updated = true;
+      }
+    });
+
+    if (updated) hydrateFields(target.values);
+    return updated;
+  };
+
+  window.ToolShalaCoverLetterTemplateAPI = {
+    getActiveVersion,
+    getCoverText: buildCoverText,
+    setCoverData
   };
 
   renderSwitcher();
