@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATS-Friendly Resume Template for Students & Freshers | ToolShala</title>
+    <meta
+      name="description"
+      content="Edit, copy, reset, and print a premium ATS-friendly resume template built for students, freshers, internships, and entry-level roles."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+          <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a>
+          <a class="nav-link" href="./career.html">Career</a>
+          <a class="nav-link nav-active" href="./templates.html">Templates</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
+          <a href="./templates.html" class="btn-primary ml-1">Back to Library</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel>
+        <div class="space-y-1 px-4 py-4">
+          <a class="nav-link mobile-nav-link" href="./index.html">Home</a>
+          <a class="nav-link mobile-nav-link" href="./templates.html">Templates</a>
+          <a class="nav-link mobile-nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link mobile-nav-link" href="./career.html">Career</a>
+          <a class="nav-link mobile-nav-link" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-wrap">
+      <div class="resume-template-hero reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Template by ToolShala</p>
+        <h1>ATS-Friendly Resume Template</h1>
+        <p>
+          Designed for students, freshers, and job seekers applying for internships and entry-level roles. Keep your resume simple,
+          keyword-focused, and recruiter-friendly.
+        </p>
+      </div>
+
+      <div class="resume-template-layout">
+        <aside class="feature-card reveal">
+          <h2>How to use this template</h2>
+          <ol class="how-to-list">
+            <li>Edit each section directly in the preview panel.</li>
+            <li>Replace placeholders with your real details and outcomes.</li>
+            <li>Keep only relevant sections to stay concise and focused.</li>
+            <li>Use the copy button for quick paste into docs.</li>
+            <li>Use print/download to export as PDF for applications.</li>
+          </ol>
+
+          <div class="tips-block">
+            <h3>Resume Tips</h3>
+            <ul>
+              <li>Use simple formatting and standard section names.</li>
+              <li>Add role-relevant keywords from the job description.</li>
+              <li>Keep it to one page if possible.</li>
+              <li>Tailor the summary for each target role.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="feature-card reveal">
+          <div class="template-toolbar">
+            <button type="button" class="btn-secondary" id="copyResumeTemplate">Copy Template</button>
+            <button type="button" class="btn-primary" id="printResumeTemplate">Download / Print</button>
+            <button type="button" class="btn-secondary" id="resetResumeTemplate">Reset</button>
+          </div>
+          <p class="copy-feedback hidden" id="resumeTemplateFeedback"></p>
+
+          <article class="resume-preview" id="resumePreview">
+            <section class="resume-section" data-section="header">
+              <h2>Header / Name / Contact</h2>
+              <div class="editable-block" contenteditable="true" data-field="header"></div>
+              <p class="section-guidance">Include full name, phone, email, LinkedIn, portfolio/GitHub, and city.</p>
+            </section>
+
+            <section class="resume-section" data-section="summary">
+              <h2>Career Objective / Resume Summary</h2>
+              <div class="editable-block" contenteditable="true" data-field="summary"></div>
+              <p class="section-guidance">Keep this 2-3 lines and mention role, strengths, and what value you bring.</p>
+            </section>
+
+            <section class="resume-section" data-section="education">
+              <h2>Education</h2>
+              <div class="editable-block" contenteditable="true" data-field="education"></div>
+              <p class="section-guidance">List latest education first with CGPA/percentage and graduation timeline.</p>
+            </section>
+
+            <section class="resume-section" data-section="skills">
+              <h2>Skills</h2>
+              <div class="editable-block" contenteditable="true" data-field="skills"></div>
+              <p class="section-guidance">Group skills into technical, tools, and soft skills for readability.</p>
+            </section>
+
+            <section class="resume-section" data-section="projects">
+              <h2>Projects</h2>
+              <div class="editable-block" contenteditable="true" data-field="projects"></div>
+              <p class="section-guidance">Mention what you built, tools used, and measurable impact.</p>
+            </section>
+
+            <section class="resume-section" data-section="internships">
+              <h2>Internships / Experience</h2>
+              <div class="editable-block" contenteditable="true" data-field="internships"></div>
+              <p class="section-guidance">Use action verbs and quantify outcomes where possible.</p>
+            </section>
+
+            <section class="resume-section" data-section="certifications">
+              <h2>Certifications</h2>
+              <div class="editable-block" contenteditable="true" data-field="certifications"></div>
+              <p class="section-guidance">Include issuer and completion date for relevant certifications.</p>
+            </section>
+
+            <section class="resume-section" data-section="achievements">
+              <h2>Achievements</h2>
+              <div class="editable-block" contenteditable="true" data-field="achievements"></div>
+              <p class="section-guidance">Add awards, rankings, hackathons, or noteworthy milestones.</p>
+            </section>
+
+            <section class="resume-section" data-section="languages">
+              <h2>Languages</h2>
+              <div class="editable-block" contenteditable="true" data-field="languages"></div>
+              <p class="section-guidance">Add proficiency level if useful (Basic, Intermediate, Fluent).</p>
+            </section>
+
+            <section class="resume-section" data-section="optional">
+              <h2>Declaration / References (Optional)</h2>
+              <div class="editable-block" contenteditable="true" data-field="optional"></div>
+              <p class="section-guidance">Use only if the recruiter/application form specifically asks for this.</p>
+            </section>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./ats-resume-template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

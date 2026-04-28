@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Email Format for Students & Freshers | ToolShala</title>
+    <meta
+      name="description"
+      content="Use this polished professional email format for internships, job applications, follow-ups, and formal requests. Edit, copy, reset, and print in one place."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+          <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a>
+          <a class="nav-link" href="./career.html">Career</a>
+          <a class="nav-link nav-active" href="./templates.html">Templates</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
+          <a href="./templates.html" class="btn-primary ml-1">Back to Library</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel>
+        <div class="space-y-1 px-4 py-4">
+          <a class="nav-link mobile-nav-link" href="./index.html">Home</a>
+          <a class="nav-link mobile-nav-link" href="./templates.html">Templates</a>
+          <a class="nav-link mobile-nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link mobile-nav-link" href="./career.html">Career</a>
+          <a class="nav-link mobile-nav-link" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-wrap">
+      <section class="email-template-hero reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Template by ToolShala</p>
+        <h1>Professional Email Format</h1>
+        <p>
+          A ready-to-use format for students and freshers writing internship applications, job outreach emails, follow-ups,
+          and formal requests. Keep your email clear, polite, and action-focused.
+        </p>
+      </section>
+
+      <div class="email-template-layout">
+        <aside class="feature-card reveal">
+          <h2>How to use this template</h2>
+          <ol class="how-to-list">
+            <li>Select an example format based on your situation.</li>
+            <li>Customize subject, recipient name, role, and company details.</li>
+            <li>Keep paragraphs short and highlight your purpose clearly.</li>
+            <li>Copy the final email and paste into your email client.</li>
+            <li>Proofread once before sending.</li>
+          </ol>
+
+          <div class="tips-block">
+            <h3>Quick Email Tips</h3>
+            <ul>
+              <li>Keep subject lines short and specific.</li>
+              <li>Always mention your purpose clearly in the first lines.</li>
+              <li>Use polite, direct language and avoid slang.</li>
+              <li>Proofread grammar, names, and links before sending.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="feature-card reveal">
+          <div class="template-toolbar">
+            <button type="button" class="btn-secondary" id="copyEmailTemplate">Copy Full Email</button>
+            <button type="button" class="btn-primary" id="printEmailTemplate">Download / Print</button>
+            <button type="button" class="btn-secondary" id="resetEmailTemplate">Reset</button>
+          </div>
+          <p class="copy-feedback hidden" id="emailTemplateFeedback"></p>
+
+          <div class="example-switcher" id="emailExampleSwitcher" aria-label="Email format options"></div>
+
+          <article class="email-preview" id="emailPreview" aria-live="polite">
+            <section class="email-block">
+              <h2>Subject Line</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="subject"></div>
+            </section>
+
+            <section class="email-block">
+              <h2>Greeting</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="greeting"></div>
+            </section>
+
+            <section class="email-block">
+              <h2>Opening Line</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="opening"></div>
+            </section>
+
+            <section class="email-block">
+              <h2>Main Body</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="body"></div>
+            </section>
+
+            <section class="email-block">
+              <h2>Closing Line</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="closing"></div>
+            </section>
+
+            <section class="email-block">
+              <h2>Signature</h2>
+              <div class="editable-block" contenteditable="true" data-email-field="signature"></div>
+            </section>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./professional-email-template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
