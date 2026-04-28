@@ -99,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const copyEmailText = async () => {
+    if (!buildEmailText().trim()) {
+      setFeedback('Please add email content before copying.', true);
+      return;
+    }
     try {
       await navigator.clipboard.writeText(buildEmailText());
       setFeedback('Email template copied. Paste and personalize before sending.');
@@ -110,6 +114,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetActiveTemplate = () => {
     hydrateFields(getActiveFormat().values);
     setFeedback('Template reset to selected format defaults.');
+  };
+
+  const setEmailData = (payload) => {
+    if (!payload || typeof payload !== 'object') return false;
+    const target = getActiveFormat();
+    if (!target) return false;
+    let updated = false;
+
+    ['subject', 'greeting', 'opening', 'body', 'closing', 'signature'].forEach((key) => {
+      if (typeof payload[key] === 'string' && payload[key].trim()) {
+        target.values[key] = payload[key].trim();
+        updated = true;
+      }
+    });
+
+    if (updated) hydrateFields(target.values);
+    return updated;
+  };
+
+  window.ToolShalaProfessionalEmailTemplateAPI = {
+    getActiveFormat,
+    getEmailText: buildEmailText,
+    setEmailData
   };
 
   renderSwitcher();

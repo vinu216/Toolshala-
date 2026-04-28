@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn Summary Template for Students, Freshers & Freelancers | ToolShala</title>
+    <meta
+      name="description"
+      content="Create a modern LinkedIn About summary using student, fresher, and freelancer versions with editable sections, copy, print, and reset support."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+          <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a>
+          <a class="nav-link" href="./career.html">Career</a>
+          <a class="nav-link nav-active" href="./templates.html">Templates</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
+          <a href="./templates.html" class="btn-primary ml-1">Back to Library</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel>
+        <div class="space-y-1 px-4 py-4">
+          <a class="nav-link mobile-nav-link" href="./index.html">Home</a>
+          <a class="nav-link mobile-nav-link" href="./templates.html">Templates</a>
+          <a class="nav-link mobile-nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link mobile-nav-link" href="./career.html">Career</a>
+          <a class="nav-link mobile-nav-link" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-wrap">
+      <section class="linkedin-template-hero reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Template by ToolShala</p>
+        <h1>LinkedIn Summary Template</h1>
+        <p>
+          Write a profile summary that sounds clear, human, and confident. Pick a version for Student, Fresher,
+          or Freelancer, customize quickly, and use it in your LinkedIn About section.
+        </p>
+      </section>
+
+      <div class="linkedin-template-layout">
+        <aside class="feature-card reveal">
+          <h2>How to use this template</h2>
+          <ol class="how-to-list">
+            <li>Select the summary version that matches your current profile stage.</li>
+            <li>Edit each section with your real skills, projects, and goals.</li>
+            <li>Keep sentences short and easy to scan on mobile.</li>
+            <li>Copy your final summary and paste it into LinkedIn About.</li>
+            <li>Update your summary every few months as your profile grows.</li>
+          </ol>
+
+          <div class="tips-block">
+            <h3>LinkedIn Summary Tips</h3>
+            <ul>
+              <li>Keep it authentic—write in your own voice.</li>
+              <li>Mention your current goal clearly.</li>
+              <li>Add relevant keywords for your target roles.</li>
+              <li>Keep it easy to read with short lines.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="feature-card reveal">
+          <div class="template-toolbar">
+            <button type="button" class="btn-secondary" id="copyLinkedInTemplate">Copy Summary</button>
+            <button type="button" class="btn-primary" id="printLinkedInTemplate">Download / Print</button>
+            <button type="button" class="btn-secondary" id="resetLinkedInTemplate">Reset</button>
+          </div>
+          <p class="copy-feedback hidden" id="linkedInTemplateFeedback"></p>
+
+          <div class="example-switcher" id="linkedInVersionSwitcher" aria-label="LinkedIn summary versions"></div>
+
+          <article class="linkedin-preview" aria-live="polite">
+            <section class="linkedin-block">
+              <h2>Opening Line</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="opening"></div>
+            </section>
+            <section class="linkedin-block">
+              <h2>Current Status</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="status"></div>
+            </section>
+            <section class="linkedin-block">
+              <h2>Key Skills</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="skills"></div>
+            </section>
+            <section class="linkedin-block">
+              <h2>What I am Interested In</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="interests"></div>
+            </section>
+            <section class="linkedin-block">
+              <h2>Career Goals</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="goals"></div>
+            </section>
+            <section class="linkedin-block">
+              <h2>Call to Connect / Collaborate</h2>
+              <div class="editable-block" contenteditable="true" data-linkedin-field="cta"></div>
+            </section>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./linkedin-summary-template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

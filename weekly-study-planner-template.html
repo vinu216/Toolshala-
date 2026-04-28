@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Study Planner Template for Students | ToolShala</title>
+    <meta
+      name="description"
+      content="Plan subjects, study blocks, revision, and breaks with a student-friendly weekly planner template. Includes simple and detailed modes with copy, print, and reset support."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+          <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+        <div class="hidden items-center gap-2 md:flex" data-menu>
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link" href="./opportunities.html">Opportunities</a>
+          <a class="nav-link" href="./career.html">Career</a>
+          <a class="nav-link nav-active" href="./templates.html">Templates</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./contact.html">Contact</a>
+          <a href="./templates.html" class="btn-primary ml-1">Back to Library</a>
+        </div>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel>
+        <div class="space-y-1 px-4 py-4">
+          <a class="nav-link mobile-nav-link" href="./index.html">Home</a>
+          <a class="nav-link mobile-nav-link" href="./templates.html">Templates</a>
+          <a class="nav-link mobile-nav-link" href="./tools.html">Tools</a>
+          <a class="nav-link mobile-nav-link" href="./career.html">Career</a>
+          <a class="nav-link mobile-nav-link" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="section-wrap">
+      <section class="planner-template-hero reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Template by ToolShala</p>
+        <h1>Weekly Study Planner</h1>
+        <p>
+          Organize your week with clear study time blocks, subject priorities, revision sessions, and break slots.
+          Pick a simple or detailed version, edit quickly, and keep your study routine realistic and consistent.
+        </p>
+      </section>
+
+      <div class="planner-template-layout">
+        <aside class="feature-card reveal">
+          <h2>How to use this template</h2>
+          <ol class="how-to-list">
+            <li>Choose the planner mode: Simple Weekly Plan or Detailed Weekly Plan.</li>
+            <li>Fill in goals for each day and assign subjects per time block.</li>
+            <li>Keep one fixed revision block daily, especially for weak subjects.</li>
+            <li>Add short breaks to stay focused without burning out.</li>
+            <li>Review your week every Sunday and adjust next week accordingly.</li>
+          </ol>
+
+          <div class="tips-block">
+            <h3>Study Planning Tips</h3>
+            <ul>
+              <li>Don’t overload your schedule—focus on realistic daily targets.</li>
+              <li>Keep breaks short and intentional to protect momentum.</li>
+              <li>Revise weak subjects more often than strong subjects.</li>
+              <li>Review the plan weekly and improve it based on actual progress.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="feature-card reveal">
+          <div class="template-toolbar">
+            <button type="button" class="btn-secondary" id="copyPlannerTemplate">Copy Planner Structure</button>
+            <button type="button" class="btn-primary" id="printPlannerTemplate">Download / Print</button>
+            <button type="button" class="btn-secondary" id="resetPlannerTemplate">Reset</button>
+          </div>
+          <p class="copy-feedback hidden" id="plannerTemplateFeedback"></p>
+
+          <div class="example-switcher" id="plannerModeSwitcher" aria-label="Weekly planner versions"></div>
+
+          <article class="planner-preview" id="plannerPreview" aria-live="polite"></article>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-shell">
+        <div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
+          <div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./weekly-study-planner-template.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

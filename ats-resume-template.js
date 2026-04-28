@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const copyTemplateText = async () => {
     const text = buildPlainText();
+    if (!text.trim()) {
+      setFeedback('Please add resume content before copying.', true);
+      return;
+    }
     try {
       await navigator.clipboard.writeText(text);
       setFeedback('Template copied. Paste it into your preferred editor.');
@@ -65,6 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   hydrateDefaults();
+
+  const setResumeData = (payload) => {
+    if (!payload || typeof payload !== 'object') return false;
+    let updated = false;
+    fields.forEach((field) => {
+      const key = field.getAttribute('data-field');
+      if (typeof payload[key] === 'string' && payload[key].trim()) {
+        field.textContent = payload[key].trim();
+        updated = true;
+      }
+    });
+    return updated;
+  };
+
+  window.ToolShalaATSResumeTemplateAPI = {
+    getContent: buildPlainText,
+    reset: hydrateDefaults,
+    setResumeData
+  };
 
   copyBtn?.addEventListener('click', copyTemplateText);
   printBtn?.addEventListener('click', () => window.print());
