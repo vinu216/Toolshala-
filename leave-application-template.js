@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  const fieldOrder = ['sender', 'date', 'recipient', 'subject', 'salutation', 'reason', 'duration', 'approval', 'closing'];
   const fields = Array.from(document.querySelectorAll('[data-leave-field]'));
   const switcher = document.getElementById('leaveVersionSwitcher');
   const feedbackNode = document.getElementById('leaveTemplateFeedback');
@@ -54,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const printButton = document.getElementById('printLeaveTemplate');
   const resetButton = document.getElementById('resetLeaveTemplate');
   let activeVersionId = leaveVersions[0].id;
-
-  const fieldOrder = ['sender', 'date', 'recipient', 'subject', 'salutation', 'reason', 'duration', 'approval', 'closing'];
 
   const getActiveVersion = () => leaveVersions.find((version) => version.id === activeVersionId) || leaveVersions[0];
 
@@ -73,6 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = field.getAttribute('data-leave-field');
       field.textContent = values[key] || '';
     });
+  };
+
+  const buildLeaveText = () => {
+    const values = {};
+    fields.forEach((field) => {
+      const key = field.getAttribute('data-leave-field');
+      values[key] = field.textContent.trim();
+    });
+
+    return fieldOrder
+      .map((key) => values[key] || '')
+      .filter(Boolean)
+      .join('\n\n')
+      .trim();
   };
 
   const renderSwitcher = () => {
@@ -97,24 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const buildLeaveText = () => {
-    const values = {};
-    fields.forEach((field) => {
-      const key = field.getAttribute('data-leave-field');
-      values[key] = field.textContent.trim();
-    });
-
-    return fieldOrder
-      .map((key, index) => {
-        const value = values[key] || '';
-        if (!value) return '';
-        return index >= 4 ? value : `${value}`;
-      })
-      .filter(Boolean)
-      .join('\n\n')
-      .trim();
-  };
-
   const copyLeaveText = async () => {
     try {
       await navigator.clipboard.writeText(buildLeaveText());
@@ -122,6 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
       setFeedback('Copy failed. Please copy manually from the preview.', true);
     }
+  };
+
+  const downloadLeaveText = () => {
+    const activeLabel = getActiveVersion().label.toLowerCase().replace(/\s+/g, '-');
+    const blob = new Blob([buildLeaveText()], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${activeLabel}.txt`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
   };
 
   const resetActiveVersion = () => {
@@ -146,13 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.ToolShalaLeaveApplicationTemplateAPI = {
     getActiveVersion,
-    setApplicationData
+    setApplicationData,
+    buildLeaveText
   };
 
   renderSwitcher();
   hydrateFields(getActiveVersion().values);
 
   copyButton?.addEventListener('click', copyLeaveText);
-  printButton?.addEventListener('click', () => window.print());
+  printButton?.addEventListener('click', () => {
+    downloadLeaveText();
+    window.print();
+  });
   resetButton?.addEventListener('click', resetActiveVersion);
 });
