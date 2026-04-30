@@ -52,7 +52,7 @@
   const feedback = document.getElementById('thankYouTemplateFeedback');
   const subjectBank = document.getElementById('thankYouSubjectBank');
   const copyBtn = document.getElementById('copyThankYouTemplate');
-  const printBtn = document.getElementById('printThankYouTemplate');
+  const downloadBtn = document.getElementById('downloadThankYouTemplate');
   const resetBtn = document.getElementById('resetThankYouTemplate');
 
   let activeVersion = VERSIONS[0].id;
@@ -116,6 +116,16 @@
     }
   };
 
+  const downloadTemplate = () => {
+    const blob = new Blob([collectText()], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `interview-thank-you-email-${activeVersion}.txt`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    setFeedback('Interview thank you template downloaded successfully.');
+  };
+
   const resetTemplate = () => {
     activeVersion = VERSIONS[0].id;
     renderAll();
@@ -129,7 +139,7 @@
   };
 
   copyBtn?.addEventListener('click', copyTemplate);
-  printBtn?.addEventListener('click', () => window.print());
+  downloadBtn?.addEventListener('click', downloadTemplate);
   resetBtn?.addEventListener('click', resetTemplate);
 
   renderAll();
