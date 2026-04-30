@@ -26,6 +26,7 @@
 
   const copySelectedBtn = document.getElementById('copySelectedObjectives');
   const copyAllBtn = document.getElementById('copyAllObjectives');
+  const downloadBtn = document.getElementById('downloadObjectiveBank');
   const printBtn = document.getElementById('printObjectiveBank');
   const resetBtn = document.getElementById('resetObjectiveBank');
 
@@ -109,6 +110,19 @@
     setFeedback('Objective bank reset to default examples.');
   };
 
+  const downloadAll = () => {
+    const visible = getVisible()
+      .map((item) => `${item.category}: ${grid.querySelector(`.objective-card[data-id="${item.id}"] .objective-text`)?.textContent?.trim() || item.text}`)
+      .join('\n\n');
+    const blob = new Blob([visible], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'fresher-resume-objective-bank.txt';
+    link.click();
+    URL.revokeObjectURL(link.href);
+    setFeedback('Visible objectives downloaded successfully.');
+  };
+
   const renderAll = () => {
     renderFilters();
     renderGrid();
@@ -116,6 +130,7 @@
 
   copySelectedBtn?.addEventListener('click', copySelected);
   copyAllBtn?.addEventListener('click', copyAll);
+  downloadBtn?.addEventListener('click', downloadAll);
   printBtn?.addEventListener('click', () => window.print());
   resetBtn?.addEventListener('click', reset);
 

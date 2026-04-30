@@ -37,6 +37,7 @@
   const ideasBank = document.getElementById('ideasBank');
   const feedback = document.getElementById('instagramCalendarFeedback');
   const copyBtn = document.getElementById('copyInstagramCalendar');
+  const downloadBtn = document.getElementById('downloadInstagramCalendar');
   const printBtn = document.getElementById('printInstagramCalendar');
   const resetBtn = document.getElementById('resetInstagramCalendar');
 
@@ -136,6 +137,16 @@
     }
   };
 
+  const downloadText = () => {
+    const blob = new Blob([extractText()], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `instagram-content-calendar-${activeView}.txt`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    setFeedback('Instagram calendar downloaded successfully.');
+  };
+
   const resetView = () => {
     activeView = VIEWS[0].id;
     renderAll();
@@ -150,6 +161,7 @@
   };
 
   copyBtn?.addEventListener('click', copyText);
+  downloadBtn?.addEventListener('click', downloadText);
   printBtn?.addEventListener('click', () => window.print());
   resetBtn?.addEventListener('click', resetView);
 
