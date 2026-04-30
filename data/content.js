@@ -672,7 +672,152 @@ window.ToolShalaContent = {
         publishedAt: '2026-03-30',
         featured: false,
         downloads: 7100,
+        pageUrl: './fresher-resume-objective-bank-template.html',
         tags: ['resume', 'objective']
+      },
+      {
+        id: 'tpl-job-application-email-template',
+        slug: 'job-application-email-template',
+        title: 'Job Application Email Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Formal and editable job application email formats for freshers and job seekers.',
+        preview: 'Use fresher, professional, or short direct versions with ready sections and quick copy/download support.',
+        content:
+          'Subject: Application for [Job Role] - [Your Name]\n\nDear [Hiring Manager Name],\nI am writing to apply for the [Job Role] position at [Company Name].\nI have experience in [Skill 1], [Skill 2], and [Skill 3] through [Project/Internship].\nI am excited about the opportunity to contribute to your team.\n\nPlease find my resume attached.\nRegards,\n[Your Name]',
+        publishedAt: '2026-04-01',
+        featured: true,
+        downloads: 9200,
+        pageUrl: './job-application-email-template.html',
+        tags: ['email', 'career', 'job-application', 'fresher']
+      },
+      {
+        id: 'tpl-internship-followup-email-template',
+        slug: 'internship-follow-up-email-template',
+        title: 'Internship Follow-Up Email Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Polite follow-up email formats for students after internship applications.',
+        preview: 'Choose short, detailed, or friendly versions with ready sections, then copy, download, or print quickly.',
+        content:
+          'Subject: Follow-Up on Internship Application - [Your Name]\n\nDear [Hiring Manager Name],\nI hope you are doing well. I applied for the [Internship Role] on [Application Date] and wanted to follow up.\nI remain very interested in this opportunity.\nCould you kindly share any update on the selection timeline?\n\nThank you for your time.\nBest regards,\n[Your Name]',
+        publishedAt: '2026-04-02',
+        featured: false,
+        downloads: 7800,
+        pageUrl: './internship-follow-up-email-template.html',
+        tags: ['email', 'internship', 'follow-up']
+      },
+      {
+        id: 'tpl-resignation-letter-template',
+        slug: 'resignation-letter-template',
+        title: 'Resignation Letter Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Professional resignation letter formats for jobs and internships.',
+        preview: 'Use formal, short, or internship resignation versions with copy, download, print, and reset actions.',
+        content:
+          'Subject: Formal Resignation - [Your Name]\n\nDear [Manager Name],\nPlease accept this letter as my formal resignation from [Company Name].\nMy last working day will be [Last Working Date].\nThank you for your support and guidance.\nI will assist with a smooth handover during notice period.\n\nSincerely,\n[Your Name]',
+        publishedAt: '2026-04-03',
+        featured: false,
+        downloads: 7600,
+        pageUrl: './resignation-letter-template.html',
+        tags: ['email', 'formal', 'resignation']
+      },
+      {
+        id: 'tpl-recommendation-letter-request-template',
+        slug: 'recommendation-letter-request-template',
+        title: 'Recommendation Letter Request Template',
+        category: 'email',
+        categoryLabel: 'Email',
+        description: 'Polite recommendation letter request templates for students, freshers, and interns.',
+        preview: 'Choose professor, manager, or short polite request formats with copy, download, print, and reset support.',
+        content:
+          'Respected Professor [Name],\n\nI hope you are doing well. I am [Your Name] from [Course/Batch].\nI am applying for [program/internship], and I request your recommendation letter.\nThe deadline is [Date], and submission details are [link/email].\nThank you for your support and time.\n\nSincerely,\n[Your Name]',
+        publishedAt: '2026-04-04',
+        featured: false,
+        downloads: 6800,
+        pageUrl: './recommendation-letter-request-template.html',
+        tags: ['email', 'recommendation', 'formal']
+      },
+      {
+        id: 'tpl-work-from-home-checklist-template',
+        slug: 'work-from-home-checklist-template',
+        title: 'Work From Home Checklist Template',
+        category: 'study-planner',
+        categoryLabel: 'Study Planner',
+        description: 'Structured checklist for remote work routines, priorities, communication, and daily review.',
+        preview: 'Track workspace setup, daily tasks, communication, breaks, meetings, and end-of-day review with simple or detailed mode.',
+        content:
+          '[ ] Set up workspace and tools\n[ ] List top 3 priority tasks\n[ ] Share status update\n[ ] Take planned breaks\n[ ] Prepare meeting agenda\n[ ] Review progress before ending day',
+        publishedAt: '2026-04-05',
+        featured: false,
+        downloads: 6400,
+        pageUrl: './work-from-home-checklist-template.html',
+        tags: ['productivity', 'checklist', 'remote-work']
+      },
+      {
+        id: 'tpl-content-brief-template',
+        slug: 'content-brief-template',
+        title: 'Content Brief Template',
+        category: 'social-media',
+        categoryLabel: 'Social Media',
+        description: 'Structured content brief format for creators, marketers, and freelance writers.',
+        preview: 'Plan title, goal, audience, key points, CTA, references, and deadline with blog and social versions.',
+        content:
+          'Content Title: [Working Title]\nGoal: [What this content should achieve]\nTarget Audience: [Who this content is for]\nMain Message: [Single key takeaway]\nTone: [Brand tone]\nKey Points: [3-5 important points]\nCTA: [What audience should do next]\nReferences: [Links/resources]\nDeadline: [Date]',
+        publishedAt: '2026-04-06',
+        featured: false,
+        downloads: 6100,
+        pageUrl: './content-brief-template.html',
+        tags: ['creator', 'content', 'brief']
+      },
+      {
+        id: 'tpl-resume-keywords-bank-template',
+        slug: 'resume-keywords-bank-template',
+        title: 'Resume Keywords Bank',
+        category: 'resume',
+        categoryLabel: 'Resume',
+        description: 'ATS-friendly keyword categories for fresher and student resumes.',
+        preview: 'Browse and copy categorized ATS keywords for communication, leadership, technical skills, analytics, and more.',
+        content:
+          'Communication: articulate, presentation, collaboration\nLeadership: ownership, mentoring, initiative\nProblem Solving: critical thinking, troubleshooting, process improvement\nTechnical Skills: JavaScript, Python, SQL, Git\nProject Management: sprint planning, risk management, timeline management',
+        publishedAt: '2026-04-07',
+        featured: false,
+        downloads: 6600,
+        pageUrl: './resume-keywords-bank-template.html',
+        tags: ['resume', 'keywords', 'ats']
+      },
+      {
+        id: 'tpl-event-invitation-template',
+        slug: 'event-invitation-template',
+        title: 'Event Invitation Template',
+        category: 'social-media',
+        categoryLabel: 'Social Media',
+        description: 'Welcoming event invitation format for workshops, webinars, meetups, and celebrations.',
+        preview: 'Create formal, casual, or webinar invites with clear schedule, agenda highlights, RSVP, and contact details.',
+        content:
+          'Event Name: [Event Title]\nDate: [Date]\nTime: [Time]\nVenue / Platform: [Location/Link]\nPurpose: [Why attendees should join]\nAgenda / Highlights: [Top points]\nRSVP: [How to confirm]\nContact Info: [Organizer details]',
+        publishedAt: '2026-04-08',
+        featured: false,
+        downloads: 5900,
+        pageUrl: './event-invitation-template.html',
+        tags: ['social', 'invitation', 'event']
+      },
+      {
+        id: 'tpl-todo-list-template',
+        slug: 'to-do-list-template',
+        title: 'To-Do List Template',
+        category: 'study-planner',
+        categoryLabel: 'Study Planner',
+        description: 'Clean daily to-do list format with priorities, completed tasks, and notes.',
+        preview: 'Use simple or detailed to-do formats with checkbox-style tasks, priorities, completed list, and notes.',
+        content:
+          '[ ] Today\\'s Task 1\n[ ] Today\\'s Task 2\nPriority: [Top tasks]\nLow Priority: [Optional tasks]\nCompleted: [x] Finished tasks\nNotes: [Quick reminder]',
+        publishedAt: '2026-04-09',
+        featured: false,
+        downloads: 6200,
+        pageUrl: './to-do-list-template.html',
+        tags: ['productivity', 'to-do', 'planner']
       }
     ],
     testimonials: [
