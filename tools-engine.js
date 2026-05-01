@@ -498,6 +498,146 @@
         outputTips: ['Read once after summarizing', 'Highlight formulas or terms', 'Revise with short bullet points']
       };
     },
+
+    'grammar-corrector-sentence-improver': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const originalText = String(values.originalText || '').trim();
+      const outputStyle = String(values.outputStyle || 'simple').toLowerCase();
+      const improvementLevel = String(values.improvementLevel || 'moderate').toLowerCase();
+      const tone = String(values.tone || '').toLowerCase();
+
+      const sentences = splitSentences(originalText);
+      const normalized = sentences.length ? sentences : [originalText];
+
+      const correctedSentences = normalized.map((sentence) => {
+        let next = sentence.replace(/\s+/g, ' ').trim();
+        if (next && !/[.!?]$/.test(next)) next = `${next}.`;
+        next = next.replace(/\bi\b/g, 'I');
+        next = next.replace(/\bim\b/gi, "I'm");
+        next = next.replace(/\bdont\b/gi, "don't");
+        next = next.replace(/\bcant\b/gi, "can't");
+        next = next.replace(/\bwont\b/gi, "won't");
+        next = next.replace(/\b([a-z])/g, (m, ch) => ch.toUpperCase());
+        return next;
+      });
+
+      let improvedSentences = correctedSentences.map((sentence) => rewriteSentence(sentence, outputStyle));
+
+      if (improvementLevel === 'light') {
+        improvedSentences = correctedSentences.map((sentence) => sentence.replace(/\bvery\b\s+/gi, '').trim());
+      } else if (improvementLevel === 'strong') {
+        improvedSentences = correctedSentences.map((sentence) => {
+          const rewired = rewriteSentence(sentence, outputStyle);
+          return `To improve clarity, ${rewired.charAt(0).toLowerCase()}${rewired.slice(1)}`;
+        });
+      }
+
+      if (tone) {
+        improvedSentences = improvedSentences.map((sentence) => {
+          if (tone === 'polite') return `Please note that ${sentence.charAt(0).toLowerCase()}${sentence.slice(1)}`;
+          if (tone === 'confident') return `Clearly, ${sentence}`;
+          if (tone === 'academic') return `From an academic perspective, ${sentence.charAt(0).toLowerCase()}${sentence.slice(1)}`;
+          return sentence;
+        });
+      }
+
+      if (variant % 2 === 1) {
+        improvedSentences = improvedSentences.map((sentence) => sentence.replace(/\bin order to\b/gi, 'to'));
+      }
+
+      const correctedText = correctedSentences.join(' ');
+      const improvedText = improvedSentences.join(' ');
+      const bestPick = improvementLevel === 'light' ? correctedText : improvedText;
+
+      return {
+        type: 'cards',
+        items: [
+          { label: 'Corrected', text: correctedText, hashtags: ['Grammar', 'Readable'], copyText: correctedText },
+          { label: 'Improved', text: improvedText, hashtags: ['Clarity', outputStyle], copyText: improvedText },
+          { label: 'Best Pick', text: bestPick, note: 'Balanced for readability and natural tone.', bestPick: true, hashtags: ['Best Pick'], copyText: bestPick },
+          {
+            label: 'Improvement Tips',
+            rows: [
+              'Keep sentences short.',
+              'Use active voice where possible.',
+              'Remove repeated words before final use.'
+            ],
+            copyText: 'Keep sentences short.
+Use active voice where possible.
+Remove repeated words before final use.'
+          }
+        ],
+        outputTips: ['Always review the final text before using it.']
+      };
+    },
+    'paragraph-rewriter-humanizer': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const originalParagraph = String(values.originalParagraph || '').trim();
+      const desiredTone = String(values.desiredTone || 'simple').toLowerCase();
+      const rewriteStyle = String(values.rewriteStyle || 'same-length').toLowerCase();
+      const focus = String(values.focus || '').toLowerCase();
+
+      const sourceSentences = splitSentences(originalParagraph);
+      const normalizedSentences = sourceSentences.length
+        ? sourceSentences
+        : originalParagraph
+          .replace(/\s+/g, ' ')
+          .split(/[.?!]\s+/)
+          .map((entry) => entry.trim())
+          .filter(Boolean);
+
+      const rewrittenSentences = normalizedSentences.map((sentence) => {
+        let next = rewriteSentence(sentence, desiredTone).trim();
+        if (focus === 'clarity') {
+          next = next.replace(/\bin order to\b/gi, 'to').replace(/\bdue to the fact that\b/gi, 'because');
+        } else if (focus === 'fluency') {
+          next = next.replace(/\s+/g, ' ').replace(/\bhowever\b/gi, 'still');
+        } else if (focus === 'vocabulary') {
+          next = next.replace(/\bgood\b/gi, 'effective').replace(/\bbad\b/gi, 'unhelpful');
+        } else if (focus === 'readability') {
+          next = next.replace(/,\s*which\s*/gi, '. This ');
+        }
+        return next;
+      });
+
+      let rewrittenText = rewrittenSentences.join(' ');
+      if (rewriteStyle === 'shorter') {
+        rewrittenText = rewrittenSentences.slice(0, Math.max(2, Math.ceil(rewrittenSentences.length * 0.65))).join(' ');
+      } else if (rewriteStyle === 'longer') {
+        rewrittenText = `${rewrittenText} This version keeps the core meaning intact while adding clearer transitions and context.`;
+      } else if (rewriteStyle === 'more-natural') {
+        rewrittenText = rewrittenText.replace(/\btherefore\b/gi, 'so').replace(/\bmoreover\b/gi, 'also');
+      }
+
+      const humanizedText = rewrittenText
+        .replace(/\butilize\b/gi, 'use')
+        .replace(/\bcommence\b/gi, 'start')
+        .replace(/\badditionally\b/gi, 'also');
+
+      const shortVersion = splitSentences(humanizedText).slice(0, 2).join(' ') || humanizedText.slice(0, 220);
+      const bestPick = rewriteStyle === 'more-natural' ? humanizedText : rewrittenText;
+
+      const bestPickNote = desiredTone === 'academic'
+        ? 'Polished for academic readability with preserved meaning.'
+        : desiredTone === 'professional'
+          ? 'Polished for professional communication with smoother flow.'
+          : 'Balanced for natural tone, clarity, and readability.';
+
+      if (variant % 2 === 1) {
+        rewrittenText = rewrittenText.replace(/\bimportant\b/gi, 'key');
+      }
+
+      return {
+        type: 'cards',
+        items: [
+          { label: 'Rewritten', text: rewrittenText, hashtags: ['Rewritten', 'Meaning Preserved'], copyText: rewrittenText },
+          { label: 'Humanized', text: humanizedText, hashtags: ['Natural Tone', 'Humanized'], copyText: humanizedText },
+          { label: 'Best Pick', text: bestPick, note: bestPickNote, bestPick: true, hashtags: ['Best Pick'], copyText: bestPick },
+          { label: 'Short Version', text: shortVersion, hashtags: ['Short Version'], copyText: shortVersion }
+        ],
+        outputTips: ['Break long sentences', 'Replace repeated words', 'Keep the meaning the same']
+      };
+    },
     'assignment-rewriter': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const originalText = String(values.originalText || '').trim();
@@ -1141,6 +1281,67 @@
 
       return { type: 'cards', items };
     },
+    'instagram-bio-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const name = String(values.name || '').trim();
+      const niche = String(values.niche || '').trim();
+      const bioStyle = String(values.bioStyle || 'minimal').toLowerCase();
+      const purpose = String(values.purpose || 'personal').toLowerCase();
+      const keywords = normalizeCommaList(values.keywords);
+      const cta = String(values.cta || '').trim();
+
+      const purposeLine = {
+        personal: 'Sharing my journey',
+        creator: 'Creating content that helps',
+        business: 'Helping people with smart solutions',
+        student: 'Learning and building in public',
+        freelancer: 'Open to quality freelance work'
+      };
+
+      const stylePool = {
+        cute: ['✨', '🌸', '💫'],
+        professional: ['📌', '✅', '📈'],
+        aesthetic: ['🌙', '🕊️', '☁️'],
+        funny: ['😂', '😎', '🙃'],
+        minimal: ['', '', '']
+      };
+
+      const styleLabel = {
+        cute: 'Cute',
+        professional: 'Professional',
+        aesthetic: 'Aesthetic',
+        funny: 'Funny',
+        minimal: 'Minimal'
+      };
+
+      const keywordSnippet = keywords.length ? ` | ${keywords.slice(0, 2).join(' • ')}` : '';
+      const ctaLine = cta ? ` | ${cta}` : '';
+      const baseIntent = purposeLine[purpose] || purposeLine.personal;
+      const emojis = stylePool[bioStyle] || stylePool.minimal;
+
+      const bios = Array.from({ length: 5 }, (_, index) => {
+        const emoji = pick(emojis, variant + index);
+        const lead = index % 2 === 0 ? `${name}` : `${name} • ${niche}`;
+        const line = `${lead} ${emoji}`.trim();
+        const second = `${baseIntent} in ${niche}${keywordSnippet}${ctaLine}`;
+        const compact = second.replace(/\s+/g, ' ').trim();
+        const text = [line, compact].filter(Boolean).join('\n');
+        const cardLabel = index === (variant % 5) ? 'Best Pick' : (styleLabel[bioStyle] || 'Bio Option');
+        return {
+          label: cardLabel,
+          text: text.slice(0, 160),
+          hashtags: [`#${niche.replace(/[^a-zA-Z0-9]/g, '') || 'Creator'}`, '#InstagramBio', '#PersonalBrand'],
+          bestPick: index === (variant % 5),
+          copyText: text.slice(0, 160)
+        };
+      });
+
+      return {
+        type: 'cards',
+        items: bios,
+        outputTips: ['Use one clear identity', 'Add one CTA', 'Don’t overload with too many words']
+      };
+    },
     'linkedin-bio-generator': (values, options = {}) => {
       const skills = normalizeCommaList(values.skills);
       const topSkills = skills.slice(0, 3).join(', ');
@@ -1658,6 +1859,140 @@
         note: 'Always review names, role details, and attachments before sending.'
       }; 
     },
+    'email-subject-line-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const purpose = String(values.purpose || 'request').toLowerCase();
+      const recipientType = String(values.recipientType || 'general').toLowerCase();
+      const tone = String(values.tone || 'professional').toLowerCase();
+      const context = String(values.context || '').trim();
+      const style = String(values.style || 'clear').toLowerCase();
+
+      const purposeMap = {
+        'internship-application': 'Internship Application',
+        'job-application': 'Job Application',
+        'follow-up': 'Follow-up',
+        request: 'Request',
+        'thank-you': 'Thank You',
+        complaint: 'Complaint'
+      };
+
+      const recipientCue = {
+        recruiter: 'Recruiter',
+        teacher: 'Teacher',
+        manager: 'Manager',
+        client: 'Client',
+        general: 'Update'
+      };
+
+      const contextText = context ? ` - ${context}` : '';
+      const base = purposeMap[purpose] || 'Email Update';
+      const rec = recipientCue[recipientType] || 'Update';
+
+      const styleTemplates = {
+        short: [
+          `${base}${contextText}`,
+          `${base}: ${rec}`,
+          `${rec} ${base}`
+        ],
+        'attention-grabbing': [
+          `Quick ${base}${contextText}`,
+          `${base} | Action Needed`,
+          `${base}: Next Steps`
+        ],
+        formal: [
+          `${base} Regarding ${rec}${contextText}`,
+          `${base} Submission${contextText}`,
+          `${base} - Request for Review`
+        ],
+        clear: [
+          `${base}${contextText}`,
+          `${base} - ${rec}`,
+          `${base} Update${contextText}`
+        ]
+      };
+
+      const tonePrefix = tone === 'friendly'
+        ? ['Quick', 'Hello', 'Update']
+        : tone === 'formal'
+          ? ['Formal', 'Regarding', 'Submission']
+          : tone === 'polite'
+            ? ['Kind', 'Request', 'Follow-up']
+            : ['Professional', 'Update', 'Request'];
+
+      const templates = styleTemplates[style] || styleTemplates.clear;
+      const items = Array.from({ length: 5 }, (_, index) => {
+        const main = pick(templates, variant + index);
+        const prefix = pick(tonePrefix, variant + index);
+        const subject = `${prefix}: ${main}`.replace(/\s+/g, ' ').replace(/\s-\s-/g, ' - ').slice(0, 78).trim();
+        return {
+          label: index === (variant % 5) ? 'Best Pick' : (style === 'short' ? 'Short' : style === 'formal' ? 'Formal' : style === 'attention-grabbing' ? 'Attention-Grabbing' : 'Clear'),
+          text: subject,
+          bestPick: index === (variant % 5),
+          copyText: subject
+        };
+      });
+
+      return {
+        type: 'cards',
+        items,
+        outputTips: ['Avoid spammy words', 'Mention the purpose clearly', 'Keep it under ~8 words when possible']
+      };
+    },
+    'whatsapp-message-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const purpose = String(values.purpose || 'request').toLowerCase();
+      const recipientType = String(values.recipientType || 'friend').toLowerCase();
+      const tone = String(values.tone || 'polite').toLowerCase();
+      const details = String(values.details || '').trim();
+      const length = String(values.length || 'medium').toLowerCase();
+
+      const greetings = {
+        friend: ['Hey!', 'Hi!', 'Hello!'],
+        teacher: ['Hello Ma’am/Sir,', 'Good day,', 'Respected Ma’am/Sir,'],
+        client: ['Hello,', 'Hi,', 'Good day,'],
+        manager: ['Hello Sir/Ma’am,', 'Hi,', 'Good day,'],
+        group: ['Hi everyone,', 'Hello team,', 'Hey all,']
+      };
+      const purposeTemplates = {
+        'follow-up': ['Just following up on this.', 'Wanted to quickly follow up regarding this.', 'Following up to check if there is any update.'],
+        request: ['Could you please help with this?', 'Can you please share an update on this?', 'Requesting your support on this.'],
+        reminder: ['Quick reminder about this.', 'Gentle reminder regarding this.', 'Just a reminder so this stays on track.'],
+        apology: ['Sorry for the delay from my side.', 'Apologies for the inconvenience caused.', 'I sincerely apologize for the confusion.'],
+        thanks: ['Thank you for your help.', 'Really appreciate your support.', 'Thanks a lot for your time and guidance.'],
+        invitation: ['You are invited to join this.', 'Would love to have you with us.', 'Please join us for this.']
+      };
+      const toneEndings = {
+        formal: ['Please let me know.', 'Kindly confirm when possible.', 'Looking forward to your response.'],
+        friendly: ['Let me know what you think 🙂', 'Happy to discuss anytime!', 'Thanks again!'],
+        polite: ['Thank you for your time.', 'Would really appreciate your response.', 'Please let me know when convenient.'],
+        short: ['Please confirm.', 'Let me know.', 'Thanks.']
+      };
+
+      const count = length === 'short' ? 3 : length === 'long' ? 5 : 4;
+      const openers = greetings[recipientType] || greetings.friend;
+      const bodyPool = purposeTemplates[purpose] || purposeTemplates.request;
+      const enders = toneEndings[tone] || toneEndings.polite;
+      const detailLine = details ? ` ${details}` : '';
+
+      const items = Array.from({ length: count }, (_, index) => {
+        const opener = pick(openers, variant + index);
+        const body = pick(bodyPool, variant + index);
+        const ending = pick(enders, variant + index);
+        const message = `${opener} ${body}${detailLine} ${ending}`.replace(/\s+/g, ' ').trim();
+        return {
+          label: index === (variant % count) ? 'Best Pick' : (tone === 'short' ? 'Short' : tone === 'friendly' ? 'Friendly' : 'Professional'),
+          text: message,
+          bestPick: index === (variant % count),
+          copyText: message
+        };
+      });
+
+      return {
+        type: 'cards',
+        items,
+        outputTips: ['Start with a greeting', 'Mention purpose quickly', 'Avoid long paragraphs']
+      };
+    },
     'content-idea-generator': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const niche = String(values.niche || '').trim();
@@ -1791,6 +2126,7 @@
           || toolId === 'interview-answer-generator'
           || toolId === 'study-notes-summarizer'
           || toolId === 'assignment-rewriter'
+          || toolId === 'paragraph-rewriter-humanizer'
           || toolId === 'sop-generator'
           || toolId === 'linkedin-networking-message-generator'
           || toolId === 'job-description-analyzer'
@@ -1799,12 +2135,15 @@
           || toolId === 'youtube-shorts-script-generator'
           || toolId === 'leave-application-generator'
           || toolId === 'instagram-caption-generator'
+          || toolId === 'instagram-bio-generator'
           || toolId === 'linkedin-bio-generator'
           || toolId === 'cover-letter-generator'
           || toolId === 'study-timetable-generator'
           || toolId === 'ai-career-path-suggestor'
           || toolId === 'scholarship-recommendation-tool'
           || toolId === 'professional-email-generator'
+          || toolId === 'email-subject-line-generator'
+          || toolId === 'whatsapp-message-generator'
           || toolId === 'content-idea-generator'
         )) {
           const fallback = localGenerator(values, options);
@@ -1818,6 +2157,8 @@
               ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback notes summary set.'
             : toolId === 'assignment-rewriter'
               ? 'Live AI rewriting is temporarily unavailable. Showing a reliable fallback rewritten version.'
+            : toolId === 'paragraph-rewriter-humanizer'
+              ? 'Live AI humanizer is temporarily unavailable. Showing a reliable fallback rewritten paragraph.'
             : toolId === 'sop-generator'
               ? 'Live AI SOP generation is temporarily unavailable. Showing a reliable fallback SOP draft.'
             : toolId === 'linkedin-networking-message-generator'
@@ -1832,6 +2173,8 @@
               ? 'Live AI script generation is temporarily unavailable. Showing reliable fallback script ideas.'
             : toolId === 'instagram-caption-generator'
               ? 'Live AI caption generation is temporarily unavailable. Showing a reliable fallback caption set.'
+            : toolId === 'instagram-bio-generator'
+              ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback Instagram bio set.'
             : toolId === 'linkedin-bio-generator'
                 ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback LinkedIn bio set.'
             : toolId === 'cover-letter-generator'
@@ -1844,6 +2187,10 @@
                 ? 'Live AI scholarship recommendations are temporarily unavailable. Showing a reliable fallback recommendation set.'
             : toolId === 'professional-email-generator'
                 ? 'Live AI email generation is temporarily unavailable. Showing a reliable fallback email draft.'
+            : toolId === 'email-subject-line-generator'
+                ? 'Live AI subject line generation is temporarily unavailable. Showing reliable fallback subject options.'
+            : toolId === 'whatsapp-message-generator'
+                ? 'Live AI message generation is temporarily unavailable. Showing reliable fallback WhatsApp messages.'
             : toolId === 'content-idea-generator'
                 ? 'Live AI content idea generation is temporarily unavailable. Showing a reliable fallback idea set.'
                         : 'Live AI generation is temporarily unavailable. Showing reliable fallback headlines you can still use.';
@@ -1940,6 +2287,31 @@
       }
     }
 
+
+    if (tool.id === 'grammar-corrector-sentence-improver') {
+      const text = String(values.originalText || '').trim();
+      if (text.length < 20) {
+        return {
+          fieldErrors: {
+            originalText: 'Please add at least 20 characters so we can improve grammar and flow properly.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'paragraph-rewriter-humanizer') {
+      const text = String(values.originalParagraph || '').trim();
+      if (text.length < 80) {
+        return {
+          fieldErrors: {
+            originalParagraph: 'Please add at least 80 characters so the rewritten paragraph stays meaningful.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
     if (tool.id === 'sop-generator') {
       const background = String(values.academicBackground || '').trim();
       const goals = String(values.careerGoals || '').trim();
@@ -1950,6 +2322,44 @@
             careerGoals: 'Please add clearer career goals (at least one concrete direction).'
           },
           formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'instagram-bio-generator') {
+      const name = String(values.name || '').trim();
+      const niche = String(values.niche || '').trim();
+      if (name.length < 2 || niche.length < 3) {
+        const fieldErrors = {};
+        if (name.length < 2) fieldErrors.name = 'Please enter a valid name or brand name.';
+        if (niche.length < 3) fieldErrors.niche = 'Please add a clearer niche/category.';
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'whatsapp-message-generator') {
+      const details = String(values.details || '').trim();
+      if (details && details.length < 8) {
+        return {
+          fieldErrors: {
+            details: 'Please add a little more context or leave this field empty.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'email-subject-line-generator') {
+      const context = String(values.context || '').trim();
+      if (context && context.length < 3) {
+        return {
+          fieldErrors: {
+            context: 'Please add a clearer keyword/context or leave this field empty.'
+          },
+          formError: 'Please correct the highlighted field.'
         };
       }
     }
@@ -2568,6 +2978,10 @@
           ? 'Regenerate Summary'
         : tool.id === 'assignment-rewriter'
           ? 'Regenerate Rewrite'
+        : tool.id === 'grammar-corrector-sentence-improver'
+          ? 'Regenerate Improvement'
+        : tool.id === 'paragraph-rewriter-humanizer'
+          ? 'Regenerate Rewrite'
         : tool.id === 'sop-generator'
           ? 'Regenerate SOP'
         : tool.id === 'linkedin-networking-message-generator'
@@ -2580,6 +2994,12 @@
           ? 'Regenerate Paths'
         : tool.id === 'youtube-shorts-script-generator'
           ? 'Regenerate Scripts'
+        : tool.id === 'instagram-bio-generator'
+          ? 'Regenerate Bios'
+        : tool.id === 'whatsapp-message-generator'
+          ? 'Regenerate Messages'
+        : tool.id === 'email-subject-line-generator'
+          ? 'Regenerate Subjects'
         : tool.outputType === 'text'
           ? 'Regenerate'
           : 'Generate More';

@@ -46,6 +46,19 @@ window.ToolShalaContent = {
         url: './tool.html?tool=instagram-caption-generator'
       },
       {
+        id: 'tool-instagram-bio-generator',
+        slug: 'instagram-bio-generator',
+        title: 'Instagram Bio Generator',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Generate short, catchy, and optimized Instagram bios for creators, students, freelancers, and personal brands.',
+        publishedAt: '2026-05-01',
+        featured: false,
+        tags: ['instagram', 'bio', 'branding', 'creator'],
+        ctaLabel: 'Generate Bio',
+        url: './tool.html?tool=instagram-bio-generator'
+      },
+      {
         id: 'tool-linkedin-bio-generator',
         slug: 'linkedin-bio-generator',
         title: 'LinkedIn Bio Generator',
@@ -124,6 +137,32 @@ window.ToolShalaContent = {
         url: './tool.html?tool=professional-email-generator'
       },
       {
+        id: 'tool-email-subject-line-generator',
+        slug: 'email-subject-line-generator',
+        title: 'Email Subject Line Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate concise and effective email subject lines for applications, follow-ups, requests, and professional communication.',
+        publishedAt: '2026-05-01',
+        featured: false,
+        tags: ['email', 'subject-line', 'professional-writing'],
+        ctaLabel: 'Generate Subjects',
+        url: './tool.html?tool=email-subject-line-generator'
+      },
+      {
+        id: 'tool-whatsapp-message-generator',
+        slug: 'whatsapp-message-generator',
+        title: 'WhatsApp Message Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate polite and clear WhatsApp messages for follow-ups, requests, reminders, apologies, and more.',
+        publishedAt: '2026-05-01',
+        featured: false,
+        tags: ['whatsapp', 'messages', 'communication'],
+        ctaLabel: 'Generate Messages',
+        url: './tool.html?tool=whatsapp-message-generator'
+      },
+      {
         id: 'tool-content-idea-generator',
         slug: 'content-idea-generator',
         title: 'Content Idea Generator for Creators',
@@ -200,6 +239,33 @@ window.ToolShalaContent = {
         tags: ['job-description', 'resume-keywords', 'skills'],
         ctaLabel: 'Analyze JD',
         url: './tool.html?tool=job-description-analyzer'
+      },
+
+      {
+        id: 'tool-grammar-corrector-sentence-improver',
+        slug: 'grammar-corrector-sentence-improver',
+        title: 'Grammar Corrector / Sentence Improver',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Correct grammar, improve clarity, and rewrite sentences in simple, formal, professional, or friendly styles.',
+        publishedAt: '2026-05-01',
+        featured: false,
+        tags: ['grammar', 'sentence-improver', 'writing', 'clarity'],
+        ctaLabel: 'Improve Text',
+        url: './tool.html?tool=grammar-corrector-sentence-improver'
+      },
+      {
+        id: 'tool-paragraph-rewriter-humanizer',
+        slug: 'paragraph-rewriter-humanizer',
+        title: 'Paragraph Rewriter / Humanizer',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Rewrite paragraphs in a natural, clear, and human-sounding way while keeping the original meaning.',
+        publishedAt: '2026-05-01',
+        featured: false,
+        tags: ['paragraph', 'rewriter', 'humanizer', 'writing'],
+        ctaLabel: 'Humanize Paragraph',
+        url: './tool.html?tool=paragraph-rewriter-humanizer'
       },
       {
         id: 'tool-assignment-rewriter',
