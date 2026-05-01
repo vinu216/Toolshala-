@@ -812,7 +812,7 @@ window.ToolShalaContent = {
         description: 'Clean daily to-do list format with priorities, completed tasks, and notes.',
         preview: 'Use simple or detailed to-do formats with checkbox-style tasks, priorities, completed list, and notes.',
         content:
-          '[ ] Today\\'s Task 1\n[ ] Today\\'s Task 2\nPriority: [Top tasks]\nLow Priority: [Optional tasks]\nCompleted: [x] Finished tasks\nNotes: [Quick reminder]',
+          "[ ] Today's Task 1\n[ ] Today's Task 2\nPriority: [Top tasks]\nLow Priority: [Optional tasks]\nCompleted: [x] Finished tasks\nNotes: [Quick reminder]",
         publishedAt: '2026-04-09',
         featured: false,
         downloads: 6200,
