@@ -266,6 +266,53 @@ window.ToolShalaToolDefinitions = [
     ]
   },
   {
+    id: 'instagram-bio-generator',
+    title: 'Instagram Bio Generator',
+    category: 'Social Tool',
+    description: 'Generate short and memorable Instagram bio options tailored to your niche, purpose, and style.',
+    ctaLabel: 'Generate Bios',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep your bio short, clear, and easy to remember.',
+    tips: [
+      'Use one clear identity.',
+      'Add one CTA.',
+      'Don’t overload with too many words.'
+    ],
+    fields: [
+      { key: 'name', label: 'Name / Brand Name', type: 'text', placeholder: 'e.g. Neha Creates / GrowthSprint Studio', required: true },
+      { key: 'niche', label: 'Niche / Category', type: 'text', placeholder: 'e.g. Study tips, Fitness, Design, Personal Branding', required: true },
+      {
+        key: 'bioStyle',
+        label: 'Bio Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'cute', label: 'Cute' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'aesthetic', label: 'Aesthetic' },
+          { value: 'funny', label: 'Funny' },
+          { value: 'minimal', label: 'Minimal' }
+        ]
+      },
+      {
+        key: 'purpose',
+        label: 'Purpose',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'personal', label: 'Personal' },
+          { value: 'creator', label: 'Creator' },
+          { value: 'business', label: 'Business' },
+          { value: 'student', label: 'Student' },
+          { value: 'freelancer', label: 'Freelancer' }
+        ]
+      },
+      { key: 'keywords', label: 'Optional Keywords / Interests', type: 'text', placeholder: 'e.g. productivity, reels, ui/ux, startups', required: false },
+      { key: 'cta', label: 'Optional Call to Action', type: 'text', placeholder: 'e.g. DM for collabs | Download free guide', required: false }
+    ]
+  },
+  {
     id: 'linkedin-bio-generator',
     title: 'LinkedIn Bio Generator',
     category: 'Career Tool',
@@ -495,6 +542,130 @@ window.ToolShalaToolDefinitions = [
           { value: 'simple', label: 'Simple' },
           { value: 'academic', label: 'Academic' },
           { value: 'exam-friendly', label: 'Exam Friendly' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'grammar-corrector-sentence-improver',
+    title: 'Grammar Corrector / Sentence Improver',
+    category: 'Writing Tool',
+    description: 'Correct grammar and improve readability while keeping your original meaning and natural tone.',
+    ctaLabel: 'Generate',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Always review the final text before using it.',
+    tips: [
+      'Keep sentences short.',
+      'Use active voice.',
+      'Remove extra repetition.'
+    ],
+    fields: [
+      {
+        key: 'originalText',
+        label: 'Original Text',
+        type: 'textarea',
+        placeholder: 'Paste your sentence or paragraph here...',
+        required: true
+      },
+      {
+        key: 'outputStyle',
+        label: 'Output Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'simple', label: 'Simple' },
+          { value: 'formal', label: 'Formal' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'friendly', label: 'Friendly' }
+        ]
+      },
+      {
+        key: 'improvementLevel',
+        label: 'Improvement Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'light', label: 'Light Correction' },
+          { value: 'moderate', label: 'Moderate Improvement' },
+          { value: 'strong', label: 'Strong Rewrite' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Optional Tone',
+        type: 'select',
+        required: false,
+        options: [
+          { value: '', label: 'No specific tone' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'clear', label: 'Clear' },
+          { value: 'academic', label: 'Academic' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'paragraph-rewriter-humanizer',
+    title: 'Paragraph Rewriter / Humanizer',
+    category: 'Writing Tool',
+    description: 'Rewrite your paragraph for natural flow, stronger readability, and human tone without changing the meaning.',
+    ctaLabel: 'Generate',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Use this as a writing helper, then review it before submitting.',
+    tips: [
+      'Break long sentences.',
+      'Replace repeated words.',
+      'Keep the meaning the same.'
+    ],
+    fields: [
+      {
+        key: 'originalParagraph',
+        label: 'Original Paragraph',
+        type: 'textarea',
+        placeholder: 'Paste your paragraph here...',
+        required: true,
+        rows: 10
+      },
+      {
+        key: 'desiredTone',
+        label: 'Desired Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'simple', label: 'Simple' },
+          { value: 'academic', label: 'Academic' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'friendly', label: 'Friendly' }
+        ]
+      },
+      {
+        key: 'rewriteStyle',
+        label: 'Rewrite Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'same-length', label: 'Same Length' },
+          { value: 'shorter', label: 'Shorter' },
+          { value: 'longer', label: 'Longer' },
+          { value: 'more-natural', label: 'More Natural' }
+        ]
+      },
+      {
+        key: 'focus',
+        label: 'Optional Focus',
+        type: 'select',
+        required: false,
+        options: [
+          { value: '', label: 'No specific focus' },
+          { value: 'clarity', label: 'Clarity' },
+          { value: 'fluency', label: 'Fluency' },
+          { value: 'vocabulary', label: 'Vocabulary' },
+          { value: 'readability', label: 'Readability' }
         ]
       }
     ]
@@ -1157,6 +1328,156 @@ window.ToolShalaToolDefinitions = [
           { value: 'formal', label: 'Formal' },
           { value: 'polite', label: 'Polite' },
           { value: 'professional', label: 'Professional' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'email-subject-line-generator',
+    title: 'Email Subject Line Generator',
+    category: 'Writing Tool',
+    description: 'Generate catchy, clear, and professional subject lines based on your email purpose and context.',
+    ctaLabel: 'Generate Subject Lines',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep subject lines short, clear, and relevant.',
+    tips: [
+      'Avoid spammy words.',
+      'Mention the purpose clearly.',
+      'Keep it under ~8 words when possible.'
+    ],
+    fields: [
+      {
+        key: 'purpose',
+        label: 'Email Purpose',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'internship-application', label: 'Internship Application' },
+          { value: 'job-application', label: 'Job Application' },
+          { value: 'follow-up', label: 'Follow-up' },
+          { value: 'request', label: 'Request' },
+          { value: 'thank-you', label: 'Thank You' },
+          { value: 'complaint', label: 'Complaint' }
+        ]
+      },
+      {
+        key: 'recipientType',
+        label: 'Recipient Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'recruiter', label: 'Recruiter' },
+          { value: 'teacher', label: 'Teacher' },
+          { value: 'manager', label: 'Manager' },
+          { value: 'client', label: 'Client' },
+          { value: 'general', label: 'General' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'formal', label: 'Formal' },
+          { value: 'friendly', label: 'Friendly' }
+        ]
+      },
+      {
+        key: 'context',
+        label: 'Optional Keywords / Context',
+        type: 'text',
+        required: false,
+        placeholder: 'e.g. frontend intern, interview follow-up, invoice delay'
+      },
+      {
+        key: 'style',
+        label: 'Optional Style',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'short', label: 'Short' },
+          { value: 'attention-grabbing', label: 'Attention-Grabbing' },
+          { value: 'formal', label: 'Formal' },
+          { value: 'clear', label: 'Clear' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'whatsapp-message-generator',
+    title: 'WhatsApp Message Generator',
+    category: 'Writing Tool',
+    description: 'Generate clear and WhatsApp-friendly message options for personal, academic, and professional communication.',
+    ctaLabel: 'Generate Messages',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep it short, clear, and polite for WhatsApp.',
+    tips: [
+      'Start with a greeting.',
+      'Mention purpose quickly.',
+      'Avoid long paragraphs.'
+    ],
+    fields: [
+      {
+        key: 'purpose',
+        label: 'Message Purpose',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'follow-up', label: 'Follow-up' },
+          { value: 'request', label: 'Request' },
+          { value: 'reminder', label: 'Reminder' },
+          { value: 'apology', label: 'Apology' },
+          { value: 'thanks', label: 'Thanks' },
+          { value: 'invitation', label: 'Invitation' }
+        ]
+      },
+      {
+        key: 'recipientType',
+        label: 'Recipient Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'friend', label: 'Friend' },
+          { value: 'teacher', label: 'Teacher' },
+          { value: 'client', label: 'Client' },
+          { value: 'manager', label: 'Manager' },
+          { value: 'group', label: 'Group' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'short', label: 'Short' }
+        ]
+      },
+      {
+        key: 'details',
+        label: 'Optional Details / Context',
+        type: 'textarea',
+        required: false,
+        placeholder: 'e.g. Followed up last week about internship status.',
+        rows: 5
+      },
+      {
+        key: 'length',
+        label: 'Optional Length',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'short', label: 'Short' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'long', label: 'Long' }
         ]
       }
     ]
