@@ -1,9 +1,15 @@
 (function () {
   const SUPPORTED_TOOLS = new Set([
     'resume-headline-generator',
+    'resume-bullet-point-generator',
+    'formal-letter-generator',
+    'hashtag-generator',
     'resume-summary-generator',
     'interview-answer-generator',
     'study-notes-summarizer',
+    'notes-to-bullet-points-converter',
+    'grammar-corrector-sentence-improver',
+    'paragraph-rewriter-humanizer',
     'assignment-rewriter',
     'sop-generator',
     'linkedin-networking-message-generator',
@@ -13,12 +19,16 @@
     'youtube-shorts-script-generator',
     'leave-application-generator',
     'instagram-caption-generator',
+    'instagram-bio-generator',
+    'linkedin-headline-generator',
     'linkedin-bio-generator',
     'cover-letter-generator',
     'study-timetable-generator',
     'ai-career-path-suggestor',
     'scholarship-recommendation-tool',
     'professional-email-generator',
+    'email-subject-line-generator',
+    'whatsapp-message-generator',
     'content-idea-generator'
   ]);
 
@@ -693,11 +703,350 @@ Suggested next step: ${nextStep}`
     };
   };
 
+
+
+  const normalizeInstagramBioResult = (payload) => {
+    const bios = Array.isArray(payload?.bios) ? payload.bios : [];
+    const bestPickText = String(payload?.bestPick?.text || '').trim();
+    const hashtags = Array.isArray(payload?.hashtags)
+      ? payload.hashtags.map((tag) => String(tag || '').trim()).filter(Boolean).slice(0, 6)
+      : [];
+
+    const items = bios
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        const style = String(entry?.style || 'General').trim();
+        if (!text) return null;
+        const isBest = bestPickText
+          ? text.toLowerCase() === bestPickText.toLowerCase()
+          : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : `Bio Option ${index + 1}`,
+          text,
+          note: `Style: ${style}`,
+          bestPick: isBest,
+          hashtags: hashtags.length ? hashtags.slice(0, 3) : ['Instagram Bio'],
+          copyText: text
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length !== 5) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+    return {
+      type: 'cards',
+      items,
+      outputTips: ['Keep bio specific to your niche', 'Use one clear CTA', 'Avoid overstuffing keywords']
+    };
+  };
+
+
+  const normalizeWhatsAppMessageResult = (payload) => {
+    const messages = Array.isArray(payload?.messages) ? payload.messages : [];
+    const bestPickText = String(payload?.bestPick?.text || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    const items = messages
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        const tone = String(entry?.tone || 'General').trim();
+        if (!text) return null;
+        const isBest = bestPickText ? text.toLowerCase() === bestPickText.toLowerCase() : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : `Message Option ${index + 1}`,
+          text,
+          note: `Tone: ${tone}`,
+          bestPick: isBest,
+          hashtags: ['WhatsApp Friendly', 'Clear'],
+          copyText: text
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length < 3) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: tips.length ? tips : ['Keep greeting and purpose clear', 'Keep message concise']
+    };
+  };
+
+
+  const normalizeEmailSubjectResult = (payload) => {
+    const subjects = Array.isArray(payload?.subjects) ? payload.subjects : [];
+    const bestPickText = String(payload?.bestPick?.text || '').trim();
+    const bestPickReason = String(payload?.bestPick?.reason || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    const items = subjects
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        const style = String(entry?.style || 'General').trim();
+        if (!text) return null;
+        const isBest = bestPickText ? text.toLowerCase() === bestPickText.toLowerCase() : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : `Subject ${index + 1}`,
+          text,
+          note: isBest && bestPickReason ? `Why this works: ${bestPickReason}` : `Style: ${style}`,
+          bestPick: isBest,
+          hashtags: ['Concise', 'Relevant'],
+          copyText: text
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length !== 5) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: tips.length ? tips : ['Keep it concise', 'Match subject to recipient context']
+    };
+  };
+
+
+  const normalizeLinkedinHeadlineResult = (payload) => {
+    const headlines = Array.isArray(payload?.headlines) ? payload.headlines : [];
+    const bestPickText = String(payload?.bestPick?.text || '').trim();
+    const bestPickReason = String(payload?.bestPick?.reason || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    const items = headlines
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        const tone = String(entry?.tone || 'professional').trim();
+        if (!text) return null;
+        const isBest = bestPickText ? text.toLowerCase() === bestPickText.toLowerCase() : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : `Headline ${index + 1}`,
+          text,
+          note: isBest && bestPickReason ? `Why this works: ${bestPickReason}` : `Tone: ${tone}`,
+          bestPick: isBest,
+          hashtags: isBest ? ['Best Pick', 'Professional', 'Keyword Friendly'] : ['Professional', 'Keyword Friendly'],
+          copyText: text
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length !== 5) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: tips.length ? tips : ['Keep headline role-focused', 'Use relevant keywords']
+    };
+  };
+
+
+  const normalizeResumeBulletResult = (payload) => {
+    const bullets = Array.isArray(payload?.bullets) ? payload.bullets : [];
+    const bestPickText = String(payload?.bestPick?.text || '').trim();
+    const bestPickReason = String(payload?.bestPick?.reason || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    const items = bullets
+      .map((entry, index) => {
+        const text = String(entry?.text || '').trim();
+        const tone = String(entry?.tone || 'professional').trim();
+        if (!text) return null;
+        const isBest = bestPickText ? text.toLowerCase() === bestPickText.toLowerCase() : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : `Bullet Point ${index + 1}`,
+          text,
+          note: isBest && bestPickReason ? `Why this works: ${bestPickReason}` : `Tone: ${tone}`,
+          bestPick: isBest,
+          hashtags: isBest ? ['Best Pick', 'ATS-Friendly', 'Strong Impact'] : ['ATS-Friendly', 'Strong Impact'],
+          copyText: `• ${text}`
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length < 3) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: tips.length ? tips : ['Use action verbs', 'Mention tools', 'Show measurable outcome']
+    };
+  };
+
+
+  const normalizeFormalLetterResult = (payload) => {
+    const letter = String(payload?.letter || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    if (!letter) return null;
+
+    return {
+      type: 'text',
+      text: letter,
+      printable: true,
+      className: 'tool-letter-box',
+      disclaimer: tips.length ? `Tips: ${tips.join(' • ')}` : 'Keep tone respectful and message clear.'
+    };
+  };
+
+
+  const normalizeNotesToBulletsResult = (payload) => {
+    const summary = String(payload?.summary || '').trim();
+    const bullets = Array.isArray(payload?.bullets) ? payload.bullets.map((b) => String(b || '').trim()).filter(Boolean) : [];
+    const keywords = Array.isArray(payload?.keywords) ? payload.keywords.map((k) => String(k || '').trim()).filter(Boolean) : [];
+    const bestPick = String(payload?.bestPick || '').trim();
+    const tips = Array.isArray(payload?.tips) ? payload.tips.map((t) => String(t || '').trim()).filter(Boolean).slice(0, 4) : [];
+
+    if (!summary || !bullets.length || !keywords.length || !bestPick) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        {
+          label: 'Best Pick Summary',
+          text: bestPick,
+          bestPick: true,
+          hashtags: ['Best Pick', 'Revision Helper'],
+          copyText: bestPick
+        },
+        {
+          label: 'Short Bullet Points',
+          rows: bullets.slice(0, 6),
+          hashtags: ['Bullets', 'Quick Revision'],
+          copyText: bullets.slice(0, 6).map((b) => `• ${b}`).join('
+')
+        },
+        {
+          label: 'Important Keywords',
+          text: keywords.slice(0, 10).join(', '),
+          hashtags: ['Keywords'],
+          copyText: keywords.slice(0, 10).join(', ')
+        },
+        {
+          label: 'Topic Summary',
+          text: summary,
+          hashtags: ['Summary'],
+          copyText: summary
+        }
+      ],
+      outputTips: tips.length ? tips : ['Keep points short', 'Highlight formulas', 'Revise repeatedly']
+    };
+  };
+
+
+  const normalizeHashtagResult = (payload) => {
+    const sets = Array.isArray(payload?.sets) ? payload.sets : [];
+    const bestTitle = String(payload?.bestPick?.title || '').trim();
+    const bestReason = String(payload?.bestPick?.reason || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    const items = sets
+      .map((entry, index) => {
+        const title = String(entry?.title || '').trim() || `Hashtag Set ${index + 1}`;
+        const hashtags = Array.isArray(entry?.hashtags)
+          ? entry.hashtags.map((tag) => String(tag || '').trim()).filter(Boolean).slice(0, 10)
+          : [];
+        if (!hashtags.length) return null;
+        const isBest = bestTitle ? title.toLowerCase() === bestTitle.toLowerCase() : index === 0;
+        return {
+          label: isBest ? 'Best Pick' : title,
+          text: hashtags.join(' '),
+          note: isBest && bestReason ? `Why this works: ${bestReason}` : 'Balanced broad + niche mix.',
+          bestPick: isBest,
+          hashtags: isBest ? ['Best Pick', 'Broad', 'Niche', 'Trending'] : ['Broad', 'Niche', 'Trending'],
+          copyText: hashtags.join(' ')
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (items.length < 3) return null;
+    if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
+
+    return {
+      type: 'cards',
+      items,
+      outputTips: tips.length ? tips : ['Use broad + niche mix', 'Keep hashtags relevant']
+    };
+  };
+
+  const normalizeGrammarCorrectorResult = (payload) => {
+    const corrected = String(payload?.corrected || '').trim();
+    const improved = String(payload?.improved || '').trim();
+    const bestPick = String(payload?.bestPick || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    if (!corrected || !improved || !bestPick) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        { label: 'Corrected Version', text: corrected, hashtags: ['Grammar', 'Accurate'], copyText: corrected },
+        { label: 'Improved Version', text: improved, hashtags: ['Clarity', 'Readable'], copyText: improved },
+        { label: 'Best Pick', text: bestPick, bestPick: true, hashtags: ['Best Pick', 'Natural'], copyText: bestPick },
+        ...(tips.length ? [{ label: 'Quick Tips', rows: tips, hashtags: ['Tips'] }] : [])
+      ],
+      outputTips: tips.length ? tips : ['Read once before final use', 'Keep tone aligned to context']
+    };
+  };
+
+
+  const normalizeParagraphHumanizerResult = (payload) => {
+    const rewritten = String(payload?.rewritten || '').trim();
+    const humanized = String(payload?.humanized || '').trim();
+    const shortVersion = String(payload?.shortVersion || '').trim();
+    const bestPick = String(payload?.bestPick || '').trim();
+    const tips = Array.isArray(payload?.tips)
+      ? payload.tips.map((tip) => String(tip || '').trim()).filter(Boolean).slice(0, 4)
+      : [];
+
+    if (!rewritten || !humanized || !shortVersion || !bestPick) return null;
+
+    return {
+      type: 'cards',
+      items: [
+        { label: 'Rewritten', text: rewritten, hashtags: ['Meaning Preserved', 'Clear'], copyText: rewritten },
+        { label: 'Humanized', text: humanized, hashtags: ['Natural Tone', 'Readable'], copyText: humanized },
+        { label: 'Best Pick', text: bestPick, bestPick: true, hashtags: ['Best Pick'], copyText: bestPick },
+        { label: 'Short Version', text: shortVersion, hashtags: ['Short Version'], copyText: shortVersion },
+        ...(tips.length ? [{ label: 'Quick Tips', rows: tips, hashtags: ['Tips'] }] : [])
+      ],
+      outputTips: tips.length ? tips : ['Keep one main idea per sentence', 'Read once for flow']
+    };
+  };
+
   const normalizeResult = (toolId, payload, values = {}) => {
     if (toolId === 'resume-headline-generator') return normalizeResumeResult(payload);
+    if (toolId === 'resume-bullet-point-generator') return normalizeResumeBulletResult(payload);
+    if (toolId === 'formal-letter-generator') return normalizeFormalLetterResult(payload);
+    if (toolId === 'hashtag-generator') return normalizeHashtagResult(payload);
     if (toolId === 'resume-summary-generator') return normalizeResumeSummaryResult(payload);
     if (toolId === 'interview-answer-generator') return normalizeInterviewAnswerResult(payload);
     if (toolId === 'study-notes-summarizer') return normalizeStudyNotesResult(payload);
+    if (toolId === 'notes-to-bullet-points-converter') return normalizeNotesToBulletsResult(payload);
+    if (toolId === 'grammar-corrector-sentence-improver') return normalizeGrammarCorrectorResult(payload);
+    if (toolId === 'paragraph-rewriter-humanizer') return normalizeParagraphHumanizerResult(payload);
     if (toolId === 'assignment-rewriter') return normalizeAssignmentRewriterResult(payload);
     if (toolId === 'sop-generator') return normalizeSopResult(payload);
     if (toolId === 'linkedin-networking-message-generator') return normalizeLinkedinNetworkingMessageResult(payload);
@@ -707,12 +1056,16 @@ Suggested next step: ${nextStep}`
     if (toolId === 'youtube-shorts-script-generator') return normalizeYoutubeScriptResult(payload);
     if (toolId === 'leave-application-generator') return normalizeLeaveResult(payload);
     if (toolId === 'instagram-caption-generator') return normalizeInstagramResult(payload);
+    if (toolId === 'instagram-bio-generator') return normalizeInstagramBioResult(payload);
+    if (toolId === 'linkedin-headline-generator') return normalizeLinkedinHeadlineResult(payload);
     if (toolId === 'linkedin-bio-generator') return normalizeLinkedinResult(payload);
     if (toolId === 'cover-letter-generator') return normalizeCoverLetterResult(payload, values);
     if (toolId === 'study-timetable-generator') return normalizeStudyTimetableResult(payload, values);
     if (toolId === 'ai-career-path-suggestor') return normalizeCareerPathResult(payload, values);
     if (toolId === 'scholarship-recommendation-tool') return normalizeScholarshipResult(payload);
     if (toolId === 'professional-email-generator') return normalizeProfessionalEmailResult(payload);
+    if (toolId === 'email-subject-line-generator') return normalizeEmailSubjectResult(payload);
+    if (toolId === 'whatsapp-message-generator') return normalizeWhatsAppMessageResult(payload);
     if (toolId === 'content-idea-generator') return normalizeContentIdeaResult(payload);
     return null;
   };
@@ -730,7 +1083,28 @@ Suggested next step: ${nextStep}`
         || host === '0.0.0.0'
       ) ? 'https://toolshala.in' : '';
       const apiBase = configuredBase || fallbackBase;
-      const apiUrl = `${apiBase}/api/generate-tool`;
+      const endpoint = toolId === 'grammar-corrector-sentence-improver'
+        ? '/api/improve-text'
+        : toolId === 'paragraph-rewriter-humanizer'
+          ? '/api/humanize-paragraph'
+          : toolId === 'instagram-bio-generator'
+            ? '/api/generate-instagram-bio'
+            : toolId === 'whatsapp-message-generator'
+              ? '/api/generate-whatsapp-message'
+              : toolId === 'email-subject-line-generator'
+                ? '/api/generate-email-subjects'
+                : toolId === 'linkedin-headline-generator'
+                  ? '/api/generate-linkedin-headlines'
+                  : toolId === 'resume-bullet-point-generator'
+                    ? '/api/generate-resume-bullets'
+                    : toolId === 'formal-letter-generator'
+                      ? '/api/generate-formal-letter'
+                      : toolId === 'notes-to-bullet-points-converter'
+                        ? '/api/summarize-notes'
+                        : toolId === 'hashtag-generator'
+                          ? '/api/generate-hashtags'
+                          : '/api/generate-tool';
+      const apiUrl = `${apiBase}${endpoint}`;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
