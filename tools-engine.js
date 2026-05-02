@@ -81,6 +81,16 @@
 
   const getToolById = (toolId) => toolDefinitions.find((tool) => tool.id === toolId);
 
+  const getToolFields = (tool) => {
+    if (Array.isArray(tool?.fields) && tool.fields.length) {
+      return tool.fields;
+    }
+    if (Array.isArray(tool?.inputs) && tool.inputs.length) {
+      return tool.inputs;
+    }
+    return [];
+  };
+
   const pick = (list, index) => list[index % list.length];
 
   const normalizeCommaList = (value) =>
@@ -477,8 +487,7 @@
             rows: primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.'],
             hashtags: ['Best Pick', 'Revision Helper'],
             bestPick: true,
-            copyText: (primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.']).map((r) => `• ${r}`).join('
-')
+            copyText: (primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.']).map((r) => `• ${r}`).join('\n')
           },
           {
             label: 'Important Keywords',
@@ -2537,7 +2546,7 @@ ${senderName}`;
   const validate = (tool, values) => {
     const fieldErrors = {};
 
-    for (const field of tool.fields) {
+    for (const field of getToolFields(tool)) {
       if (field.required && !String(values[field.key] || '').trim()) {
         fieldErrors[field.key] = `${field.label} is required.`;
       }
@@ -3320,6 +3329,7 @@ ${senderName}`;
     const params = new URLSearchParams(window.location.search);
     const toolId = params.get('tool') || toolDefinitions[0].id;
     const tool = getToolById(toolId) || toolDefinitions[0];
+    const toolFields = getToolFields(tool);
 
     const titleNode = root.querySelector('[data-tool-title]');
     const descriptionNode = root.querySelector('[data-tool-description]');
@@ -3397,7 +3407,7 @@ ${senderName}`;
           : 'Generate More';
     }
 
-    tool.fields.forEach((field) => {
+    toolFields.forEach((field) => {
       formNode.appendChild(renderField(field));
     });
 
@@ -3413,12 +3423,12 @@ ${senderName}`;
       errorNode.classList.add('hidden');
 
       const values = {};
-      tool.fields.forEach((field) => {
+      toolFields.forEach((field) => {
         const input = formNode.querySelector(`[name="${field.key}"]`);
         values[field.key] = input ? input.value.trim() : '';
       });
 
-      tool.fields.forEach((field) => {
+      toolFields.forEach((field) => {
         const input = formNode.querySelector(`[name="${field.key}"]`);
         clearFieldError(input);
       });
@@ -3482,7 +3492,7 @@ ${senderName}`;
 
     resetButton.addEventListener('click', () => {
       formNode.reset();
-      tool.fields.forEach((field) => {
+      toolFields.forEach((field) => {
         const input = formNode.querySelector(`[name="${field.key}"]`);
         clearFieldError(input);
       });
