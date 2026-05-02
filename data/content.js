@@ -58,6 +58,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Generate Bio',
         url: './tool.html?tool=instagram-bio-generator'
       },
+
+      {
+        id: 'tool-linkedin-headline-generator',
+        slug: 'linkedin-headline-generator',
+        title: 'LinkedIn Headline Generator',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Generate concise, recruiter-friendly LinkedIn headline options for students, freshers, freelancers, and professionals.',
+        publishedAt: '2026-05-02',
+        featured: false,
+        tags: ['linkedin', 'headline', 'personal-branding', 'job-search'],
+        ctaLabel: 'Generate Headlines',
+        url: './tool.html?tool=linkedin-headline-generator'
+      },
+
       {
         id: 'tool-linkedin-bio-generator',
         slug: 'linkedin-bio-generator',
@@ -123,6 +138,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Find Scholarships',
         url: './tool.html?tool=scholarship-recommendation-tool'
       },
+
+      {
+        id: 'tool-formal-letter-generator',
+        slug: 'formal-letter-generator',
+        title: 'Formal Letter Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate structured formal letters for school, college, office, and general professional communication.',
+        publishedAt: '2026-05-02',
+        featured: false,
+        tags: ['formal-letter', 'application', 'request', 'complaint'],
+        ctaLabel: 'Generate Letter',
+        url: './tool.html?tool=formal-letter-generator'
+      },
+
       {
         id: 'tool-professional-email-generator',
         slug: 'professional-email-generator',
@@ -162,6 +192,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Generate Messages',
         url: './tool.html?tool=whatsapp-message-generator'
       },
+
+      {
+        id: 'tool-hashtag-generator',
+        slug: 'hashtag-generator',
+        title: 'Hashtag Generator',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Generate relevant hashtag sets with broad, niche, and topic tags for Instagram, YouTube, LinkedIn, and TikTok/Reels.',
+        publishedAt: '2026-05-02',
+        featured: false,
+        tags: ['hashtag', 'social-media', 'instagram', 'linkedin'],
+        ctaLabel: 'Generate Hashtags',
+        url: './tool.html?tool=hashtag-generator'
+      },
+
       {
         id: 'tool-content-idea-generator',
         slug: 'content-idea-generator',
@@ -175,6 +220,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Try Tool',
         url: './tool.html?tool=content-idea-generator'
       },
+
+      {
+        id: 'tool-resume-bullet-point-generator',
+        slug: 'resume-bullet-point-generator',
+        title: 'Resume Bullet Point Generator',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Generate ATS-friendly resume bullet points for internships, projects, work experience, volunteer roles, and academics.',
+        publishedAt: '2026-05-02',
+        featured: false,
+        tags: ['resume', 'bullet-points', 'ats', 'internship'],
+        ctaLabel: 'Generate Bullets',
+        url: './tool.html?tool=resume-bullet-point-generator'
+      },
+
       {
         id: 'tool-resume-summary-generator',
         slug: 'resume-summary-generator',
@@ -293,6 +353,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Generate Scripts',
         url: './tool.html?tool=youtube-shorts-script-generator'
       },
+
+      {
+        id: 'tool-notes-to-bullet-points-converter',
+        slug: 'notes-to-bullet-points-converter',
+        title: 'Notes to Bullet Points Converter',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Convert long notes into short bullet points, keywords, and quick revision points for exam preparation.',
+        publishedAt: '2026-05-02',
+        featured: false,
+        tags: ['notes', 'bullet-points', 'revision', 'exam-prep'],
+        ctaLabel: 'Convert Notes',
+        url: './tool.html?tool=notes-to-bullet-points-converter'
+      },
+
       {
         id: 'tool-study-notes-summarizer',
         slug: 'study-notes-summarizer',

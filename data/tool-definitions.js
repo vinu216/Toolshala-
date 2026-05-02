@@ -35,6 +35,54 @@ window.ToolShalaToolDefinitions = [
       }
     ]
   },
+
+  {
+    id: 'resume-bullet-point-generator',
+    title: 'Resume Bullet Point Generator',
+    category: 'Career Tool',
+    description: 'Generate strong resume bullet points for projects, internships, achievements, and responsibilities.',
+    ctaLabel: 'Generate Bullets',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Use strong action words and measurable results.',
+    tips: [
+      'Start with action verbs.',
+      'Mention tools or skills.',
+      'Keep bullets short and impactful.'
+    ],
+    fields: [
+      { key: 'role', label: 'Role / Job Title', type: 'text', placeholder: 'e.g. Frontend Developer Intern', required: true },
+      {
+        key: 'experienceType',
+        label: 'Experience Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Internship', label: 'Internship' },
+          { value: 'Project', label: 'Project' },
+          { value: 'Work Experience', label: 'Work Experience' },
+          { value: 'Volunteer', label: 'Volunteer' },
+          { value: 'Academic', label: 'Academic' }
+        ]
+      },
+      { key: 'task', label: 'Task / Responsibility', type: 'textarea', placeholder: 'e.g. Built dashboard components and improved page speed.', required: true },
+      { key: 'skills', label: 'Skills Used', type: 'text', placeholder: 'e.g. React, JavaScript, Tailwind CSS, Git', required: true },
+      { key: 'result', label: 'Result / Outcome', type: 'text', placeholder: 'e.g. Reduced load time by 28% and improved user engagement.', required: true },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'strong', label: 'Strong' },
+          { value: 'simple', label: 'Simple' },
+          { value: 'ats-friendly', label: 'ATS-Friendly' }
+        ]
+      }
+    ]
+  },
+
   {
     id: 'resume-summary-generator',
     title: 'Resume Summary Generator',
@@ -312,6 +360,54 @@ window.ToolShalaToolDefinitions = [
       { key: 'cta', label: 'Optional Call to Action', type: 'text', placeholder: 'e.g. DM for collabs | Download free guide', required: false }
     ]
   },
+
+  {
+    id: 'linkedin-headline-generator',
+    title: 'LinkedIn Headline Generator',
+    category: 'Career Tool',
+    description: 'Generate strong, role-focused LinkedIn headline options that are concise, keyword-friendly, and professional.',
+    ctaLabel: 'Generate Headlines',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Keep your headline clear and role-focused.',
+    tips: [
+      'Use important keywords related to your target role and industry.',
+      'Show your current role or status so recruiters understand your stage quickly.',
+      'Keep it short and scannable to improve profile readability.'
+    ],
+    fields: [
+      { key: 'name', label: 'Name', type: 'text', placeholder: 'e.g. Priya Sharma', required: true },
+      {
+        key: 'currentStatus',
+        label: 'Current Status',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Student', label: 'Student' },
+          { value: 'Fresher', label: 'Fresher' },
+          { value: 'Freelancer', label: 'Freelancer' },
+          { value: 'Professional', label: 'Professional' }
+        ]
+      },
+      { key: 'targetRole', label: 'Target Role / Field', type: 'text', placeholder: 'e.g. Data Analyst | UI/UX Designer', required: true },
+      { key: 'skills', label: 'Key Skills', type: 'text', placeholder: 'e.g. Excel, SQL, Tableau, Storytelling', required: true },
+      { key: 'industry', label: 'Industry / Niche', type: 'text', placeholder: 'e.g. FinTech, EdTech, Marketing', required: true },
+      { key: 'goal', label: 'Optional Goal', type: 'text', placeholder: 'e.g. Looking for internship opportunities', required: false },
+      {
+        key: 'tone',
+        label: 'Optional Tone',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'simple', label: 'Simple' },
+          { value: 'modern', label: 'Modern' }
+        ]
+      }
+    ]
+  },
+
   {
     id: 'linkedin-bio-generator',
     title: 'LinkedIn Bio Generator',
@@ -469,6 +565,61 @@ window.ToolShalaToolDefinitions = [
       }
     ]
   },
+
+  {
+    id: 'notes-to-bullet-points-converter',
+    title: 'Notes to Bullet Points Converter',
+    category: 'Student Tool',
+    description: 'Convert long notes into short, useful bullet points for revision and quick studying.',
+    ctaLabel: 'Convert Notes',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Use this as a revision helper and review once before exams.',
+    tips: [
+      'Keep points short',
+      'Highlight formulas',
+      'Revise repeatedly'
+    ],
+    fields: [
+      { key: 'topic', label: 'Topic / Chapter Name', type: 'text', placeholder: 'e.g. Cell Division, Indian Constitution', required: true },
+      { key: 'notes', label: 'Notes / Text', type: 'textarea', placeholder: 'Paste your long notes here...', required: true, rows: 10 },
+      {
+        key: 'educationLevel',
+        label: 'Education Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'school', label: 'School' },
+          { value: 'college', label: 'College' },
+          { value: 'competitive-exam', label: 'Competitive Exam' }
+        ]
+      },
+      {
+        key: 'summaryStyle',
+        label: 'Summary Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'short-bullets', label: 'Short Bullets' },
+          { value: 'exam-points', label: 'Exam Points' },
+          { value: 'revision-points', label: 'Revision Points' }
+        ]
+      },
+      {
+        key: 'focus',
+        label: 'Optional Focus',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'definitions', label: 'Definitions' },
+          { value: 'facts', label: 'Facts' },
+          { value: 'formula-concepts', label: 'Formula / Concepts' },
+          { value: 'important-terms', label: 'Important Terms' }
+        ]
+      }
+    ]
+  },
+
   {
     id: 'study-notes-summarizer',
     title: 'Study Notes Summarizer',
@@ -1287,6 +1438,67 @@ window.ToolShalaToolDefinitions = [
       }
     ]
   },
+
+  {
+    id: 'formal-letter-generator',
+    title: 'Formal Letter Generator',
+    category: 'Writing Tool',
+    description: 'Generate professional formal letters for school, college, office, and general communication in ready-to-use format.',
+    ctaLabel: 'Generate Letter',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Keep the tone respectful and the message clear.',
+    tips: [
+      'Mention subject clearly.',
+      'Keep paragraphs short.',
+      'Be polite and direct.'
+    ],
+    fields: [
+      {
+        key: 'letterType',
+        label: 'Letter Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Application', label: 'Application' },
+          { value: 'Complaint', label: 'Complaint' },
+          { value: 'Request', label: 'Request' },
+          { value: 'Permission', label: 'Permission' },
+          { value: 'Inquiry', label: 'Inquiry' },
+          { value: 'General', label: 'General' }
+        ]
+      },
+      {
+        key: 'recipientType',
+        label: 'Recipient Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'Teacher', label: 'Teacher' },
+          { value: 'Principal', label: 'Principal' },
+          { value: 'Manager', label: 'Manager' },
+          { value: 'Officer', label: 'Officer' },
+          { value: 'General', label: 'General' }
+        ]
+      },
+      { key: 'subject', label: 'Subject', type: 'text', placeholder: 'e.g. Request for 2 days leave due to medical appointment', required: true },
+      { key: 'message', label: 'Reason / Message', type: 'textarea', placeholder: 'e.g. I am writing to request leave on 5th and 6th May due to...', required: true },
+      { key: 'senderName', label: 'Sender Name', type: 'text', placeholder: 'e.g. Riya Sharma', required: true },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'respectful', label: 'Respectful' },
+          { value: 'professional', label: 'Professional' }
+        ]
+      }
+    ]
+  },
+
   {
     id: 'professional-email-generator',
     title: 'Professional Email Generator',
@@ -1482,6 +1694,64 @@ window.ToolShalaToolDefinitions = [
       }
     ]
   },
+
+  {
+    id: 'hashtag-generator',
+    title: 'Hashtag Generator',
+    category: 'Social Tool',
+    description: 'Generate platform-friendly hashtag sets based on topic, niche, content type, tone, and optional keywords.',
+    ctaLabel: 'Generate Hashtags',
+    outputType: 'cards',
+    enableGenerateMore: true,
+    helperText: 'Use a mix of broad and niche hashtags for better reach.',
+    tips: [
+      'Don’t use too many hashtags',
+      'Match hashtags to content',
+      'Keep them relevant'
+    ],
+    fields: [
+      { key: 'topic', label: 'Topic / Niche', type: 'text', placeholder: 'e.g. Study motivation, UI design, personal branding', required: true },
+      {
+        key: 'platform',
+        label: 'Platform',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'instagram', label: 'Instagram' },
+          { value: 'youtube', label: 'YouTube' },
+          { value: 'linkedin', label: 'LinkedIn' },
+          { value: 'tiktok-reels', label: 'TikTok / Reels' }
+        ]
+      },
+      {
+        key: 'contentType',
+        label: 'Content Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'educational', label: 'Educational' },
+          { value: 'motivational', label: 'Motivational' },
+          { value: 'promotional', label: 'Promotional' },
+          { value: 'personal', label: 'Personal' },
+          { value: 'trending', label: 'Trending' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'casual', label: 'Casual' },
+          { value: 'trendy', label: 'Trendy' },
+          { value: 'minimal', label: 'Minimal' }
+        ]
+      },
+      { key: 'keywords', label: 'Optional Keywords', type: 'text', placeholder: 'e.g. exams, productivity, growth, startup', required: false }
+    ]
+  },
+
   {
     id: 'content-idea-generator',
     title: 'Content Idea Generator for Creators',

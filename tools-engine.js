@@ -213,6 +213,58 @@
         items: headlines.slice(0, 5)
       };
     },
+
+    'resume-bullet-point-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const role = String(values.role || '').trim();
+      const experienceType = String(values.experienceType || '').trim();
+      const task = String(values.task || '').trim();
+      const result = String(values.result || '').trim();
+      const tone = String(values.tone || 'professional').toLowerCase();
+      const skills = normalizeCommaList(values.skills);
+      const topSkills = skills.slice(0, 3);
+      const primarySkill = topSkills[0] || 'relevant tools';
+      const skillText = topSkills.join(', ');
+
+      const actionByTone = {
+        professional: ['Developed', 'Implemented', 'Optimized', 'Coordinated', 'Delivered'],
+        strong: ['Led', 'Accelerated', 'Transformed', 'Streamlined', 'Spearheaded'],
+        simple: ['Built', 'Improved', 'Managed', 'Created', 'Supported'],
+        'ats-friendly': ['Developed', 'Executed', 'Analyzed', 'Improved', 'Collaborated']
+      };
+      const actions = actionByTone[tone] || actionByTone.professional;
+
+      const templates = [
+        `${actions[0]} ${experienceType.toLowerCase()} deliverables as a ${role} by ${task.toLowerCase()}, using ${skillText}, resulting in ${result.toLowerCase()}.`,
+        `${actions[1]} key ${experienceType.toLowerCase()} responsibilities through ${primarySkill} and ${task.toLowerCase()}, which ${result.toLowerCase()}.`,
+        `${actions[2]} workflows for ${experienceType.toLowerCase()} assignments with ${skillText} to ${task.toLowerCase()}, helping ${result.toLowerCase()}.`,
+        `${actions[3]} cross-functional tasks as a ${role}, applying ${skillText} to ${task.toLowerCase()} and ${result.toLowerCase()}.`,
+        `${actions[4]} measurable outcomes in ${experienceType.toLowerCase()} work by leveraging ${primarySkill} for ${task.toLowerCase()}, leading to ${result.toLowerCase()}.`
+      ];
+
+      const items = templates.map((textValue, index) => ({
+        label: `Bullet Point ${index + 1}`,
+        text: textValue.charAt(0).toUpperCase() + textValue.slice(1),
+        hashtags: index === (variant % 5)
+          ? ['Best Pick', 'ATS-Friendly', 'Strong Impact']
+          : ['ATS-Friendly', 'Strong Impact'],
+        bestPick: index === (variant % 5),
+        copyText: `• ${textValue.charAt(0).toUpperCase() + textValue.slice(1)}`,
+        note: 'Action + Skill + Result structure'
+      }));
+
+      return {
+        type: 'cards',
+        items: items.slice(0, 5),
+        outputTips: [
+          'Start with action verbs',
+          'Mention tools or skills',
+          'Keep bullets short and impactful'
+        ],
+        disclaimer: 'Use strong action words and measurable results.'
+      };
+    },
+
     'resume-summary-generator': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const skills = normalizeCommaList(values.skills);
@@ -384,6 +436,67 @@
         outputTips: ['Keep answers specific', 'Don’t over-explain', 'Use real examples']
       };
     },
+
+    'notes-to-bullet-points-converter': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const topic = String(values.topic || '').trim();
+      const notes = String(values.notes || '').trim();
+      const educationLevel = String(values.educationLevel || 'school').trim();
+      const summaryStyle = String(values.summaryStyle || 'short-bullets').trim();
+      const focus = String(values.focus || '').trim();
+
+      const sentences = splitSentences(notes);
+      const baseSentences = (sentences.length ? sentences : notes.split(/[.?!]\s+/)).map((s) => s.trim()).filter(Boolean);
+      const cleaned = baseSentences.map((s) => s.replace(/^[•\-]\s*/, ''));
+      const primaryBullets = cleaned.slice(variant % 2, (variant % 2) + 5).map((line) => line.length > 140 ? `${line.slice(0, 137)}...` : line);
+      const keywords = extractKeywords(`${topic} ${notes}`, 10);
+
+      const focusNote = focus === 'definitions'
+        ? 'Prioritize key definitions and exact meanings.'
+        : focus === 'facts'
+          ? 'Prioritize important facts, dates, and values.'
+          : focus === 'formula-concepts'
+            ? 'Prioritize formulas, core concepts, and usage steps.'
+            : focus === 'important-terms'
+              ? 'Prioritize important terms and exam keywords.'
+              : 'Prioritize high-yield revision points.';
+
+      const styleLabel = summaryStyle === 'exam-points'
+        ? 'Exam Points'
+        : summaryStyle === 'revision-points'
+          ? 'Revision Points'
+          : 'Short Bullets';
+
+      return {
+        type: 'cards',
+        items: [
+          {
+            label: 'Best Pick Summary',
+            title: `${topic} - ${styleLabel}`,
+            text: 'Use these concise bullets for quick recall:',
+            rows: primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.'],
+            hashtags: ['Best Pick', 'Revision Helper'],
+            bestPick: true,
+            copyText: (primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.']).map((r) => `• ${r}`).join('
+')
+          },
+          {
+            label: 'Important Keywords',
+            rows: keywords.length ? keywords.slice(0, 8) : ['Add more detailed notes to extract stronger keywords.'],
+            hashtags: ['Keywords', 'Exam Focus']
+          },
+          {
+            label: 'Quick Revision Bullets',
+            rows: cleaned.slice(0, 4).map((line, index) => `Point ${index + 1}: ${line}`),
+            note: focusNote,
+            hashtags: [educationLevel === 'competitive-exam' ? 'Competitive Exam' : educationLevel === 'college' ? 'College' : 'School', styleLabel]
+          }
+        ],
+        outputTips: ['Keep points short', 'Highlight formulas', 'Revise repeatedly'],
+        disclaimer: 'Use this as a revision helper and review once before exams.'
+      };
+    },
+
     'study-notes-summarizer': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const topic = String(values.topic || '').trim();
@@ -1150,6 +1263,77 @@ Remove repeated words before final use.'
         outputTips: ['Start with a question or bold statement', 'Keep the first line engaging', 'End with one clear CTA']
       };
     },
+
+    'formal-letter-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const letterType = String(values.letterType || 'General').trim();
+      const recipientType = String(values.recipientType || 'General').trim();
+      const subject = String(values.subject || '').trim();
+      const message = String(values.message || '').trim();
+      const senderName = String(values.senderName || '').trim();
+      const tone = String(values.tone || 'formal').toLowerCase();
+
+      const recipientMap = {
+        Teacher: 'Respected Teacher',
+        Principal: 'Respected Principal',
+        Manager: 'Respected Manager',
+        Officer: 'Respected Officer',
+        General: 'Respected Sir/Madam'
+      };
+
+      const toneLines = {
+        formal: 'I am writing this letter to formally communicate the following matter.',
+        polite: 'I hope you are doing well. I am writing with a polite request regarding the following matter.',
+        respectful: 'With due respect, I would like to bring the following matter to your kind attention.',
+        professional: 'I am writing to communicate this matter in a clear and professional manner.'
+      };
+
+      const closingSets = [
+        'I shall be grateful for your kind consideration.',
+        'I request you to kindly look into this matter at the earliest.',
+        'Thank you for your time and support.',
+        'I would appreciate your positive response.'
+      ];
+
+      const currentDate = new Date().toLocaleDateString('en-GB', {
+        day: '2-digit', month: 'long', year: 'numeric'
+      });
+
+      const selectedClosing = closingSets[variant % closingSets.length];
+      const cleanMessage = message.endsWith('.') ? message : `${message}.`;
+
+      const letter = `Date: ${currentDate}
+
+To,
+The ${recipientType}
+
+Subject: ${subject}
+
+${recipientMap[recipientType] || recipientMap.General},
+
+${toneLines[tone] || toneLines.formal}
+
+This is a ${letterType.toLowerCase()} letter regarding: ${subject}.
+
+${cleanMessage}
+
+${selectedClosing}
+
+Sincerely,
+${senderName}`;
+
+      return {
+        type: 'text',
+        text: letter,
+        outputTips: [
+          'Mention subject clearly',
+          'Keep paragraphs short',
+          'Be polite and direct'
+        ],
+        disclaimer: 'Keep the tone respectful and the message clear.'
+      };
+    },
+
     'leave-application-generator': (values, options = {}) => {
       const today = new Date().toLocaleDateString('en-IN', {
         day: 'numeric',
@@ -1194,6 +1378,73 @@ Remove repeated words before final use.'
         className: 'tool-letter-box'
       };
     },
+
+    'hashtag-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const topic = String(values.topic || '').trim();
+      const platform = String(values.platform || 'instagram').trim();
+      const contentType = String(values.contentType || 'educational').trim();
+      const tone = String(values.tone || 'professional').trim();
+      const keywords = normalizeCommaList(values.keywords || '');
+
+      const normalizedTopic = topic.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
+      const topicTag = normalizedTopic.join('') || 'content';
+      const keywordTags = keywords.map((k) => k.toLowerCase().replace(/[^a-z0-9]/g, '')).filter(Boolean);
+
+      const broadByPlatform = {
+        instagram: ['#instagood', '#contentcreator', '#explorepage'],
+        youtube: ['#youtube', '#youtubecreator', '#youtubeshorts'],
+        linkedin: ['#linkedin', '#careergrowth', '#professionaldevelopment'],
+        'tiktok-reels': ['#reels', '#tiktok', '#viralreels']
+      };
+      const nicheByType = {
+        educational: ['#learnsomethingnew', '#studytips', '#educationmatters'],
+        motivational: ['#dailyinspiration', '#motivationdaily', '#mindsetmatters'],
+        promotional: ['#brandgrowth', '#digitalmarketing', '#promocontent'],
+        personal: ['#personalbrand', '#creatorjourney', '#behindthescenes'],
+        trending: ['#trendingnow', '#viralcontent', '#trendalert']
+      };
+      const toneTags = {
+        professional: ['#professional', '#qualitycontent'],
+        casual: ['#casualvibes', '#everydaycontent'],
+        trendy: ['#trendingreels', '#trendingsounds'],
+        minimal: ['#minimalstyle', '#cleansimple']
+      };
+
+      const makeSet = (shift) => {
+        const broad = broadByPlatform[platform] || broadByPlatform.instagram;
+        const niche = nicheByType[contentType] || nicheByType.educational;
+        const mixed = [
+          broad[shift % broad.length],
+          niche[(shift + 1) % niche.length],
+          `#${topicTag}`,
+          `#${topicTag}${platform === 'linkedin' ? 'insights' : 'tips'}`,
+          ...(keywordTags.slice(0, 2).map((k) => `#${k}`)),
+          ...(toneTags[tone] || toneTags.professional)
+        ];
+        return [...new Set(mixed)].slice(0, 8);
+      };
+
+      const items = [0, 1, 2, 3].map((offset, idx) => {
+        const tags = makeSet(variant + offset);
+        return {
+          label: `Hashtag Set ${idx + 1}`,
+          text: tags.join(' '),
+          hashtags: idx === 0 ? ['Best Pick', 'Broad', 'Niche', 'Trending'] : ['Broad', 'Niche', 'Trending'],
+          bestPick: idx === 0,
+          note: idx === 0 ? 'Estimated use: balanced for discoverability and relevance.' : 'Estimated use: good mix for topic-specific reach.',
+          copyText: tags.join(' ')
+        };
+      });
+
+      return {
+        type: 'cards',
+        items,
+        outputTips: ['Don’t use too many hashtags', 'Match hashtags to content', 'Keep them relevant'],
+        disclaimer: 'Use a mix of broad and niche hashtags for better reach.'
+      };
+    },
+
     'instagram-caption-generator': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const topic = values.topic;
@@ -1342,6 +1593,65 @@ Remove repeated words before final use.'
         outputTips: ['Use one clear identity', 'Add one CTA', 'Don’t overload with too many words']
       };
     },
+
+    'linkedin-headline-generator': (values, options = {}) => {
+      const variant = Number(options.variant || 0);
+      const name = String(values.name || '').trim();
+      const currentStatus = String(values.currentStatus || 'Professional').trim();
+      const targetRole = String(values.targetRole || '').trim();
+      const industry = String(values.industry || '').trim();
+      const goal = String(values.goal || '').trim();
+      const tone = String(values.tone || 'professional').toLowerCase();
+      const skills = normalizeCommaList(values.skills);
+      const topSkills = skills.slice(0, 3);
+      const skillText = topSkills.join(' | ');
+
+      const toneLead = {
+        professional: `${currentStatus} | ${targetRole}`,
+        confident: `${targetRole} | Delivering impact in ${industry}`,
+        simple: `${currentStatus} ${targetRole}`,
+        modern: `${targetRole} • ${industry}`
+      };
+
+      const goalSnippet = goal ? ` | ${goal}` : '';
+
+      const templates = [
+        `${toneLead[tone] || toneLead.professional} | ${skillText}${goalSnippet}`,
+        `${currentStatus} ${targetRole} | ${skillText} | ${industry}${goalSnippet}`,
+        `${targetRole} aspiring to grow in ${industry} | Skills: ${skillText}${goalSnippet}`,
+        `${name} | ${targetRole} | ${industry} | ${skillText}${goalSnippet}`,
+        `${currentStatus} focused on ${targetRole} opportunities | ${skillText} | ${industry}${goalSnippet}`,
+        `${targetRole} in ${industry} | ${skillText} | Open to meaningful collaborations`,
+        `${currentStatus} building expertise in ${targetRole} | ${skillText} | ${industry}`
+      ];
+
+      const items = new Array(5).fill(null).map((_, index) => {
+        const textValue = templates[(index + variant) % templates.length].replace(/\s+/g, ' ').trim();
+        const labels = index === 0
+          ? ['Best Pick', 'Professional', 'Keyword Friendly']
+          : ['Professional', 'Keyword Friendly'];
+        return {
+          label: `Headline Option ${index + 1}`,
+          text: textValue,
+          hashtags: labels,
+          bestPick: index === 0,
+          copyText: textValue,
+          note: textValue.length > 120 ? 'Consider trimming a few words to keep it crisp.' : 'Strong and concise for LinkedIn visibility.'
+        };
+      });
+
+      return {
+        type: 'cards',
+        items,
+        outputTips: [
+          'Use important keywords',
+          'Show your current role',
+          'Keep it under a short character limit if possible'
+        ],
+        disclaimer: 'Keep your headline clear and role-focused.'
+      };
+    },
+
     'linkedin-bio-generator': (values, options = {}) => {
       const skills = normalizeCommaList(values.skills);
       const topSkills = skills.slice(0, 3).join(', ');
@@ -2122,8 +2432,10 @@ Remove repeated words before final use.'
 
         if (typeof localGenerator === 'function' && (
           toolId === 'resume-headline-generator'
+          || toolId === 'resume-bullet-point-generator'
           || toolId === 'resume-summary-generator'
           || toolId === 'interview-answer-generator'
+          || toolId === 'notes-to-bullet-points-converter'
           || toolId === 'study-notes-summarizer'
           || toolId === 'assignment-rewriter'
           || toolId === 'paragraph-rewriter-humanizer'
@@ -2134,8 +2446,11 @@ Remove repeated words before final use.'
           || toolId === 'career-path-quiz'
           || toolId === 'youtube-shorts-script-generator'
           || toolId === 'leave-application-generator'
+          || toolId === 'formal-letter-generator'
+          || toolId === 'hashtag-generator'
           || toolId === 'instagram-caption-generator'
           || toolId === 'instagram-bio-generator'
+          || toolId === 'linkedin-headline-generator'
           || toolId === 'linkedin-bio-generator'
           || toolId === 'cover-letter-generator'
           || toolId === 'study-timetable-generator'
@@ -2149,10 +2464,18 @@ Remove repeated words before final use.'
           const fallback = localGenerator(values, options);
           const fallbackMessage = toolId === 'leave-application-generator'
             ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback leave letter.'
+            : toolId === 'resume-bullet-point-generator'
+              ? 'Live AI bullet generation is temporarily unavailable. Showing a reliable fallback bullet set.'
+            : toolId === 'formal-letter-generator'
+              ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback formal letter.'
+            : toolId === 'hashtag-generator'
+              ? 'Live AI hashtag generation is temporarily unavailable. Showing a reliable fallback hashtag set.'
             : toolId === 'resume-summary-generator'
               ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback summary set.'
             : toolId === 'interview-answer-generator'
               ? 'Live AI interview answer generation is temporarily unavailable. Showing a reliable fallback answer set.'
+            : toolId === 'notes-to-bullet-points-converter'
+              ? 'Live AI conversion is temporarily unavailable. Showing a reliable fallback bullet-point revision set.'
             : toolId === 'study-notes-summarizer'
               ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback notes summary set.'
             : toolId === 'assignment-rewriter'
@@ -2175,6 +2498,8 @@ Remove repeated words before final use.'
               ? 'Live AI caption generation is temporarily unavailable. Showing a reliable fallback caption set.'
             : toolId === 'instagram-bio-generator'
               ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback Instagram bio set.'
+            : toolId === 'linkedin-headline-generator'
+                ? 'Live AI headline generation is temporarily unavailable. Showing a reliable fallback LinkedIn headline set.'
             : toolId === 'linkedin-bio-generator'
                 ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback LinkedIn bio set.'
             : toolId === 'cover-letter-generator'
@@ -2239,7 +2564,37 @@ Remove repeated words before final use.'
       }
     }
 
+
+    if (tool.id === 'resume-bullet-point-generator') {
+      const task = String(values.task || '').trim();
+      const result = String(values.result || '').trim();
+      const skills = normalizeCommaList(values.skills);
+      if (skills.length < 2 || task.length < 12 || result.length < 8) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            skills: skills.length < 2 ? 'Please add at least 2 skills separated by commas.' : '',
+            task: task.length < 12 ? 'Please add a clearer task/responsibility.' : '',
+            result: result.length < 8 ? 'Please add a measurable or meaningful outcome.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
     if (tool.id === 'resume-summary-generator') {
+      const skills = normalizeCommaList(values.skills);
+      if (skills.length < 2) {
+        return {
+          fieldErrors: {
+            skills: 'Please add at least 2 key skills separated by commas.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'linkedin-headline-generator') {
       const skills = normalizeCommaList(values.skills);
       if (skills.length < 2) {
         return {
@@ -2257,6 +2612,18 @@ Remove repeated words before final use.'
         return {
           fieldErrors: {
             question: 'Please enter a slightly more detailed question.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'notes-to-bullet-points-converter') {
+      const notes = String(values.notes || '').trim();
+      if (notes.length < 120) {
+        return {
+          fieldErrors: {
+            notes: 'Please paste at least 120 characters so bullets stay meaningful.'
           },
           formError: 'Please correct the highlighted field.'
         };
@@ -2450,6 +2817,33 @@ Remove repeated words before final use.'
             skills: 'Please add at least 2 comma-separated skills.'
           },
           formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'hashtag-generator') {
+      const topic = String(values.topic || '').trim();
+      if (topic.length < 3) {
+        return {
+          fieldErrors: {
+            topic: 'Please add a clearer topic or niche.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'formal-letter-generator') {
+      const subject = String(values.subject || '').trim();
+      const message = String(values.message || '').trim();
+      if (subject.length < 6 || message.length < 20) {
+        return {
+          fieldErrors: {
+            ...(subject.length < 6 ? { subject: 'Please enter a clear subject.' } : {}),
+            ...(message.length < 20 ? { message: 'Please add a slightly detailed reason/message.' } : {})
+          },
+          formError: 'Please correct the highlighted field(s).'
         };
       }
     }
