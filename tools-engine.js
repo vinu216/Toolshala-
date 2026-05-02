@@ -675,9 +675,7 @@
               'Use active voice where possible.',
               'Remove repeated words before final use.'
             ],
-            copyText: 'Keep sentences short.
-Use active voice where possible.
-Remove repeated words before final use.'
+            copyText: 'Keep sentences short.\nUse active voice where possible.\nRemove repeated words before final use.'
           }
         ],
         outputTips: ['Always review the final text before using it.']
