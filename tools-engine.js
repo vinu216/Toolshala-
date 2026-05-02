@@ -477,7 +477,8 @@
             rows: primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.'],
             hashtags: ['Best Pick', 'Revision Helper'],
             bestPick: true,
-            copyText: (primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.']).map((r) => `• ${r}`).join('\n')
+            copyText: (primaryBullets.length ? primaryBullets : ['Read topic overview once.', 'List top 3 concepts.', 'Revise one solved example.']).map((r) => `• ${r}`).join('
+')
           },
           {
             label: 'Important Keywords',

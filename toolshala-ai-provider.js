@@ -930,7 +930,8 @@ Suggested next step: ${nextStep}`
           label: 'Short Bullet Points',
           rows: bullets.slice(0, 6),
           hashtags: ['Bullets', 'Quick Revision'],
-          copyText: bullets.slice(0, 6).map((b) => `• ${b}`).join('\n')
+          copyText: bullets.slice(0, 6).map((b) => `• ${b}`).join('
+')
         },
         {
           label: 'Important Keywords',
