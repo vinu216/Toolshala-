@@ -164,6 +164,31 @@ Strength: ${v.strength || 'Not provided'}`
       system: 'You are a creator strategy assistant. Generate practical, platform-aware, audience-first content ideas.',
       user: `Generate 10 content ideas JSON and one bestStarterIdea.\nNiche: ${v.niche}\nPlatform: ${v.platform}\nGoal: ${v.contentGoal}\nAudience: ${v.audienceType}\nKeywords: ${v.keywords || 'Not provided'}`
     })
+  },
+  'resume-summary-generator': {
+    schema: { name: 'resume_summary_response', strict: true, schema: { type: 'object', additionalProperties: false, properties: { summaries: { type: 'array', minItems: 3, maxItems: 5, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, bestPick: { type: 'boolean' }, tags: { type: 'array', items: { type: 'string' } } }, required: ['text', 'bestPick', 'tags'] } } }, required: ['summaries'] } },
+    validate: (v) => v.role && v.experience && v.skills,
+    prompt: (v) => ({ system: 'You are a resume summary assistant.', user: `Generate 3-5 resume summaries JSON with one bestPick=true.\nRole: ${v.role}\nExperience: ${v.experience}\nSkills: ${v.skills}\nIndustry: ${v.industry || 'Not provided'}\nAchievement: ${v.achievement || 'Not provided'}\nTone: ${v.tone || 'professional'}` })
+  },
+  'interview-answer-generator': {
+    schema: { name: 'interview_answer_response', strict: true, schema: { type: 'object', additionalProperties: false, properties: { answers: { type: 'array', minItems: 2, maxItems: 4, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, style: { type: 'string' }, bestPick: { type: 'boolean' }, tags: { type: 'array', items: { type: 'string' } } }, required: ['text', 'style', 'bestPick', 'tags'] } } }, required: ['answers'] } },
+    validate: (v) => v.question && v.role,
+    prompt: (v) => ({ system: 'You help candidates answer interview questions with realistic examples.', user: `Generate JSON interview answers.\nQuestion: ${v.question}\nRole: ${v.role}\nExperience: ${v.experience || 'Not provided'}\nTone: ${v.tone || 'professional'}` })
+  },
+  'assignment-rewriter': {
+    schema: { name: 'assignment_rewriter_response', strict: true, schema: { type: 'object', additionalProperties: false, properties: { rewrittenVersion: { type: 'string' }, shortVersion: { type: 'string' }, improvementTips: { type: 'array', minItems: 3, maxItems: 5, items: { type: 'string' } } }, required: ['rewrittenVersion', 'shortVersion', 'improvementTips'] } },
+    validate: (v) => v.originalText,
+    prompt: (v) => ({ system: 'You rewrite assignments while preserving meaning and improving clarity.', user: `Rewrite as JSON.\nText: ${v.originalText}\nTone: ${v.tone || 'formal'}\nLength: ${v.length || 'same'}` })
+  },
+  'sop-generator': {
+    schema: { name: 'sop_generator_response', strict: true, schema: { type: 'object', additionalProperties: false, properties: { sopDraft: { type: 'string' }, sectionBreakdown: { type: 'array', minItems: 3, maxItems: 6, items: { type: 'string' } } }, required: ['sopDraft', 'sectionBreakdown'] } },
+    validate: (v) => v.name && v.course && v.university,
+    prompt: (v) => ({ system: 'You write student SOP drafts that are specific and honest.', user: `Generate SOP JSON.\nName: ${v.name}\nCourse: ${v.course}\nUniversity: ${v.university}\nBackground: ${v.background || 'Not provided'}\nGoals: ${v.goals || 'Not provided'}` })
+  },
+  'linkedin-networking-message-generator': {
+    schema: { name: 'linkedin_networking_message_response', strict: true, schema: { type: 'object', additionalProperties: false, properties: { messages: { type: 'array', minItems: 3, maxItems: 5, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, context: { type: 'string' } }, required: ['text', 'context'] } } }, required: ['messages'] } },
+    validate: (v) => v.recipientRole && v.goal,
+    prompt: (v) => ({ system: 'You write concise and polite LinkedIn networking messages.', user: `Generate JSON networking messages.\nRecipient role: ${v.recipientRole}\nGoal: ${v.goal}\nBackground: ${v.background || 'Not provided'}` })
   }
 };
 
