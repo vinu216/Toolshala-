@@ -1870,26 +1870,47 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       setButtonLoading(generateButton, true, FEEDBACK_MESSAGES.loadingContent);
       loadingNode.classList.remove('hidden');
-      await wait(900);
 
-      const formatDate = (dateValue) =>
-        new Date(dateValue).toLocaleDateString('en-IN', {
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric'
+      const prompt = [
+        'Write a formal leave application letter.',
+        `Name: ${name}`,
+        `Reason: ${reason}`,
+        `Leave start date: ${startDate}`,
+        `Leave end date: ${endDate}`,
+        `Recipient: ${recipient}`,
+        'Keep the tone professional, concise, and ready to copy-paste.'
+      ].join('\n');
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
         });
 
-      letterText = `Date: ${new Date().toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-      })}\n\nTo,\n${recipient}\n\nSubject: Application for leave from ${formatDate(startDate)} to ${formatDate(endDate)}\n\nRespected Sir/Madam,\n\nI am ${name}. I request you to kindly grant me leave from ${formatDate(startDate)} to ${formatDate(endDate)} due to ${reason}.\n\nI will ensure that all pending work and responsibilities are managed properly and completed immediately after returning.\n\nKindly approve my leave request.\n\nThank you for your understanding.\n\nSincerely,\n${name}`;
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(String(payload?.error || 'Could not generate the leave application right now.'));
+        }
 
-      outputNode.textContent = letterText;
-      copyButton.disabled = false;
-      showToast('success', FEEDBACK_MESSAGES.toolSuccess);
-      setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingContent);
-      loadingNode.classList.add('hidden');
+        const generatedText = String(payload?.text || '').trim();
+        if (!generatedText) {
+          throw new Error('The generated response was empty. Please try again.');
+        }
+
+        letterText = generatedText;
+        outputNode.textContent = letterText;
+        copyButton.disabled = false;
+        showToast('success', FEEDBACK_MESSAGES.toolSuccess);
+      } catch (error) {
+        letterText = '';
+        copyButton.disabled = true;
+        outputNode.textContent = 'Your formatted leave application will appear here.';
+        showMessage(errorNode, error instanceof Error ? error.message : 'Could not generate the leave application right now.');
+      } finally {
+        setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingContent);
+        loadingNode.classList.add('hidden');
+      }
     });
 
     resetButton?.addEventListener('click', () => {
