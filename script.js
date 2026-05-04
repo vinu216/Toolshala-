@@ -1807,13 +1807,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       showToast('success', FEEDBACK_MESSAGES.toolSuccess);
       setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingResult);
-      loadingNode.classList.add('hidden');
+      loadingNode?.classList.add('hidden');
     });
 
     resetButton?.addEventListener('click', () => {
       form.reset();
       clearOutput();
-      loadingNode.classList.add('hidden');
+      loadingNode?.classList.add('hidden');
     });
   };
 
@@ -1869,7 +1869,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingNode.textContent = FEEDBACK_MESSAGES.loadingContent;
       }
       setButtonLoading(generateButton, true, FEEDBACK_MESSAGES.loadingContent);
-      loadingNode.classList.remove('hidden');
+      loadingNode?.classList.remove('hidden');
 
       const prompt = [
         'Write a formal leave application letter.',
@@ -1909,7 +1909,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showMessage(errorNode, error instanceof Error ? error.message : 'Could not generate the leave application right now.');
       } finally {
         setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingContent);
-        loadingNode.classList.add('hidden');
+        loadingNode?.classList.add('hidden');
       }
     });
 
@@ -1917,7 +1917,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
       letterText = '';
       clearOutput();
-      loadingNode.classList.add('hidden');
+      loadingNode?.classList.add('hidden');
     });
   };
 
@@ -2023,13 +2023,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       showToast('success', FEEDBACK_MESSAGES.toolSuccess);
       setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingResult);
-      loadingNode.classList.add('hidden');
+      loadingNode?.classList.add('hidden');
     });
 
     resetButton?.addEventListener('click', () => {
       form.reset();
       clearOutput();
-      loadingNode.classList.add('hidden');
+      loadingNode?.classList.add('hidden');
     });
   };
 
