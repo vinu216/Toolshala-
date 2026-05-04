@@ -1,89 +1,101 @@
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS'
-};
-
-const jsonResponse = (statusCode, payload) => ({
-  statusCode,
-  headers: {
-    ...CORS_HEADERS,
-    'Content-Type': 'application/json; charset=utf-8'
-  },
-  body: JSON.stringify(payload)
-});
-
 exports.handler = async (event) => {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Content-Type': 'application/json'
+  };
+
   if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 204, headers: CORS_HEADERS, body: '' };
+    return {
+      statusCode: 204,
+      headers: corsHeaders,
+      body: ''
+    };
   }
 
   if (event.httpMethod !== 'POST') {
-    return jsonResponse(405, { error: 'Method not allowed. Use POST.' });
-  }
-
-  let parsedBody;
-  try {
-    parsedBody = JSON.parse(event.body || '{}');
-  } catch (_error) {
-    return jsonResponse(400, { error: 'Invalid JSON body.' });
-  }
-
-  const prompt = String(parsedBody?.prompt || '').trim();
-  if (!prompt) {
-    return jsonResponse(400, { error: 'Missing prompt.' });
-  }
-
-  const apiKey = String(process.env.NVIDIA_API_KEY || '').trim();
-  if (!apiKey) {
-    return jsonResponse(500, { error: 'Server configuration error: missing NVIDIA_API_KEY.' });
+    return {
+      statusCode: 405,
+      headers: corsHeaders,
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
   }
 
   try {
+    const apiKey = process.env.NVIDIA_API_KEY;
+    if (!apiKey) {
+      return {
+        statusCode: 500,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: 'NVIDIA_API_KEY not set' })
+      };
+    }
+
+    let body = {};
+    try {
+      body = JSON.parse(event.body || '{}');
+    } catch {
+      return {
+        statusCode: 400,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: 'Invalid JSON body' })
+      };
+    }
+
+    const prompt = (body.prompt || '').trim();
+    if (!prompt) {
+      return {
+        statusCode: 400,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: 'prompt is required' })
+      };
+    }
+
     const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
       method: 'POST',
       headers: {
+        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         Authorization: `Bearer ${NVIDIA_API_KEY}`
       },
       body: JSON.stringify({
-        model: 'moonshotai/kimi-k2.6',
+        model: 'openai/gpt-oss-20b',
         messages: [{ role: 'user', content: prompt }],
-        stream: false,
-        chat_template_kwargs: { thinking: true }
+        temperature: 1,
+        top_p: 1,
+        max_tokens: 4096,
+        stream: false
       })
     });
 
-    let payload = {};
-    const raw = await response.text();
-    if (raw) {
-      try {
-        payload = JSON.parse(raw);
-      } catch (_error) {
-        if (!response.ok) {
-          return jsonResponse(response.status, { error: 'NVIDIA API returned a non-JSON error response.' });
-        }
-        return jsonResponse(502, { error: 'NVIDIA API returned an invalid JSON response.' });
-      }
-    }
-
+    const data = await response.json();
     if (!response.ok) {
-      const apiError = String(
-        payload?.error?.message
-        || payload?.message
-        || payload?.error
-        || 'NVIDIA API request failed.'
-      ).trim();
-      return jsonResponse(response.status, { error: apiError });
+      return {
+        statusCode: response.status,
+        headers: corsHeaders,
+        body: JSON.stringify({
+          error: data?.error?.message || 'NVIDIA API request failed'
+        })
+      };
     }
 
-    const text = String(payload?.choices?.[0]?.message?.content || '').trim();
-    if (!text) {
-      return jsonResponse(502, { error: 'NVIDIA API returned an empty response.' });
-    }
+    const text = data?.choices?.[0]?.message?.content?.trim()
+      || data?.choices?.[0]?.delta?.content?.trim()
+      || '';
 
-    return jsonResponse(200, { text });
-  } catch (_error) {
-    return jsonResponse(500, { error: 'Failed to reach NVIDIA API.' });
+    return {
+      statusCode: 200,
+      headers: corsHeaders,
+      body: JSON.stringify({ text })
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      headers: corsHeaders,
+      body: JSON.stringify({
+        error: err.message || 'Internal server error'
+      })
+    };
   }
 };
