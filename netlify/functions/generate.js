@@ -22,10 +22,6 @@ exports.handler = async (event) => {
     return jsonResponse(405, { error: 'Method not allowed. Use POST.' });
   }
 
-  if (!process.env.OPENAI_API_KEY) {
-    return jsonResponse(500, { error: 'Server configuration error: missing OPENAI_API_KEY.' });
-  }
-
   let parsedBody;
   try {
     parsedBody = JSON.parse(event.body || '{}');
@@ -38,32 +34,56 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'Missing prompt.' });
   }
 
+  const apiKey = String(process.env.NVIDIA_API_KEY || '').trim();
+  if (!apiKey) {
+    return jsonResponse(500, { error: 'Server configuration error: missing NVIDIA_API_KEY.' });
+  }
+
   try {
-    const response = await fetch('https://api.openai.com/v1/responses', {
+    const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        Authorization: `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-4.1-mini',
-        input: prompt
+        model: 'moonshotai/kimi-k2.6',
+        messages: [{ role: 'user', content: prompt }],
+        stream: false,
+        chat_template_kwargs: { thinking: true }
       })
     });
 
-    const payload = await response.json().catch(() => ({}));
+    let payload = {};
+    const raw = await response.text();
+    if (raw) {
+      try {
+        payload = JSON.parse(raw);
+      } catch (_error) {
+        if (!response.ok) {
+          return jsonResponse(response.status, { error: 'NVIDIA API returned a non-JSON error response.' });
+        }
+        return jsonResponse(502, { error: 'NVIDIA API returned an invalid JSON response.' });
+      }
+    }
+
     if (!response.ok) {
-      const apiError = String(payload?.error?.message || 'OpenAI API request failed.').trim();
+      const apiError = String(
+        payload?.error?.message
+        || payload?.message
+        || payload?.error
+        || 'NVIDIA API request failed.'
+      ).trim();
       return jsonResponse(response.status, { error: apiError });
     }
 
-    const text = String(payload?.output_text || '').trim();
+    const text = String(payload?.choices?.[0]?.message?.content || '').trim();
     if (!text) {
-      return jsonResponse(502, { error: 'OpenAI API returned an empty response.' });
+      return jsonResponse(502, { error: 'NVIDIA API returned an empty response.' });
     }
 
     return jsonResponse(200, { text });
   } catch (_error) {
-    return jsonResponse(500, { error: 'Failed to reach OpenAI API.' });
+    return jsonResponse(500, { error: 'Failed to reach NVIDIA API.' });
   }
 };
