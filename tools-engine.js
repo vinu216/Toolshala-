@@ -2420,127 +2420,17 @@ ${senderName}`;
   };
 
   const generateResult = async (toolId, values, options = {}) => {
-    const localGenerator = generators[toolId];
     const provider = getApiProvider();
-    const mode = options.mode || 'hybrid';
-
-    if (provider && mode !== 'local') {
-      try {
-        const remoteResult = await provider.generate({
-          toolId,
-          values,
-          variant: options.variant || 0
-        });
-        if (remoteResult && typeof remoteResult === 'object') {
-          return remoteResult;
-        }
-      } catch (error) {
-        console.warn('[ToolShala] API provider failed, falling back to local generator.', error);
-
-        if (typeof localGenerator === 'function' && (
-          toolId === 'resume-headline-generator'
-          || toolId === 'resume-bullet-point-generator'
-          || toolId === 'resume-summary-generator'
-          || toolId === 'interview-answer-generator'
-          || toolId === 'notes-to-bullet-points-converter'
-          || toolId === 'study-notes-summarizer'
-          || toolId === 'assignment-rewriter'
-          || toolId === 'paragraph-rewriter-humanizer'
-          || toolId === 'sop-generator'
-          || toolId === 'linkedin-networking-message-generator'
-          || toolId === 'job-description-analyzer'
-          || toolId === 'scholarship-finder'
-          || toolId === 'career-path-quiz'
-          || toolId === 'youtube-shorts-script-generator'
-          || toolId === 'leave-application-generator'
-          || toolId === 'formal-letter-generator'
-          || toolId === 'hashtag-generator'
-          || toolId === 'instagram-caption-generator'
-          || toolId === 'instagram-bio-generator'
-          || toolId === 'linkedin-headline-generator'
-          || toolId === 'linkedin-bio-generator'
-          || toolId === 'cover-letter-generator'
-          || toolId === 'study-timetable-generator'
-          || toolId === 'ai-career-path-suggestor'
-          || toolId === 'scholarship-recommendation-tool'
-          || toolId === 'professional-email-generator'
-          || toolId === 'email-subject-line-generator'
-          || toolId === 'whatsapp-message-generator'
-          || toolId === 'content-idea-generator'
-        )) {
-          const fallback = localGenerator(values, options);
-          const fallbackMessage = toolId === 'leave-application-generator'
-            ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback leave letter.'
-            : toolId === 'resume-bullet-point-generator'
-              ? 'Live AI bullet generation is temporarily unavailable. Showing a reliable fallback bullet set.'
-            : toolId === 'formal-letter-generator'
-              ? 'Live AI letter generation is temporarily unavailable. Showing a reliable fallback formal letter.'
-            : toolId === 'hashtag-generator'
-              ? 'Live AI hashtag generation is temporarily unavailable. Showing a reliable fallback hashtag set.'
-            : toolId === 'resume-summary-generator'
-              ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback summary set.'
-            : toolId === 'interview-answer-generator'
-              ? 'Live AI interview answer generation is temporarily unavailable. Showing a reliable fallback answer set.'
-            : toolId === 'notes-to-bullet-points-converter'
-              ? 'Live AI conversion is temporarily unavailable. Showing a reliable fallback bullet-point revision set.'
-            : toolId === 'study-notes-summarizer'
-              ? 'Live AI summary generation is temporarily unavailable. Showing a reliable fallback notes summary set.'
-            : toolId === 'assignment-rewriter'
-              ? 'Live AI rewriting is temporarily unavailable. Showing a reliable fallback rewritten version.'
-            : toolId === 'paragraph-rewriter-humanizer'
-              ? 'Live AI humanizer is temporarily unavailable. Showing a reliable fallback rewritten paragraph.'
-            : toolId === 'sop-generator'
-              ? 'Live AI SOP generation is temporarily unavailable. Showing a reliable fallback SOP draft.'
-            : toolId === 'linkedin-networking-message-generator'
-              ? 'Live AI message generation is temporarily unavailable. Showing a reliable fallback message set.'
-            : toolId === 'job-description-analyzer'
-              ? 'Live AI analysis is temporarily unavailable. Showing a reliable fallback JD analysis.'
-            : toolId === 'scholarship-finder'
-              ? 'Live AI scholarship finder is temporarily unavailable. Showing reliable scholarship category guidance.'
-            : toolId === 'career-path-quiz'
-              ? 'Live AI career path analysis is temporarily unavailable. Showing reliable career direction guidance.'
-            : toolId === 'youtube-shorts-script-generator'
-              ? 'Live AI script generation is temporarily unavailable. Showing reliable fallback script ideas.'
-            : toolId === 'instagram-caption-generator'
-              ? 'Live AI caption generation is temporarily unavailable. Showing a reliable fallback caption set.'
-            : toolId === 'instagram-bio-generator'
-              ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback Instagram bio set.'
-            : toolId === 'linkedin-headline-generator'
-                ? 'Live AI headline generation is temporarily unavailable. Showing a reliable fallback LinkedIn headline set.'
-            : toolId === 'linkedin-bio-generator'
-                ? 'Live AI bio generation is temporarily unavailable. Showing a reliable fallback LinkedIn bio set.'
-            : toolId === 'cover-letter-generator'
-                ? 'Live AI cover letter generation is temporarily unavailable. Showing a reliable fallback cover letter.'
-            : toolId === 'study-timetable-generator'
-                ? 'Live AI timetable generation is temporarily unavailable. Showing a reliable fallback weekly plan.'
-            : toolId === 'ai-career-path-suggestor'
-                ? 'Live AI career guidance is temporarily unavailable. Showing a reliable fallback career path set.'
-            : toolId === 'scholarship-recommendation-tool'
-                ? 'Live AI scholarship recommendations are temporarily unavailable. Showing a reliable fallback recommendation set.'
-            : toolId === 'professional-email-generator'
-                ? 'Live AI email generation is temporarily unavailable. Showing a reliable fallback email draft.'
-            : toolId === 'email-subject-line-generator'
-                ? 'Live AI subject line generation is temporarily unavailable. Showing reliable fallback subject options.'
-            : toolId === 'whatsapp-message-generator'
-                ? 'Live AI message generation is temporarily unavailable. Showing reliable fallback WhatsApp messages.'
-            : toolId === 'content-idea-generator'
-                ? 'Live AI content idea generation is temporarily unavailable. Showing a reliable fallback idea set.'
-                        : 'Live AI generation is temporarily unavailable. Showing reliable fallback headlines you can still use.';
-
-          return {
-            ...fallback,
-            disclaimer: fallbackMessage,
-            usedFallback: true
-          };
-        }
-      }
+    if (!provider) throw new Error('AI service is unavailable right now.');
+    const remoteResult = await provider.generate({
+      toolId,
+      values,
+      variant: options.variant || 0
+    });
+    if (!remoteResult || typeof remoteResult !== 'object') {
+      throw new Error('The AI service returned an invalid response.');
     }
-
-    if (typeof localGenerator === 'function') {
-      return localGenerator(values, options);
-    }
-
-    return { type: 'text', text: 'This tool is under maintenance.' };
+    return remoteResult;
   };
   
   const validate = (tool, values) => {
@@ -3452,16 +3342,19 @@ ${senderName}`;
       loadingNode.classList.remove('hidden');
 
       await wait(700);
-      const result = await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
-      lastValues = values;
-      renderOutput({ outputNode, result, tool });
-      loadingNode.classList.add('hidden');
-      submitButton.disabled = false;
-      submitButton.textContent = submitButton.dataset.defaultLabel;
-      if (result?.usedFallback) {
-        showToast('error', 'AI service issue.', 'Showing fallback headlines for now.');
-      } else {
+      try {
+        const result = await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+        lastValues = values;
+        renderOutput({ outputNode, result, tool });
         showToast('success', 'Your result is ready.');
+      } catch (error) {
+        errorNode.textContent = error?.message || 'AI service failed. Please try again.';
+        errorNode.classList.remove('hidden');
+        showToast('error', 'AI service issue.', 'Unable to generate a response right now.');
+      } finally {
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
       }
     });
 
@@ -3478,14 +3371,15 @@ ${senderName}`;
         loadingMessageIndex += 1;
         loadingNode.classList.remove('hidden');
         await wait(500);
-        const result = await generateResult(tool.id, lastValues, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
-        renderOutput({ outputNode, result, tool });
-        loadingNode.classList.add('hidden');
-        generateMoreButton.disabled = false;
-        if (result?.usedFallback) {
-          showToast('error', 'AI service issue.', 'Showing fallback headlines for now.');
-        } else {
+        try {
+          const result = await generateResult(tool.id, lastValues, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+          renderOutput({ outputNode, result, tool });
           showToast('success', 'New result generated.');
+        } catch (_error) {
+          showToast('error', 'AI service issue.', 'Unable to generate a response right now.');
+        } finally {
+          loadingNode.classList.add('hidden');
+          generateMoreButton.disabled = false;
         }
       });
     }

@@ -1037,6 +1037,9 @@ Suggested next step: ${nextStep}`
   };
 
   const normalizeResult = (toolId, payload, values = {}) => {
+    if (typeof payload?.text === 'string' && payload.text.trim()) {
+      return { type: 'text', text: payload.text.trim() };
+    }
     if (toolId === 'resume-headline-generator') return normalizeResumeResult(payload);
     if (toolId === 'resume-bullet-point-generator') return normalizeResumeBulletResult(payload);
     if (toolId === 'formal-letter-generator') return normalizeFormalLetterResult(payload);
@@ -1074,62 +1077,20 @@ Suggested next step: ${nextStep}`
     async generate({ toolId, values }) {
       if (!SUPPORTED_TOOLS.has(toolId)) throw new Error('Unsupported remote tool.');
 
-      const configuredBase = typeof window !== 'undefined' ? String(window.TOOLSHALA_API_BASE || '').trim() : '';
-      const host = typeof window !== 'undefined' ? window.location.hostname : '';
-      const fallbackBase = (
-        host.endsWith('github.io')
-        || host === 'localhost'
-        || host === '127.0.0.1'
-        || host === '0.0.0.0'
-      ) ? 'https://toolshala.in' : '';
-      const apiBase = configuredBase || fallbackBase;
-      const endpoint = toolId === 'grammar-corrector-sentence-improver'
-        ? '/api/improve-text'
-        : toolId === 'paragraph-rewriter-humanizer'
-          ? '/api/humanize-paragraph'
-          : toolId === 'instagram-caption-generator'
-            ? '/api/generate-instagram-caption'
-          : toolId === 'instagram-bio-generator'
-            ? '/api/generate-instagram-bio'
-            : toolId === 'leave-application-generator'
-              ? '/api/generate-leave-application'
-            : toolId === 'whatsapp-message-generator'
-              ? '/api/generate-whatsapp-message'
-            : toolId === 'email-subject-line-generator'
-              ? '/api/generate-email-subjects'
-            : toolId === 'linkedin-headline-generator'
-              ? '/api/generate-linkedin-headlines'
-              : toolId === 'linkedin-bio-generator'
-                ? '/api/generate-linkedin-bio'
-                  : toolId === 'resume-bullet-point-generator'
-                    ? '/api/generate-resume-bullets'
-                    : toolId === 'formal-letter-generator'
-                      ? '/api/generate-formal-letter'
-                      : toolId === 'professional-email-generator'
-                        ? '/api/generate-professional-email'
-                        : toolId === 'study-timetable-generator'
-                          ? '/api/generate-study-timetable'
-                          : toolId === 'cover-letter-generator'
-                            ? '/api/generate-cover-letter'
-                            : toolId === 'ai-career-path-suggestor'
-                              ? '/api/generate-career-paths'
-                              : toolId === 'scholarship-recommendation-tool'
-                                ? '/api/recommend-scholarships'
-                                : toolId === 'content-idea-generator'
-                                  ? '/api/generate-content-ideas'
-                      : toolId === 'notes-to-bullet-points-converter'
-                        ? '/api/summarize-notes'
-                        : toolId === 'hashtag-generator'
-                          ? '/api/generate-hashtags'
-                          : '/api/generate-tool';
-      const apiUrl = `${apiBase}${endpoint}`;
+      const promptLines = Object.entries(values || {})
+        .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
+        .filter((line) => !line.endsWith(':'));
+      const prompt = [
+        `Tool ID: ${toolId}`,
+        'Generate a high-quality response based on the following user inputs.',
+        ...promptLines
+      ].join('\n');
 
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          toolId,
-          values
+          prompt
         })
       });
 

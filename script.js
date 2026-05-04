@@ -2031,9 +2031,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const setupGenericGenerateForm = () => {
+    const form = document.getElementById('generateForm') || document.querySelector('form');
+    const promptInput = document.getElementById('promptInput')
+      || document.querySelector("[name='prompt']")
+      || document.querySelector('textarea')
+      || document.querySelector("input[type='text']");
+    const generateBtn = document.getElementById('generateBtn') || document.querySelector("button[type='submit']");
+    const resultBox = document.getElementById('generatedOutput')
+      || document.getElementById('resultBox')
+      || document.querySelector('.generated-output')
+      || document.querySelector('.result');
+    const errorBox = document.getElementById('errorBox')
+      || document.querySelector('.error')
+      || document.querySelector('[data-error]');
+
+    if (!form || !promptInput || !resultBox || form.dataset.aiGenerateBound === '1') return;
+    form.dataset.aiGenerateBound = '1';
+
+    const renderResult = (text) => {
+      resultBox.textContent = text;
+      resultBox.style.whiteSpace = 'pre-wrap';
+      const cardTextEls = resultBox.querySelectorAll('.card-text, .output-text, .description, [data-output-text]');
+      cardTextEls.forEach((el) => { el.textContent = text; });
+      if (!cardTextEls.length && resultBox.childElementCount === 0) resultBox.textContent = text;
+    };
+
+    const showError = (message) => {
+      if (errorBox) {
+        errorBox.textContent = message;
+        errorBox.style.display = 'block';
+      }
+    };
+
+    const clearError = () => {
+      if (errorBox) {
+        errorBox.textContent = '';
+        errorBox.style.display = 'none';
+      }
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const prompt = promptInput.value.trim();
+      if (!prompt) return showError('Please enter a prompt.');
+      clearError();
+      resultBox.textContent = '';
+      if (generateBtn) {
+        generateBtn.disabled = true;
+        generateBtn.textContent = 'Generating...';
+      }
+      renderResult('Generating...');
+
+      try {
+        const res = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || 'Request failed');
+        const text = String(data.text || data.output_text || data.result || '').trim();
+        if (!text) throw new Error('Empty response from AI');
+        renderResult(text);
+      } catch (err) {
+        showError(err.message || 'Something went wrong');
+      } finally {
+        if (generateBtn) {
+          generateBtn.disabled = false;
+          generateBtn.textContent = 'Generate';
+        }
+      }
+    });
+  };
+
   setupResumeHeadlineTool();
   setupLeaveApplicationTool();
   setupInstagramCaptionTool();
+  setupGenericGenerateForm();
   setupTemplateLibrary();
   setupGlobalLinkDefaults();
   setupSkipLink();
