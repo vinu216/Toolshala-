@@ -44,7 +44,7 @@ exports.handler = async (event) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`
+        Authorization: `Bearer ${NVIDIA_API_KEY}`
       },
       body: JSON.stringify({
         model: 'moonshotai/kimi-k2.6',
