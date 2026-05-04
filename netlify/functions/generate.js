@@ -77,13 +77,7 @@ exports.handler = async (event) => {
       return jsonResponse(response.status, { error: apiError });
     }
 
-    const messageContent = payload?.choices?.[0]?.message?.content;
-    const text = Array.isArray(messageContent)
-      ? messageContent
-          .map((part) => (typeof part === 'string' ? part : String(part?.text || '')))
-          .join('')
-          .trim()
-      : String(messageContent || payload?.text || '').trim();
+    const text = String(payload?.choices?.[0]?.message?.content || '').trim();
     if (!text) {
       return jsonResponse(502, { error: 'NVIDIA API returned an empty response.' });
     }
