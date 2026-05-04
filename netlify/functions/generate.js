@@ -57,7 +57,7 @@ exports.handler = async (event) => {
       headers: {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        Authorization: `Bearer ${NVIDIA_API_KEY}`
       },
       body: JSON.stringify({
         model: 'openai/gpt-oss-20b',
