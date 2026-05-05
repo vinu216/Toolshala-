@@ -2421,7 +2421,7 @@ ${senderName}`;
 
   const generateResult = async (toolId, values, options = {}) => {
     const provider = getApiProvider();
-    if (!provider) throw new Error('AI service is unavailable right now.');
+    if (!provider) throw new Error('AI provider is not configured on this page.');
     const remoteResult = await provider.generate({
       toolId,
       values,

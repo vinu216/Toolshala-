@@ -1094,9 +1094,11 @@ Suggested next step: ${nextStep}`
         })
       });
 
-      const payload = await response.json().catch(() => ({}));
+      const payload = await response.json().catch(() => {
+        throw new Error('Invalid JSON response from /api/generate.');
+      });
       if (!response.ok) {
-        throw new Error(String(payload?.error || 'Tool service is unavailable right now.').trim());
+        throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
       }
 
       const normalized = normalizeResult(toolId, payload, values);

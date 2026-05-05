@@ -56,11 +56,10 @@ exports.handler = async (event) => {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${NVIDIA_API_KEY}`
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b',
+        model: process.env.NVIDIA_MODEL || 'openai/gpt-oss-20b',
         messages: [{ role: 'user', content: prompt }],
         temperature: 1,
         top_p: 1,
@@ -69,7 +68,7 @@ exports.handler = async (event) => {
       })
     });
 
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
     if (!response.ok) {
       return {
         statusCode: response.status,
@@ -83,6 +82,14 @@ exports.handler = async (event) => {
     const text = data?.choices?.[0]?.message?.content?.trim()
       || data?.choices?.[0]?.delta?.content?.trim()
       || '';
+
+    if (!text) {
+      return {
+        statusCode: 502,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: 'AI provider returned an empty response.' })
+      };
+    }
 
     return {
       statusCode: 200,
