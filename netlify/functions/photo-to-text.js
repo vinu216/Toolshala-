@@ -1,15 +1,5 @@
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
-const EXTENSION_MIME_TYPES = {
-  jpg: 'image/jpeg',
-  jpeg: 'image/jpeg',
-  png: 'image/png',
-  webp: 'image/webp',
-  heic: 'image/heic',
-  heif: 'image/heif'
-};
-
-const OCR_SYSTEM_PROMPT = 'You are an OCR engine. Transcribe the visible text from the uploaded image exactly as it appears. Do not describe the image, do not summarize, do not explain, do not infer missing words, and do not add any extra text. Preserve line breaks, punctuation, numbering, bullet points, and paragraph structure as much as possible. Return only the extracted text.';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -42,34 +32,11 @@ const normalizeExtractedText = (text = '') =>
 
 const buildPrompt = () =>
   [
-    OCR_SYSTEM_PROMPT,
-    'Keep the same language as the text in the image.',
-    'If no readable text is visible, return an empty response with no explanation.'
+    'Extract all visible text from this image.',
+    'Preserve line breaks and paragraph structure as much as possible.',
+    'Return only the extracted text. Do not summarize, explain, translate, or add placeholders.',
+    'If no readable text is visible, return an empty response.'
   ].join(' ');
-
-const cleanModelOcrOutput = (text = '') => {
-  let value = normalizeExtractedText(text)
-    .replace(/^```(?:text|ocr|plaintext)?\s*/i, '')
-    .replace(/\s*```$/i, '')
-    .trim();
-
-  value = value.replace(/^(?:here(?:\s+is|\'s)?\s+)?(?:the\s+)?(?:extracted\s+text|ocr\s+text|transcription|visible\s+text|text\s+in\s+the\s+image)\s*:\s*/i, '');
-  value = value.replace(/^(?:the|this)\s+(?:image|picture|photo)\s+(?:contains|shows|has)\s+(?:the\s+following\s+)?(?:visible\s+)?text\s*:\s*/i, '');
-  value = value.replace(/^i\s+can\s+(?:read|see)\s+(?:the\s+following\s+)?text\s*:\s*/i, '');
-
-  value = normalizeExtractedText(value);
-  const compact = value.replace(/\s+/g, ' ').trim().toLowerCase();
-  const descriptivePatterns = [
-    /^(?:the|this) (?:image|picture|photo) (?:shows|depicts|appears|looks like|is)\b/,
-    /^i (?:can see|see|notice)\b/,
-    /^it (?:shows|appears|looks like|contains|depicts)\b/,
-    /^there (?:is|are)\b.*\b(?:in|on) (?:the|this) (?:image|picture|photo)\b/,
-    /^(?:sorry|i['’]?m sorry|i cannot|i can['’]?t)\b/,
-    /^(?:no readable text|there is no readable text|no text is visible)\b/
-  ];
-
-  return descriptivePatterns.some((pattern) => pattern.test(compact)) ? '' : value;
-};
 
 const extractWithOpenAI = async ({ base64, mimeType }) => {
   const apiKey = process.env.OPENAI_API_KEY;
@@ -86,7 +53,6 @@ const extractWithOpenAI = async ({ base64, mimeType }) => {
     body: JSON.stringify({
       model: process.env.OPENAI_VISION_MODEL || 'gpt-4o-mini',
       messages: [
-        { role: 'system', content: OCR_SYSTEM_PROMPT },
         {
           role: 'user',
           content: [
@@ -105,7 +71,7 @@ const extractWithOpenAI = async ({ base64, mimeType }) => {
     throw new Error(data?.error?.message || 'OpenAI vision OCR request failed.');
   }
 
-  return cleanModelOcrOutput(data?.choices?.[0]?.message?.content || '');
+  return normalizeExtractedText(data?.choices?.[0]?.message?.content || '');
 };
 
 const extractWithNvidia = async ({ base64, mimeType }) => {
@@ -123,7 +89,6 @@ const extractWithNvidia = async ({ base64, mimeType }) => {
     body: JSON.stringify({
       model: process.env.NVIDIA_VISION_MODEL || process.env.NVIDIA_OCR_MODEL || 'meta/llama-3.2-11b-vision-instruct',
       messages: [
-        { role: 'system', content: OCR_SYSTEM_PROMPT },
         {
           role: 'user',
           content: [
@@ -144,7 +109,7 @@ const extractWithNvidia = async ({ base64, mimeType }) => {
     throw new Error(data?.error?.message || 'NVIDIA vision OCR request failed.');
   }
 
-  return cleanModelOcrOutput(data?.choices?.[0]?.message?.content || data?.choices?.[0]?.delta?.content || '');
+  return normalizeExtractedText(data?.choices?.[0]?.message?.content || data?.choices?.[0]?.delta?.content || '');
 };
 
 exports.handler = async (event) => {
@@ -163,10 +128,9 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'Invalid JSON body.' });
   }
 
-  const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(body.imageBase64 || body.imageData);
-  const filename = String(body.fileName || body.filename || 'uploaded image').slice(0, 180);
-  const extension = filename.split('.').pop()?.toLowerCase() || '';
-  const mimeType = String(body.mimeType || dataUrlMimeType || EXTENSION_MIME_TYPES[extension] || '').toLowerCase();
+  const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(body.imageData);
+  const mimeType = String(body.mimeType || dataUrlMimeType || '').toLowerCase();
+  const filename = String(body.filename || 'uploaded image').slice(0, 180);
 
   if (!base64) {
     return jsonResponse(400, { error: 'Image data is required.' });
@@ -194,7 +158,7 @@ exports.handler = async (event) => {
 
     if (text === null) {
       return jsonResponse(500, {
-        error: 'Text extraction is temporarily unavailable. Please try again later.'
+        error: 'OCR backend is not configured. Add OPENAI_API_KEY or NVIDIA_API_KEY with a vision-capable model in Netlify environment variables.'
       });
     }
 
