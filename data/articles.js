@@ -7,6 +7,273 @@ window.ToolShalaArticleContent = {
   collections: {
     seoGuides: [
       {
+        id: 'guide-026',
+        title: 'AI Content Strategist Roadmap for Beginners',
+        slug: '/guides/ai-content-strategist-roadmap-for-beginners',
+        primaryKeyword: 'AI Content Strategist roadmap for beginners',
+        searchIntent: 'Informational',
+        metaTitle: 'AI Content Strategist Roadmap for Beginners | ToolShala',
+        metaDescription:
+          'Learn what an AI Content Strategist does, skills and tools to learn, 30-day and 90-day roadmaps, portfolio ideas, and resume tips for beginners.',
+        shortExcerpt: 'A beginner-friendly roadmap to start an AI content strategy career with skills, tools, projects, and profile tips.',
+        category: 'Career Guidance',
+        ctaText: 'Start AI Content Roadmap',
+        relatedLinks: [
+          '/tools',
+          '/templates',
+          '/career',
+          '/guides/best-free-ai-tools-for-students',
+          '/guides/best-skills-to-learn-in-2026',
+          '/guides/linkedin-profile-kaise-banaye'
+        ],
+        featuredImageAlt: 'AI content strategist roadmap for beginners and freshers',
+        publishDate: '2026-05-06',
+        readingTime: '11 min read',
+        author: 'ToolShala Editorial Team',
+        featured: true,
+        status: 'ready',
+        guideContent: {
+          intro:
+            'AI Content Strategist ek aisa role hai jahan aap content planning, audience research, SEO, brand voice, and AI tools ko combine karke useful content systems banate ho. Agar aap fresher, student, creator, writer, marketer, ya non-coding AI career explore kar rahe ho, this roadmap will help you start step-by-step without feeling overwhelmed.',
+          featuredSnippet:
+            'An AI Content Strategist plans content with audience research, SEO, analytics, brand messaging, and AI-assisted workflows. Beginners should learn content basics, prompt writing, keyword research, editing, and portfolio projects before applying for internships or entry-level roles.',
+          sections: [
+            {
+              heading: 'What is an AI Content Strategist?',
+              paragraphs: [
+                'An AI Content Strategist decides what content should be created, why it should be created, who it is for, and how AI can make the workflow faster without making the content generic.',
+                'This role is not only about writing prompts. A good strategist understands audience pain points, search intent, content formats, distribution channels, and performance metrics. AI helps with research, outlines, drafts, repurposing, and testing ideas, but human judgement keeps the content useful and trustworthy.'
+              ],
+              bullets: [
+                'Plans blogs, landing pages, social posts, newsletters, and content calendars',
+                'Uses SEO and audience research to choose topics with real demand',
+                'Creates AI workflows for ideation, drafting, editing, repurposing, and QA',
+                'Tracks performance using metrics like clicks, rankings, engagement, and conversions'
+              ]
+            },
+            {
+              heading: 'Who Should Choose This Career?',
+              paragraphs: [
+                'Choose this career if you enjoy writing, research, digital marketing, consumer psychology, and experimenting with AI tools. Coding is not mandatory, but curiosity and clear communication are important.',
+                'This path is beginner-friendly for college students, freshers, bloggers, social media creators, English/Hindi writers, BBA/BCom/BA students, and anyone who wants a practical AI career with creativity plus strategy.'
+              ],
+              bullets: [
+                'You like explaining ideas in simple language',
+                'You can research topics and organize information clearly',
+                'You are interested in SEO, content marketing, social media, or personal branding',
+                'You want to use AI responsibly instead of blindly copying AI output'
+              ]
+            },
+            {
+              heading: 'Why AI Content Strategy is in Demand',
+              paragraphs: [
+                'Brands are publishing more content across Google, LinkedIn, Instagram, YouTube, email, and communities. At the same time, low-quality AI content is increasing, so companies need people who can make content useful, original, and aligned with business goals.',
+                'AI Content Strategists save time by building smarter workflows. They can turn one core idea into blog outlines, social posts, email drafts, FAQs, and campaign angles while still checking accuracy, tone, and audience fit.'
+              ],
+              bullets: [
+                'Businesses need faster content production without losing quality',
+                'SEO and social algorithms reward helpful, audience-first content',
+                'Founders and small teams want AI-assisted content systems',
+                'Freshers with portfolio proof can support marketing, creator, and startup teams'
+              ]
+            },
+            {
+              heading: 'Skills Needed for AI Content Strategist Jobs',
+              paragraphs: [
+                'Start with fundamentals first. Tools will keep changing, but content thinking, research, editing, and analytics will stay valuable. Your aim should be to become someone who can create a clear content plan and explain why it will work.',
+                'Beginner level par perfection zaroori nahi hai. You need enough skills to research, plan, draft, improve, and measure content in a structured way.'
+              ],
+              bullets: [
+                'Content strategy: audience persona, content pillars, funnel stages, and editorial calendar',
+                'SEO basics: keywords, search intent, headings, internal links, meta title, and description',
+                'Prompt writing: giving context, constraints, examples, tone, and quality checks to AI tools',
+                'Editing: fact-checking, removing fluff, improving clarity, and matching brand voice',
+                'Analytics: Google Search Console basics, social insights, CTR, engagement, and conversion goals',
+                'Communication: briefs, feedback handling, stakeholder updates, and simple reporting'
+              ]
+            },
+            {
+              heading: 'Tools to Learn as a Beginner',
+              paragraphs: [
+                'Do not try to master 20 tools at once. Pick one AI writing assistant, one keyword research workflow, one design or content planning tool, and one analytics tool. Build repeatable workflows instead of collecting tools.',
+                'ToolShala resources can help you practice fast drafts, content ideas, LinkedIn profile copy, email writing, and resume material while building your portfolio.'
+              ],
+              bullets: [
+                'AI writing and research: ChatGPT, Gemini, Claude, or Perplexity-style research workflows',
+                'SEO research: Google Trends, Google Search, Search Console basics, Keyword Planner, or beginner keyword tools',
+                'Planning: Notion, Google Sheets, Trello, or a simple content calendar template',
+                'Writing and editing: Google Docs, Grammarly-style checks, Hemingway-style clarity review',
+                'Design and repurposing: Canva, short-form post templates, basic carousel planning',
+                'ToolShala CTAs: Content Idea Generator, Hashtag Generator, LinkedIn Bio Generator, Resume Bullet Point Generator, Resume Headline Generator, and Content Brief Template'
+              ]
+            },
+            {
+              heading: '30-Day AI Content Strategist Roadmap',
+              paragraphs: [
+                'Use the first 30 days to understand the role, learn basics, and create small proof-of-work projects. Daily 60-90 minutes are enough if you stay consistent.',
+                'By the end of 30 days, you should have one niche, one content calendar, 3-5 polished content samples, and a basic LinkedIn profile that explains your direction.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 1-7: Understand Content and Audience',
+                  bullets: [
+                    'Pick one niche like careers, finance, fitness, education, SaaS, fashion, or local business',
+                    'Study 10 good blogs and 10 LinkedIn or Instagram posts in that niche',
+                    'Write down audience questions, pain points, and common formats',
+                    'Create 3 simple audience personas'
+                  ]
+                },
+                {
+                  heading: 'Days 8-15: Learn SEO and Content Planning',
+                  bullets: [
+                    'Learn keyword intent: informational, comparison, transactional, and navigational',
+                    'Create a 20-topic content idea bank using Google Search suggestions and ToolShala Content Idea Generator',
+                    'Draft meta titles, meta descriptions, and H2 outlines for 5 topics',
+                    'Build a two-week content calendar in Google Sheets or Notion'
+                  ]
+                },
+                {
+                  heading: 'Days 16-23: Practice AI-Assisted Creation',
+                  bullets: [
+                    'Write prompts with context, target reader, format, tone, and constraints',
+                    'Generate outlines, but rewrite intros and examples in your own words',
+                    'Create one blog outline, one LinkedIn carousel script, one newsletter draft, and one FAQ section',
+                    'Check every AI output for accuracy, originality, and usefulness'
+                  ]
+                },
+                {
+                  heading: 'Days 24-30: Build Your First Portfolio',
+                  bullets: [
+                    'Publish or save 3 polished samples: blog brief, content calendar, and repurposing plan',
+                    'Create a one-page case study explaining goal, audience, process, AI workflow, and final output',
+                    'Update LinkedIn headline, About section, and featured portfolio links',
+                    'Prepare a short pitch for internships or freelance content strategy work'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: '90-Day Roadmap to Become Job-Ready',
+              paragraphs: [
+                'The next 60 days should convert learning into proof. Companies trust freshers when they can show practical thinking, not only certificates.',
+                'Your 90-day goal is simple: build a niche portfolio, show repeatable workflows, and apply to internships, creator teams, agencies, SaaS startups, and small businesses.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 31-60: Deepen Skills and Publish Consistently',
+                  bullets: [
+                    'Choose one niche and publish 2-3 LinkedIn posts every week',
+                    'Create two long-form content briefs with keyword research and internal linking ideas',
+                    'Repurpose one blog into 5 social posts, 1 email, and 1 short video script',
+                    'Learn basic analytics: impressions, clicks, engagement rate, saves, shares, and CTR'
+                  ]
+                },
+                {
+                  heading: 'Days 61-90: Portfolio, Outreach, and Interviews',
+                  bullets: [
+                    'Create 3 portfolio case studies with before-after examples',
+                    'Make a Notion, Google Drive, or simple website portfolio page',
+                    'Send 30 targeted applications or cold emails to startups, agencies, creators, and local businesses',
+                    'Practice explaining your AI workflow, fact-checking process, and content strategy decisions'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: 'Portfolio Project Ideas for Freshers',
+              paragraphs: [
+                'Portfolio projects are the fastest way to show that you can think like a strategist. Pick projects that show research, planning, AI workflow, editing, and measurable goals.',
+                'Even if you do not have clients, you can create sample strategy projects for imaginary brands or real public brands as practice. Clearly label them as sample projects.'
+              ],
+              bullets: [
+                '30-day content calendar for a coaching institute, creator, or local business',
+                'SEO content brief pack with 5 blog outlines, keywords, FAQs, and meta descriptions',
+                'Repurposing system that turns one blog into LinkedIn posts, Instagram captions, email, and YouTube Shorts script',
+                'AI prompt library for brand voice, content briefs, editing checks, and social captions',
+                'Competitor content audit with gaps, content pillars, and quick-win recommendations',
+                'LinkedIn personal branding plan for a student or fresher profile'
+              ]
+            },
+            {
+              heading: 'Resume and LinkedIn Tips',
+              paragraphs: [
+                'Your resume and LinkedIn should show clarity. Instead of writing only "good communication skills", mention projects, workflows, tools, and results. Beginners can include sample projects and learning sprints.',
+                'Use a specific LinkedIn headline like "AI Content Strategy Intern | SEO Content Briefs | Content Calendar & Prompt Workflows" instead of a vague headline like "Student".'
+              ],
+              bullets: [
+                'Add a portfolio link near the top of your resume and LinkedIn profile',
+                'Use project bullets with action words: researched, planned, audited, repurposed, improved',
+                'Mention tools only if you can explain how you used them',
+                'Write a LinkedIn About section with your niche, skills, projects, and availability',
+                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Professional Email Generator for polished application material'
+              ]
+            },
+            {
+              heading: 'Common Mistakes Beginners Should Avoid',
+              paragraphs: [
+                'AI can speed up your work, but it can also make your content look generic if you do not guide it properly. Strategy means deciding, filtering, editing, and improving, not just generating text.',
+                'Avoid shortcuts that damage trust. Recruiters and clients notice when content has no audience insight, no examples, and no clear goal.'
+              ],
+              bullets: [
+                'Copy-pasting AI content without fact-checking or editing',
+                'Learning tools but ignoring content strategy fundamentals',
+                'Creating content for everyone instead of a clear audience',
+                'Forgetting SEO basics like search intent, headings, and internal links',
+                'Not building a portfolio because you are waiting for your first client',
+                'Using too many buzzwords without showing proof of work'
+              ]
+            },
+            {
+              heading: 'Beginner-Friendly Resources and Next Steps',
+              paragraphs: [
+                'Start with free resources and practical practice. Read beginner SEO guides, study brand blogs, follow marketing breakdowns, and reverse-engineer why good content works.',
+                'For ToolShala practice, use the Content Idea Generator for topic banks, Content Brief Template for structured plans, Hashtag Generator for social distribution, LinkedIn tools for profile building, and resume tools for applications.'
+              ],
+              bullets: [
+                'Read Google Search Central beginner SEO documentation for search basics',
+                'Follow 3-5 brands in your niche and save examples of strong content',
+                'Create weekly content teardown notes: goal, audience, format, hook, CTA, and improvement idea',
+                'Build one public portfolio page before applying',
+                'Apply for content strategy intern, SEO content intern, social media strategist intern, and AI content assistant roles'
+              ]
+            }
+          ],
+          faq: [
+            {
+              question: 'Is AI Content Strategist a good career for freshers?',
+              answer:
+                'Yes. It is a good beginner-friendly career if you can combine writing, research, SEO basics, AI workflows, and portfolio proof. Freshers should start with internships, freelance samples, or assistant roles.'
+            },
+            {
+              question: 'Do I need coding to become an AI Content Strategist?',
+              answer:
+                'No, coding is not mandatory. Basic comfort with digital tools, spreadsheets, analytics, SEO, and AI prompt writing is more important for most beginner roles.'
+            },
+            {
+              question: 'Which tools should I learn first?',
+              answer:
+                'Start with one AI assistant, Google Docs, Google Sheets or Notion, basic keyword research using Google Search and Trends, Canva for simple visuals, and ToolShala tools for content ideas, LinkedIn copy, and resume support.'
+            },
+            {
+              question: 'How can I get my first AI content strategy internship?',
+              answer:
+                'Build 2-3 sample projects, update LinkedIn, prepare a simple portfolio, and send targeted applications to startups, agencies, creators, and local businesses with a short problem-solving pitch.'
+            }
+          ],
+          conclusion:
+            'AI Content Strategist is a practical career path for beginners who like writing, research, marketing, and AI tools. Start small, build proof in 30 days, make your portfolio stronger in 90 days, and use ToolShala tools to polish your content ideas, LinkedIn profile, resume, and outreach messages.',
+          cta: {
+            title: 'Start Building Your AI Content Strategy Portfolio',
+            text:
+              'Use ToolShala tools and templates to generate content ideas, create briefs, improve LinkedIn copy, and prepare resume bullets for your first internship or freelance pitch.',
+            primaryLabel: 'Explore ToolShala Tools',
+            primaryLink: './tool.html?tool=content-idea-generator',
+            secondaryLabel: 'Use Content Brief Template',
+            secondaryLink: './content-brief-template.html'
+          }
+        }
+      },
+      {
         id: 'guide-001',
         title: '10th ke baad kya karein? Complete Career Roadmap',
         slug: '/guides/10th-ke-baad-kya-karein',
