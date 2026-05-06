@@ -132,10 +132,6 @@
   const PHOTO_TO_TEXT_CONFIG = {
     endpoint: '/api/photo-to-text',
     maxFileSize: 8 * 1024 * 1024,
-    maxUploadSize: 3 * 1024 * 1024,
-    maxDimension: 1600,
-    outputMimeType: 'image/jpeg',
-    outputQuality: 0.82,
     allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp'])
   };
 
@@ -3592,17 +3588,18 @@ ${senderName}`;
       loadingNode.classList.remove('hidden');
 
       try {
-        const optimizedImage = await optimizePhotoForOcr(file);
-        loadingNode.textContent = 'Extracting text from your image...';
+        const imageData = await readFileAsDataUrl(file);
+        const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
+        if (!imageBase64) {
+          throw new Error('Could not read the selected image. Please try another file.');
+        }
         const response = await fetch(PHOTO_TO_TEXT_CONFIG.endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            imageBase64: optimizedImage.imageBase64,
-            mimeType: optimizedImage.mimeType,
-            fileName: optimizedImage.fileName,
-            width: optimizedImage.width,
-            height: optimizedImage.height
+            imageBase64,
+            fileName: file.name || 'uploaded-image',
+            mimeType: file.type
           })
         });
 

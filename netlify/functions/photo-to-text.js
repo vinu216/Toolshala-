@@ -1,6 +1,4 @@
 const DEFAULT_MAX_FILE_MB = 8;
-const DEFAULT_TIMEOUT_MS = 20000;
-const DEFAULT_MAX_DIMENSION = 1600;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const corsHeaders = {
@@ -18,18 +16,11 @@ const jsonResponse = (statusCode, body) => ({
 
 const getEnvString = (key, fallback = '') => String(process.env[key] || fallback).trim();
 
-const getPositiveNumber = (key, fallback) => {
-  const value = Number(getEnvString(key, String(fallback)));
-  return Number.isFinite(value) && value > 0 ? value : fallback;
+const getMaxImageBytes = () => {
+  const configuredMaxMb = Number(getEnvString('PHOTO_TO_TEXT_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
+  const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
+  return Math.floor(maxMb * 1024 * 1024);
 };
-
-const getMaxImageBytes = () => Math.floor(getPositiveNumber('PHOTO_TO_TEXT_MAX_FILE_MB', DEFAULT_MAX_FILE_MB) * 1024 * 1024);
-
-const getOcrTimeoutMs = () => Math.floor(getPositiveNumber('PHOTO_TO_TEXT_TIMEOUT_MS', DEFAULT_TIMEOUT_MS));
-
-const getMaxDimension = () => Math.floor(getPositiveNumber('PHOTO_TO_TEXT_MAX_DIMENSION', DEFAULT_MAX_DIMENSION));
-
-const getMaxTokens = () => Math.floor(getPositiveNumber('PHOTO_TO_TEXT_MAX_TOKENS', 2048));
 
 const parseImagePayload = (imageBase64 = '') => {
   const value = String(imageBase64 || '').trim();
@@ -49,7 +40,7 @@ const buildPhotoToTextConfig = () => {
     return {
       provider,
       apiKey: getEnvString('NVIDIA_API_KEY'),
-      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct'),
+      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'mistralai/mistral-large-3-675b-instruct-2512'),
       baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
     };
   }
@@ -119,7 +110,7 @@ const extractMessageContent = (payload = {}) => {
   return String(content || '');
 };
 
-const callVisionChatOcr = async ({ config, base64, mimeType, fileName, timeoutMs }) => {
+const callVisionChatOcr = async ({ config, base64, mimeType, fileName }) => {
   if (!config.apiKey) {
     throw new Error(
       config.provider === 'nvidia'
@@ -136,58 +127,37 @@ const callVisionChatOcr = async ({ config, base64, mimeType, fileName, timeoutMs
     throw new Error('Photo to Text OCR base URL is not configured. Add PHOTO_TO_TEXT_BASE_URL.');
   }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  const startedAt = Date.now();
-  const maxTokens = getMaxTokens();
+  const response = await fetch(`${config.baseUrl}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${config.apiKey}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: config.model,
+      messages: [
+        { role: 'system', content: OCR_SYSTEM_PROMPT },
+        {
+          role: 'user',
+          content: [
+            { type: 'text', text: buildOcrUserPrompt(fileName) },
+            { type: 'image_url', image_url: { url: `data:${mimeType};base64,${base64}` } }
+          ]
+        }
+      ],
+      temperature: 0,
+      top_p: 1,
+      max_tokens: 4096,
+      stream: false
+    })
+  });
 
-  try {
-    const response = await fetch(`${config.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${config.apiKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: config.model,
-        messages: [
-          { role: 'system', content: OCR_SYSTEM_PROMPT },
-          {
-            role: 'user',
-            content: [
-              { type: 'text', text: buildOcrUserPrompt(fileName) },
-              { type: 'image_url', image_url: { url: `data:${mimeType};base64,${base64}` } }
-            ]
-          }
-        ],
-        temperature: 0,
-        top_p: 1,
-        max_tokens: maxTokens,
-        stream: false
-      }),
-      signal: controller.signal
-    });
-
-    console.info('[photo-to-text] upstream complete', {
-      provider: config.provider,
-      status: response.status,
-      durationMs: Date.now() - startedAt
-    });
-
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      throw new Error(payload?.error?.message || `${config.provider} OCR request failed with status ${response.status}.`);
-    }
-
-    return normalizeExtractedText(extractMessageContent(payload));
-  } catch (error) {
-    if (error?.name === 'AbortError') {
-      throw new Error('OCR request timed out. Please upload a smaller or clearer image.');
-    }
-    throw error;
-  } finally {
-    clearTimeout(timeout);
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(payload?.error?.message || `${config.provider} OCR request failed with status ${response.status}.`);
   }
+
+  return normalizeExtractedText(extractMessageContent(payload));
 };
 
 exports.handler = async (event) => {
@@ -214,10 +184,6 @@ exports.handler = async (event) => {
   const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(imagePayload);
   const mimeType = String(body.mimeType || dataUrlMimeType || '').toLowerCase();
   const fileName = String(body.fileName || body.filename || 'uploaded-image').slice(0, 180);
-  const width = Number(body.width || 0);
-  const height = Number(body.height || 0);
-  const timeoutMs = getOcrTimeoutMs();
-  const maxDimension = getMaxDimension();
 
   if (!base64) {
     return jsonResponse(400, { error: 'Image data is required.' });
@@ -232,25 +198,12 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'Invalid image data. Please upload the image again.' });
   }
 
-  if ((width && width > maxDimension) || (height && height > maxDimension)) {
-    return jsonResponse(413, { error: `Image dimensions are too large. Please upload an image up to ${maxDimension}px on the longest side.` });
-  }
-
   const imageBytes = Buffer.from(normalizedBase64, 'base64');
   const maxImageBytes = getMaxImageBytes();
   if (imageBytes.length > maxImageBytes) {
     const maxMb = Math.max(1, Math.floor(maxImageBytes / (1024 * 1024)));
     return jsonResponse(413, { error: `Image is too large. Please upload an image up to ${maxMb} MB.` });
   }
-
-  console.info('[photo-to-text] request accepted', {
-    fileName,
-    mimeType,
-    sizeBytes: imageBytes.length,
-    width: width || null,
-    height: height || null,
-    timeoutMs
-  });
 
   const config = buildPhotoToTextConfig();
   if (!['nvidia', 'openai', 'openai-compatible'].includes(config.provider)) {
@@ -260,7 +213,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const text = await callVisionChatOcr({ config, base64: normalizedBase64, mimeType, fileName, timeoutMs });
+    const text = await callVisionChatOcr({ config, base64: normalizedBase64, mimeType, fileName });
 
     if (!text) {
       return jsonResponse(422, { error: 'No readable text was found in this image. Try a clearer or higher-resolution photo.' });
@@ -269,11 +222,6 @@ exports.handler = async (event) => {
     console.info('[photo-to-text] request complete', { durationMs: Date.now() - requestStartedAt });
     return jsonResponse(200, { text });
   } catch (error) {
-    console.warn('[photo-to-text] request failed', {
-      message: error?.message || 'OCR provider failed.',
-      durationMs: Date.now() - requestStartedAt
-    });
-    const isTimeout = /timed out|abort/i.test(String(error?.message || error?.name || ''));
-    return jsonResponse(isTimeout ? 504 : 502, { error: error?.message || 'OCR provider failed. Please try another clear image.' });
+    return jsonResponse(502, { error: error?.message || 'OCR provider failed. Please try another clear image.' });
   }
 };
