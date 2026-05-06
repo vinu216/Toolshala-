@@ -1,5 +1,32 @@
 window.ToolShalaToolDefinitions = [
   {
+    id: 'photo-to-text',
+    title: 'Photo to Text',
+    category: 'AI Tool',
+    description: 'Extract visible text from uploaded images, screenshots, and camera photos with OCR.',
+    ctaLabel: 'Extract Text',
+    outputType: 'text',
+    generationMode: 'photo-ocr',
+    helperText: 'Upload a clear image with readable text. For best OCR results, crop extra background and avoid blur.',
+    tips: [
+      'Use a clear, well-lit photo for better text extraction.',
+      'Screenshots and document photos usually work best.',
+      'Review extracted text before using it in applications or assignments.'
+    ],
+    fields: [
+      {
+        key: 'image',
+        label: 'Upload Image',
+        type: 'file',
+        accept: 'image/jpeg,image/png,image/webp,image/heic,image/heif',
+        capture: 'environment',
+        required: true,
+        helperText: 'JPEG, PNG, WEBP, HEIC or HEIF up to 8 MB.'
+      }
+    ]
+  },
+
+  {
     id: 'resume-headline-generator',
     title: 'Resume Headline Generator',
     category: 'Career Tool',
