@@ -40,7 +40,7 @@ const buildPhotoToTextConfig = () => {
     return {
       provider,
       apiKey: getEnvString('NVIDIA_API_KEY'),
-      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct'),
+      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'mistralai/mistral-large-3-675b-instruct-2512'),
       baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
     };
   }
