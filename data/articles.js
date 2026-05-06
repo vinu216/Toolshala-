@@ -8,25 +8,25 @@ window.ToolShalaArticleContent = {
     seoGuides: [
       {
         id: 'guide-026',
-        title: 'Cybersecurity Analyst Roadmap for Beginners',
-        slug: '/guides/cybersecurity-analyst-roadmap-for-beginners',
-        primaryKeyword: 'Cybersecurity Analyst roadmap for beginners',
+        title: 'Digital Marketing Executive Roadmap for Freshers',
+        slug: '/guides/digital-marketing-executive-roadmap-for-freshers',
+        primaryKeyword: 'Digital Marketing Executive roadmap for freshers',
         searchIntent: 'Informational',
-        metaTitle: 'Cybersecurity Analyst Roadmap for Beginners | Skills, Labs & Jobs | ToolShala',
+        metaTitle: 'Digital Marketing Executive Roadmap for Freshers | SEO, Social, Ads & Email | ToolShala',
         metaDescription:
-          'Learn how to become a cybersecurity analyst with beginner skills, tools, SOC concepts, 30-day and 90-day roadmaps, lab ideas, resume tips, interview prep, and resources.',
-        shortExcerpt: 'A beginner-friendly cybersecurity analyst roadmap with skills, tools, SOC basics, labs, projects, resume tips, and interview prep.',
+          'Learn how to become a digital marketing executive as a fresher with SEO, social media, email, ads basics, 30-day and 90-day roadmaps, projects, resume tips, and tools.',
+        shortExcerpt: 'A fresher-friendly digital marketing roadmap with SEO, social media, email, ads, projects, internship tips, and ToolShala resources.',
         category: 'Career Guidance',
-        ctaText: 'Start Cybersecurity Roadmap',
+        ctaText: 'Start Digital Marketing Roadmap',
         relatedLinks: [
           '/career',
           '/tools',
           '/templates',
           '/guides/best-skills-to-learn-in-2026',
-          '/guides/free-online-courses-with-certificate',
-          '/guides/resume-format-for-college-students'
+          '/guides/best-side-skills-for-students',
+          '/guides/internship-kaise-dhoondein'
         ],
-        featuredImageAlt: 'Cybersecurity analyst roadmap for beginners with SOC tools labs and resume tips',
+        featuredImageAlt: 'Digital marketing executive roadmap for freshers with SEO social media ads and email basics',
         publishDate: '2026-05-06',
         readingTime: '11 min read',
         author: 'ToolShala Editorial Team',
@@ -34,268 +34,266 @@ window.ToolShalaArticleContent = {
         status: 'ready',
         guideContent: {
           intro:
-            'Cybersecurity Analyst Roadmap for Beginners un students aur freshers ke liye hai jo security career start karna chahte hain but networking, tools, labs, certifications, and jobs ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, lab ideas, resume tips, interview prep, and resources cover kiye gaye hain.',
+            'Digital Marketing Executive Roadmap for Freshers un students aur beginners ke liye hai jo SEO, social media, email marketing, ads, analytics, and content planning seekhkar internship ya entry-level marketing role target karna chahte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, projects, resume tips, freelance ideas, and ToolShala resources cover kiye gaye hain.',
           featuredSnippet:
-            'A Cybersecurity Analyst protects systems by monitoring alerts, investigating suspicious activity, understanding networks, reviewing logs, and helping teams respond to incidents. Beginners should learn networking, Linux, security basics, SIEM concepts, log analysis, labs, and portfolio documentation before applying for SOC or security analyst roles.',
+            'A Digital Marketing Executive helps brands grow online through SEO, social media, email campaigns, paid ads, content planning, and analytics. Freshers should learn marketing basics, SEO, social content, email writing, ad fundamentals, reporting, and build 3-5 portfolio projects before applying.',
           sections: [
             {
-              heading: 'What is a Cybersecurity Analyst?',
+              heading: 'What Does a Digital Marketing Executive Do?',
               paragraphs: [
-                'A Cybersecurity Analyst organization ke systems, networks, accounts, and data ko threats se protect karne mein help karta hai. Daily work mein alerts review karna, suspicious login check karna, logs analyze karna, phishing reports investigate karna, and incident notes document karna include ho sakta hai.',
-                'Beginner level par this role is often connected with SOC, yaani Security Operations Center. SOC analyst ka kaam hota hai tools se aane wale alerts ko triage karna, false positive aur real threat mein difference samajhna, and senior team ko clear information dena.'
+                'A Digital Marketing Executive online channels par brand visibility, leads, traffic, and engagement improve karne mein help karta hai. Daily work mein content calendar banana, social posts schedule karna, SEO tasks karna, email campaigns draft karna, ad performance check karna, and analytics reports banana include ho sakta hai.',
+                'Freshers ke liye ye role practical hai because you can show proof through small campaigns, content ideas, SEO audits, Instagram calendars, email samples, and basic performance reports.'
               ],
               bullets: [
-                'Monitors security alerts from tools and dashboards',
-                'Investigates suspicious emails, logins, malware signs, and network activity',
-                'Uses logs, SIEM dashboards, threat intelligence, and basic forensics clues',
-                'Documents incidents with timeline, impact, evidence, and next steps',
-                'Helps improve security awareness, rules, and response processes'
+                'Plans and executes SEO, social media, email, and paid campaign tasks',
+                'Creates content ideas, captions, hashtags, briefs, and posting calendars',
+                'Tracks metrics like reach, clicks, impressions, CTR, leads, and conversions',
+                'Coordinates with designers, writers, founders, sales teams, or clients',
+                'Improves campaigns based on data, audience feedback, and business goals'
               ]
             },
             {
-              heading: 'Why Cybersecurity Analyst Careers Are Growing',
+              heading: 'Why Digital Marketing is Popular Among Freshers',
               paragraphs: [
-                'Cybersecurity is growing because companies, colleges, banks, startups, hospitals, ecommerce stores, and government services are all becoming more digital. More digital systems means more risk from phishing, weak passwords, ransomware, data leaks, and account misuse.',
-                'Businesses need people who can monitor systems, explain security issues, and respond quickly. Not every cybersecurity job is advanced hacking; many beginner roles need strong fundamentals, alert handling, documentation, and disciplined investigation.'
+                'Digital marketing popular hai because almost every business needs online visibility: startups, coaching institutes, ecommerce stores, agencies, local businesses, creators, SaaS companies, and personal brands.',
+                'Freshers ke liye entry barrier manageable hai. You can start with free tools, build public portfolio projects, learn by observing brands, and apply for internships even before advanced certifications.'
               ],
               bullets: [
-                'Remote work and cloud tools have increased security monitoring needs',
-                'Phishing, ransomware, credential theft, and data breaches are common business risks',
-                'Compliance and privacy requirements push companies to improve security teams',
-                'SOC and entry-level analyst roles are practical starting points for freshers',
-                'Security skills combine well with networking, cloud, IT support, DevOps, and risk careers'
+                'High demand across agencies, startups, creators, local businesses, and ecommerce',
+                'Beginner-friendly entry roles exist in SEO, social media, content, email, and ads support',
+                'Portfolio proof can be created without waiting for a full-time job',
+                'Skills also help freelancing, personal branding, creator work, and entrepreneurship',
+                'Marketing results are measurable, so improvement is easier to show'
               ]
             },
             {
-              heading: 'Skills Needed for Cybersecurity Analyst Beginners',
+              heading: 'Skills Needed for Digital Marketing Executive Freshers',
               paragraphs: [
-                'Cybersecurity beginners ko sab kuch ek saath learn karne ki zaroorat nahi hai. First goal should be fundamentals: networks kaise work karte hain, operating systems kaise behave karte hain, logs kaise read karte hain, and common attacks kaise identify hote hain.',
-                'Strong beginner analyst calm and detail-oriented hota hai. Woh alert dekhkar panic nahi karta; evidence collect karta hai, context samajhta hai, and clear notes likhta hai.'
+                'Digital marketing mein creativity plus data dono chahiye. Aapko viral trends ke saath basic strategy, audience understanding, copywriting, and analytics bhi samajhna hoga.',
+                'Freshers should become T-shaped: SEO, social, email, ads, and analytics ke basics samjho, then one area mein slightly deeper practice karo.'
               ],
               bullets: [
-                'Networking basics: IP, DNS, HTTP/HTTPS, ports, protocols, subnetting basics, and firewalls',
-                'Operating systems: Windows basics, Linux commands, processes, files, users, and permissions',
-                'Security fundamentals: CIA triad, authentication, malware, phishing, vulnerabilities, and risk',
-                'Log analysis: timestamps, source IP, destination IP, usernames, event IDs, and failed logins',
-                'SOC mindset: alert triage, severity, false positives, escalation, and incident notes',
-                'Communication: writing clear reports and explaining technical issues simply',
-                'Ethics: legal boundaries, privacy, permission, and responsible practice'
+                'Marketing basics: audience, funnel, positioning, offer, CTA, and customer journey',
+                'Copywriting: hooks, captions, subject lines, landing page copy, and clear CTAs',
+                'SEO basics: keywords, search intent, headings, meta description, internal links, and content quality',
+                'Social media: content pillars, formats, captions, hashtags, reels ideas, and posting calendar',
+                'Email marketing: welcome emails, newsletters, follow-ups, segmentation basics, and subject lines',
+                'Ads basics: campaign objective, targeting, creative, budget, CPC, CTR, conversion, and A/B testing',
+                'Analytics: Google Analytics basics, Search Console basics, social insights, and simple reporting'
               ]
             },
             {
-              heading: 'Cybersecurity Tools and Concepts to Learn',
+              heading: 'SEO, Social Media, Email, and Ads Basics to Learn',
               paragraphs: [
-                'Tools important hain, but concepts zyada important hain. Agar aap networking, logs, and attack basics samajhte ho, then different security tools learn karna easier ho jata hai.',
-                'Beginner stack simple rakho: Linux basics, Wireshark for packets, a SIEM demo or Splunk basics for logs, password/security hygiene, and safe lab platforms for practice.'
+                'Digital marketing ko random tools ki list ki tarah mat seekho. Channels ko business goals se connect karo: awareness, engagement, leads, sales, retention, or community building.',
+                'Beginner level par enough hai ki aap basic tasks confidently kar sako, report samajh sako, and next improvement suggest kar sako.'
               ],
               bullets: [
-                'Linux terminal: cd, ls, cat, grep, find, chmod, ps, netstat or ss, and basic shell usage',
-                'Windows security basics: Event Viewer, users, processes, PowerShell awareness, and Defender logs',
-                'Networking tools: Wireshark, ping, traceroute, nslookup, netstat, and basic packet reading',
-                'SIEM concepts: alerts, dashboards, correlation rules, log sources, severity, and escalation',
-                'Security concepts: vulnerabilities, CVE, patching, MFA, phishing, malware, ransomware, and backups',
-                'Threat frameworks: basic MITRE ATT&CK awareness and kill chain thinking',
-                'Safe practice platforms: TryHackMe, OverTheWire, PortSwigger Web Security Academy, and beginner CTFs'
+                'SEO: keyword research, search intent, on-page SEO, blog outline, meta title, meta description, and internal linking',
+                'Social media: audience persona, content calendar, hooks, captions, hashtags, engagement replies, and content repurposing',
+                'Email: subject lines, preview text, simple newsletter structure, lead magnet follow-up, and polite promotional copy',
+                'Ads: campaign objective, audience targeting, creative testing, landing page match, budget basics, and performance metrics',
+                'Analytics: UTM basics, impressions, clicks, CTR, engagement rate, conversion rate, leads, and campaign notes',
+                'Reporting: what happened, why it happened, what to improve next, and what action is needed'
               ]
             },
             {
-              heading: '30-Day Cybersecurity Analyst Roadmap',
+              heading: '30-Day Digital Marketing Roadmap for Freshers',
               paragraphs: [
-                'First 30 days ka goal foundation and safe practice hai. Roz 60-90 minutes do, notes maintain karo, and har week ek small proof-of-work output save karo.',
-                'By day 30, you should understand networking basics, Linux commands, common threats, simple log reading, and at least one beginner lab write-up.'
+                'First 30 days ka goal fundamentals and proof banana hai. Roz 60-90 minutes practice karo and har week one small deliverable create karo.',
+                'By day 30, you should have one niche selected, 20 content ideas, one SEO mini audit, one social calendar, and 2-3 email/caption samples.'
               ],
               subSections: [
                 {
-                  heading: 'Days 1-7: Learn Security and Networking Basics',
+                  heading: 'Days 1-7: Understand Marketing Basics and Pick a Niche',
                   bullets: [
-                    'Understand what cybersecurity analysts, SOC analysts, and incident responders do',
-                    'Learn IP address, DNS, HTTP/HTTPS, ports, TCP/UDP, firewalls, and VPN basics',
-                    'Read about common threats: phishing, malware, ransomware, brute force, and data leaks',
-                    'Create a glossary of 30 cybersecurity terms in your own words'
+                    'Learn audience, funnel, offer, CTA, brand voice, and customer journey basics',
+                    'Pick one niche like education, fitness, local food, fashion, SaaS, finance, or career content',
+                    'Study 5 brands in that niche and note their content pillars, offers, and CTAs',
+                    'Create a simple audience persona with pain points, goals, and preferred platforms'
                   ]
                 },
                 {
-                  heading: 'Days 8-15: Practice Linux and Windows Logs',
+                  heading: 'Days 8-15: Learn SEO and Content Planning',
                   bullets: [
-                    'Practice Linux commands for files, search, permissions, processes, and network checks',
-                    'Open Windows Event Viewer and understand login, process, and security event basics',
-                    'Read sample authentication logs and identify failed login patterns',
-                    'Write a short incident note from a sample suspicious login scenario'
+                    'Use Google Search suggestions and ToolShala Content Idea Generator to create 20 topic ideas',
+                    'Practice keyword intent: informational, comparison, local, and transactional searches',
+                    'Create 5 blog outlines with H2 headings, FAQs, meta titles, and meta descriptions',
+                    'Do a basic SEO audit of one page: title, headings, internal links, speed feel, and content gaps'
                   ]
                 },
                 {
-                  heading: 'Days 16-23: Learn Wireshark and SOC Alert Thinking',
+                  heading: 'Days 16-23: Practice Social Media and Email Marketing',
                   bullets: [
-                    'Use Wireshark to open a sample PCAP and identify IPs, protocols, DNS queries, and HTTP traffic',
-                    'Learn alert triage questions: what happened, who is affected, when, severity, and evidence',
-                    'Study false positive vs true positive examples',
-                    'Complete one beginner SOC or phishing room on a safe learning platform'
+                    'Create a 14-day Instagram or LinkedIn content calendar for your chosen niche',
+                    'Write 10 captions using hooks, value points, and clear CTA',
+                    'Use ToolShala Hashtag Generator and Instagram Caption Generator to compare and improve drafts',
+                    'Write 3 email samples: welcome email, event reminder, and internship/client outreach email'
                   ]
                 },
                 {
-                  heading: 'Days 24-30: Build First Lab Write-Up',
+                  heading: 'Days 24-30: Learn Ads Basics and Build First Portfolio Proof',
                   bullets: [
-                    'Pick one lab: phishing email analysis, suspicious login, malware indicator lookup, or basic network traffic review',
-                    'Document objective, tools used, evidence, timeline, finding, and recommended action',
-                    'Create a simple one-page portfolio entry with screenshots and notes',
-                    'Use ToolShala Resume Bullet Point Generator to convert the lab into resume-ready bullets'
+                    'Understand campaign objective, target audience, creative, budget, CPC, CTR, and conversion basics',
+                    'Create one sample ad brief with audience, offer, creative angle, landing page promise, and metrics to track',
+                    'Make a one-page mini case study: niche, audience, content plan, SEO ideas, email samples, and ad brief',
+                    'Use ToolShala Resume Bullet Point Generator to convert your project into resume-ready bullets'
                   ]
                 }
               ]
             },
             {
-              heading: '90-Day Cybersecurity Roadmap to Become Job-Ready',
+              heading: '90-Day Digital Marketing Roadmap to Become Job-Ready',
               paragraphs: [
-                'Next 60 days mein depth, labs, and interview prep par focus karo. Recruiters freshers se expert hacking expect nahi karte, but they want fundamentals, ethical mindset, clear documentation, and proof of practice.',
-                'By day 90, aim for 3-5 lab write-ups, basic SIEM/log analysis experience, networking confidence, one clean resume, and interview answers for SOC analyst or cybersecurity intern roles.'
+                'Next 60 days mein depth, tools, reporting, and applications par focus karo. Recruiters freshers se huge results expect nahi karte, but they want consistency, clarity, and proof that you can execute.',
+                'By day 90, aim for 3 portfolio projects, one public content calendar, one SEO audit, one email sequence, one sample ad plan, and a resume/LinkedIn profile that explains your marketing skills clearly.'
               ],
               subSections: [
                 {
-                  heading: 'Days 31-60: Build SOC and Web Security Practice',
+                  heading: 'Days 31-60: Build Channel Depth and Projects',
                   bullets: [
-                    'Practice 2-3 SOC-style labs: phishing analysis, brute-force login detection, suspicious process, or endpoint alert',
-                    'Learn web security basics: HTTP requests, cookies, authentication, input validation, XSS, and SQL injection concepts',
-                    'Try beginner PortSwigger or OWASP Top 10 learning modules safely',
-                    'Create incident notes with severity, evidence, affected asset, and recommended next steps'
+                    'Create one SEO content plan with 10 keywords, blog outlines, internal link ideas, and meta descriptions',
+                    'Publish or draft 12-15 social posts for LinkedIn, Instagram, or a sample brand account',
+                    'Build one email sequence for lead nurture, course promotion, or event registration',
+                    'Create a basic reporting sheet with impressions, clicks, CTR, engagement rate, leads, and notes'
                   ]
                 },
                 {
-                  heading: 'Days 61-90: Portfolio, Resume, and Applications',
+                  heading: 'Days 61-90: Portfolio, Outreach, and Interviews',
                   bullets: [
-                    'Publish 3-5 lab write-ups on Notion, GitHub, Google Docs, or a simple portfolio page',
-                    'Prepare a short walkthrough for your best investigation lab',
-                    'Apply for cybersecurity intern, SOC analyst intern, IT security trainee, security operations trainee, and helpdesk-to-security roles',
-                    'Practice explaining networking, logs, phishing, CIA triad, incident response, and your lab process'
+                    'Create 3 polished portfolio entries: SEO audit, social calendar, and email/ad campaign plan',
+                    'Prepare a simple Notion, Google Drive, or portfolio page with screenshots and explanations',
+                    'Apply for digital marketing intern, SEO intern, social media intern, email marketing intern, and performance marketing trainee roles',
+                    'Practice explaining audience, funnel, campaign objective, content choices, and metrics in interviews'
                   ]
                 }
               ]
             },
             {
-              heading: 'Cybersecurity Lab and Practice Ideas',
+              heading: 'Digital Marketing Portfolio and Project Ideas',
               paragraphs: [
-                'Cybersecurity portfolio should show safe, legal, and documented practice. Never test on real websites, college networks, or company systems without written permission.',
-                'Beginner labs can be simple but useful if you explain your investigation clearly. Focus on evidence, reasoning, and what action you would recommend.'
+                'Portfolio projects should show that you can think like a marketer, not only write captions. Add goal, audience, strategy, sample creatives, and metrics you would track.',
+                'Even sample projects are useful if clearly labeled. A clean project with business thinking can help freshers stand out in internship applications.'
               ],
               bullets: [
-                'Phishing email analysis: sender, links, headers, language, indicators, and recommendation',
-                'Suspicious login investigation: failed attempts, source IP, username, timestamp, and next steps',
-                'Wireshark traffic review: DNS queries, HTTP requests, unusual ports, and possible indicators',
-                'Windows Event Viewer mini lab: login events, failed attempts, process clues, and timeline',
-                'Linux log review: auth logs, sudo usage, SSH attempts, and unusual commands',
-                'OWASP Top 10 beginner notes: explain XSS, SQL injection, broken access control, and prevention in simple words',
-                'Home security audit: password manager, MFA, updates, backups, router basics, and phishing awareness checklist'
+                'SEO audit for a coaching institute, local business, blog, or creator website',
+                '30-day Instagram content calendar with pillars, hooks, captions, hashtags, and CTA',
+                'LinkedIn personal branding plan for a fresher or founder profile',
+                'Email welcome sequence for a newsletter, course, event, or lead magnet',
+                'Sample ad campaign brief with objective, audience, creative angles, landing page promise, and KPIs',
+                'Competitor analysis report comparing content, SEO topics, offers, and social engagement',
+                'Repurposing project: turn one blog/video into posts, captions, email, and ad angles'
               ]
             },
             {
-              heading: 'Resume Tips for Cybersecurity Analyst Freshers',
+              heading: 'Resume and LinkedIn Tips for Digital Marketing Freshers',
               paragraphs: [
-                'Cybersecurity resume mein only tools list karna enough nahi hai. Labs, write-ups, investigation steps, and clear outcomes mention karo. Freshers ke liye proof-of-practice very important hai.',
-                'Resume one page rakho, portfolio or lab write-up link top section mein add karo, and keywords naturally include karo: SOC, SIEM basics, log analysis, Wireshark, Linux, networking, phishing analysis, incident response basics.'
+                'Resume mein sirf "social media knowledge" mat likho. Projects, channels, tools, and outputs mention karo. Example: "Created 14-day content calendar with 3 content pillars, 10 captions, hashtag sets, and engagement CTAs."',
+                'LinkedIn headline specific rakho: "Digital Marketing Fresher | SEO, Social Media, Email & Content Projects". About section mein niche, skills, projects, and internship availability clearly mention karo.'
               ],
               bullets: [
-                'Use a clear headline like: Cybersecurity Analyst Fresher | SOC Basics, Linux, Networking & Log Analysis',
-                'Add lab bullets with tools, scenario, evidence reviewed, and recommendation',
-                'Mention certifications or courses only if you can explain the concepts',
-                'Use action words: investigated, analyzed, documented, triaged, identified, reviewed, reported',
-                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, ATS Resume Template, and Resume Keywords Bank to polish applications'
+                'Add portfolio link near the top of your resume and LinkedIn profile',
+                'Use action words: planned, researched, audited, wrote, scheduled, analyzed, optimized, reported',
+                'Mention ToolShala projects like content ideas, captions, email drafts, SEO outlines, and campaign briefs',
+                'Use numbers where possible: 20 content ideas, 14-day calendar, 5 blog outlines, 3 email samples',
+                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Resume Keywords Bank for application polish'
               ]
             },
             {
-              heading: 'Cybersecurity Analyst Interview Prep for Beginners',
+              heading: 'Internship and Freelance Tips for Freshers',
               paragraphs: [
-                'Interview prep mein theory plus scenario thinking dono important hain. Aapko batana chahiye ki suspicious alert aane par aap kaise investigate karoge, evidence kya collect karoge, and escalation kab karoge.',
-                'Prepare simple, honest answers. Agar koi concept nahi aata, say how you would investigate safely and learn rather than guessing confidently.'
+                'Digital marketing internships and freelance gigs mil sakte hain if your outreach is specific. Generic message mat bhejo; ek small improvement idea share karo.',
+                'Start with small services: content calendar, caption writing, SEO audit, email drafts, Google Business Profile content, or monthly reporting sheet. First proof build karo, then pricing improve karo.'
               ],
               bullets: [
-                'Networking: DNS, HTTP/HTTPS, ports, TCP vs UDP, firewall, VPN, and basic subnet idea',
-                'Security basics: CIA triad, vulnerability, threat, risk, phishing, malware, MFA, and least privilege',
-                'SOC process: alert triage, severity, false positive, escalation, incident notes, and timeline',
-                'Tools: Linux commands, Wireshark basics, Windows Event Viewer, SIEM concepts, and log fields',
-                'Scenario questions: suspicious email, failed login spike, unknown process, unusual network traffic',
-                'Project questions: why you chose the lab, what evidence you found, and what action you recommended'
+                'Pitch local businesses with one useful content or SEO improvement idea',
+                'Offer a small audit before selling a big package',
+                'Apply to agencies because they hire interns for SEO, social, and reporting support',
+                'Create sample work for a public brand and clearly label it as a sample project',
+                'Use ToolShala Professional Email Generator and LinkedIn Networking Message Generator for polite outreach',
+                'Track every application or lead in a simple spreadsheet with status and follow-up date'
               ]
             },
             {
-              heading: 'Common Cybersecurity Beginner Mistakes to Avoid',
+              heading: 'Common Digital Marketing Beginner Mistakes to Avoid',
               paragraphs: [
-                'Beginners often jump directly to hacking tools without fundamentals. This creates shallow knowledge and can also become unsafe or illegal if boundaries are ignored.',
-                'Cybersecurity mein patience, ethics, and documentation matter a lot. Good analysts verify evidence before making claims.'
+                'Beginners often confuse posting with marketing. Real marketing means understanding audience, offer, message, channel, and measurable outcome.',
+                'Avoid learning only trends. Trends help, but fundamentals like copywriting, SEO, analytics, and customer psychology stay useful longer.'
               ],
               bullets: [
-                'Trying random hacking tools before learning networking and Linux basics',
-                'Practicing on real websites or networks without permission',
-                'Ignoring documentation and not saving lab write-ups',
-                'Claiming advanced skills like penetration testing without proof',
-                'Only collecting certificates without hands-on labs',
-                'Skipping soft skills, report writing, and incident communication',
-                'Sharing sensitive logs, screenshots, or personal data publicly'
+                'Only learning Instagram trends and ignoring SEO, email, analytics, and funnel basics',
+                'Creating content without a clear audience or CTA',
+                'Using hashtags randomly without niche and intent thinking',
+                'Copying competitor posts without understanding brand voice or offer',
+                'Not tracking metrics or learning from performance',
+                'Running sample ads without understanding budget, landing page, and conversion goal',
+                'Applying for internships without portfolio samples or project links'
               ]
             },
             {
-              heading: 'Resources and Learning Path for Cybersecurity Beginners',
+              heading: 'Digital Marketing Tools and Resources to Learn',
               paragraphs: [
-                'Free and low-cost resources are enough to start if you follow a sequence. Learn basics first, then labs, then portfolio, then applications.',
-                'Recommended path: networking basics, Linux, Windows logs, security fundamentals, Wireshark, web security basics, SIEM concepts, SOC labs, resume, and interviews.'
+                'Start with free and beginner-friendly tools. You do not need paid subscriptions to build a portfolio. Learn one tool per function: research, planning, content, email, analytics, and reporting.',
+                'Best learning path: marketing basics, SEO, social media, email, ads fundamentals, analytics, reporting, projects, then applications.'
               ],
               bullets: [
-                'Networking basics from free beginner networking courses and documentation',
-                'Linux command practice with OverTheWire Bandit or similar safe beginner labs',
-                'TryHackMe beginner paths for pre-security, SOC basics, phishing, and blue-team practice',
-                'PortSwigger Web Security Academy for safe web security fundamentals',
-                'OWASP Top 10 resources for common web risks',
-                'Splunk free training or demo datasets for SIEM/log analysis basics',
-                'ToolShala career guides, resume tools, and templates for applications and profile building'
+                'SEO research: Google Search, Google Trends, Google Search Console basics, Keyword Planner, and beginner SEO guides',
+                'Social planning: Instagram insights, LinkedIn analytics, Canva, Notion, Google Sheets, and ToolShala content tools',
+                'Email practice: Mailchimp or Brevo free learning resources, subject line examples, and ToolShala Email Subject Line Generator',
+                'Ads basics: Meta Blueprint, Google Skillshop, YouTube tutorials, and sample campaign briefs',
+                'Analytics: Google Analytics basics, Looker Studio basics, UTM builder, and reporting sheets',
+                'Portfolio support: ToolShala templates, resume tools, LinkedIn tools, and professional email generators'
               ]
             },
             {
-              heading: 'Useful ToolShala CTAs for Cybersecurity Beginners',
+              heading: 'Useful ToolShala CTAs for Digital Marketing Freshers',
               paragraphs: [
-                'ToolShala resources can help you present your cybersecurity learning professionally. After each lab, convert your notes into resume bullets, LinkedIn updates, and application emails.',
-                'Use ToolShala tools to improve the career side of your roadmap while your technical labs build proof-of-work.'
+                'ToolShala generators and templates can help you practice real marketing outputs and prepare internship-ready application material. Use them to create drafts, then edit with your own strategy and examples.',
+                'For best results, choose a niche first, then use the tools to build a connected portfolio: topic ideas, captions, hashtags, email samples, campaign notes, and resume bullets.'
               ],
               bullets: [
-                'Resume Bullet Point Generator for lab and project achievements',
-                'Resume Headline Generator for cybersecurity fresher positioning',
-                'Resume Keywords Bank for SOC, security, networking, Linux, and analyst keywords',
-                'ATS Friendly Resume Template for clean application formatting',
-                'Professional Email Generator for internship outreach and follow-ups',
-                'LinkedIn Bio Generator for a clear security-learning profile summary',
-                'AI Career Path Suggestor to check whether cybersecurity analyst fits your interests'
+                'Content Idea Generator for campaign topics and content pillars',
+                'Instagram Caption Generator and Hashtag Generator for social media practice',
+                'Email Subject Line Generator and Professional Email Generator for email marketing and outreach',
+                'Content Brief Template for blog, SEO, and campaign planning',
+                'Instagram Content Calendar Template for portfolio-ready social planning',
+                'Resume Bullet Point Generator and LinkedIn Bio Generator for internship applications',
+                'Project Proposal Template for freelance marketing service pitches'
               ]
             }
           ],
           faq: [
             {
-              question: 'Can a beginner become a Cybersecurity Analyst?',
+              question: 'Can a fresher become a Digital Marketing Executive?',
               answer:
-                'Yes. Beginners can start with networking, Linux, Windows logs, security basics, Wireshark, SIEM concepts, and safe labs. A portfolio with 3-5 lab write-ups can help with internships and entry-level SOC roles.'
+                'Yes. Freshers can start with SEO, social media, email, ads basics, analytics, and 3-5 portfolio projects. Internships and agencies often hire beginners who can show practical work samples.'
             },
             {
-              question: 'Do I need coding for cybersecurity analyst jobs?',
+              question: 'Do I need a degree for digital marketing jobs?',
               answer:
-                'Coding is helpful but not mandatory for many beginner SOC or cybersecurity analyst roles. Start with networking, Linux, logs, and security concepts. Later, Python or scripting can help automate analysis.'
+                'A degree can help, but practical skills and portfolio proof matter a lot. Learn SEO, content, social media, email, ads basics, and reporting, then show sample projects clearly.'
             },
             {
-              question: 'Which labs should I do first for cybersecurity?',
+              question: 'Which digital marketing skill should I learn first?',
               answer:
-                'Start with phishing email analysis, Linux command practice, Wireshark traffic review, suspicious login investigation, Windows Event Viewer basics, and beginner SOC rooms on safe learning platforms.'
+                'Start with marketing basics and content planning, then learn SEO and social media. After that, add email marketing, ads basics, and analytics so you can understand complete campaigns.'
             },
             {
-              question: 'Which ToolShala tools are useful for cybersecurity freshers?',
+              question: 'Which ToolShala tools are useful for digital marketing freshers?',
               answer:
-                'Use Resume Headline Generator, Resume Bullet Point Generator, Resume Keywords Bank, ATS Friendly Resume Template, Professional Email Generator, LinkedIn Bio Generator, and AI Career Path Suggestor to present your cybersecurity projects better.'
+                'Use Content Idea Generator, Instagram Caption Generator, Hashtag Generator, Email Subject Line Generator, Professional Email Generator, Content Brief Template, Instagram Content Calendar Template, Resume Bullet Point Generator, and LinkedIn Bio Generator.'
             }
           ],
           conclusion:
-            'Cybersecurity Analyst Roadmap for Beginners ka simple formula hai: networking basics seekho, Linux and logs practice karo, safe labs complete karo, evidence-based write-ups banao, and resume plus interview prep ko saath-saath improve karo. In 30 days, foundations and one lab write-up build karo. In 90 days, 3-5 labs, clear portfolio, and fresher-ready applications ke saath cybersecurity internships or SOC roles target karo.',
+            'Digital Marketing Executive Roadmap for Freshers ka simple formula hai: audience samjho, SEO basics seekho, social content plan banao, email and ads fundamentals practice karo, and analytics se improvement note karo. In 30 days, foundation and first portfolio proof build karo. In 90 days, 3 strong projects, clean resume, LinkedIn profile, and outreach plan ke saath internships or freelance gigs target karo.',
           cta: {
-            title: 'Turn Your Cybersecurity Labs into Job-Ready Applications',
+            title: 'Build Your Digital Marketing Portfolio with ToolShala',
             text:
-              'Use ToolShala resume tools and templates to convert lab write-ups into stronger resume bullets, improve your cybersecurity headline, and prepare internship outreach emails.',
-            primaryLabel: 'Generate Resume Bullets',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
-            secondaryLabel: 'Use Resume Keywords Bank',
-            secondaryLink: './resume-keywords-bank-template.html'
+              'Use ToolShala content, email, resume, and template resources to create campaign ideas, captions, hashtags, emails, content briefs, and internship-ready resume bullets.',
+            primaryLabel: 'Generate Content Ideas',
+            primaryLink: './tool.html?tool=content-idea-generator',
+            secondaryLabel: 'Use Content Calendar Template',
+            secondaryLink: './instagram-content-calendar-template.html'
           }
         }
       },
