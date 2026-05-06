@@ -12,6 +12,108 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
 
+  const renderInlineMarkdown = (value = '') =>
+    escapeHtml(value)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/__([^_]+)__/g, '<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>')
+      .replace(/(^|[^_])_([^_]+)_/g, '$1<em>$2</em>');
+
+  const safeMarkdownToHtml = (markdown = '') => {
+    const lines = String(markdown || '').replace(/\r\n?/g, '\n').split('\n');
+    const html = [];
+    const paragraph = [];
+    let listType = null;
+    let inCodeBlock = false;
+    let codeLines = [];
+
+    const closeParagraph = () => {
+      if (!paragraph.length) return;
+      html.push(`<p>${paragraph.join('<br>')}</p>`);
+      paragraph.length = 0;
+    };
+
+    const closeList = () => {
+      if (!listType) return;
+      html.push(`</${listType}>`);
+      listType = null;
+    };
+
+    const closeCodeBlock = () => {
+      html.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
+      codeLines = [];
+      inCodeBlock = false;
+    };
+
+    lines.forEach((line) => {
+      const trimmed = line.trim();
+
+      if (/^```/.test(trimmed)) {
+        closeParagraph();
+        closeList();
+        if (inCodeBlock) {
+          closeCodeBlock();
+        } else {
+          inCodeBlock = true;
+          codeLines = [];
+        }
+        return;
+      }
+
+      if (inCodeBlock) {
+        codeLines.push(line);
+        return;
+      }
+
+      if (!trimmed) {
+        closeParagraph();
+        closeList();
+        return;
+      }
+
+      const headingMatch = trimmed.match(/^(#{1,3})\s+(.+)$/);
+      if (headingMatch) {
+        closeParagraph();
+        closeList();
+        const level = headingMatch[1].length;
+        html.push(`<h${level}>${renderInlineMarkdown(headingMatch[2])}</h${level}>`);
+        return;
+      }
+
+      const unorderedMatch = trimmed.match(/^[-*]\s+(.+)$/);
+      const orderedMatch = trimmed.match(/^\d+[.)]\s+(.+)$/);
+      if (unorderedMatch || orderedMatch) {
+        closeParagraph();
+        const nextListType = unorderedMatch ? 'ul' : 'ol';
+        if (listType !== nextListType) {
+          closeList();
+          html.push(`<${nextListType}>`);
+          listType = nextListType;
+        }
+        html.push(`<li>${renderInlineMarkdown((unorderedMatch || orderedMatch)[1])}</li>`);
+        return;
+      }
+
+      closeList();
+      paragraph.push(renderInlineMarkdown(trimmed));
+    });
+
+    if (inCodeBlock) closeCodeBlock();
+    closeParagraph();
+    closeList();
+
+    return html.join('');
+  };
+
+  const renderMarkdownInto = (node, markdown = '') => {
+    try {
+      node.innerHTML = safeMarkdownToHtml(markdown);
+    } catch (error) {
+      node.textContent = String(markdown || '');
+    }
+  };
+
   const showToast = (type, title, description = '') => {
     if (window.ToolShalaToast?.show) {
       window.ToolShalaToast.show(type, title, description);
@@ -41,6 +143,7 @@
     return [
       `Tool ID: ${toolId}`,
       'Generate a high-quality response based on the following user inputs.',
+      'Format the response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
       ...promptLines
     ].join('\n');
   };
@@ -3009,10 +3112,10 @@ ${senderName}`;
       return;
     }
     if (result.type === 'text') {
-      const pre = document.createElement('pre');
-      pre.className = `tool-output-text ${result.className || ''}`.trim();
-      pre.textContent = result.text;
-      outputNode.appendChild(pre);
+      const contentNode = document.createElement('div');
+      contentNode.className = `tool-output-text tool-output-markdown ${result.className || ''}`.trim();
+      renderMarkdownInto(contentNode, result.text);
+      outputNode.appendChild(contentNode);
 
       const actions = document.createElement('div');
       actions.className = 'tool-actions';
@@ -3093,9 +3196,9 @@ ${senderName}`;
       }
 
       if (content.text) {
-        const textNode = document.createElement(content.multiline ? 'pre' : 'p');
-        textNode.className = content.multiline ? 'tool-output-text mt-2' : 'mt-2 text-sm text-slate-700';
-        textNode.textContent = content.text;
+        const textNode = document.createElement('div');
+        textNode.className = content.multiline ? 'tool-output-text tool-output-markdown mt-2' : 'tool-output-markdown item-card-markdown mt-2 text-sm text-slate-700';
+        renderMarkdownInto(textNode, content.text);
         card.appendChild(textNode);
       }
 

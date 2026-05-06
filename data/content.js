@@ -200,7 +200,7 @@ window.ToolShalaContent = {
         categoryLabel: 'Writing Tool',
         description: 'Generate polite and clear WhatsApp messages for follow-ups, requests, reminders, apologies, and more.',
         publishedAt: '2026-05-01',
-        featured: false,
+        featured: true,
         tags: ['whatsapp', 'messages', 'communication'],
         ctaLabel: 'Generate Messages',
         url: './tool.html?tool=whatsapp-message-generator'
@@ -214,7 +214,7 @@ window.ToolShalaContent = {
         categoryLabel: 'Social Tool',
         description: 'Generate relevant hashtag sets with broad, niche, and topic tags for Instagram, YouTube, LinkedIn, and TikTok/Reels.',
         publishedAt: '2026-05-02',
-        featured: false,
+        featured: true,
         tags: ['hashtag', 'social-media', 'instagram', 'linkedin'],
         ctaLabel: 'Generate Hashtags',
         url: './tool.html?tool=hashtag-generator'
@@ -361,7 +361,7 @@ window.ToolShalaContent = {
         categoryLabel: 'Social Tool',
         description: 'Generate script ideas with hooks, main points, CTA, and shot suggestions for short-form content.',
         publishedAt: '2026-04-26',
-        featured: false,
+        featured: true,
         tags: ['youtube', 'shorts', 'script', 'creator'],
         ctaLabel: 'Generate Scripts',
         url: './tool.html?tool=youtube-shorts-script-generator'

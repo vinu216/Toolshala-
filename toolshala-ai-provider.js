@@ -930,8 +930,7 @@ Suggested next step: ${nextStep}`
           label: 'Short Bullet Points',
           rows: bullets.slice(0, 6),
           hashtags: ['Bullets', 'Quick Revision'],
-          copyText: bullets.slice(0, 6).map((b) => `• ${b}`).join('
-')
+          copyText: bullets.slice(0, 6).map((b) => `• ${b}`).join('\n')
         },
         {
           label: 'Important Keywords',
@@ -1083,6 +1082,7 @@ Suggested next step: ${nextStep}`
       const prompt = [
         `Tool ID: ${toolId}`,
         'Generate a high-quality response based on the following user inputs.',
+        'Format any plain-text response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
         ...promptLines
       ].join('\n');
 

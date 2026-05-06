@@ -505,7 +505,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const renderToolsFromData = () => {
     const container = document.getElementById('toolsGrid');
+    const featuredContainer = document.getElementById('featuredToolsGrid');
     const tools = contentCollections?.tools;
+
+    if (featuredContainer && Array.isArray(tools) && tools.length) {
+      const featuredOrder = [
+        'photo-to-text',
+        'resume-headline-generator',
+        'instagram-caption-generator',
+        'youtube-shorts-script-generator',
+        'hashtag-generator',
+        'whatsapp-message-generator'
+      ];
+      const orderIndex = new Map(featuredOrder.map((slug, index) => [slug, index]));
+      const featuredTools = tools
+        .filter((tool) => tool.featured)
+        .sort((a, b) => {
+          const aIndex = orderIndex.has(a.slug) ? orderIndex.get(a.slug) : featuredOrder.length;
+          const bIndex = orderIndex.has(b.slug) ? orderIndex.get(b.slug) : featuredOrder.length;
+          return aIndex - bIndex || String(a.title || '').localeCompare(String(b.title || ''));
+        })
+        .slice(0, 7);
+
+      renderCollection({
+        container: featuredContainer,
+        items: featuredTools,
+        renderer: (tool, index) => {
+          const cta = resolveToolLink(tool);
+          const icon = ['✦', '📄', '✨', '▶', '#', '💬', '✓'][index % 7];
+          return `<article class="tools-featured-card"><div class="tools-featured-card-top"><span class="tools-featured-icon" aria-hidden="true">${escapeHtml(icon)}</span><span class="tools-featured-badge">${escapeHtml(tool.categoryLabel || tool.category)}</span></div><h3>${escapeHtml(tool.title)}</h3><p>${escapeHtml(tool.description)}</p><a href="${escapeHtml(cta.href)}" class="tools-featured-cta">${escapeHtml(cta.label || 'Try Tool')}</a></article>`;
+        }
+      });
+    }
 
     renderCollection({
       container,
