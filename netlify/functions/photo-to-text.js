@@ -40,8 +40,8 @@ const buildPhotoToTextConfig = () => {
     return {
       provider,
       apiKey: getEnvString('NVIDIA_API_KEY'),
-      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'mistralai/mistral-large-3-675b-instruct-2512'),
-      baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
+      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'nemotron-ocr-v1'),
+      baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://ai.api.nvidia.com/v1/cv/nvidia/nemotron-ocr-v1'))
     };
   }
 
