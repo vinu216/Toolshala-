@@ -132,7 +132,7 @@
   const PHOTO_TO_TEXT_CONFIG = {
     endpoint: '/api/photo-to-text',
     maxFileSize: 8 * 1024 * 1024,
-    allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
+    allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp'])
   };
 
   const buildPromptFromValues = (toolId, values = {}) => {
@@ -3422,7 +3422,7 @@ ${senderName}`;
     }
 
     if (!PHOTO_TO_TEXT_CONFIG.allowedTypes.has(file.type)) {
-      return 'Unsupported image type. Please upload a JPEG, PNG, WEBP, HEIC, or HEIF image.';
+      return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
     }
 
     if (file.size > PHOTO_TO_TEXT_CONFIG.maxFileSize) {
@@ -3521,12 +3521,16 @@ ${senderName}`;
 
       try {
         const imageData = await readFileAsDataUrl(file);
+        const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
+        if (!imageBase64) {
+          throw new Error('Could not read the selected image. Please try another file.');
+        }
         const response = await fetch(PHOTO_TO_TEXT_CONFIG.endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            imageData,
-            filename: file.name || 'uploaded-image',
+            imageBase64,
+            fileName: file.name || 'uploaded-image',
             mimeType: file.type
           })
         });

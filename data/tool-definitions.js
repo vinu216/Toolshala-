@@ -16,12 +16,11 @@ window.ToolShalaToolDefinitions = [
     fields: [
       {
         key: 'image',
-        label: 'Upload Image',
+        label: 'Choose from Gallery',
         type: 'file',
-        accept: 'image/jpeg,image/png,image/webp,image/heic,image/heif',
-        capture: 'environment',
+        accept: 'image/*',
         required: true,
-        helperText: 'JPEG, PNG, WEBP, HEIC or HEIF up to 8 MB.'
+        helperText: 'Choose an existing gallery image. JPEG, PNG or WEBP up to 8 MB.'
       }
     ]
   },
