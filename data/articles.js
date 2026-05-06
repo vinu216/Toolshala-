@@ -8,310 +8,295 @@ window.ToolShalaArticleContent = {
     seoGuides: [
       {
         id: 'guide-026',
-        title: 'Product Manager Roadmap for Freshers',
-        slug: '/guides/product-manager-roadmap-for-freshers',
-        primaryKeyword: 'Product Manager roadmap for freshers',
+        title: 'Community Growth Manager Roadmap',
+        slug: '/guides/community-growth-manager-roadmap',
+        primaryKeyword: 'Community Growth Manager roadmap',
         searchIntent: 'Informational',
-        metaTitle: 'Product Manager Roadmap for Freshers | Skills, Projects & Interview Prep | ToolShala',
+        metaTitle: 'Community Growth Manager Roadmap | Audience Building & Engagement Strategy | ToolShala',
         metaDescription:
-          'Learn how to become a product manager as a fresher with product thinking, skills, 30-day and 90-day roadmaps, case study ideas, resume tips, interview prep, and ToolShala resources.',
-        shortExcerpt: 'A fresher-friendly product manager roadmap with product thinking basics, projects, case studies, portfolio tips, and interview prep.',
+          'Learn how to become a Community Growth Manager with audience building, engagement strategy, tools, 30-day and 90-day roadmaps, projects, resume tips, and ToolShala resources.',
+        shortExcerpt: 'A beginner-friendly roadmap to learn community growth, audience building, engagement strategy, tools, portfolio projects, and career next steps.',
         category: 'Career Guidance',
-        ctaText: 'Start PM Roadmap',
+        ctaText: 'Start Community Roadmap',
         relatedLinks: [
           '/career',
           '/tools',
           '/templates',
           '/guides/best-skills-to-learn-in-2026',
-          '/guides/internship-kaise-dhoondein',
+          '/guides/best-side-skills-for-students',
           '/guides/linkedin-profile-kaise-banaye'
         ],
-        featuredImageAlt: 'Product manager roadmap for freshers with product thinking projects and interview prep',
+        featuredImageAlt: 'Community growth manager roadmap with audience building and engagement strategy',
         publishDate: '2026-05-06',
-        readingTime: '11 min read',
+        readingTime: '10 min read',
         author: 'ToolShala Editorial Team',
         featured: true,
         status: 'ready',
         guideContent: {
           intro:
-            'Product Manager Roadmap for Freshers un students aur beginners ke liye hai jo product management career start karna chahte hain but coding, MBA, business knowledge, case studies, and interviews ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein PM role, product thinking, skills, 30-day and 90-day roadmap, project ideas, resume tips, interview prep, and ToolShala resources cover kiye gaye hain.',
+            'Community Growth Manager Roadmap students, freshers, creators, and early-career marketers ke liye hai jo audience building, online communities, engagement strategy, and member retention seekhna chahte hain. Is guide mein simple Hinglish tone mein role, skills, platforms, 30-day and 90-day roadmap, portfolio ideas, resume tips, mistakes, and ToolShala resources cover kiye gaye hain.',
           featuredSnippet:
-            'A Product Manager understands user problems, defines product goals, prioritizes features, coordinates with design, engineering, marketing, and business teams, and tracks product success metrics. Freshers should learn product thinking, user research, prioritization, analytics basics, case studies, and communication before applying for PM internships or associate product roles.',
+            'A Community Growth Manager builds and nurtures an audience around a brand, creator, product, or learning group. Beginners should learn community strategy, content planning, engagement prompts, moderation, events, analytics, member feedback, and portfolio projects before applying for community, creator, or growth roles.',
           sections: [
             {
-              heading: 'What Does a Product Manager Do?',
+              heading: 'What is a Community Growth Manager?',
               paragraphs: [
-                'A Product Manager product ka direction define karta hai: users ko kya problem hai, business goal kya hai, kya build karna chahiye, and success kaise measure hoga. PM khud har cheez design ya code nahi karta, but teams ko clarity, priority, and context deta hai.',
-                'Daily work mein user feedback review karna, feature ideas compare karna, product requirement documents likhna, designers and engineers ke saath discuss karna, launch plan banana, and metrics track karna include ho sakta hai.'
+                'A Community Growth Manager kisi brand, startup, creator, course, product, or interest group ke around active audience build karta hai. Role ka focus sirf followers badhana nahi hota; real goal hota hai members ko useful conversations, trust, learning, and action ke through engaged rakhna.',
+                'Daily work mein community content calendar banana, discussions start karna, member questions answer karna, events plan karna, feedback collect karna, new members onboard karna, and engagement metrics track karna include ho sakta hai.'
               ],
               bullets: [
-                'Understands user problems through research, feedback, and data',
-                'Defines product goals, use cases, features, and success metrics',
-                'Prioritizes what to build first based on impact, effort, risk, and business value',
-                'Works with design, engineering, marketing, sales, support, and leadership teams',
-                'Tracks product performance and improves features after launch'
+                'Builds communities on platforms like WhatsApp, Telegram, Discord, LinkedIn, Instagram, Slack, or Circle',
+                'Creates engagement prompts, polls, updates, events, and member onboarding flows',
+                'Moderates conversations and keeps the community safe and useful',
+                'Turns audience feedback into content, product, or support insights',
+                'Tracks growth, activity, retention, referrals, and member satisfaction'
               ]
             },
             {
-              heading: 'Why Product Management is Popular Among Freshers',
+              heading: 'Why Community Growth Matters for Brands and Creators',
               paragraphs: [
-                'Product management popular hai because it sits at the intersection of business, users, design, technology, and data. Freshers who like problem-solving, communication, startups, apps, and strategy often find this role exciting.',
-                'PM roles are competitive, but freshers can enter through internships, associate product roles, product analyst roles, founder office roles, business analyst roles, or growth/product operations roles. Portfolio proof and clear thinking matter a lot.'
+                'Community growth matters because attention online is crowded. Brands and creators need deeper relationships, not only one-time likes. A strong community improves trust, repeat engagement, word-of-mouth, and customer feedback.',
+                'Startups, edtech brands, SaaS products, creator businesses, coaching institutes, newsletters, and student clubs all need people who can keep members active and create useful conversations.'
               ],
               bullets: [
-                'PM work gives exposure to business, technology, design, and customer problems',
-                'Startups and product companies need people who can connect user needs with execution',
-                'Freshers can build sample case studies without needing a full-time PM job first',
-                'PM skills also help in analytics, growth, operations, marketing, consulting, and entrepreneurship',
-                'Strong communication and structured thinking can stand out even without heavy coding'
+                'Communities create trust beyond ads and random social posts',
+                'Active members can become customers, advocates, contributors, or referral sources',
+                'Community feedback helps improve products, content, courses, and events',
+                'Creators and startups use communities for retention, launches, and support',
+                'Freshers can show proof through small community projects and engagement experiments'
               ]
             },
             {
-              heading: 'Skills Needed for Product Manager Freshers',
+              heading: 'Skills Needed for Community Growth Manager Roles',
               paragraphs: [
-                'Freshers ko perfect technical depth ki zaroorat nahi hai, but product fundamentals clear hone chahiye. A good beginner PM can explain the user problem, possible solution, trade-offs, and how success will be measured.',
-                'Your goal should be to become structured: unclear problem ko clear questions, assumptions, metrics, and next steps mein convert karna.'
+                'Community growth is a mix of communication, content, empathy, data, and operations. Aapko logon ko samajhna, conversations start karna, and value consistently deliver karna aana chahiye.',
+                'Beginner level par sabse important skill hai consistency. Community tab grow hoti hai jab members ko regularly relevant prompts, answers, events, and recognition milta hai.'
               ],
               bullets: [
-                'User research: interviews, surveys, feedback review, personas, and user journey mapping',
-                'Product thinking: problem framing, use cases, prioritization, trade-offs, and MVP mindset',
-                'Business basics: market, competitors, pricing, acquisition, retention, and revenue model',
-                'Analytics basics: funnels, activation, retention, conversion, cohorts, dashboards, and A/B testing idea',
-                'UX basics: wireframes, user flows, usability, accessibility, and clear product copy',
-                'Technical awareness: APIs, databases, frontend/backend basics, app/web architecture, and constraints',
-                'Communication: PRDs, stakeholder updates, meeting notes, launch plans, and decision writing'
+                'Audience understanding: personas, member goals, pain points, and motivation',
+                'Content planning: prompts, polls, updates, newsletters, event posts, and recap posts',
+                'Communication: clear writing, friendly replies, conflict handling, and member support',
+                'Moderation: rules, onboarding, spam control, escalation, and safe conversation norms',
+                'Engagement strategy: rituals, challenges, AMAs, office hours, shoutouts, and referrals',
+                'Analytics: member growth, active members, replies, event attendance, retention, and churn signals',
+                'Operations: calendar, templates, checklists, documentation, and collaboration with marketing/product teams'
               ]
             },
             {
-              heading: 'Basic Product Thinking for Beginners',
+              heading: 'Platforms and Tools to Learn for Community Growth',
               paragraphs: [
-                'Product thinking ka matlab hai solution se pehle problem samajhna. Beginners often directly feature suggest kar dete hain, but PM pehle user, context, pain point, frequency, severity, and business impact samajhta hai.',
-                'Har product problem ko 6 questions se start karo: user kaun hai, problem kya hai, current workaround kya hai, solution ka goal kya hai, success metric kya hai, and constraints kya hain.'
+                'Har community platform ka behavior different hota hai. WhatsApp and Telegram fast updates ke liye useful hain, Discord and Slack deeper discussions ke liye, LinkedIn professional audience ke liye, and Instagram creator-led engagement ke liye.',
+                'Tools se pehle community purpose clear karo: learning, support, networking, product feedback, events, job updates, or creator fandom. Platform purpose ke according choose karo.'
               ],
               bullets: [
-                'User: Who has the problem and how often do they face it?',
-                'Problem: What is painful, slow, confusing, risky, or expensive?',
-                'Goal: What should improve for user and business?',
-                'Solution: What is the simplest MVP before building a full feature?',
-                'Priority: What gives highest impact with manageable effort?',
-                'Metric: How will we know if the feature worked?',
-                'Trade-off: What are we choosing not to build right now and why?'
+                'WhatsApp Communities and Telegram Channels for updates, announcements, and quick member communication',
+                'Discord, Slack, Circle, or Geneva for topic channels, roles, events, and deeper discussions',
+                'LinkedIn Groups, LinkedIn posts, and newsletters for professional communities',
+                'Instagram Broadcast Channels, stories, polls, and DMs for creator-led communities',
+                'Notion or Google Docs for community playbooks, rules, content calendars, and member FAQs',
+                'Google Sheets, Airtable, or simple dashboards for member tracking and event planning',
+                'ToolShala Content Idea Generator, Professional Email Generator, LinkedIn Bio Generator, and Instagram Content Calendar Template for content and outreach support'
               ]
             },
             {
-              heading: 'Product Management Tools and Concepts to Learn',
+              heading: '30-Day Community Growth Manager Roadmap',
               paragraphs: [
-                'Tools helpful hain, but PM skill sirf tools se nahi banta. Start with docs, spreadsheets, simple wireframes, and basic analytics thinking. Later you can learn Jira, Figma, Notion, and analytics tools.',
-                'Beginner PM stack simple rakho: one writing tool, one planning tool, one wireframing tool, one analytics/reporting workflow, and one portfolio place.'
-              ],
-              bullets: [
-                'Docs: Google Docs or Notion for PRDs, user stories, launch notes, and case study writing',
-                'Spreadsheets: Google Sheets or Excel for prioritization, user feedback, and metrics tracking',
-                'Design basics: Figma or FigJam for wireframes, user flows, and journey maps',
-                'Project tools: Trello, Jira basics, Asana, ClickUp, or Notion boards for roadmap and task tracking',
-                'Analytics awareness: Google Analytics, Mixpanel-style funnels, Amplitude-style events, and dashboard basics',
-                'Research tools: Google Forms, Typeform, interviews, competitor reviews, and app store reviews',
-                'ToolShala tools: AI Career Path Suggestor, Resume Bullet Point Generator, LinkedIn Bio Generator, and Project Proposal Template for profile building'
-              ]
-            },
-            {
-              heading: '30-Day Product Manager Roadmap for Freshers',
-              paragraphs: [
-                'First 30 days ka goal PM fundamentals and first proof-of-work banana hai. Roz 60-90 minutes practice karo. Sirf PM videos dekhne ke bajay product teardown and case study output create karo.',
-                'By day 30, you should have one product teardown, one user research mini project, one basic PRD, and one LinkedIn/resume update showing your PM direction.'
+                'First 30 days ka goal community fundamentals and first proof-of-work banana hai. Roz 60-90 minutes practice karo and one small community concept create karo.',
+                'By day 30, you should have one niche selected, one community strategy doc, a 14-day engagement calendar, onboarding message, rules, and 2-3 sample engagement experiments.'
               ],
               subSections: [
                 {
-                  heading: 'Days 1-7: Understand PM Role and Product Basics',
+                  heading: 'Days 1-7: Understand Communities and Pick a Niche',
                   bullets: [
-                    'Learn what PM, APM, product analyst, product ops, and growth PM roles do',
-                    'Study 3 apps you use daily and write their target users, core problem, and main features',
-                    'Create a glossary of PM terms: MVP, PRD, roadmap, backlog, KPI, funnel, retention, activation',
-                    'Use ToolShala AI Career Path Suggestor to compare PM with other career options'
+                    'Study 5 communities: one Telegram channel, one Discord server, one LinkedIn group, one creator page, and one learning community',
+                    'Pick one niche like career, study, creators, fitness, finance, coding, design, or local business',
+                    'Define member persona: goals, pain points, why they would join, and what value they expect',
+                    'Write a simple community purpose statement and member promise'
                   ]
                 },
                 {
-                  heading: 'Days 8-15: Practice User Research and Problem Framing',
+                  heading: 'Days 8-15: Build Community Foundation',
                   bullets: [
-                    'Pick one product area: food delivery, edtech, finance app, job portal, study planner, or creator tool',
-                    'Interview 3-5 users or collect survey responses about one pain point',
-                    'Summarize user problems, current workaround, frequency, and impact',
-                    'Write a problem statement and success metric for one improvement idea'
+                    'Create community rules, welcome message, onboarding checklist, and weekly content pillars',
+                    'Use ToolShala Content Idea Generator to create 30 discussion prompts or post ideas',
+                    'Plan 3 recurring rituals: Monday goals, weekly wins, resource drop, AMA, or challenge thread',
+                    'Create a simple moderation and escalation checklist'
                   ]
                 },
                 {
-                  heading: 'Days 16-23: Learn Prioritization and PRD Basics',
+                  heading: 'Days 16-23: Practice Engagement Strategy',
                   bullets: [
-                    'List 8-10 feature ideas and prioritize using impact vs effort or RICE-style thinking',
-                    'Write a simple PRD with problem, user, goal, scope, user stories, wireframe notes, and metrics',
-                    'Create a rough user flow or wireframe in Figma, FigJam, or paper',
-                    'Ask a friend to review clarity and note what confused them'
+                    'Create a 14-day engagement calendar with polls, questions, prompts, and member shoutouts',
+                    'Draft 5 announcement posts, 5 discussion starters, and 3 event invites',
+                    'Use ToolShala Professional Email Generator for event invites or member follow-ups',
+                    'Define metrics: new members, active members, replies, event attendance, and retention signal'
                   ]
                 },
                 {
-                  heading: 'Days 24-30: Build First PM Portfolio Case Study',
+                  heading: 'Days 24-30: Package First Portfolio Project',
                   bullets: [
-                    'Create one product teardown or improvement case study with screenshots and recommendations',
-                    'Document assumptions, user insights, priority choice, MVP, and success metrics',
-                    'Publish it on Notion, Google Docs, Medium, LinkedIn article, or portfolio page',
-                    'Use ToolShala Resume Bullet Point Generator to convert your case study into resume-ready bullets'
+                    'Build a one-page community growth plan for your selected niche',
+                    'Add purpose, target members, platform choice, onboarding flow, content calendar, engagement rituals, and metrics',
+                    'Create sample posts, welcome messages, and event plan screenshots or docs',
+                    'Use ToolShala Resume Bullet Point Generator to convert the project into resume-ready bullets'
                   ]
                 }
               ]
             },
             {
-              heading: '90-Day Product Manager Roadmap to Become Job-Ready',
+              heading: '90-Day Community Growth Roadmap to Become Job-Ready',
               paragraphs: [
-                'Next 60 days mein deeper product thinking, portfolio, and interview prep par focus karo. PM hiring mein clarity and communication matter a lot.',
-                'By day 90, aim for 3 strong case studies, one PRD sample, one product metrics analysis, one resume, and interview answers for PM internship or associate product roles.'
+                'Next 60 days mein real practice, portfolio depth, and outreach par focus karo. Community roles mein proof important hai: can you create engagement and keep people coming back?',
+                'By day 90, aim for 2-3 community case studies, one live or simulated community project, a clear playbook, and resume/LinkedIn profile that explains your growth and engagement work.'
               ],
               subSections: [
                 {
-                  heading: 'Days 31-60: Build Product Depth and Projects',
+                  heading: 'Days 31-60: Run Experiments and Build Systems',
                   bullets: [
-                    'Create two case studies: one product teardown and one new feature proposal',
-                    'Practice metrics: activation, conversion, retention, churn, DAU/MAU, NPS, and funnel drop-off',
-                    'Analyze competitor apps and note positioning, onboarding, pricing, and retention loops',
-                    'Build one PRD and one roadmap sheet for a sample product improvement'
+                    'Run a small live community experiment with a college club, creator, class group, newsletter, or Telegram group',
+                    'Test 4 engagement formats: poll, challenge, AMA, resource drop, discussion thread, or member spotlight',
+                    'Create a community playbook with rules, weekly calendar, templates, moderation notes, and metrics sheet',
+                    'Collect feedback from members and note what increased replies or participation'
                   ]
                 },
                 {
                   heading: 'Days 61-90: Portfolio, Applications, and Interviews',
                   bullets: [
-                    'Create a simple PM portfolio with case studies, PRD sample, user research notes, and metrics thinking',
-                    'Prepare a 2-minute walkthrough for each case study',
-                    'Apply for product management intern, APM intern, product analyst intern, growth intern, founder office, and business analyst roles',
-                    'Practice product sense, estimation, prioritization, metrics, behavioral, and case interview questions'
+                    'Create 2-3 portfolio projects: community launch plan, engagement calendar, and event/AMA campaign recap',
+                    'Prepare a simple dashboard showing member growth, active members, replies, event attendance, and learnings',
+                    'Apply for community intern, community manager trainee, creator growth intern, social media community intern, and customer community roles',
+                    'Practice explaining community purpose, engagement strategy, moderation decisions, and metrics in interviews'
                   ]
                 }
               ]
             },
             {
-              heading: 'Product Manager Case Study and Project Ideas',
+              heading: 'Community Growth Portfolio and Project Ideas',
               paragraphs: [
-                'PM portfolio should show how you think. Do not only list feature ideas. Explain user problem, evidence, options, prioritization, MVP, wireframe, and success metric.',
-                'Freshers can use familiar products for sample case studies, but clearly label them as unofficial practice projects.'
+                'Portfolio projects should show your thinking and execution. Do not only say "managed community"; show purpose, audience, content calendar, engagement experiments, and metrics.',
+                'Freshers can build simulated projects if they do not have clients. Clearly label sample projects and make them practical for a real niche.'
               ],
               bullets: [
-                'Improve onboarding flow for a learning app or job portal',
-                'Design a save-and-apply tracker feature for internship search',
-                'Reduce cart abandonment for an ecommerce checkout flow',
-                'Improve retention for a habit tracker or study planner app',
-                'Create a product teardown of a popular fintech, food delivery, or edtech app',
-                'Write a PRD for a campus events discovery feature',
-                'Analyze app reviews and turn user complaints into prioritized product improvements'
+                'Launch plan for a student career community on Telegram or WhatsApp',
+                'Discord server structure for a coding, gaming, design, or creator community',
+                '14-day engagement calendar for a course, cohort, or newsletter community',
+                'AMA or webinar event plan with invite copy, reminders, questions, and recap post',
+                'Member onboarding flow with welcome message, rules, first action, and resource list',
+                'Community health dashboard tracking active members, replies, events, referrals, and churn signals',
+                'Creator fan/community growth plan using Instagram Broadcast Channel and weekly rituals'
               ]
             },
             {
-              heading: 'Resume and Portfolio Tips for Product Manager Freshers',
+              heading: 'Engagement Strategy Basics for Community Managers',
               paragraphs: [
-                'Resume mein PM keywords add karna enough nahi hai. Show proof of product thinking through case studies, user research, PRDs, metrics, and cross-functional projects.',
-                'Freshers should keep resume one page and add portfolio link near the top. A strong headline can be: "Product Management Fresher | User Research, PRDs, Product Metrics & Case Studies".'
+                'Engagement strategy ka matlab random posts karna nahi hai. It is a repeatable system that helps members feel welcomed, useful, recognized, and connected to each other.',
+                'Strong engagement comes from clear member value, predictable rituals, low-friction participation, and good moderation.'
               ],
               bullets: [
-                'Add 2-3 PM case studies with problem, process, decision, and metric sections',
-                'Use action words: researched, prioritized, defined, analyzed, mapped, documented, validated',
-                'Mention tools only when connected to output: Notion PRD, Figma wireframe, Sheets prioritization, analytics dashboard',
-                'Use numbers where possible: interviewed 5 users, analyzed 50 reviews, prioritized 10 features, mapped 4-step funnel',
-                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and ATS Resume Template for application polish'
+                'Onboarding: welcome new members and give them one simple first action',
+                'Rituals: weekly prompts, wins, challenges, AMAs, office hours, or resource drops',
+                'Recognition: shoutouts, member spotlights, badges, roles, or contribution highlights',
+                'Conversation design: ask specific questions instead of broad vague prompts',
+                'Events: plan small recurring sessions before large one-time webinars',
+                'Feedback loop: ask members what they need and turn answers into content or events',
+                'Metrics: track active members, replies per post, event attendance, retention, and referral source'
               ]
             },
             {
-              heading: 'Product Manager Interview Prep for Freshers',
+              heading: 'Resume and LinkedIn Tips for Community Growth Freshers',
               paragraphs: [
-                'PM interviews test structured thinking. Aapko perfect answer nahi chahiye, but clear approach chahiye: clarify goal, identify user, define problem, compare options, choose metrics, and explain trade-offs.',
-                'Practice speaking your case studies out loud. Interviewer ko yeh samajhna chahiye ki aap assumptions, constraints, and decisions ko logically handle kar sakte ho.'
+                'Resume mein sirf "good communication skills" mat likho. Community work ko outputs and metrics ke saath show karo: onboarding flow, engagement calendar, event plan, active members, replies, or feedback collected.',
+                'LinkedIn headline specific rakho: "Community Growth Fresher | Audience Building, Engagement Strategy & Events". About section mein niche, platforms, projects, and availability mention karo.'
               ],
               bullets: [
-                'Product sense: improve this app, design a feature, solve a user problem',
-                'Metrics: choose success metric, diagnose drop-off, improve activation or retention',
-                'Prioritization: impact vs effort, RICE-style thinking, trade-offs, and MVP scope',
-                'Execution: PRD clarity, launch plan, stakeholder alignment, risks, and dependencies',
-                'Behavioral: teamwork, conflict, ambiguity, feedback, ownership, and learning mindset',
-                'Portfolio questions: why you chose the problem, what users said, what you prioritized, and how you would measure success'
+                'Add portfolio link with community plans, calendars, event recaps, and dashboard screenshots',
+                'Use action words: launched, moderated, onboarded, planned, engaged, hosted, analyzed, retained',
+                'Mention platforms: WhatsApp, Telegram, Discord, LinkedIn, Instagram, Slack, Notion, Google Sheets',
+                'Use numbers where possible: 14-day calendar, 30 prompts, 3 events, 50 members, 25 replies',
+                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Professional Email Generator for application polish'
               ]
             },
             {
-              heading: 'Common Product Management Beginner Mistakes',
+              heading: 'Common Community Growth Mistakes to Avoid',
               paragraphs: [
-                'Beginners often think PM means only giving ideas. Real PM work is about solving the right problem with constraints and measurable outcomes.',
-                'Avoid copying popular product case study templates without understanding the product, user, and trade-offs.'
+                'Beginners often think community means posting updates daily. Actually, community is about member-to-member connection and consistent value, not only announcements.',
+                'Avoid vanity metrics. Big member count useless hai if no one replies, attends, contributes, or gets value.'
               ],
               bullets: [
-                'Jumping to solutions without defining the user problem',
-                'Adding too many features instead of prioritizing an MVP',
-                'Ignoring metrics and business goals',
-                'Writing long PRDs without clarity or scope',
-                'Not talking to users or checking feedback/reviews',
-                'Claiming technical expertise without basic product-tech understanding',
-                'Applying without case studies, PRD samples, or portfolio proof'
+                'Focusing only on member count instead of active members and retention',
+                'Posting too many announcements without conversations',
+                'Starting a community without clear purpose or member promise',
+                'Ignoring rules, moderation, spam, and safety boundaries',
+                'Using vague prompts like "Thoughts?" instead of specific questions',
+                'Not documenting experiments, templates, and learnings',
+                'Applying to roles without portfolio proof or engagement examples'
               ]
             },
             {
-              heading: 'Beginner Resources for Product Management',
+              heading: 'Beginner Resources for Community Growth Managers',
               paragraphs: [
-                'Free resources are enough to start if you practice with real products. Read product teardowns, study app onboarding, analyze user reviews, and write your own case studies.',
-                'Best learning path: PM basics, user research, product thinking, metrics, UX basics, PRD writing, case studies, portfolio, then applications.'
+                'Free resources are enough to start if you observe communities and practice with small groups. Study how good communities onboard, create rituals, run events, and keep conversations alive.',
+                'Best learning path: community basics, audience research, platform choice, onboarding, engagement calendar, events, metrics, portfolio, then applications.'
               ],
               bullets: [
-                'Product teardowns and case studies from trusted product blogs and communities',
-                'Google Sheets or Excel for prioritization matrices and metrics tracking',
-                'Figma or FigJam basics for wireframes, flows, and journey maps',
-                'Notion or Google Docs for PRDs, case studies, and product notes',
-                'App Store and Play Store reviews for user pain point research',
-                'Beginner analytics resources for funnels, retention, conversion, and cohorts',
-                'ToolShala career guides, resume tools, LinkedIn tools, and project templates for applications'
+                'Study active Discord, Telegram, WhatsApp, LinkedIn, and newsletter communities in your niche',
+                'Read beginner community management guides from trusted community-led growth blogs and platform resources',
+                'Follow community managers, creator growth experts, and audience-building newsletters',
+                'Practice writing prompts, event invites, welcome messages, and recap posts',
+                'Use Notion or Google Docs to document community playbooks and case studies',
+                'Use Google Sheets or Airtable for member tracking, content calendars, and metrics dashboards',
+                'Use ToolShala career guides, resume tools, email generators, and templates for profile building'
               ]
             },
             {
-              heading: 'Useful ToolShala CTAs for Product Manager Freshers',
+              heading: 'Useful ToolShala CTAs for Community Growth Managers',
               paragraphs: [
-                'ToolShala resources can help you package your PM learning professionally. After each case study, convert your notes into resume bullets, LinkedIn updates, and outreach messages.',
-                'Use these tools to build a connected application workflow: career fit, case study notes, resume bullets, profile copy, and internship outreach.'
+                'ToolShala resources can help you plan and present community growth work professionally. Use them to generate content ideas, outreach emails, LinkedIn profile copy, event messages, and resume bullets.',
+                'A practical workflow: choose niche, create prompts, plan calendar, draft outreach, document results, then polish resume and LinkedIn.'
               ],
               bullets: [
-                'AI Career Path Suggestor to check whether product management fits your interests',
-                'Resume Bullet Point Generator for PM case study and project achievements',
-                'Resume Headline Generator for product management fresher positioning',
-                'LinkedIn Bio Generator for a clear product-focused About section',
-                'Professional Email Generator for internship outreach and follow-ups',
-                'Project Proposal Template for product case study or freelance product research offers',
-                'Content Brief Template for structuring product case study notes'
+                'Content Idea Generator for prompts, rituals, and weekly discussion topics',
+                'Professional Email Generator for event invites, partnership outreach, and follow-ups',
+                'WhatsApp Message Generator for community reminders and member updates',
+                'LinkedIn Bio Generator and LinkedIn Headline Generator for profile positioning',
+                'Resume Bullet Point Generator and Resume Headline Generator for application material',
+                'Instagram Content Calendar Template for creator/community posting plans',
+                'Event Invitation Template and Content Brief Template for event and campaign planning'
               ]
             }
           ],
           faq: [
             {
-              question: 'Can a fresher become a Product Manager?',
+              question: 'Can a fresher become a Community Growth Manager?',
               answer:
-                'Yes. Freshers can start through PM internships, APM internships, product analyst roles, founder office roles, business analyst roles, or growth roles. A portfolio with case studies, PRD samples, and user research notes can improve chances.'
+                'Yes. Freshers can start with community internships, creator growth roles, social media community roles, or student/community volunteer projects. A portfolio with engagement calendars, event plans, and metrics can improve chances.'
             },
             {
-              question: 'Do I need coding or MBA for product management?',
+              question: 'Which platform should I learn first for community growth?',
               answer:
-                'Coding and MBA are helpful but not mandatory for every beginner PM role. You should understand basic technology, business goals, user problems, metrics, and communication. Technical depth can grow with time.'
+                'Start with the platform your target audience already uses. For students, WhatsApp or Telegram can work well. For professional or creator communities, LinkedIn, Discord, Slack, Circle, or Instagram Broadcast Channels may be useful.'
             },
             {
-              question: 'What should I include in a PM portfolio?',
+              question: 'What should I include in a community growth portfolio?',
               answer:
-                'Include 2-3 product case studies, a PRD sample, user research notes, prioritization logic, wireframes or user flows, success metrics, and clear learnings. Show how you think, not just feature ideas.'
+                'Include community purpose, target member persona, onboarding flow, rules, content calendar, engagement experiments, event plans, sample messages, metrics dashboard, and learnings.'
             },
             {
-              question: 'Which ToolShala tools are useful for PM freshers?',
+              question: 'Which ToolShala tools are useful for community growth freshers?',
               answer:
-                'Use AI Career Path Suggestor, Resume Bullet Point Generator, Resume Headline Generator, LinkedIn Bio Generator, Professional Email Generator, Project Proposal Template, and Content Brief Template to prepare applications and portfolio content.'
+                'Use Content Idea Generator, Professional Email Generator, WhatsApp Message Generator, LinkedIn Bio Generator, LinkedIn Headline Generator, Resume Bullet Point Generator, Instagram Content Calendar Template, and Event Invitation Template.'
             }
           ],
           conclusion:
-            'Product Manager Roadmap for Freshers ka simple formula hai: user problem samjho, product thinking practice karo, PRD and metrics basics seekho, case studies publish karo, and interview prep ko structured rakho. In 30 days, one product teardown and PRD sample banao. In 90 days, 3 case studies, clean portfolio, and PM-ready resume ke saath internships or adjacent product roles apply karo.',
+            'Community Growth Manager Roadmap ka simple formula hai: audience samjho, clear member promise define karo, onboarding flow banao, engagement rituals test karo, metrics track karo, and portfolio proof build karo. In 30 days, one community strategy and engagement calendar banao. In 90 days, 2-3 projects, live experiment, and polished resume/LinkedIn ke saath community or growth roles apply karo.',
           cta: {
-            title: 'Build Your Product Management Application Kit',
+            title: 'Build Your Community Growth Toolkit with ToolShala',
             text:
-              'Use ToolShala career tools and templates to turn product case studies into resume bullets, improve your LinkedIn profile, and prepare internship outreach messages.',
-            primaryLabel: 'Try AI Career Path Suggestor',
-            primaryLink: './tool.html?tool=ai-career-path-suggestor',
-            secondaryLabel: 'Generate Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+              'Use ToolShala tools and templates to generate community prompts, event invites, outreach messages, LinkedIn copy, content calendars, and resume bullets for your growth portfolio.',
+            primaryLabel: 'Generate Community Content Ideas',
+            primaryLink: './tool.html?tool=content-idea-generator',
+            secondaryLabel: 'Use Event Invitation Template',
+            secondaryLink: './event-invitation-template.html'
           }
         }
       },
