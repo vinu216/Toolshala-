@@ -60,7 +60,13 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         model: process.env.NVIDIA_MODEL || 'openai/gpt-oss-20b',
-        messages: [{ role: 'user', content: prompt }],
+        messages: [
+          {
+            role: 'system',
+            content: 'You create clean, readable Markdown responses for ToolShala. Use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.'
+          },
+          { role: 'user', content: prompt }
+        ],
         temperature: 1,
         top_p: 1,
         max_tokens: 4096,
