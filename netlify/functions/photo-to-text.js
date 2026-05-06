@@ -161,6 +161,8 @@ const callVisionChatOcr = async ({ config, base64, mimeType, fileName }) => {
 };
 
 exports.handler = async (event) => {
+  const requestStartedAt = Date.now();
+
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: corsHeaders, body: '' };
   }
@@ -168,6 +170,8 @@ exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { error: 'Method not allowed' });
   }
+
+  console.info('[photo-to-text] request start');
 
   let body = {};
   try {
@@ -215,6 +219,7 @@ exports.handler = async (event) => {
       return jsonResponse(422, { error: 'No readable text was found in this image. Try a clearer or higher-resolution photo.' });
     }
 
+    console.info('[photo-to-text] request complete', { durationMs: Date.now() - requestStartedAt });
     return jsonResponse(200, { text });
   } catch (error) {
     return jsonResponse(502, { error: error?.message || 'OCR provider failed. Please try another clear image.' });
