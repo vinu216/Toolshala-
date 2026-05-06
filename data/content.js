@@ -7,6 +7,19 @@ window.ToolShalaContent = {
   collections: {
     tools: [
       {
+        id: 'tool-photo-to-text',
+        slug: 'photo-to-text',
+        title: 'Photo to Text',
+        category: 'ai',
+        categoryLabel: 'AI / OCR Tool',
+        description: 'Upload an image, screenshot, or camera photo and extract visible text in seconds.',
+        publishedAt: '2026-05-06',
+        featured: true,
+        tags: ['ocr', 'image-to-text', 'photo', 'productivity', 'ai'],
+        ctaLabel: 'Extract Text',
+        url: './tool.html?tool=photo-to-text'
+      },
+      {
         id: 'tool-resume-headline-generator',
         slug: 'resume-headline-generator',
         title: 'Resume Headline Generator',

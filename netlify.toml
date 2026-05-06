@@ -7,3 +7,8 @@
   to = "/.netlify/functions/generate"
   status = 200
   force = true
+[[redirects]]
+  from = "/api/photo-to-text"
+  to = "/.netlify/functions/photo-to-text"
+  status = 200
+  force = true

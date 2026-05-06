@@ -27,6 +27,12 @@
     defaultLoadingMessages: ['Generating your result...', 'Preparing your content...', 'Just a moment...']
   };
 
+  const PHOTO_TO_TEXT_CONFIG = {
+    endpoint: '/api/photo-to-text',
+    maxFileSize: 8 * 1024 * 1024,
+    allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
+  };
+
   const buildPromptFromValues = (toolId, values = {}) => {
     const promptLines = Object.entries(values || {})
       .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
@@ -2885,6 +2891,16 @@ ${senderName}`;
       input.innerHTML = `<option value="">Select ${escapeHtml(field.label)}</option>${(field.options || [])
         .map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`)
         .join('')}`;
+    } else if (field.type === 'file') {
+      input = document.createElement('input');
+      input.className = 'field-input';
+      input.type = 'file';
+      if (field.accept) {
+        input.accept = field.accept;
+      }
+      if (field.capture) {
+        input.setAttribute('capture', field.capture);
+      }
     } else if (field.type === 'textarea') {
       input = document.createElement('textarea');
       input.className = 'field-textarea';
@@ -3003,7 +3019,7 @@ ${senderName}`;
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'btn-secondary';
-      button.textContent = 'Copy';
+      button.textContent = result.copyLabel || 'Copy';
       button.addEventListener('click', async () => {
         try {
           await copyText(result.text);
@@ -3013,6 +3029,13 @@ ${senderName}`;
         }
       });
       actions.appendChild(button);
+
+      if (Number.isFinite(result.characterCount)) {
+        const count = document.createElement('p');
+        count.className = 'tool-helper-text';
+        count.textContent = `${result.characterCount} character${result.characterCount === 1 ? '' : 's'} extracted.`;
+        outputNode.appendChild(count);
+      }
 
       if (result.printable) {
         const printButton = document.createElement('button');
@@ -3273,6 +3296,186 @@ ${senderName}`;
     }
   };
 
+  const formatFileSize = (size = 0) => {
+    if (size >= 1024 * 1024) {
+      return `${(size / (1024 * 1024)).toFixed(1)} MB`;
+    }
+    return `${Math.max(1, Math.round(size / 1024))} KB`;
+  };
+
+  const readFileAsDataUrl = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Could not read the selected image. Please try another file.'));
+      reader.readAsDataURL(file);
+    });
+
+  const getSelectedPhoto = (formNode) => formNode.querySelector('input[type="file"][name="image"]')?.files?.[0] || null;
+
+  const validatePhotoFile = (file) => {
+    if (!file) {
+      return 'Please select an image first.';
+    }
+
+    if (!PHOTO_TO_TEXT_CONFIG.allowedTypes.has(file.type)) {
+      return 'Unsupported image type. Please upload a JPEG, PNG, WEBP, HEIC, or HEIF image.';
+    }
+
+    if (file.size > PHOTO_TO_TEXT_CONFIG.maxFileSize) {
+      return `Image is too large (${formatFileSize(file.size)}). Please upload an image up to 8 MB.`;
+    }
+
+    return '';
+  };
+
+  const setupPhotoToTextTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, tool }) => {
+    const fileInput = formNode.querySelector('input[type="file"][name="image"]');
+    if (!fileInput) {
+      return false;
+    }
+
+    const fieldWrap = fileInput.closest('.field-wrap');
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview hidden';
+    preview.setAttribute('aria-live', 'polite');
+    preview.innerHTML = '<img alt="Selected image preview" /><p data-photo-file-meta></p>';
+    fieldWrap?.appendChild(preview);
+
+    const previewImage = preview.querySelector('img');
+    const previewMeta = preview.querySelector('[data-photo-file-meta]');
+    let previewUrl = '';
+
+    const clearPreview = () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        previewUrl = '';
+      }
+      preview.classList.add('hidden');
+      if (previewImage) {
+        previewImage.removeAttribute('src');
+      }
+      if (previewMeta) {
+        previewMeta.textContent = '';
+      }
+    };
+
+    const showError = (message) => {
+      errorNode.textContent = message;
+      errorNode.classList.remove('hidden');
+      showToast('error', 'Please check the image.', message);
+    };
+
+    fileInput.addEventListener('change', () => {
+      clearFieldError(fileInput);
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      renderOutput({ outputNode, result: null, tool });
+      clearPreview();
+
+      const file = getSelectedPhoto(formNode);
+      if (!file) {
+        return;
+      }
+
+      const validationMessage = validatePhotoFile(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'image', validationMessage);
+        showError(validationMessage);
+        fileInput.value = '';
+        return;
+      }
+
+      previewUrl = URL.createObjectURL(file);
+      if (previewImage) {
+        previewImage.src = previewUrl;
+      }
+      if (previewMeta) {
+        previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+      }
+      preview.classList.remove('hidden');
+    });
+
+    formNode.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      clearFieldError(fileInput);
+
+      const file = getSelectedPhoto(formNode);
+      const validationMessage = validatePhotoFile(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'image', validationMessage);
+        showError(validationMessage);
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
+      submitButton.textContent = 'Extracting...';
+      loadingNode.textContent = 'Extracting text from your image...';
+      loadingNode.classList.remove('hidden');
+
+      try {
+        const imageData = await readFileAsDataUrl(file);
+        const response = await fetch(PHOTO_TO_TEXT_CONFIG.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            imageData,
+            filename: file.name || 'uploaded-image',
+            mimeType: file.type
+          })
+        });
+
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+        }
+
+        const text = String(payload?.text || '').trim();
+        if (!text) {
+          throw new Error('No readable text was found in this image. Try a clearer or higher-resolution photo.');
+        }
+
+        renderOutput({
+          outputNode,
+          result: {
+            type: 'text',
+            text,
+            copyLabel: 'Copy Text',
+            characterCount: text.length
+          },
+          tool
+        });
+        showToast('success', 'Text extracted successfully.');
+      } catch (error) {
+        const message = error?.message || 'Text extraction failed. Please try another clear image.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Text extraction failed.', message);
+      } finally {
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
+      }
+    });
+
+    resetButton.addEventListener('click', () => {
+      formNode.reset();
+      clearFieldError(fileInput);
+      clearPreview();
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      loadingNode.classList.add('hidden');
+      renderOutput({ outputNode, result: null, tool });
+      showToast('success', 'Done successfully.');
+    });
+
+    window.addEventListener('beforeunload', clearPreview);
+    return true;
+  };
+
   const initToolDetailPage = () => {
     const root = document.querySelector('[data-tool-detail]');
     if (!root) {
@@ -3363,6 +3566,12 @@ ${senderName}`;
     toolFields.forEach((field) => {
       formNode.appendChild(renderField(field));
     });
+
+    if (tool.id === 'photo-to-text') {
+      renderOutput({ outputNode, result: null, tool });
+      setupPhotoToTextTool({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, tool });
+      return;
+    }
 
     formNode.addEventListener('input', (event) => {
       clearFieldError(event.target);
