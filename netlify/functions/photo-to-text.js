@@ -1,5 +1,5 @@
-const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
-const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
+const DEFAULT_MAX_FILE_MB = 8;
+const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -14,8 +14,16 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body)
 });
 
-const parseImagePayload = (imageData = '') => {
-  const value = String(imageData || '').trim();
+const getEnvString = (key, fallback = '') => String(process.env[key] || fallback).trim();
+
+const getMaxImageBytes = () => {
+  const configuredMaxMb = Number(getEnvString('PHOTO_TO_TEXT_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
+  const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
+  return Math.floor(maxMb * 1024 * 1024);
+};
+
+const parseImagePayload = (imageBase64 = '') => {
+  const value = String(imageBase64 || '').trim();
   const match = value.match(/^data:([^;]+);base64,(.+)$/i);
   if (match) {
     return { mimeType: match[1].toLowerCase(), base64: match[2] };
@@ -23,76 +31,116 @@ const parseImagePayload = (imageData = '') => {
   return { mimeType: '', base64: value };
 };
 
-const normalizeExtractedText = (text = '') =>
-  String(text || '')
+const normalizeBaseUrl = (baseUrl = '') => String(baseUrl || '').trim().replace(/\/+$/, '');
+
+const buildPhotoToTextConfig = () => {
+  const provider = getEnvString('PHOTO_TO_TEXT_PROVIDER', 'nvidia').toLowerCase();
+
+  if (provider === 'nvidia') {
+    return {
+      provider,
+      apiKey: getEnvString('NVIDIA_API_KEY'),
+      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct'),
+      baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
+    };
+  }
+
+  if (provider === 'openai' || provider === 'openai-compatible') {
+    return {
+      provider,
+      apiKey: getEnvString('PHOTO_TO_TEXT_API_KEY'),
+      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'gpt-4o-mini'),
+      baseUrl: normalizeBaseUrl(
+        getEnvString('PHOTO_TO_TEXT_BASE_URL', provider === 'openai' ? 'https://api.openai.com/v1' : '')
+      )
+    };
+  }
+
+  return { provider, apiKey: '', model: '', baseUrl: '' };
+};
+
+const OCR_SYSTEM_PROMPT = [
+  'You are a strict OCR transcription engine.',
+  'Transcribe only text that is visibly present in the image.',
+  'Preserve original line breaks, bullets, numbering, punctuation, capitalization, and section spacing as much as possible.',
+  'Do not describe the image.',
+  'Do not summarize, analyze, translate, correct grammar, or infer missing words.',
+  'Do not add headings, labels, markdown fences, commentary, or explanations.',
+  'If there is no readable visible text, return an empty string.'
+].join(' ');
+
+const buildOcrUserPrompt = (fileName = '') =>
+  [
+    `OCR transcribe this uploaded image${fileName ? ` (${fileName})` : ''}.`,
+    'Return only the exact visible text, with formatting preserved as plain text.'
+  ].join(' ');
+
+const normalizeExtractedText = (text = '') => {
+  let output = String(text || '')
     .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .trim();
+
+  const fenceMatch = output.match(/^```(?:text|plain\s*text|markdown)?\s*\n([\s\S]*?)\n```$/i);
+  if (fenceMatch) {
+    output = fenceMatch[1].trim();
+  }
+
+  output = output
+    .replace(/^(?:here(?:'s| is)\s+)?(?:the\s+)?(?:extracted|transcribed|visible|ocr)\s+text\s*[:\-–]\s*/i, '')
+    .replace(/^the\s+(?:image|photo|picture)\s+(?:says|reads|contains(?:\s+the\s+following)?\s+text)\s*[:\-–]\s*/i, '')
     .replace(/[ \t]+\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 
-const buildPrompt = () =>
-  [
-    'Extract all visible text from this image.',
-    'Preserve line breaks and paragraph structure as much as possible.',
-    'Return only the extracted text. Do not summarize, explain, translate, or add placeholders.',
-    'If no readable text is visible, return an empty response.'
-  ].join(' ');
-
-const extractWithOpenAI = async ({ base64, mimeType }) => {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    return null;
+  if (/^(?:i\s+)?(?:cannot|can't)\s+(?:read|extract|transcribe)|^no\s+(?:readable|visible)\s+text/i.test(output)) {
+    return '';
   }
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: process.env.OPENAI_VISION_MODEL || 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'user',
-          content: [
-            { type: 'text', text: buildPrompt() },
-            { type: 'image_url', image_url: { url: `data:${mimeType};base64,${base64}` } }
-          ]
-        }
-      ],
-      temperature: 0,
-      max_tokens: 4096
-    })
-  });
-
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    throw new Error(data?.error?.message || 'OpenAI vision OCR request failed.');
-  }
-
-  return normalizeExtractedText(data?.choices?.[0]?.message?.content || '');
+  return output;
 };
 
-const extractWithNvidia = async ({ base64, mimeType }) => {
-  const apiKey = process.env.NVIDIA_API_KEY;
-  if (!apiKey) {
-    return null;
+const extractMessageContent = (payload = {}) => {
+  const content = payload?.choices?.[0]?.message?.content ?? payload?.choices?.[0]?.delta?.content ?? '';
+  if (Array.isArray(content)) {
+    return content
+      .map((part) => (typeof part === 'string' ? part : part?.text || ''))
+      .join('\n');
+  }
+  return String(content || '');
+};
+
+const callVisionChatOcr = async ({ config, base64, mimeType, fileName }) => {
+  if (!config.apiKey) {
+    throw new Error(
+      config.provider === 'nvidia'
+        ? 'Photo to Text OCR is not configured. Add NVIDIA_API_KEY and PHOTO_TO_TEXT_MODEL for a vision-capable NVIDIA model.'
+        : 'Photo to Text OCR is not configured. Add PHOTO_TO_TEXT_API_KEY, PHOTO_TO_TEXT_PROVIDER, and PHOTO_TO_TEXT_MODEL.'
+    );
   }
 
-  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+  if (!config.model) {
+    throw new Error('Photo to Text OCR model is not configured. Add PHOTO_TO_TEXT_MODEL.');
+  }
+
+  if (!config.baseUrl) {
+    throw new Error('Photo to Text OCR base URL is not configured. Add PHOTO_TO_TEXT_BASE_URL.');
+  }
+
+  const response = await fetch(`${config.baseUrl}/chat/completions`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${config.apiKey}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      model: process.env.NVIDIA_VISION_MODEL || process.env.NVIDIA_OCR_MODEL || 'meta/llama-3.2-11b-vision-instruct',
+      model: config.model,
       messages: [
+        { role: 'system', content: OCR_SYSTEM_PROMPT },
         {
           role: 'user',
           content: [
-            { type: 'text', text: buildPrompt() },
+            { type: 'text', text: buildOcrUserPrompt(fileName) },
             { type: 'image_url', image_url: { url: `data:${mimeType};base64,${base64}` } }
           ]
         }
@@ -104,12 +152,12 @@ const extractWithNvidia = async ({ base64, mimeType }) => {
     })
   });
 
-  const data = await response.json().catch(() => ({}));
+  const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(data?.error?.message || 'NVIDIA vision OCR request failed.');
+    throw new Error(payload?.error?.message || `${config.provider} OCR request failed with status ${response.status}.`);
   }
 
-  return normalizeExtractedText(data?.choices?.[0]?.message?.content || data?.choices?.[0]?.delta?.content || '');
+  return normalizeExtractedText(extractMessageContent(payload));
 };
 
 exports.handler = async (event) => {
@@ -128,16 +176,17 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'Invalid JSON body.' });
   }
 
-  const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(body.imageData);
+  const imagePayload = body.imageBase64 || body.imageData || '';
+  const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(imagePayload);
   const mimeType = String(body.mimeType || dataUrlMimeType || '').toLowerCase();
-  const filename = String(body.filename || 'uploaded image').slice(0, 180);
+  const fileName = String(body.fileName || body.filename || 'uploaded-image').slice(0, 180);
 
   if (!base64) {
     return jsonResponse(400, { error: 'Image data is required.' });
   }
 
   if (!ALLOWED_MIME_TYPES.has(mimeType)) {
-    return jsonResponse(400, { error: 'Unsupported image type. Please upload a JPEG, PNG, WEBP, HEIC, or HEIF image.' });
+    return jsonResponse(400, { error: 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.' });
   }
 
   const normalizedBase64 = base64.replace(/\s/g, '');
@@ -145,22 +194,22 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'Invalid image data. Please upload the image again.' });
   }
 
-  const estimatedBytes = Math.floor((normalizedBase64.length * 3) / 4);
-  if (estimatedBytes > MAX_IMAGE_BYTES) {
-    return jsonResponse(413, { error: 'Image is too large. Please upload an image up to 8 MB.' });
+  const imageBytes = Buffer.from(normalizedBase64, 'base64');
+  const maxImageBytes = getMaxImageBytes();
+  if (imageBytes.length > maxImageBytes) {
+    const maxMb = Math.max(1, Math.floor(maxImageBytes / (1024 * 1024)));
+    return jsonResponse(413, { error: `Image is too large. Please upload an image up to ${maxMb} MB.` });
+  }
+
+  const config = buildPhotoToTextConfig();
+  if (!['nvidia', 'openai', 'openai-compatible'].includes(config.provider)) {
+    return jsonResponse(500, {
+      error: `Unsupported Photo to Text provider "${config.provider}". Use PHOTO_TO_TEXT_PROVIDER=nvidia, openai, or openai-compatible.`
+    });
   }
 
   try {
-    let text = await extractWithOpenAI({ base64: normalizedBase64, mimeType, filename });
-    if (text === null) {
-      text = await extractWithNvidia({ base64: normalizedBase64, mimeType, filename });
-    }
-
-    if (text === null) {
-      return jsonResponse(500, {
-        error: 'OCR backend is not configured. Add OPENAI_API_KEY or NVIDIA_API_KEY with a vision-capable model in Netlify environment variables.'
-      });
-    }
+    const text = await callVisionChatOcr({ config, base64: normalizedBase64, mimeType, fileName });
 
     if (!text) {
       return jsonResponse(422, { error: 'No readable text was found in this image. Try a clearer or higher-resolution photo.' });
@@ -168,6 +217,6 @@ exports.handler = async (event) => {
 
     return jsonResponse(200, { text });
   } catch (error) {
-    return jsonResponse(502, { error: error?.message || 'Text extraction failed. Please try another clear image.' });
+    return jsonResponse(502, { error: error?.message || 'OCR provider failed. Please try another clear image.' });
   }
 };
