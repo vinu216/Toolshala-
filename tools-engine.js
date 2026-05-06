@@ -132,7 +132,11 @@
   const PHOTO_TO_TEXT_CONFIG = {
     endpoint: '/api/photo-to-text',
     maxFileSize: 8 * 1024 * 1024,
-    allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
+    maxUploadSize: 3 * 1024 * 1024,
+    maxDimension: 1600,
+    outputMimeType: 'image/jpeg',
+    outputQuality: 0.82,
+    allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp'])
   };
 
   const buildPromptFromValues = (toolId, values = {}) => {
@@ -3406,13 +3410,81 @@ ${senderName}`;
     return `${Math.max(1, Math.round(size / 1024))} KB`;
   };
 
-  const readFileAsDataUrl = (file) =>
+  const readBlobAsDataUrl = (blob) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => resolve(String(reader.result || ''));
-      reader.onerror = () => reject(new Error('Could not read the selected image. Please try another file.'));
-      reader.readAsDataURL(file);
+      reader.onerror = () => reject(new Error('Could not prepare the selected image. Please try another file.'));
+      reader.readAsDataURL(blob);
     });
+
+  const loadImageFromFile = (file) =>
+    new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const image = new Image();
+      image.onload = () => {
+        URL.revokeObjectURL(url);
+        resolve(image);
+      };
+      image.onerror = () => {
+        URL.revokeObjectURL(url);
+        reject(new Error('Could not load the selected image. Please try another JPEG, PNG, or WEBP image.'));
+      };
+      image.src = url;
+    });
+
+  const optimizePhotoForOcr = async (file) => {
+    const image = await loadImageFromFile(file);
+    const sourceWidth = image.naturalWidth || image.width;
+    const sourceHeight = image.naturalHeight || image.height;
+
+    if (!sourceWidth || !sourceHeight) {
+      throw new Error('Could not read image dimensions. Please try another image.');
+    }
+
+    const scale = Math.min(1, PHOTO_TO_TEXT_CONFIG.maxDimension / Math.max(sourceWidth, sourceHeight));
+    const width = Math.max(1, Math.round(sourceWidth * scale));
+    const height = Math.max(1, Math.round(sourceHeight * scale));
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+
+    if (!context) {
+      throw new Error('Image optimization is not supported in this browser. Please try a smaller image.');
+    }
+
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, width, height);
+    context.drawImage(image, 0, 0, width, height);
+
+    const blob = await new Promise((resolve) => {
+      canvas.toBlob(resolve, PHOTO_TO_TEXT_CONFIG.outputMimeType, PHOTO_TO_TEXT_CONFIG.outputQuality);
+    });
+
+    if (!blob) {
+      throw new Error('Could not optimize the selected image. Please try another file.');
+    }
+
+    if (blob.size > PHOTO_TO_TEXT_CONFIG.maxUploadSize) {
+      throw new Error(`Optimized image is still too large (${formatFileSize(blob.size)}). Please crop it or choose an image under ${formatFileSize(PHOTO_TO_TEXT_CONFIG.maxUploadSize)}.`);
+    }
+
+    const dataUrl = await readBlobAsDataUrl(blob);
+    const imageBase64 = dataUrl.replace(/^data:[^;]+;base64,/i, '');
+    if (!imageBase64) {
+      throw new Error('Could not prepare the selected image. Please try another file.');
+    }
+
+    return {
+      imageBase64,
+      mimeType: blob.type || PHOTO_TO_TEXT_CONFIG.outputMimeType,
+      fileName: file.name || 'uploaded-image.jpg',
+      width,
+      height,
+      size: blob.size
+    };
+  };
 
   const getSelectedPhoto = (formNode) => formNode.querySelector('input[type="file"][name="image"]')?.files?.[0] || null;
 
@@ -3422,7 +3494,7 @@ ${senderName}`;
     }
 
     if (!PHOTO_TO_TEXT_CONFIG.allowedTypes.has(file.type)) {
-      return 'Unsupported image type. Please upload a JPEG, PNG, WEBP, HEIC, or HEIF image.';
+      return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
     }
 
     if (file.size > PHOTO_TO_TEXT_CONFIG.maxFileSize) {
@@ -3516,24 +3588,40 @@ ${senderName}`;
       submitButton.disabled = true;
       submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
       submitButton.textContent = 'Extracting...';
-      loadingNode.textContent = 'Extracting text from your image...';
+      loadingNode.textContent = 'Optimizing image for faster OCR...';
       loadingNode.classList.remove('hidden');
 
       try {
-        const imageData = await readFileAsDataUrl(file);
+        const optimizedImage = await optimizePhotoForOcr(file);
+        loadingNode.textContent = 'Extracting text from your image...';
         const response = await fetch(PHOTO_TO_TEXT_CONFIG.endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            imageData,
-            filename: file.name || 'uploaded-image',
-            mimeType: file.type
+            imageBase64: optimizedImage.imageBase64,
+            mimeType: optimizedImage.mimeType,
+            fileName: optimizedImage.fileName,
+            width: optimizedImage.width,
+            height: optimizedImage.height
           })
         });
 
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) {
-          throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+          const backendMessage = String(payload?.error || '').trim();
+          if (backendMessage) {
+            throw new Error(backendMessage);
+          }
+          if (response.status === 504 || response.status === 408) {
+            throw new Error('OCR request timed out. Please crop the image or upload a smaller, clearer photo.');
+          }
+          if (response.status === 413) {
+            throw new Error('Image is too large after optimization. Please crop it or choose a smaller image.');
+          }
+          if (response.status === 502) {
+            throw new Error('OCR provider failed. Please try again with a smaller or clearer image.');
+          }
+          throw new Error(`Text extraction failed with status ${response.status}. Please try again.`);
         }
 
         const text = String(payload?.text || '').trim();
@@ -3553,7 +3641,10 @@ ${senderName}`;
         });
         showToast('success', 'Text extracted successfully.');
       } catch (error) {
-        const message = error?.message || 'Text extraction failed. Please try another clear image.';
+        const isNetworkError = error instanceof TypeError;
+        const message = isNetworkError
+          ? 'Network error while extracting text. Please check your connection and try a smaller image.'
+          : error?.message || 'Text extraction failed. Please try another clear image.';
         errorNode.textContent = message;
         errorNode.classList.remove('hidden');
         showToast('error', 'Text extraction failed.', message);
