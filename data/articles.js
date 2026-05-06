@@ -8,25 +8,25 @@ window.ToolShalaArticleContent = {
     seoGuides: [
       {
         id: 'guide-026',
-        title: 'Digital Marketing Executive Roadmap for Freshers',
-        slug: '/guides/digital-marketing-executive-roadmap-for-freshers',
-        primaryKeyword: 'Digital Marketing Executive roadmap for freshers',
+        title: 'Video Editor / Short-Form Content Creator Roadmap',
+        slug: '/guides/video-editor-short-form-content-creator-roadmap',
+        primaryKeyword: 'Video Editor Short-Form Content Creator roadmap',
         searchIntent: 'Informational',
-        metaTitle: 'Digital Marketing Executive Roadmap for Freshers | SEO, Social, Ads & Email | ToolShala',
+        metaTitle: 'Video Editor / Short-Form Content Creator Roadmap | Reels, Shorts & Freelance | ToolShala',
         metaDescription:
-          'Learn how to become a digital marketing executive as a fresher with SEO, social media, email, ads basics, 30-day and 90-day roadmaps, projects, resume tips, and tools.',
-        shortExcerpt: 'A fresher-friendly digital marketing roadmap with SEO, social media, email, ads, projects, internship tips, and ToolShala resources.',
-        category: 'Career Guidance',
-        ctaText: 'Start Digital Marketing Roadmap',
+          'Learn how to become a video editor or short-form content creator with editing skills, tools, 30-day and 90-day roadmaps, portfolio ideas, reels practice, freelance tips, and ToolShala social tools.',
+        shortExcerpt: 'A beginner-friendly roadmap to learn short-form video editing, create reels and shorts, build a portfolio, and find freelance or internship opportunities.',
+        category: 'Creator Careers',
+        ctaText: 'Start Creator Roadmap',
         relatedLinks: [
-          '/career',
           '/tools',
           '/templates',
-          '/guides/best-skills-to-learn-in-2026',
+          '/career',
           '/guides/best-side-skills-for-students',
-          '/guides/internship-kaise-dhoondein'
+          '/guides/best-freelancing-skills-for-beginners',
+          '/guides/best-free-ai-tools-for-students'
         ],
-        featuredImageAlt: 'Digital marketing executive roadmap for freshers with SEO social media ads and email basics',
+        featuredImageAlt: 'Video editor and short-form content creator roadmap for beginners',
         publishDate: '2026-05-06',
         readingTime: '11 min read',
         author: 'ToolShala Editorial Team',
@@ -34,264 +34,282 @@ window.ToolShalaArticleContent = {
         status: 'ready',
         guideContent: {
           intro:
-            'Digital Marketing Executive Roadmap for Freshers un students aur beginners ke liye hai jo SEO, social media, email marketing, ads, analytics, and content planning seekhkar internship ya entry-level marketing role target karna chahte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, projects, resume tips, freelance ideas, and ToolShala resources cover kiye gaye hain.',
+            'Video Editor / Short-Form Content Creator Roadmap beginners, students, and freshers ke liye hai jo Reels, YouTube Shorts, TikTok-style videos, creator edits, and brand content editing se career ya freelance income start karna chahte hain. Is guide mein simple Hinglish tone mein skills, tools, 30-day and 90-day roadmap, portfolio ideas, practice plan, client tips, and ToolShala social/media resources cover kiye gaye hain.',
           featuredSnippet:
-            'A Digital Marketing Executive helps brands grow online through SEO, social media, email campaigns, paid ads, content planning, and analytics. Freshers should learn marketing basics, SEO, social content, email writing, ad fundamentals, reporting, and build 3-5 portfolio projects before applying.',
+            'A short-form video editor or content creator plans hooks, edits vertical videos, adds captions, music, pacing, transitions, and CTAs for platforms like Instagram Reels and YouTube Shorts. Beginners should learn storytelling, editing basics, platform formats, scripting, portfolio projects, and client communication before applying for creator or freelance roles.',
           sections: [
             {
-              heading: 'What Does a Digital Marketing Executive Do?',
+              heading: 'What is a Short-Form Content Creator or Video Editor?',
               paragraphs: [
-                'A Digital Marketing Executive online channels par brand visibility, leads, traffic, and engagement improve karne mein help karta hai. Daily work mein content calendar banana, social posts schedule karna, SEO tasks karna, email campaigns draft karna, ad performance check karna, and analytics reports banana include ho sakta hai.',
-                'Freshers ke liye ye role practical hai because you can show proof through small campaigns, content ideas, SEO audits, Instagram calendars, email samples, and basic performance reports.'
+                'A short-form content creator ya video editor vertical videos ko engaging, clear, and platform-ready banata hai. Work mein raw clips select karna, hook improve karna, cuts tight karna, captions add karna, music sync karna, B-roll use karna, and final video export karna include ho sakta hai.',
+                'Creator role mein aap ideas, script, shooting, editing, posting, and analytics bhi handle kar sakte ho. Video editor role mein mostly footage ko polished reel, short, ad, testimonial, podcast clip, or educational video mein convert karna hota hai.'
               ],
               bullets: [
-                'Plans and executes SEO, social media, email, and paid campaign tasks',
-                'Creates content ideas, captions, hashtags, briefs, and posting calendars',
-                'Tracks metrics like reach, clicks, impressions, CTR, leads, and conversions',
-                'Coordinates with designers, writers, founders, sales teams, or clients',
-                'Improves campaigns based on data, audience feedback, and business goals'
+                'Edits vertical videos for Instagram Reels, YouTube Shorts, LinkedIn, and TikTok-style formats',
+                'Improves hooks, pacing, captions, transitions, audio, and CTA',
+                'Repurposes long videos, podcasts, webinars, or interviews into short clips',
+                'Creates content for creators, coaches, startups, agencies, local businesses, and personal brands',
+                'Tracks performance signals like watch time, retention, saves, shares, comments, and clicks'
               ]
             },
             {
-              heading: 'Why Digital Marketing is Popular Among Freshers',
+              heading: 'Why Short-Form Video Editing is in Demand',
               paragraphs: [
-                'Digital marketing popular hai because almost every business needs online visibility: startups, coaching institutes, ecommerce stores, agencies, local businesses, creators, SaaS companies, and personal brands.',
-                'Freshers ke liye entry barrier manageable hai. You can start with free tools, build public portfolio projects, learn by observing brands, and apply for internships even before advanced certifications.'
+                'Short-form video demand mein hai because brands, creators, educators, coaches, and small businesses all want attention on social platforms. Reels and Shorts quickly communicate ideas and can support awareness, trust, leads, and sales.',
+                'Many people can record videos, but not everyone can edit them into clear, high-retention content. That is where a good beginner editor can add value: better hook, faster pacing, clean subtitles, and a clear message.'
               ],
               bullets: [
-                'High demand across agencies, startups, creators, local businesses, and ecommerce',
-                'Beginner-friendly entry roles exist in SEO, social media, content, email, and ads support',
-                'Portfolio proof can be created without waiting for a full-time job',
-                'Skills also help freelancing, personal branding, creator work, and entrepreneurship',
-                'Marketing results are measurable, so improvement is easier to show'
+                'Creators need consistent reels and shorts to grow audience and personal brand',
+                'Businesses need product explainers, testimonials, ads, and educational clips',
+                'Agencies outsource editing to freelancers and interns for speed',
+                'Long-form podcasts and webinars can be repurposed into many short clips',
+                'Editing skill combines well with marketing, design, copywriting, and content strategy'
               ]
             },
             {
-              heading: 'Skills Needed for Digital Marketing Executive Freshers',
+              heading: 'Skills Needed for Video Editing and Short-Form Content',
               paragraphs: [
-                'Digital marketing mein creativity plus data dono chahiye. Aapko viral trends ke saath basic strategy, audience understanding, copywriting, and analytics bhi samajhna hoga.',
-                'Freshers should become T-shaped: SEO, social, email, ads, and analytics ke basics samjho, then one area mein slightly deeper practice karo.'
+                'Beginner editors ko sirf transitions learn karna enough nahi hai. Short-form content mein storytelling, attention, audio, readability, and platform behavior samajhna important hai.',
+                'Your goal should be: viewer ko first 2 seconds mein stop karna, message clearly deliver karna, and video ko easy to watch banana.'
               ],
               bullets: [
-                'Marketing basics: audience, funnel, positioning, offer, CTA, and customer journey',
-                'Copywriting: hooks, captions, subject lines, landing page copy, and clear CTAs',
-                'SEO basics: keywords, search intent, headings, meta description, internal links, and content quality',
-                'Social media: content pillars, formats, captions, hashtags, reels ideas, and posting calendar',
-                'Email marketing: welcome emails, newsletters, follow-ups, segmentation basics, and subject lines',
-                'Ads basics: campaign objective, targeting, creative, budget, CPC, CTR, conversion, and A/B testing',
-                'Analytics: Google Analytics basics, Search Console basics, social insights, and simple reporting'
+                'Storytelling: hook, setup, value, payoff, CTA, and emotional clarity',
+                'Editing basics: trimming, jump cuts, pacing, B-roll, transitions, effects, and export settings',
+                'Caption design: readable subtitles, keywords, timing, contrast, and safe margins',
+                'Audio: noise cleanup, volume balance, music selection, beat cuts, and sound effects',
+                'Platform knowledge: Reels, Shorts, LinkedIn video, aspect ratio, duration, thumbnails, and trends',
+                'Content writing: hooks, scripts, captions, titles, hashtags, and content briefs',
+                'Client workflow: brief, raw footage organization, revisions, deadlines, and feedback handling'
               ]
             },
             {
-              heading: 'SEO, Social Media, Email, and Ads Basics to Learn',
+              heading: 'Video Editing Tools and Software to Learn',
               paragraphs: [
-                'Digital marketing ko random tools ki list ki tarah mat seekho. Channels ko business goals se connect karo: awareness, engagement, leads, sales, retention, or community building.',
-                'Beginner level par enough hai ki aap basic tasks confidently kar sako, report samajh sako, and next improvement suggest kar sako.'
+                'Start with one beginner-friendly editing tool. Do not keep switching software every week. Once editing fundamentals clear ho jayein, advanced tools learn karna easier ho jata hai.',
+                'Mobile-first beginners CapCut se start kar sakte hain. Laptop users DaVinci Resolve, Premiere Pro, Final Cut Pro, or Canva video features explore kar sakte hain. For fast creator work, templates and AI tools also help.'
               ],
               bullets: [
-                'SEO: keyword research, search intent, on-page SEO, blog outline, meta title, meta description, and internal linking',
-                'Social media: audience persona, content calendar, hooks, captions, hashtags, engagement replies, and content repurposing',
-                'Email: subject lines, preview text, simple newsletter structure, lead magnet follow-up, and polite promotional copy',
-                'Ads: campaign objective, audience targeting, creative testing, landing page match, budget basics, and performance metrics',
-                'Analytics: UTM basics, impressions, clicks, CTR, engagement rate, conversion rate, leads, and campaign notes',
-                'Reporting: what happened, why it happened, what to improve next, and what action is needed'
+                'CapCut for beginner-friendly mobile and desktop short-form edits',
+                'DaVinci Resolve for free professional editing, color, audio, and timeline practice',
+                'Adobe Premiere Pro or Final Cut Pro for agency and professional workflows',
+                'Canva for quick social videos, thumbnails, covers, and simple brand templates',
+                'Descript, Veed, or similar tools for captions, podcast clips, and text-based editing practice',
+                'Notion or Google Sheets for content calendar, client status, and revision tracking',
+                'ToolShala YouTube / Shorts Script Generator, Instagram Caption Generator, Hashtag Generator, and Content Idea Generator for ideation and publishing support'
               ]
             },
             {
-              heading: '30-Day Digital Marketing Roadmap for Freshers',
+              heading: '30-Day Video Editor Roadmap for Beginners',
               paragraphs: [
-                'First 30 days ka goal fundamentals and proof banana hai. Roz 60-90 minutes practice karo and har week one small deliverable create karo.',
-                'By day 30, you should have one niche selected, 20 content ideas, one SEO mini audit, one social calendar, and 2-3 email/caption samples.'
+                'First 30 days ka goal editing foundation and visible output banana hai. Roz 60-90 minutes practice karo. Har week 3-5 short edits export karo, even if they are sample projects.',
+                'By day 30, you should have basic editing confidence, 10-12 practice reels or shorts, one content calendar, and a small portfolio folder.'
               ],
               subSections: [
                 {
-                  heading: 'Days 1-7: Understand Marketing Basics and Pick a Niche',
+                  heading: 'Days 1-7: Learn Short-Form Video Basics',
                   bullets: [
-                    'Learn audience, funnel, offer, CTA, brand voice, and customer journey basics',
-                    'Pick one niche like education, fitness, local food, fashion, SaaS, finance, or career content',
-                    'Study 5 brands in that niche and note their content pillars, offers, and CTAs',
-                    'Create a simple audience persona with pain points, goals, and preferred platforms'
+                    'Study 20 reels or shorts in one niche and note hook, length, cuts, captions, music, and CTA',
+                    'Learn 9:16 vertical format, safe margins, export settings, audio levels, and caption readability',
+                    'Pick one niche: education, fitness, finance, college life, career, fashion, food, or local business',
+                    'Use ToolShala Content Idea Generator to create 20 short-form video ideas'
                   ]
                 },
                 {
-                  heading: 'Days 8-15: Learn SEO and Content Planning',
+                  heading: 'Days 8-15: Practice Editing Fundamentals',
                   bullets: [
-                    'Use Google Search suggestions and ToolShala Content Idea Generator to create 20 topic ideas',
-                    'Practice keyword intent: informational, comparison, local, and transactional searches',
-                    'Create 5 blog outlines with H2 headings, FAQs, meta titles, and meta descriptions',
-                    'Do a basic SEO audit of one page: title, headings, internal links, speed feel, and content gaps'
+                    'Learn trimming, splitting, jump cuts, zooms, B-roll, text overlays, and simple transitions',
+                    'Edit 5 talking-head videos from your own footage or safe sample clips',
+                    'Add captions with clear font size, contrast, timing, and line breaks',
+                    'Create 3 versions of the same clip with different hooks and pacing'
                   ]
                 },
                 {
-                  heading: 'Days 16-23: Practice Social Media and Email Marketing',
+                  heading: 'Days 16-23: Add Storytelling and Publishing Assets',
                   bullets: [
-                    'Create a 14-day Instagram or LinkedIn content calendar for your chosen niche',
-                    'Write 10 captions using hooks, value points, and clear CTA',
-                    'Use ToolShala Hashtag Generator and Instagram Caption Generator to compare and improve drafts',
-                    'Write 3 email samples: welcome email, event reminder, and internship/client outreach email'
+                    'Write 10 hooks and 5 short scripts using ToolShala YouTube / Shorts Script Generator',
+                    'Create thumbnails or cover frames for 5 videos',
+                    'Use Instagram Caption Generator and Hashtag Generator to prepare captions and tags',
+                    'Analyze which edits feel easier to watch and write notes on retention improvements'
                   ]
                 },
                 {
-                  heading: 'Days 24-30: Learn Ads Basics and Build First Portfolio Proof',
+                  heading: 'Days 24-30: Build First Portfolio Pack',
                   bullets: [
-                    'Understand campaign objective, target audience, creative, budget, CPC, CTR, and conversion basics',
-                    'Create one sample ad brief with audience, offer, creative angle, landing page promise, and metrics to track',
-                    'Make a one-page mini case study: niche, audience, content plan, SEO ideas, email samples, and ad brief',
-                    'Use ToolShala Resume Bullet Point Generator to convert your project into resume-ready bullets'
+                    'Create a portfolio folder with 8-10 best edits across 2-3 formats',
+                    'Add project notes: goal, niche, raw footage problem, edit decisions, tools, and final output',
+                    'Create a simple before-after edit sample to show improvement',
+                    'Use ToolShala Resume Bullet Point Generator to convert your editing practice into resume-ready bullets'
                   ]
                 }
               ]
             },
             {
-              heading: '90-Day Digital Marketing Roadmap to Become Job-Ready',
+              heading: '90-Day Short-Form Content Creator Roadmap',
               paragraphs: [
-                'Next 60 days mein depth, tools, reporting, and applications par focus karo. Recruiters freshers se huge results expect nahi karte, but they want consistency, clarity, and proof that you can execute.',
-                'By day 90, aim for 3 portfolio projects, one public content calendar, one SEO audit, one email sequence, one sample ad plan, and a resume/LinkedIn profile that explains your marketing skills clearly.'
+                'Next 60 days mein portfolio depth, client workflow, and niche clarity par focus karo. Beginner editor ko prove karna hota hai ki woh consistently quality edits deliver kar sakta hai.',
+                'By day 90, aim for 25-40 edited videos, 3 portfolio case studies, a clear service menu, and outreach messages for internships, creators, agencies, and small businesses.'
               ],
               subSections: [
                 {
-                  heading: 'Days 31-60: Build Channel Depth and Projects',
+                  heading: 'Days 31-60: Build Niche Projects and Systems',
                   bullets: [
-                    'Create one SEO content plan with 10 keywords, blog outlines, internal link ideas, and meta descriptions',
-                    'Publish or draft 12-15 social posts for LinkedIn, Instagram, or a sample brand account',
-                    'Build one email sequence for lead nurture, course promotion, or event registration',
-                    'Create a basic reporting sheet with impressions, clicks, CTR, engagement rate, leads, and notes'
+                    'Choose 1-2 niches and create 15-20 edited samples with consistent style',
+                    'Repurpose one long video or podcast into 5 short clips with different hooks',
+                    'Create a reusable editing checklist: hook, cuts, captions, audio, cover, CTA, and export',
+                    'Build a content calendar for 30 days using Instagram Content Calendar Template'
                   ]
                 },
                 {
-                  heading: 'Days 61-90: Portfolio, Outreach, and Interviews',
+                  heading: 'Days 61-90: Portfolio, Freelance Pitching, and Interviews',
                   bullets: [
-                    'Create 3 polished portfolio entries: SEO audit, social calendar, and email/ad campaign plan',
-                    'Prepare a simple Notion, Google Drive, or portfolio page with screenshots and explanations',
-                    'Apply for digital marketing intern, SEO intern, social media intern, email marketing intern, and performance marketing trainee roles',
-                    'Practice explaining audience, funnel, campaign objective, content choices, and metrics in interviews'
+                    'Create 3 case studies: creator talking-head edit, brand/product reel, and educational short',
+                    'Prepare a service menu with deliverables, turnaround time, revision policy, and sample pricing',
+                    'Send targeted pitches to creators, coaches, agencies, campus clubs, and local businesses',
+                    'Practice explaining your editing process, hook choices, retention thinking, and revision workflow'
                   ]
                 }
               ]
             },
             {
-              heading: 'Digital Marketing Portfolio and Project Ideas',
+              heading: 'Portfolio Ideas for Video Editors and Short-Form Creators',
               paragraphs: [
-                'Portfolio projects should show that you can think like a marketer, not only write captions. Add goal, audience, strategy, sample creatives, and metrics you would track.',
-                'Even sample projects are useful if clearly labeled. A clean project with business thinking can help freshers stand out in internship applications.'
+                'Portfolio should show range and clarity. Do not upload only random edits. Organize work by format, niche, and problem solved.',
+                'Freshers can create sample projects with their own footage, public-domain clips, or permission-based creator clips. Always avoid copyrighted footage misuse and label sample work honestly.'
               ],
               bullets: [
-                'SEO audit for a coaching institute, local business, blog, or creator website',
-                '30-day Instagram content calendar with pillars, hooks, captions, hashtags, and CTA',
-                'LinkedIn personal branding plan for a fresher or founder profile',
-                'Email welcome sequence for a newsletter, course, event, or lead magnet',
-                'Sample ad campaign brief with objective, audience, creative angles, landing page promise, and KPIs',
-                'Competitor analysis report comparing content, SEO topics, offers, and social engagement',
-                'Repurposing project: turn one blog/video into posts, captions, email, and ad angles'
+                'Talking-head educational reel with hook, captions, B-roll, and CTA',
+                'Podcast clip repurposed into 3 high-retention shorts',
+                'Product demo reel for a local business or sample brand',
+                'Before-after editing sample showing raw clip vs final edit',
+                'Instagram content calendar with 15 reel ideas, hooks, captions, and hashtags',
+                'Event recap reel for college fest, webinar, workshop, or local event',
+                'Ad-style short video with problem, product promise, proof, and CTA'
               ]
             },
             {
-              heading: 'Resume and LinkedIn Tips for Digital Marketing Freshers',
+              heading: 'Reel and Shorts Practice Plan',
               paragraphs: [
-                'Resume mein sirf "social media knowledge" mat likho. Projects, channels, tools, and outputs mention karo. Example: "Created 14-day content calendar with 3 content pillars, 10 captions, hashtag sets, and engagement CTAs."',
-                'LinkedIn headline specific rakho: "Digital Marketing Fresher | SEO, Social Media, Email & Content Projects". About section mein niche, skills, projects, and internship availability clearly mention karo.'
+                'Practice plan ka focus repetition plus review hai. Har edit ke baad note karo: hook strong tha ya nahi, video drag hua ya nahi, subtitles readable the ya nahi, and CTA clear tha ya nahi.',
+                'Use a weekly cycle: research, script, edit, publish or save, review, and improve. Even if you do not post publicly, maintain a dated portfolio folder.'
               ],
               bullets: [
-                'Add portfolio link near the top of your resume and LinkedIn profile',
-                'Use action words: planned, researched, audited, wrote, scheduled, analyzed, optimized, reported',
-                'Mention ToolShala projects like content ideas, captions, email drafts, SEO outlines, and campaign briefs',
-                'Use numbers where possible: 20 content ideas, 14-day calendar, 5 blog outlines, 3 email samples',
+                'Monday: research 10 trending formats in your niche and save references',
+                'Tuesday: write 5 hooks and 2 short scripts',
+                'Wednesday: shoot or collect footage and organize assets',
+                'Thursday: edit 2 reels or shorts with captions and B-roll',
+                'Friday: create cover frames, captions, hashtags, and posting notes',
+                'Saturday: review edits with a friend or mentor and note improvements',
+                'Sunday: update portfolio, content calendar, and next week ideas'
+              ]
+            },
+            {
+              heading: 'Client and Freelance Opportunities for Video Editors',
+              paragraphs: [
+                'Short-form editing freelance-friendly skill hai because many creators and businesses need regular videos but do not have time to edit. Start small and focus on clear deliverables.',
+                'Beginner services can include reel editing, podcast clipping, captions, thumbnail/cover frames, content calendar support, and repurposing packages.'
+              ],
+              bullets: [
+                'Creators and coaches: talking-head reels, podcast clips, course promos, and launch content',
+                'Local businesses: product reels, testimonials, event recaps, offers, and festival campaigns',
+                'Agencies: bulk reel edits, ad variations, captioning, and format resizing',
+                'College clubs and events: recap videos, speaker clips, registration promos, and sponsor reels',
+                'Startups and founders: LinkedIn clips, product explainers, hiring posts, and customer stories',
+                'Use ToolShala Professional Email Generator and Project Proposal Template for outreach and offers'
+              ]
+            },
+            {
+              heading: 'Resume and Portfolio Tips for Video Editing Freshers',
+              paragraphs: [
+                'Resume mein sirf software names mat likho. Mention formats, niches, outputs, and editing decisions. Example: "Edited 15 short-form videos with hooks, captions, B-roll, and CTA for career education niche."',
+                'Portfolio link top section mein add karo. Best 6-10 edits first dikhao, then case studies and process notes. Recruiter ya client ko quickly samajh aana chahiye ki aap kis type ka editing work kar sakte ho.'
+              ],
+              bullets: [
+                'Use headline like: Short-Form Video Editor | Reels, Shorts, Captions & Creator Content',
+                'Add links to Google Drive, Notion, Behance, YouTube playlist, Instagram page, or portfolio site',
+                'Include before-after examples and 2-3 case studies with editing choices',
+                'Mention tools only if you can show outputs: CapCut, DaVinci Resolve, Premiere Pro, Canva, Descript',
                 'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Resume Keywords Bank for application polish'
               ]
             },
             {
-              heading: 'Internship and Freelance Tips for Freshers',
+              heading: 'Common Beginner Mistakes in Short-Form Video Editing',
               paragraphs: [
-                'Digital marketing internships and freelance gigs mil sakte hain if your outreach is specific. Generic message mat bhejo; ek small improvement idea share karo.',
-                'Start with small services: content calendar, caption writing, SEO audit, email drafts, Google Business Profile content, or monthly reporting sheet. First proof build karo, then pricing improve karo.'
+                'Beginners often over-edit. Fast transitions and effects look cool, but if message unclear hai, video perform nahi karega.',
+                'Good editing means clarity, pacing, emotion, and platform fit. Trends follow karo, but blindly copy mat karo.'
               ],
               bullets: [
-                'Pitch local businesses with one useful content or SEO improvement idea',
-                'Offer a small audit before selling a big package',
-                'Apply to agencies because they hire interns for SEO, social, and reporting support',
-                'Create sample work for a public brand and clearly label it as a sample project',
-                'Use ToolShala Professional Email Generator and LinkedIn Networking Message Generator for polite outreach',
-                'Track every application or lead in a simple spreadsheet with status and follow-up date'
+                'Using too many transitions, zooms, fonts, and sound effects',
+                'Weak first 2 seconds and unclear hook',
+                'Captions too small, too fast, or low contrast',
+                'Ignoring audio quality and background noise',
+                'Copying trends without matching brand voice or audience',
+                'Not organizing files, raw clips, exports, and client feedback',
+                'Applying to clients without a portfolio or before-after samples'
               ]
             },
             {
-              heading: 'Common Digital Marketing Beginner Mistakes to Avoid',
+              heading: 'Tools and Resources to Learn Short-Form Editing',
               paragraphs: [
-                'Beginners often confuse posting with marketing. Real marketing means understanding audience, offer, message, channel, and measurable outcome.',
-                'Avoid learning only trends. Trends help, but fundamentals like copywriting, SEO, analytics, and customer psychology stay useful longer.'
+                'Start with free or low-cost resources. Learn editing fundamentals, then platform-specific styles, then client workflow. Paid courses optional hain; consistent practice more important hai.',
+                'Best path: watch references, learn one tool, edit daily, review retention patterns, build portfolio, then pitch clients.'
               ],
               bullets: [
-                'Only learning Instagram trends and ignoring SEO, email, analytics, and funnel basics',
-                'Creating content without a clear audience or CTA',
-                'Using hashtags randomly without niche and intent thinking',
-                'Copying competitor posts without understanding brand voice or offer',
-                'Not tracking metrics or learning from performance',
-                'Running sample ads without understanding budget, landing page, and conversion goal',
-                'Applying for internships without portfolio samples or project links'
+                'CapCut tutorials for fast mobile and desktop short-form editing',
+                'DaVinci Resolve beginner tutorials for professional timeline, color, and audio basics',
+                'YouTube Creator Academy and platform creator resources for Shorts/Reels strategy',
+                'Canva design basics for cover frames, thumbnails, and simple motion graphics',
+                'ToolShala YouTube / Shorts Script Generator for hooks, scripts, CTAs, and shot ideas',
+                'ToolShala Instagram Caption Generator, Hashtag Generator, and Content Idea Generator for publishing support',
+                'ToolShala Instagram Content Calendar Template and Content Brief Template for planning content systems'
               ]
             },
             {
-              heading: 'Digital Marketing Tools and Resources to Learn',
+              heading: 'Useful ToolShala CTAs for Video Editors and Creators',
               paragraphs: [
-                'Start with free and beginner-friendly tools. You do not need paid subscriptions to build a portfolio. Learn one tool per function: research, planning, content, email, analytics, and reporting.',
-                'Best learning path: marketing basics, SEO, social media, email, ads fundamentals, analytics, reporting, projects, then applications.'
+                'ToolShala social and media tools can help you plan, package, and present short-form content faster. Use them as draft support, then add your own niche understanding and creative judgement.',
+                'For portfolio and client work, combine script ideas, captions, hashtags, calendar planning, project proposals, and resume bullets into one workflow.'
               ],
               bullets: [
-                'SEO research: Google Search, Google Trends, Google Search Console basics, Keyword Planner, and beginner SEO guides',
-                'Social planning: Instagram insights, LinkedIn analytics, Canva, Notion, Google Sheets, and ToolShala content tools',
-                'Email practice: Mailchimp or Brevo free learning resources, subject line examples, and ToolShala Email Subject Line Generator',
-                'Ads basics: Meta Blueprint, Google Skillshop, YouTube tutorials, and sample campaign briefs',
-                'Analytics: Google Analytics basics, Looker Studio basics, UTM builder, and reporting sheets',
-                'Portfolio support: ToolShala templates, resume tools, LinkedIn tools, and professional email generators'
-              ]
-            },
-            {
-              heading: 'Useful ToolShala CTAs for Digital Marketing Freshers',
-              paragraphs: [
-                'ToolShala generators and templates can help you practice real marketing outputs and prepare internship-ready application material. Use them to create drafts, then edit with your own strategy and examples.',
-                'For best results, choose a niche first, then use the tools to build a connected portfolio: topic ideas, captions, hashtags, email samples, campaign notes, and resume bullets.'
-              ],
-              bullets: [
-                'Content Idea Generator for campaign topics and content pillars',
-                'Instagram Caption Generator and Hashtag Generator for social media practice',
-                'Email Subject Line Generator and Professional Email Generator for email marketing and outreach',
-                'Content Brief Template for blog, SEO, and campaign planning',
-                'Instagram Content Calendar Template for portfolio-ready social planning',
-                'Resume Bullet Point Generator and LinkedIn Bio Generator for internship applications',
-                'Project Proposal Template for freelance marketing service pitches'
+                'YouTube / Shorts Script Generator for video hooks, talking points, CTA, and shot suggestions',
+                'Content Idea Generator for niche content pillars and fresh reel ideas',
+                'Instagram Caption Generator for caption drafts and posting copy',
+                'Hashtag Generator for platform-ready hashtag sets',
+                'Instagram Content Calendar Template for consistent reel planning',
+                'Project Proposal Template for freelance editing offers',
+                'Resume Bullet Point Generator and LinkedIn Bio Generator for applications and outreach'
               ]
             }
           ],
           faq: [
             {
-              question: 'Can a fresher become a Digital Marketing Executive?',
+              question: 'Can a beginner become a short-form video editor?',
               answer:
-                'Yes. Freshers can start with SEO, social media, email, ads basics, analytics, and 3-5 portfolio projects. Internships and agencies often hire beginners who can show practical work samples.'
+                'Yes. Beginners can start with CapCut, DaVinci Resolve, or Premiere Pro basics, then practice hooks, cuts, captions, audio, B-roll, and platform formats. A portfolio with 8-10 strong edits can help with internships and freelance work.'
             },
             {
-              question: 'Do I need a degree for digital marketing jobs?',
+              question: 'Which tool should I learn first for reels and shorts editing?',
               answer:
-                'A degree can help, but practical skills and portfolio proof matter a lot. Learn SEO, content, social media, email, ads basics, and reporting, then show sample projects clearly.'
+                'Start with CapCut if you want a fast beginner-friendly tool. If you have a laptop and want deeper editing skills, learn DaVinci Resolve or Premiere Pro after you understand basic cuts, captions, audio, and export settings.'
             },
             {
-              question: 'Which digital marketing skill should I learn first?',
+              question: 'How do I build a video editing portfolio without clients?',
               answer:
-                'Start with marketing basics and content planning, then learn SEO and social media. After that, add email marketing, ads basics, and analytics so you can understand complete campaigns.'
+                'Use your own footage, permission-based clips, public-domain material, or sample brand concepts. Create talking-head edits, podcast clips, product reels, before-after samples, and content calendars. Clearly label sample projects.'
             },
             {
-              question: 'Which ToolShala tools are useful for digital marketing freshers?',
+              question: 'Which ToolShala tools are useful for short-form creators?',
               answer:
-                'Use Content Idea Generator, Instagram Caption Generator, Hashtag Generator, Email Subject Line Generator, Professional Email Generator, Content Brief Template, Instagram Content Calendar Template, Resume Bullet Point Generator, and LinkedIn Bio Generator.'
+                'Use YouTube / Shorts Script Generator, Content Idea Generator, Instagram Caption Generator, Hashtag Generator, Instagram Content Calendar Template, Project Proposal Template, Resume Bullet Point Generator, and LinkedIn Bio Generator.'
             }
           ],
           conclusion:
-            'Digital Marketing Executive Roadmap for Freshers ka simple formula hai: audience samjho, SEO basics seekho, social content plan banao, email and ads fundamentals practice karo, and analytics se improvement note karo. In 30 days, foundation and first portfolio proof build karo. In 90 days, 3 strong projects, clean resume, LinkedIn profile, and outreach plan ke saath internships or freelance gigs target karo.',
+            'Video Editor / Short-Form Content Creator Roadmap ka simple formula hai: hooks samjho, editing basics practice karo, captions and audio polish karo, 30 days mein first portfolio pack banao, and 90 days mein niche samples plus client workflow ready karo. ToolShala social/media tools use karke scripts, ideas, captions, hashtags, calendars, proposals, and resume bullets faster prepare karo.',
           cta: {
-            title: 'Build Your Digital Marketing Portfolio with ToolShala',
+            title: 'Plan Your Next Reel or Short with ToolShala',
             text:
-              'Use ToolShala content, email, resume, and template resources to create campaign ideas, captions, hashtags, emails, content briefs, and internship-ready resume bullets.',
-            primaryLabel: 'Generate Content Ideas',
-            primaryLink: './tool.html?tool=content-idea-generator',
+              'Use ToolShala social tools to generate short-form scripts, content ideas, captions, hashtags, and content calendars for your creator portfolio or freelance client work.',
+            primaryLabel: 'Generate Shorts Script',
+            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
             secondaryLabel: 'Use Content Calendar Template',
             secondaryLink: './instagram-content-calendar-template.html'
           }
