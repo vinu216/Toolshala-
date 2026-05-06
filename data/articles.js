@@ -7,6 +7,299 @@ window.ToolShalaArticleContent = {
   collections: {
     seoGuides: [
       {
+        id: 'guide-026',
+        title: 'Cybersecurity Analyst Roadmap for Beginners',
+        slug: '/guides/cybersecurity-analyst-roadmap-for-beginners',
+        primaryKeyword: 'Cybersecurity Analyst roadmap for beginners',
+        searchIntent: 'Informational',
+        metaTitle: 'Cybersecurity Analyst Roadmap for Beginners | Skills, Labs & Jobs | ToolShala',
+        metaDescription:
+          'Learn how to become a cybersecurity analyst with beginner skills, tools, SOC concepts, 30-day and 90-day roadmaps, lab ideas, resume tips, interview prep, and resources.',
+        shortExcerpt: 'A beginner-friendly cybersecurity analyst roadmap with skills, tools, SOC basics, labs, projects, resume tips, and interview prep.',
+        category: 'Career Guidance',
+        ctaText: 'Start Cybersecurity Roadmap',
+        relatedLinks: [
+          '/career',
+          '/tools',
+          '/templates',
+          '/guides/best-skills-to-learn-in-2026',
+          '/guides/free-online-courses-with-certificate',
+          '/guides/resume-format-for-college-students'
+        ],
+        featuredImageAlt: 'Cybersecurity analyst roadmap for beginners with SOC tools labs and resume tips',
+        publishDate: '2026-05-06',
+        readingTime: '11 min read',
+        author: 'ToolShala Editorial Team',
+        featured: true,
+        status: 'ready',
+        guideContent: {
+          intro:
+            'Cybersecurity Analyst Roadmap for Beginners un students aur freshers ke liye hai jo security career start karna chahte hain but networking, tools, labs, certifications, and jobs ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, lab ideas, resume tips, interview prep, and resources cover kiye gaye hain.',
+          featuredSnippet:
+            'A Cybersecurity Analyst protects systems by monitoring alerts, investigating suspicious activity, understanding networks, reviewing logs, and helping teams respond to incidents. Beginners should learn networking, Linux, security basics, SIEM concepts, log analysis, labs, and portfolio documentation before applying for SOC or security analyst roles.',
+          sections: [
+            {
+              heading: 'What is a Cybersecurity Analyst?',
+              paragraphs: [
+                'A Cybersecurity Analyst organization ke systems, networks, accounts, and data ko threats se protect karne mein help karta hai. Daily work mein alerts review karna, suspicious login check karna, logs analyze karna, phishing reports investigate karna, and incident notes document karna include ho sakta hai.',
+                'Beginner level par this role is often connected with SOC, yaani Security Operations Center. SOC analyst ka kaam hota hai tools se aane wale alerts ko triage karna, false positive aur real threat mein difference samajhna, and senior team ko clear information dena.'
+              ],
+              bullets: [
+                'Monitors security alerts from tools and dashboards',
+                'Investigates suspicious emails, logins, malware signs, and network activity',
+                'Uses logs, SIEM dashboards, threat intelligence, and basic forensics clues',
+                'Documents incidents with timeline, impact, evidence, and next steps',
+                'Helps improve security awareness, rules, and response processes'
+              ]
+            },
+            {
+              heading: 'Why Cybersecurity Analyst Careers Are Growing',
+              paragraphs: [
+                'Cybersecurity is growing because companies, colleges, banks, startups, hospitals, ecommerce stores, and government services are all becoming more digital. More digital systems means more risk from phishing, weak passwords, ransomware, data leaks, and account misuse.',
+                'Businesses need people who can monitor systems, explain security issues, and respond quickly. Not every cybersecurity job is advanced hacking; many beginner roles need strong fundamentals, alert handling, documentation, and disciplined investigation.'
+              ],
+              bullets: [
+                'Remote work and cloud tools have increased security monitoring needs',
+                'Phishing, ransomware, credential theft, and data breaches are common business risks',
+                'Compliance and privacy requirements push companies to improve security teams',
+                'SOC and entry-level analyst roles are practical starting points for freshers',
+                'Security skills combine well with networking, cloud, IT support, DevOps, and risk careers'
+              ]
+            },
+            {
+              heading: 'Skills Needed for Cybersecurity Analyst Beginners',
+              paragraphs: [
+                'Cybersecurity beginners ko sab kuch ek saath learn karne ki zaroorat nahi hai. First goal should be fundamentals: networks kaise work karte hain, operating systems kaise behave karte hain, logs kaise read karte hain, and common attacks kaise identify hote hain.',
+                'Strong beginner analyst calm and detail-oriented hota hai. Woh alert dekhkar panic nahi karta; evidence collect karta hai, context samajhta hai, and clear notes likhta hai.'
+              ],
+              bullets: [
+                'Networking basics: IP, DNS, HTTP/HTTPS, ports, protocols, subnetting basics, and firewalls',
+                'Operating systems: Windows basics, Linux commands, processes, files, users, and permissions',
+                'Security fundamentals: CIA triad, authentication, malware, phishing, vulnerabilities, and risk',
+                'Log analysis: timestamps, source IP, destination IP, usernames, event IDs, and failed logins',
+                'SOC mindset: alert triage, severity, false positives, escalation, and incident notes',
+                'Communication: writing clear reports and explaining technical issues simply',
+                'Ethics: legal boundaries, privacy, permission, and responsible practice'
+              ]
+            },
+            {
+              heading: 'Cybersecurity Tools and Concepts to Learn',
+              paragraphs: [
+                'Tools important hain, but concepts zyada important hain. Agar aap networking, logs, and attack basics samajhte ho, then different security tools learn karna easier ho jata hai.',
+                'Beginner stack simple rakho: Linux basics, Wireshark for packets, a SIEM demo or Splunk basics for logs, password/security hygiene, and safe lab platforms for practice.'
+              ],
+              bullets: [
+                'Linux terminal: cd, ls, cat, grep, find, chmod, ps, netstat or ss, and basic shell usage',
+                'Windows security basics: Event Viewer, users, processes, PowerShell awareness, and Defender logs',
+                'Networking tools: Wireshark, ping, traceroute, nslookup, netstat, and basic packet reading',
+                'SIEM concepts: alerts, dashboards, correlation rules, log sources, severity, and escalation',
+                'Security concepts: vulnerabilities, CVE, patching, MFA, phishing, malware, ransomware, and backups',
+                'Threat frameworks: basic MITRE ATT&CK awareness and kill chain thinking',
+                'Safe practice platforms: TryHackMe, OverTheWire, PortSwigger Web Security Academy, and beginner CTFs'
+              ]
+            },
+            {
+              heading: '30-Day Cybersecurity Analyst Roadmap',
+              paragraphs: [
+                'First 30 days ka goal foundation and safe practice hai. Roz 60-90 minutes do, notes maintain karo, and har week ek small proof-of-work output save karo.',
+                'By day 30, you should understand networking basics, Linux commands, common threats, simple log reading, and at least one beginner lab write-up.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 1-7: Learn Security and Networking Basics',
+                  bullets: [
+                    'Understand what cybersecurity analysts, SOC analysts, and incident responders do',
+                    'Learn IP address, DNS, HTTP/HTTPS, ports, TCP/UDP, firewalls, and VPN basics',
+                    'Read about common threats: phishing, malware, ransomware, brute force, and data leaks',
+                    'Create a glossary of 30 cybersecurity terms in your own words'
+                  ]
+                },
+                {
+                  heading: 'Days 8-15: Practice Linux and Windows Logs',
+                  bullets: [
+                    'Practice Linux commands for files, search, permissions, processes, and network checks',
+                    'Open Windows Event Viewer and understand login, process, and security event basics',
+                    'Read sample authentication logs and identify failed login patterns',
+                    'Write a short incident note from a sample suspicious login scenario'
+                  ]
+                },
+                {
+                  heading: 'Days 16-23: Learn Wireshark and SOC Alert Thinking',
+                  bullets: [
+                    'Use Wireshark to open a sample PCAP and identify IPs, protocols, DNS queries, and HTTP traffic',
+                    'Learn alert triage questions: what happened, who is affected, when, severity, and evidence',
+                    'Study false positive vs true positive examples',
+                    'Complete one beginner SOC or phishing room on a safe learning platform'
+                  ]
+                },
+                {
+                  heading: 'Days 24-30: Build First Lab Write-Up',
+                  bullets: [
+                    'Pick one lab: phishing email analysis, suspicious login, malware indicator lookup, or basic network traffic review',
+                    'Document objective, tools used, evidence, timeline, finding, and recommended action',
+                    'Create a simple one-page portfolio entry with screenshots and notes',
+                    'Use ToolShala Resume Bullet Point Generator to convert the lab into resume-ready bullets'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: '90-Day Cybersecurity Roadmap to Become Job-Ready',
+              paragraphs: [
+                'Next 60 days mein depth, labs, and interview prep par focus karo. Recruiters freshers se expert hacking expect nahi karte, but they want fundamentals, ethical mindset, clear documentation, and proof of practice.',
+                'By day 90, aim for 3-5 lab write-ups, basic SIEM/log analysis experience, networking confidence, one clean resume, and interview answers for SOC analyst or cybersecurity intern roles.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 31-60: Build SOC and Web Security Practice',
+                  bullets: [
+                    'Practice 2-3 SOC-style labs: phishing analysis, brute-force login detection, suspicious process, or endpoint alert',
+                    'Learn web security basics: HTTP requests, cookies, authentication, input validation, XSS, and SQL injection concepts',
+                    'Try beginner PortSwigger or OWASP Top 10 learning modules safely',
+                    'Create incident notes with severity, evidence, affected asset, and recommended next steps'
+                  ]
+                },
+                {
+                  heading: 'Days 61-90: Portfolio, Resume, and Applications',
+                  bullets: [
+                    'Publish 3-5 lab write-ups on Notion, GitHub, Google Docs, or a simple portfolio page',
+                    'Prepare a short walkthrough for your best investigation lab',
+                    'Apply for cybersecurity intern, SOC analyst intern, IT security trainee, security operations trainee, and helpdesk-to-security roles',
+                    'Practice explaining networking, logs, phishing, CIA triad, incident response, and your lab process'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: 'Cybersecurity Lab and Practice Ideas',
+              paragraphs: [
+                'Cybersecurity portfolio should show safe, legal, and documented practice. Never test on real websites, college networks, or company systems without written permission.',
+                'Beginner labs can be simple but useful if you explain your investigation clearly. Focus on evidence, reasoning, and what action you would recommend.'
+              ],
+              bullets: [
+                'Phishing email analysis: sender, links, headers, language, indicators, and recommendation',
+                'Suspicious login investigation: failed attempts, source IP, username, timestamp, and next steps',
+                'Wireshark traffic review: DNS queries, HTTP requests, unusual ports, and possible indicators',
+                'Windows Event Viewer mini lab: login events, failed attempts, process clues, and timeline',
+                'Linux log review: auth logs, sudo usage, SSH attempts, and unusual commands',
+                'OWASP Top 10 beginner notes: explain XSS, SQL injection, broken access control, and prevention in simple words',
+                'Home security audit: password manager, MFA, updates, backups, router basics, and phishing awareness checklist'
+              ]
+            },
+            {
+              heading: 'Resume Tips for Cybersecurity Analyst Freshers',
+              paragraphs: [
+                'Cybersecurity resume mein only tools list karna enough nahi hai. Labs, write-ups, investigation steps, and clear outcomes mention karo. Freshers ke liye proof-of-practice very important hai.',
+                'Resume one page rakho, portfolio or lab write-up link top section mein add karo, and keywords naturally include karo: SOC, SIEM basics, log analysis, Wireshark, Linux, networking, phishing analysis, incident response basics.'
+              ],
+              bullets: [
+                'Use a clear headline like: Cybersecurity Analyst Fresher | SOC Basics, Linux, Networking & Log Analysis',
+                'Add lab bullets with tools, scenario, evidence reviewed, and recommendation',
+                'Mention certifications or courses only if you can explain the concepts',
+                'Use action words: investigated, analyzed, documented, triaged, identified, reviewed, reported',
+                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, ATS Resume Template, and Resume Keywords Bank to polish applications'
+              ]
+            },
+            {
+              heading: 'Cybersecurity Analyst Interview Prep for Beginners',
+              paragraphs: [
+                'Interview prep mein theory plus scenario thinking dono important hain. Aapko batana chahiye ki suspicious alert aane par aap kaise investigate karoge, evidence kya collect karoge, and escalation kab karoge.',
+                'Prepare simple, honest answers. Agar koi concept nahi aata, say how you would investigate safely and learn rather than guessing confidently.'
+              ],
+              bullets: [
+                'Networking: DNS, HTTP/HTTPS, ports, TCP vs UDP, firewall, VPN, and basic subnet idea',
+                'Security basics: CIA triad, vulnerability, threat, risk, phishing, malware, MFA, and least privilege',
+                'SOC process: alert triage, severity, false positive, escalation, incident notes, and timeline',
+                'Tools: Linux commands, Wireshark basics, Windows Event Viewer, SIEM concepts, and log fields',
+                'Scenario questions: suspicious email, failed login spike, unknown process, unusual network traffic',
+                'Project questions: why you chose the lab, what evidence you found, and what action you recommended'
+              ]
+            },
+            {
+              heading: 'Common Cybersecurity Beginner Mistakes to Avoid',
+              paragraphs: [
+                'Beginners often jump directly to hacking tools without fundamentals. This creates shallow knowledge and can also become unsafe or illegal if boundaries are ignored.',
+                'Cybersecurity mein patience, ethics, and documentation matter a lot. Good analysts verify evidence before making claims.'
+              ],
+              bullets: [
+                'Trying random hacking tools before learning networking and Linux basics',
+                'Practicing on real websites or networks without permission',
+                'Ignoring documentation and not saving lab write-ups',
+                'Claiming advanced skills like penetration testing without proof',
+                'Only collecting certificates without hands-on labs',
+                'Skipping soft skills, report writing, and incident communication',
+                'Sharing sensitive logs, screenshots, or personal data publicly'
+              ]
+            },
+            {
+              heading: 'Resources and Learning Path for Cybersecurity Beginners',
+              paragraphs: [
+                'Free and low-cost resources are enough to start if you follow a sequence. Learn basics first, then labs, then portfolio, then applications.',
+                'Recommended path: networking basics, Linux, Windows logs, security fundamentals, Wireshark, web security basics, SIEM concepts, SOC labs, resume, and interviews.'
+              ],
+              bullets: [
+                'Networking basics from free beginner networking courses and documentation',
+                'Linux command practice with OverTheWire Bandit or similar safe beginner labs',
+                'TryHackMe beginner paths for pre-security, SOC basics, phishing, and blue-team practice',
+                'PortSwigger Web Security Academy for safe web security fundamentals',
+                'OWASP Top 10 resources for common web risks',
+                'Splunk free training or demo datasets for SIEM/log analysis basics',
+                'ToolShala career guides, resume tools, and templates for applications and profile building'
+              ]
+            },
+            {
+              heading: 'Useful ToolShala CTAs for Cybersecurity Beginners',
+              paragraphs: [
+                'ToolShala resources can help you present your cybersecurity learning professionally. After each lab, convert your notes into resume bullets, LinkedIn updates, and application emails.',
+                'Use ToolShala tools to improve the career side of your roadmap while your technical labs build proof-of-work.'
+              ],
+              bullets: [
+                'Resume Bullet Point Generator for lab and project achievements',
+                'Resume Headline Generator for cybersecurity fresher positioning',
+                'Resume Keywords Bank for SOC, security, networking, Linux, and analyst keywords',
+                'ATS Friendly Resume Template for clean application formatting',
+                'Professional Email Generator for internship outreach and follow-ups',
+                'LinkedIn Bio Generator for a clear security-learning profile summary',
+                'AI Career Path Suggestor to check whether cybersecurity analyst fits your interests'
+              ]
+            }
+          ],
+          faq: [
+            {
+              question: 'Can a beginner become a Cybersecurity Analyst?',
+              answer:
+                'Yes. Beginners can start with networking, Linux, Windows logs, security basics, Wireshark, SIEM concepts, and safe labs. A portfolio with 3-5 lab write-ups can help with internships and entry-level SOC roles.'
+            },
+            {
+              question: 'Do I need coding for cybersecurity analyst jobs?',
+              answer:
+                'Coding is helpful but not mandatory for many beginner SOC or cybersecurity analyst roles. Start with networking, Linux, logs, and security concepts. Later, Python or scripting can help automate analysis.'
+            },
+            {
+              question: 'Which labs should I do first for cybersecurity?',
+              answer:
+                'Start with phishing email analysis, Linux command practice, Wireshark traffic review, suspicious login investigation, Windows Event Viewer basics, and beginner SOC rooms on safe learning platforms.'
+            },
+            {
+              question: 'Which ToolShala tools are useful for cybersecurity freshers?',
+              answer:
+                'Use Resume Headline Generator, Resume Bullet Point Generator, Resume Keywords Bank, ATS Friendly Resume Template, Professional Email Generator, LinkedIn Bio Generator, and AI Career Path Suggestor to present your cybersecurity projects better.'
+            }
+          ],
+          conclusion:
+            'Cybersecurity Analyst Roadmap for Beginners ka simple formula hai: networking basics seekho, Linux and logs practice karo, safe labs complete karo, evidence-based write-ups banao, and resume plus interview prep ko saath-saath improve karo. In 30 days, foundations and one lab write-up build karo. In 90 days, 3-5 labs, clear portfolio, and fresher-ready applications ke saath cybersecurity internships or SOC roles target karo.',
+          cta: {
+            title: 'Turn Your Cybersecurity Labs into Job-Ready Applications',
+            text:
+              'Use ToolShala resume tools and templates to convert lab write-ups into stronger resume bullets, improve your cybersecurity headline, and prepare internship outreach emails.',
+            primaryLabel: 'Generate Resume Bullets',
+            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            secondaryLabel: 'Use Resume Keywords Bank',
+            secondaryLink: './resume-keywords-bank-template.html'
+          }
+        }
+      },
+      {
         id: 'guide-001',
         title: '10th ke baad kya karein? Complete Career Roadmap',
         slug: '/guides/10th-ke-baad-kya-karein',
