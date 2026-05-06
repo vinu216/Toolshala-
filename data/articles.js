@@ -209,6 +209,20 @@ window.ToolShalaArticleContent = {
               ]
             },
             {
+              heading: 'Interview and Job Search Tips for AI Content Strategists',
+              paragraphs: [
+                'Applications tab strong hoti hain jab recruiter ko immediately proof dikhe. Before applying, keep one portfolio link, 2-3 case studies, and a short explanation of your AI content workflow ready.',
+                'Interview mein sirf tools list mat bolna. Explain how you research audience, build content briefs, maintain brand voice, fact-check AI drafts, and measure if content is working.'
+              ],
+              bullets: [
+                'Prepare a 60-second pitch covering niche, tools, portfolio projects, and availability',
+                'Practice explaining one content calendar and one SEO brief step-by-step',
+                'Apply to content intern, SEO content intern, creator team, agency, and startup marketing roles',
+                'Send customized outreach with one useful content improvement suggestion for the company',
+                'Keep samples in Google Drive, Notion, or a simple portfolio page so links open quickly on mobile'
+              ]
+            },
+            {
               heading: 'Common Mistakes Beginners Should Avoid',
               paragraphs: [
                 'AI can speed up your work, but it can also make your content look generic if you do not guide it properly. Strategy means deciding, filtering, editing, and improving, not just generating text.',
@@ -1356,6 +1370,20 @@ window.ToolShalaArticleContent = {
               ]
             },
             {
+              heading: 'Interview and Job Search Tips for UI/UX Designers',
+              paragraphs: [
+                'UI/UX interviews usually test your design thinking, not only your Figma speed. Recruiters want to see how you understood the user problem, selected a flow, made trade-offs, and improved the design after feedback.',
+                'Job search ke time portfolio link sabse important asset hai. Apply with 2-3 focused case studies instead of sending many random screens without context.'
+              ],
+              bullets: [
+                'Prepare one product redesign story using problem, process, decisions, prototype, feedback, and learning',
+                'Practice whiteboard-style questions like improving checkout, onboarding, search, or form flows',
+                'Apply to UI/UX intern, product design intern, visual design intern, and web design fresher roles',
+                'Customize outreach by mentioning one usability improvement you noticed in the company product',
+                'Keep Figma prototype links public and test them before adding to resume or LinkedIn'
+              ]
+            },
+            {
               heading: 'Common UI/UX Beginner Mistakes to Avoid',
               paragraphs: [
                 'Beginners often focus too much on colors and trends. Visual polish matters, but user clarity and problem-solving matter more.',
@@ -1604,7 +1632,7 @@ window.ToolShalaArticleContent = {
               ]
             },
             {
-              heading: 'Cybersecurity Lab and Practice Ideas',
+              heading: 'Cybersecurity Lab and Portfolio Practice Ideas',
               paragraphs: [
                 'Cybersecurity portfolio should show safe, legal, and documented practice. Never test on real websites, college networks, or company systems without written permission.',
                 'Beginner labs can be simple but useful if you explain your investigation clearly. Focus on evidence, reasoning, and what action you would recommend.'
@@ -2849,6 +2877,20 @@ window.ToolShalaArticleContent = {
                 'Mention platforms: WhatsApp, Telegram, Discord, LinkedIn, Instagram, Slack, Notion, Google Sheets',
                 'Use numbers where possible: 14-day calendar, 30 prompts, 3 events, 50 members, 25 replies',
                 'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Professional Email Generator for application polish'
+              ]
+            },
+            {
+              heading: 'Interview and Job Search Tips for Community Growth Roles',
+              paragraphs: [
+                'Community growth interviews focus on judgment, empathy, moderation maturity, and experiment thinking. Be ready to explain how you would welcome members, handle low engagement, manage spam, and plan recurring rituals.',
+                'For job search, target community intern, creator growth, social media community, customer community, and early-stage startup growth roles. Portfolio proof matters more than follower count.'
+              ],
+              bullets: [
+                'Prepare examples of onboarding messages, event plans, engagement prompts, and moderation rules',
+                'Practice answering scenarios like inactive members, conflict between members, spam, and low event attendance',
+                'Show metrics you can track: active members, replies, retention, referrals, feedback, and event attendance',
+                'Apply with a short portfolio that includes screenshots, calendars, dashboards, and learnings',
+                'Use warm outreach by joining relevant communities and contributing before asking for opportunities'
               ]
             },
             {
