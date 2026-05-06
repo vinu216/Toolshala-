@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ToolShala favicon</title>
+  <desc id="desc">A crisp purple ToolShala T monogram in a rounded badge with a small glowing dot.</desc>
+  <defs>
+    <linearGradient id="badge" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="20" cy="14" r="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#312e81"/>
+  <rect x="6" y="5" width="53" height="53" rx="15" fill="url(#badge)"/>
+  <rect x="6" y="5" width="53" height="53" rx="15" fill="url(#shine)"/>
+  <path fill="#fff" d="M16 16h32v10H37v23H27V26H16z"/>
+  <rect x="19" y="19" width="26" height="3" rx="1.5" fill="#e0e7ff" opacity=".72"/>
+  <circle cx="47" cy="45" r="7" fill="#c4b5fd"/>
+  <circle cx="47" cy="45" r="3" fill="#fff"/>
+  <path fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" d="M22 6h21c9 0 15 6 15 15v21c0 9-6 15-15 15H21C12 57 6 51 6 42V21C6 12 12 6 22 6Z"/>
+</svg>
