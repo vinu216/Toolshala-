@@ -8,25 +8,25 @@ window.ToolShalaArticleContent = {
     seoGuides: [
       {
         id: 'guide-026',
-        title: 'Video Editor / Short-Form Content Creator Roadmap',
-        slug: '/guides/video-editor-short-form-content-creator-roadmap',
-        primaryKeyword: 'Video Editor Short-Form Content Creator roadmap',
+        title: 'Product Manager Roadmap for Freshers',
+        slug: '/guides/product-manager-roadmap-for-freshers',
+        primaryKeyword: 'Product Manager roadmap for freshers',
         searchIntent: 'Informational',
-        metaTitle: 'Video Editor / Short-Form Content Creator Roadmap | Reels, Shorts & Freelance | ToolShala',
+        metaTitle: 'Product Manager Roadmap for Freshers | Skills, Projects & Interview Prep | ToolShala',
         metaDescription:
-          'Learn how to become a video editor or short-form content creator with editing skills, tools, 30-day and 90-day roadmaps, portfolio ideas, reels practice, freelance tips, and ToolShala social tools.',
-        shortExcerpt: 'A beginner-friendly roadmap to learn short-form video editing, create reels and shorts, build a portfolio, and find freelance or internship opportunities.',
-        category: 'Creator Careers',
-        ctaText: 'Start Creator Roadmap',
+          'Learn how to become a product manager as a fresher with product thinking, skills, 30-day and 90-day roadmaps, case study ideas, resume tips, interview prep, and ToolShala resources.',
+        shortExcerpt: 'A fresher-friendly product manager roadmap with product thinking basics, projects, case studies, portfolio tips, and interview prep.',
+        category: 'Career Guidance',
+        ctaText: 'Start PM Roadmap',
         relatedLinks: [
+          '/career',
           '/tools',
           '/templates',
-          '/career',
-          '/guides/best-side-skills-for-students',
-          '/guides/best-freelancing-skills-for-beginners',
-          '/guides/best-free-ai-tools-for-students'
+          '/guides/best-skills-to-learn-in-2026',
+          '/guides/internship-kaise-dhoondein',
+          '/guides/linkedin-profile-kaise-banaye'
         ],
-        featuredImageAlt: 'Video editor and short-form content creator roadmap for beginners',
+        featuredImageAlt: 'Product manager roadmap for freshers with product thinking projects and interview prep',
         publishDate: '2026-05-06',
         readingTime: '11 min read',
         author: 'ToolShala Editorial Team',
@@ -34,284 +34,284 @@ window.ToolShalaArticleContent = {
         status: 'ready',
         guideContent: {
           intro:
-            'Video Editor / Short-Form Content Creator Roadmap beginners, students, and freshers ke liye hai jo Reels, YouTube Shorts, TikTok-style videos, creator edits, and brand content editing se career ya freelance income start karna chahte hain. Is guide mein simple Hinglish tone mein skills, tools, 30-day and 90-day roadmap, portfolio ideas, practice plan, client tips, and ToolShala social/media resources cover kiye gaye hain.',
+            'Product Manager Roadmap for Freshers un students aur beginners ke liye hai jo product management career start karna chahte hain but coding, MBA, business knowledge, case studies, and interviews ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein PM role, product thinking, skills, 30-day and 90-day roadmap, project ideas, resume tips, interview prep, and ToolShala resources cover kiye gaye hain.',
           featuredSnippet:
-            'A short-form video editor or content creator plans hooks, edits vertical videos, adds captions, music, pacing, transitions, and CTAs for platforms like Instagram Reels and YouTube Shorts. Beginners should learn storytelling, editing basics, platform formats, scripting, portfolio projects, and client communication before applying for creator or freelance roles.',
+            'A Product Manager understands user problems, defines product goals, prioritizes features, coordinates with design, engineering, marketing, and business teams, and tracks product success metrics. Freshers should learn product thinking, user research, prioritization, analytics basics, case studies, and communication before applying for PM internships or associate product roles.',
           sections: [
             {
-              heading: 'What is a Short-Form Content Creator or Video Editor?',
+              heading: 'What Does a Product Manager Do?',
               paragraphs: [
-                'A short-form content creator ya video editor vertical videos ko engaging, clear, and platform-ready banata hai. Work mein raw clips select karna, hook improve karna, cuts tight karna, captions add karna, music sync karna, B-roll use karna, and final video export karna include ho sakta hai.',
-                'Creator role mein aap ideas, script, shooting, editing, posting, and analytics bhi handle kar sakte ho. Video editor role mein mostly footage ko polished reel, short, ad, testimonial, podcast clip, or educational video mein convert karna hota hai.'
+                'A Product Manager product ka direction define karta hai: users ko kya problem hai, business goal kya hai, kya build karna chahiye, and success kaise measure hoga. PM khud har cheez design ya code nahi karta, but teams ko clarity, priority, and context deta hai.',
+                'Daily work mein user feedback review karna, feature ideas compare karna, product requirement documents likhna, designers and engineers ke saath discuss karna, launch plan banana, and metrics track karna include ho sakta hai.'
               ],
               bullets: [
-                'Edits vertical videos for Instagram Reels, YouTube Shorts, LinkedIn, and TikTok-style formats',
-                'Improves hooks, pacing, captions, transitions, audio, and CTA',
-                'Repurposes long videos, podcasts, webinars, or interviews into short clips',
-                'Creates content for creators, coaches, startups, agencies, local businesses, and personal brands',
-                'Tracks performance signals like watch time, retention, saves, shares, comments, and clicks'
+                'Understands user problems through research, feedback, and data',
+                'Defines product goals, use cases, features, and success metrics',
+                'Prioritizes what to build first based on impact, effort, risk, and business value',
+                'Works with design, engineering, marketing, sales, support, and leadership teams',
+                'Tracks product performance and improves features after launch'
               ]
             },
             {
-              heading: 'Why Short-Form Video Editing is in Demand',
+              heading: 'Why Product Management is Popular Among Freshers',
               paragraphs: [
-                'Short-form video demand mein hai because brands, creators, educators, coaches, and small businesses all want attention on social platforms. Reels and Shorts quickly communicate ideas and can support awareness, trust, leads, and sales.',
-                'Many people can record videos, but not everyone can edit them into clear, high-retention content. That is where a good beginner editor can add value: better hook, faster pacing, clean subtitles, and a clear message.'
+                'Product management popular hai because it sits at the intersection of business, users, design, technology, and data. Freshers who like problem-solving, communication, startups, apps, and strategy often find this role exciting.',
+                'PM roles are competitive, but freshers can enter through internships, associate product roles, product analyst roles, founder office roles, business analyst roles, or growth/product operations roles. Portfolio proof and clear thinking matter a lot.'
               ],
               bullets: [
-                'Creators need consistent reels and shorts to grow audience and personal brand',
-                'Businesses need product explainers, testimonials, ads, and educational clips',
-                'Agencies outsource editing to freelancers and interns for speed',
-                'Long-form podcasts and webinars can be repurposed into many short clips',
-                'Editing skill combines well with marketing, design, copywriting, and content strategy'
+                'PM work gives exposure to business, technology, design, and customer problems',
+                'Startups and product companies need people who can connect user needs with execution',
+                'Freshers can build sample case studies without needing a full-time PM job first',
+                'PM skills also help in analytics, growth, operations, marketing, consulting, and entrepreneurship',
+                'Strong communication and structured thinking can stand out even without heavy coding'
               ]
             },
             {
-              heading: 'Skills Needed for Video Editing and Short-Form Content',
+              heading: 'Skills Needed for Product Manager Freshers',
               paragraphs: [
-                'Beginner editors ko sirf transitions learn karna enough nahi hai. Short-form content mein storytelling, attention, audio, readability, and platform behavior samajhna important hai.',
-                'Your goal should be: viewer ko first 2 seconds mein stop karna, message clearly deliver karna, and video ko easy to watch banana.'
+                'Freshers ko perfect technical depth ki zaroorat nahi hai, but product fundamentals clear hone chahiye. A good beginner PM can explain the user problem, possible solution, trade-offs, and how success will be measured.',
+                'Your goal should be to become structured: unclear problem ko clear questions, assumptions, metrics, and next steps mein convert karna.'
               ],
               bullets: [
-                'Storytelling: hook, setup, value, payoff, CTA, and emotional clarity',
-                'Editing basics: trimming, jump cuts, pacing, B-roll, transitions, effects, and export settings',
-                'Caption design: readable subtitles, keywords, timing, contrast, and safe margins',
-                'Audio: noise cleanup, volume balance, music selection, beat cuts, and sound effects',
-                'Platform knowledge: Reels, Shorts, LinkedIn video, aspect ratio, duration, thumbnails, and trends',
-                'Content writing: hooks, scripts, captions, titles, hashtags, and content briefs',
-                'Client workflow: brief, raw footage organization, revisions, deadlines, and feedback handling'
+                'User research: interviews, surveys, feedback review, personas, and user journey mapping',
+                'Product thinking: problem framing, use cases, prioritization, trade-offs, and MVP mindset',
+                'Business basics: market, competitors, pricing, acquisition, retention, and revenue model',
+                'Analytics basics: funnels, activation, retention, conversion, cohorts, dashboards, and A/B testing idea',
+                'UX basics: wireframes, user flows, usability, accessibility, and clear product copy',
+                'Technical awareness: APIs, databases, frontend/backend basics, app/web architecture, and constraints',
+                'Communication: PRDs, stakeholder updates, meeting notes, launch plans, and decision writing'
               ]
             },
             {
-              heading: 'Video Editing Tools and Software to Learn',
+              heading: 'Basic Product Thinking for Beginners',
               paragraphs: [
-                'Start with one beginner-friendly editing tool. Do not keep switching software every week. Once editing fundamentals clear ho jayein, advanced tools learn karna easier ho jata hai.',
-                'Mobile-first beginners CapCut se start kar sakte hain. Laptop users DaVinci Resolve, Premiere Pro, Final Cut Pro, or Canva video features explore kar sakte hain. For fast creator work, templates and AI tools also help.'
+                'Product thinking ka matlab hai solution se pehle problem samajhna. Beginners often directly feature suggest kar dete hain, but PM pehle user, context, pain point, frequency, severity, and business impact samajhta hai.',
+                'Har product problem ko 6 questions se start karo: user kaun hai, problem kya hai, current workaround kya hai, solution ka goal kya hai, success metric kya hai, and constraints kya hain.'
               ],
               bullets: [
-                'CapCut for beginner-friendly mobile and desktop short-form edits',
-                'DaVinci Resolve for free professional editing, color, audio, and timeline practice',
-                'Adobe Premiere Pro or Final Cut Pro for agency and professional workflows',
-                'Canva for quick social videos, thumbnails, covers, and simple brand templates',
-                'Descript, Veed, or similar tools for captions, podcast clips, and text-based editing practice',
-                'Notion or Google Sheets for content calendar, client status, and revision tracking',
-                'ToolShala YouTube / Shorts Script Generator, Instagram Caption Generator, Hashtag Generator, and Content Idea Generator for ideation and publishing support'
+                'User: Who has the problem and how often do they face it?',
+                'Problem: What is painful, slow, confusing, risky, or expensive?',
+                'Goal: What should improve for user and business?',
+                'Solution: What is the simplest MVP before building a full feature?',
+                'Priority: What gives highest impact with manageable effort?',
+                'Metric: How will we know if the feature worked?',
+                'Trade-off: What are we choosing not to build right now and why?'
               ]
             },
             {
-              heading: '30-Day Video Editor Roadmap for Beginners',
+              heading: 'Product Management Tools and Concepts to Learn',
               paragraphs: [
-                'First 30 days ka goal editing foundation and visible output banana hai. Roz 60-90 minutes practice karo. Har week 3-5 short edits export karo, even if they are sample projects.',
-                'By day 30, you should have basic editing confidence, 10-12 practice reels or shorts, one content calendar, and a small portfolio folder.'
+                'Tools helpful hain, but PM skill sirf tools se nahi banta. Start with docs, spreadsheets, simple wireframes, and basic analytics thinking. Later you can learn Jira, Figma, Notion, and analytics tools.',
+                'Beginner PM stack simple rakho: one writing tool, one planning tool, one wireframing tool, one analytics/reporting workflow, and one portfolio place.'
+              ],
+              bullets: [
+                'Docs: Google Docs or Notion for PRDs, user stories, launch notes, and case study writing',
+                'Spreadsheets: Google Sheets or Excel for prioritization, user feedback, and metrics tracking',
+                'Design basics: Figma or FigJam for wireframes, user flows, and journey maps',
+                'Project tools: Trello, Jira basics, Asana, ClickUp, or Notion boards for roadmap and task tracking',
+                'Analytics awareness: Google Analytics, Mixpanel-style funnels, Amplitude-style events, and dashboard basics',
+                'Research tools: Google Forms, Typeform, interviews, competitor reviews, and app store reviews',
+                'ToolShala tools: AI Career Path Suggestor, Resume Bullet Point Generator, LinkedIn Bio Generator, and Project Proposal Template for profile building'
+              ]
+            },
+            {
+              heading: '30-Day Product Manager Roadmap for Freshers',
+              paragraphs: [
+                'First 30 days ka goal PM fundamentals and first proof-of-work banana hai. Roz 60-90 minutes practice karo. Sirf PM videos dekhne ke bajay product teardown and case study output create karo.',
+                'By day 30, you should have one product teardown, one user research mini project, one basic PRD, and one LinkedIn/resume update showing your PM direction.'
               ],
               subSections: [
                 {
-                  heading: 'Days 1-7: Learn Short-Form Video Basics',
+                  heading: 'Days 1-7: Understand PM Role and Product Basics',
                   bullets: [
-                    'Study 20 reels or shorts in one niche and note hook, length, cuts, captions, music, and CTA',
-                    'Learn 9:16 vertical format, safe margins, export settings, audio levels, and caption readability',
-                    'Pick one niche: education, fitness, finance, college life, career, fashion, food, or local business',
-                    'Use ToolShala Content Idea Generator to create 20 short-form video ideas'
+                    'Learn what PM, APM, product analyst, product ops, and growth PM roles do',
+                    'Study 3 apps you use daily and write their target users, core problem, and main features',
+                    'Create a glossary of PM terms: MVP, PRD, roadmap, backlog, KPI, funnel, retention, activation',
+                    'Use ToolShala AI Career Path Suggestor to compare PM with other career options'
                   ]
                 },
                 {
-                  heading: 'Days 8-15: Practice Editing Fundamentals',
+                  heading: 'Days 8-15: Practice User Research and Problem Framing',
                   bullets: [
-                    'Learn trimming, splitting, jump cuts, zooms, B-roll, text overlays, and simple transitions',
-                    'Edit 5 talking-head videos from your own footage or safe sample clips',
-                    'Add captions with clear font size, contrast, timing, and line breaks',
-                    'Create 3 versions of the same clip with different hooks and pacing'
+                    'Pick one product area: food delivery, edtech, finance app, job portal, study planner, or creator tool',
+                    'Interview 3-5 users or collect survey responses about one pain point',
+                    'Summarize user problems, current workaround, frequency, and impact',
+                    'Write a problem statement and success metric for one improvement idea'
                   ]
                 },
                 {
-                  heading: 'Days 16-23: Add Storytelling and Publishing Assets',
+                  heading: 'Days 16-23: Learn Prioritization and PRD Basics',
                   bullets: [
-                    'Write 10 hooks and 5 short scripts using ToolShala YouTube / Shorts Script Generator',
-                    'Create thumbnails or cover frames for 5 videos',
-                    'Use Instagram Caption Generator and Hashtag Generator to prepare captions and tags',
-                    'Analyze which edits feel easier to watch and write notes on retention improvements'
+                    'List 8-10 feature ideas and prioritize using impact vs effort or RICE-style thinking',
+                    'Write a simple PRD with problem, user, goal, scope, user stories, wireframe notes, and metrics',
+                    'Create a rough user flow or wireframe in Figma, FigJam, or paper',
+                    'Ask a friend to review clarity and note what confused them'
                   ]
                 },
                 {
-                  heading: 'Days 24-30: Build First Portfolio Pack',
+                  heading: 'Days 24-30: Build First PM Portfolio Case Study',
                   bullets: [
-                    'Create a portfolio folder with 8-10 best edits across 2-3 formats',
-                    'Add project notes: goal, niche, raw footage problem, edit decisions, tools, and final output',
-                    'Create a simple before-after edit sample to show improvement',
-                    'Use ToolShala Resume Bullet Point Generator to convert your editing practice into resume-ready bullets'
+                    'Create one product teardown or improvement case study with screenshots and recommendations',
+                    'Document assumptions, user insights, priority choice, MVP, and success metrics',
+                    'Publish it on Notion, Google Docs, Medium, LinkedIn article, or portfolio page',
+                    'Use ToolShala Resume Bullet Point Generator to convert your case study into resume-ready bullets'
                   ]
                 }
               ]
             },
             {
-              heading: '90-Day Short-Form Content Creator Roadmap',
+              heading: '90-Day Product Manager Roadmap to Become Job-Ready',
               paragraphs: [
-                'Next 60 days mein portfolio depth, client workflow, and niche clarity par focus karo. Beginner editor ko prove karna hota hai ki woh consistently quality edits deliver kar sakta hai.',
-                'By day 90, aim for 25-40 edited videos, 3 portfolio case studies, a clear service menu, and outreach messages for internships, creators, agencies, and small businesses.'
+                'Next 60 days mein deeper product thinking, portfolio, and interview prep par focus karo. PM hiring mein clarity and communication matter a lot.',
+                'By day 90, aim for 3 strong case studies, one PRD sample, one product metrics analysis, one resume, and interview answers for PM internship or associate product roles.'
               ],
               subSections: [
                 {
-                  heading: 'Days 31-60: Build Niche Projects and Systems',
+                  heading: 'Days 31-60: Build Product Depth and Projects',
                   bullets: [
-                    'Choose 1-2 niches and create 15-20 edited samples with consistent style',
-                    'Repurpose one long video or podcast into 5 short clips with different hooks',
-                    'Create a reusable editing checklist: hook, cuts, captions, audio, cover, CTA, and export',
-                    'Build a content calendar for 30 days using Instagram Content Calendar Template'
+                    'Create two case studies: one product teardown and one new feature proposal',
+                    'Practice metrics: activation, conversion, retention, churn, DAU/MAU, NPS, and funnel drop-off',
+                    'Analyze competitor apps and note positioning, onboarding, pricing, and retention loops',
+                    'Build one PRD and one roadmap sheet for a sample product improvement'
                   ]
                 },
                 {
-                  heading: 'Days 61-90: Portfolio, Freelance Pitching, and Interviews',
+                  heading: 'Days 61-90: Portfolio, Applications, and Interviews',
                   bullets: [
-                    'Create 3 case studies: creator talking-head edit, brand/product reel, and educational short',
-                    'Prepare a service menu with deliverables, turnaround time, revision policy, and sample pricing',
-                    'Send targeted pitches to creators, coaches, agencies, campus clubs, and local businesses',
-                    'Practice explaining your editing process, hook choices, retention thinking, and revision workflow'
+                    'Create a simple PM portfolio with case studies, PRD sample, user research notes, and metrics thinking',
+                    'Prepare a 2-minute walkthrough for each case study',
+                    'Apply for product management intern, APM intern, product analyst intern, growth intern, founder office, and business analyst roles',
+                    'Practice product sense, estimation, prioritization, metrics, behavioral, and case interview questions'
                   ]
                 }
               ]
             },
             {
-              heading: 'Portfolio Ideas for Video Editors and Short-Form Creators',
+              heading: 'Product Manager Case Study and Project Ideas',
               paragraphs: [
-                'Portfolio should show range and clarity. Do not upload only random edits. Organize work by format, niche, and problem solved.',
-                'Freshers can create sample projects with their own footage, public-domain clips, or permission-based creator clips. Always avoid copyrighted footage misuse and label sample work honestly.'
+                'PM portfolio should show how you think. Do not only list feature ideas. Explain user problem, evidence, options, prioritization, MVP, wireframe, and success metric.',
+                'Freshers can use familiar products for sample case studies, but clearly label them as unofficial practice projects.'
               ],
               bullets: [
-                'Talking-head educational reel with hook, captions, B-roll, and CTA',
-                'Podcast clip repurposed into 3 high-retention shorts',
-                'Product demo reel for a local business or sample brand',
-                'Before-after editing sample showing raw clip vs final edit',
-                'Instagram content calendar with 15 reel ideas, hooks, captions, and hashtags',
-                'Event recap reel for college fest, webinar, workshop, or local event',
-                'Ad-style short video with problem, product promise, proof, and CTA'
+                'Improve onboarding flow for a learning app or job portal',
+                'Design a save-and-apply tracker feature for internship search',
+                'Reduce cart abandonment for an ecommerce checkout flow',
+                'Improve retention for a habit tracker or study planner app',
+                'Create a product teardown of a popular fintech, food delivery, or edtech app',
+                'Write a PRD for a campus events discovery feature',
+                'Analyze app reviews and turn user complaints into prioritized product improvements'
               ]
             },
             {
-              heading: 'Reel and Shorts Practice Plan',
+              heading: 'Resume and Portfolio Tips for Product Manager Freshers',
               paragraphs: [
-                'Practice plan ka focus repetition plus review hai. Har edit ke baad note karo: hook strong tha ya nahi, video drag hua ya nahi, subtitles readable the ya nahi, and CTA clear tha ya nahi.',
-                'Use a weekly cycle: research, script, edit, publish or save, review, and improve. Even if you do not post publicly, maintain a dated portfolio folder.'
+                'Resume mein PM keywords add karna enough nahi hai. Show proof of product thinking through case studies, user research, PRDs, metrics, and cross-functional projects.',
+                'Freshers should keep resume one page and add portfolio link near the top. A strong headline can be: "Product Management Fresher | User Research, PRDs, Product Metrics & Case Studies".'
               ],
               bullets: [
-                'Monday: research 10 trending formats in your niche and save references',
-                'Tuesday: write 5 hooks and 2 short scripts',
-                'Wednesday: shoot or collect footage and organize assets',
-                'Thursday: edit 2 reels or shorts with captions and B-roll',
-                'Friday: create cover frames, captions, hashtags, and posting notes',
-                'Saturday: review edits with a friend or mentor and note improvements',
-                'Sunday: update portfolio, content calendar, and next week ideas'
+                'Add 2-3 PM case studies with problem, process, decision, and metric sections',
+                'Use action words: researched, prioritized, defined, analyzed, mapped, documented, validated',
+                'Mention tools only when connected to output: Notion PRD, Figma wireframe, Sheets prioritization, analytics dashboard',
+                'Use numbers where possible: interviewed 5 users, analyzed 50 reviews, prioritized 10 features, mapped 4-step funnel',
+                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and ATS Resume Template for application polish'
               ]
             },
             {
-              heading: 'Client and Freelance Opportunities for Video Editors',
+              heading: 'Product Manager Interview Prep for Freshers',
               paragraphs: [
-                'Short-form editing freelance-friendly skill hai because many creators and businesses need regular videos but do not have time to edit. Start small and focus on clear deliverables.',
-                'Beginner services can include reel editing, podcast clipping, captions, thumbnail/cover frames, content calendar support, and repurposing packages.'
+                'PM interviews test structured thinking. Aapko perfect answer nahi chahiye, but clear approach chahiye: clarify goal, identify user, define problem, compare options, choose metrics, and explain trade-offs.',
+                'Practice speaking your case studies out loud. Interviewer ko yeh samajhna chahiye ki aap assumptions, constraints, and decisions ko logically handle kar sakte ho.'
               ],
               bullets: [
-                'Creators and coaches: talking-head reels, podcast clips, course promos, and launch content',
-                'Local businesses: product reels, testimonials, event recaps, offers, and festival campaigns',
-                'Agencies: bulk reel edits, ad variations, captioning, and format resizing',
-                'College clubs and events: recap videos, speaker clips, registration promos, and sponsor reels',
-                'Startups and founders: LinkedIn clips, product explainers, hiring posts, and customer stories',
-                'Use ToolShala Professional Email Generator and Project Proposal Template for outreach and offers'
+                'Product sense: improve this app, design a feature, solve a user problem',
+                'Metrics: choose success metric, diagnose drop-off, improve activation or retention',
+                'Prioritization: impact vs effort, RICE-style thinking, trade-offs, and MVP scope',
+                'Execution: PRD clarity, launch plan, stakeholder alignment, risks, and dependencies',
+                'Behavioral: teamwork, conflict, ambiguity, feedback, ownership, and learning mindset',
+                'Portfolio questions: why you chose the problem, what users said, what you prioritized, and how you would measure success'
               ]
             },
             {
-              heading: 'Resume and Portfolio Tips for Video Editing Freshers',
+              heading: 'Common Product Management Beginner Mistakes',
               paragraphs: [
-                'Resume mein sirf software names mat likho. Mention formats, niches, outputs, and editing decisions. Example: "Edited 15 short-form videos with hooks, captions, B-roll, and CTA for career education niche."',
-                'Portfolio link top section mein add karo. Best 6-10 edits first dikhao, then case studies and process notes. Recruiter ya client ko quickly samajh aana chahiye ki aap kis type ka editing work kar sakte ho.'
+                'Beginners often think PM means only giving ideas. Real PM work is about solving the right problem with constraints and measurable outcomes.',
+                'Avoid copying popular product case study templates without understanding the product, user, and trade-offs.'
               ],
               bullets: [
-                'Use headline like: Short-Form Video Editor | Reels, Shorts, Captions & Creator Content',
-                'Add links to Google Drive, Notion, Behance, YouTube playlist, Instagram page, or portfolio site',
-                'Include before-after examples and 2-3 case studies with editing choices',
-                'Mention tools only if you can show outputs: CapCut, DaVinci Resolve, Premiere Pro, Canva, Descript',
-                'Use ToolShala Resume Headline Generator, Resume Bullet Point Generator, LinkedIn Bio Generator, and Resume Keywords Bank for application polish'
+                'Jumping to solutions without defining the user problem',
+                'Adding too many features instead of prioritizing an MVP',
+                'Ignoring metrics and business goals',
+                'Writing long PRDs without clarity or scope',
+                'Not talking to users or checking feedback/reviews',
+                'Claiming technical expertise without basic product-tech understanding',
+                'Applying without case studies, PRD samples, or portfolio proof'
               ]
             },
             {
-              heading: 'Common Beginner Mistakes in Short-Form Video Editing',
+              heading: 'Beginner Resources for Product Management',
               paragraphs: [
-                'Beginners often over-edit. Fast transitions and effects look cool, but if message unclear hai, video perform nahi karega.',
-                'Good editing means clarity, pacing, emotion, and platform fit. Trends follow karo, but blindly copy mat karo.'
+                'Free resources are enough to start if you practice with real products. Read product teardowns, study app onboarding, analyze user reviews, and write your own case studies.',
+                'Best learning path: PM basics, user research, product thinking, metrics, UX basics, PRD writing, case studies, portfolio, then applications.'
               ],
               bullets: [
-                'Using too many transitions, zooms, fonts, and sound effects',
-                'Weak first 2 seconds and unclear hook',
-                'Captions too small, too fast, or low contrast',
-                'Ignoring audio quality and background noise',
-                'Copying trends without matching brand voice or audience',
-                'Not organizing files, raw clips, exports, and client feedback',
-                'Applying to clients without a portfolio or before-after samples'
+                'Product teardowns and case studies from trusted product blogs and communities',
+                'Google Sheets or Excel for prioritization matrices and metrics tracking',
+                'Figma or FigJam basics for wireframes, flows, and journey maps',
+                'Notion or Google Docs for PRDs, case studies, and product notes',
+                'App Store and Play Store reviews for user pain point research',
+                'Beginner analytics resources for funnels, retention, conversion, and cohorts',
+                'ToolShala career guides, resume tools, LinkedIn tools, and project templates for applications'
               ]
             },
             {
-              heading: 'Tools and Resources to Learn Short-Form Editing',
+              heading: 'Useful ToolShala CTAs for Product Manager Freshers',
               paragraphs: [
-                'Start with free or low-cost resources. Learn editing fundamentals, then platform-specific styles, then client workflow. Paid courses optional hain; consistent practice more important hai.',
-                'Best path: watch references, learn one tool, edit daily, review retention patterns, build portfolio, then pitch clients.'
+                'ToolShala resources can help you package your PM learning professionally. After each case study, convert your notes into resume bullets, LinkedIn updates, and outreach messages.',
+                'Use these tools to build a connected application workflow: career fit, case study notes, resume bullets, profile copy, and internship outreach.'
               ],
               bullets: [
-                'CapCut tutorials for fast mobile and desktop short-form editing',
-                'DaVinci Resolve beginner tutorials for professional timeline, color, and audio basics',
-                'YouTube Creator Academy and platform creator resources for Shorts/Reels strategy',
-                'Canva design basics for cover frames, thumbnails, and simple motion graphics',
-                'ToolShala YouTube / Shorts Script Generator for hooks, scripts, CTAs, and shot ideas',
-                'ToolShala Instagram Caption Generator, Hashtag Generator, and Content Idea Generator for publishing support',
-                'ToolShala Instagram Content Calendar Template and Content Brief Template for planning content systems'
-              ]
-            },
-            {
-              heading: 'Useful ToolShala CTAs for Video Editors and Creators',
-              paragraphs: [
-                'ToolShala social and media tools can help you plan, package, and present short-form content faster. Use them as draft support, then add your own niche understanding and creative judgement.',
-                'For portfolio and client work, combine script ideas, captions, hashtags, calendar planning, project proposals, and resume bullets into one workflow.'
-              ],
-              bullets: [
-                'YouTube / Shorts Script Generator for video hooks, talking points, CTA, and shot suggestions',
-                'Content Idea Generator for niche content pillars and fresh reel ideas',
-                'Instagram Caption Generator for caption drafts and posting copy',
-                'Hashtag Generator for platform-ready hashtag sets',
-                'Instagram Content Calendar Template for consistent reel planning',
-                'Project Proposal Template for freelance editing offers',
-                'Resume Bullet Point Generator and LinkedIn Bio Generator for applications and outreach'
+                'AI Career Path Suggestor to check whether product management fits your interests',
+                'Resume Bullet Point Generator for PM case study and project achievements',
+                'Resume Headline Generator for product management fresher positioning',
+                'LinkedIn Bio Generator for a clear product-focused About section',
+                'Professional Email Generator for internship outreach and follow-ups',
+                'Project Proposal Template for product case study or freelance product research offers',
+                'Content Brief Template for structuring product case study notes'
               ]
             }
           ],
           faq: [
             {
-              question: 'Can a beginner become a short-form video editor?',
+              question: 'Can a fresher become a Product Manager?',
               answer:
-                'Yes. Beginners can start with CapCut, DaVinci Resolve, or Premiere Pro basics, then practice hooks, cuts, captions, audio, B-roll, and platform formats. A portfolio with 8-10 strong edits can help with internships and freelance work.'
+                'Yes. Freshers can start through PM internships, APM internships, product analyst roles, founder office roles, business analyst roles, or growth roles. A portfolio with case studies, PRD samples, and user research notes can improve chances.'
             },
             {
-              question: 'Which tool should I learn first for reels and shorts editing?',
+              question: 'Do I need coding or MBA for product management?',
               answer:
-                'Start with CapCut if you want a fast beginner-friendly tool. If you have a laptop and want deeper editing skills, learn DaVinci Resolve or Premiere Pro after you understand basic cuts, captions, audio, and export settings.'
+                'Coding and MBA are helpful but not mandatory for every beginner PM role. You should understand basic technology, business goals, user problems, metrics, and communication. Technical depth can grow with time.'
             },
             {
-              question: 'How do I build a video editing portfolio without clients?',
+              question: 'What should I include in a PM portfolio?',
               answer:
-                'Use your own footage, permission-based clips, public-domain material, or sample brand concepts. Create talking-head edits, podcast clips, product reels, before-after samples, and content calendars. Clearly label sample projects.'
+                'Include 2-3 product case studies, a PRD sample, user research notes, prioritization logic, wireframes or user flows, success metrics, and clear learnings. Show how you think, not just feature ideas.'
             },
             {
-              question: 'Which ToolShala tools are useful for short-form creators?',
+              question: 'Which ToolShala tools are useful for PM freshers?',
               answer:
-                'Use YouTube / Shorts Script Generator, Content Idea Generator, Instagram Caption Generator, Hashtag Generator, Instagram Content Calendar Template, Project Proposal Template, Resume Bullet Point Generator, and LinkedIn Bio Generator.'
+                'Use AI Career Path Suggestor, Resume Bullet Point Generator, Resume Headline Generator, LinkedIn Bio Generator, Professional Email Generator, Project Proposal Template, and Content Brief Template to prepare applications and portfolio content.'
             }
           ],
           conclusion:
-            'Video Editor / Short-Form Content Creator Roadmap ka simple formula hai: hooks samjho, editing basics practice karo, captions and audio polish karo, 30 days mein first portfolio pack banao, and 90 days mein niche samples plus client workflow ready karo. ToolShala social/media tools use karke scripts, ideas, captions, hashtags, calendars, proposals, and resume bullets faster prepare karo.',
+            'Product Manager Roadmap for Freshers ka simple formula hai: user problem samjho, product thinking practice karo, PRD and metrics basics seekho, case studies publish karo, and interview prep ko structured rakho. In 30 days, one product teardown and PRD sample banao. In 90 days, 3 case studies, clean portfolio, and PM-ready resume ke saath internships or adjacent product roles apply karo.',
           cta: {
-            title: 'Plan Your Next Reel or Short with ToolShala',
+            title: 'Build Your Product Management Application Kit',
             text:
-              'Use ToolShala social tools to generate short-form scripts, content ideas, captions, hashtags, and content calendars for your creator portfolio or freelance client work.',
-            primaryLabel: 'Generate Shorts Script',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
-            secondaryLabel: 'Use Content Calendar Template',
-            secondaryLink: './instagram-content-calendar-template.html'
+              'Use ToolShala career tools and templates to turn product case studies into resume bullets, improve your LinkedIn profile, and prepare internship outreach messages.',
+            primaryLabel: 'Try AI Career Path Suggestor',
+            primaryLink: './tool.html?tool=ai-career-path-suggestor',
+            secondaryLabel: 'Generate Resume Bullets',
+            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
           }
         }
       },
