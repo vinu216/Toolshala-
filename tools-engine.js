@@ -22,7 +22,48 @@
 
   const TOOL_ENGINE_CONFIG = {
     apiProviderGlobal: 'ToolShalaAIProvider',
+    defaultEndpoint: '/api/generate',
+    defaultProvider: 'nvidia',
     defaultLoadingMessages: ['Generating your result...', 'Preparing your content...', 'Just a moment...']
+  };
+
+  const buildPromptFromValues = (toolId, values = {}) => {
+    const promptLines = Object.entries(values || {})
+      .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
+      .filter((line) => !line.endsWith(':'));
+
+    return [
+      `Tool ID: ${toolId}`,
+      'Generate a high-quality response based on the following user inputs.',
+      ...promptLines
+    ].join('\n');
+  };
+
+  const defaultApiProvider = {
+    name: TOOL_ENGINE_CONFIG.defaultProvider,
+    endpoint: TOOL_ENGINE_CONFIG.defaultEndpoint,
+    async generate({ toolId, values }) {
+      const response = await fetch(TOOL_ENGINE_CONFIG.defaultEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: buildPromptFromValues(toolId, values) })
+      });
+
+      const payload = await response.json().catch(() => {
+        throw new Error('Invalid JSON response from /api/generate.');
+      });
+
+      if (!response.ok) {
+        throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+      }
+
+      const text = String(payload?.text || '').trim();
+      if (!text) {
+        throw new Error('The AI service returned an empty response.');
+      }
+
+      return { type: 'text', text };
+    }
   };
 
   const getApiProvider = () => {
@@ -30,7 +71,12 @@
     if (provider && typeof provider.generate === 'function') {
       return provider;
     }
-    return null;
+
+    if (window.console && typeof window.console.warn === 'function') {
+      window.console.warn('[ToolShala] Page-level AI provider missing. Using default /api/generate provider.');
+    }
+
+    return defaultApiProvider;
   };
 
   const copyText = async (text) => {
@@ -2421,12 +2467,29 @@ ${senderName}`;
 
   const generateResult = async (toolId, values, options = {}) => {
     const provider = getApiProvider();
-    if (!provider) throw new Error('AI provider is not configured on this page.');
-    const remoteResult = await provider.generate({
-      toolId,
-      values,
-      variant: options.variant || 0
-    });
+    let remoteResult = null;
+
+    try {
+      remoteResult = await provider.generate({
+        toolId,
+        values,
+        variant: options.variant || 0
+      });
+    } catch (error) {
+      if (provider !== defaultApiProvider) {
+        if (window.console && typeof window.console.warn === 'function') {
+          window.console.warn('[ToolShala] Primary provider failed. Retrying with default /api/generate provider.', error);
+        }
+        remoteResult = await defaultApiProvider.generate({
+          toolId,
+          values,
+          variant: options.variant || 0
+        });
+      } else {
+        throw error;
+      }
+    }
+
     if (!remoteResult || typeof remoteResult !== 'object') {
       throw new Error('The AI service returned an invalid response.');
     }
