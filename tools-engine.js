@@ -137,7 +137,11 @@
 
   const IMAGE_QUIZ_CONFIG = {
     endpoint: '/api/generate-image-quiz',
-    maxFileSize: PHOTO_TO_TEXT_CONFIG.maxFileSize,
+    maxOriginalFileSize: 4 * 1024 * 1024,
+    maxOptimizedImageSize: Math.floor(3.5 * 1024 * 1024),
+    maxRequestPayloadSize: Math.floor(5.25 * 1024 * 1024),
+    maxDimension: 1600,
+    jpegQualities: [0.82, 0.74, 0.66, 0.58],
     allowedTypes: PHOTO_TO_TEXT_CONFIG.allowedTypes
   };
 
@@ -4110,8 +4114,8 @@ ${senderName}`;
     imageWrap.className = 'field-wrap hidden';
     imageWrap.innerHTML = `
       <label class="field-label" for="tool-field-quizImage">Upload Image <span class="field-required">*</span></label>
-      <input class="field-input" id="tool-field-quizImage" name="quizImage" type="file" accept="image/*">
-      <p class="field-helper">Upload a clear JPEG, PNG, or WEBP image up to 8 MB. The main picker uses normal gallery/file selection and does not force camera.</p>
+      <input class="field-input" id="tool-field-quizImage" name="quizImage" type="file" accept="image/jpeg,image/png,image/webp">
+      <p class="field-helper">Upload a clear JPEG, PNG, or WEBP image under 4 MB. Images are resized/compressed before upload so the request stays safely below Netlify limits. The main picker uses normal gallery/file selection and does not force camera.</p>
       <p id="tool-field-quizImage-error" class="field-error hidden" data-field-error="true" aria-live="polite"></p>
     `;
     notesField.parentNode.insertBefore(imageWrap, notesField.nextSibling);
@@ -4136,7 +4140,7 @@ ${senderName}`;
     const validateQuizImage = (file) => {
       if (!file) return 'Please select an image first.';
       if (!IMAGE_QUIZ_CONFIG.allowedTypes.has(file.type)) return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
-      if (file.size > IMAGE_QUIZ_CONFIG.maxFileSize) return `Image is too large (${formatFileSize(file.size)}). Please upload an image up to 8 MB.`;
+      if (file.size > IMAGE_QUIZ_CONFIG.maxOriginalFileSize) return `Image too large. Please upload a smaller image (under ${formatFileSize(IMAGE_QUIZ_CONFIG.maxOriginalFileSize)}).`;
       return '';
     };
 
@@ -4169,13 +4173,83 @@ ${senderName}`;
       renderOutput({ outputNode, result: null, tool });
     };
 
-    const readImagePayload = async (file) => {
-      const imageData = await readFileAsDataUrl(file);
+
+    const loadImageElement = (file) =>
+      new Promise((resolve, reject) => {
+        const url = URL.createObjectURL(file);
+        const image = new Image();
+        image.onload = () => {
+          URL.revokeObjectURL(url);
+          resolve(image);
+        };
+        image.onerror = () => {
+          URL.revokeObjectURL(url);
+          reject(new Error('Could not load the selected image. Please try another clear JPEG, PNG, or WEBP image.'));
+        };
+        image.src = url;
+      });
+
+    const canvasToBlob = (canvas, type, quality) =>
+      new Promise((resolve) => canvas.toBlob(resolve, type, quality));
+
+    const blobToDataUrl = (blob) =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ''));
+        reader.onerror = () => reject(new Error('Could not prepare the optimized image. Please try another file.'));
+        reader.readAsDataURL(blob);
+      });
+
+    const getPayloadByteSize = (payload) => new TextEncoder().encode(JSON.stringify(payload)).length;
+
+    const optimizeImageForQuizUpload = async (file) => {
+      const validationMessage = validateQuizImage(file);
+      if (validationMessage) throw new Error(validationMessage);
+
+      const image = await loadImageElement(file);
+      const width = image.naturalWidth || image.width;
+      const height = image.naturalHeight || image.height;
+      if (!width || !height) {
+        throw new Error('Invalid image payload. Please upload a readable JPEG, PNG, or WEBP image.');
+      }
+
+      const scale = Math.min(1, IMAGE_QUIZ_CONFIG.maxDimension / Math.max(width, height));
+      const targetWidth = Math.max(1, Math.round(width * scale));
+      const targetHeight = Math.max(1, Math.round(height * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+      const context = canvas.getContext('2d', { alpha: false });
+      if (!context) throw new Error('Could not optimize this image in your browser. Please try another image.');
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, targetWidth, targetHeight);
+      context.drawImage(image, 0, 0, targetWidth, targetHeight);
+
+      let optimizedBlob = null;
+      for (const quality of IMAGE_QUIZ_CONFIG.jpegQualities) {
+        const candidate = await canvasToBlob(canvas, 'image/jpeg', quality);
+        if (!candidate) continue;
+        optimizedBlob = candidate;
+        if (candidate.size <= IMAGE_QUIZ_CONFIG.maxOptimizedImageSize) break;
+      }
+
+      if (!optimizedBlob || optimizedBlob.size > IMAGE_QUIZ_CONFIG.maxOptimizedImageSize) {
+        throw new Error(`Image too large. Please upload a smaller image (under ${formatFileSize(IMAGE_QUIZ_CONFIG.maxOriginalFileSize)}).`);
+      }
+
+      const imageData = await blobToDataUrl(optimizedBlob);
       const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
       if (!imageBase64) {
-        throw new Error('Could not read the selected image. Please try another file.');
+        throw new Error('Invalid image payload. Please upload the image again.');
       }
-      return imageBase64;
+
+      return {
+        imageBase64,
+        mimeType: 'image/jpeg',
+        optimizedSize: optimizedBlob.size,
+        originalSize: file.size,
+        fileName: file.name || 'uploaded-image'
+      };
     };
 
     const collectTextValues = () => {
@@ -4196,15 +4270,20 @@ ${senderName}`;
         throw new Error(validationMessage);
       }
       const commonValues = collectTextValues();
-      return {
+      const optimizedImage = await optimizeImageForQuizUpload(file);
+      const payload = {
         topicSubject: commonValues.topicSubject,
         questionCount: commonValues.questionCount,
         difficulty: commonValues.difficulty,
         questionType: commonValues.questionType,
-        imageBase64: await readImagePayload(file),
-        mimeType: file.type,
-        fileName: file.name || 'uploaded-image'
+        imageBase64: optimizedImage.imageBase64,
+        mimeType: optimizedImage.mimeType,
+        fileName: optimizedImage.fileName
       };
+      if (getPayloadByteSize(payload) > IMAGE_QUIZ_CONFIG.maxRequestPayloadSize) {
+        throw new Error(`Image too large. Please upload a smaller image (under ${formatFileSize(IMAGE_QUIZ_CONFIG.maxOriginalFileSize)}).`);
+      }
+      return payload;
     };
 
     const validateImageValues = (values) => {
@@ -4225,7 +4304,17 @@ ${senderName}`;
       });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) {
-        throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+        const serverError = String(payload?.error || `Request failed with status ${response.status}`).trim();
+        if (serverError === 'Provider not configured') {
+          throw new Error('Image quiz is not configured. Please set the provider environment variables.');
+        }
+        if (serverError === 'Image too large') {
+          throw new Error(`Image too large. Please upload a smaller image (under ${formatFileSize(IMAGE_QUIZ_CONFIG.maxOriginalFileSize)}).`);
+        }
+        if (serverError === 'Invalid image payload') {
+          throw new Error('Invalid image payload. Please upload the image again.');
+        }
+        throw new Error(serverError);
       }
       const text = String(payload?.text || '').trim();
       if (!text) throw new Error('AI provider returned an empty quiz response.');
@@ -4245,7 +4334,7 @@ ${senderName}`;
       resetButton.disabled = true;
       submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
       submitButton.textContent = activeMode === 'image' ? 'Analyzing...' : 'Generating...';
-      loadingNode.textContent = activeMode === 'image' ? 'Analyzing image and generating quiz...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingNode.textContent = activeMode === 'image' ? 'Optimizing image, then generating quiz...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
       loadingNode.classList.remove('hidden');
       outputNode.setAttribute('aria-busy', 'true');
       renderOutput({ outputNode, result: null, tool });
