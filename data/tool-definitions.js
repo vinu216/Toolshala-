@@ -26,6 +26,242 @@ window.ToolShalaToolDefinitions = [
   },
 
   {
+    id: 'ats-resume-optimizer',
+    title: 'ATS Resume Optimizer',
+    category: 'Career Tool',
+    description: 'Analyze resume text and generate ATS-friendly headline, summary, bullets, keywords, missing skills, and improvement notes.',
+    metaDescription: 'Free ATS Resume Optimizer for students, freshers, professionals, and job seekers. Create an ATS-friendly resume summary, headline, bullet points, and resume keyword suggestions.',
+    ctaLabel: 'Optimize Resume',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: apna actual resume paste karo, target job title add karo, aur optional JD/keywords se ATS-friendly output aur better banega.',
+    promptInstructions: [
+      'You are an honest ATS resume optimization assistant for students, freshers, professionals, and job seekers.',
+      'Do not invent fake roles, employers, degrees, certifications, tools, metrics, achievements, dates, or experience. Preserve the user’s actual background and only improve wording, structure, clarity, and keyword alignment.',
+      'Do not provide a fake ATS score. If you mention fit or match, clearly label it as qualitative AI guidance, not an official ATS score.',
+      'Return clean Markdown with exactly these sections: ATS-Friendly Headline, Optimized Resume Summary, Improved Bullet Points, Keyword Suggestions, Missing Skills/Keywords, What Improved.',
+      'ATS-Friendly Headline must be one concise role-aligned headline for the target job title.',
+      'Optimized Resume Summary must be truthful, readable, and matched to the selected tone: professional, concise, or strong.',
+      'Improved Bullet Points must rewrite the user’s existing responsibilities/projects into stronger bullets without adding unsupported facts; use placeholders like [add metric] only when the user should fill real numbers.',
+      'Keyword Suggestions must include relevant resume keywords from the target job title, optional job description, optional skills/keywords, and user resume text.',
+      'Missing Skills/Keywords must separate must-have JD keywords from nice-to-have keywords when a job description is provided.',
+      'What Improved must briefly explain clarity, formatting, keyword alignment, and recruiter readability improvements in friendly Hinglish.'
+    ],
+    tips: [
+      'Paste your real resume text; AI ko fake experience add karne ke liye use mat karo.',
+      'Optional job description paste karoge to missing keywords aur role alignment better milega.',
+      'Generated bullets me [add metric] placeholders ko sirf apne real numbers se replace karo.'
+    ],
+    fields: [
+      {
+        key: 'resumeText',
+        label: 'Paste Resume Text / Upload Text Area',
+        type: 'textarea',
+        placeholder: 'Paste your resume text here: summary, education, skills, projects, internships, achievements...',
+        required: true,
+        rows: 8
+      },
+      {
+        key: 'targetJobTitle',
+        label: 'Target Job Title',
+        type: 'text',
+        placeholder: 'e.g. Data Analyst Intern, Frontend Developer Fresher',
+        required: true
+      },
+      {
+        key: 'jobDescription',
+        label: 'Optional Job Description',
+        type: 'textarea',
+        placeholder: 'Paste the target job description or key responsibilities/requirements here...',
+        required: false,
+        rows: 5
+      },
+      {
+        key: 'keywords',
+        label: 'Optional Skills / Keywords',
+        type: 'text',
+        placeholder: 'e.g. SQL, Excel, React, customer support, communication',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'concise', label: 'Concise' },
+          { value: 'strong', label: 'Strong' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'job-description-to-resume-tailor',
+    title: 'Job Description to Resume Tailor',
+    category: 'Career Tool',
+    description: 'Analyze a job description and generate ATS-friendly resume tailoring suggestions, keyword match insights, summary, and bullet rewrites.',
+    metaDescription: 'Free Job Description to Resume Tailor for job seekers. Match resume keywords to a JD, find missing keywords, improve ATS resume match, and tailor summary and bullets.',
+    ctaLabel: 'Tailor Resume',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: JD, current resume summary/full resume, target role aur skills add karo; tool practical ATS-friendly tailoring suggestions dega.',
+    promptInstructions: [
+      'You are a job description parser and resume tailoring assistant for students, freshers, professionals, and job seekers.',
+      'Be honest: do not claim experience, achievements, companies, tools, certifications, metrics, or responsibilities the user has not provided.',
+      'Focus on tailoring and ATS keyword alignment, not fabrication. Preserve the user’s actual background and clearly mark any missing keyword as learn/verify/add only if true.',
+      'Return clean Markdown with exactly these sections: Keyword Match Analysis, Missing Keywords, Tailored Resume Summary, Bullet Rewrites, Suggested Sections to Update, Fit/Improvement Notes.',
+      'Keyword Match Analysis must compare JD requirements with the current resume summary/full resume and skills list, highlighting strong matches and partial matches.',
+      'Missing Keywords must list important JD keywords not clearly visible in the user input and separate must-have from nice-to-have where possible.',
+      'Tailored Resume Summary must be concise, ATS-friendly, truthful, and aligned with the target role and selected tone.',
+      'Bullet Rewrites must provide 4-6 resume bullet rewrites based only on user-provided background/skills; use [add real metric] placeholders only when the user should fill actual numbers.',
+      'Suggested Sections to Update must mention which resume sections should be edited, such as headline, summary, skills, projects, experience, certifications, or tools.',
+      'Fit/Improvement Notes must give short practical Hinglish-friendly notes about what to improve before applying.'
+    ],
+    tips: [
+      'Full JD paste karoge to keyword match aur missing keywords better milenge.',
+      'Current resume summary ya full resume me sirf real experience/skills add karo.',
+      'Bullet rewrites ko final resume me use karne se pehle facts and metrics verify kar lo.'
+    ],
+    fields: [
+      {
+        key: 'jobDescription',
+        label: 'Job Description Text (JD paste karo)',
+        type: 'textarea',
+        placeholder: 'Paste the full job description, responsibilities, required skills, and qualifications here...',
+        required: true,
+        rows: 8
+      },
+      {
+        key: 'resumeSummaryOrRole',
+        label: 'Current Resume Summary / Full Resume',
+        type: 'textarea',
+        placeholder: 'Paste your current resume summary, role context, or full resume text here...',
+        required: true,
+        rows: 6
+      },
+      {
+        key: 'targetTitle',
+        label: 'Target Role',
+        type: 'text',
+        placeholder: 'e.g. Frontend Developer Intern, Data Analyst Fresher',
+        required: true
+      },
+      {
+        key: 'skills',
+        label: 'Skills List (comma separated)',
+        type: 'text',
+        placeholder: 'e.g. React, JavaScript, SQL, Excel, communication, problem solving',
+        required: true
+      },
+      {
+        key: 'tone',
+        label: 'Tone (optional)',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'concise', label: 'Concise' },
+          { value: 'strong', label: 'Strong' },
+          { value: 'fresher-friendly', label: 'Fresher Friendly' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'salary-negotiation-script-generator',
+    title: 'Salary Negotiation Script Generator',
+    category: 'Career Tool',
+    description: 'Generate polished WhatsApp, email, and call scripts for salary discussion, counter offer, and offer negotiation after a job offer.',
+    metaDescription: 'Free Salary Negotiation Script Generator for job offers. Create salary discussion scripts, counter offer messages, email versions, call scripts, and polite closing lines.',
+    ctaLabel: 'Generate Scripts',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: role, offer, expected salary, market context aur reason add karo; output polite, realistic aur confident rahega.',
+    promptInstructions: [
+      'You are a salary negotiation script assistant for job seekers after receiving a job offer.',
+      'Do not guarantee salary increases or provide legal/financial advice. Keep the tone professional, respectful, confident, realistic, and concise.',
+      'Avoid aggressive, manipulative, entitled, threatening, or overly pushy language.',
+      'Return clean Markdown with exactly these sections: Short WhatsApp/Chat Version, Email Version, Call Script Version, Stronger Alternate Lines, Polite Closing Line, Counter-offer Talking Points.',
+      'Use role/title, current offer amount, expected salary, experience level, optional location/market context, negotiation style, and optional reason for higher expectation naturally.',
+      'Mention market value, relevant skills, and mutual benefit where appropriate, but do not invent credentials, competing offers, or market data not provided by the user.',
+      'Short WhatsApp/Chat Version must be brief and recruiter-friendly.',
+      'Email Version must include subject line, greeting, appreciation, counter-offer request, justification, and close.',
+      'Call Script Version must sound natural for a live conversation and include 3-5 short speaking lines.',
+      'Stronger Alternate Lines must include 1-2 confident but respectful counter-offer lines.',
+      'Counter-offer Talking Points must be optional, practical bullets the user can use during discussion.'
+    ],
+    tips: [
+      'Negotiation se pehle fixed pay, variable pay, joining bonus, benefits, and notice period terms clearly check karo.',
+      'Expected salary realistic rakho and apne skills, location, market context, and role value se justify karo.',
+      'Script send karne se pehle company name, recruiter name, exact amount, and tone verify kar lo.'
+    ],
+    fields: [
+      {
+        key: 'role',
+        label: 'Role / Title',
+        type: 'text',
+        placeholder: 'e.g. Software Developer, Marketing Executive, Data Analyst',
+        required: true
+      },
+      {
+        key: 'currentOfferAmount',
+        label: 'Current Offer Amount',
+        type: 'text',
+        placeholder: 'e.g. ₹4.5 LPA, ₹35,000/month, $70,000/year',
+        required: true
+      },
+      {
+        key: 'expectedSalary',
+        label: 'Expected Salary',
+        type: 'text',
+        placeholder: 'e.g. ₹6 LPA, ₹45,000/month, $78,000/year',
+        required: true
+      },
+      {
+        key: 'experienceLevel',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'fresher', label: 'Fresher' },
+          { value: '0-1 years', label: '0-1 Years' },
+          { value: '1-3 years', label: '1-3 Years' },
+          { value: '3+ years', label: '3+ Years' }
+        ]
+      },
+      {
+        key: 'locationMarketContext',
+        label: 'Location / Market Context (optional)',
+        type: 'text',
+        placeholder: 'e.g. Bengaluru market, remote role, metro city cost of living, product startup benchmarks',
+        required: false
+      },
+      {
+        key: 'negotiationStyle',
+        label: 'Negotiation Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'polite', label: 'Polite' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'firm', label: 'Firm' }
+        ]
+      },
+      {
+        key: 'reasonForHigherExpectation',
+        label: 'Reason for Higher Expectation (optional)',
+        type: 'textarea',
+        placeholder: 'e.g. relevant internship/project experience, niche skills, market range, relocation cost, competing responsibilities',
+        required: false,
+        rows: 4
+      }
+    ]
+  },
+
+  {
     id: 'resume-headline-generator',
     title: 'Resume Headline Generator',
     category: 'Career Tool',
@@ -996,6 +1232,91 @@ window.ToolShalaToolDefinitions = [
     ]
   },
   {
+    id: 'cold-dm-outreach-message-generator',
+    title: 'Cold DM / Outreach Message Generator',
+    category: 'Writing Tool',
+    description: 'Generate short, natural, and platform-ready cold DM or outreach messages for LinkedIn, Instagram, email, and WhatsApp.',
+    metaDescription: 'Free Cold DM Generator and outreach message generator for LinkedIn DM, WhatsApp outreach, Instagram, and email. Create short DMs, warmer alternatives, stronger versions, openers, and email subject lines.',
+    ctaLabel: 'Generate Outreach',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: platform, recipient, purpose, value proposition aur short context clear likho; message direct-send ready aur non-spammy rahega.',
+    promptInstructions: [
+      'You are a cold DM and outreach message assistant for students, freshers, creators, freelancers, and job seekers.',
+      'Do not invent personal details, achievements, offers, prices, relationships, guarantees, or prior conversations. Use only the provided value proposition and short context.',
+      'Return clean Markdown with exactly these sections: Short DM/Message, Slightly Warmer Alternative, Stronger Alternative, Very Short Opener, Optional Email Subject Line.',
+      'Short DM/Message must be concise, natural, platform-appropriate, and directly sendable after small edits.',
+      'Slightly Warmer Alternative must sound friendly and relationship-oriented without becoming long or needy.',
+      'Stronger Alternative must be confident and clear while staying respectful and non-pushy.',
+      'Very Short Opener must be one quick first line or hook when useful for the selected platform.',
+      'Optional Email Subject Line must appear only for email outreach; for LinkedIn, Instagram, or WhatsApp, write "Not needed for this platform".',
+      'Use the selected platform, recipient role/name, purpose of outreach, value proposition, tone, and short context naturally.',
+      'Avoid spammy, generic, overly salesy, exaggerated, or copy-paste sounding messages.'
+    ],
+    tips: [
+      'Recipient ko generic spam jaisa message mat bhejo; one specific reason ya context add karo.',
+      'Value proposition ko clear rakho: help, collaboration, portfolio, service, referral, ya quick question.',
+      'Message short rakho and follow-up bhejne se pehle 3-5 days wait karo.'
+    ],
+    fields: [
+      {
+        key: 'platform',
+        label: 'Platform Select Karo',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'linkedin', label: 'LinkedIn DM' },
+          { value: 'instagram', label: 'Instagram DM' },
+          { value: 'email', label: 'Email' },
+          { value: 'whatsapp', label: 'WhatsApp' }
+        ]
+      },
+      {
+        key: 'recipientRole',
+        label: 'Recipient Role / Name',
+        type: 'text',
+        placeholder: 'e.g. Recruiter, Founder, Creator, Marketing Manager, Priya from HR',
+        required: true
+      },
+      {
+        key: 'purpose',
+        label: 'Purpose of Outreach',
+        type: 'text',
+        placeholder: 'e.g. ask for internship referral, pitch design service, request collaboration',
+        required: true
+      },
+      {
+        key: 'valueProposition',
+        label: 'Value Proposition',
+        type: 'textarea',
+        placeholder: 'e.g. I can help improve landing page conversions; I built two React projects; I can create 10 short-form videos for your brand...',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'polite', label: 'Polite' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'confident', label: 'Confident' }
+        ]
+      },
+      {
+        key: 'shortContext',
+        label: 'Short Context',
+        type: 'textarea',
+        placeholder: 'e.g. I liked their recent post, saw an open role, found their brand on Instagram, met them at an event, or have a relevant portfolio link...',
+        required: true,
+        rows: 4
+      }
+    ]
+  },
+
+  {
     id: 'linkedin-networking-message-generator',
     title: 'LinkedIn Networking Message Generator',
     category: 'Career Tool',
@@ -1318,6 +1639,90 @@ window.ToolShalaToolDefinitions = [
     ]
   },
   {
+    id: 'project-idea-generator-students-freshers',
+    title: 'Project Idea Generator for Students/Freshers',
+    category: 'Career Tool',
+    description: 'Generate realistic student and fresher project ideas with variants, tech stack suggestions, learning outcomes, and resume/portfolio value notes.',
+    metaDescription: 'Free Project Idea Generator for students and freshers. Get student project ideas, fresher project ideas, portfolio projects, tech stack suggestions, learning outcomes, and resume value notes.',
+    ctaLabel: 'Generate Ideas',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: stream, skills, target career, difficulty aur optional tech preference add karo so ideas realistic, buildable, resume-ready rahen.',
+    promptInstructions: [
+      'You are a project idea mentor for students, freshers, and job seekers building portfolio-ready projects.',
+      'Do not provide demo/static ideas unrelated to the user inputs. Tailor ideas to stream/domain, skill set, experience level, target career, and difficulty.',
+      'Return clean Markdown with exactly these sections: Project Ideas, Beginner and Advanced Variants, Tools/Tech Stack Suggestions, What You Will Learn, Resume/Portfolio Value Note.',
+      'Project Ideas must include 5-10 realistic, buildable ideas with a project title, one-line problem statement, expected output, and suggested scope for each idea.',
+      'Beginner and Advanced Variants must show how to simplify or upgrade the ideas based on the selected difficulty and experience level.',
+      'Tools/Tech Stack Suggestions must recommend realistic tools, libraries, datasets, platforms, or no-code options, and respect the optional tools/tech stack preference when provided.',
+      'What You Will Learn must explain the practical skills, concepts, and problem-solving outcomes the user will gain.',
+      'Resume/Portfolio Value Note must explain how the selected projects can be described on a fresher resume, GitHub, LinkedIn, or portfolio.',
+      'Avoid vague, too broad, unrealistic, or enterprise-scale ideas. Keep ideas focused enough to build as student/fresher portfolio projects.',
+      'Keep the tone simple, encouraging, and Hinglish-friendly while keeping project names and resume wording professional.'
+    ],
+    tips: [
+      'Apne current skills honestly add karo so project scope manageable rahe.',
+      'Portfolio value ke liye project me problem, tech stack, learning outcome, GitHub/demo link, and resume bullet clearly document karo.',
+      'Beginner ho to mini project start karo; advanced ho to real dataset, users, auth, analytics, or deployment add karo.'
+    ],
+    fields: [
+      {
+        key: 'streamDomain',
+        label: 'Stream / Domain',
+        type: 'text',
+        placeholder: 'e.g. Computer Science, BCom, Data Analytics, Digital Marketing, Mechanical, UI/UX',
+        required: true
+      },
+      {
+        key: 'skillSet',
+        label: 'Skill Set',
+        type: 'textarea',
+        placeholder: 'e.g. HTML, CSS, JavaScript, Excel, SQL, Canva, Python basics, communication',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'experienceLevel',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'beginner', label: 'Beginner' },
+          { value: 'college-student', label: 'College Student' },
+          { value: 'fresher', label: 'Fresher' },
+          { value: 'internship-ready', label: 'Internship Ready' }
+        ]
+      },
+      {
+        key: 'targetCareer',
+        label: 'Target Career',
+        type: 'text',
+        placeholder: 'e.g. Frontend Developer, Data Analyst, HR, Digital Marketer, Product Manager',
+        required: true
+      },
+      {
+        key: 'projectDifficulty',
+        label: 'Project Difficulty',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'easy', label: 'Easy' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'advanced', label: 'Advanced' },
+          { value: 'mixed', label: 'Mixed Ideas' }
+        ]
+      },
+      {
+        key: 'techStackPreference',
+        label: 'Tools / Tech Stack Preference (optional)',
+        type: 'text',
+        placeholder: 'e.g. React + Firebase, Python + Excel, Canva, Figma, no-code tools, MERN stack',
+        required: false
+      }
+    ]
+  },
+
+  {
     id: 'ai-career-path-suggestor',
     title: 'AI Career Path Suggestor',
     category: 'AI Tool',
@@ -1521,6 +1926,90 @@ window.ToolShalaToolDefinitions = [
           { value: 'respectful', label: 'Respectful' },
           { value: 'professional', label: 'Professional' }
         ]
+      }
+    ]
+  },
+
+  {
+    id: 'follow-up-email-generator',
+    title: 'Follow-up Email Generator',
+    category: 'Writing Tool',
+    description: 'Generate professional interview, application, networking, and no-response follow-up emails with short versions and optional WhatsApp copy.',
+    metaDescription: 'Free Follow-up Email Generator for interview follow-up email, application follow-up, networking follow-up, and no-response emails with subject line and short version.',
+    ctaLabel: 'Generate Follow-up',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: follow-up type, company/recipient, role, date aur context add karo; output friendly but not needy rahega.',
+    promptInstructions: [
+      'You are a follow-up email writing assistant for students, freshers, job seekers, and professionals.',
+      'Do not invent interview details, recruiter names, selection status, promises, relationships, or prior conversations. Use placeholders only for missing names or details.',
+      'Return clean Markdown with exactly these sections: Subject Line, Full Follow-up Email, Short Version, Polite Closing, Optional WhatsApp Version.',
+      'Subject Line is mandatory and must be clear, specific, and professional.',
+      'Full Follow-up Email must be polished, concise, respectful, and suitable for the selected follow-up type: interview follow-up, application follow-up, networking follow-up, or no-response follow-up.',
+      'Short Version must be easy to edit and send as a brief email or LinkedIn message.',
+      'Polite Closing must provide one concise closing line that sounds warm and professional.',
+      'Optional WhatsApp Version should be included only if useful for the selected context and must stay short and non-spammy.',
+      'Avoid repetitive, needy, spammy, overly apologetic, or pushy wording.',
+      'Use recipient/company name, role/title, optional last interaction date, selected tone, and extra note/context naturally.'
+    ],
+    tips: [
+      'Interview ke baad usually 24-48 hours me follow-up bhejna helpful hota hai.',
+      'Application/no-response follow-up ke liye 5-7 working days wait karna professional lagta hai.',
+      'Final email send karne se pehle company, role, date, and recipient name verify kar lo.'
+    ],
+    fields: [
+      {
+        key: 'followUpType',
+        label: 'Follow-up Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'interview-follow-up', label: 'Interview Follow-up' },
+          { value: 'application-follow-up', label: 'Application Follow-up' },
+          { value: 'networking-follow-up', label: 'Networking Follow-up' },
+          { value: 'no-response-follow-up', label: 'No-response Follow-up' }
+        ]
+      },
+      {
+        key: 'recipientCompany',
+        label: 'Recipient / Company Name',
+        type: 'text',
+        placeholder: 'e.g. Hiring Manager at Acme, Ms. Sharma, ABC Technologies',
+        required: true
+      },
+      {
+        key: 'role',
+        label: 'Role / Title',
+        type: 'text',
+        placeholder: 'e.g. Frontend Developer Intern, Data Analyst Fresher, Marketing Manager',
+        required: true
+      },
+      {
+        key: 'lastInteractionDate',
+        label: 'Last Interaction Date (optional)',
+        type: 'text',
+        placeholder: 'e.g. 5 May 2026, last Monday, 3 days ago',
+        required: false
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'polite', label: 'Polite' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'confident', label: 'Confident' }
+        ]
+      },
+      {
+        key: 'extraContext',
+        label: 'Extra Note / Context',
+        type: 'textarea',
+        placeholder: 'e.g. I interviewed for the role, submitted assignment, shared portfolio, met at a webinar, or want to check next steps...',
+        required: false,
+        rows: 4
       }
     ]
   },
