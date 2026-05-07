@@ -1290,14 +1290,14 @@ window.ToolShalaToolDefinitions = [
     id: 'quiz-mcq-generator',
     title: 'Quiz / MCQ Generator',
     category: 'Student Tool',
-    description: 'Generate clear MCQ, short-answer, or mixed quiz questions from a topic, notes, or lesson content for study and teaching.',
-    metaDescription: 'Free Quiz / MCQ Generator for quiz generator, MCQ generator, and question generator searches. Convert topic notes or lesson content into educational quiz questions with answers and explanations.',
+    description: 'Generate clear MCQ, short-answer, or mixed quiz questions from a topic, notes, lesson content, or uploaded image for study and teaching.',
+    metaDescription: 'Free Quiz / MCQ Generator for quiz generator, MCQ generator, and question generator searches. Convert topic notes, lesson content, or uploaded images into educational quiz questions with answers and explanations.',
     ctaLabel: 'Generate Quiz',
     outputType: 'text',
     enableGenerateMore: true,
-    helperText: 'Hinglish tip: topic aur lesson notes paste karo; AI teacher-friendly questions, answers, aur explanations bana dega.',
+    helperText: 'Hinglish tip: topic/lesson notes paste karo ya image upload karo; AI teacher-friendly questions, answers, aur explanations bana dega.',
     promptInstructions: [
-      'You are a Quiz / MCQ Generator for students, teachers, and educational creators. Generate quiz questions only from the user-provided topic and notes/lesson text.',
+      'You are a Quiz / MCQ Generator for students, teachers, and educational creators. Generate quiz questions only from the user-provided topic, notes/lesson text, or uploaded image content.',
       'Do not invent unsupported facts. If the notes do not contain enough detail, make fewer grounded questions and mention the limitation briefly.',
       'Use a student-friendly Hinglish tone for any guidance, but keep questions, options, correct answers, and explanations clear and subject-accurate.',
       'Generate exactly the requested number of questions when the notes support it.',
@@ -1310,7 +1310,7 @@ window.ToolShalaToolDefinitions = [
       'Questions must be clear and educational. Explanations must be concise and useful for revision.'
     ],
     tips: [
-      'Lesson ke main points paste karoge to MCQs zyada accurate banenge.',
+      'Lesson ke main points paste karo ya clear image upload karo to MCQs zyada accurate banenge.',
       'Teachers quick class quiz ke liye 5-10 questions choose kar sakte hain.',
       'Students answers hide karke active recall practice kar sakte hain.'
     ],
