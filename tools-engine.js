@@ -135,6 +135,24 @@
     allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp'])
   };
 
+  const LECTURE_NOTES_IMAGE_CONFIG = {
+    endpoint: '/api/summarize-notes-image',
+    maxFileSize: 4 * 1024 * 1024,
+    allowedTypes: PHOTO_TO_TEXT_CONFIG.allowedTypes
+  };
+
+  const NOTES_TO_BULLETS_IMAGE_CONFIG = {
+    endpoint: '/api/notes-to-bullets-image',
+    maxFileSize: 4 * 1024 * 1024,
+    allowedTypes: PHOTO_TO_TEXT_CONFIG.allowedTypes
+  };
+
+  const FLASHCARD_IMAGE_CONFIG = {
+    endpoint: '/api/generate-flashcards-image',
+    maxFileSize: 4 * 1024 * 1024,
+    allowedTypes: PHOTO_TO_TEXT_CONFIG.allowedTypes
+  };
+
   const IMAGE_QUIZ_CONFIG = {
     endpoint: '/api/generate-image-quiz',
     maxOriginalFileSize: 4 * 1024 * 1024,
@@ -2882,6 +2900,7 @@ ${senderName}`;
       }
     }
 
+
     if (tool.id === 'quiz-mcq-generator') {
       const notes = String(values.notesText || '').trim();
       const count = Number(values.questionCount || 0);
@@ -4452,6 +4471,739 @@ ${senderName}`;
     return true;
   };
 
+  const setupFlashcardGeneratorTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields }) => {
+    const notesField = formNode.querySelector('[name="notesText"]')?.closest('.field-wrap');
+    const notesInput = formNode.querySelector('[name="notesText"]');
+    if (!notesField || !notesInput) return false;
+
+    const modeWrap = document.createElement('div');
+    modeWrap.className = 'quiz-mode-switch';
+    modeWrap.innerHTML = `
+      <p class="field-label">Choose input mode</p>
+      <div class="quiz-mode-tabs" role="tablist" aria-label="Flashcard input mode">
+        <button type="button" class="quiz-mode-tab is-active" data-flashcard-mode="text" aria-selected="true">Text Input</button>
+        <button type="button" class="quiz-mode-tab" data-flashcard-mode="image" aria-selected="false">Image Upload</button>
+      </div>
+      <p class="field-helper">Text mode keeps the existing notes-based flow. Image mode uses a normal gallery/file picker, reads visible content, and generates short Q&A flashcards with memory hints.</p>
+    `;
+    formNode.insertBefore(modeWrap, formNode.firstChild);
+
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'field-wrap hidden';
+    imageWrap.innerHTML = `
+      <label class="field-label" for="tool-field-flashcardImage">Upload Study Image <span class="field-required">*</span></label>
+      <input class="field-input" id="tool-field-flashcardImage" name="flashcardImage" type="file" accept="image/*">
+      <p class="field-helper">Choose a clear gallery/file image of notes, textbook pages, slides, charts, or diagrams. JPEG, PNG, or WEBP up to 4 MB. The main picker does not force camera.</p>
+      <p id="tool-field-flashcardImage-error" class="field-error hidden" data-field-error="true" aria-live="polite"></p>
+    `;
+    notesField.parentNode.insertBefore(imageWrap, notesField.nextSibling);
+
+    const fileInput = imageWrap.querySelector('[name="flashcardImage"]');
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview hidden';
+    preview.setAttribute('aria-live', 'polite');
+    preview.innerHTML = '<img alt="Selected study image preview" /><p data-photo-file-meta></p><button type="button" class="btn-secondary mt-3" data-clear-flashcard-image>Remove image</button>';
+    imageWrap.appendChild(preview);
+    const previewImage = preview.querySelector('img');
+    const previewMeta = preview.querySelector('[data-photo-file-meta]');
+    const clearImageButton = preview.querySelector('[data-clear-flashcard-image]');
+
+    let activeMode = 'text';
+    let previewUrl = '';
+    let lastValues = null;
+    let variantCount = 0;
+
+    const getSelectedFlashcardImage = () => fileInput?.files?.[0] || null;
+    const validateFlashcardImage = (file) => {
+      if (!file) return 'Please select an image first.';
+      if (!FLASHCARD_IMAGE_CONFIG.allowedTypes.has(file.type)) return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
+      if (file.size > FLASHCARD_IMAGE_CONFIG.maxFileSize) return `Image too large (${formatFileSize(file.size)}). Please upload an image up to ${formatFileSize(FLASHCARD_IMAGE_CONFIG.maxFileSize)}.`;
+      return '';
+    };
+    const clearPreview = () => {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = '';
+      preview.classList.add('hidden');
+      previewImage?.removeAttribute('src');
+      if (previewMeta) previewMeta.textContent = '';
+    };
+    const collectTextValues = () => {
+      const values = {};
+      toolFields.forEach((field) => {
+        const input = formNode.querySelector(`[name="${field.key}"]`);
+        values[field.key] = input ? input.value.trim() : '';
+      });
+      return values;
+    };
+    const validateSharedOptions = (values) => {
+      const fieldErrors = {};
+      const count = Number(values.flashcardCount || 0);
+      if (!String(values.topicTitle || '').trim()) fieldErrors.topicTitle = 'Topic / Chapter Title is required.';
+      if (!Number.isInteger(count) || count < 3 || count > 30) fieldErrors.flashcardCount = 'Please choose between 3 and 30 flashcards.';
+      if (!String(values.difficulty || '').trim()) fieldErrors.difficulty = 'Difficulty is required.';
+      if (!String(values.outputStyle || '').trim()) fieldErrors.outputStyle = 'Output Style is required.';
+      return Object.keys(fieldErrors).length ? { fieldErrors, formError: 'Please correct the highlighted field.' } : null;
+    };
+    const collectImageValues = async (reuseValues = null) => {
+      if (reuseValues?.imageBase64) return reuseValues;
+      const commonValues = collectTextValues();
+      const sharedValidation = validateSharedOptions(commonValues);
+      if (sharedValidation) {
+        Object.entries(sharedValidation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+        throw new Error(sharedValidation.formError || 'Please check the form and try again.');
+      }
+      const file = getSelectedFlashcardImage();
+      const validationMessage = validateFlashcardImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'flashcardImage', validationMessage);
+        throw new Error(validationMessage);
+      }
+      const imageData = await readFileAsDataUrl(file);
+      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
+      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      return {
+        imageBase64,
+        mimeType: file.type,
+        fileName: file.name || 'flashcard-study-image',
+        topicTitle: commonValues.topicTitle,
+        flashcardCount: commonValues.flashcardCount,
+        difficulty: commonValues.difficulty,
+        outputStyle: commonValues.outputStyle
+      };
+    };
+    const setMode = (mode) => {
+      activeMode = mode === 'image' ? 'image' : 'text';
+      modeWrap.querySelectorAll('[data-flashcard-mode]').forEach((button) => {
+        const selected = button.dataset.flashcardMode === activeMode;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+      const textMode = activeMode === 'text';
+      notesField.classList.toggle('hidden', !textMode);
+      imageWrap.classList.toggle('hidden', textMode);
+      notesInput.required = textMode;
+      fileInput.required = !textMode;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      renderOutput({ outputNode, result: null, tool });
+    };
+    const generateImageFlashcards = async (values) => {
+      const response = await fetch(FLASHCARD_IMAGE_CONFIG.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+      const text = String(payload?.text || '').trim();
+      if (!text) throw new Error('AI provider returned empty flashcards. Please try a clearer image.');
+      return { type: 'text', text, copyLabel: 'Copy Flashcards', fileName: 'toolshala-image-flashcards.txt' };
+    };
+    const runGeneration = async ({ regenerate = false } = {}) => {
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      let values;
+      try {
+        if (activeMode === 'image') {
+          values = await collectImageValues(regenerate ? lastValues : null);
+        } else {
+          values = collectTextValues();
+          const validation = validate(tool, values);
+          if (validation) {
+            Object.entries(validation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+            throw new Error(validation.formError || 'Please check the form and try again.');
+          }
+        }
+      } catch (error) {
+        const message = error?.message || 'Please check the form and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check your input.', message);
+        return;
+      }
+
+      submitButton.disabled = true;
+      if (generateMoreButton) generateMoreButton.disabled = true;
+      resetButton.disabled = true;
+      submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
+      submitButton.textContent = activeMode === 'image' ? 'Analyzing...' : 'Generating...';
+      loadingNode.textContent = activeMode === 'image' ? 'Reading image and creating flashcards...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingNode.classList.remove('hidden');
+      outputNode.setAttribute('aria-busy', 'true');
+      renderOutput({ outputNode, result: null, tool });
+      await wait(500);
+      try {
+        const result = activeMode === 'image'
+          ? await generateImageFlashcards(values)
+          : await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+        lastValues = values;
+        renderOutput({ outputNode, result, tool });
+        showToast('success', activeMode === 'image' ? 'Image flashcards are ready.' : 'Your result is ready.');
+      } catch (error) {
+        const message = error?.message || 'AI service failed. Please check your inputs and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Unable to generate right now.', message);
+      } finally {
+        outputNode.setAttribute('aria-busy', 'false');
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        if (generateMoreButton) generateMoreButton.disabled = false;
+        resetButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
+      }
+    };
+
+    modeWrap.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-flashcard-mode]');
+      if (!button) return;
+      lastValues = null;
+      variantCount = 0;
+      setMode(button.dataset.flashcardMode);
+    });
+    fileInput.addEventListener('change', () => {
+      clearFieldError(fileInput);
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      clearPreview();
+      const file = getSelectedFlashcardImage();
+      if (!file) return;
+      const validationMessage = validateFlashcardImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'flashcardImage', validationMessage);
+        errorNode.textContent = validationMessage;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check the image.', validationMessage);
+        fileInput.value = '';
+        return;
+      }
+      previewUrl = URL.createObjectURL(file);
+      previewImage.src = previewUrl;
+      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+      preview.classList.remove('hidden');
+      lastValues = null;
+    });
+    clearImageButton.addEventListener('click', () => {
+      fileInput.value = '';
+      clearPreview();
+      clearFieldError(fileInput);
+      lastValues = null;
+    });
+    formNode.addEventListener('input', (event) => clearFieldError(event.target));
+    formNode.addEventListener('submit', (event) => {
+      event.preventDefault();
+      variantCount = 0;
+      runGeneration();
+    });
+    if (generateMoreButton) {
+      generateMoreButton.addEventListener('click', () => {
+        if (!lastValues) {
+          showToast('error', 'Please generate flashcards first.');
+          return;
+        }
+        variantCount += 1;
+        runGeneration({ regenerate: true });
+      });
+    }
+    resetButton.addEventListener('click', () => {
+      formNode.reset();
+      clearPreview();
+      lastValues = null;
+      variantCount = 0;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      outputNode.setAttribute('aria-busy', 'false');
+      loadingNode.classList.add('hidden');
+      setMode('text');
+      renderOutput({ outputNode, result: null, tool });
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
+    });
+    window.addEventListener('beforeunload', clearPreview);
+    return true;
+  };
+
+  const setupNotesToBulletsConverterTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields }) => {
+    const notesField = formNode.querySelector('[name="notes"]')?.closest('.field-wrap');
+    const notesInput = formNode.querySelector('[name="notes"]');
+    if (!notesField || !notesInput) return false;
+
+    const modeWrap = document.createElement('div');
+    modeWrap.className = 'quiz-mode-switch';
+    modeWrap.innerHTML = `
+      <p class="field-label">Choose input mode</p>
+      <div class="quiz-mode-tabs" role="tablist" aria-label="Notes to bullets input mode">
+        <button type="button" class="quiz-mode-tab is-active" data-bullets-mode="text" aria-selected="true">Text Input</button>
+        <button type="button" class="quiz-mode-tab" data-bullets-mode="image" aria-selected="false">Image Upload</button>
+      </div>
+      <p class="field-helper">Text mode keeps the existing notes-to-bullets flow. Image mode uses a normal gallery/file picker, reads visible notes, and converts only that content into concise bullet points.</p>
+    `;
+    formNode.insertBefore(modeWrap, formNode.firstChild);
+
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'field-wrap hidden';
+    imageWrap.innerHTML = `
+      <label class="field-label" for="tool-field-bulletsImage">Upload Notes Image <span class="field-required">*</span></label>
+      <input class="field-input" id="tool-field-bulletsImage" name="bulletsImage" type="file" accept="image/*">
+      <p class="field-helper">Choose a clear gallery/file image of notes, slides, textbook text, or document content. JPEG, PNG, or WEBP up to 4 MB. The main picker does not force camera.</p>
+      <p id="tool-field-bulletsImage-error" class="field-error hidden" data-field-error="true" aria-live="polite"></p>
+    `;
+    notesField.parentNode.insertBefore(imageWrap, notesField.nextSibling);
+
+    const fileInput = imageWrap.querySelector('[name="bulletsImage"]');
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview hidden';
+    preview.setAttribute('aria-live', 'polite');
+    preview.innerHTML = '<img alt="Selected notes image preview" /><p data-photo-file-meta></p><button type="button" class="btn-secondary mt-3" data-clear-bullets-image>Remove image</button>';
+    imageWrap.appendChild(preview);
+    const previewImage = preview.querySelector('img');
+    const previewMeta = preview.querySelector('[data-photo-file-meta]');
+    const clearImageButton = preview.querySelector('[data-clear-bullets-image]');
+
+    let activeMode = 'text';
+    let previewUrl = '';
+    let lastValues = null;
+    let variantCount = 0;
+
+    const getSelectedBulletsImage = () => fileInput?.files?.[0] || null;
+    const validateBulletsImage = (file) => {
+      if (!file) return 'Please select an image first.';
+      if (!NOTES_TO_BULLETS_IMAGE_CONFIG.allowedTypes.has(file.type)) return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
+      if (file.size > NOTES_TO_BULLETS_IMAGE_CONFIG.maxFileSize) return `Image too large (${formatFileSize(file.size)}). Please upload an image up to ${formatFileSize(NOTES_TO_BULLETS_IMAGE_CONFIG.maxFileSize)}.`;
+      return '';
+    };
+    const clearPreview = () => {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = '';
+      preview.classList.add('hidden');
+      previewImage?.removeAttribute('src');
+      if (previewMeta) previewMeta.textContent = '';
+    };
+    const collectTextValues = () => {
+      const values = {};
+      toolFields.forEach((field) => {
+        const input = formNode.querySelector(`[name="${field.key}"]`);
+        values[field.key] = input ? input.value.trim() : '';
+      });
+      return values;
+    };
+    const collectImageValues = async (reuseValues = null) => {
+      if (reuseValues?.imageBase64) return reuseValues;
+      const file = getSelectedBulletsImage();
+      const validationMessage = validateBulletsImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'bulletsImage', validationMessage);
+        throw new Error(validationMessage);
+      }
+      const imageData = await readFileAsDataUrl(file);
+      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
+      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      const commonValues = collectTextValues();
+      return {
+        imageBase64,
+        mimeType: file.type,
+        fileName: file.name || 'notes-to-bullets-image',
+        topic: commonValues.topic,
+        educationLevel: commonValues.educationLevel,
+        summaryStyle: commonValues.summaryStyle,
+        focus: commonValues.focus
+      };
+    };
+    const setMode = (mode) => {
+      activeMode = mode === 'image' ? 'image' : 'text';
+      modeWrap.querySelectorAll('[data-bullets-mode]').forEach((button) => {
+        const selected = button.dataset.bulletsMode === activeMode;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+      const textMode = activeMode === 'text';
+      notesField.classList.toggle('hidden', !textMode);
+      imageWrap.classList.toggle('hidden', textMode);
+      notesInput.required = textMode;
+      fileInput.required = !textMode;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      renderOutput({ outputNode, result: null, tool });
+    };
+    const generateImageBullets = async (values) => {
+      const response = await fetch(NOTES_TO_BULLETS_IMAGE_CONFIG.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+      const text = String(payload?.text || '').trim();
+      if (!text) throw new Error('AI provider returned empty bullet points. Please try a clearer image.');
+      return { type: 'text', text, copyLabel: 'Copy Bullet Points', fileName: 'toolshala-notes-bullet-points.txt' };
+    };
+    const runGeneration = async ({ regenerate = false } = {}) => {
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      let values;
+      try {
+        if (activeMode === 'image') {
+          values = await collectImageValues(regenerate ? lastValues : null);
+        } else {
+          values = collectTextValues();
+          const validation = validate(tool, values);
+          if (validation) {
+            Object.entries(validation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+            throw new Error(validation.formError || 'Please check the form and try again.');
+          }
+        }
+      } catch (error) {
+        const message = error?.message || 'Please check the form and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check your input.', message);
+        return;
+      }
+
+      submitButton.disabled = true;
+      if (generateMoreButton) generateMoreButton.disabled = true;
+      resetButton.disabled = true;
+      submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
+      submitButton.textContent = activeMode === 'image' ? 'Analyzing...' : 'Generating...';
+      loadingNode.textContent = activeMode === 'image' ? 'Reading image and creating bullet points...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingNode.classList.remove('hidden');
+      outputNode.setAttribute('aria-busy', 'true');
+      renderOutput({ outputNode, result: null, tool });
+      await wait(500);
+      try {
+        const result = activeMode === 'image'
+          ? await generateImageBullets(values)
+          : await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+        lastValues = values;
+        renderOutput({ outputNode, result, tool });
+        showToast('success', activeMode === 'image' ? 'Image bullet points are ready.' : 'Your result is ready.');
+      } catch (error) {
+        const message = error?.message || 'AI service failed. Please check your inputs and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Unable to generate right now.', message);
+      } finally {
+        outputNode.setAttribute('aria-busy', 'false');
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        if (generateMoreButton) generateMoreButton.disabled = false;
+        resetButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
+      }
+    };
+
+    modeWrap.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-bullets-mode]');
+      if (!button) return;
+      lastValues = null;
+      variantCount = 0;
+      setMode(button.dataset.bulletsMode);
+    });
+    fileInput.addEventListener('change', () => {
+      clearFieldError(fileInput);
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      clearPreview();
+      const file = getSelectedBulletsImage();
+      if (!file) return;
+      const validationMessage = validateBulletsImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'bulletsImage', validationMessage);
+        errorNode.textContent = validationMessage;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check the image.', validationMessage);
+        fileInput.value = '';
+        return;
+      }
+      previewUrl = URL.createObjectURL(file);
+      previewImage.src = previewUrl;
+      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+      preview.classList.remove('hidden');
+      lastValues = null;
+    });
+    clearImageButton.addEventListener('click', () => {
+      fileInput.value = '';
+      clearPreview();
+      clearFieldError(fileInput);
+      lastValues = null;
+    });
+    formNode.addEventListener('input', (event) => clearFieldError(event.target));
+    formNode.addEventListener('submit', (event) => {
+      event.preventDefault();
+      variantCount = 0;
+      runGeneration();
+    });
+    if (generateMoreButton) {
+      generateMoreButton.addEventListener('click', () => {
+        if (!lastValues) {
+          showToast('error', 'Please generate bullet points first.');
+          return;
+        }
+        variantCount += 1;
+        runGeneration({ regenerate: true });
+      });
+    }
+    resetButton.addEventListener('click', () => {
+      formNode.reset();
+      clearPreview();
+      lastValues = null;
+      variantCount = 0;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      outputNode.setAttribute('aria-busy', 'false');
+      loadingNode.classList.add('hidden');
+      setMode('text');
+      renderOutput({ outputNode, result: null, tool });
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
+    });
+    window.addEventListener('beforeunload', clearPreview);
+    return true;
+  };
+
+  const setupLectureNotesSummarizerTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields }) => {
+    const notesField = formNode.querySelector('[name="notes"]')?.closest('.field-wrap');
+    const notesInput = formNode.querySelector('[name="notes"]');
+    if (!notesField || !notesInput) return false;
+
+    const modeWrap = document.createElement('div');
+    modeWrap.className = 'quiz-mode-switch';
+    modeWrap.innerHTML = `
+      <p class="field-label">Choose input mode</p>
+      <div class="quiz-mode-tabs" role="tablist" aria-label="Lecture notes input mode">
+        <button type="button" class="quiz-mode-tab is-active" data-lecture-mode="text" aria-selected="true">Text Input</button>
+        <button type="button" class="quiz-mode-tab" data-lecture-mode="image" aria-selected="false">Image Upload</button>
+      </div>
+      <p class="field-helper">Text mode keeps the existing paste-notes flow. Image mode uses a normal gallery/file picker, reads visible notes, and summarizes only that image content.</p>
+    `;
+    formNode.insertBefore(modeWrap, formNode.firstChild);
+
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'field-wrap hidden';
+    imageWrap.innerHTML = `
+      <label class="field-label" for="tool-field-lectureImage">Upload Notes Image <span class="field-required">*</span></label>
+      <input class="field-input" id="tool-field-lectureImage" name="lectureImage" type="file" accept="image/*">
+      <p class="field-helper">Choose a clear gallery/file image of class notes, textbook text, slides, or whiteboard notes. JPEG, PNG, or WEBP up to 4 MB. The main picker does not force camera.</p>
+      <p id="tool-field-lectureImage-error" class="field-error hidden" data-field-error="true" aria-live="polite"></p>
+    `;
+    notesField.parentNode.insertBefore(imageWrap, notesField.nextSibling);
+
+    const fileInput = imageWrap.querySelector('[name="lectureImage"]');
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview hidden';
+    preview.setAttribute('aria-live', 'polite');
+    preview.innerHTML = '<img alt="Selected lecture notes image preview" /><p data-photo-file-meta></p><button type="button" class="btn-secondary mt-3" data-clear-lecture-image>Remove image</button>';
+    imageWrap.appendChild(preview);
+    const previewImage = preview.querySelector('img');
+    const previewMeta = preview.querySelector('[data-photo-file-meta]');
+    const clearImageButton = preview.querySelector('[data-clear-lecture-image]');
+
+    let activeMode = 'text';
+    let previewUrl = '';
+    let lastValues = null;
+    let variantCount = 0;
+
+    const getSelectedLectureImage = () => fileInput?.files?.[0] || null;
+    const validateLectureImage = (file) => {
+      if (!file) return 'Please select an image first.';
+      if (!LECTURE_NOTES_IMAGE_CONFIG.allowedTypes.has(file.type)) return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
+      if (file.size > LECTURE_NOTES_IMAGE_CONFIG.maxFileSize) return `Image too large (${formatFileSize(file.size)}). Please upload an image up to ${formatFileSize(LECTURE_NOTES_IMAGE_CONFIG.maxFileSize)}.`;
+      return '';
+    };
+    const clearPreview = () => {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = '';
+      preview.classList.add('hidden');
+      previewImage?.removeAttribute('src');
+      if (previewMeta) previewMeta.textContent = '';
+    };
+    const collectTextValues = () => {
+      const values = {};
+      toolFields.forEach((field) => {
+        const input = formNode.querySelector(`[name="${field.key}"]`);
+        values[field.key] = input ? input.value.trim() : '';
+      });
+      return values;
+    };
+    const collectImageValues = async (reuseValues = null) => {
+      if (reuseValues?.imageBase64) return reuseValues;
+      const file = getSelectedLectureImage();
+      const validationMessage = validateLectureImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'lectureImage', validationMessage);
+        throw new Error(validationMessage);
+      }
+      const imageData = await readFileAsDataUrl(file);
+      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
+      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      const commonValues = collectTextValues();
+      return {
+        imageBase64,
+        mimeType: file.type,
+        fileName: file.name || 'lecture-notes-image',
+        subject: commonValues.subject,
+        summaryLength: commonValues.summaryLength,
+        summaryStyle: commonValues.summaryStyle
+      };
+    };
+    const setMode = (mode) => {
+      activeMode = mode === 'image' ? 'image' : 'text';
+      modeWrap.querySelectorAll('[data-lecture-mode]').forEach((button) => {
+        const selected = button.dataset.lectureMode === activeMode;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+      const textMode = activeMode === 'text';
+      notesField.classList.toggle('hidden', !textMode);
+      imageWrap.classList.toggle('hidden', textMode);
+      notesInput.required = textMode;
+      fileInput.required = !textMode;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      renderOutput({ outputNode, result: null, tool });
+    };
+    const generateImageSummary = async (values) => {
+      const response = await fetch(LECTURE_NOTES_IMAGE_CONFIG.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+      const text = String(payload?.text || '').trim();
+      if (!text) throw new Error('AI provider returned an empty summary. Please try a clearer image.');
+      return { type: 'text', text, copyLabel: 'Copy Summary', fileName: 'toolshala-lecture-notes-summary.txt' };
+    };
+    const runGeneration = async ({ regenerate = false } = {}) => {
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      let values;
+      try {
+        if (activeMode === 'image') {
+          values = await collectImageValues(regenerate ? lastValues : null);
+        } else {
+          values = collectTextValues();
+          const validation = validate(tool, values);
+          if (validation) {
+            Object.entries(validation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+            throw new Error(validation.formError || 'Please check the form and try again.');
+          }
+        }
+      } catch (error) {
+        const message = error?.message || 'Please check the form and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check your input.', message);
+        return;
+      }
+
+      submitButton.disabled = true;
+      if (generateMoreButton) generateMoreButton.disabled = true;
+      resetButton.disabled = true;
+      submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
+      submitButton.textContent = activeMode === 'image' ? 'Analyzing...' : 'Generating...';
+      loadingNode.textContent = activeMode === 'image' ? 'Reading image and preparing lecture notes...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingNode.classList.remove('hidden');
+      outputNode.setAttribute('aria-busy', 'true');
+      renderOutput({ outputNode, result: null, tool });
+      await wait(500);
+      try {
+        const result = activeMode === 'image'
+          ? await generateImageSummary(values)
+          : await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+        lastValues = values;
+        renderOutput({ outputNode, result, tool });
+        showToast('success', activeMode === 'image' ? 'Image summary is ready.' : 'Your result is ready.');
+      } catch (error) {
+        const message = error?.message || 'AI service failed. Please check your inputs and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Unable to generate right now.', message);
+      } finally {
+        outputNode.setAttribute('aria-busy', 'false');
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        if (generateMoreButton) generateMoreButton.disabled = false;
+        resetButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
+      }
+    };
+
+    modeWrap.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-lecture-mode]');
+      if (!button) return;
+      lastValues = null;
+      variantCount = 0;
+      setMode(button.dataset.lectureMode);
+    });
+    fileInput.addEventListener('change', () => {
+      clearFieldError(fileInput);
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      clearPreview();
+      const file = getSelectedLectureImage();
+      if (!file) return;
+      const validationMessage = validateLectureImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'lectureImage', validationMessage);
+        errorNode.textContent = validationMessage;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Please check the image.', validationMessage);
+        fileInput.value = '';
+        return;
+      }
+      previewUrl = URL.createObjectURL(file);
+      previewImage.src = previewUrl;
+      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+      preview.classList.remove('hidden');
+      lastValues = null;
+    });
+    clearImageButton.addEventListener('click', () => {
+      fileInput.value = '';
+      clearPreview();
+      clearFieldError(fileInput);
+      lastValues = null;
+    });
+    formNode.addEventListener('input', (event) => clearFieldError(event.target));
+    formNode.addEventListener('submit', (event) => {
+      event.preventDefault();
+      variantCount = 0;
+      runGeneration();
+    });
+    if (generateMoreButton) {
+      generateMoreButton.addEventListener('click', () => {
+        if (!lastValues) {
+          showToast('error', 'Please generate a summary first.');
+          return;
+        }
+        variantCount += 1;
+        runGeneration({ regenerate: true });
+      });
+    }
+    resetButton.addEventListener('click', () => {
+      formNode.reset();
+      clearPreview();
+      lastValues = null;
+      variantCount = 0;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [...toolFields.map((field) => formNode.querySelector(`[name="${field.key}"]`)), fileInput].forEach(clearFieldError);
+      outputNode.setAttribute('aria-busy', 'false');
+      loadingNode.classList.add('hidden');
+      setMode('text');
+      renderOutput({ outputNode, result: null, tool });
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
+    });
+    window.addEventListener('beforeunload', clearPreview);
+    return true;
+  };
+
   const setupPhotoToTextTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, tool }) => {
     const fileInput = formNode.querySelector('input[type="file"][name="image"]');
     if (!fileInput) {
@@ -4756,6 +5508,24 @@ ${senderName}`;
     toolFields.forEach((field) => {
       formNode.appendChild(renderField(field));
     });
+
+    if (tool.id === 'flashcard-generator') {
+      renderOutput({ outputNode, result: null, tool });
+      setupFlashcardGeneratorTool({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields });
+      return;
+    }
+
+    if (tool.id === 'notes-to-bullet-points-converter') {
+      renderOutput({ outputNode, result: null, tool });
+      setupNotesToBulletsConverterTool({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields });
+      return;
+    }
+
+    if (tool.id === 'lecture-notes-summarizer') {
+      renderOutput({ outputNode, result: null, tool });
+      setupLectureNotesSummarizerTool({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields });
+      return;
+    }
 
     if (tool.id === 'quiz-mcq-generator') {
       renderOutput({ outputNode, result: null, tool });

@@ -17,3 +17,18 @@
   to = "/.netlify/functions/generate-image-quiz"
   status = 200
   force = true
+[[redirects]]
+  from = "/api/summarize-notes-image"
+  to = "/.netlify/functions/summarize-notes-image"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/api/notes-to-bullets-image"
+  to = "/.netlify/functions/notes-to-bullets-image"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/api/generate-flashcards-image"
+  to = "/.netlify/functions/generate-flashcards-image"
+  status = 200
+  force = true

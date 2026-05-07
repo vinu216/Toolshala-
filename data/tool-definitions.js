@@ -777,13 +777,14 @@ window.ToolShalaToolDefinitions = [
     id: 'notes-to-bullet-points-converter',
     title: 'Notes to Bullet Points Converter',
     category: 'Student Tool',
-    description: 'Convert long notes into short, useful bullet points for revision and quick studying.',
+    description: 'Convert pasted notes or uploaded notes images into short, useful bullet points for revision and quick studying.',
     ctaLabel: 'Convert Notes',
     outputType: 'cards',
     enableGenerateMore: true,
-    helperText: 'Use this as a revision helper and review once before exams.',
+    helperText: 'Paste notes or upload a clear notes image; use the bullets as a revision helper and review once before exams.',
     tips: [
       'Keep points short',
+      'Upload a clear notes image if your notes are in a photo, slide, or document screenshot',
       'Highlight formulas',
       'Revise repeatedly'
     ],
@@ -1145,12 +1146,12 @@ window.ToolShalaToolDefinitions = [
     id: 'lecture-notes-summarizer',
     title: 'Lecture Notes Summarizer',
     category: 'Student Tool',
-    description: 'Convert long lecture notes, class notes, or textbook text into a clear summary, key points, definitions, revision bullets, and memory tips.',
-    metaDescription: 'Free Lecture Notes Summarizer for lecture notes summarizer, notes to summary, and study notes generator searches. Summarize class notes into revision-friendly study points.',
+    description: 'Convert pasted notes or uploaded notes images into a clear summary, key points, definitions, revision bullets, and memory tips.',
+    metaDescription: 'Free Lecture Notes Summarizer for pasted notes and image-based notes. Summarize class notes, slides, textbook photos, or whiteboard images into revision-friendly study points.',
     ctaLabel: 'Summarize Lecture Notes',
     outputType: 'text',
     enableGenerateMore: true,
-    helperText: 'Hinglish tip: apne raw lecture notes paste karo; AI concise summary, definitions, aur revision bullets bana dega.',
+    helperText: 'Hinglish tip: raw lecture notes paste karo ya notes image upload karo; AI concise summary, definitions, aur revision bullets bana dega.',
     promptInstructions: [
       'You are a Lecture Notes Summarizer for students. Convert only the user-provided notes into an accurate, easy-to-revise study summary.',
       'Do not invent facts, examples, formulas, dates, definitions, or textbook details that are not supported by the notes. If something is unclear, mention it as unclear instead of guessing.',
@@ -1165,7 +1166,7 @@ window.ToolShalaToolDefinitions = [
       'Optional Memory Tips should include mnemonics, chunking, or recall tips only when they fit the notes.'
     ],
     tips: [
-      'Long lecture notes paste karne se summary zyada accurate hoti hai.',
+      'Long lecture notes paste karne ya clear notes image upload karne se summary zyada accurate hoti hai.',
       'Exam revision style choose karo agar quick test/semester prep karna hai.',
       'Generated summary ko apne class slides ya textbook ke saath once verify kar lo.'
     ],
@@ -1214,12 +1215,12 @@ window.ToolShalaToolDefinitions = [
     id: 'flashcard-generator',
     title: 'Flashcard Generator',
     category: 'Student Tool',
-    description: 'Generate quick Q&A study flashcards from a topic, lecture notes, or chapter text for daily revision.',
-    metaDescription: 'Free Flashcard Generator for study flashcards and notes to flashcards. Turn topic notes or chapter content into concise Q&A cards with memory hints.',
+    description: 'Generate quick Q&A study flashcards from pasted notes, chapter text, or uploaded study images for daily revision.',
+    metaDescription: 'Free Flashcard Generator for study flashcards, notes to flashcards, and image-based flashcards. Turn notes, chapter text, slides, or textbook images into concise Q&A cards with memory hints.',
     ctaLabel: 'Generate Flashcards',
     outputType: 'text',
     enableGenerateMore: true,
-    helperText: 'Hinglish tip: topic aur notes paste karo; AI short Q&A flashcards with memory hints bana dega.',
+    helperText: 'Hinglish tip: topic ke saath notes paste karo ya study image upload karo; AI short Q&A flashcards with memory hints bana dega.',
     promptInstructions: [
       'You are a Flashcard Generator for students. Create revision-friendly Q&A flashcards only from the user-provided topic and notes/chapter text.',
       'Do not invent unsupported facts. If the notes are unclear, keep the flashcard general and grounded in the visible content.',
@@ -1233,7 +1234,7 @@ window.ToolShalaToolDefinitions = [
       'Memory Hint can be one short mnemonic, keyword cue, formula cue, or recall trick. If no hint fits, write a brief recall cue.'
     ],
     tips: [
-      'Best results ke liye chapter notes ya class notes ka important part paste karo.',
+      'Best results ke liye chapter notes paste karo ya clear notes/slide/textbook image upload karo.',
       'Exam revision style choose karo jab quick test preparation karni ho.',
       'Generated flashcards ko daily 5-10 minute active recall ke liye use karo.'
     ],
