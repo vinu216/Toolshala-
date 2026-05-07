@@ -171,6 +171,21 @@ window.ToolShalaContent = {
         url: './tool.html?tool=study-timetable-generator'
       },
       {
+        id: 'tool-daily-priority-planner',
+        slug: 'daily-priority-planner',
+        title: 'Daily Priority Planner',
+        category: 'ai',
+        categoryLabel: 'Productivity Tool',
+        description: 'Turn today’s tasks into a smart to-do planner with priority order, time blocks, focus tasks, low-priority items, and an action checklist.',
+        metaDescription: 'Free Daily Priority Planner for daily priority planner, to-do planner, and task planner searches. Prioritize today’s tasks with AI time blocks and focus checklist.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['daily-priority-planner', 'to-do-planner', 'task-planner', 'productivity', 'planner'],
+        ctaLabel: 'Plan My Day',
+        url: './tool.html?tool=daily-priority-planner'
+      },
+
+      {
         id: 'tool-student-study-planner-generator',
         slug: 'student-study-planner-generator',
         title: 'Student Study Planner Generator',
@@ -183,6 +198,21 @@ window.ToolShalaContent = {
         tags: ['study-planner', 'student-timetable-generator', 'exam-study-plan', 'revision', 'planner'],
         ctaLabel: 'Generate Planner',
         url: './tool.html?tool=student-study-planner-generator'
+      },
+
+      {
+        id: 'tool-exam-revision-timetable-generator',
+        slug: 'exam-revision-timetable-generator',
+        title: 'Exam Revision Timetable Generator',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Generate a realistic day-wise exam revision timetable with subject split, weak-topic blocks, quick tips, and mock test slots.',
+        metaDescription: 'Free Exam Revision Timetable Generator for exam revision timetable, revision planner, and study timetable searches. Create a practical day-wise exam revision schedule.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['exam-revision-timetable', 'revision-planner', 'study-timetable', 'exam-prep', 'revision'],
+        ctaLabel: 'Generate Timetable',
+        url: './tool.html?tool=exam-revision-timetable-generator'
       },
 
       {
@@ -213,6 +243,36 @@ window.ToolShalaContent = {
         tags: ['freelance-proposal-generator', 'proposal-writer', 'client-pitch', 'freelance', 'career'],
         ctaLabel: 'Generate Proposal',
         url: './tool.html?tool=freelance-proposal-generator'
+      },
+
+      {
+        id: 'tool-client-onboarding-checklist-generator',
+        slug: 'client-onboarding-checklist-generator',
+        title: 'Client Onboarding Checklist Generator',
+        category: 'career',
+        categoryLabel: 'Freelance Tool',
+        description: 'Create a client onboarding checklist with pre-kickoff steps, documents to collect, welcome message, week 1 plan, and follow-ups.',
+        metaDescription: 'Free Client Onboarding Checklist Generator for client onboarding checklist, freelancer onboarding, and client welcome checklist searches. Build smooth client onboarding steps.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['client-onboarding-checklist', 'freelancer-onboarding', 'client-welcome-checklist', 'freelance', 'checklist'],
+        ctaLabel: 'Generate Checklist',
+        url: './tool.html?tool=client-onboarding-checklist-generator'
+      },
+
+      {
+        id: 'tool-freelancer-invoice-generator',
+        slug: 'freelancer-invoice-generator',
+        title: 'Freelancer Invoice Generator',
+        category: 'career',
+        categoryLabel: 'Freelance Tool',
+        description: 'Generate client-ready freelance invoice text with service breakdown, amount due, due date, and a polite payment note.',
+        metaDescription: 'Free Freelancer Invoice Generator for freelancer invoice generator, invoice maker, and billing text generator searches. Create professional invoice text for clients.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['freelancer-invoice-generator', 'invoice-maker', 'billing-text-generator', 'freelance', 'invoice'],
+        ctaLabel: 'Generate Invoice',
+        url: './tool.html?tool=freelancer-invoice-generator'
       },
 
       {
@@ -300,6 +360,21 @@ window.ToolShalaContent = {
         url: './tool.html?tool=professional-email-generator'
       },
       {
+        id: 'tool-newsletter-subject-line-generator',
+        slug: 'newsletter-subject-line-generator',
+        title: 'Newsletter Subject Line Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate short, attractive, non-spammy newsletter subject lines with preview text and best-performing style notes.',
+        metaDescription: 'Free Newsletter Subject Line Generator for newsletter subject line generator, email subject generator, and open rates searches. Create audience-specific newsletter subjects.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['newsletter-subject-line-generator', 'email-subject-generator', 'open-rates', 'newsletter', 'creator'],
+        ctaLabel: 'Generate Subjects',
+        url: './tool.html?tool=newsletter-subject-line-generator'
+      },
+
+      {
         id: 'tool-email-subject-line-generator',
         slug: 'email-subject-line-generator',
         title: 'Email Subject Line Generator',
@@ -353,6 +428,21 @@ window.ToolShalaContent = {
         tags: ['reel-hook-generator', 'shorts-hook-generator', 'viral-hook-ideas', 'reels', 'shorts'],
         ctaLabel: 'Generate Hooks',
         url: './tool.html?tool=reel-shorts-hook-generator'
+      },
+
+      {
+        id: 'tool-content-repurposing-generator-creators',
+        slug: 'content-repurposing-generator-creators',
+        title: 'Content Repurposing Generator for Creators',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Repurpose one content piece into Instagram caption, LinkedIn post, YouTube Shorts idea, X thread hook, and newsletter angle.',
+        metaDescription: 'Free Content Repurposing Generator for content repurposing generator, content repurpose tool, and creator workflow searches. Convert one content idea into multiple formats.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['content-repurposing-generator', 'content-repurpose-tool', 'creator-workflow', 'repurpose-content', 'social-media'],
+        ctaLabel: 'Repurpose Content',
+        url: './tool.html?tool=content-repurposing-generator-creators'
       },
 
       {
@@ -519,6 +609,21 @@ window.ToolShalaContent = {
         url: './tool.html?tool=assignment-rewriter'
       },
       {
+        id: 'tool-youtube-video-title-generator',
+        slug: 'youtube-video-title-generator',
+        title: 'YouTube Video Title Generator',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Generate searchable, engaging, and non-clickbait YouTube title ideas with SEO-friendly, clicky, and short title picks.',
+        metaDescription: 'Free YouTube Video Title Generator for YouTube title generator, video title ideas, and SEO video titles searches. Create click-worthy searchable YouTube titles.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['youtube-title-generator', 'video-title-ideas', 'seo-video-titles', 'youtube', 'creator'],
+        ctaLabel: 'Generate Titles',
+        url: './tool.html?tool=youtube-video-title-generator'
+      },
+
+      {
         id: 'tool-youtube-shorts-script-generator',
         slug: 'youtube-shorts-script-generator',
         title: 'YouTube / Shorts Script Generator',
@@ -544,6 +649,21 @@ window.ToolShalaContent = {
         tags: ['notes', 'bullet-points', 'revision', 'exam-prep'],
         ctaLabel: 'Convert Notes',
         url: './tool.html?tool=notes-to-bullet-points-converter'
+      },
+
+      {
+        id: 'tool-concept-simplifier-topic-explainer',
+        slug: 'concept-simplifier-topic-explainer',
+        title: 'Concept Simplifier / Topic Explainer',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Understand difficult concepts in simple Hinglish with a clear explanation, real-life example, key terms, revision points, and one-line summary.',
+        metaDescription: 'Free Concept Simplifier / Topic Explainer for concept simplifier, topic explainer, and study explainer searches. Explain difficult study topics in simple Hinglish.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['concept-simplifier', 'topic-explainer', 'study-explainer', 'student-tool', 'study'],
+        ctaLabel: 'Explain Topic',
+        url: './tool.html?tool=concept-simplifier-topic-explainer'
       },
 
       {
@@ -603,6 +723,36 @@ window.ToolShalaContent = {
         tags: ['lesson-plan-generator', 'teacher-lesson-plan', 'class-plan-generator', 'teacher-tool', 'study'],
         ctaLabel: 'Generate Lesson Plan',
         url: './tool.html?tool=lesson-plan-generator-for-teachers'
+      },
+
+      {
+        id: 'tool-classroom-activity-planner-teachers',
+        slug: 'classroom-activity-planner-teachers',
+        title: 'Classroom Activity Planner for Teachers',
+        category: 'study',
+        categoryLabel: 'Teacher Tool',
+        description: 'Create classroom-ready warm-up, main, group, and recap activities with simple materials for any topic and grade.',
+        metaDescription: 'Free Classroom Activity Planner for Teachers for classroom activity planner, teacher activity generator, and class activity ideas searches. Generate practical topic-based classroom activities.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['classroom-activity-planner', 'teacher-activity-generator', 'class-activity-ideas', 'teacher-tool', 'study'],
+        ctaLabel: 'Plan Activities',
+        url: './tool.html?tool=classroom-activity-planner-teachers'
+      },
+
+      {
+        id: 'tool-parent-teacher-meeting-note-generator',
+        slug: 'parent-teacher-meeting-note-generator',
+        title: 'Parent-Teacher Meeting Note Generator',
+        category: 'study',
+        categoryLabel: 'Teacher Tool',
+        description: 'Create professional PTM meeting summaries, discussion points, action items, and follow-up notes from teacher observations.',
+        metaDescription: 'Free Parent-Teacher Meeting Note Generator for parent teacher meeting notes, meeting summary generator, and teacher report notes searches. Generate clear PTM notes and action points.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['parent-teacher-meeting-notes', 'meeting-summary-generator', 'teacher-report-notes', 'ptm-notes', 'teacher-tool'],
+        ctaLabel: 'Generate PTM Notes',
+        url: './tool.html?tool=parent-teacher-meeting-note-generator'
       },
 
       {

@@ -2893,6 +2893,74 @@ ${senderName}`;
       }
     }
 
+    if (tool.id === 'parent-teacher-meeting-note-generator') {
+      const studentName = String(values.studentName || '').trim();
+      const classSection = String(values.classSection || '').trim();
+      const meetingPurpose = String(values.meetingPurpose || '').trim();
+      const performanceNotes = String(values.performanceNotes || '').trim();
+      const behaviorNotes = String(values.behaviorNotes || '').trim();
+      const improvementAreas = String(values.improvementAreas || '').trim();
+      const fieldErrors = {};
+
+      if (studentName.length < 2) {
+        fieldErrors.studentName = 'Please enter a clear student name.';
+      }
+      if (classSection.length < 2) {
+        fieldErrors.classSection = 'Please enter a clear class or section.';
+      }
+      if (meetingPurpose.length < 12) {
+        fieldErrors.meetingPurpose = 'Please add a clearer meeting purpose.';
+      }
+      if (performanceNotes.length < 20) {
+        fieldErrors.performanceNotes = 'Please add at least one clear performance observation.';
+      }
+      if (behaviorNotes.length < 12) {
+        fieldErrors.behaviorNotes = 'Please add a brief behavior or participation observation.';
+      }
+      if (improvementAreas.length < 12) {
+        fieldErrors.improvementAreas = 'Please add at least one improvement area.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'classroom-activity-planner-teachers') {
+      const subject = String(values.subject || '').trim();
+      const classGrade = String(values.classGrade || '').trim();
+      const topic = String(values.topic || '').trim();
+      const duration = Number(values.classDuration || 0);
+      const activityCount = Number(values.activityCount || 0);
+      const fieldErrors = {};
+
+      if (subject.length < 2) {
+        fieldErrors.subject = 'Please enter a valid subject.';
+      }
+      if (classGrade.length < 2) {
+        fieldErrors.classGrade = 'Please enter a clear class or grade.';
+      }
+      if (topic.length < 3) {
+        fieldErrors.topic = 'Please enter a clearer topic.';
+      }
+      if (!Number.isInteger(duration) || duration < 10 || duration > 180) {
+        fieldErrors.classDuration = 'Please use a class duration between 10 and 180 minutes.';
+      }
+      if (!Number.isInteger(activityCount) || activityCount < 3 || activityCount > 8) {
+        fieldErrors.activityCount = 'Please choose between 3 and 8 activities.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
     if (tool.id === 'lesson-plan-generator-for-teachers') {
       const duration = Number(values.classDuration || 0);
       const objective = String(values.learningObjective || '').trim();
@@ -2927,6 +2995,76 @@ ${senderName}`;
       }
     }
 
+    if (tool.id === 'client-onboarding-checklist-generator') {
+      const serviceType = String(values.serviceType || '').trim();
+      const clientType = String(values.clientType || '').trim();
+      const deliverables = String(values.deliverables || '').trim();
+      const communicationPreferences = String(values.communicationPreferences || '').trim();
+      const timeline = String(values.timeline || '').trim();
+      const fieldErrors = {};
+
+      if (serviceType.length < 3) {
+        fieldErrors.serviceType = 'Please enter a clearer service type.';
+      }
+      if (clientType.length < 3) {
+        fieldErrors.clientType = 'Please enter a clearer client type.';
+      }
+      if (deliverables.length < 15) {
+        fieldErrors.deliverables = 'Please add clearer deliverables for the onboarding checklist.';
+      }
+      if (communicationPreferences.length < 10) {
+        fieldErrors.communicationPreferences = 'Please add communication channel or update preference.';
+      }
+      if (timeline.length < 3) {
+        fieldErrors.timeline = 'Please enter a clear project timeline.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'freelancer-invoice-generator') {
+      const freelancerName = String(values.freelancerName || '').trim();
+      const clientName = String(values.clientName || '').trim();
+      const projectServiceName = String(values.projectServiceName || '').trim();
+      const amount = Number(values.amount || 0);
+      const dueDate = new Date(values.dueDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const paymentNotes = String(values.paymentNotes || '').trim();
+      const fieldErrors = {};
+
+      if (freelancerName.length < 2) {
+        fieldErrors.freelancerName = 'Please enter a clear freelancer name.';
+      }
+      if (clientName.length < 2) {
+        fieldErrors.clientName = 'Please enter a clear client name.';
+      }
+      if (projectServiceName.length < 3) {
+        fieldErrors.projectServiceName = 'Please enter a clearer project or service name.';
+      }
+      if (!Number.isFinite(amount) || amount <= 0) {
+        fieldErrors.amount = 'Please enter a valid amount greater than 0.';
+      }
+      if (Number.isNaN(dueDate.getTime()) || dueDate.getTime() < today.getTime()) {
+        fieldErrors.dueDate = 'Please choose today or a future due date.';
+      }
+      if (paymentNotes.length < 8) {
+        fieldErrors.paymentNotes = 'Please add a brief payment note or payment instruction.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
     if (tool.id === 'freelance-proposal-generator') {
       const requirements = String(values.projectRequirements || '').trim();
       if (requirements.length < 80) {
@@ -2946,6 +3084,22 @@ ${senderName}`;
           fieldErrors: {
             packageCount: 'Please choose between 3 and 5 packages.'
           },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'content-repurposing-generator-creators') {
+      const originalContent = String(values.originalContent || '').trim();
+      const fieldErrors = {};
+
+      if (originalContent.length < 40) {
+        fieldErrors.originalContent = 'Please paste at least 40 characters of original content.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
           formError: 'Please correct the highlighted field.'
         };
       }
@@ -3061,6 +3215,30 @@ ${senderName}`;
       }
     }
 
+    if (tool.id === 'newsletter-subject-line-generator') {
+      const newsletterTopic = String(values.newsletterTopic || '').trim();
+      const audienceType = String(values.audienceType || '').trim();
+      const subjectLineCount = Number(values.subjectLineCount || 0);
+      const fieldErrors = {};
+
+      if (newsletterTopic.length < 12) {
+        fieldErrors.newsletterTopic = 'Please add a clearer newsletter topic.';
+      }
+      if (audienceType.length < 3) {
+        fieldErrors.audienceType = 'Please enter a clearer audience type.';
+      }
+      if (!Number.isInteger(subjectLineCount) || subjectLineCount < 10 || subjectLineCount > 20) {
+        fieldErrors.subjectLineCount = 'Please choose between 10 and 20 subject lines.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
     if (tool.id === 'email-subject-line-generator') {
       const context = String(values.context || '').trim();
       if (context && context.length < 3) {
@@ -3166,6 +3344,30 @@ ${senderName}`;
             interests: 'Please add clearer interests so suggestions are meaningful.',
             strengths: 'Please add at least 2 strengths or skills.'
           },
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'youtube-video-title-generator') {
+      const videoTopic = String(values.videoTopic || '').trim();
+      const targetAudience = String(values.targetAudience || '').trim();
+      const titleCount = Number(values.titleCount || 0);
+      const fieldErrors = {};
+
+      if (videoTopic.length < 12) {
+        fieldErrors.videoTopic = 'Please add a clearer video topic.';
+      }
+      if (targetAudience.length < 3) {
+        fieldErrors.targetAudience = 'Please enter your target audience.';
+      }
+      if (!Number.isInteger(titleCount) || titleCount < 10 || titleCount > 20) {
+        fieldErrors.titleCount = 'Please choose between 10 and 20 titles.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
           formError: 'Please correct the highlighted fields.'
         };
       }
@@ -3283,6 +3485,91 @@ ${senderName}`;
             examDate: 'Please choose today or a future exam date.'
           },
           formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'concept-simplifier-topic-explainer') {
+      const topicName = String(values.topicName || '').trim();
+      const subject = String(values.subject || '').trim();
+      const classLevel = String(values.classLevel || '').trim();
+      const fieldErrors = {};
+
+      if (topicName.length < 3) {
+        fieldErrors.topicName = 'Please enter a clearer topic name.';
+      }
+      if (subject.length < 2) {
+        fieldErrors.subject = 'Please enter a valid subject.';
+      }
+      if (classLevel.length < 2) {
+        fieldErrors.classLevel = 'Please enter your class or level.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'exam-revision-timetable-generator') {
+      const examName = String(values.examName || '').trim();
+      const subjects = String(values.subjects || '').split(/[\n,;]+/).map((item) => item.trim()).filter(Boolean);
+      const weakTopics = String(values.weakTopics || '').trim();
+      const weakTopicItems = weakTopics.split(/[\n,;]+/).map((item) => item.trim()).filter(Boolean);
+      const hours = Number(values.hoursPerDay || 0);
+      const examDate = new Date(values.examDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const fieldErrors = {};
+
+      if (examName.length < 3) {
+        fieldErrors.examName = 'Please enter a clear exam name.';
+      }
+      if (Number.isNaN(examDate.getTime()) || examDate.getTime() < today.getTime()) {
+        fieldErrors.examDate = 'Please choose today or a future exam date.';
+      }
+      if (subjects.length < 2) {
+        fieldErrors.subjects = 'Please add at least 2 subjects.';
+      }
+      if (weakTopicItems.length < 2 || weakTopics.length < 12) {
+        fieldErrors.weakTopics = 'Please add at least 2 weak topics for focused revision.';
+      }
+      if (hours < 1 || hours > 14) {
+        fieldErrors.hoursPerDay = 'Please use daily revision hours between 1 and 14.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+    if (tool.id === 'daily-priority-planner') {
+      const tasks = String(values.todaysTasks || '').trim();
+      const goals = String(values.topGoals || '').trim();
+      const hours = Number(values.availableHours || 0);
+      const taskItems = tasks.split(/[\n,;]+/).map((item) => item.trim()).filter(Boolean);
+      const goalItems = goals.split(/[\n,;]+/).map((item) => item.trim()).filter(Boolean);
+      const fieldErrors = {};
+
+      if (taskItems.length < 3 || tasks.length < 20) {
+        fieldErrors.todaysTasks = 'Please add at least 3 clear tasks for today.';
+      }
+      if (goalItems.length < 2 || goals.length < 12) {
+        fieldErrors.topGoals = 'Please add at least 2 clear goals; 3 is best.';
+      }
+      if (hours < 1 || hours > 16) {
+        fieldErrors.availableHours = 'Please use available hours between 1 and 16.';
+      }
+
+      if (Object.keys(fieldErrors).length) {
+        return {
+          fieldErrors,
+          formError: 'Please correct the highlighted fields.'
         };
       }
     }
@@ -4007,7 +4294,13 @@ ${senderName}`;
     
     if (generateMoreButton) {
       generateMoreButton.classList.toggle('hidden', !tool.enableGenerateMore);
-      generateMoreButton.textContent = tool.id === 'student-study-planner-generator'
+      generateMoreButton.textContent = tool.id === 'daily-priority-planner'
+        ? 'Regenerate Plan'
+        : tool.id === 'exam-revision-timetable-generator'
+        ? 'Regenerate Timetable'
+        : tool.id === 'concept-simplifier-topic-explainer'
+        ? 'Regenerate Explanation'
+        : tool.id === 'student-study-planner-generator'
         ? 'Regenerate Planner'
         : tool.id === 'study-timetable-generator'
         ? 'Regenerate Plan'
@@ -4025,14 +4318,24 @@ ${senderName}`;
           ? 'Regenerate Quiz'
         : tool.id === 'lesson-plan-generator-for-teachers'
           ? 'Regenerate Lesson Plan'
+        : tool.id === 'classroom-activity-planner-teachers'
+          ? 'Regenerate Activities'
+        : tool.id === 'parent-teacher-meeting-note-generator'
+          ? 'Regenerate Notes'
         : tool.id === 'worksheet-practice-sheet-generator'
           ? 'Regenerate Worksheet'
         : tool.id === 'freelance-proposal-generator'
           ? 'Regenerate Proposal'
         : tool.id === 'freelance-rate-card-generator'
           ? 'Regenerate Rate Card'
+        : tool.id === 'freelancer-invoice-generator'
+          ? 'Regenerate Invoice'
+        : tool.id === 'client-onboarding-checklist-generator'
+          ? 'Regenerate Checklist'
         : tool.id === 'social-media-content-calendar-generator'
           ? 'Regenerate Calendar'
+        : tool.id === 'content-repurposing-generator-creators'
+          ? 'Regenerate Repurposing'
         : tool.id === 'reel-shorts-hook-generator'
           ? 'Regenerate Hooks'
         : tool.id === 'assignment-rewriter'
@@ -4063,11 +4366,15 @@ ${senderName}`;
           ? 'Regenerate Paths'
         : tool.id === 'youtube-shorts-script-generator'
           ? 'Regenerate Scripts'
+        : tool.id === 'youtube-video-title-generator'
+          ? 'Regenerate Titles'
         : tool.id === 'instagram-bio-generator'
           ? 'Regenerate Bios'
         : tool.id === 'whatsapp-message-generator'
           ? 'Regenerate Messages'
         : tool.id === 'email-subject-line-generator'
+          ? 'Regenerate Subjects'
+        : tool.id === 'newsletter-subject-line-generator'
           ? 'Regenerate Subjects'
         : tool.outputType === 'text'
           ? 'Regenerate'
