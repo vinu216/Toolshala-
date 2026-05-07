@@ -828,44 +828,214 @@ window.ToolShalaToolDefinitions = [
   },
 
   {
-    id: 'study-notes-summarizer',
-    title: 'Study Notes Summarizer',
+    id: 'student-study-planner-generator',
+    title: 'Student Study Planner Generator',
     category: 'Student Tool',
-    description: 'Convert long notes and chapters into concise revision blocks: summary, bullets, keywords, quick revision, and optional memory aid.',
-    ctaLabel: 'Summarize Notes',
-    outputType: 'cards',
+    description: 'Create a daily, weekly, and monthly exam study plan with clear timetable blocks, subject split, revision, breaks, and consistency tips.',
+    metaDescription: 'Free Student Study Planner Generator for study planner, student timetable generator, and exam study plan needs. Build daily, weekly, and monthly plans from subjects, exam date, study hours, and weak topics.',
+    ctaLabel: 'Generate Study Planner',
+    outputType: 'text',
     enableGenerateMore: true,
-    helperText: 'Always review the summary once and adjust it for your exam needs.',
+    helperText: 'Hinglish tip: exact exam date, weak topics, aur realistic daily hours add karo so planner practical rahe.',
+    promptInstructions: [
+      'You are a practical Student Study Planner Generator for Indian students.',
+      'Do not provide generic filler. Use the exact class/stream, subjects, exam date, daily available hours, weak subjects/topics, and study goal from the user.',
+      'Create a realistic study planner in student-friendly Hinglish tone. Keep it practical, motivating, and easy to follow.',
+      'Use clear Markdown with exactly these sections: Planner Snapshot, Daily Timetable, Weekly Focus Plan, Monthly Roadmap, Subject-wise Split, Revision Blocks, Break Timing Suggestions, Motivation / Consistency Tips.',
+      'Daily Timetable must include specific time blocks that fit the available study hours per day and include short breaks.',
+      'Weekly Focus Plan must prioritize weak topics without ignoring other subjects.',
+      'Monthly Roadmap must adapt to the exam date. If the exam is close, compress the roadmap into remaining days/weeks and state that clearly.',
+      'Subject-wise Split must mention approximate time percentage or hours for each subject.',
+      'Revision Blocks must include spaced revision, quick tests, and previous-paper/mock-test practice when relevant.',
+      'Break Timing Suggestions must be realistic for students and avoid unhealthy all-night plans.',
+      'End with 4-6 concise consistency tips in Hinglish.'
+    ],
     tips: [
-      'Read once after summarizing to check accuracy.',
-      'Highlight formulas, terms, and definitions while revising.',
-      'Revise using short bullet points for faster recall.'
+      'Exam date accurate add karo, plan automatically urgency ke according banega.',
+      'Weak topics clearly likho so extra revision blocks wahin focus karein.',
+      'Daily hours realistic rakho; repeat-use ke liye weekly plan update karte raho.'
     ],
     fields: [
       {
-        key: 'topic',
-        label: 'Topic / Chapter Name',
+        key: 'classStream',
+        label: 'Class / Stream',
         type: 'text',
-        placeholder: 'e.g. Photosynthesis, Trigonometry Basics, Indian Polity',
+        placeholder: 'e.g. Class 12 Science / NEET dropper / B.Com 2nd Year',
         required: true
       },
       {
-        key: 'notes',
-        label: 'Notes / Text',
+        key: 'subjects',
+        label: 'Subjects List',
         type: 'textarea',
-        placeholder: 'Paste your long notes or chapter text here for summarization...',
+        placeholder: 'e.g. Physics, Chemistry, Biology, English',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'examDate',
+        label: 'Exam Date',
+        type: 'date',
+        required: true,
+        helperText: 'Use your next main exam date so daily, weekly, and monthly planning stays realistic.'
+      },
+      {
+        key: 'hoursPerDay',
+        label: 'Available Study Hours Per Day',
+        type: 'number',
+        placeholder: 'e.g. 4',
+        required: true
+      },
+      {
+        key: 'weakTopics',
+        label: 'Weak Subjects / Topics',
+        type: 'textarea',
+        placeholder: 'e.g. Physics numericals, Organic Chemistry, Calculus integration, History dates',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'studyGoal',
+        label: 'Study Goal',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'revision', label: 'Revision' },
+          { value: 'exam-prep', label: 'Exam Prep' },
+          { value: 'backlog-cover', label: 'Backlog Cover' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'lecture-notes-summarizer',
+    title: 'Lecture Notes Summarizer',
+    category: 'Student Tool',
+    description: 'Convert long lecture notes, class notes, or textbook text into a clear summary, key points, definitions, revision bullets, and memory tips.',
+    metaDescription: 'Free Lecture Notes Summarizer for lecture notes summarizer, notes to summary, and study notes generator searches. Summarize class notes into revision-friendly study points.',
+    ctaLabel: 'Summarize Lecture Notes',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: apne raw lecture notes paste karo; AI concise summary, definitions, aur revision bullets bana dega.',
+    promptInstructions: [
+      'You are a Lecture Notes Summarizer for students. Convert only the user-provided notes into an accurate, easy-to-revise study summary.',
+      'Do not invent facts, examples, formulas, dates, definitions, or textbook details that are not supported by the notes. If something is unclear, mention it as unclear instead of guessing.',
+      'Use a student-friendly Hinglish tone for guidance while keeping subject terms accurate.',
+      'Follow the selected summary length: short means very concise, medium means balanced, detailed means fuller but still organized.',
+      'Follow the selected style: bullet points, paragraph, or exam revision. Exam revision should prioritize scoring points, definitions, likely questions, and quick recall.',
+      'Return clean Markdown with exactly these sections: Concise Summary, Key Points, Important Definitions, Revision-Friendly Bullets, Optional Memory Tips.',
+      'Concise Summary must preserve the main concept flow and not miss important concepts visible in the notes.',
+      'Key Points must list high-value concepts in simple language.',
+      'Important Definitions must include terms and meanings found in the notes. If no clear definitions are present, say what terms should be reviewed.',
+      'Revision-Friendly Bullets must be quick-to-scan and useful before exams.',
+      'Optional Memory Tips should include mnemonics, chunking, or recall tips only when they fit the notes.'
+    ],
+    tips: [
+      'Long lecture notes paste karne se summary zyada accurate hoti hai.',
+      'Exam revision style choose karo agar quick test/semester prep karna hai.',
+      'Generated summary ko apne class slides ya textbook ke saath once verify kar lo.'
+    ],
+    fields: [
+      {
+        key: 'notes',
+        label: 'Lecture / Class Notes',
+        type: 'textarea',
+        placeholder: 'Paste long lecture notes, class notes, or textbook text here...',
+        required: true,
+        rows: 12
+      },
+      {
+        key: 'summaryLength',
+        label: 'Summary Length',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'short', label: 'Short' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'detailed', label: 'Detailed' }
+        ]
+      },
+      {
+        key: 'summaryStyle',
+        label: 'Summary Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'bullet-points', label: 'Bullet Points' },
+          { value: 'paragraph', label: 'Paragraph' },
+          { value: 'exam-revision', label: 'Exam Revision' }
+        ]
+      },
+      {
+        key: 'subject',
+        label: 'Subject (optional)',
+        type: 'text',
+        placeholder: 'e.g. Biology, Economics, Java, History',
+        required: false
+      }
+    ]
+  },
+
+  {
+    id: 'flashcard-generator',
+    title: 'Flashcard Generator',
+    category: 'Student Tool',
+    description: 'Generate quick Q&A study flashcards from a topic, lecture notes, or chapter text for daily revision.',
+    metaDescription: 'Free Flashcard Generator for study flashcards and notes to flashcards. Turn topic notes or chapter content into concise Q&A cards with memory hints.',
+    ctaLabel: 'Generate Flashcards',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: topic aur notes paste karo; AI short Q&A flashcards with memory hints bana dega.',
+    promptInstructions: [
+      'You are a Flashcard Generator for students. Create revision-friendly Q&A flashcards only from the user-provided topic and notes/chapter text.',
+      'Do not invent unsupported facts. If the notes are unclear, keep the flashcard general and grounded in the visible content.',
+      'Use student-friendly Hinglish guidance where helpful, but keep questions and answers clear and subject-accurate.',
+      'Generate exactly the requested number of flashcards unless the notes are too short; if fewer are possible, say why briefly.',
+      'Follow the selected difficulty: easy means basic recall, medium means concept understanding, hard means application or exam-style recall.',
+      'Follow output style: simple means direct Q&A, exam revision means scoring/important points, advanced means deeper concept connections.',
+      'Return clean Markdown only with a short heading and a numbered list of flashcards.',
+      'Each flashcard must include exactly these labels: Question, Answer, Memory Hint.',
+      'Questions must be short and direct. Answers must be accurate, concise, and easy to revise.',
+      'Memory Hint can be one short mnemonic, keyword cue, formula cue, or recall trick. If no hint fits, write a brief recall cue.'
+    ],
+    tips: [
+      'Best results ke liye chapter notes ya class notes ka important part paste karo.',
+      'Exam revision style choose karo jab quick test preparation karni ho.',
+      'Generated flashcards ko daily 5-10 minute active recall ke liye use karo.'
+    ],
+    fields: [
+      {
+        key: 'topicTitle',
+        label: 'Topic / Chapter Title',
+        type: 'text',
+        placeholder: 'e.g. Photosynthesis, Indian Constitution, Java OOPs',
+        required: true
+      },
+      {
+        key: 'notesText',
+        label: 'Notes or Chapter Text',
+        type: 'textarea',
+        placeholder: 'Paste your notes, textbook section, or chapter content here...',
         required: true,
         rows: 10
       },
       {
-        key: 'educationLevel',
-        label: 'Education Level',
+        key: 'flashcardCount',
+        label: 'Number of Flashcards',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: true,
+        helperText: 'Use 5-20 cards for focused revision.'
+      },
+      {
+        key: 'difficulty',
+        label: 'Difficulty',
         type: 'select',
         required: true,
         options: [
-          { value: 'school', label: 'School' },
-          { value: 'college', label: 'College' },
-          { value: 'competitive-exam', label: 'Competitive Exam' }
+          { value: 'easy', label: 'Easy' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'hard', label: 'Hard' }
         ]
       },
       {
@@ -874,33 +1044,611 @@ window.ToolShalaToolDefinitions = [
         type: 'select',
         required: true,
         options: [
-          { value: 'bullet-summary', label: 'Bullet Summary' },
-          { value: 'short-notes', label: 'Short Notes' },
-          { value: 'exam-revision-points', label: 'Exam Revision Points' }
+          { value: 'simple', label: 'Simple' },
+          { value: 'exam-revision', label: 'Exam Revision' },
+          { value: 'advanced', label: 'Advanced' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'quiz-mcq-generator',
+    title: 'Quiz / MCQ Generator',
+    category: 'Student Tool',
+    description: 'Generate clear MCQ, short-answer, or mixed quiz questions from a topic, notes, or lesson content for study and teaching.',
+    metaDescription: 'Free Quiz / MCQ Generator for quiz generator, MCQ generator, and question generator searches. Convert topic notes or lesson content into educational quiz questions with answers and explanations.',
+    ctaLabel: 'Generate Quiz',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: topic aur lesson notes paste karo; AI teacher-friendly questions, answers, aur explanations bana dega.',
+    promptInstructions: [
+      'You are a Quiz / MCQ Generator for students, teachers, and educational creators. Generate quiz questions only from the user-provided topic and notes/lesson text.',
+      'Do not invent unsupported facts. If the notes do not contain enough detail, make fewer grounded questions and mention the limitation briefly.',
+      'Use a student-friendly Hinglish tone for any guidance, but keep questions, options, correct answers, and explanations clear and subject-accurate.',
+      'Generate exactly the requested number of questions when the notes support it.',
+      'Follow the selected difficulty: easy = basic recall, medium = concept understanding, hard = application or exam-style reasoning.',
+      'Follow the question type selector: MCQ = all questions must have 4 options; short answer = no multiple-choice distractors; mixed = combine MCQ and short answer.',
+      'Return clean Markdown only with a short quiz title and a numbered list.',
+      'Each question must include exactly these labels: Question, Options, Correct Answer, Short Explanation.',
+      'For MCQ questions, Options must include A, B, C, and D with sensible, non-ambiguous distractors and only one correct answer.',
+      'For short-answer questions, write Options: N/A (Short Answer) and provide the expected answer under Correct Answer.',
+      'Questions must be clear and educational. Explanations must be concise and useful for revision.'
+    ],
+    tips: [
+      'Lesson ke main points paste karoge to MCQs zyada accurate banenge.',
+      'Teachers quick class quiz ke liye 5-10 questions choose kar sakte hain.',
+      'Students answers hide karke active recall practice kar sakte hain.'
+    ],
+    fields: [
+      {
+        key: 'topicSubject',
+        label: 'Topic / Subject',
+        type: 'text',
+        placeholder: 'e.g. Photosynthesis, Indian Polity, Java OOPs, Marketing Basics',
+        required: true
+      },
+      {
+        key: 'notesText',
+        label: 'Notes or Lesson Text',
+        type: 'textarea',
+        placeholder: 'Paste notes, lesson content, textbook text, or class material here...',
+        required: true,
+        rows: 10
+      },
+      {
+        key: 'questionCount',
+        label: 'Number of Questions',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: true,
+        helperText: 'Use 3-25 questions for a focused quiz.'
+      },
+      {
+        key: 'difficulty',
+        label: 'Difficulty',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'easy', label: 'Easy' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'hard', label: 'Hard' }
         ]
       },
       {
-        key: 'focus',
-        label: 'Optional Focus',
+        key: 'questionType',
+        label: 'Question Type',
         type: 'select',
-        required: false,
+        required: true,
         options: [
-          { value: 'definitions', label: 'Definitions' },
-          { value: 'important-facts', label: 'Important Facts' },
-          { value: 'formula-concepts', label: 'Formula / Concepts' },
-          { value: 'full-revision', label: 'Full Revision' }
+          { value: 'mcq', label: 'MCQ' },
+          { value: 'short-answer', label: 'Short Answer' },
+          { value: 'mixed', label: 'Mixed' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'lesson-plan-generator-for-teachers',
+    title: 'Lesson Plan Generator for Teachers',
+    category: 'Teacher Tool',
+    description: 'Create a classroom-ready lesson plan from subject, grade, topic, duration, learning objective, and teaching style.',
+    metaDescription: 'Free Lesson Plan Generator for Teachers for lesson plan generator, teacher lesson plan, and class plan generator searches. Build classroom-ready objectives, activities, assessment, homework, and closure.',
+    ctaLabel: 'Generate Lesson Plan',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: subject, class, topic, duration, aur objective clear likho so lesson plan classroom-ready aaye.',
+    promptInstructions: [
+      'You are a Lesson Plan Generator for Teachers. Create a practical, classroom-ready lesson plan only from the teacher-provided inputs.',
+      'Use teacher-friendly Hinglish guidance where helpful, but keep the lesson plan clear, professional, and easy to edit.',
+      'Adapt the plan to the class/grade, subject, topic, class duration, learning objective, and selected teaching style.',
+      'Do not invent curriculum standards or textbook references unless the user provides them.',
+      'Return clean Markdown only with exactly these sections: Lesson Objective, Introduction, Teaching Steps, Activity, Assessment, Homework, Closure.',
+      'Lesson Objective must be measurable and aligned with the provided learning objective.',
+      'Introduction must include a short hook or warm-up suitable for the grade level.',
+      'Teaching Steps must be time-boxed and fit within the provided class duration.',
+      'Activity must be practical for a normal classroom and match the selected teaching style.',
+      'Assessment must include quick checks for understanding such as questions, exit ticket, oral check, worksheet, or mini task.',
+      'Homework must be realistic and directly connected to the lesson.',
+      'Closure must summarize key learning and give a smooth ending line teachers can use.'
+    ],
+    tips: [
+      'Duration minutes me add karo, jaise 40 ya 60, so time-boxing practical rahe.',
+      'Learning objective clear hoga to assessment aur activity better align hogi.',
+      'Generated plan ko apne school syllabus aur class level ke according quickly edit kar lo.'
+    ],
+    fields: [
+      {
+        key: 'subject',
+        label: 'Subject',
+        type: 'text',
+        placeholder: 'e.g. Science, English, Mathematics, Social Studies',
+        required: true
+      },
+      {
+        key: 'classGrade',
+        label: 'Class / Grade',
+        type: 'text',
+        placeholder: 'e.g. Class 6, Grade 10, B.Com 1st Year',
+        required: true
+      },
+      {
+        key: 'topic',
+        label: 'Topic',
+        type: 'text',
+        placeholder: 'e.g. Photosynthesis, Fractions, Direct and Indirect Speech',
+        required: true
+      },
+      {
+        key: 'classDuration',
+        label: 'Class Duration (minutes)',
+        type: 'number',
+        placeholder: 'e.g. 45',
+        required: true,
+        helperText: 'Use total teaching time in minutes.'
+      },
+      {
+        key: 'learningObjective',
+        label: 'Learning Objective',
+        type: 'textarea',
+        placeholder: 'e.g. Students will be able to explain photosynthesis and identify raw materials needed for the process.',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'teachingStyle',
+        label: 'Teaching Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'interactive', label: 'Interactive' },
+          { value: 'activity-based', label: 'Activity Based' },
+          { value: 'lecture-discussion', label: 'Lecture + Discussion' },
+          { value: 'blended', label: 'Blended' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'worksheet-practice-sheet-generator',
+    title: 'Worksheet / Practice Sheet Generator',
+    category: 'Teacher Tool',
+    description: 'Generate printable topic-based worksheets, practice questions, homework sheets, and revision activity sheets for students and teachers.',
+    metaDescription: 'Free Worksheet / Practice Sheet Generator for worksheet generator, practice sheet generator, and homework sheet maker searches. Create printable classroom-friendly worksheets with instructions, questions, and answer key.',
+    ctaLabel: 'Generate Worksheet',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: subject, class, topic, difficulty, aur worksheet type choose karo; AI printable practice sheet bana dega.',
+    promptInstructions: [
+      'You are a Worksheet / Practice Sheet Generator for teachers and students. Create a printable, classroom-friendly worksheet from the user inputs.',
+      'Use the subject, topic, class/grade, difficulty, worksheet type, and optional question count exactly as provided.',
+      'If number of questions is not provided, generate a balanced worksheet with 10 questions.',
+      'Do not invent curriculum standards, school names, textbook references, or answer facts that are not appropriate for the provided topic.',
+      'Use teacher-friendly Hinglish guidance where helpful, but keep questions and answer key clear, printable, and easy to edit.',
+      'Return clean Markdown only with exactly these sections: Worksheet Title, Instructions, Questions, Answer Key.',
+      'Worksheet Title must include the subject, topic, class/grade, and worksheet type.',
+      'Instructions must be short and classroom-ready, including time guidance if useful.',
+      'Questions must match the selected difficulty and worksheet type: practice = skill-building, homework = independent work, revision = exam/recall focused.',
+      'Use a mix of question formats when suitable, such as short answer, fill in the blanks, true/false, matching, MCQ, or word problems. Keep every question relevant to the topic.',
+      'Answer Key is optional in the user request but should be included by default for teacher/student checking. If a question is open-ended, provide a sample answer or expected points.',
+      'Keep the output printable: avoid long paragraphs, use numbering, and make questions clear and non-ambiguous.'
+    ],
+    tips: [
+      'Class/grade clear likho so question level age-appropriate rahe.',
+      'Revision worksheet exams ke pehle quick practice ke liye best hai.',
+      'Answer key ko print karte time hide/remove kar sakte ho if students ke liye worksheet deni hai.'
+    ],
+    fields: [
+      {
+        key: 'subject',
+        label: 'Subject',
+        type: 'text',
+        placeholder: 'e.g. Mathematics, Science, English, Social Studies',
+        required: true
+      },
+      {
+        key: 'topic',
+        label: 'Topic',
+        type: 'text',
+        placeholder: 'e.g. Fractions, Photosynthesis, Tenses, Indian Constitution',
+        required: true
+      },
+      {
+        key: 'classGrade',
+        label: 'Class / Grade',
+        type: 'text',
+        placeholder: 'e.g. Class 5, Grade 8, B.Com 1st Year',
+        required: true
+      },
+      {
+        key: 'difficulty',
+        label: 'Difficulty',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'easy', label: 'Easy' },
+          { value: 'medium', label: 'Medium' },
+          { value: 'hard', label: 'Hard' }
+        ]
+      },
+      {
+        key: 'worksheetType',
+        label: 'Worksheet Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'practice', label: 'Practice' },
+          { value: 'homework', label: 'Homework' },
+          { value: 'revision', label: 'Revision' }
+        ]
+      },
+      {
+        key: 'questionCount',
+        label: 'Number of Questions (optional)',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: false,
+        helperText: 'Leave blank for a balanced 10-question worksheet.'
+      }
+    ]
+  },
+
+  {
+    id: 'freelance-proposal-generator',
+    title: 'Freelance Proposal Generator',
+    category: 'Freelance Tool',
+    description: 'Create polished freelance proposals with client-friendly openings, persuasive project fit, detailed approach, and closing CTA.',
+    metaDescription: 'Free Freelance Proposal Generator for freelance proposal generator, proposal writer, and client pitch searches. Create polished client proposals from project requirements, role, tone, budget, and timeline.',
+    ctaLabel: 'Generate Proposal',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: client ki requirements clearly paste karo; AI professional proposal, opening, aur closing CTA bana dega.',
+    promptInstructions: [
+      'You are a Freelance Proposal Generator for freelancers pitching client projects.',
+      'Create a professional, persuasive proposal from the user-provided project title, optional client name, freelancer role/skill, project requirements, tone, and optional budget/timeline.',
+      'Do not invent fake portfolio results, client names, certifications, guarantees, prices, timelines, or experience. Use only user-provided facts and careful placeholders where needed.',
+      'Keep the proposal confident but not overly salesy. Address the client needs directly and show understanding of the project.',
+      'Use polished freelancer-friendly English with light Hinglish guidance only when helpful.',
+      'Return clean Markdown only with exactly these sections: Client-Friendly Opening, Short Proposal, Detailed Proposal, Closing CTA.',
+      'Client-Friendly Opening must feel personalized and mention the project/client context naturally.',
+      'Short Proposal must be concise and ready for platforms like Upwork, Fiverr, LinkedIn, or email.',
+      'Detailed Proposal must include understanding of requirements, approach, deliverables, collaboration style, and budget/timeline note if provided.',
+      'Closing CTA must be polite, action-oriented, and easy for the client to respond to.',
+      'Avoid hype, pressure tactics, exaggerated claims, and generic filler.'
+    ],
+    tips: [
+      'Requirements jitni specific hongi, proposal utna client-focused banega.',
+      'Budget/timeline optional hai, but add karne se proposal more practical lagega.',
+      'Generated draft me apna real portfolio link ya samples manually add kar sakte ho.'
+    ],
+    fields: [
+      {
+        key: 'projectTitle',
+        label: 'Project Title',
+        type: 'text',
+        placeholder: 'e.g. Shopify store redesign, SEO blog writing, React landing page',
+        required: true
+      },
+      {
+        key: 'clientName',
+        label: 'Client Name (optional)',
+        type: 'text',
+        placeholder: 'e.g. Priya, Acme Studio, Hiring Manager',
+        required: false
+      },
+      {
+        key: 'freelancerRole',
+        label: 'Freelancer Role / Skill',
+        type: 'text',
+        placeholder: 'e.g. UI/UX Designer, Content Writer, WordPress Developer, Video Editor',
+        required: true
+      },
+      {
+        key: 'projectRequirements',
+        label: 'Project Requirements',
+        type: 'textarea',
+        placeholder: 'Paste client brief, required deliverables, target audience, must-have features, problems to solve, or job post details...',
+        required: true,
+        rows: 8
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'professional', label: 'Professional' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'confident', label: 'Confident' },
+          { value: 'concise', label: 'Concise' }
+        ]
+      },
+      {
+        key: 'budgetTimeline',
+        label: 'Budget / Timeline (optional)',
+        type: 'text',
+        placeholder: 'e.g. ₹25,000 in 3 weeks / $500 fixed / 10 days delivery',
+        required: false
+      }
+    ]
+  },
+
+  {
+    id: 'freelance-rate-card-generator',
+    title: 'Freelance Rate Card Generator',
+    category: 'Freelance Tool',
+    description: 'Build freelancer-friendly rate cards with pricing tiers, hourly or project-based rates, service packages, add-ons, and negotiation buffer suggestions.',
+    metaDescription: 'Free Freelance Rate Card Generator for freelance rate card generator, pricing calculator, and service packages searches. Create realistic service pricing tiers, add-ons, and negotiation buffers.',
+    ctaLabel: 'Generate Rate Card',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: service, niche, experience, currency, aur rate preference add karo; AI client-friendly pricing packages bana dega.',
+    promptInstructions: [
+      'You are a Freelance Rate Card Generator for freelancers creating client-facing service packages.',
+      'Create realistic but flexible pricing guidance from the user-provided service type, experience level, currency, rate preference, niche, and package count.',
+      'Do not promise exact market rates or guaranteed earnings. Make clear that rates are suggested starting points and should be adjusted by market, location, portfolio strength, demand, and client scope.',
+      'Use freelancer-friendly and client-friendly language. Keep the output professional, practical, and easy to copy into a PDF, profile, proposal, or website.',
+      'Use light Hinglish guidance where helpful, but keep package names, prices, deliverables, and notes clear.',
+      'Return clean Markdown only with exactly these sections: Rate Card Snapshot, Starter / Standard / Premium Packages, Rate Justification, Add-on Services, Negotiation Buffer Suggestion.',
+      'Starter / Standard / Premium Packages must always include Starter, Standard, and Premium tiers with price/rate, best-for use case, deliverables, timeline or scope note, and revision/support boundary.',
+      'If the requested number of packages is more than 3, add extra tiers after Premium, such as Enterprise or Retainer. If it is 3, include only Starter, Standard, and Premium.',
+      'Rate Justification must explain pricing logic based on experience level, niche complexity, service value, and rate preference without sounding defensive.',
+      'Add-on Services must list relevant optional extras that can increase project value.',
+      'Negotiation Buffer Suggestion must suggest a safe buffer percentage or amount, plus a line on when to discount and when not to discount.',
+      'Pricing should be realistic, flexible, and not overly inflated. Avoid legal/financial guarantees.'
+    ],
+    tips: [
+      'Starter package simple rakho so clients easily entry-level option choose kar saken.',
+      'Premium package me strategy, priority, ya extra revisions jaise value-adds include karo.',
+      'Rates final karne se pehle niche, client budget, aur apna portfolio level compare kar lo.'
+    ],
+    fields: [
+      {
+        key: 'serviceType',
+        label: 'Service Type',
+        type: 'text',
+        placeholder: 'e.g. Logo design, SEO blog writing, WordPress website, Video editing',
+        required: true
+      },
+      {
+        key: 'experienceLevel',
+        label: 'Experience Level',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'beginner', label: 'Beginner' },
+          { value: 'intermediate', label: 'Intermediate' },
+          { value: 'expert', label: 'Expert' }
+        ]
+      },
+      {
+        key: 'currency',
+        label: 'Currency',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'INR', label: 'INR (₹)' },
+          { value: 'USD', label: 'USD ($)' },
+          { value: 'EUR', label: 'EUR (€)' },
+          { value: 'GBP', label: 'GBP (£)' }
+        ]
+      },
+      {
+        key: 'ratePreference',
+        label: 'Hourly or Project Rate Preference',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'project-based', label: 'Project Based' },
+          { value: 'hourly', label: 'Hourly' },
+          { value: 'both', label: 'Both' }
+        ]
+      },
+      {
+        key: 'niche',
+        label: 'Niche',
+        type: 'text',
+        placeholder: 'e.g. D2C brands, coaches, restaurants, SaaS startups, local businesses',
+        required: true
+      },
+      {
+        key: 'packageCount',
+        label: 'Number of Packages',
+        type: 'number',
+        placeholder: 'e.g. 3',
+        required: true,
+        helperText: 'Use 3-5 packages. Starter, Standard, and Premium are always included.'
+      }
+    ]
+  },
+
+  {
+    id: 'social-media-content-calendar-generator',
+    title: 'Social Media Content Calendar Generator',
+    category: 'Social Tool',
+    description: 'Generate weekly or monthly social media content calendars with day-wise post ideas, hooks, CTAs, themes, and posting schedule.',
+    metaDescription: 'Free Social Media Content Calendar Generator for content planner and posting schedule searches. Create weekly or monthly calendars for Instagram, LinkedIn, YouTube, X, or multi-platform content.',
+    ctaLabel: 'Generate Content Calendar',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: platform, niche, goal, frequency, tone, aur duration choose karo; AI practical content calendar bana dega.',
+    promptInstructions: [
+      'You are a Social Media Content Calendar Generator for creators, small businesses, and students.',
+      'Create a practical weekly or monthly content calendar from the user-provided platform, niche/topic, content goal, posting frequency, tone, and duration.',
+      'Do not invent brand facts, claims, offers, statistics, events, or guarantees. Keep ideas executable and adaptable.',
+      'Use creator-friendly Hinglish guidance where helpful, but keep the calendar clear, professional, and easy to copy into a planner.',
+      'Return clean Markdown only with exactly these sections: Calendar Snapshot, Day-wise Content Plan, Theme Ideas, Execution Tips.',
+      'Calendar Snapshot must summarize platform, niche/topic, content goal, posting frequency, tone, and duration.',
+      'Day-wise Content Plan must be organized by day or week depending on duration and posting frequency.',
+      'Each planned post must include: Day/Date Placeholder, Post Type, Hook/Angle, CTA, and Notes.',
+      'Post Type must fit the selected platform: reels/carousels/stories for Instagram, posts/documents for LinkedIn, videos/shorts/community for YouTube, threads/posts for X, or adapted formats for multi-platform.',
+      'Theme Ideas must include recurring content pillars or weekly themes that support repeat use.',
+      'Execution Tips must be concise and practical: batching, repurposing, captions, visuals, and review rhythm.',
+      'Keep the plan realistic for the chosen posting frequency and avoid overwhelming the creator.'
+    ],
+    tips: [
+      'Monthly duration choose karne par content pillars repeatable bante hain.',
+      'Posting frequency realistic rakho so calendar execute ho sake.',
+      'Multi-platform plan ko same idea ke adapted formats me reuse kar sakte ho.'
+    ],
+    fields: [
+      {
+        key: 'platform',
+        label: 'Platform',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'instagram', label: 'Instagram' },
+          { value: 'linkedin', label: 'LinkedIn' },
+          { value: 'youtube', label: 'YouTube' },
+          { value: 'x', label: 'X' },
+          { value: 'multi-platform', label: 'Multi-platform' }
+        ]
+      },
+      {
+        key: 'nicheTopic',
+        label: 'Niche / Topic',
+        type: 'text',
+        placeholder: 'e.g. fitness for beginners, student productivity, home bakery, personal finance',
+        required: true
+      },
+      {
+        key: 'contentGoal',
+        label: 'Content Goal',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'growth', label: 'Growth' },
+          { value: 'engagement', label: 'Engagement' },
+          { value: 'education', label: 'Education' },
+          { value: 'sales-leads', label: 'Sales / Leads' },
+          { value: 'personal-branding', label: 'Personal Branding' }
+        ]
+      },
+      {
+        key: 'postingFrequency',
+        label: 'Posting Frequency',
+        type: 'select',
+        required: true,
+        options: [
+          { value: '3-posts-week', label: '3 posts / week' },
+          { value: '5-posts-week', label: '5 posts / week' },
+          { value: 'daily', label: 'Daily' },
+          { value: '2-posts-day', label: '2 posts / day' }
         ]
       },
       {
         key: 'tone',
-        label: 'Optional Tone',
+        label: 'Tone',
         type: 'select',
-        required: false,
+        required: true,
         options: [
-          { value: 'simple', label: 'Simple' },
-          { value: 'academic', label: 'Academic' },
-          { value: 'exam-friendly', label: 'Exam Friendly' }
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'educational', label: 'Educational' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'witty', label: 'Witty' },
+          { value: 'inspirational', label: 'Inspirational' }
         ]
+      },
+      {
+        key: 'duration',
+        label: 'Month / Week Duration',
+        type: 'select',
+        required: true,
+        options: [
+          { value: '1-week', label: '1 Week' },
+          { value: '2-weeks', label: '2 Weeks' },
+          { value: '1-month', label: '1 Month' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'reel-shorts-hook-generator',
+    title: 'Reel / Shorts Hook Generator',
+    category: 'Social Tool',
+    description: 'Generate scroll-stopping hooks, opener variants, CTA lines, and caption openers for Instagram Reels, YouTube Shorts, and short-form videos.',
+    metaDescription: 'Free Reel / Shorts Hook Generator for reel hook generator, shorts hook generator, and viral hook ideas searches. Create sharp hooks, opener variants, CTAs, and caption openers for short-form content.',
+    ctaLabel: 'Generate Hooks',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: platform, niche, topic, audience, hook style, aur hook count add karo; AI sharp scroll-stopping hooks bana dega.',
+    promptInstructions: [
+      'You are a Reel / Shorts Hook Generator for creators making short-form videos.',
+      'Create platform-appropriate hooks from the user-provided platform, content niche, video topic, audience type, hook style, and number of hooks.',
+      'Do not invent fake results, statistics, claims, controversy, or clickbait that the creator cannot support. Hooks can be bold, but they must stay truthful and usable.',
+      'Use creator-friendly Hinglish guidance where helpful, but keep hooks crisp, direct, and ready to say on camera.',
+      'Return clean Markdown only with exactly these sections: Hook Options, Short Opener Variants, CTA Lines, Caption Opener.',
+      'Hook Options must include the requested number of hooks. Each hook should be short, scroll-stopping, and suitable for the selected platform.',
+      'Short Opener Variants must include 3-5 ultra-short first-line alternatives that can be spoken in the first 1-2 seconds.',
+      'CTA Lines must include optional CTAs that match the audience and goal without sounding spammy.',
+      'Caption Opener must include 2-3 first lines for captions that reinforce the video hook.',
+      'Follow the selected hook style: curiosity, problem-solution, bold, emotional, or educational.',
+      'Make hooks creator-friendly, repeat-use friendly, and easy to adapt for Instagram Reels, YouTube Shorts, or multi-platform short-form content.'
+    ],
+    tips: [
+      'Best hook first 1-2 seconds me clear curiosity ya problem create karta hai.',
+      'Bold hook use karte time claim ko truthful aur provable rakho.',
+      'Regenerate karke multiple angles test karo: curiosity, problem-solution, aur educational.'
+    ],
+    fields: [
+      {
+        key: 'platform',
+        label: 'Platform',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'instagram-reels', label: 'Instagram Reels' },
+          { value: 'youtube-shorts', label: 'YouTube Shorts' },
+          { value: 'both', label: 'Reels + Shorts' },
+          { value: 'tiktok-reels', label: 'TikTok / Reels' }
+        ]
+      },
+      {
+        key: 'contentNiche',
+        label: 'Content Niche',
+        type: 'text',
+        placeholder: 'e.g. fitness, study tips, finance, beauty, freelancing, food business',
+        required: true
+      },
+      {
+        key: 'videoTopic',
+        label: 'Video Topic',
+        type: 'textarea',
+        placeholder: 'e.g. 5 mistakes beginners make while learning coding / How to price freelance design projects',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'audienceType',
+        label: 'Audience Type',
+        type: 'text',
+        placeholder: 'e.g. college students, beginner freelancers, busy parents, small business owners',
+        required: true
+      },
+      {
+        key: 'hookStyle',
+        label: 'Hook Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'curiosity', label: 'Curiosity' },
+          { value: 'problem-solution', label: 'Problem-Solution' },
+          { value: 'bold', label: 'Bold' },
+          { value: 'emotional', label: 'Emotional' },
+          { value: 'educational', label: 'Educational' }
+        ]
+      },
+      {
+        key: 'hookCount',
+        label: 'Number of Hooks',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: true,
+        helperText: 'Use 5-25 hooks for quick testing and iteration.'
       }
     ]
   },

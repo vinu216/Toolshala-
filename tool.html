@@ -63,8 +63,8 @@
             <h2>Enter your details</h2>
             <form id="tool-generator-form" class="mt-4" data-tool-form novalidate></form>
             <p class="tool-helper-text" data-tool-helper-text></p>
-            <div class="tool-error hidden" data-tool-error></div>
-            <div class="tool-loading hidden" data-tool-loading>Generating your result...</div>
+            <div class="tool-error hidden" data-tool-error role="alert" aria-live="assertive"></div>
+            <div class="tool-loading hidden" data-tool-loading role="status" aria-live="polite">Generating your result...</div>
             <div class="tool-actions">
               <button class="btn-primary" type="submit" form="tool-generator-form" data-tool-submit>Generate</button>
               <button class="btn-secondary hidden" type="button" data-tool-generate-more>Generate More</button>
@@ -78,7 +78,27 @@
 
           <article class="tool-panel reveal">
             <h3>Generated Output</h3>
-            <div class="mt-4" data-tool-output></div>
+            <div class="mt-4" data-tool-output aria-live="polite"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap pt-0" data-tool-seo-section>
+        <div class="tool-info-grid">
+          <article class="tool-info-card">
+            <p class="tool-info-eyebrow">Overview</p>
+            <h2 data-tool-overview-title>Why use this ToolShala tool?</h2>
+            <p data-tool-overview-text>Get structured, useful output from your own details in seconds.</p>
+          </article>
+          <article class="tool-info-card">
+            <p class="tool-info-eyebrow">How to use</p>
+            <h2>Simple workflow</h2>
+            <ul class="tool-info-list" data-tool-how-to></ul>
+          </article>
+          <article class="tool-info-card" data-tool-related-card>
+            <p class="tool-info-eyebrow">Related tools</p>
+            <h2>Try next</h2>
+            <div class="tool-related-links" data-tool-related-links></div>
           </article>
         </div>
       </section>

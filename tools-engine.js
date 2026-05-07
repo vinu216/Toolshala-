@@ -241,6 +241,73 @@
 
   const getToolById = (toolId) => toolDefinitions.find((tool) => tool.id === toolId);
 
+  const getContentTools = () => {
+    const tools = window.ToolShalaContent?.collections?.tools;
+    return Array.isArray(tools) ? tools : [];
+  };
+
+  const getToolListingBySlug = (slug) => getContentTools().find((entry) => entry?.slug === slug) || null;
+
+  const buildToolOverview = (tool) => {
+    const listing = getToolListingBySlug(tool.id);
+    const title = tool.title || 'ToolShala Tool';
+    const category = tool.category || listing?.categoryLabel || 'AI Tool';
+    const description = tool.metaDescription || listing?.metaDescription || tool.description || listing?.description || 'Generate a useful result from your details.';
+    return {
+      title: `${title}: quick overview`,
+      text: `${description} Add clear inputs, review the AI output, then copy or regenerate until it fits your exact use case.`,
+      steps: [
+        `Fill the required ${category.toLowerCase()} fields with specific, truthful details.`,
+        'Click generate and wait for the AI response from the existing ToolShala API flow.',
+        'Review the result, copy the raw text, or regenerate for a fresh version.'
+      ]
+    };
+  };
+
+  const getRelatedTools = (tool, limit = 3) => {
+    const tools = getContentTools();
+    const current = getToolListingBySlug(tool.id);
+    const category = current?.category;
+    const tags = new Set([...(current?.tags || []), tool.category, ...(String(tool.title || '').toLowerCase().split(/\W+/))]
+      .map((item) => String(item || '').toLowerCase())
+      .filter(Boolean));
+
+    return tools
+      .filter((entry) => entry?.slug && entry.slug !== tool.id && entry.url)
+      .map((entry) => {
+        const entryTags = [entry.category, entry.categoryLabel, ...(entry.tags || []), entry.title]
+          .map((item) => String(item || '').toLowerCase());
+        const score = entryTags.reduce((sum, item) => sum + (tags.has(item) ? 2 : 0), entry.category === category ? 3 : 0) + (entry.featured ? 1 : 0);
+        return { entry, score };
+      })
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || String(a.entry.title || '').localeCompare(String(b.entry.title || '')))
+      .slice(0, limit)
+      .map((item) => item.entry);
+  };
+
+  const renderToolSeoContent = (root, tool) => {
+    const overviewTitle = root.querySelector('[data-tool-overview-title]');
+    const overviewText = root.querySelector('[data-tool-overview-text]');
+    const howToNode = root.querySelector('[data-tool-how-to]');
+    const relatedCard = root.querySelector('[data-tool-related-card]');
+    const relatedLinks = root.querySelector('[data-tool-related-links]');
+    const overview = buildToolOverview(tool);
+
+    if (overviewTitle) overviewTitle.textContent = overview.title;
+    if (overviewText) overviewText.textContent = overview.text;
+    if (howToNode) {
+      howToNode.innerHTML = overview.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('');
+    }
+    if (relatedLinks && relatedCard) {
+      const related = getRelatedTools(tool);
+      relatedCard.classList.toggle('hidden', !related.length);
+      relatedLinks.innerHTML = related
+        .map((entry) => `<a href="${escapeHtml(entry.url)}">${escapeHtml(entry.title || 'Related tool')}</a>`)
+        .join('');
+    }
+  };
+
   const getToolFields = (tool) => {
     if (Array.isArray(tool?.fields) && tool.fields.length) {
       return tool.fields;
@@ -666,7 +733,7 @@
       };
     },
 
-    'study-notes-summarizer': (values, options = {}) => {
+    'lecture-notes-summarizer': (values, options = {}) => {
       const variant = Number(options.variant || 0);
       const topic = String(values.topic || '').trim();
       const notes = String(values.notes || '').trim();
@@ -2772,12 +2839,145 @@ ${senderName}`;
       }
     }
 
-    if (tool.id === 'study-notes-summarizer') {
+    if (tool.id === 'lecture-notes-summarizer') {
       const notes = String(values.notes || '').trim();
       if (notes.length < 120) {
         return {
           fieldErrors: {
             notes: 'Please add a bit more notes text (at least 120 characters) for better summarization.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'flashcard-generator') {
+      const notes = String(values.notesText || '').trim();
+      const count = Number(values.flashcardCount || 0);
+      if (notes.length < 80) {
+        return {
+          fieldErrors: {
+            notesText: 'Please paste at least 80 characters of notes or chapter text.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (!Number.isInteger(count) || count < 3 || count > 30) {
+        return {
+          fieldErrors: {
+            flashcardCount: 'Please choose between 3 and 30 flashcards.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'quiz-mcq-generator') {
+      const notes = String(values.notesText || '').trim();
+      const count = Number(values.questionCount || 0);
+      if (notes.length < 80) {
+        return {
+          fieldErrors: {
+            notesText: 'Please paste at least 80 characters of notes or lesson text.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (!Number.isInteger(count) || count < 3 || count > 25) {
+        return {
+          fieldErrors: {
+            questionCount: 'Please choose between 3 and 25 questions.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'lesson-plan-generator-for-teachers') {
+      const duration = Number(values.classDuration || 0);
+      const objective = String(values.learningObjective || '').trim();
+      if (!Number.isInteger(duration) || duration < 15 || duration > 240) {
+        return {
+          fieldErrors: {
+            classDuration: 'Please use a class duration between 15 and 240 minutes.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (objective.length < 30) {
+        return {
+          fieldErrors: {
+            learningObjective: 'Please add a clearer learning objective with at least 30 characters.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'worksheet-practice-sheet-generator') {
+      const countValue = String(values.questionCount || '').trim();
+      const count = Number(countValue || 0);
+      if (countValue && (!Number.isInteger(count) || count < 3 || count > 50)) {
+        return {
+          fieldErrors: {
+            questionCount: 'Please choose between 3 and 50 questions, or leave it blank.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'freelance-proposal-generator') {
+      const requirements = String(values.projectRequirements || '').trim();
+      if (requirements.length < 80) {
+        return {
+          fieldErrors: {
+            projectRequirements: 'Please add at least 80 characters of client requirements or project brief.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'freelance-rate-card-generator') {
+      const packageCount = Number(values.packageCount || 0);
+      if (!Number.isInteger(packageCount) || packageCount < 3 || packageCount > 5) {
+        return {
+          fieldErrors: {
+            packageCount: 'Please choose between 3 and 5 packages.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'social-media-content-calendar-generator') {
+      const nicheTopic = String(values.nicheTopic || '').trim();
+      if (nicheTopic.length < 4) {
+        return {
+          fieldErrors: {
+            nicheTopic: 'Please add a clearer niche or topic.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
+    if (tool.id === 'reel-shorts-hook-generator') {
+      const topic = String(values.videoTopic || '').trim();
+      const count = Number(values.hookCount || 0);
+      if (topic.length < 12) {
+        return {
+          fieldErrors: {
+            videoTopic: 'Please add a clearer video topic.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (!Number.isInteger(count) || count < 5 || count > 25) {
+        return {
+          fieldErrors: {
+            hookCount: 'Please choose between 5 and 25 hooks.'
           },
           formError: 'Please correct the highlighted field.'
         };
@@ -3055,6 +3255,38 @@ ${senderName}`;
       }
     }
 
+    if (tool.id === 'student-study-planner-generator') {
+      const hours = Number(values.hoursPerDay || 0);
+      const subjects = normalizeCommaList(values.subjects);
+      const examDate = new Date(values.examDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (hours < 1 || hours > 14) {
+        return {
+          fieldErrors: {
+            hoursPerDay: 'Please use available study hours between 1 and 14.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (subjects.length < 2) {
+        return {
+          fieldErrors: {
+            subjects: 'Please add at least 2 subjects.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+      if (Number.isNaN(examDate.getTime()) || examDate.getTime() < today.getTime()) {
+        return {
+          fieldErrors: {
+            examDate: 'Please choose today or a future exam date.'
+          },
+          formError: 'Please correct the highlighted field.'
+        };
+      }
+    }
+
     return null;
   };
 
@@ -3093,6 +3325,7 @@ ${senderName}`;
     label.className = 'field-label';
     label.setAttribute('for', `tool-field-${field.key}`);
     label.innerHTML = `${escapeHtml(field.label)}${field.required ? ' <span class="field-required">*</span>' : ''}`;
+    const describedBy = [];
 
     let input;
     if (field.type === 'select') {
@@ -3139,14 +3372,22 @@ ${senderName}`;
     const helperText = getFieldHelperText(field);
     if (helperText) {
       const helper = document.createElement('p');
+      helper.id = `tool-field-${field.key}-helper`;
       helper.className = 'field-helper';
       helper.textContent = helperText;
+      describedBy.push(helper.id);
       wrapper.appendChild(helper);
     }
     
     const error = document.createElement('p');
+    error.id = `tool-field-${field.key}-error`;
     error.className = 'field-error hidden';
     error.setAttribute('data-field-error', 'true');
+    error.setAttribute('aria-live', 'polite');
+    describedBy.push(error.id);
+    if (describedBy.length) {
+      input.setAttribute('aria-describedby', describedBy.join(' '));
+    }
     wrapper.appendChild(error);
 
     return wrapper;
@@ -3155,7 +3396,8 @@ ${senderName}`;
   const renderOutput = ({ outputNode, result, tool }) => {
     outputNode.innerHTML = '';
     if (!result) {
-      outputNode.innerHTML = '<p class="tool-empty">Your generated result will appear here.</p>';
+      const label = tool?.title ? `${tool.title} result` : 'generated result';
+      outputNode.innerHTML = `<p class="tool-empty">Your ${escapeHtml(label)} will appear here after generation.</p>`;
       return;
     }
 
@@ -3240,6 +3482,38 @@ ${senderName}`;
       });
       actions.appendChild(button);
 
+      const shareButton = document.createElement('button');
+      shareButton.type = 'button';
+      shareButton.className = 'btn-secondary';
+      shareButton.textContent = 'Share';
+      shareButton.addEventListener('click', async () => {
+        try {
+          const shared = await shareText(tool.title, result.text);
+          showToast('success', shared ? 'Share dialog opened.' : 'Copied to clipboard.', shared ? '' : 'Share is unavailable. Content copied instead.');
+        } catch (error) {
+          showToast('error', 'Could not share right now.', 'Please try again.');
+        }
+      });
+      actions.appendChild(shareButton);
+
+      const downloadButton = document.createElement('button');
+      downloadButton.type = 'button';
+      downloadButton.className = 'btn-secondary';
+      downloadButton.textContent = 'Download';
+      downloadButton.addEventListener('click', () => {
+        const blob = new Blob([result.text || ''], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = result.fileName || `${tool.id || 'toolshala'}-result.txt`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        showToast('success', 'Your download is starting.');
+      });
+      actions.appendChild(downloadButton);
+
       if (Number.isFinite(result.characterCount)) {
         const count = document.createElement('p');
         count.className = 'tool-helper-text';
@@ -3257,26 +3531,6 @@ ${senderName}`;
           showToast('success', 'Done successfully.', 'Your print dialog is ready.');
         });
         actions.appendChild(printButton);
-      }
-
-      if (result.downloadable) {
-        const downloadButton = document.createElement('button');
-        downloadButton.type = 'button';
-        downloadButton.className = 'btn-secondary';
-        downloadButton.textContent = 'Download';
-        downloadButton.addEventListener('click', () => {
-          const blob = new Blob([result.text || ''], { type: 'text/plain;charset=utf-8' });
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = result.fileName || 'generated-output.txt';
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          URL.revokeObjectURL(url);
-          showToast('success', 'Your download is starting.');
-        });
-        actions.appendChild(downloadButton);
       }
 
       outputNode.appendChild(actions);
@@ -3391,7 +3645,7 @@ ${senderName}`;
         const copyAll = document.createElement('button');
         copyAll.type = 'button';
         copyAll.className = 'btn-secondary';
-        copyAll.textContent = 'Copy Plan';
+        copyAll.textContent = 'Copy All';
         copyAll.addEventListener('click', async () => {
           try {
             await copyText(result.copyText);
@@ -3423,7 +3677,7 @@ ${senderName}`;
         const downloadButton = document.createElement('button');
         downloadButton.type = 'button';
         downloadButton.className = 'btn-secondary';
-        downloadButton.textContent = 'Download Plan';
+        downloadButton.textContent = 'Download All';
         downloadButton.addEventListener('click', () => {
           const payload = result.copyText || (result.items || []).map((entry) => (typeof entry === 'string' ? entry : entry.copyText || entry.text || '')).join('\n\n');
           const blob = new Blob([payload], { type: 'text/plain;charset=utf-8' });
@@ -3681,9 +3935,10 @@ ${senderName}`;
       clearPreview();
       errorNode.textContent = '';
       errorNode.classList.add('hidden');
+      outputNode.setAttribute('aria-busy', 'false');
       loadingNode.classList.add('hidden');
       renderOutput({ outputNode, result: null, tool });
-      showToast('success', 'Done successfully.');
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
     });
 
     window.addEventListener('beforeunload', clearPreview);
@@ -3746,10 +4001,15 @@ ${senderName}`;
     if (helperTextNode) {
       helperTextNode.textContent = tool.helperText || 'Tip: add clear and truthful details to get practical, role-ready output.';
     }
+
+    renderToolSeoContent(root, tool);
+    outputNode.setAttribute('aria-busy', 'false');
     
     if (generateMoreButton) {
       generateMoreButton.classList.toggle('hidden', !tool.enableGenerateMore);
-      generateMoreButton.textContent = tool.id === 'study-timetable-generator'
+      generateMoreButton.textContent = tool.id === 'student-study-planner-generator'
+        ? 'Regenerate Planner'
+        : tool.id === 'study-timetable-generator'
         ? 'Regenerate Plan'
         : tool.id === 'ai-career-path-suggestor'
           ? 'Regenerate Suggestions'
@@ -3757,8 +4017,24 @@ ${senderName}`;
           ? 'Regenerate Summaries'
         : tool.id === 'interview-answer-generator'
           ? 'Regenerate Answers'
-        : tool.id === 'study-notes-summarizer'
+        : tool.id === 'lecture-notes-summarizer'
           ? 'Regenerate Summary'
+        : tool.id === 'flashcard-generator'
+          ? 'Regenerate Flashcards'
+        : tool.id === 'quiz-mcq-generator'
+          ? 'Regenerate Quiz'
+        : tool.id === 'lesson-plan-generator-for-teachers'
+          ? 'Regenerate Lesson Plan'
+        : tool.id === 'worksheet-practice-sheet-generator'
+          ? 'Regenerate Worksheet'
+        : tool.id === 'freelance-proposal-generator'
+          ? 'Regenerate Proposal'
+        : tool.id === 'freelance-rate-card-generator'
+          ? 'Regenerate Rate Card'
+        : tool.id === 'social-media-content-calendar-generator'
+          ? 'Regenerate Calendar'
+        : tool.id === 'reel-shorts-hook-generator'
+          ? 'Regenerate Hooks'
         : tool.id === 'assignment-rewriter'
           ? 'Regenerate Rewrite'
         : tool.id === 'grammar-corrector-sentence-improver'
@@ -3842,11 +4118,15 @@ ${senderName}`;
       }
 
       submitButton.disabled = true;
+      if (generateMoreButton) generateMoreButton.disabled = true;
+      resetButton.disabled = true;
       submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
       submitButton.textContent = 'Generating...';
       loadingNode.textContent = TOOL_ENGINE_CONFIG.defaultLoadingMessages[loadingMessageIndex % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
       loadingMessageIndex += 1;
       loadingNode.classList.remove('hidden');
+      outputNode.setAttribute('aria-busy', 'true');
+      renderOutput({ outputNode, result: null, tool });
 
       await wait(700);
       try {
@@ -3855,12 +4135,16 @@ ${senderName}`;
         renderOutput({ outputNode, result, tool });
         showToast('success', 'Your result is ready.');
       } catch (error) {
-        errorNode.textContent = error?.message || 'AI service failed. Please try again.';
+        const message = error?.message || 'AI service failed. Please check your inputs and try again.';
+        errorNode.textContent = message;
         errorNode.classList.remove('hidden');
-        showToast('error', 'AI service issue.', 'Unable to generate a response right now.');
+        showToast('error', 'Unable to generate right now.', message);
       } finally {
+        outputNode.setAttribute('aria-busy', 'false');
         loadingNode.classList.add('hidden');
         submitButton.disabled = false;
+        if (generateMoreButton) generateMoreButton.disabled = false;
+        resetButton.disabled = false;
         submitButton.textContent = submitButton.dataset.defaultLabel;
       }
     });
@@ -3873,20 +4157,32 @@ ${senderName}`;
         }
         
         variantCount += 1;
+        errorNode.textContent = '';
+        errorNode.classList.add('hidden');
         generateMoreButton.disabled = true;
+        submitButton.disabled = true;
+        resetButton.disabled = true;
         loadingNode.textContent = TOOL_ENGINE_CONFIG.defaultLoadingMessages[loadingMessageIndex % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
         loadingMessageIndex += 1;
         loadingNode.classList.remove('hidden');
+        outputNode.setAttribute('aria-busy', 'true');
+        renderOutput({ outputNode, result: null, tool });
         await wait(500);
         try {
           const result = await generateResult(tool.id, lastValues, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
           renderOutput({ outputNode, result, tool });
           showToast('success', 'New result generated.');
-        } catch (_error) {
-          showToast('error', 'AI service issue.', 'Unable to generate a response right now.');
+        } catch (error) {
+          const message = error?.message || 'Unable to regenerate a response right now.';
+          errorNode.textContent = message;
+          errorNode.classList.remove('hidden');
+          showToast('error', 'Unable to regenerate right now.', message);
         } finally {
+          outputNode.setAttribute('aria-busy', 'false');
           loadingNode.classList.add('hidden');
           generateMoreButton.disabled = false;
+          submitButton.disabled = false;
+          resetButton.disabled = false;
         }
       });
     }
@@ -3901,9 +4197,10 @@ ${senderName}`;
       variantCount = 0;
       errorNode.textContent = '';
       errorNode.classList.add('hidden');
+      outputNode.setAttribute('aria-busy', 'false');
       loadingNode.classList.add('hidden');
       renderOutput({ outputNode, result: null, tool });
-      showToast('success', 'Done successfully.');
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
     });
   };
 
