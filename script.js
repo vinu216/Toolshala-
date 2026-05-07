@@ -856,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (publishNode) publishNode.textContent = formatPublishedDate(guide.publishDate);
     if (breadcrumbNode) breadcrumbNode.textContent = guide.title;
 
-    const content = guide.guideContent || guide.content || (guide.body ? { overview: guide.body } : null);
+    const content = guide.guideContent || guide.content || (guide.body ? { intro: guide.body } : null);
     if (introNode) {
       introNode.textContent = content?.overview || content?.intro || guide.shortExcerpt;
     }
