@@ -856,9 +856,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (publishNode) publishNode.textContent = formatPublishedDate(guide.publishDate);
     if (breadcrumbNode) breadcrumbNode.textContent = guide.title;
 
-    const content = guide.guideContent || null;
+    const content = guide.guideContent || guide.content || (guide.body ? { overview: guide.body } : null);
     if (introNode) {
-      introNode.textContent = content?.intro || guide.shortExcerpt;
+      introNode.textContent = content?.overview || content?.intro || guide.shortExcerpt;
     }
     if (snippetNode) {
       if (content?.featuredSnippet) {
@@ -871,36 +871,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (sectionsNode) {
       const sections = Array.isArray(content?.sections) ? content.sections : [];
-      if (sections.length) {
-        sectionsNode.innerHTML = sections
-          .map((section) => {
-            const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('');
-            const bullets = (section.bullets || []).length
-              ? `<ul class="mt-3 list-disc space-y-2 pl-5 text-slate-700">${section.bullets.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`
-              : '';
-            const subSections = (section.subSections || [])
-              .map((subSection) => {
-                const subParagraphs = (subSection.paragraphs || [])
-                  .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
-                  .join('');
-                const subBullets = (subSection.bullets || []).length
-                  ? `<ul class="mt-2 list-disc space-y-2 pl-5 text-slate-700">${subSection.bullets
-                      .map((point) => `<li>${escapeHtml(point)}</li>`)
-                      .join('')}</ul>`
-                  : '';
-                return `<div class="mt-4"><h3 class="text-lg font-bold text-slate-900">${escapeHtml(
-                  subSection.heading || ''
-                )}</h3>${subParagraphs}${subBullets}</div>`;
-              })
-              .join('');
+      const bodyParagraphs = typeof guide.body === 'string' && guide.body.trim() ? guide.body.split(/\n{2,}/).filter(Boolean) : [];
+      const relatedLinks = Array.isArray(guide.relatedLinks) ? guide.relatedLinks.slice(0, 5) : [];
+      const linkSection = relatedLinks.length
+        ? `<section class="rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5"><h2 class="text-2xl font-extrabold text-slate-900">Explore Related ToolShala Resources</h2><p class="mt-3 text-slate-700">Use these internal resources to continue learning, build your portfolio, and polish applications.</p><div class="mt-4 flex flex-wrap gap-3">${relatedLinks
+            .map((link) => `<a href="${escapeHtml(resolveInternalPath(link))}" class="btn-secondary">${escapeHtml(link.replace('/guides/', '').replace(/^\//, '').replace(/-/g, ' '))}</a>`)
+            .join('')}</div></section>`
+        : '';
 
-            return `<section><h2 class="text-2xl font-extrabold text-slate-900">${escapeHtml(
-              section.heading || ''
-            )}</h2><div class="mt-3 space-y-3 text-slate-700">${paragraphs}</div>${bullets}${subSections}</section>`;
-          })
-          .join('');
+      if (sections.length) {
+        sectionsNode.innerHTML =
+          sections
+            .map((section) => {
+              const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('');
+              const bullets = (section.bullets || []).length
+                ? `<ul class="mt-3 list-disc space-y-2 pl-5 text-slate-700">${section.bullets.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`
+                : '';
+              const subSections = (section.subSections || [])
+                .map((subSection) => {
+                  const subParagraphs = (subSection.paragraphs || [])
+                    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+                    .join('');
+                  const subBullets = (subSection.bullets || []).length
+                    ? `<ul class="mt-2 list-disc space-y-2 pl-5 text-slate-700">${subSection.bullets
+                        .map((point) => `<li>${escapeHtml(point)}</li>`)
+                        .join('')}</ul>`
+                    : '';
+                  return `<div class="mt-4"><h3 class="text-lg font-bold text-slate-900">${escapeHtml(
+                    subSection.heading || ''
+                  )}</h3>${subParagraphs}${subBullets}</div>`;
+                })
+                .join('');
+
+              return `<section><h2 class="text-2xl font-extrabold text-slate-900">${escapeHtml(
+                section.heading || ''
+              )}</h2><div class="mt-3 space-y-3 text-slate-700">${paragraphs}</div>${bullets}${subSections}</section>`;
+            })
+            .join('') + linkSection;
+      } else if (bodyParagraphs.length) {
+        sectionsNode.innerHTML = `<section><h2 class="text-2xl font-extrabold text-slate-900">${escapeHtml(
+          guide.title
+        )}</h2><div class="mt-3 space-y-3 text-slate-700">${bodyParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div></section>${linkSection}`;
       } else {
-        sectionsNode.innerHTML = '<section><h2 class="text-2xl font-extrabold text-slate-900">Content Placeholder</h2><p class="mt-3 text-slate-700">Detailed article content will appear here soon.</p></section>';
+        sectionsNode.innerHTML = `<section><h2 class="text-2xl font-extrabold text-slate-900">${escapeHtml(
+          guide.title
+        )}</h2><p class="mt-3 text-slate-700">${escapeHtml(guide.shortExcerpt || guide.metaDescription || 'This guide is being prepared by ToolShala.')}</p></section>${linkSection}`;
       }
     }
 
