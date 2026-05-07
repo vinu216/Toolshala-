@@ -135,6 +135,18 @@
     allowedTypes: new Set(['image/jpeg', 'image/png', 'image/webp'])
   };
 
+  const IMAGE_QUIZ_CONFIG = {
+    endpoint: '/api/generate-image-quiz',
+    maxOriginalFileSize: 4 * 1024 * 1024,
+    maxPayloadBytes: 4.5 * 1024 * 1024,
+    maxBase64Length: 4 * 1024 * 1024,
+    maxDimension: 1280,
+    outputMimeType: 'image/jpeg',
+    outputQuality: 0.78,
+    minOutputQuality: 0.58,
+    allowedTypes: PHOTO_TO_TEXT_CONFIG.allowedTypes
+  };
+
   const buildPromptFromValues = (toolId, values = {}) => {
     const promptLines = Object.entries(values || {})
       .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
@@ -4080,6 +4092,362 @@ ${senderName}`;
     return '';
   };
 
+  const setupQuizMcqGeneratorTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields }) => {
+    const notesField = formNode.querySelector('[name="notesText"]')?.closest('.field-wrap');
+    const topicInput = formNode.querySelector('[name="topicSubject"]');
+    const notesInput = formNode.querySelector('[name="notesText"]');
+    if (!notesField || !topicInput || !notesInput) {
+      return false;
+    }
+
+    const modeWrap = document.createElement('div');
+    modeWrap.className = 'quiz-mode-switch';
+    modeWrap.innerHTML = `
+      <p class="field-label">Choose input mode</p>
+      <div class="quiz-mode-tabs" role="tablist" aria-label="Quiz input mode">
+        <button type="button" class="quiz-mode-tab is-active" data-quiz-mode="text" aria-selected="true">Text Input</button>
+        <button type="button" class="quiz-mode-tab" data-quiz-mode="image" aria-selected="false">Image Upload</button>
+      </div>
+      <p class="field-helper">Text mode keeps the existing notes-based flow. Image mode reads a normal gallery/file upload and generates questions from visible content.</p>
+    `;
+    formNode.insertBefore(modeWrap, formNode.firstChild);
+
+    const imageWrap = document.createElement('div');
+    imageWrap.className = 'field-wrap hidden';
+    imageWrap.innerHTML = `
+      <label class="field-label" for="tool-field-quizImage">Upload Image <span class="field-required">*</span></label>
+      <input class="field-input" id="tool-field-quizImage" name="quizImage" type="file" accept="image/*">
+      <p class="field-helper">Upload a clear JPEG, PNG, or WEBP image under 4 MB. The main picker uses normal gallery/file selection and does not force camera.</p>
+      <p id="tool-field-quizImage-error" class="field-error hidden" data-field-error="true" aria-live="polite"></p>
+    `;
+    notesField.parentNode.insertBefore(imageWrap, notesField.nextSibling);
+
+    const fileInput = imageWrap.querySelector('[name="quizImage"]');
+    const preview = document.createElement('div');
+    preview.className = 'photo-preview hidden';
+    preview.setAttribute('aria-live', 'polite');
+    preview.innerHTML = '<img alt="Selected image preview" /><p data-photo-file-meta></p><button type="button" class="btn-secondary mt-3" data-clear-quiz-image>Remove image</button>';
+    imageWrap.appendChild(preview);
+    const previewImage = preview.querySelector('img');
+    const previewMeta = preview.querySelector('[data-photo-file-meta]');
+    const clearImageButton = preview.querySelector('[data-clear-quiz-image]');
+
+    let activeMode = 'text';
+    let previewUrl = '';
+    let lastValues = null;
+    let variantCount = 0;
+
+    const getSelectedQuizImage = () => fileInput?.files?.[0] || null;
+
+    const validateQuizImage = (file) => {
+      if (!file) return 'Please select an image first.';
+      if (!IMAGE_QUIZ_CONFIG.allowedTypes.has(file.type)) return 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.';
+      if (file.size > IMAGE_QUIZ_CONFIG.maxOriginalFileSize) return `Image too large. Please upload a smaller image (under 4 MB).`;
+      return '';
+    };
+
+    const clearPreview = () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+        previewUrl = '';
+      }
+      preview.classList.add('hidden');
+      previewImage?.removeAttribute('src');
+      if (previewMeta) previewMeta.textContent = '';
+    };
+
+    const setMode = (mode) => {
+      activeMode = mode === 'image' ? 'image' : 'text';
+      modeWrap.querySelectorAll('[data-quiz-mode]').forEach((button) => {
+        const selected = button.dataset.quizMode === activeMode;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+      const textRequired = activeMode === 'text';
+      notesField.classList.toggle('hidden', !textRequired);
+      imageWrap.classList.toggle('hidden', textRequired);
+      notesInput.required = textRequired;
+      topicInput.required = textRequired;
+      fileInput.required = !textRequired;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      [topicInput, notesInput, fileInput].forEach(clearFieldError);
+      renderOutput({ outputNode, result: null, tool });
+    };
+
+    const getUtf8ByteLength = (value = '') => {
+      if (window.TextEncoder) {
+        return new TextEncoder().encode(String(value || '')).length;
+      }
+      return new Blob([String(value || '')]).size;
+    };
+
+    const loadImageForOptimization = (dataUrl) =>
+      new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = () => reject(new Error('Could not read the selected image. Please try another file.'));
+        image.src = dataUrl;
+      });
+
+    const canvasToBlob = (canvas, mimeType, quality) =>
+      new Promise((resolve, reject) => {
+        if (!canvas.toBlob) {
+          reject(new Error('Your browser cannot optimize this image. Please upload a smaller image.'));
+          return;
+        }
+        canvas.toBlob((blob) => {
+          if (blob) resolve(blob);
+          else reject(new Error('Could not optimize this image. Please upload a smaller image.'));
+        }, mimeType, quality);
+      });
+
+    const resizeImageBlob = async (image, maxDimension, quality) => {
+      const scale = Math.min(1, maxDimension / Math.max(image.naturalWidth || image.width, image.naturalHeight || image.height));
+      const width = Math.max(1, Math.round((image.naturalWidth || image.width) * scale));
+      const height = Math.max(1, Math.round((image.naturalHeight || image.height) * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Your browser cannot optimize this image. Please upload a smaller image.');
+      context.fillStyle = '#ffffff';
+      context.fillRect(0, 0, width, height);
+      context.drawImage(image, 0, 0, width, height);
+      return canvasToBlob(canvas, IMAGE_QUIZ_CONFIG.outputMimeType, quality);
+    };
+
+    const blobToBase64 = async (blob) => {
+      const dataUrl = await readFileAsDataUrl(blob);
+      return dataUrl.replace(/^data:[^;]+;base64,/i, '');
+    };
+
+    const optimizeQuizImageFile = async (file, commonValues) => {
+      const validationMessage = validateQuizImage(file);
+      if (validationMessage) {
+        throw new Error(validationMessage);
+      }
+
+      const originalDataUrl = await readFileAsDataUrl(file);
+      const image = await loadImageForOptimization(originalDataUrl);
+      const dimensions = [IMAGE_QUIZ_CONFIG.maxDimension, 1120, 960];
+      const qualities = [IMAGE_QUIZ_CONFIG.outputQuality, 0.7, IMAGE_QUIZ_CONFIG.minOutputQuality];
+      let lastBase64 = '';
+
+      for (const dimension of dimensions) {
+        for (const quality of qualities) {
+          const blob = await resizeImageBlob(image, dimension, quality);
+          const imageBase64 = await blobToBase64(blob);
+          lastBase64 = imageBase64;
+          const payloadBytes = getUtf8ByteLength(JSON.stringify({
+            topicSubject: commonValues.topicSubject,
+            questionCount: commonValues.questionCount,
+            difficulty: commonValues.difficulty,
+            questionType: commonValues.questionType,
+            imageBase64,
+            mimeType: IMAGE_QUIZ_CONFIG.outputMimeType,
+            fileName: file.name || 'uploaded-image'
+          }));
+          if (imageBase64.length <= IMAGE_QUIZ_CONFIG.maxBase64Length && payloadBytes <= IMAGE_QUIZ_CONFIG.maxPayloadBytes) {
+            return {
+              imageBase64,
+              mimeType: IMAGE_QUIZ_CONFIG.outputMimeType,
+              fileName: file.name || 'uploaded-image'
+            };
+          }
+        }
+      }
+
+      if (lastBase64.length > IMAGE_QUIZ_CONFIG.maxBase64Length) {
+        throw new Error('Image too large. Please upload a smaller image (under 4 MB).');
+      }
+      throw new Error('Image payload is too large. Please upload a smaller or lower-resolution image.');
+    };
+
+    const collectTextValues = () => {
+      const values = {};
+      toolFields.forEach((field) => {
+        const input = formNode.querySelector(`[name="${field.key}"]`);
+        values[field.key] = input ? input.value.trim() : '';
+      });
+      return values;
+    };
+
+    const collectImageValues = async (reuseValues = null) => {
+      if (reuseValues?.imageBase64) return reuseValues;
+      const file = getSelectedQuizImage();
+      const validationMessage = validateQuizImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'quizImage', validationMessage);
+        throw new Error(validationMessage);
+      }
+      const commonValues = collectTextValues();
+      const optimizedImage = await optimizeQuizImageFile(file, commonValues);
+      return {
+        topicSubject: commonValues.topicSubject,
+        questionCount: commonValues.questionCount,
+        difficulty: commonValues.difficulty,
+        questionType: commonValues.questionType,
+        ...optimizedImage
+      };
+    };
+
+    const validateImageValues = (values) => {
+      const count = Number(values.questionCount || 0);
+      const fieldErrors = {};
+      if (!Number.isInteger(count) || count < 3 || count > 25) fieldErrors.questionCount = 'Please choose between 3 and 25 questions.';
+      if (!values.difficulty) fieldErrors.difficulty = 'Difficulty is required.';
+      if (!values.questionType) fieldErrors.questionType = 'Question Type is required.';
+      if (Object.keys(fieldErrors).length) return { fieldErrors, formError: 'Please correct the highlighted field.' };
+      return null;
+    };
+
+    const generateImageQuiz = async (values) => {
+      const response = await fetch(IMAGE_QUIZ_CONFIG.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(String(payload?.error || `Request failed with status ${response.status}`).trim());
+      }
+      const text = String(payload?.text || '').trim();
+      if (!text) throw new Error('AI provider returned an empty quiz response.');
+      return { type: 'text', text, copyLabel: 'Copy Quiz', fileName: 'toolshala-image-quiz.txt' };
+    };
+
+    const runGeneration = async ({ regenerate = false } = {}) => {
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      toolFields.forEach((field) => clearFieldError(formNode.querySelector(`[name="${field.key}"]`)));
+      clearFieldError(fileInput);
+
+      let values;
+      let result;
+      submitButton.disabled = true;
+      if (generateMoreButton) generateMoreButton.disabled = true;
+      resetButton.disabled = true;
+      submitButton.dataset.defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
+      submitButton.textContent = activeMode === 'image' ? 'Analyzing...' : 'Generating...';
+      loadingNode.textContent = activeMode === 'image' ? 'Analyzing image and generating quiz...' : TOOL_ENGINE_CONFIG.defaultLoadingMessages[variantCount % TOOL_ENGINE_CONFIG.defaultLoadingMessages.length];
+      loadingNode.classList.remove('hidden');
+      outputNode.setAttribute('aria-busy', 'true');
+      renderOutput({ outputNode, result: null, tool });
+
+      try {
+        if (activeMode === 'image') {
+          values = await collectImageValues(regenerate ? lastValues : null);
+          const validation = validateImageValues(values);
+          if (validation) {
+            Object.entries(validation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+            throw new Error(validation.formError || 'Please check the form and try again.');
+          }
+          result = await generateImageQuiz(values);
+          lastValues = values;
+        } else {
+          values = collectTextValues();
+          const validation = validate(tool, values);
+          if (validation) {
+            Object.entries(validation.fieldErrors || {}).forEach(([fieldKey, message]) => setFieldError(formNode, fieldKey, message));
+            throw new Error(validation.formError || 'Please check the form and try again.');
+          }
+          result = await generateResult(tool.id, values, { variant: variantCount, mode: tool.generationMode || 'hybrid' });
+          lastValues = values;
+        }
+        renderOutput({ outputNode, result, tool });
+        showToast('success', activeMode === 'image' ? 'Image quiz generated.' : 'Your result is ready.');
+      } catch (error) {
+        const message = error?.message || 'AI service failed. Please check your inputs and try again.';
+        errorNode.textContent = message;
+        errorNode.classList.remove('hidden');
+        showToast('error', 'Unable to generate right now.', message);
+      } finally {
+        outputNode.setAttribute('aria-busy', 'false');
+        loadingNode.classList.add('hidden');
+        submitButton.disabled = false;
+        if (generateMoreButton) generateMoreButton.disabled = false;
+        resetButton.disabled = false;
+        submitButton.textContent = submitButton.dataset.defaultLabel;
+      }
+    };
+
+    modeWrap.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-quiz-mode]');
+      if (!button) return;
+      lastValues = null;
+      variantCount = 0;
+      setMode(button.dataset.quizMode);
+    });
+
+    fileInput.addEventListener('change', () => {
+      clearFieldError(fileInput);
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      clearPreview();
+      lastValues = null;
+      const file = getSelectedQuizImage();
+      if (!file) return;
+      const validationMessage = validateQuizImage(file);
+      if (validationMessage) {
+        setFieldError(formNode, 'quizImage', validationMessage);
+        errorNode.textContent = validationMessage;
+        errorNode.classList.remove('hidden');
+        fileInput.value = '';
+        showToast('error', 'Please check the image.', validationMessage);
+        return;
+      }
+      previewUrl = URL.createObjectURL(file);
+      if (previewImage) previewImage.src = previewUrl;
+      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+      preview.classList.remove('hidden');
+    });
+
+    clearImageButton?.addEventListener('click', () => {
+      fileInput.value = '';
+      clearFieldError(fileInput);
+      clearPreview();
+      lastValues = null;
+    });
+
+    formNode.addEventListener('input', (event) => clearFieldError(event.target));
+    formNode.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      await runGeneration();
+    });
+
+    if (generateMoreButton) {
+      generateMoreButton.addEventListener('click', async () => {
+        if (!lastValues) {
+          showToast('error', 'Please generate a quiz first.');
+          return;
+        }
+        variantCount += 1;
+        await runGeneration({ regenerate: true });
+      });
+    }
+
+    resetButton.addEventListener('click', () => {
+      formNode.reset();
+      toolFields.forEach((field) => clearFieldError(formNode.querySelector(`[name="${field.key}"]`)));
+      clearFieldError(fileInput);
+      clearPreview();
+      lastValues = null;
+      variantCount = 0;
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      outputNode.setAttribute('aria-busy', 'false');
+      loadingNode.classList.add('hidden');
+      renderOutput({ outputNode, result: null, tool });
+      setMode('text');
+      showToast('success', 'Cleared.', 'You can start a fresh generation now.');
+    });
+
+    window.addEventListener('beforeunload', clearPreview);
+    setMode('text');
+    return true;
+  };
+
   const setupPhotoToTextTool = ({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, tool }) => {
     const fileInput = formNode.querySelector('input[type="file"][name="image"]');
     if (!fileInput) {
@@ -4384,6 +4752,12 @@ ${senderName}`;
     toolFields.forEach((field) => {
       formNode.appendChild(renderField(field));
     });
+
+    if (tool.id === 'quiz-mcq-generator') {
+      renderOutput({ outputNode, result: null, tool });
+      setupQuizMcqGeneratorTool({ formNode, outputNode, errorNode, loadingNode, resetButton, submitButton, generateMoreButton, tool, toolFields });
+      return;
+    }
 
     if (tool.id === 'photo-to-text') {
       renderOutput({ outputNode, result: null, tool });

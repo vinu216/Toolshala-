@@ -12,3 +12,8 @@
   to = "/.netlify/functions/photo-to-text"
   status = 200
   force = true
+[[redirects]]
+  from = "/api/generate-image-quiz"
+  to = "/.netlify/functions/generate-image-quiz"
+  status = 200
+  force = true
