@@ -1,5 +1,11 @@
 (function () {
   const SUPPORTED_TOOLS = new Set([
+    'ats-resume-optimizer',
+    'job-description-to-resume-tailor',
+    'salary-negotiation-script-generator',
+    'follow-up-email-generator',
+    'cold-dm-outreach-message-generator',
+    'project-idea-generator-students-freshers',
     'resume-headline-generator',
     'resume-bullet-point-generator',
     'formal-letter-generator',
@@ -1079,10 +1085,17 @@ Suggested next step: ${nextStep}`
       const promptLines = Object.entries(values || {})
         .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
         .filter((line) => !line.endsWith(':'));
+      const tool = Array.isArray(window.ToolShalaToolDefinitions)
+        ? window.ToolShalaToolDefinitions.find((entry) => entry?.id === toolId)
+        : null;
+      const promptInstructions = Array.isArray(tool?.promptInstructions)
+        ? tool.promptInstructions.map((line) => String(line || '').trim()).filter(Boolean)
+        : [];
       const prompt = [
         `Tool ID: ${toolId}`,
         'Generate a high-quality response based on the following user inputs.',
         'Format any plain-text response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
+        ...promptInstructions,
         ...promptLines
       ].join('\n');
 

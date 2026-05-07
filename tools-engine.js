@@ -139,11 +139,16 @@
     const promptLines = Object.entries(values || {})
       .map(([key, value]) => `${key}: ${String(value || '').trim()}`)
       .filter((line) => !line.endsWith(':'));
+    const tool = getToolById(toolId);
+    const promptInstructions = Array.isArray(tool?.promptInstructions)
+      ? tool.promptInstructions.map((line) => String(line || '').trim()).filter(Boolean)
+      : [];
 
     return [
       `Tool ID: ${toolId}`,
       'Generate a high-quality response based on the following user inputs.',
       'Format the response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
+      ...promptInstructions,
       ...promptLines
     ].join('\n');
   };
@@ -2621,6 +2626,74 @@ ${senderName}`;
       };
     }
 
+    if (tool.id === 'ats-resume-optimizer') {
+      const resumeText = String(values.resumeText || '').trim();
+      const targetJobTitle = String(values.targetJobTitle || '').trim();
+      if (resumeText.length < 120 || targetJobTitle.length < 3) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            resumeText: resumeText.length < 120 ? 'Please paste at least 120 characters of resume text for a useful ATS optimization.' : '',
+            targetJobTitle: targetJobTitle.length < 3 ? 'Please add a clear target job title.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'job-description-to-resume-tailor') {
+      const jobDescription = String(values.jobDescription || '').trim();
+      const resumeSummaryOrRole = String(values.resumeSummaryOrRole || '').trim();
+      const skills = normalizeCommaList(values.skills);
+      const targetTitle = String(values.targetTitle || '').trim();
+      if (jobDescription.length < 150 || resumeSummaryOrRole.length < 30 || skills.length < 2 || targetTitle.length < 3) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            jobDescription: jobDescription.length < 150 ? 'Please paste at least 150 characters from the job description for useful keyword matching.' : '',
+            resumeSummaryOrRole: resumeSummaryOrRole.length < 30 ? 'Please add a clearer current summary or role context.' : '',
+            skills: skills.length < 2 ? 'Please add at least 2 skills separated by commas.' : '',
+            targetTitle: targetTitle.length < 3 ? 'Please add a clear target title.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'follow-up-email-generator') {
+      const recipientCompany = String(values.recipientCompany || '').trim();
+      const role = String(values.role || '').trim();
+      const lastInteractionDate = String(values.lastInteractionDate || '').trim();
+      if (recipientCompany.length < 2 || role.length < 3 || lastInteractionDate.length < 3) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            recipientCompany: recipientCompany.length < 2 ? 'Please add a recipient or company name.' : '',
+            role: role.length < 3 ? 'Please add a clear role or position.' : '',
+            lastInteractionDate: lastInteractionDate.length < 3 ? 'Please add the last interaction date or timeline.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'salary-negotiation-script-generator') {
+      const currentOfferAmount = String(values.currentOfferAmount || '').trim();
+      const expectedSalary = String(values.expectedSalary || '').trim();
+      const role = String(values.role || '').trim();
+      if (currentOfferAmount.length < 2 || expectedSalary.length < 2 || role.length < 3) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            currentOfferAmount: currentOfferAmount.length < 2 ? 'Please enter the current offer amount.' : '',
+            expectedSalary: expectedSalary.length < 2 ? 'Please enter your expected salary or range.' : '',
+            role: role.length < 3 ? 'Please add a clear role or job title.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+
     if (tool.id === 'resume-headline-generator') {
       const skills = normalizeCommaList(values.skills);
       if (skills.length < 2) {
@@ -2799,6 +2872,40 @@ ${senderName}`;
         };
       }
     }
+
+    if (tool.id === 'project-idea-generator-students-freshers') {
+      const streamDomain = String(values.streamDomain || '').trim();
+      const skillSet = String(values.skillSet || '').trim();
+      const targetCareer = String(values.targetCareer || '').trim();
+      if (streamDomain.length < 3 || skillSet.length < 12 || targetCareer.length < 3) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            streamDomain: streamDomain.length < 3 ? 'Please add a clear stream or domain.' : '',
+            skillSet: skillSet.length < 12 ? 'Please add a clearer skill set so ideas can match your current level.' : '',
+            targetCareer: targetCareer.length < 3 ? 'Please add a clear target career.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
+
+    if (tool.id === 'cold-dm-outreach-message-generator') {
+      const recipientRole = String(values.recipientRole || '').trim();
+      const purpose = String(values.purpose || '').trim();
+      const contextValue = String(values.contextValue || '').trim();
+      if (recipientRole.length < 3 || purpose.length < 8 || contextValue.length < 20) {
+        return {
+          fieldErrors: Object.fromEntries(Object.entries({
+            recipientRole: recipientRole.length < 3 ? 'Please add a clear recipient role.' : '',
+            purpose: purpose.length < 8 ? 'Please add a clearer outreach purpose.' : '',
+            contextValue: contextValue.length < 20 ? 'Please add more context or value so the outreach does not sound generic.' : ''
+          }).filter(([, message]) => message)),
+          formError: 'Please correct the highlighted fields.'
+        };
+      }
+    }
+
 
     if (tool.id === 'linkedin-networking-message-generator') {
       const purpose = String(values.purpose || '').trim();
@@ -3616,6 +3723,17 @@ ${senderName}`;
     let loadingMessageIndex = 0;
 
     document.title = `${tool.title} | ToolShala`;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const searchableDescription = tool.metaDescription || tool.description;
+    if (metaDescription) metaDescription.setAttribute('content', searchableDescription);
+    if (ogTitle) ogTitle.setAttribute('content', `${tool.title} | ToolShala`);
+    if (ogDescription) ogDescription.setAttribute('content', searchableDescription);
+    if (twitterTitle) twitterTitle.setAttribute('content', `${tool.title} | ToolShala`);
+    if (twitterDescription) twitterDescription.setAttribute('content', searchableDescription);
     titleNode.textContent = tool.title;
     descriptionNode.textContent = tool.description;
     categoryNode.textContent = tool.category;
@@ -3651,6 +3769,16 @@ ${senderName}`;
           ? 'Regenerate SOP'
         : tool.id === 'linkedin-networking-message-generator'
           ? 'Regenerate Messages'
+        : tool.id === 'cold-dm-outreach-message-generator'
+          ? 'Regenerate Outreach'
+        : tool.id === 'project-idea-generator-students-freshers'
+          ? 'Regenerate Ideas'
+        : tool.id === 'job-description-to-resume-tailor'
+          ? 'Regenerate Tailoring'
+        : tool.id === 'salary-negotiation-script-generator'
+          ? 'Regenerate Scripts'
+        : tool.id === 'follow-up-email-generator'
+          ? 'Regenerate Email'
         : tool.id === 'job-description-analyzer'
           ? 'Reanalyze'
         : tool.id === 'scholarship-finder'
