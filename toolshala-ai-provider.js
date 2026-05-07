@@ -12,7 +12,13 @@
     'hashtag-generator',
     'resume-summary-generator',
     'interview-answer-generator',
-    'study-notes-summarizer',
+    'lecture-notes-summarizer',
+    'flashcard-generator',
+    'quiz-mcq-generator',
+    'lesson-plan-generator-for-teachers',
+    'worksheet-practice-sheet-generator',
+    'freelance-proposal-generator',
+    'freelance-rate-card-generator',
     'notes-to-bullet-points-converter',
     'grammar-corrector-sentence-improver',
     'paragraph-rewriter-humanizer',
@@ -30,12 +36,15 @@
     'linkedin-bio-generator',
     'cover-letter-generator',
     'study-timetable-generator',
+    'student-study-planner-generator',
     'ai-career-path-suggestor',
     'scholarship-recommendation-tool',
     'professional-email-generator',
     'email-subject-line-generator',
     'whatsapp-message-generator',
-    'content-idea-generator'
+    'content-idea-generator',
+    'social-media-content-calendar-generator',
+    'reel-shorts-hook-generator'
   ]);
 
   const normalizeResumeResult = (payload) => {
@@ -1051,7 +1060,7 @@ Suggested next step: ${nextStep}`
     if (toolId === 'hashtag-generator') return normalizeHashtagResult(payload);
     if (toolId === 'resume-summary-generator') return normalizeResumeSummaryResult(payload);
     if (toolId === 'interview-answer-generator') return normalizeInterviewAnswerResult(payload);
-    if (toolId === 'study-notes-summarizer') return normalizeStudyNotesResult(payload);
+    if (toolId === 'lecture-notes-summarizer') return normalizeStudyNotesResult(payload);
     if (toolId === 'notes-to-bullet-points-converter') return normalizeNotesToBulletsResult(payload);
     if (toolId === 'grammar-corrector-sentence-improver') return normalizeGrammarCorrectorResult(payload);
     if (toolId === 'paragraph-rewriter-humanizer') return normalizeParagraphHumanizerResult(payload);

@@ -171,6 +171,21 @@ window.ToolShalaContent = {
         url: './tool.html?tool=study-timetable-generator'
       },
       {
+        id: 'tool-student-study-planner-generator',
+        slug: 'student-study-planner-generator',
+        title: 'Student Study Planner Generator',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Generate a daily, weekly, and monthly exam study plan with timetable blocks, revision slots, breaks, and weak-topic focus.',
+        metaDescription: 'Free Student Study Planner Generator for study planner, student timetable generator, and exam study plan searches. Build practical daily, weekly, and monthly schedules.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['study-planner', 'student-timetable-generator', 'exam-study-plan', 'revision', 'planner'],
+        ctaLabel: 'Generate Planner',
+        url: './tool.html?tool=student-study-planner-generator'
+      },
+
+      {
         id: 'tool-project-idea-generator-students-freshers',
         slug: 'project-idea-generator-students-freshers',
         title: 'Project Idea Generator for Students/Freshers',
@@ -183,6 +198,36 @@ window.ToolShalaContent = {
         tags: ['project-idea-generator', 'student-project-ideas', 'fresher-projects', 'portfolio', 'career'],
         ctaLabel: 'Generate Ideas',
         url: './tool.html?tool=project-idea-generator-students-freshers'
+      },
+
+      {
+        id: 'tool-freelance-proposal-generator',
+        slug: 'freelance-proposal-generator',
+        title: 'Freelance Proposal Generator',
+        category: 'career',
+        categoryLabel: 'Freelance Tool',
+        description: 'Generate polished freelance proposals, short client pitches, detailed project approaches, and closing CTAs from client requirements.',
+        metaDescription: 'Free Freelance Proposal Generator for freelance proposal generator, proposal writer, and client pitch searches. Create professional client proposals in minutes.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['freelance-proposal-generator', 'proposal-writer', 'client-pitch', 'freelance', 'career'],
+        ctaLabel: 'Generate Proposal',
+        url: './tool.html?tool=freelance-proposal-generator'
+      },
+
+      {
+        id: 'tool-freelance-rate-card-generator',
+        slug: 'freelance-rate-card-generator',
+        title: 'Freelance Rate Card Generator',
+        category: 'career',
+        categoryLabel: 'Freelance Tool',
+        description: 'Generate freelancer rate cards with starter, standard, and premium packages, add-ons, pricing logic, and negotiation buffers.',
+        metaDescription: 'Free Freelance Rate Card Generator for freelance rate card generator, pricing calculator, and service packages searches. Build client-friendly pricing tiers and add-ons.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['freelance-rate-card-generator', 'pricing-calculator', 'service-packages', 'freelance', 'rate-card'],
+        ctaLabel: 'Generate Rate Card',
+        url: './tool.html?tool=freelance-rate-card-generator'
       },
 
       {
@@ -293,6 +338,36 @@ window.ToolShalaContent = {
         tags: ['hashtag', 'social-media', 'instagram', 'linkedin'],
         ctaLabel: 'Generate Hashtags',
         url: './tool.html?tool=hashtag-generator'
+      },
+
+      {
+        id: 'tool-reel-shorts-hook-generator',
+        slug: 'reel-shorts-hook-generator',
+        title: 'Reel / Shorts Hook Generator',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Generate scroll-stopping Reels and Shorts hooks, opener variants, CTA lines, and caption openers for short-form videos.',
+        metaDescription: 'Free Reel / Shorts Hook Generator for reel hook generator, shorts hook generator, and viral hook ideas searches. Create hooks and openers for short-form content.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['reel-hook-generator', 'shorts-hook-generator', 'viral-hook-ideas', 'reels', 'shorts'],
+        ctaLabel: 'Generate Hooks',
+        url: './tool.html?tool=reel-shorts-hook-generator'
+      },
+
+      {
+        id: 'tool-social-media-content-calendar-generator',
+        slug: 'social-media-content-calendar-generator',
+        title: 'Social Media Content Calendar Generator',
+        category: 'social',
+        categoryLabel: 'Social Tool',
+        description: 'Generate weekly or monthly social media content calendars with post types, hooks, CTAs, themes, and execution notes.',
+        metaDescription: 'Free Social Media Content Calendar Generator for content planner and posting schedule searches. Build weekly or monthly calendars for Instagram, LinkedIn, YouTube, X, and multi-platform content.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['social-media-content-calendar-generator', 'content-planner', 'posting-schedule', 'creator', 'social-media'],
+        ctaLabel: 'Generate Calendar',
+        url: './tool.html?tool=social-media-content-calendar-generator'
       },
 
       {
@@ -472,18 +547,79 @@ window.ToolShalaContent = {
       },
 
       {
-        id: 'tool-study-notes-summarizer',
-        slug: 'study-notes-summarizer',
-        title: 'Study Notes Summarizer',
+        id: 'tool-lecture-notes-summarizer',
+        slug: 'lecture-notes-summarizer',
+        title: 'Lecture Notes Summarizer',
         category: 'study',
         categoryLabel: 'Student Tool',
-        description: 'Convert long notes into summary, bullet points, keywords, and quick revision format.',
-        publishedAt: '2026-04-26',
-        featured: false,
-        tags: ['study', 'notes', 'summary', 'revision'],
+        description: 'Turn long lecture notes, class notes, or textbook text into a concise summary, key points, definitions, revision bullets, and memory tips.',
+        metaDescription: 'Free Lecture Notes Summarizer for lecture notes summarizer, notes to summary, and study notes generator searches. Create revision-friendly study summaries from notes.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['lecture-notes-summarizer', 'notes-to-summary', 'study-notes-generator', 'summary', 'revision'],
         ctaLabel: 'Summarize Notes',
-        url: './tool.html?tool=study-notes-summarizer'
+        url: './tool.html?tool=lecture-notes-summarizer'
       },
+      {
+        id: 'tool-flashcard-generator',
+        slug: 'flashcard-generator',
+        title: 'Flashcard Generator',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Create quick Q&A study flashcards from a topic, notes, or chapter text with concise answers and memory hints.',
+        metaDescription: 'Free Flashcard Generator for flashcard generator, study flashcards, and notes to flashcards searches. Convert notes into revision-friendly Q&A cards.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['flashcard-generator', 'study-flashcards', 'notes-to-flashcards', 'revision', 'study'],
+        ctaLabel: 'Generate Flashcards',
+        url: './tool.html?tool=flashcard-generator'
+      },
+
+      {
+        id: 'tool-quiz-mcq-generator',
+        slug: 'quiz-mcq-generator',
+        title: 'Quiz / MCQ Generator',
+        category: 'study',
+        categoryLabel: 'Student Tool',
+        description: 'Create MCQ, short-answer, or mixed quiz questions from a topic, notes, or lesson text with answers and explanations.',
+        metaDescription: 'Free Quiz / MCQ Generator for quiz generator, MCQ generator, and question generator searches. Generate educational questions from notes or lesson content.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['quiz-generator', 'mcq-generator', 'question-generator', 'study', 'teacher-tool'],
+        ctaLabel: 'Generate Quiz',
+        url: './tool.html?tool=quiz-mcq-generator'
+      },
+
+      {
+        id: 'tool-lesson-plan-generator-for-teachers',
+        slug: 'lesson-plan-generator-for-teachers',
+        title: 'Lesson Plan Generator for Teachers',
+        category: 'study',
+        categoryLabel: 'Teacher Tool',
+        description: 'Generate classroom-ready lesson plans with objectives, introduction, teaching steps, activity, assessment, homework, and closure.',
+        metaDescription: 'Free Lesson Plan Generator for Teachers for lesson plan generator, teacher lesson plan, and class plan generator searches. Create editable classroom lesson plans in minutes.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['lesson-plan-generator', 'teacher-lesson-plan', 'class-plan-generator', 'teacher-tool', 'study'],
+        ctaLabel: 'Generate Lesson Plan',
+        url: './tool.html?tool=lesson-plan-generator-for-teachers'
+      },
+
+      {
+        id: 'tool-worksheet-practice-sheet-generator',
+        slug: 'worksheet-practice-sheet-generator',
+        title: 'Worksheet / Practice Sheet Generator',
+        category: 'study',
+        categoryLabel: 'Teacher Tool',
+        description: 'Create printable worksheets, practice sheets, homework sheets, and revision activities from a subject, topic, and class level.',
+        metaDescription: 'Free Worksheet / Practice Sheet Generator for worksheet generator, practice sheet generator, and homework sheet maker searches. Generate printable questions, instructions, and answer keys.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['worksheet-generator', 'practice-sheet-generator', 'homework-sheet-maker', 'teacher-tool', 'study'],
+        ctaLabel: 'Generate Worksheet',
+        url: './tool.html?tool=worksheet-practice-sheet-generator'
+      },
+
       {
         id: 'tool-scholarship-finder',
         slug: 'scholarship-finder',

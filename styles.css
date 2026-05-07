@@ -510,7 +510,7 @@ select {
   line-height: 1.25;
   min-height: 2.75rem;
   padding: 0.75rem 1.1rem;
-  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
 .btn-primary {
@@ -531,8 +531,16 @@ select {
 }
 
 .btn-secondary:hover {
-  background-color: #f8fafc;
+  border-color: #a5b4fc;
+  background: linear-gradient(135deg, #ffffff, #f5f7ff);
+  color: #312e81;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.12);
   transform: translateY(-2px);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0);
 }
 
 .section-wrap {
@@ -3028,6 +3036,82 @@ footer a:active {
   box-shadow: inset 0 1px 0 #ffffff;
 }
 
+
+.tool-info-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-info-card {
+  border: 1px solid #dbe4f5;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  padding: 1.1rem;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.tool-info-eyebrow {
+  margin: 0 0 0.35rem;
+  color: #4f46e5;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tool-info-card h2 {
+  color: #1e1b4b;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.tool-info-card p,
+.tool-info-list {
+  margin-top: 0.55rem;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tool-info-list {
+  list-style: disc;
+  padding-left: 1.1rem;
+}
+
+.tool-related-links {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tool-related-links a {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #dbe4fb;
+  background: #fff;
+  padding: 0.45rem 0.75rem;
+  color: #3730a3;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.tool-related-links a:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.12);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+  .tool-info-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media print {
   header,
   footer,
@@ -3237,7 +3321,13 @@ footer a:active {
 .btn-primary:disabled {
   opacity: 0.65;
   cursor: not-allowed;
+  filter: saturate(0.82);
   transform: none;
+  box-shadow: none;
+}
+
+[data-tool-output][aria-busy='true'] {
+  opacity: 0.72;
 }
 
 a:focus-visible,
