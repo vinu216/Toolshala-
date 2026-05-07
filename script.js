@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const guides = seoGuides.length
       ? seoGuides
           .filter((guide) => guide.featured)
-          .slice(0, 4)
+          .slice(0, 6)
           .map((guide) => ({
             id: guide.id,
             slug: guide.slug,
@@ -713,7 +713,9 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryLabel: guide.category,
             publishedAt: guide.publishDate,
             featured: guide.featured,
-            url: resolveGuideLink(guide)
+            url: resolveGuideLink(guide),
+            ctaText: guide.ctaText,
+            readingTime: guide.readingTime
           }))
       : fallbackGuides;
 
@@ -743,7 +745,8 @@ document.addEventListener('DOMContentLoaded', () => {
           'data-category': guide.category
         });
 
-        return `<article class="feature-card reveal"${attrs}><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(guide.categoryLabel)}</p><h3>${escapeHtml(guide.title)}</h3><p>${escapeHtml(guide.excerpt)}</p><p class="card-helper-text">Simple guidance for better decisions.</p><a href="${escapeHtml(guide.url || './career.html')}" class="mt-3 inline-flex font-semibold text-indigo-700">Read Guide</a></article>`;
+        const meta = [guide.readingTime, guide.audience].filter(Boolean).join(' • ');
+        return `<article class="feature-card career-guide-feature reveal"${attrs}><div class="career-guide-feature-head"><span class="path-badge">${escapeHtml(guide.categoryLabel || 'Career Guide')}</span>${meta ? `<span>${escapeHtml(meta)}</span>` : ''}</div><h3>${escapeHtml(guide.title)}</h3><p>${escapeHtml(guide.excerpt)}</p><p class="card-helper-text">Recommended next step: read the guide, note the skill list, then use ToolShala tools/templates to create proof of work.</p><a href="${escapeHtml(guide.url || './career.html')}" class="career-action-link mt-4">${escapeHtml(guide.ctaText || 'Read Guide')}</a></article>`;
       }
     });
   };
