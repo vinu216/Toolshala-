@@ -1,4 +1,6 @@
-const DEFAULT_MAX_FILE_MB = 8;
+const DEFAULT_MAX_FILE_MB = 3.5;
+const MAX_SAFE_REQUEST_BYTES = Math.floor(5.5 * 1024 * 1024);
+const PROVIDER_TIMEOUT_MS = 25000;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
 const corsHeaders = {
@@ -19,7 +21,7 @@ const getEnvString = (key, fallback = '') => String(process.env[key] || fallback
 const getMaxImageBytes = () => {
   const configuredMaxMb = Number(getEnvString('IMAGE_QUIZ_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
   const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
-  return Math.floor(maxMb * 1024 * 1024);
+  return Math.min(Math.floor(maxMb * 1024 * 1024), Math.floor(DEFAULT_MAX_FILE_MB * 1024 * 1024));
 };
 
 const parseImagePayload = (imageBase64 = '') => {
@@ -33,26 +35,52 @@ const parseImagePayload = (imageBase64 = '') => {
 
 const normalizeBaseUrl = (baseUrl = '') => String(baseUrl || '').trim().replace(/\/+$/, '');
 
-const buildVisionConfig = () => {
-  const provider = getEnvString('IMAGE_QUIZ_PROVIDER', getEnvString('PHOTO_TO_TEXT_PROVIDER', 'openai')).toLowerCase();
+const hasExplicitOpenAiModel = () => Boolean(getEnvString('IMAGE_QUIZ_MODEL') || getEnvString('OPENAI_MODEL'));
 
-  if (provider === 'openai' || provider === 'openai-compatible') {
-    return {
-      provider,
-      apiKey: getEnvString('IMAGE_QUIZ_API_KEY', getEnvString('OPENAI_API_KEY', getEnvString('PHOTO_TO_TEXT_API_KEY'))),
-      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('OPENAI_MODEL', getEnvString('PHOTO_TO_TEXT_MODEL', 'gpt-4o-mini'))),
-      baseUrl: normalizeBaseUrl(
-        getEnvString('IMAGE_QUIZ_BASE_URL', provider === 'openai' ? 'https://api.openai.com/v1' : getEnvString('PHOTO_TO_TEXT_BASE_URL'))
-      )
-    };
-  }
+// Provider selection is explicit and environment-driven: prefer IMAGE_QUIZ_PROVIDER,
+// otherwise use an existing NVIDIA deployment. OpenAI is only auto-selected when
+// both OPENAI_API_KEY and an explicit OPENAI_MODEL/IMAGE_QUIZ_MODEL are set.
+const resolveImageQuizProvider = () => {
+  const explicitProvider = getEnvString('IMAGE_QUIZ_PROVIDER').toLowerCase();
+  if (explicitProvider) return explicitProvider;
+
+  const photoProvider = getEnvString('PHOTO_TO_TEXT_PROVIDER').toLowerCase();
+  if (photoProvider === 'nvidia' && getEnvString('NVIDIA_API_KEY')) return 'nvidia';
+
+  if (getEnvString('NVIDIA_API_KEY')) return 'nvidia';
+
+  if (getEnvString('OPENAI_API_KEY') && hasExplicitOpenAiModel()) return 'openai';
+
+  return '';
+};
+
+const buildVisionConfig = () => {
+  const provider = resolveImageQuizProvider();
 
   if (provider === 'nvidia') {
     return {
       provider,
       apiKey: getEnvString('IMAGE_QUIZ_API_KEY', getEnvString('NVIDIA_API_KEY')),
-      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct')),
+      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('NVIDIA_MODEL', getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct'))),
       baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
+    };
+  }
+
+  if (provider === 'openai') {
+    return {
+      provider,
+      apiKey: getEnvString('IMAGE_QUIZ_API_KEY', getEnvString('OPENAI_API_KEY')),
+      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('OPENAI_MODEL')),
+      baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL', 'https://api.openai.com/v1'))
+    };
+  }
+
+  if (provider === 'openai-compatible') {
+    return {
+      provider,
+      apiKey: getEnvString('IMAGE_QUIZ_API_KEY'),
+      model: getEnvString('IMAGE_QUIZ_MODEL'),
+      baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL'))
     };
   }
 
@@ -90,6 +118,8 @@ const buildUserPrompt = ({ topicSubject, questionCount, difficulty, questionType
   'Generate a grounded quiz from the visible image content. Avoid fake or unrelated questions.'
 ].join('\n');
 
+const isBodyTooLarge = (body = '') => Buffer.byteLength(String(body || ''), 'utf8') > MAX_SAFE_REQUEST_BYTES;
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: corsHeaders, body: '' };
@@ -99,11 +129,15 @@ exports.handler = async (event) => {
     return jsonResponse(405, { error: 'Method not allowed' });
   }
 
+  if (isBodyTooLarge(event.body)) {
+    return jsonResponse(413, { error: 'Image too large' });
+  }
+
   let body = {};
   try {
     body = JSON.parse(event.body || '{}');
   } catch {
-    return jsonResponse(400, { error: 'Invalid JSON body' });
+    return jsonResponse(400, { error: 'Invalid image payload' });
   }
 
   const imagePayload = body.imageBase64 || body.image || body.imageData || '';
@@ -116,11 +150,11 @@ exports.handler = async (event) => {
   const questionType = String(body.questionType || '').trim().toLowerCase();
 
   if (!base64) {
-    return jsonResponse(400, { error: 'Image data is required.' });
+    return jsonResponse(400, { error: 'Invalid image payload' });
   }
 
   if (!ALLOWED_MIME_TYPES.has(mimeType)) {
-    return jsonResponse(400, { error: 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.' });
+    return jsonResponse(400, { error: 'Invalid image payload' });
   }
 
   if (!Number.isInteger(questionCount) || questionCount < 3 || questionCount > 25) {
@@ -136,25 +170,35 @@ exports.handler = async (event) => {
   }
 
   const normalizedBase64 = base64.replace(/\s/g, '');
-  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(normalizedBase64)) {
-    return jsonResponse(400, { error: 'Invalid image data. Please upload the image again.' });
+  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(normalizedBase64) || normalizedBase64.length % 4 !== 0) {
+    return jsonResponse(400, { error: 'Invalid image payload' });
+  }
+
+  if (Buffer.byteLength(normalizedBase64, 'utf8') > MAX_SAFE_REQUEST_BYTES) {
+    return jsonResponse(413, { error: 'Image too large' });
   }
 
   const imageBytes = Buffer.from(normalizedBase64, 'base64');
   const maxImageBytes = getMaxImageBytes();
+  if (!imageBytes.length) {
+    return jsonResponse(400, { error: 'Invalid image payload' });
+  }
+
   if (imageBytes.length > maxImageBytes) {
-    const maxMb = Math.max(1, Math.floor(maxImageBytes / (1024 * 1024)));
-    return jsonResponse(413, { error: `Image is too large. Please upload an image up to ${maxMb} MB.` });
+    return jsonResponse(413, { error: 'Image too large' });
   }
 
   const config = buildVisionConfig();
   if (!['openai', 'openai-compatible', 'nvidia'].includes(config.provider)) {
-    return jsonResponse(500, { error: `Unsupported image quiz provider "${config.provider}". Use IMAGE_QUIZ_PROVIDER=openai, openai-compatible, or nvidia.` });
+    return jsonResponse(500, { error: 'Provider not configured' });
   }
 
   if (!config.apiKey || !config.model || !config.baseUrl) {
-    return jsonResponse(500, { error: 'Image quiz generation is not configured on the server. Add image-capable AI provider environment variables.' });
+    return jsonResponse(500, { error: 'Provider not configured' });
   }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);
 
   try {
     const response = await fetch(`${config.baseUrl}/chat/completions`, {
@@ -163,6 +207,7 @@ exports.handler = async (event) => {
         Authorization: `Bearer ${config.apiKey}`,
         'Content-Type': 'application/json'
       },
+      signal: controller.signal,
       body: JSON.stringify({
         model: config.model,
         messages: [
@@ -194,6 +239,11 @@ exports.handler = async (event) => {
 
     return jsonResponse(200, { text });
   } catch (error) {
+    if (error?.name === 'AbortError') {
+      return jsonResponse(504, { error: 'Image quiz generation timed out. Please try a clearer or smaller image.' });
+    }
     return jsonResponse(502, { error: error?.message || 'Image quiz generation failed. Please try another clear image.' });
+  } finally {
+    clearTimeout(timeout);
   }
 };
