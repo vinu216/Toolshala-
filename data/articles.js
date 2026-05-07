@@ -35,6 +35,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'AI Content Strategist ek aisa role hai jahan aap content planning, audience research, SEO, brand voice, and AI tools ko combine karke useful content systems banate ho. Agar aap fresher, student, creator, writer, marketer, ya non-coding AI career explore kar rahe ho, this roadmap will help you start step-by-step without feeling overwhelmed.',
+          overview:
+            'AI Content Strategist role content planning, SEO research, prompt writing, brand voice, and analytics ko combine karta hai. Is overview mein aap samjhoge ki yeh non-coding AI career kis ke liye fit hai, companies ko structured AI content workflows kyun chahiye, and roadmap beginners ko basics se portfolio-ready projects tak kaise le jaata hai.',
           featuredSnippet:
             'An AI Content Strategist plans content with audience research, SEO, analytics, brand messaging, and AI-assisted workflows. Beginners should learn content basics, prompt writing, keyword research, editing, and portfolio projects before applying for internships or entry-level roles.',
           sections: [
@@ -316,6 +318,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'No-Code Automation Specialist ek practical career role hai jahan aap apps, forms, spreadsheets, CRMs, emails, and AI tools ko connect karke repetitive kaam automate karte ho. Agar aap student ya fresher ho, coding strong nahi hai, but systems, problem-solving, and productivity tools pasand hain, this roadmap aapko step-by-step start karne mein help karega.',
+          overview:
+            'No-Code Automation Specialist apps, forms, spreadsheets, CRMs, emails, and AI tools ko connect karke repetitive work reduce karta hai. Is overview mein aap role ka purpose, business productivity impact, beginner skills, platforms, and process thinking ko real workflow projects mein convert karne ka path samjhoge.',
           featuredSnippet:
             'A No-Code Automation Specialist builds workflows using tools like Zapier, Make, Airtable, Notion, Google Sheets, Forms, and AI assistants. Beginners should learn process mapping, triggers, actions, data cleanup, testing, documentation, and portfolio projects before pitching internships or freelance clients.',
           sections: [
@@ -615,6 +619,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Prompt Engineering ek practical AI career skill hai jahan aap AI tools ko clear instructions, context, examples, constraints, and quality checks dete ho so output useful, accurate, and role-ready bane. Agar aap student, fresher, writer, marketer, researcher, support executive, ya non-coding AI career explore kar rahe ho, this roadmap aapko basics se portfolio tak guide karega.',
+          overview:
+            'Prompt Engineering ka focus AI tools ko clear instructions, context, examples, constraints, and evaluation checks dena hai. Ye overview students aur freshers ko batata hai ki prompt frameworks kaise seekhne hain, AI output quality kaise improve karni hai, prompt library kaise banani hai, and practical AI workflow projects kaise present karne hain.',
           featuredSnippet:
             'Prompt Engineering means designing clear instructions for AI systems so they produce useful outputs. Beginners should learn AI basics, task framing, context writing, examples, evaluation, iteration, and portfolio workflows before applying for AI assistant, prompt writer, or AI operations roles.',
           sections: [
@@ -901,6 +907,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Data Analyst Roadmap for Freshers un students aur beginners ke liye hai jo Excel, SQL, Python, and dashboards seekhkar entry-level analytics job ya internship target karna chahte hain. Is guide mein simple Hinglish tone mein role, skills, practice plan, projects, resume tips, interview prep, and free resources cover kiye gaye hain.',
+          overview:
+            'Data Analyst career freshers ke liye useful hai jo Excel, SQL, dashboards, reports, and business insights par kaam karna chahte hain. Is overview mein analyst ka daily work, industries mein data skills ki value, and 30-day plus 90-day roadmap se job-ready portfolio proof banane ka approach cover hai.',
           featuredSnippet:
             'A data analyst collects, cleans, analyzes, and visualizes data to help teams make better decisions. Freshers should start with Excel or Google Sheets, learn SQL basics, add beginner Python, build Power BI or Tableau dashboards, and create 3-5 portfolio projects before applying.',
           sections: [
@@ -1188,6 +1196,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'UI/UX Designer Roadmap for Beginners students aur freshers ke liye hai jo design career start karna chahte hain without feeling confused about tools, skills, portfolio, and case studies. Is guide mein simple Hinglish tone mein UI/UX basics, Figma practice, 30-day and 90-day roadmap, portfolio projects, resume tips, and beginner resources cover kiye gaye hain.',
+          overview:
+            'UI/UX Design beginners ke liye strong path hai agar aap creativity, problem-solving, user empathy, and digital products enjoy karte ho. Is overview mein UI vs UX ka difference, usable design ki importance, and Figma, wireframes, prototypes, case studies, and portfolio presentation seekhne ka roadmap summarize hai.',
           featuredSnippet:
             'UI/UX design is about creating digital products that look good and are easy to use. Beginners should learn user research, wireframes, visual design, Figma, prototyping, usability testing, and portfolio case studies before applying for internships or junior designer roles.',
           sections: [
@@ -1496,6 +1506,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Cybersecurity Analyst Roadmap for Beginners un students aur freshers ke liye hai jo security career start karna chahte hain but networking, tools, labs, certifications, and jobs ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, lab ideas, resume tips, interview prep, and resources cover kiye gaye hain.',
+          overview:
+            'Cybersecurity Analyst systems ko protect karne ke liye networks, logs, threats, alerts, and incident response basics samajhta hai. Ye overview beginners ko safe and structured security path deta hai jisme fundamentals, labs, SOC-style practice, portfolio documentation, and fresher-level interview prep cover hota hai.',
           featuredSnippet:
             'A Cybersecurity Analyst protects systems by monitoring alerts, investigating suspicious activity, understanding networks, reviewing logs, and helping teams respond to incidents. Beginners should learn networking, Linux, security basics, SIEM concepts, log analysis, labs, and portfolio documentation before applying for SOC or security analyst roles.',
           sections: [
@@ -1789,6 +1801,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Digital Marketing Executive Roadmap for Freshers un students aur beginners ke liye hai jo SEO, social media, email marketing, ads, analytics, and content planning seekhkar internship ya entry-level marketing role target karna chahte hain. Is guide mein simple Hinglish tone mein role, skills, tools, 30-day and 90-day roadmap, projects, resume tips, freelance ideas, and ToolShala resources cover kiye gaye hain.',
+          overview:
+            'Digital Marketing Executive role freshers ke liye practical option hai agar aap SEO, social media, email marketing, analytics, and campaign planning seekhna chahte ho. Is overview mein businesses ko measurable online growth kyun chahiye, and beginners practical marketing projects plus application-ready profiles kaise bana sakte hain, yeh cover hai.',
           featuredSnippet:
             'A Digital Marketing Executive helps brands grow online through SEO, social media, email campaigns, paid ads, content planning, and analytics. Freshers should learn marketing basics, SEO, social content, email writing, ad fundamentals, reporting, and build 3-5 portfolio projects before applying.',
           sections: [
@@ -2080,6 +2094,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Video Editor / Short-Form Content Creator Roadmap beginners, students, and freshers ke liye hai jo Reels, YouTube Shorts, TikTok-style videos, creator edits, and brand content editing se career ya freelance income start karna chahte hain. Is guide mein simple Hinglish tone mein skills, tools, 30-day and 90-day roadmap, portfolio ideas, practice plan, client tips, and ToolShala social/media resources cover kiye gaye hain.',
+          overview:
+            'Video Editor / Short-Form Content Creator path beginners ke liye hai jo Reels, Shorts, captions, hooks, and fast-paced story edits banana chahte hain. Is overview mein short-form video demand, important tools, editing skills, storytelling basics, and practical sample edits ke saath portfolio build karne ka direction diya gaya hai.',
           featuredSnippet:
             'A short-form video editor or content creator plans hooks, edits vertical videos, adds captions, music, pacing, transitions, and CTAs for platforms like Instagram Reels and YouTube Shorts. Beginners should learn storytelling, editing basics, platform formats, scripting, portfolio projects, and client communication before applying for creator or freelance roles.',
           sections: [
@@ -2389,6 +2405,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Product Manager Roadmap for Freshers un students aur beginners ke liye hai jo product management career start karna chahte hain but coding, MBA, business knowledge, case studies, and interviews ko lekar confused feel karte hain. Is guide mein simple Hinglish tone mein PM role, product thinking, skills, 30-day and 90-day roadmap, project ideas, resume tips, interview prep, and ToolShala resources cover kiye gaye hain.',
+          overview:
+            'Product Management freshers ko users, problems, prioritization, product metrics, PRDs, and roadmap thinking samajhne ka structured path deta hai. Is overview mein PM role ka core purpose, decision-making ki importance, and case studies, product teardowns, and interview-ready examples build karne ka approach summarize hai.',
           featuredSnippet:
             'A Product Manager understands user problems, defines product goals, prioritizes features, coordinates with design, engineering, marketing, and business teams, and tracks product success metrics. Freshers should learn product thinking, user research, prioritization, analytics basics, case studies, and communication before applying for PM internships or associate product roles.',
           sections: [
@@ -2698,6 +2716,8 @@ window.ToolShalaArticleContent = {
         guideContent: {
           intro:
             'Community Growth Manager Roadmap students, freshers, creators, and early-career marketers ke liye hai jo audience building, online communities, engagement strategy, and member retention seekhna chahte hain. Is guide mein simple Hinglish tone mein role, skills, platforms, 30-day and 90-day roadmap, portfolio ideas, resume tips, mistakes, and ToolShala resources cover kiye gaye hain.',
+          overview:
+            'Community Growth Manager role audience building, engagement strategy, moderation, events, retention loops, and growth analytics ko combine karta hai. Is overview mein brands aur creators ke liye communities ki value, member engagement ka logic, and small experiments ko portfolio-ready proof mein convert karne ka roadmap cover hai.',
           featuredSnippet:
             'A Community Growth Manager builds and nurtures an audience around a brand, creator, product, or learning group. Beginners should learn community strategy, content planning, engagement prompts, moderation, events, analytics, member feedback, and portfolio projects before applying for community, creator, or growth roles.',
           sections: [

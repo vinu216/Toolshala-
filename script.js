@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const content = guide.guideContent || guide.content || (guide.body ? { intro: guide.body } : null);
     if (introNode) {
-      introNode.textContent = content?.intro || guide.shortExcerpt;
+      introNode.textContent = content?.overview || content?.intro || guide.shortExcerpt;
     }
     if (snippetNode) {
       if (content?.featuredSnippet) {
