@@ -828,6 +828,86 @@ window.ToolShalaToolDefinitions = [
   },
 
   {
+    id: 'daily-priority-planner',
+    title: 'Daily Priority Planner',
+    category: 'Productivity Tool',
+    description: 'Prioritize today’s tasks into a smart to-do plan with realistic order, time blocks, focus tasks, low-priority items, and a quick action checklist.',
+    metaDescription: 'Free Daily Priority Planner for daily priority planner, to-do planner, and task planner searches. Generate an actionable daily to-do plan for students, creators, freelancers, and teachers.',
+    ctaLabel: 'Plan My Day',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: tasks ko line-by-line likho, top goals clear rakho, aur available hours realistic add karo.',
+    promptInstructions: [
+      'You are a Daily Priority Planner for students, creators, freelancers, and teachers.',
+      'Use only the user-provided tasks, goals, available hours, urgency, and user type. Do not invent unrelated tasks, deadlines, meetings, classes, or client work.',
+      'Create a practical, immediately usable daily plan in short Hinglish labels with clear Markdown.',
+      'Return exactly these sections: Priority Order, Time Blocks, Focus Tasks, Low-Priority Tasks, Quick Action Checklist.',
+      'Priority Order must rank tasks realistically by goal relevance, deadline urgency, effort, and daily impact. Mention why each top task is placed there in one short phrase.',
+      'Time Blocks must fit inside the available hours and include short breaks where practical. Do not create a schedule longer than the available hours.',
+      'Focus Tasks must identify 2-4 deep-work tasks for today with suggested focus duration and success criteria.',
+      'Low-Priority Tasks must identify tasks that can be batched, delegated, shortened, or moved to tomorrow.',
+      'Quick Action Checklist must include 5-8 checkbox-style actions the user can start immediately.',
+      'If the task list is too long for the available hours, clearly say what to cut or postpone instead of overloading the day.',
+      'Keep the tone practical, supportive, and concise. Avoid generic motivation filler.'
+    ],
+    tips: [
+      'Tasks ko separate lines me add karo so AI priority clearly samjhe.',
+      'Top 3 goals me sirf aaj ke outcomes likho, lifetime goals nahi.',
+      'Available hours honest rakho; overloaded day ko AI trim kar dega.'
+    ],
+    fields: [
+      {
+        key: 'userType',
+        label: 'User Type',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'student', label: 'Student' },
+          { value: 'creator', label: 'Creator' },
+          { value: 'freelancer', label: 'Freelancer' },
+          { value: 'teacher', label: 'Teacher' }
+        ]
+      },
+      {
+        key: 'todaysTasks',
+        label: 'Today’s Tasks',
+        type: 'textarea',
+        placeholder: 'e.g. Assignment finish, client draft, reels script, lecture prep, emails, revision...',
+        required: true,
+        rows: 6
+      },
+      {
+        key: 'topGoals',
+        label: 'Top 3 Goals',
+        type: 'textarea',
+        placeholder: 'e.g. 1) Submit assignment\n2) Finish client draft\n3) 45 min revision',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'availableHours',
+        label: 'Available Hours',
+        type: 'number',
+        placeholder: 'e.g. 5',
+        required: true,
+        helperText: 'Aaj realistically kitne focused hours milenge?'
+      },
+      {
+        key: 'deadlineUrgency',
+        label: 'Deadline Urgency',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'low', label: 'Low - flexible' },
+          { value: 'medium', label: 'Medium - this week' },
+          { value: 'high', label: 'High - today/tomorrow' },
+          { value: 'mixed', label: 'Mixed deadlines' }
+        ]
+      }
+    ]
+  },
+
+  {
     id: 'student-study-planner-generator',
     title: 'Student Study Planner Generator',
     category: 'Student Tool',
@@ -903,6 +983,160 @@ window.ToolShalaToolDefinitions = [
           { value: 'exam-prep', label: 'Exam Prep' },
           { value: 'backlog-cover', label: 'Backlog Cover' }
         ]
+      }
+    ]
+  },
+
+  {
+    id: 'exam-revision-timetable-generator',
+    title: 'Exam Revision Timetable Generator',
+    category: 'Student Tool',
+    description: 'Generate a day-wise exam revision timetable from exam date, subjects, weak topics, daily hours, and revision style.',
+    metaDescription: 'Free Exam Revision Timetable Generator for exam revision timetable, revision planner, and study timetable searches. Build realistic day-wise revision plans with weak-topic blocks and mock test slots.',
+    ctaLabel: 'Generate Revision Timetable',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: exam date, subjects, weak topics, aur daily hours accurately add karo for realistic revision blocks.',
+    promptInstructions: [
+      'You are an Exam Revision Timetable Generator for students preparing for exams.',
+      'Use only the user-provided exam name, exam date, subjects, weak topics, daily hours, and revision style. Do not invent extra subjects or unrealistic study hours.',
+      'Create a realistic, exam-friendly revision timetable in concise Hinglish-friendly Markdown.',
+      'Return exactly these sections: Exam Snapshot, Day-wise Revision Timetable, Subject Split, Weak-topic Focus Blocks, Mock Test Slots, Quick Revision Tips.',
+      'Day-wise Revision Timetable must cover the available days until the exam date. If the exam is very close, create a compressed last-minute plan and clearly say so.',
+      'Every timetable day must include clear time blocks that fit within the available hours per day and include short breaks where useful.',
+      'Subject Split must divide subjects realistically by importance, weak areas, and revision style. Include approximate hours or percentage split.',
+      'Weak-topic Focus Blocks must prioritize weak topics with practice/revision actions, not just reading.',
+      'Mock Test Slots must include at least 1 mock/sample paper slot when time allows; for last-minute plans, include mini-test or PYQ slots.',
+      'Quick Revision Tips must be practical and immediately usable before exams.',
+      'For strict style, create disciplined fixed blocks; for balanced style, mix revision, practice, and breaks; for last-minute style, focus on high-yield topics, PYQs, formulas, and recall.',
+      'Avoid generic filler and avoid unhealthy all-night schedules.'
+    ],
+    tips: [
+      'Weak topics clearly likho so timetable un blocks ko extra focus de.',
+      'Hours per day realistic rakho; plan overloading avoid karega.',
+      'Last-minute style tab choose karo jab exam bahut close ho.'
+    ],
+    fields: [
+      {
+        key: 'examName',
+        label: 'Exam Name',
+        type: 'text',
+        placeholder: 'e.g. Class 12 Boards / B.Com Semester / NEET Mock Test',
+        required: true
+      },
+      {
+        key: 'examDate',
+        label: 'Exam Date',
+        type: 'date',
+        required: true,
+        helperText: 'Aaj ya future exam date choose karo.'
+      },
+      {
+        key: 'subjects',
+        label: 'Subjects List',
+        type: 'textarea',
+        placeholder: 'e.g. Physics, Chemistry, Maths, English',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'weakTopics',
+        label: 'Weak Topics',
+        type: 'textarea',
+        placeholder: 'e.g. Physics numericals, Organic reactions, Integration, Essay writing',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'hoursPerDay',
+        label: 'Hours Per Day',
+        type: 'number',
+        placeholder: 'e.g. 4',
+        required: true,
+        helperText: 'Daily revision ke liye realistic focused hours.'
+      },
+      {
+        key: 'revisionStyle',
+        label: 'Revision Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'strict', label: 'Strict' },
+          { value: 'balanced', label: 'Balanced' },
+          { value: 'last-minute', label: 'Last-minute' }
+        ]
+      }
+    ]
+  },
+
+  {
+    id: 'concept-simplifier-topic-explainer',
+    title: 'Concept Simplifier / Topic Explainer',
+    category: 'Student Tool',
+    description: 'Explain difficult concepts, chapters, or topics in simple Hinglish with examples, key terms, revision points, and a one-line summary.',
+    metaDescription: 'Free Concept Simplifier and Topic Explainer for concept simplifier, topic explainer, and study explainer searches. Understand difficult study topics in simple Hinglish with examples and revision points.',
+    ctaLabel: 'Explain Concept',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: topic, subject, aur class/level clear add karo so explanation beginner-friendly aur exam-useful bane.',
+    promptInstructions: [
+      'You are a Concept Simplifier / Topic Explainer for students.',
+      'Explain only the user-provided topic for the given subject, class/level, explanation style, and optional language preference.',
+      'Use simple, beginner-friendly Hinglish by default unless the language preference asks otherwise. Keep technical terms accurate.',
+      'Return exactly these sections: Simple Explanation, Real-life Example, Key Terms, 3 Quick Revision Points, One-line Summary.',
+      'Simple Explanation must remove confusion with step-by-step wording and short paragraphs.',
+      'Real-life Example must connect the concept to a relatable student-friendly situation, object, or daily-life example.',
+      'Key Terms must list important terms with simple meanings, not just keywords.',
+      '3 Quick Revision Points must include exactly 3 concise bullets useful before a test or exam.',
+      'One-line Summary must be optional only if the concept is too broad; otherwise include one crisp line.',
+      'For simple style, avoid jargon and use easy analogies. For exam style, include scoring points and exam keywords. For example-based style, use more examples and comparisons.',
+      'Do not add unsupported syllabus claims, textbook names, school names, or fake facts. If the topic is ambiguous, explain the likely meaning and mention what detail would improve the answer.'
+    ],
+    tips: [
+      'Topic specific likho, jaise “photosynthesis” instead of only “biology”.',
+      'Exam style choose karo jab answer-writing ya test prep ke liye samajhna ho.',
+      'Language preference optional hai; blank chhodoge to simple Hinglish output milega.'
+    ],
+    fields: [
+      {
+        key: 'topicName',
+        label: 'Topic Name',
+        type: 'text',
+        placeholder: 'e.g. Photosynthesis / Demand and Supply / Newton’s Laws',
+        required: true
+      },
+      {
+        key: 'subject',
+        label: 'Subject',
+        type: 'text',
+        placeholder: 'e.g. Biology, Economics, Physics, History',
+        required: true
+      },
+      {
+        key: 'classLevel',
+        label: 'Class / Level',
+        type: 'text',
+        placeholder: 'e.g. Class 10 / B.Com 1st Year / Competitive Exam',
+        required: true
+      },
+      {
+        key: 'explanationStyle',
+        label: 'Explanation Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'simple', label: 'Simple' },
+          { value: 'exam', label: 'Exam' },
+          { value: 'example-based', label: 'Example-based' }
+        ]
+      },
+      {
+        key: 'languagePreference',
+        label: 'Language Preference (optional)',
+        type: 'text',
+        placeholder: 'e.g. Hinglish, Hindi, Simple English',
+        required: false,
+        helperText: 'Blank chhodne par simple Hinglish use hoga.'
       }
     ]
   },
@@ -1212,6 +1446,178 @@ window.ToolShalaToolDefinitions = [
   },
 
   {
+    id: 'classroom-activity-planner-teachers',
+    title: 'Classroom Activity Planner for Teachers',
+    category: 'Teacher Tool',
+    description: 'Generate classroom-ready warm-up, main, group, and recap activities from subject, grade, topic, duration, and activity style.',
+    metaDescription: 'Free Classroom Activity Planner for Teachers for classroom activity planner, teacher activity generator, and class activity ideas searches. Create practical topic-based warm-up, group work, and recap activities.',
+    ctaLabel: 'Plan Activities',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: subject, class/grade, topic, duration, aur activity style clear add karo so activities classroom-ready aayein.',
+    promptInstructions: [
+      'You are a Classroom Activity Planner for Teachers. Create practical, classroom-ready activities only from the teacher-provided inputs.',
+      'Use teacher-friendly language with light Hinglish guidance where helpful. Keep instructions clear, age-appropriate, and easy to execute in a normal classroom.',
+      'Use the subject, class/grade, topic, class duration, activity style, and requested number of activities exactly as provided.',
+      'Do not invent curriculum standards, textbook references, school names, expensive materials, or unsafe activities.',
+      'Return clean Markdown only with exactly these sections: Activity Snapshot, Warm-up Activity, Main Activity, Group Activity, Quick Recap Activity, Materials Needed.',
+      'Activity Snapshot must summarize subject, class/grade, topic, duration, activity style, and number of activities.',
+      'Warm-up Activity must be short, engaging, and suitable for the age/class level.',
+      'Main Activity must teach or practice the topic clearly with step-by-step teacher instructions and suggested timing.',
+      'Group Activity must include group size, student roles, instructions, and expected output.',
+      'Quick Recap Activity must help the teacher check understanding at the end of class within 3-7 minutes.',
+      'Materials Needed must prefer simple classroom materials and include alternatives if no special material is available.',
+      'If the requested number of activities is more than the required sections, add extra activity ideas inside the most relevant sections without breaking the exact section names.',
+      'For fun style, make activities energetic but controlled. For academic style, focus on learning outcomes. For discussion style, add prompts. For group work style, make collaboration central.'
+    ],
+    tips: [
+      'Duration minutes me add karo, jaise 35 ya 45, so timing practical rahe.',
+      'Activity style choose karne se tone aur classroom flow better match hota hai.',
+      'Generated activities ko apne class size aur available materials ke hisaab se quickly adjust kar lo.'
+    ],
+    fields: [
+      {
+        key: 'subject',
+        label: 'Subject',
+        type: 'text',
+        placeholder: 'e.g. Science, English, Mathematics, Social Studies',
+        required: true
+      },
+      {
+        key: 'classGrade',
+        label: 'Class / Grade',
+        type: 'text',
+        placeholder: 'e.g. Class 5, Grade 8, B.Ed Demo Class',
+        required: true
+      },
+      {
+        key: 'topic',
+        label: 'Topic',
+        type: 'text',
+        placeholder: 'e.g. Water Cycle, Fractions, Parts of Speech',
+        required: true
+      },
+      {
+        key: 'classDuration',
+        label: 'Class Duration (minutes)',
+        type: 'number',
+        placeholder: 'e.g. 40',
+        required: true,
+        helperText: 'Total class time minutes me add karo.'
+      },
+      {
+        key: 'activityStyle',
+        label: 'Activity Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'fun', label: 'Fun' },
+          { value: 'academic', label: 'Academic' },
+          { value: 'discussion', label: 'Discussion' },
+          { value: 'group-work', label: 'Group Work' }
+        ]
+      },
+      {
+        key: 'activityCount',
+        label: 'Number of Activities',
+        type: 'number',
+        placeholder: 'e.g. 4',
+        required: true,
+        helperText: 'Use 3-8 activities for a practical classroom flow.'
+      }
+    ]
+  },
+
+  {
+    id: 'parent-teacher-meeting-note-generator',
+    title: 'Parent-Teacher Meeting Note Generator',
+    category: 'Teacher Tool',
+    description: 'Generate professional parent-teacher meeting notes, discussion summaries, action items, and follow-up notes from teacher inputs.',
+    metaDescription: 'Free Parent-Teacher Meeting Note Generator for parent teacher meeting notes, meeting summary generator, and teacher report notes searches. Create clear PTM summaries and action points for teachers.',
+    ctaLabel: 'Generate PTM Notes',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: performance, behavior, aur improvement areas objective words me likho so parent-friendly PTM note ready aaye.',
+    promptInstructions: [
+      'You are a Parent-Teacher Meeting Note Generator for teachers.',
+      'Create professional, clear, parent-friendly meeting notes only from the teacher-provided inputs.',
+      'Use the student name, class/section, meeting purpose, performance notes, behavior notes, improvement areas, and tone exactly as provided. Do not invent marks, diagnoses, incidents, family details, or sensitive personal information.',
+      'Use student privacy-aware wording: keep language respectful, objective, and limited to classroom-relevant observations. Avoid labels such as lazy, weak, problematic, slow, careless, or any medical/psychological claims.',
+      'Return clean Markdown only with exactly these sections: Meeting Summary, Key Discussion Points, Action Items, Next Follow-up Note.',
+      'Meeting Summary must briefly summarize the purpose, student context, and overall discussion in teacher-friendly language.',
+      'Key Discussion Points must convert performance notes, behavior notes, and improvement areas into clear bullets parents can understand.',
+      'Action Items must include practical next steps for teacher, parent/guardian, and student where relevant.',
+      'Next Follow-up Note must include a short professional note the teacher can send or record after the meeting, with an appropriate follow-up timeline if possible.',
+      'For formal tone, keep wording polished and official. For friendly tone, keep it warm but professional. For concise tone, keep sections short and direct.',
+      'Do not include raw private details beyond what is necessary for the note. If input is sensitive, soften it into neutral classroom-observation language.'
+    ],
+    tips: [
+      'Notes factual rakho: observations, examples, aur next steps add karo.',
+      'Behavior notes me respectful wording use karo; blame ya labels avoid karo.',
+      'Generated PTM note ko school policy aur parent context ke hisaab se review kar lo.'
+    ],
+    fields: [
+      {
+        key: 'studentName',
+        label: 'Student Name',
+        type: 'text',
+        placeholder: 'e.g. Aarav Sharma',
+        required: true
+      },
+      {
+        key: 'classSection',
+        label: 'Class / Section',
+        type: 'text',
+        placeholder: 'e.g. Class 7-B / Grade 5 A',
+        required: true
+      },
+      {
+        key: 'meetingPurpose',
+        label: 'Meeting Purpose',
+        type: 'textarea',
+        placeholder: 'e.g. Discuss academic progress, class participation, and improvement plan for upcoming unit test.',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'performanceNotes',
+        label: 'Performance Notes',
+        type: 'textarea',
+        placeholder: 'e.g. Good in oral answers, needs more written practice in fractions and word problems.',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'behaviorNotes',
+        label: 'Behavior Notes',
+        type: 'textarea',
+        placeholder: 'e.g. Participates when prompted, sometimes gets distracted during group tasks.',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'improvementAreas',
+        label: 'Improvement Areas',
+        type: 'textarea',
+        placeholder: 'e.g. Daily homework consistency, revision before tests, asking doubts in class.',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'formal', label: 'Formal' },
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'concise', label: 'Concise' }
+        ]
+      }
+    ]
+  },
+
+  {
     id: 'worksheet-practice-sheet-generator',
     title: 'Worksheet / Practice Sheet Generator',
     category: 'Teacher Tool',
@@ -1376,6 +1782,176 @@ window.ToolShalaToolDefinitions = [
   },
 
   {
+    id: 'client-onboarding-checklist-generator',
+    title: 'Client Onboarding Checklist Generator',
+    category: 'Freelance Tool',
+    description: 'Generate a freelancer-friendly client onboarding checklist with kickoff steps, documents to collect, welcome message, and first-week action plan.',
+    metaDescription: 'Free Client Onboarding Checklist Generator for client onboarding checklist, freelancer onboarding, and client welcome checklist searches. Create organized onboarding steps for freelance clients.',
+    ctaLabel: 'Generate Checklist',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: service, deliverables, timeline, aur communication preference clear add karo so onboarding smooth rahe.',
+    promptInstructions: [
+      'You are a Client Onboarding Checklist Generator for freelancers, creators, and small service businesses.',
+      'Create an organized, practical onboarding checklist only from the user-provided service type, client type, project stage, deliverables, communication preferences, and timeline.',
+      'Do not invent contracts, legal terms, payment terms, platform rules, client names, or guarantees unless the user provides them. Use careful placeholders where necessary.',
+      'Use freelancer-friendly and client-friendly language with light Hinglish guidance only when helpful. Keep the output easy to copy into email, Notion, docs, or project management tools.',
+      'Return clean Markdown only with exactly these sections: Pre-kickoff Checklist, Documents to Collect, Onboarding Message, Week 1 Action List, Follow-up Checklist.',
+      'Pre-kickoff Checklist must include clear steps to confirm scope, access, expectations, communication channel, and timeline before work starts.',
+      'Documents to Collect must list project-specific assets, credentials/access, brand/content files, approvals, references, and any information needed for the selected service type.',
+      'Onboarding Message must be a polite ready-to-send welcome message for the client, matching the communication preferences and project stage.',
+      'Week 1 Action List must break the first week into realistic freelancer actions, client inputs, and checkpoints aligned with the timeline.',
+      'Follow-up Checklist must include post-kickoff follow-ups, pending inputs, approval reminders, and next meeting/update steps.',
+      'If the timeline is short, compress the plan and call out priority actions. If deliverables are broad, organize them into clear buckets.',
+      'Avoid vague advice; make every checklist item actionable and client-ready.'
+    ],
+    tips: [
+      'Deliverables ko bullets ya comma-separated add karo for better checklist.',
+      'Communication preference me channel + frequency likho, jaise WhatsApp daily / email weekly.',
+      'Generated checklist ko apne contract, payment terms, aur workflow ke hisaab se edit kar lo.'
+    ],
+    fields: [
+      {
+        key: 'serviceType',
+        label: 'Service Type',
+        type: 'text',
+        placeholder: 'e.g. Social media management, website design, video editing, SEO writing',
+        required: true
+      },
+      {
+        key: 'clientType',
+        label: 'Client Type',
+        type: 'text',
+        placeholder: 'e.g. startup founder, local business, coach, creator, agency client',
+        required: true
+      },
+      {
+        key: 'projectStage',
+        label: 'Project Stage',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'new-lead', label: 'New Lead' },
+          { value: 'proposal-approved', label: 'Proposal Approved' },
+          { value: 'payment-received', label: 'Payment Received' },
+          { value: 'kickoff-ready', label: 'Kickoff Ready' }
+        ]
+      },
+      {
+        key: 'deliverables',
+        label: 'Deliverables',
+        type: 'textarea',
+        placeholder: 'e.g. 12 Instagram posts, 4 reels, monthly content calendar, analytics report',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'communicationPreferences',
+        label: 'Communication Preferences',
+        type: 'textarea',
+        placeholder: 'e.g. Weekly email updates, WhatsApp for quick approvals, Friday review call',
+        required: true,
+        rows: 3
+      },
+      {
+        key: 'timeline',
+        label: 'Timeline',
+        type: 'text',
+        placeholder: 'e.g. 2 weeks / 30-day retainer / kickoff Monday, first draft Friday',
+        required: true
+      }
+    ]
+  },
+
+  {
+    id: 'freelancer-invoice-generator',
+    title: 'Freelancer Invoice Generator',
+    category: 'Freelance Tool',
+    description: 'Generate professional client-ready invoice text with service breakdown, amount due, due date, and a polite payment note.',
+    metaDescription: 'Free Freelancer Invoice Generator for freelancer invoice generator, invoice maker, and billing text generator searches. Create professional invoice text for freelance clients.',
+    ctaLabel: 'Generate Invoice',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: client name, service, amount, due date, aur payment notes clear add karo so invoice ready-to-send bane.',
+    promptInstructions: [
+      'You are a Freelancer Invoice Generator for freelancers sending professional billing text to clients.',
+      'Create client-ready invoice text only from the user-provided freelancer name, client name, project/service name, amount, currency, due date, and payment notes.',
+      'Do not invent invoice numbers, tax IDs, GST/VAT details, bank account details, late fees, discounts, or legal terms unless the user explicitly provides them in payment notes.',
+      'Use professional, clear billing language with light Hinglish guidance only when useful. Keep the final invoice easy to edit and send by email, PDF, chat, or proposal platform.',
+      'Return clean Markdown only with exactly these sections: Invoice Heading/Text, Service Breakdown, Amount Due, Due Date, Polite Payment Note.',
+      'Invoice Heading/Text must include freelancer name, client name, and project/service context in a polished invoice-style opening.',
+      'Service Breakdown must describe the service clearly and include placeholders only for missing optional details like invoice number or date if needed.',
+      'Amount Due must show the selected currency and amount clearly. Do not calculate taxes or totals beyond the provided amount.',
+      'Due Date must repeat the provided due date in a client-friendly sentence.',
+      'Polite Payment Note must use the user payment notes and keep tone respectful, concise, and non-pushy.',
+      'Avoid generic filler, exaggerated urgency, or threatening payment language.'
+    ],
+    tips: [
+      'Payment notes me UPI/bank/link details ya “as discussed” wording add kar sakte ho.',
+      'Tax/GST details sirf tab add karo jab aap sure ho aur notes me provide karo.',
+      'Final invoice send karne se pehle amount, due date, aur client name verify kar lo.'
+    ],
+    fields: [
+      {
+        key: 'freelancerName',
+        label: 'Freelancer Name',
+        type: 'text',
+        placeholder: 'e.g. Riya Sharma / PixelCraft Studio',
+        required: true
+      },
+      {
+        key: 'clientName',
+        label: 'Client Name',
+        type: 'text',
+        placeholder: 'e.g. Acme Labs / Mr. Mehta / Priya',
+        required: true
+      },
+      {
+        key: 'projectServiceName',
+        label: 'Project / Service Name',
+        type: 'text',
+        placeholder: 'e.g. Logo design package / Monthly social media management',
+        required: true
+      },
+      {
+        key: 'amount',
+        label: 'Amount',
+        type: 'number',
+        placeholder: 'e.g. 25000',
+        required: true
+      },
+      {
+        key: 'currency',
+        label: 'Currency',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'INR', label: 'INR (₹)' },
+          { value: 'USD', label: 'USD ($)' },
+          { value: 'EUR', label: 'EUR (€)' },
+          { value: 'GBP', label: 'GBP (£)' },
+          { value: 'AUD', label: 'AUD (A$)' }
+        ]
+      },
+      {
+        key: 'dueDate',
+        label: 'Due Date',
+        type: 'date',
+        required: true,
+        helperText: 'Client payment deadline choose karo.'
+      },
+      {
+        key: 'paymentNotes',
+        label: 'Payment Notes',
+        type: 'textarea',
+        placeholder: 'e.g. Payment via UPI/bank transfer. Please share payment confirmation after transfer.',
+        required: true,
+        rows: 4
+      }
+    ]
+  },
+
+  {
     id: 'freelance-rate-card-generator',
     title: 'Freelance Rate Card Generator',
     category: 'Freelance Tool',
@@ -1460,6 +2036,101 @@ window.ToolShalaToolDefinitions = [
         placeholder: 'e.g. 3',
         required: true,
         helperText: 'Use 3-5 packages. Starter, Standard, and Premium are always included.'
+      }
+    ]
+  },
+
+  {
+    id: 'content-repurposing-generator-creators',
+    title: 'Content Repurposing Generator for Creators',
+    category: 'Social Tool',
+    description: 'Turn one original content piece into platform-ready captions, posts, Shorts ideas, X hooks, and newsletter angles while preserving the core message.',
+    metaDescription: 'Free Content Repurposing Generator for content repurposing generator, content repurpose tool, and creator workflow searches. Convert one content piece into Instagram, LinkedIn, YouTube Shorts, X, and newsletter ideas.',
+    ctaLabel: 'Repurpose Content',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: original content clearly paste karo; AI same message ko multiple creator formats me convert karega.',
+    promptInstructions: [
+      'You are a Content Repurposing Generator for creators, freelancers, educators, and personal brands.',
+      'Repurpose only the user-provided original content. Preserve the core message, audience promise, facts, examples, and intent. Do not invent unsupported stats, claims, results, offers, or personal stories.',
+      'Use the source format, target formats, tone, and optional platform preference to adapt the content for creator workflow. Use creator-friendly Hinglish guidance where helpful, but keep outputs ready to copy.',
+      'Return clean Markdown only with exactly these sections: Repurposing Snapshot, Repurposed Instagram Caption, LinkedIn Post, YouTube Shorts Idea, Twitter/X Thread Hook, Newsletter Angle.',
+      'Repurposing Snapshot must summarize the original message, source format, selected target focus, tone, and optional platform preference.',
+      'Repurposed Instagram Caption must include a strong first line, short body, CTA, and optional hashtag suggestions if relevant.',
+      'LinkedIn Post must sound professional and value-driven with a clear hook, short paragraphs, and a thoughtful CTA.',
+      'YouTube Shorts Idea must include hook, 3-5 beat outline, visual/shot suggestion, and CTA.',
+      'Twitter/X Thread Hook must include one strong thread opener plus 3-5 bullet points for the thread flow.',
+      'Newsletter Angle must include subject/angle idea and a short newsletter intro if the original content can support it; if not relevant, give a brief reason and a better alternative angle.',
+      'Make each format distinct. Do not simply copy the same paragraph into every platform.',
+      'Keep outputs practical, concise, and easy for a creator to edit and publish quickly.'
+    ],
+    tips: [
+      'Original message jitna clear hoga, repurposed outputs utne useful honge.',
+      'Target formats se AI ko priority samajh aati hai, but core outputs still multi-format rahenge.',
+      'Regenerate karke same content ke different tone aur hooks test kar sakte ho.'
+    ],
+    fields: [
+      {
+        key: 'originalContent',
+        label: 'Original Content',
+        type: 'textarea',
+        placeholder: 'Paste your blog paragraph, reel script, video notes, tweet, or social post here...',
+        required: true,
+        rows: 8
+      },
+      {
+        key: 'sourceFormat',
+        label: 'Source Format',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'blog', label: 'Blog' },
+          { value: 'reel', label: 'Reel' },
+          { value: 'video', label: 'Video' },
+          { value: 'tweet', label: 'Tweet' },
+          { value: 'post', label: 'Post' }
+        ]
+      },
+      {
+        key: 'targetFormats',
+        label: 'Target Formats',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'all-core-formats', label: 'All Core Formats' },
+          { value: 'instagram-linkedin', label: 'Instagram + LinkedIn' },
+          { value: 'shorts-x-thread', label: 'Shorts + X Thread' },
+          { value: 'newsletter-social', label: 'Newsletter + Social' },
+          { value: 'multi-platform', label: 'Multi-platform' }
+        ]
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'educational', label: 'Educational' },
+          { value: 'witty', label: 'Witty' },
+          { value: 'inspirational', label: 'Inspirational' }
+        ]
+      },
+      {
+        key: 'platformPreference',
+        label: 'Platform Preference (optional)',
+        type: 'select',
+        required: false,
+        options: [
+          { value: 'instagram', label: 'Instagram' },
+          { value: 'linkedin', label: 'LinkedIn' },
+          { value: 'youtube', label: 'YouTube' },
+          { value: 'x', label: 'Twitter / X' },
+          { value: 'newsletter', label: 'Newsletter' },
+          { value: 'multi-platform', label: 'Multi-platform' }
+        ],
+        helperText: 'Optional: kisi ek platform ko priority dena ho to choose karo.'
       }
     ]
   },
@@ -2265,6 +2936,94 @@ window.ToolShalaToolDefinitions = [
     ]
   },
   {
+    id: 'youtube-video-title-generator',
+    title: 'YouTube Video Title Generator',
+    category: 'Social Tool',
+    description: 'Generate click-worthy, searchable, and natural YouTube video title ideas for creators without using misleading clickbait.',
+    metaDescription: 'Free YouTube Video Title Generator for YouTube title generator, video title ideas, and SEO video titles searches. Create engaging, searchable titles for YouTube creators.',
+    ctaLabel: 'Generate Titles',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: topic, audience, keywords, aur title style clear add karo so titles searchable + engaging banein.',
+    promptInstructions: [
+      'You are a YouTube Video Title Generator for creators.',
+      'Generate title ideas only from the user-provided video topic, target audience, tone/style, optional keyword, title style, and number of titles.',
+      'Follow YouTube best practices: clear topic, audience fit, searchable keyword phrasing, emotional curiosity where relevant, and no misleading clickbait.',
+      'Use creator-friendly Hinglish guidance where helpful, but keep title options ready to copy.',
+      'Return clean Markdown only with exactly these sections: 10 Title Options, SEO-Friendly Option, Clicky Option, Short/Clean Option, Quick Title Tips.',
+      '10 Title Options must include exactly the requested number of title options when the requested number is 10 or more, but the first 10 must be clearly numbered and usable as standalone YouTube titles.',
+      'SEO-Friendly Option must pick or rewrite the best search-first title and briefly explain why it is searchable.',
+      'Clicky Option must be engaging and curiosity-driven without fake claims, exaggeration, or misleading promises.',
+      'Short/Clean Option must be concise, simple, and easy to read on mobile.',
+      'Quick Title Tips must include 3 short tips for choosing the final title.',
+      'For curiosity style, create open-loop but truthful titles. For searchable style, prioritize keywords. For bold style, make strong but supportable claims. For educational style, make learning value clear.',
+      'Avoid all-caps, spammy punctuation, fake urgency, unverified numbers, or guaranteed outcomes.'
+    ],
+    tips: [
+      'Keyword optional hai, but SEO title ke liye helpful hota hai.',
+      'Searchable style evergreen videos ke liye best hai; curiosity style discovery ke liye useful hai.',
+      'Final title choose karte time thumbnail aur video promise match hona chahiye.'
+    ],
+    fields: [
+      {
+        key: 'videoTopic',
+        label: 'Video Topic',
+        type: 'textarea',
+        placeholder: 'e.g. How to start freelancing as a student / Best AI tools for creators',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'targetAudience',
+        label: 'Target Audience',
+        type: 'text',
+        placeholder: 'e.g. beginner creators, college students, small business owners',
+        required: true
+      },
+      {
+        key: 'toneStyle',
+        label: 'Tone / Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'energetic', label: 'Energetic' },
+          { value: 'direct', label: 'Direct' },
+          { value: 'inspirational', label: 'Inspirational' }
+        ]
+      },
+      {
+        key: 'keyword',
+        label: 'Keyword (optional)',
+        type: 'text',
+        placeholder: 'e.g. freelancing tips, AI tools, study hacks',
+        required: false
+      },
+      {
+        key: 'titleStyle',
+        label: 'Title Style',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'curiosity', label: 'Curiosity' },
+          { value: 'searchable', label: 'Searchable' },
+          { value: 'bold', label: 'Bold' },
+          { value: 'educational', label: 'Educational' }
+        ]
+      },
+      {
+        key: 'titleCount',
+        label: 'Number of Titles',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: true,
+        helperText: 'Use 10-20 titles for practical A/B testing.'
+      }
+    ]
+  },
+
+  {
     id: 'youtube-shorts-script-generator',
     title: 'YouTube / Shorts Script Generator',
     category: 'Social Tool',
@@ -2722,6 +3481,86 @@ window.ToolShalaToolDefinitions = [
       }
     ]
   },
+  {
+    id: 'newsletter-subject-line-generator',
+    title: 'Newsletter Subject Line Generator',
+    category: 'Writing Tool',
+    description: 'Generate short, audience-specific, non-spammy newsletter subject lines with preview text and open-rate style guidance.',
+    metaDescription: 'Free Newsletter Subject Line Generator for newsletter subject line generator, email subject generator, and open rates searches. Create attractive newsletter subject lines for creators, freelancers, and teachers.',
+    ctaLabel: 'Generate Subject Lines',
+    outputType: 'text',
+    enableGenerateMore: true,
+    helperText: 'Hinglish tip: topic, audience, objective, aur tone clear add karo so subject lines attractive but non-spammy rahen.',
+    promptInstructions: [
+      'You are a Newsletter Subject Line Generator for creators, freelancers, teachers, and small businesses.',
+      'Generate subject lines only from the user-provided newsletter topic, audience type, tone, objective, and number of subject lines.',
+      'Follow email/newsletter best practices: short, specific, audience-aware, clear value, curiosity without misleading clickbait, and no spammy wording.',
+      'Use light Hinglish guidance where helpful, but keep subject lines ready to copy into an email/newsletter tool.',
+      'Return clean Markdown only with exactly these sections: 10 Subject Line Options, Short Preview Text, Best-performing Style Note.',
+      '10 Subject Line Options must include exactly the requested number of subject lines when the requested number is 10 or more, with the first 10 clearly numbered and usable as standalone newsletter subjects.',
+      'Each subject line should be concise, natural, and relevant to the audience and objective: open, promote, inform, or re-engage.',
+      'Short Preview Text must include 3 optional preview/snippet text options that pair well with the subject lines.',
+      'Best-performing Style Note must briefly explain which style is likely strongest for this audience/objective and why.',
+      'For open objective, prioritize curiosity and clarity. For promote, include benefit without hype. For inform, make the update clear. For re-engage, sound warm and respectful.',
+      'Avoid spam triggers, ALL CAPS, excessive emojis, fake scarcity, exaggerated promises, or misleading urgency.'
+    ],
+    tips: [
+      'Subject line short rakho; preview text me extra context add kar sakte ho.',
+      'Promotional newsletters me hype se zyada clear benefit kaam karta hai.',
+      'Regenerate karke curiosity, clear, aur benefit-led versions compare karo.'
+    ],
+    fields: [
+      {
+        key: 'newsletterTopic',
+        label: 'Newsletter Topic',
+        type: 'textarea',
+        placeholder: 'e.g. Weekly AI tools roundup for creators / Parent update about exam revision tips',
+        required: true,
+        rows: 4
+      },
+      {
+        key: 'audienceType',
+        label: 'Audience Type',
+        type: 'text',
+        placeholder: 'e.g. creators, freelancers, parents, teachers, students, startup founders',
+        required: true
+      },
+      {
+        key: 'tone',
+        label: 'Tone',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'friendly', label: 'Friendly' },
+          { value: 'professional', label: 'Professional' },
+          { value: 'curious', label: 'Curious' },
+          { value: 'warm', label: 'Warm' },
+          { value: 'direct', label: 'Direct' }
+        ]
+      },
+      {
+        key: 'objective',
+        label: 'Objective',
+        type: 'select',
+        required: true,
+        options: [
+          { value: 'open', label: 'Open' },
+          { value: 'promote', label: 'Promote' },
+          { value: 'inform', label: 'Inform' },
+          { value: 're-engage', label: 'Re-engage' }
+        ]
+      },
+      {
+        key: 'subjectLineCount',
+        label: 'Number of Subject Lines',
+        type: 'number',
+        placeholder: 'e.g. 10',
+        required: true,
+        helperText: 'Use 10-20 subject lines for testing options.'
+      }
+    ]
+  },
+
   {
     id: 'email-subject-line-generator',
     title: 'Email Subject Line Generator',
