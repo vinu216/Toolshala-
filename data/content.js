@@ -20,6 +20,51 @@ window.ToolShalaContent = {
         url: './tool.html?tool=photo-to-text'
       },
       {
+        id: 'tool-ats-resume-optimizer',
+        slug: 'ats-resume-optimizer',
+        title: 'ATS Resume Optimizer',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Optimize resume text for ATS-friendly keywords, clarity, formatting, summary, and recruiter-ready improvement notes.',
+        metaDescription: 'Free ATS Resume Optimizer for students, freshers, and job seekers. Paste resume text, add target job title, and get ATS-friendly resume improvements with keywords.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['ats-resume', 'resume-optimizer', 'resume-keywords', 'jobs', 'fresher'],
+        ctaLabel: 'Optimize Resume',
+        url: './tool.html?tool=ats-resume-optimizer'
+      },
+
+      {
+        id: 'tool-job-description-to-resume-tailor',
+        slug: 'job-description-to-resume-tailor',
+        title: 'Job Description to Resume Tailor',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Parse a job description, match resume keywords, find missing keywords, and generate tailored summary plus bullet improvements.',
+        metaDescription: 'Free resume tailor and job description parser for freshers and job seekers. Match resume keywords, find missing JD keywords, and improve resume wording.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['resume-tailor', 'job-description-parser', 'resume-keyword-match', 'jobs', 'career'],
+        ctaLabel: 'Tailor Resume',
+        url: './tool.html?tool=job-description-to-resume-tailor'
+      },
+
+      {
+        id: 'tool-salary-negotiation-script-generator',
+        slug: 'salary-negotiation-script-generator',
+        title: 'Salary Negotiation Script Generator',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Generate professional salary negotiation scripts, counter offer wording, and short offer discussion messages after a job offer.',
+        metaDescription: 'Free salary negotiation script generator for job seekers. Create polite scripts, strong counter offer messages, and short WhatsApp/email offer discussion replies.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['salary-negotiation-script', 'counter-offer', 'offer-discussion', 'salary', 'career'],
+        ctaLabel: 'Generate Scripts',
+        url: './tool.html?tool=salary-negotiation-script-generator'
+      },
+
+      {
         id: 'tool-resume-headline-generator',
         slug: 'resume-headline-generator',
         title: 'Resume Headline Generator',
@@ -126,6 +171,21 @@ window.ToolShalaContent = {
         url: './tool.html?tool=study-timetable-generator'
       },
       {
+        id: 'tool-project-idea-generator-students-freshers',
+        slug: 'project-idea-generator-students-freshers',
+        title: 'Project Idea Generator for Students/Freshers',
+        category: 'career',
+        categoryLabel: 'Career Tool',
+        description: 'Generate student project ideas and fresher portfolio projects with variants, tech stack suggestions, and resume value notes.',
+        metaDescription: 'Free project idea generator for students and freshers. Get student project ideas, fresher projects, tech stacks, beginner/advanced variants, and resume value notes.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['project-idea-generator', 'student-project-ideas', 'fresher-projects', 'portfolio', 'career'],
+        ctaLabel: 'Generate Ideas',
+        url: './tool.html?tool=project-idea-generator-students-freshers'
+      },
+
+      {
         id: 'tool-ai-career-path-suggestor',
         slug: 'ai-career-path-suggestor',
         title: 'AI Career Path Suggestor',
@@ -164,6 +224,21 @@ window.ToolShalaContent = {
         tags: ['formal-letter', 'application', 'request', 'complaint'],
         ctaLabel: 'Generate Letter',
         url: './tool.html?tool=formal-letter-generator'
+      },
+
+      {
+        id: 'tool-follow-up-email-generator',
+        slug: 'follow-up-email-generator',
+        title: 'Follow-up Email Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate interview follow-up, application follow-up, and no-response emails with short versions and subject suggestions.',
+        metaDescription: 'Free follow up email generator for interview follow up, application follow up, and no-response situations with subject line suggestions.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['follow-up-email-generator', 'interview-follow-up', 'application-follow-up', 'email', 'job-search'],
+        ctaLabel: 'Generate Follow-up',
+        url: './tool.html?tool=follow-up-email-generator'
       },
 
       {
@@ -287,6 +362,21 @@ window.ToolShalaContent = {
         ctaLabel: 'Generate SOP',
         url: './tool.html?tool=sop-generator'
       },
+      {
+        id: 'tool-cold-dm-outreach-message-generator',
+        slug: 'cold-dm-outreach-message-generator',
+        title: 'Cold DM / Outreach Message Generator',
+        category: 'writing',
+        categoryLabel: 'Writing Tool',
+        description: 'Generate short cold DMs, outreach messages, polite follow-ups, and first-line hooks for LinkedIn, Instagram, email, or WhatsApp.',
+        metaDescription: 'Free cold DM generator for LinkedIn DM, Instagram, email, and WhatsApp outreach. Generate outreach messages, follow-ups, and first-line suggestions.',
+        publishedAt: '2026-05-07',
+        featured: true,
+        tags: ['cold-dm-generator', 'outreach-message', 'linkedin-dm', 'networking', 'communication'],
+        ctaLabel: 'Generate Outreach',
+        url: './tool.html?tool=cold-dm-outreach-message-generator'
+      },
+
       {
         id: 'tool-linkedin-networking-message-generator',
         slug: 'linkedin-networking-message-generator',
