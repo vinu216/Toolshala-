@@ -7107,6 +7107,513 @@ window.ToolShalaArticleContent = {
         readingTime: '8 min read',
         author: 'ToolShala Editorial Team',
         featured: false
+      },
+      {
+        id: 'guide-028',
+        title: 'Sales Executive Roadmap for Freshers',
+        slug: '/guides/sales-executive-roadmap',
+        primaryKeyword: 'sales executive roadmap',
+        searchIntent: 'Informational',
+        metaTitle: 'Sales Executive Roadmap for Freshers | Career Guide',
+        metaDescription:
+          'Follow this sales executive roadmap for freshers with skills, tools, 30-day and 90-day plan, call scripts, resume tips, interview strategy, and common mistakes to avoid.',
+        shortExcerpt:
+          'A practical sales executive roadmap for freshers with daily practice steps, pitch scripts, and job-ready preparation.',
+        category: 'Career Guidance',
+        ctaText: 'Start Sales Roadmap',
+        relatedLinks: [
+          '/career',
+          '/tools',
+          '/templates',
+          '/guides/best-skills-to-learn-in-2026',
+          '/guides/linkedin-profile-kaise-banaye',
+          '/guides/common-resume-mistakes-for-freshers'
+        ],
+        featuredImageAlt: 'Sales executive roadmap for freshers and students',
+        publishDate: '2026-05-08',
+        readingTime: '10 min read',
+        author: 'ToolShala Editorial Team',
+        featured: true,
+        status: 'ready',
+        guideContent: {
+          intro:
+            'Agar aap fresher ho aur sales line mein career start karna chahte ho, yeh sales executive roadmap aapko step-by-step clear direction dega. Is guide mein role samjhoge, skills build karoge, call practice karoge, aur 30-day + 90-day job-ready plan follow kar paoge.',
+          overview:
+            'Sales Executive role lead generation, customer conversation, follow-up, objection handling, and deal closure par focused hota hai. Yeh roadmap freshers ko communication se CRM tak practical skills sikhata hai, taaki internship ya entry-level sales jobs ke liye confidence ke saath apply kar saken.',
+          featuredSnippet:
+            'Sales Executive roadmap for freshers: learn communication, product pitching, CRM basics, call scripts, objection handling, and follow-up discipline. Build proof with a 30-day practice sprint and a 90-day job-ready plan.',
+          sections: [
+            {
+              heading: 'What Does a Sales Executive Do?',
+              paragraphs: [
+                'Sales Executive ka kaam sirf product bechna nahi hota. Aap prospects identify karte ho, unse call ya message par baat karte ho, unki need samajhte ho, solution explain karte ho, aur next step secure karte ho.',
+                'Real-world role mein consistency important hoti hai: daily calls, follow-ups, CRM updates, and pipeline tracking. Jo fresher process follow karta hai, woh jaldi improve karta hai.'
+              ],
+              bullets: [
+                'Leads ko qualify karna: interested vs non-interested users identify karna',
+                'Cold calls, warm calls, WhatsApp, email, aur demo coordination handle karna',
+                'Customer objections samajhna aur simple language mein answer dena',
+                'Daily pipeline update karna: follow-up date, status, and next action'
+              ]
+            },
+            {
+              heading: 'Why Sales is a Strong Career for Freshers',
+              paragraphs: [
+                'Sales ek high-growth career hai kyunki har business ko revenue chahiye. Startups, edtech, SaaS, real estate, finance, agencies, aur local businesses sabko entry-level sales talent ki need hoti hai.',
+                'Freshers ke liye biggest advantage: result visible hota hai. Aap calls, meetings, conversions, and follow-up discipline se quickly proof dikha sakte ho, even without prior experience.'
+              ],
+              bullets: [
+                'Fast learning curve: communication + business understanding dono improve hote hain',
+                'Performance-based growth: achha kaam karo to incentives aur promotions fast milte hain',
+                'Transferable career skills: negotiation, persuasion, relationship building',
+                'Future roles: BDE, Account Executive, Customer Success, Team Lead'
+              ]
+            },
+            {
+              heading: 'Skills Needed in a Sales Executive Roadmap',
+              paragraphs: [
+                'Sales mein English fluency se zyada clarity matter karti hai. Aapko customer problem samajh kar relevant solution pitch karna aana chahiye.',
+                'Beginner ke liye focus simple hona chahiye: listening, pitch structure, confidence, and disciplined follow-up.'
+              ],
+              bullets: [
+                'Communication: clear introduction, confident tone, and active listening',
+                'Need analysis: customer ka pain point quickly identify karna',
+                'Objection handling: price, trust, timing, and comparison objections ka response',
+                'Negotiation basics: value explain karke next step secure karna',
+                'CRM discipline: notes, reminders, and follow-up schedule maintain karna',
+                'Numbers mindset: daily calls, response rate, meetings, and conversion ratio track karna'
+              ]
+            },
+            {
+              heading: 'Tools to Learn for Entry-Level Sales Jobs',
+              paragraphs: [
+                'Tool overload mat karo. Basic tools seekhkar process strong banao. Har tool ka purpose samjho: lead tracking, outreach, scheduling, and reporting.',
+                'ToolShala resources use karke aap pitch writing, follow-up emails, resume lines, and profile positioning quickly improve kar sakte ho.'
+              ],
+              bullets: [
+                'CRM basics: HubSpot CRM, Zoho CRM, ya Google Sheets lead tracker',
+                'Outreach tools: Gmail templates, WhatsApp scripts, LinkedIn messaging',
+                'Meeting tools: Google Meet / Zoom scheduling and demo follow-up notes',
+                'Productivity: Google Sheets for call log and daily KPI tracker',
+                'ToolShala CTAs: Professional Email Generator, Resume Bullet Generator, Resume Headline Generator, LinkedIn Bio Generator, and Job Application Email Template'
+              ]
+            },
+            {
+              heading: '30-Day Sales Executive Roadmap for Freshers',
+              paragraphs: [
+                'First 30 days ka goal simple hai: role samjho, scripts banao, daily conversation practice karo, and tracking habit build karo.',
+                'Daily 60-90 minutes focus se bhi strong improvement possible hai.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 1-7: Sales Fundamentals and Product Understanding',
+                  bullets: [
+                    'Ek product/service choose karo aur uska value proposition 3 lines mein likho',
+                    'Ideal customer profile banao: kaun buyer hai, kya pain point hai',
+                    '10 competitor pitches observe karo aur notes banao',
+                    'Self-introduction aur opener script record karke practice karo'
+                  ]
+                },
+                {
+                  heading: 'Days 8-15: Call Scripts and Pitch Practice',
+                  bullets: [
+                    'Cold call opening, discovery questions, and close script draft karo',
+                    'Daily 5 mock calls friend ke saath role-play karo',
+                    'Objection bank banao: expensive, not interested, call later, already using competitor',
+                    'Har call ke baad 2 improvements likho'
+                  ]
+                },
+                {
+                  heading: 'Days 16-23: Follow-Up and CRM Discipline',
+                  bullets: [
+                    'Google Sheet/CRM mein lead status columns banao',
+                    'Follow-up schedule define karo: Day 1, Day 3, Day 7',
+                    'Short follow-up email and WhatsApp templates ready karo',
+                    'Daily metrics track karo: attempts, responses, meetings booked'
+                  ]
+                },
+                {
+                  heading: 'Days 24-30: Mini Portfolio and Interview Prep',
+                  bullets: [
+                    'Sample sales playbook banao: script, objection sheet, follow-up plan',
+                    '1-page case summary banao: mock campaign results and learnings',
+                    'Resume mein sales-oriented bullets add karo',
+                    '60-second interview pitch practice karo'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: '90-Day Roadmap to Become Job-Ready',
+              paragraphs: [
+                'Next 60 days mein aapko practical proof build karna hai. Recruiters ko show karo ki aap consistent process follow kar sakte ho.',
+                'Goal: measurable activity + communication confidence + job applications.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 31-60: Real Practice and Metrics',
+                  bullets: [
+                    'Daily outreach target set karo (example: 20 calls/messages)',
+                    'Weekly script A/B testing karo aur best opener identify karo',
+                    'Meeting conversion improve karne ke liye discovery questions refine karo',
+                    'Weekly KPI dashboard maintain karo with response and conversion trend'
+                  ]
+                },
+                {
+                  heading: 'Days 61-90: Applications, Outreach, and Interviews',
+                  bullets: [
+                    '30 targeted applications bhejo for Sales Executive / BDE roles',
+                    'LinkedIn par hiring posts par thoughtful comments aur outreach messages bhejo',
+                    '3 mock interviews do with pitch + objection handling rounds',
+                    'Portfolio link (playbook + tracker + scripts) resume mein attach karo'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: 'Call Scripts and Pitch Practice Framework',
+              paragraphs: [
+                'Script word-by-word ratna zaroori nahi, but structure fix hona chahiye. Jab structure clear hota hai to confidence naturally improve hota hai.',
+                'Use this simple flow: opener, context, question, value line, next step.'
+              ],
+              bullets: [
+                'Opener: "Hi [Name], main [Your Name] bol raha hoon. Kya 30 seconds le sakta hoon?"',
+                'Discovery: "Aap currently [problem area] kaise manage kar rahe ho?"',
+                'Value pitch: "Hum [solution] se [specific outcome] improve karte hain."',
+                'Close: "Agar aap theek samjhen to 15-min demo schedule kar lete hain."',
+                'Follow-up: "Just sharing quick summary + next step. Aapka preferred time?"'
+              ]
+            },
+            {
+              heading: 'Resume Tips for Sales Executive Freshers',
+              paragraphs: [
+                'Resume par generic lines avoid karo like "hardworking and sincere". Sales recruiters numbers aur activity proof dekhte hain.',
+                'Agar real sales job experience nahi hai, to mock projects, college campaigns, event sponsorship outreach, or internship tasks ko quantified bullets mein likho.'
+              ],
+              bullets: [
+                'Headline role-specific rakho: "Sales Executive Fresher | Lead Generation | CRM Basics"',
+                'Project bullets mein numbers add karo: calls made, responses, meetings set',
+                'Communication + follow-up + CRM skills ko examples ke saath mention karo',
+                'ToolShala Resume Headline and Resume Bullet tools se ATS-friendly phrasing banao'
+              ]
+            },
+            {
+              heading: 'Interview Tips to Crack Sales Executive Roles',
+              paragraphs: [
+                'Interview mein confidence ka matlab fast bolna nahi, structured bolna hota hai. Recruiter check karta hai ki aap customer conversation logically handle kar paoge ya nahi.',
+                'Prepare practical answers: tell me about yourself, handle rejection, close a hesitant lead, and daily targets kaise manage karoge.'
+              ],
+              bullets: [
+                '60-second intro ready rakho: background + sales interest + proof',
+                'Ek product ko 45-second mein pitch karne ki practice karo',
+                'Common objections par short responses prepare karo',
+                'End mein smart questions pucho: target expectation, training process, lead quality'
+              ]
+            },
+            {
+              heading: 'Common Mistakes Freshers Should Avoid in Sales',
+              paragraphs: [
+                'Sales beginners ka common issue hota hai ki woh sirf बोलते रहते hain aur listening kam karte hain. Customer ki need samjhe bina pitch karna conversion drop karta hai.',
+                'Dusra issue hai follow-up skip karna. Bahut deals first call par close nahi hoti; disciplined follow-up hi difference create karta hai.'
+              ],
+              bullets: [
+                'Script ko robotic tone mein bolna',
+                'Customer context samjhe bina feature dumping karna',
+                'Objection ko argue karna instead of clarify karna',
+                'CRM update na karna aur follow-up miss karna',
+                'Daily metrics track na karna',
+                'Interview mein sirf motivation bolna, process proof na dikhana'
+              ]
+            }
+          ],
+          faq: [
+            {
+              question: 'Kya sales executive fresher ke liye good career hai?',
+              answer:
+                'Yes, sales fresher ke liye strong career hai because entry-level hiring high hoti hai aur performance-based growth fast mil sakta hai. Agar aap communication aur follow-up discipline develop karte ho to early progress clear dikhai deta hai.'
+            },
+            {
+              question: 'Sales job ke liye fluent English zaroori hai?',
+              answer:
+                'Fluent English helpful hai but mandatory nahi hai. Clarity, listening, confidence, and objection handling zyada important hote hain. Hinglish + regional language roles bhi kaafi available hote hain.'
+            },
+            {
+              question: 'Freshers ko daily kya practice karna chahiye?',
+              answer:
+                'Daily script practice, mock calls, objection responses, and CRM updates karo. Saath mein call metrics track karo taaki aap improvement measurable bana sako.'
+            },
+            {
+              question: 'Without experience first sales job kaise milegi?',
+              answer:
+                'Mini portfolio banao jisme sample script, lead tracker, follow-up templates, and mock outreach results ho. Is proof ke saath targeted applications aur LinkedIn outreach karo.'
+            }
+          ],
+          conclusion:
+            'Sales Executive roadmap for freshers ka core formula simple hai: clear communication, daily practice, objection handling, and consistent follow-up. 30-day foundation aur 90-day execution plan follow karke aap internship ya entry-level sales role ke liye job-ready ban sakte ho.',
+          cta: {
+            title: 'Get Job-Ready for Sales Executive Roles',
+            text:
+              'Use ToolShala tools to polish your resume, LinkedIn profile, outreach emails, and daily sales communication practice.',
+            primaryLabel: 'Use Resume Bullet Generator',
+            primaryLink: './tool.html?tool=resume-bullet-generator',
+            secondaryLabel: 'Open Job Application Template',
+            secondaryLink: './job-application-email-template.html'
+          }
+        }
+      },
+      {
+        id: 'guide-029',
+        title: 'Technical Writer Roadmap for Beginners',
+        slug: '/guides/technical-writer-roadmap',
+        primaryKeyword: 'technical writer roadmap',
+        searchIntent: 'Informational',
+        metaTitle: 'Technical Writer Roadmap for Beginners | Career Guide',
+        metaDescription:
+          'Follow this technical writer roadmap for beginners with required skills, tools, 30-day and 90-day plans, documentation projects, resume tips, interview prep, and FAQ.',
+        shortExcerpt:
+          'A beginner-friendly technical writer roadmap with practical documentation projects, portfolio steps, and interview-ready preparation.',
+        category: 'Career Guidance',
+        ctaText: 'Start Technical Writing Roadmap',
+        relatedLinks: [
+          '/career',
+          '/tools',
+          '/templates',
+          '/guides/cover-letter-for-students-guide',
+          '/guides/common-resume-mistakes-for-freshers',
+          '/guides/linkedin-profile-kaise-banaye'
+        ],
+        featuredImageAlt: 'Technical writer roadmap for beginners and freshers',
+        publishDate: '2026-05-08',
+        readingTime: '11 min read',
+        author: 'ToolShala Editorial Team',
+        featured: true,
+        status: 'ready',
+        guideContent: {
+          intro:
+            'Technical Writer roadmap beginners ke liye perfect hai jo clear writing, software docs, help articles, and user guides mein career banana chahte hain. Agar aapko complex topic ko simple language mein explain karna pasand hai, this path can be practical and future-proof.',
+          overview:
+            'Technical Writer role ka focus hota hai clear documentation banana: user guides, SOPs, API docs, release notes, FAQs, and internal knowledge base content. Is roadmap mein aap skills, tools, and project-based plan learn karoge taaki 90 days mein beginner portfolio create karke internships ya entry-level jobs ke liye apply kar sako.',
+          featuredSnippet:
+            'Technical writer roadmap for beginners: learn documentation fundamentals, writing clarity, research, editing, doc tools, and portfolio projects. Follow a 30-day foundation and 90-day execution plan to become job-ready.',
+          sections: [
+            {
+              heading: 'What is a Technical Writer?',
+              paragraphs: [
+                'Technical Writer woh professional hota hai jo product, process, ya software ko users ke liye understandable banata hai. Aapka kaam hota hai confusing information ko structured, step-by-step, and actionable format mein present karna.',
+                'Role mein writing ke saath research, product understanding, SME interviews, screenshots/flows, and regular updates bhi aate hain. Good technical writing ka matlab hai user ko answers fast milna.'
+              ],
+              bullets: [
+                'Creates user manuals, onboarding guides, and how-to articles',
+                'Writes FAQs, troubleshooting steps, and release notes',
+                'Documents internal SOPs and team processes',
+                'Collaborates with developers, support, QA, and product teams'
+              ]
+            },
+            {
+              heading: 'Why Technical Writing is a Growing Career',
+              paragraphs: [
+                'Digital products increase hone ke saath documentation demand bhi fast grow ho rahi hai. SaaS tools, apps, AI products, developer platforms, and support teams sabko clear docs chahiye.',
+                'Companies samajh chuki hain ki poor documentation se support tickets badhte hain aur user onboarding weak hota hai. Isi liye technical writing now directly impacts product experience and retention.'
+              ],
+              bullets: [
+                'Every product needs clear documentation for user success',
+                'Remote and async teams depend on written knowledge systems',
+                'Good docs reduce support load and training time',
+                'Freshers with strong portfolio docs can enter quickly via internships'
+              ]
+            },
+            {
+              heading: 'Skills Required in a Technical Writer Roadmap',
+              paragraphs: [
+                'Technical writing mein grammar se zyada clarity important hoti hai. Aapko user ka intent samajhna hai aur information ko logical sequence mein organize karna hai.',
+                'Beginner level par focus karo: simple language, structure, consistency, and accuracy.'
+              ],
+              bullets: [
+                'Clear writing: short sentences, plain language, and user-first tone',
+                'Information architecture: headings, sections, navigation, and flow',
+                'Research and interviewing: SMEs se right details collect karna',
+                'Editing and style consistency: terminology, voice, and formatting',
+                'Basic technical comfort: software workflows, APIs, and product concepts',
+                'Documentation maintenance: versioning, updates, and change logs'
+              ]
+            },
+            {
+              heading: 'Tools to Learn for Technical Writing Beginners',
+              paragraphs: [
+                'Tools seekhte waqt goal rakho: content likhna, organize karna, review lena, aur publish/update karna. Too many tools ek saath seekhne ki zarurat nahi hai.',
+                'ToolShala resources se aap writing drafts, professional emails, and resume bullets polish kar sakte ho while building your technical writing profile.'
+              ],
+              bullets: [
+                'Docs editors: Google Docs, Notion, Markdown editors',
+                'Knowledge base tools: Confluence, Notion wiki, GitBook-style platforms',
+                'Versioning basics: GitHub for doc history and collaboration',
+                'Visual support: screenshots, Loom walkthroughs, and basic annotation tools',
+                'ToolShala CTAs: Improve Text tool, Professional Email Generator, Resume Bullet Generator, Resume Headline Generator, and Content Brief Template'
+              ]
+            },
+            {
+              heading: '30-Day Technical Writer Roadmap for Beginners',
+              paragraphs: [
+                'First 30 days mein fundamentals build karo: writing clarity, doc structure, and real documentation practice. Daily 60-90 minutes ka focused effort kaafi hai.',
+                'Day 30 tak aapke paas at least 3 sample documentation assets hone chahiye.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 1-7: Understand Documentation Basics',
+                  bullets: [
+                    'User guide, FAQ, SOP, and release note formats study karo',
+                    '3 good product help centers observe karo aur patterns note karo',
+                    'Plain-language writing rules list banao',
+                    'One weak article ko rewrite karke before-after compare karo'
+                  ]
+                },
+                {
+                  heading: 'Days 8-15: Learn Structure and Formatting',
+                  bullets: [
+                    'Heading hierarchy (H1-H3) aur step-by-step structure practice karo',
+                    'Task-based article template banao: objective, steps, expected output',
+                    'Glossary page create karo for common technical terms',
+                    'ToolShala Improve Text se clarity and readability polish karo'
+                  ]
+                },
+                {
+                  heading: 'Days 16-23: Build Documentation Samples',
+                  bullets: [
+                    'Ek imaginary app ke liye onboarding guide likho',
+                    '5-question FAQ page create karo with concise answers',
+                    'Troubleshooting article likho with issue-cause-solution format',
+                    'Peer review lo aur edits apply karo'
+                  ]
+                },
+                {
+                  heading: 'Days 24-30: Package Portfolio Proof',
+                  bullets: [
+                    '3 polished docs ko one portfolio folder/page mein organize karo',
+                    'Har sample ke saath context and audience mention karo',
+                    'LinkedIn headline update karo with technical writing focus',
+                    'Entry-level application email draft ready karo'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: '90-Day Roadmap to Become Job-Ready',
+              paragraphs: [
+                'Next 60 days ka focus hai deeper projects + collaboration style documentation. Recruiters dekhna chahte hain ki aap unclear information ko usable docs mein convert kar sakte ho.',
+                'End goal: strong portfolio + tailored applications + interview confidence.'
+              ],
+              subSections: [
+                {
+                  heading: 'Days 31-60: Advanced Documentation Practice',
+                  bullets: [
+                    'One complete product documentation set banao (getting started + FAQ + troubleshooting)',
+                    'Release notes format practice karo with version-wise changes',
+                    'SME-style mock interviews karo aur notes se docs draft karo',
+                    'Style guide banao for terminology and formatting consistency'
+                  ]
+                },
+                {
+                  heading: 'Days 61-90: Portfolio, Outreach, and Interviews',
+                  bullets: [
+                    '3-5 final documentation projects polish karo',
+                    'Notion/GitHub/Drive portfolio link share-ready banao',
+                    '30 targeted applications bhejo: technical writer intern, content documentation intern, knowledge base associate',
+                    'Mock interviews mein writing test + editing test practice karo'
+                  ]
+                }
+              ]
+            },
+            {
+              heading: 'Documentation Project Ideas for Beginners',
+              paragraphs: [
+                'Project ideas aise choose karo jo real-world documentation challenges ko reflect karein. Sirf blog writing se technical writer profile strong nahi banti.',
+                'Each project mein problem context, audience, structure, and revision notes show karo.'
+              ],
+              bullets: [
+                'SaaS-style getting started guide with setup checklist',
+                'Feature documentation with screenshots and usage examples',
+                'Troubleshooting handbook for top 10 common issues',
+                'Internal SOP for onboarding or support escalation flow',
+                'Release notes archive for 3 product versions',
+                'Glossary + quick-reference page for new users'
+              ]
+            },
+            {
+              heading: 'Resume Tips for Technical Writer Freshers',
+              paragraphs: [
+                'Resume mein "good writing skills" likhne se better hai proof-based bullets likhna. Documentation samples, structure decisions, and revisions highlight karo.',
+                'Agar paid experience nahi hai to sample docs and academic/project documentation ko professional format mein show karo.'
+              ],
+              bullets: [
+                'Role-specific headline use karo: "Technical Writer Beginner | Docs, SOPs, FAQs"',
+                'Portfolio link top section mein add karo',
+                'Bullets mein measurable scope mention karo (number of docs/pages/templates)',
+                'ToolShala Resume tools se ATS-friendly bullets and headline polish karo'
+              ]
+            },
+            {
+              heading: 'Interview Tips for Technical Writing Roles',
+              paragraphs: [
+                'Interview mein recruiter aapki clarity, structure thinking, and revision mindset check karega. Isliye examples ke saath baat karo.',
+                'Prepare answers for: how you simplify complex topics, how you collect missing info, and how you handle feedback.'
+              ],
+              bullets: [
+                '2-minute intro ready rakho with writing background and portfolio summary',
+                'One documentation sample ko end-to-end explain karne ki practice karo',
+                'Editing test ke liye concise rewriting practice daily karo',
+                'SME coordination and deadline management par practical responses ready rakho'
+              ]
+            },
+            {
+              heading: 'Common Mistakes Beginners Should Avoid',
+              paragraphs: [
+                'Technical writing beginners often overcomplicate language. Fancy writing se zyada useful writing important hoti hai.',
+                'Second big mistake: document update process ignore karna. Outdated docs user trust damage karte hain.'
+              ],
+              bullets: [
+                'Too much jargon use karna without explanation',
+                'Long paragraphs likhna without headings and steps',
+                'User persona consider na karna',
+                'Screenshots/examples na dena where needed',
+                'Peer review aur fact-check skip karna',
+                'Docs publish karke maintenance plan na banana'
+              ]
+            }
+          ],
+          faq: [
+            {
+              question: 'Kya technical writing beginners ke liye good career hai?',
+              answer:
+                'Yes, technical writing beginners ke liye strong career hai, especially agar aap clear writing aur documentation structure par focus karte ho. Product companies, SaaS teams, and support-heavy businesses mein demand steadily grow ho rahi hai.'
+            },
+            {
+              question: 'Technical writer banne ke liye coding zaroori hai?',
+              answer:
+                'Full coding mandatory nahi hai. Basic technical understanding, software workflows, and documentation tools ka comfort enough hota hai for many entry-level roles.'
+            },
+            {
+              question: 'Portfolio mein kya include karna chahiye?',
+              answer:
+                'At least 3-5 samples include karo: getting started guide, FAQ page, troubleshooting article, and one SOP/release notes sample. Har sample ka audience and purpose clearly mention karo.'
+            },
+            {
+              question: 'First technical writing internship kaise milegi?',
+              answer:
+                'Targeted applications + clear portfolio link + role-specific resume se chances improve hote hain. LinkedIn outreach mein short personalized message bhejo aur relevant sample docs attach karo.'
+            }
+          ],
+          conclusion:
+            'Technical writer roadmap beginners ke liye ek practical path deta hai: clear writing fundamentals, documentation projects, tool familiarity, and consistent portfolio proof. 30-day base aur 90-day execution plan follow karke aap technical writing internships aur entry roles ke liye confident ban sakte ho.',
+          cta: {
+            title: 'Build Your Technical Writing Portfolio with ToolShala',
+            text:
+              'Use ToolShala writing and career tools to improve clarity, craft better application emails, and create strong resume bullets for technical writing roles.',
+            primaryLabel: 'Use Improve Text Tool',
+            primaryLink: './tool.html?tool=improve-text',
+            secondaryLabel: 'Use Content Brief Template',
+            secondaryLink: './content-brief-template.html'
+          }
+        }
       }
     ]
   }
