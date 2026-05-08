@@ -1,63 +1,52 @@
+const PROVIDER_TIMEOUT_MS = 25000;
+const MAX_PROMPT_CHARS = 12000;
+const MAX_REQUEST_BYTES = 64 * 1024;
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Content-Type': 'application/json'
+};
+
+const jsonResponse = (statusCode, body) => ({
+  statusCode,
+  headers: corsHeaders,
+  body: JSON.stringify(body)
+});
+
+const isBodyTooLarge = (body = '') => Buffer.byteLength(String(body || ''), 'utf8') > MAX_REQUEST_BYTES;
+
 exports.handler = async (event) => {
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Content-Type': 'application/json'
-  };
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders, body: '' };
+  if (event.httpMethod !== 'POST') return jsonResponse(405, { error: 'Method not allowed' });
+  if (isBodyTooLarge(event.body)) return jsonResponse(413, { error: 'Request payload is too large.' });
 
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 204,
-      headers: corsHeaders,
-      body: ''
-    };
+  const apiKey = String(process.env.NVIDIA_API_KEY || '').trim();
+  if (!apiKey) return jsonResponse(500, { error: 'AI provider is not configured.' });
+
+  let body = {};
+  try {
+    body = JSON.parse(event.body || '{}');
+  } catch (_error) {
+    return jsonResponse(400, { error: 'Invalid JSON body.' });
   }
 
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      headers: corsHeaders,
-      body: JSON.stringify({ error: 'Method not allowed' })
-    };
-  }
+  const prompt = String(body.prompt || '').trim();
+  if (!prompt) return jsonResponse(400, { error: 'prompt is required' });
+  if (prompt.length > MAX_PROMPT_CHARS) return jsonResponse(413, { error: `Prompt is too long. Please keep it under ${MAX_PROMPT_CHARS} characters.` });
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);
 
   try {
-    const apiKey = process.env.NVIDIA_API_KEY;
-    if (!apiKey) {
-      return {
-        statusCode: 500,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: 'NVIDIA_API_KEY not set' })
-      };
-    }
-
-    let body = {};
-    try {
-      body = JSON.parse(event.body || '{}');
-    } catch {
-      return {
-        statusCode: 400,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: 'Invalid JSON body' })
-      };
-    }
-
-    const prompt = (body.prompt || '').trim();
-    if (!prompt) {
-      return {
-        statusCode: 400,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: 'prompt is required' })
-      };
-    }
-
     const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json'
       },
+      signal: controller.signal,
       body: JSON.stringify({
         model: process.env.NVIDIA_MODEL || 'openai/gpt-oss-20b',
         messages: [
@@ -76,39 +65,20 @@ exports.handler = async (event) => {
 
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      return {
-        statusCode: response.status,
-        headers: corsHeaders,
-        body: JSON.stringify({
-          error: data?.error?.message || 'NVIDIA API request failed'
-        })
-      };
+      const upstreamMessage = String(data?.error?.message || '').trim();
+      return jsonResponse(response.status >= 500 ? 502 : response.status, {
+        error: upstreamMessage || 'AI provider request failed.'
+      });
     }
 
-    const text = data?.choices?.[0]?.message?.content?.trim()
-      || data?.choices?.[0]?.delta?.content?.trim()
-      || '';
+    const text = String(data?.choices?.[0]?.message?.content || data?.choices?.[0]?.delta?.content || '').trim();
+    if (!text) return jsonResponse(502, { error: 'AI provider returned an empty response.' });
 
-    if (!text) {
-      return {
-        statusCode: 502,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: 'AI provider returned an empty response.' })
-      };
-    }
-
-    return {
-      statusCode: 200,
-      headers: corsHeaders,
-      body: JSON.stringify({ text })
-    };
+    return jsonResponse(200, { text });
   } catch (err) {
-    return {
-      statusCode: 500,
-      headers: corsHeaders,
-      body: JSON.stringify({
-        error: err.message || 'Internal server error'
-      })
-    };
+    if (err?.name === 'AbortError') return jsonResponse(504, { error: 'AI provider timed out. Please try again.' });
+    return jsonResponse(502, { error: 'AI provider request failed. Please try again.' });
+  } finally {
+    clearTimeout(timeout);
   }
 };

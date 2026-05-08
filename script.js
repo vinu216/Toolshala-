@@ -94,8 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const showToast = (type = 'info', title = FEEDBACK_MESSAGES.generalSuccess, description = '') => {
       const toast = document.createElement('div');
       toast.className = `toast-message toast-${type}`;
-      const safeDescription = description ? `<p>${description}</p>` : '';
-      toast.innerHTML = `<strong>${title}</strong>${safeDescription}`;
+
+      const titleNode = document.createElement('strong');
+      titleNode.textContent = String(title || FEEDBACK_MESSAGES.generalSuccess);
+      toast.appendChild(titleNode);
+
+      if (description) {
+        const descriptionNode = document.createElement('p');
+        descriptionNode.textContent = String(description);
+        toast.appendChild(descriptionNode);
+      }
+
       container.appendChild(toast);
 
       requestAnimationFrame(() => {
