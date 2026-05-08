@@ -32,3 +32,17 @@
   to = "/.netlify/functions/generate-flashcards-image"
   status = 200
   force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://toolshala.in; font-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    X-Frame-Options = "DENY"
+[[redirects]]
+  from = "/api/*"
+  to = "/404.html"
+  status = 404
+  force = true

@@ -1,3 +1,5 @@
+const PROVIDER_TIMEOUT_MS = 25000;
+const MAX_SAFE_REQUEST_BYTES = 11 * 1024 * 1024;
 const DEFAULT_MAX_FILE_MB = 8;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
@@ -21,6 +23,8 @@ const getMaxImageBytes = () => {
   const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
   return Math.floor(maxMb * 1024 * 1024);
 };
+
+const isBodyTooLarge = (body = '') => Buffer.byteLength(String(body || ''), 'utf8') > MAX_SAFE_REQUEST_BYTES;
 
 const parseImagePayload = (imageBase64 = '') => {
   const value = String(imageBase64 || '').trim();
@@ -110,7 +114,7 @@ const extractMessageContent = (payload = {}) => {
   return String(content || '');
 };
 
-const callVisionChatOcr = async ({ config, base64, mimeType, fileName }) => {
+const callVisionChatOcr = async ({ config, base64, mimeType, fileName, signal }) => {
   if (!config.apiKey) {
     throw new Error(
       config.provider === 'nvidia'
@@ -129,6 +133,7 @@ const callVisionChatOcr = async ({ config, base64, mimeType, fileName }) => {
 
   const response = await fetch(`${config.baseUrl}/chat/completions`, {
     method: 'POST',
+    signal,
     headers: {
       Authorization: `Bearer ${config.apiKey}`,
       'Content-Type': 'application/json'
@@ -169,6 +174,10 @@ exports.handler = async (event) => {
     return jsonResponse(405, { error: 'Method not allowed' });
   }
 
+  if (isBodyTooLarge(event.body)) {
+    return jsonResponse(413, { error: 'Image payload is too large.' });
+  }
+
   let body = {};
   try {
     body = JSON.parse(event.body || '{}');
@@ -190,7 +199,7 @@ exports.handler = async (event) => {
   }
 
   const normalizedBase64 = base64.replace(/\s/g, '');
-  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(normalizedBase64)) {
+  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(normalizedBase64) || normalizedBase64.length % 4 !== 0) {
     return jsonResponse(400, { error: 'Invalid image data. Please upload the image again.' });
   }
 
@@ -208,8 +217,11 @@ exports.handler = async (event) => {
     });
   }
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);
+
   try {
-    const text = await callVisionChatOcr({ config, base64: normalizedBase64, mimeType, fileName });
+    const text = await callVisionChatOcr({ config, base64: normalizedBase64, mimeType, fileName, signal: controller.signal });
 
     if (!text) {
       return jsonResponse(422, { error: 'No readable text was found in this image. Try a clearer or higher-resolution photo.' });
@@ -217,6 +229,9 @@ exports.handler = async (event) => {
 
     return jsonResponse(200, { text });
   } catch (error) {
+    if (error?.name === 'AbortError') return jsonResponse(504, { error: 'OCR provider timed out. Please try a smaller or clearer image.' });
     return jsonResponse(502, { error: error?.message || 'OCR provider failed. Please try another clear image.' });
+  } finally {
+    clearTimeout(timeout);
   }
 };
