@@ -2360,6 +2360,22 @@ footer a:active {
   max-width: 20rem;
 }
 
+.footer-social-title {
+  margin-bottom: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .social-link {
   display: inline-flex;
   align-items: center;
@@ -2369,13 +2385,21 @@ footer a:active {
   border-radius: 999px;
   border: 1px solid #dbe2ef;
   color: #334155;
-  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
 .social-link:hover {
   transform: translateY(-2px);
   border-color: #b8c3f3;
   background: #eef2ff;
+  color: var(--brand-deep);
+}
+
+.social-link:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.28);
+  outline-offset: 3px;
+  border-color: var(--brand);
+  color: var(--brand-deep);
 }
 
 .newsletter-input {
