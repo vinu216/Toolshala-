@@ -7109,7 +7109,7 @@ window.ToolShalaArticleContent = {
         featured: false
       },
       {
-        id: 'guide-028',
+        id: 'guide-048',
         title: 'Sales Executive Roadmap for Freshers',
         slug: '/guides/sales-executive-roadmap',
         primaryKeyword: 'sales executive roadmap',
@@ -7355,14 +7355,14 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to polish your resume, LinkedIn profile, outreach emails, and daily sales communication practice.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-generator',
+            primaryLink: './tool.html?tool=resume-bullet-point-generator',
             secondaryLabel: 'Open Job Application Template',
             secondaryLink: './job-application-email-template.html'
           }
         }
       },
       {
-        id: 'guide-029',
+        id: 'guide-049',
         title: 'Technical Writer Roadmap for Beginners',
         slug: '/guides/technical-writer-roadmap',
         primaryKeyword: 'technical writer roadmap',
@@ -7609,7 +7609,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala writing and career tools to improve clarity, craft better application emails, and create strong resume bullets for technical writing roles.',
             primaryLabel: 'Use Improve Text Tool',
-            primaryLink: './tool.html?tool=improve-text',
+            primaryLink: './tool.html?tool=paragraph-rewriter-humanizer',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
