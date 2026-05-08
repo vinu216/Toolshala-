@@ -268,6 +268,7 @@
     });
 
   const getToolById = (toolId) => toolDefinitions.find((tool) => tool.id === toolId);
+  const isValidToolId = (toolId) => Boolean(toolId && getToolById(toolId));
 
   const getContentTools = () => {
     const tools = window.ToolShalaContent?.collections?.tools;
@@ -5363,9 +5364,11 @@ ${senderName}`;
     }
 
     const params = new URLSearchParams(window.location.search);
-    const toolId = params.get('tool') || toolDefinitions[0].id;
-    const tool = getToolById(toolId) || toolDefinitions[0];
-    const toolFields = getToolFields(tool);
+    const requestedToolId = params.get('tool');
+    const toolId = requestedToolId || toolDefinitions[0].id;
+    const hasInvalidToolQuery = Boolean(requestedToolId) && !isValidToolId(requestedToolId);
+    const tool = hasInvalidToolQuery ? null : getToolById(toolId);
+    const toolFields = tool ? getToolFields(tool) : [];
 
     const titleNode = root.querySelector('[data-tool-title]');
     const descriptionNode = root.querySelector('[data-tool-description]');
@@ -5381,6 +5384,28 @@ ${senderName}`;
     const generateMoreButton = root.querySelector('[data-tool-generate-more]');
 
     if (!titleNode || !descriptionNode || !categoryNode || !tipsNode || !formNode || !outputNode || !errorNode || !loadingNode || !submitButton || !resetButton) {
+      return;
+    }
+
+    if (hasInvalidToolQuery || !tool) {
+      document.title = 'Tool Not Found | ToolShala';
+      titleNode.textContent = 'Tool not found';
+      descriptionNode.textContent = 'This tool link is invalid or no longer available. Please open a valid tool from the tools listing.';
+      categoryNode.textContent = 'Invalid Tool Link';
+      if (tipsNode) tipsNode.innerHTML = '';
+      if (helperTextNode) helperTextNode.textContent = 'Open Tools page to continue.';
+      formNode.classList.add('hidden');
+      resetButton.classList.add('hidden');
+      submitButton.classList.add('hidden');
+      if (generateMoreButton) generateMoreButton.classList.add('hidden');
+      errorNode.textContent = '';
+      errorNode.classList.add('hidden');
+      loadingNode.classList.add('hidden');
+      outputNode.setAttribute('aria-busy', 'false');
+      outputNode.innerHTML = '<p class="text-slate-600">Invalid tool URL. Go back to <a href="./tools.html" class="text-teal-700 underline">Tools</a> and choose a valid tool.</p>';
+      if (window.console && typeof window.console.warn === 'function') {
+        window.console.warn(`[ToolShala] Invalid tool query value: ${requestedToolId}`);
+      }
       return;
     }
 
