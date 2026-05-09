@@ -466,12 +466,31 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const normalizeGuideSlug = (value = '') => String(value).replace(/^\/?guides\//, '').replace(/^\/+/, '');
+  const guideSlugAliases = {
+    'business-analyst-roadmap-for-beginners': 'business-analyst-roadmap',
+    'graphic-designer-roadmap-for-beginners': 'graphic-designer-roadmap',
+    'no-code-automation-specialist-roadmap-for-beginners': 'no-code-automation-specialist-roadmap',
+    'how-to-find-internship': 'internship-kaise-dhoondein'
+  };
+  const guideSlugSet = new Set(seoGuides.map((guide) => normalizeGuideSlug(guide.slug)));
+  const resolveGuideSlugAlias = (value = '') => {
+    const normalized = normalizeGuideSlug(value);
+    return guideSlugAliases[normalized] || normalized;
+  };
+  const getValidGuidePath = (path = '') => {
+    if (!path.startsWith('/guides/')) {
+      return path;
+    }
+    const canonicalSlug = resolveGuideSlugAlias(path);
+    if (guideSlugSet.has(canonicalSlug)) {
+      return `/guides/${canonicalSlug}`;
+    }
+    console.warn(`[ToolShala] Skipping unknown guide link: ${path}`);
+    return '';
+  };
   const getGuidePath = (guide) => {
     const rawSlug = typeof guide === 'string' ? guide : guide?.slug || '';
-    if (rawSlug.startsWith('/guides/')) {
-      return rawSlug;
-    }
-    return `/guides/${normalizeGuideSlug(rawSlug)}`;
+    return getValidGuidePath(rawSlug.startsWith('/guides/') ? rawSlug : `/guides/${normalizeGuideSlug(rawSlug)}`);
   };
   const resolveGuideLink = (guide) => `./guide.html?slug=${encodeURIComponent(normalizeGuideSlug(guide?.slug || guide || ''))}`;
 
@@ -910,7 +929,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sectionsNode) {
       const sections = Array.isArray(content?.sections) ? content.sections : [];
       const bodyParagraphs = typeof guide.body === 'string' && guide.body.trim() ? guide.body.split(/\n{2,}/).filter(Boolean) : [];
-      const relatedLinks = Array.isArray(guide.relatedLinks) ? guide.relatedLinks.slice(0, 5) : [];
+      const relatedLinks = Array.isArray(guide.relatedLinks)
+        ? guide.relatedLinks.map((link) => getValidGuidePath(link)).filter(Boolean).slice(0, 5)
+        : [];
       const linkSection = relatedLinks.length
         ? `<section class="rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5"><h2 class="text-2xl font-extrabold text-slate-900">Explore Related ToolShala Resources</h2><p class="mt-3 text-slate-700">Use these internal resources to continue learning, build your portfolio, and polish applications.</p><div class="mt-4 flex flex-wrap gap-3">${relatedLinks
             .map((link) => `<a href="${escapeHtml(resolveInternalPath(link))}" class="btn-secondary">${escapeHtml(link.replace('/guides/', '').replace(/^\//, '').replace(/-/g, ' '))}</a>`)
@@ -992,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (ctaNode) {
       ctaNode.textContent = content?.cta?.primaryLabel || guide.ctaText || 'Read Guide';
-      const primaryCtaLink = content?.cta?.primaryLink || (Array.isArray(guide.relatedLinks) && guide.relatedLinks.length ? guide.relatedLinks[0] : '/tools');
+      const primaryCtaLink = content?.cta?.primaryLink || (Array.isArray(guide.relatedLinks) && guide.relatedLinks.length ? getValidGuidePath(guide.relatedLinks[0]) || '/tools' : '/tools');
       ctaNode.setAttribute('href', resolveInternalPath(primaryCtaLink));
     }
 
@@ -1009,7 +1030,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (linkPoolNode) {
-      const links = Array.isArray(guide.relatedLinks) ? guide.relatedLinks : [];
+      const links = Array.isArray(guide.relatedLinks)
+        ? guide.relatedLinks.map((link) => getValidGuidePath(link)).filter(Boolean)
+        : [];
       linkPoolNode.innerHTML = links
         .slice(0, 4)
         .map((link) => `<a href="${escapeHtml(resolveInternalPath(link))}" class="btn-secondary">${escapeHtml(link.replace('/guides/', '').replace(/-/g, ' '))}</a>`)

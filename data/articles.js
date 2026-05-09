@@ -7797,7 +7797,7 @@ window.ToolShalaArticleContent = {
           '/opportunities',
           '/tools',
           '/templates',
-          '/guides/how-to-find-internship'
+          '/guides/internship-kaise-dhoondein'
         ],
         featuredImageAlt: 'Customer success executive roadmap for beginners with skills tools and retention ideas',
         publishDate: '2026-05-08',
@@ -8113,7 +8113,7 @@ window.ToolShalaArticleContent = {
           '/tools',
           '/templates',
           '/guides/data-analyst-roadmap-for-freshers',
-          '/guides/business-analyst-roadmap-for-beginners'
+          '/guides/business-analyst-roadmap'
         ],
         featuredImageAlt: 'Data scientist roadmap for beginners with Python SQL machine learning and portfolio projects',
         publishDate: '2026-05-08',
@@ -8751,7 +8751,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical motion graphics roadmap for beginners with animation workflows, tools, and portfolio-building guidance.',
         category: 'Career Guidance',
         ctaText: 'Start Motion Graphics Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/graphic-designer-roadmap-for-beginners', '/guides/content-writer-copywriter-roadmap'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/graphic-designer-roadmap', '/guides/content-writer-copywriter-roadmap'],
         featuredImageAlt: 'Motion graphics designer roadmap for beginners with animation tools portfolio and career tips',
         publishDate: '2026-05-08',
         readingTime: '12 min read',
@@ -8808,7 +8808,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical product analyst roadmap for beginners with product metrics, data storytelling, and growth-focused case studies.',
         category: 'Career Guidance',
         ctaText: 'Start Product Analyst Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/business-analyst-roadmap-for-beginners', '/guides/product-manager-roadmap-for-freshers'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/business-analyst-roadmap', '/guides/product-manager-roadmap-for-freshers'],
         featuredImageAlt: 'Product analyst roadmap for beginners with SQL metrics dashboards and case study ideas',
         publishDate: '2026-05-08',
         readingTime: '12 min read',
@@ -8922,7 +8922,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical business operations roadmap for beginners focused on process improvement, execution tracking, and team coordination.',
         category: 'Career Guidance',
         ctaText: 'Start Business Ops Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/business-analyst-roadmap-for-beginners', '/guides/event-manager-roadmap'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/business-analyst-roadmap', '/guides/event-manager-roadmap'],
         featuredImageAlt: 'Business operations manager roadmap for beginners with process tools planning and execution tips',
         publishDate: '2026-05-08',
         readingTime: '12 min read',
@@ -9321,7 +9321,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical Salesforce Administrator roadmap for beginners with CRM setup, workflows, and admin-focused career preparation.',
         category: 'Career Guidance',
         ctaText: 'Start Salesforce Admin Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/no-code-automation-specialist-roadmap-for-beginners', '/guides/business-operations-manager-roadmap'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/no-code-automation-specialist-roadmap', '/guides/business-operations-manager-roadmap'],
         featuredImageAlt: 'Salesforce administrator roadmap for beginners with CRM setup automation and admin best practices',
         publishDate: '2026-05-09',
         readingTime: '12 min read',
