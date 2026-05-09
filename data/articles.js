@@ -9704,7 +9704,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Bullet Point Generator',
             primaryLink: './tool.html?tool=resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -9720,7 +9720,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical QA automation roadmap in Hinglish for beginners focused on scripting, automation frameworks, and test engineering career growth.',
         category: 'Career Guidance',
         ctaText: 'Start QA Automation Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/qa-engineer-roadmap-for-beginners', '/guides/backend-developer-roadmap'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/qa-engineer-roadmap', '/guides/backend-developer-roadmap'],
         featuredImageAlt: 'QA automation engineer roadmap for beginners with Selenium Cypress Playwright and API testing skills',
         publishDate: '2026-05-09',
         readingTime: '12 min read',
@@ -9761,7 +9761,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Bullet Point Generator',
             primaryLink: './tool.html?tool=resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -9932,7 +9932,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Keywords Bank',
             primaryLink: './resume-keywords-bank-template.html',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -10103,7 +10103,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Keywords Bank',
             primaryLink: './resume-keywords-bank-template.html',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -10281,7 +10281,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A practical Hinglish stream-selection roadmap after 10th for students and parents with decision checklist and 30-day/90-day action plan.',
         category: 'Career Guidance',
         ctaText: 'Start Stream Selection Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/career-roadmap-after-10th', '/guides/12th-ke-baad-best-career-options'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/best-career-stream-selection-after-10th', '/guides/12th-ke-baad-best-career-options'],
         featuredImageAlt: 'Best stream selection roadmap after 10th for students and parents',
         publishDate: '2026-05-09',
         readingTime: '12 min read',
@@ -10441,7 +10441,7 @@ window.ToolShalaArticleContent = {
         shortExcerpt: 'A beginner-friendly Hinglish roadmap to improve student public speaking confidence through daily practice and structured speaking challenges.',
         category: 'Career Guidance',
         ctaText: 'Start Public Speaking Roadmap',
-        relatedLinks: ['/career', '/tools', '/templates', '/guides/how-to-build-confidence-as-a-fresher', '/guides/first-job-interview-preparation-guide'],
+        relatedLinks: ['/career', '/tools', '/templates', '/guides/how-to-build-confidence-as-a-fresher', '/guides/first-job-interview-preparation'],
         featuredImageAlt: 'Public speaking roadmap for students with confidence building practice plan',
         publishDate: '2026-05-09',
         readingTime: '11 min read',
@@ -10698,7 +10698,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Bullet Point Generator',
             primaryLink: './tool.html?tool=resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -10810,7 +10810,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Digital PR Career Toolkit',
             text: 'Use ToolShala resources to improve communication quality, organize outreach workflows, and strengthen your PR profile.',
             primaryLabel: 'Use Professional Email Template',
-            primaryLink: './professional-email-template.html',
+            primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -10867,7 +10867,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Influencer Marketing Career Toolkit',
             text: 'Use ToolShala resources to improve outreach communication, organize campaign workflows, and prepare stronger applications.',
             primaryLabel: 'Use Professional Email Template',
-            primaryLink: './professional-email-template.html',
+            primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -11040,7 +11040,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -11097,7 +11097,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Resume Bullet Point Generator',
             primaryLink: './tool.html?tool=resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       },
@@ -11154,7 +11154,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Professional Email Template',
-            secondaryLink: './professional-email-template.html'
+            secondaryLink: './professional-email-format-template.html'
           }
         }
       }
