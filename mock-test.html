@@ -45,7 +45,7 @@
           <aside class="reveal hero-showcase" aria-label="Mock test highlights">
             <div class="hero-showcase-head"><h2>Practice Snapshot</h2><span>Updated Weekly</span></div>
             <div class="hero-stat-grid">
-              <article><strong>6+</strong><span>Exam categories</span></article>
+              <article><strong>10</strong><span>Exam categories</span></article>
               <article><strong>Beginner</strong><span>to intermediate</span></article>
               <article><strong>Anytime</strong><span>self-practice mode</span></article>
             </div>
@@ -56,20 +56,116 @@
 
       <section id="mock-test-library" class="section-wrap">
         <div class="section-head reveal">
-          <h2>Mock Test Categories</h2>
-          <p>Choose a category relevant to your preparation and begin with practice sets.</p>
+          <h2>Browse by Category</h2>
+          <p>Search and choose your exam track to quickly find the most relevant mock tests.</p>
         </div>
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="feature-card reveal"><p class="template-badge">Competitive Exams</p><h3 class="mt-3">General Competitive Mock Test</h3><p>Mixed aptitude, reasoning, and general awareness sets for broad exam prep.</p><p class="template-meta">Target: Multi-exam foundation</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">Start Mock Test</a></div></article>
-          <article class="feature-card reveal"><p class="template-badge">Banking</p><h3 class="mt-3">Banking Aptitude Mock Test</h3><p>Practice quantitative aptitude, reasoning, and basic English for bank exams.</p><p class="template-meta">Target: Banking</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">Start Mock Test</a></div></article>
-          <article class="feature-card reveal"><p class="template-badge">SSC</p><h3 class="mt-3">SSC Practice Mock Test</h3><p>Section-wise question sets aligned for common SSC preparation patterns.</p><p class="template-meta">Target: SSC</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">View Test</a></div></article>
-          <article class="feature-card reveal"><p class="template-badge">Railway</p><h3 class="mt-3">Railway Exam Mock Test</h3><p>Practice speed and accuracy for railway recruitment style questions.</p><p class="template-meta">Target: Railway</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">Start Mock Test</a></div></article>
-          <article class="feature-card reveal"><p class="template-badge">Teaching</p><h3 class="mt-3">Teaching Eligibility Mock Test</h3><p>Attempt pedagogy, aptitude, and subject-neutral questions for teaching exams.</p><p class="template-meta">Target: Teaching</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">View Test</a></div></article>
-          <article class="feature-card reveal"><p class="template-badge">Government Jobs</p><h3 class="mt-3">Govt Job Prep Mock Test</h3><p>All-round practice for general government job examinations and prelim rounds.</p><p class="template-meta">Target: Government jobs</p><div class="template-actions mt-4"><a href="./career.html" class="btn-primary">Start Mock Test</a></div></article>
+        <div class="reveal mb-6">
+          <label for="mock-test-search" class="mb-2 block text-sm font-semibold text-slate-700">Find your exam category</label>
+          <input id="mock-test-search" type="search" placeholder="Search categories like Teaching, SSC, Nursing..." class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100" />
         </div>
+        <div id="mock-test-categories" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+      </section>
+
+      <section class="section-wrap border-t border-slate-200" id="featured-mock-tests">
+        <div class="section-head reveal">
+          <h2>Featured Mock Tests</h2>
+          <p>Popular practice sets selected for high-demand exam segments.</p>
+        </div>
+        <div id="featured-test-grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <section class="section-wrap border-t border-slate-200">
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="feature-card reveal">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900">How it works</h2>
+            <ol class="mt-4 space-y-3 text-slate-600">
+              <li><strong>1.</strong> Select your exam category from the mock test library.</li>
+              <li><strong>2.</strong> Start with featured sets or jump to role-specific practice.</li>
+              <li><strong>3.</strong> Repeat practice weekly to improve confidence and accuracy.</li>
+            </ol>
+          </article>
+          <article class="feature-card reveal">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900">Why use ToolShala mock tests</h2>
+            <ul class="mt-4 space-y-3 text-slate-600">
+              <li>Exam-focused categories for faster navigation.</li>
+              <li>Beginner-friendly structure with simple progression.</li>
+              <li>Lightweight, mobile-first interface for daily practice.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap border-t border-slate-200">
+        <article class="feature-card reveal text-center">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Ready to begin your next mock test?</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-slate-600">Pick your exam category, attempt one focused test, and build momentum with consistent practice.</p>
+          <div class="template-actions mt-6 justify-center">
+            <a href="#mock-test-library" class="btn-primary">Browse Categories</a>
+            <a href="./career.html" class="btn-secondary">Get Career Guidance</a>
+          </div>
+        </article>
       </section>
     </main>
     <footer><div class="footer-shell"><div class="legal-row flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>&copy; <span data-year></span> ToolShala. All rights reserved.</p><div class="flex items-center gap-4"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms &amp; Conditions</a><a href="./disclaimer.html">Disclaimer</a></div></div></div></footer>
+
+    <script>
+      const mockTestCategories = [
+        { name: 'Teaching Exams', description: 'CTET, TET, teaching aptitude, and pedagogy-focused practice sets.', examType: 'Teaching', totalTests: 24, ctaText: 'Explore Teaching Tests', link: './career.html' },
+        { name: 'Rajasthan Govt Exams', description: 'Rajasthan state-level exam practice including clerk, police, and service roles.', examType: 'Rajasthan Govt', totalTests: 18, ctaText: 'View Rajasthan Tests', link: './opportunities.html' },
+        { name: 'Central Govt Exams', description: 'SSC, railway, banking, and other central recruitment style test series.', examType: 'Central Govt', totalTests: 30, ctaText: 'Start Central Prep', link: './career.html' },
+        { name: 'Civil Services Exams', description: 'UPSC and PCS style prelim-oriented mock tests for civil services aspirants.', examType: 'Civil Services', totalTests: 16, ctaText: 'Practice Civil Services', link: './career.html' },
+        { name: 'Nursing Exams', description: 'Nursing entrance and recruitment test practice across aptitude and fundamentals.', examType: 'Nursing', totalTests: 12, ctaText: 'Open Nursing Tests', link: './opportunities.html' },
+        { name: 'School Test', description: 'School-level quiz, aptitude, and concept reinforcement mock tests.', examType: 'School', totalTests: 20, ctaText: 'Go to School Tests', link: './guides.html' },
+        { name: 'Other State Govt Exams', description: 'State PSC, police, clerk, and other non-Rajasthan state exam preparation.', examType: 'State Govt', totalTests: 22, ctaText: 'Browse State Tests', link: './opportunities.html' },
+        { name: 'Agriculture Exams', description: 'Agriculture recruitment and entrance style objective test practice.', examType: 'Agriculture', totalTests: 10, ctaText: 'Explore Agriculture', link: './opportunities.html' },
+        { name: 'College Entrance Exams', description: 'CUET and college entrance preparation sets for admissions and aptitude.', examType: 'College Entrance', totalTests: 14, ctaText: 'Start Entrance Prep', link: './career.html' },
+        { name: 'Miscellaneous Exams', description: 'General mixed practice for remaining exam types and cross-domain prep.', examType: 'Miscellaneous', totalTests: 15, ctaText: 'View All Mixed Tests', link: './career.html' }
+      ];
+
+      const featuredMockTests = [
+        { title: 'SSC + Railway Sprint Set', description: 'Timed mixed set covering reasoning, aptitude, and current affairs basics.', category: 'Central Govt Exams', ctaText: 'Start Test', link: './career.html' },
+        { title: 'CTET / TET Teaching Drill', description: 'Pedagogy and teaching aptitude practice designed for quick revision.', category: 'Teaching Exams', ctaText: 'Practice Now', link: './career.html' },
+        { title: 'Rajasthan Govt Prelims Pack', description: 'Focused practice for Rajasthan-specific recruitment exam patterns.', category: 'Rajasthan Govt Exams', ctaText: 'Open Pack', link: './opportunities.html' }
+      ];
+
+      const categoryGrid = document.getElementById('mock-test-categories');
+      const featuredGrid = document.getElementById('featured-test-grid');
+      const searchInput = document.getElementById('mock-test-search');
+
+      const renderCategories = (items) => {
+        categoryGrid.innerHTML = items.map((item) => `
+          <article class="feature-card reveal">
+            <p class="template-badge">${item.examType}</p>
+            <h3 class="mt-3">${item.name}</h3>
+            <p>${item.description}</p>
+            <p class="template-meta">${item.totalTests} mock tests</p>
+            <div class="template-actions mt-4"><a href="${item.link}" class="btn-primary">${item.ctaText}</a></div>
+          </article>
+        `).join('');
+      };
+
+      const renderFeatured = () => {
+        featuredGrid.innerHTML = featuredMockTests.map((item) => `
+          <article class="feature-card reveal">
+            <p class="template-badge">${item.category}</p>
+            <h3 class="mt-3">${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="template-actions mt-4"><a href="${item.link}" class="btn-primary">${item.ctaText}</a></div>
+          </article>
+        `).join('');
+      };
+
+      renderCategories(mockTestCategories);
+      renderFeatured();
+
+      searchInput.addEventListener('input', (event) => {
+        const query = event.target.value.trim().toLowerCase();
+        const filtered = mockTestCategories.filter((item) =>
+          `${item.name} ${item.description} ${item.examType}`.toLowerCase().includes(query)
+        );
+        renderCategories(filtered);
+      });
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
