@@ -2,19 +2,22 @@
   const data = window.mockTestData;
   if (!data) return;
 
-  function cardForExam(exam) {
-    return `<article class="feature-card reveal"><p class="template-badge">${exam.level || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>Timed practice set curated for ${exam.title} preparation.</p><p class="template-meta">${exam.duration || '60 min'} • Mock Test</p><div class="template-actions mt-4"><a href="${exam.link}" class="btn-primary" aria-label="Open ${exam.title} mock test">Open Mock Test</a></div></article>`;
+  function cardForExam(exam, ctaText = 'Start Mock Test') {
+    return `<article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'}</p><div class="template-actions mt-4"><a href="${exam.ctaLink}" class="btn-primary" aria-label="${ctaText} for ${exam.title}">${ctaText}</a></div></article>`;
   }
 
   const grid = document.getElementById('mock-test-categories');
   if (grid) {
-    grid.innerHTML = data.categories.map((cat) => `<article class="feature-card reveal"><p class="template-badge">Category</p><h3 class="mt-3">${cat.title}</h3><p>${cat.description}</p><p class="template-meta">${cat.exams.length} exam tracks</p><div class="template-actions mt-4"><a href="./mock-test/${cat.slug}.html" class="btn-primary">Explore ${cat.title}</a></div></article>`).join('');
+    const renderCategories = (categories) => {
+      grid.innerHTML = categories.map((cat) => `<article class="feature-card reveal"><p class="template-badge">Category</p><h3 class="mt-3">${cat.title}</h3><p>${cat.description}</p><p class="template-meta">${cat.exams.length} exam tracks</p><div class="template-actions mt-4"><a href="./mock-test/${cat.slug}.html" class="btn-primary">Explore ${cat.title}</a></div></article>`).join('');
+    };
+    renderCategories(data.categories);
     const search = document.getElementById('mock-test-search');
     if (search) {
       search.addEventListener('input', (event) => {
         const query = event.target.value.trim().toLowerCase();
         const filtered = data.categories.filter((cat) => (`${cat.title} ${cat.description}`).toLowerCase().includes(query));
-        grid.innerHTML = filtered.map((cat) => `<article class="feature-card reveal"><p class="template-badge">Category</p><h3 class="mt-3">${cat.title}</h3><p>${cat.description}</p><p class="template-meta">${cat.exams.length} exam tracks</p><div class="template-actions mt-4"><a href="./mock-test/${cat.slug}.html" class="btn-primary">Explore ${cat.title}</a></div></article>`).join('');
+        renderCategories(filtered);
       });
     }
   }
@@ -25,13 +28,31 @@
     if (!category) return;
     document.getElementById('category-title').textContent = category.title;
     document.getElementById('category-intro').textContent = category.description;
-    const examGrid = document.getElementById('category-exam-grid');
-    const exams = category.exams.map((key) => data.examCatalog[key]).filter(Boolean);
-    examGrid.innerHTML = exams.map(cardForExam).join('');
+    const categoryOverview = document.getElementById('category-overview');
+    if (categoryOverview) categoryOverview.textContent = `${category.title} includes ${category.exams.length} exam tracks with mock tests and practice sets.`;
+
+    const examSections = document.getElementById('category-exam-sections');
+    if (examSections) {
+      examSections.innerHTML = category.exams.map((key, idx) => {
+        const exam = data.exams[key];
+        if (!exam) return '';
+        return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2">${cardForExam(exam, 'Start Mock Test')}${cardForExam({ ...exam, title: `${exam.title} Practice Set`, description: `Revision-focused practice set for ${exam.title}.`, ctaLink: exam.ctaLink }, 'View Practice Set')}</div></section>`;
+      }).join('');
+    }
 
     const related = document.getElementById('related-categories');
     if (related) {
-      related.innerHTML = data.categories.filter((c) => c.slug !== category.slug).slice(0, 3).map((c) => `<a href="./${c.slug}.html" class="btn-secondary">${c.title}</a>`).join('');
+      related.innerHTML = data.categories.filter((c) => c.slug !== category.slug).slice(0, 4).map((c) => `<a href="./${c.slug}.html" class="btn-secondary">${c.title}</a>`).join('');
     }
+  }
+
+  const examSlug = new URLSearchParams(window.location.search).get('exam');
+  const examPage = document.getElementById('mock-exam-page');
+  if (examPage && examSlug) {
+    const exam = data.exams[examSlug];
+    if (!exam) return;
+    document.getElementById('exam-title').textContent = exam.title;
+    document.getElementById('exam-description').textContent = exam.description;
+    document.getElementById('exam-meta').textContent = `${exam.category} • ${exam.questionsCount} questions • ${exam.duration}`;
   }
 })();
