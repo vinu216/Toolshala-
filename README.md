@@ -47,6 +47,11 @@ Tagline: **AI Tools, Career Help, Opportunities & Templates**
   - one new tool object (metadata + field schema)
   - one generator function in `tools-engine.js`
 
+## Requirements
+
+- Node.js 18+ (recommended: latest LTS)
+- npm 9+
+
 ## Setup Instructions
 
 1. Clone or download this project.
