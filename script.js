@@ -213,11 +213,110 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const setupPremiumFooter = () => {
+    const footerBasePath = window.location.pathname.includes('/mock-test/') ? '../' : './';
+    const currentMockCategory = document.body?.getAttribute('data-mock-category') || '';
+    const isRajasthanPage = currentMockCategory === 'rajasthan-govt-exams';
+    const isCentralPage = currentMockCategory === 'central-govt-exams';
+    const isCivilPage = currentMockCategory === 'civil-services-exams';
+    const isNursingPage = currentMockCategory === 'nursing-exams';
+    const isSchoolPage = currentMockCategory === 'school-test';
+    const isOtherStatePage = currentMockCategory === 'other-state-govt-exams';
+    const isAgriculturePage = currentMockCategory === 'agriculture-exams';
+    const isCollegeEntrancePage = currentMockCategory === 'college-entrance-exams';
+    const isMiscPage = currentMockCategory === 'miscellaneous-exams';
+    const examLinkHeading = isRajasthanPage ? 'Rajasthan Exam Links' : isCentralPage ? 'Central Exam Links' : isCivilPage ? 'Civil Services Links' : isNursingPage ? 'Nursing Exam Links' : isSchoolPage ? 'School Class Links' : isOtherStatePage ? 'Other State Exam Links' : isAgriculturePage ? 'Agriculture Exam Links' : isCollegeEntrancePage ? 'College Entrance Links' : isMiscPage ? 'Misc Exam Links' : 'Teaching Exam Links';
+    const examLinks = isRajasthanPage
+      ? [
+        { href: `${footerBasePath}mock-test/exam.html?exam=ras`, label: 'RAS' },
+        { href: `${footerBasePath}mock-test/exam.html?exam=sub-inspector`, label: 'Sub Inspector' },
+        { href: `${footerBasePath}mock-test/exam.html?exam=cet-12th`, label: 'CET 12th' },
+        { href: `${footerBasePath}mock-test/exam.html?exam=cet-graduation`, label: 'CET Graduation' },
+        { href: `${footerBasePath}mock-test/exam.html?exam=vdo`, label: 'VDO' },
+        { href: `${footerBasePath}mock-test/exam.html?exam=patwar`, label: 'Patwar' }
+      ]
+      : isCentralPage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-cgl`, label: 'SSC CGL' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-gd`, label: 'SSC GD' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=delhi-police`, label: 'Delhi Police' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-chsl`, label: 'SSC CHSL' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=mts`, label: 'MTS' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ntpc`, label: 'NTPC' }
+        ]
+      : isCivilPage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=upsc`, label: 'UPSC' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=bpsc`, label: 'BPSC' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=uppcs`, label: 'UPPCS' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ras`, label: 'RAS' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=eo-ro`, label: 'EO & RO' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ncert`, label: 'NCERT' }
+        ]
+      : isNursingPage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=norcet-12`, label: 'NORCET 12' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=norcet-11`, label: 'NORCET 11' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=aiims-cre`, label: 'AIIMS-CRE' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=rrb`, label: 'RRB Nursing' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=rajasthan-staff-nurse`, label: 'Rajasthan Staff Nurse' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-nursing-officer`, label: 'SSC Nursing Officer' }
+        ]
+      : isSchoolPage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-10`, label: 'Class 10th' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-9`, label: 'Class 9th' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-8`, label: 'Class 8th' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-7`, label: 'Class 7th' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-6`, label: 'Class 6th' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=class-12-science`, label: 'Class 12th Science' }
+        ]
+      : isOtherStatePage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=up-constable`, label: 'UP Constable' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=up-sub-inspector`, label: 'UP Sub Inspector' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=up-home-guard`, label: 'UP Home Guard' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=high-court-ro-aro`, label: 'High Court RO/ARO' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=high-court-group-c-d`, label: 'High Court Group C & D' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=up-vdo`, label: 'UP VDO' }
+        ]
+      : isAgriculturePage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=agriculture-supervisor`, label: 'Agriculture Supervisor' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=veterinary-officer`, label: 'Veterinary Officer' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=jet`, label: 'JET' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=rssb-teaching-associate`, label: 'RSSB Teaching Associate' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=pashu-parichar`, label: 'Pashu Parichar' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=food-safety-officer`, label: 'Food Safety Officer' }
+        ]
+      : isCollegeEntrancePage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=jee-12`, label: 'JEE Adv Class 12' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=jee-11`, label: 'JEE Adv Class 11' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=neet-12`, label: 'NEET UG Class 12' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=neet-11`, label: 'NEET UG Class 11' }
+        ]
+      : isMiscPage
+        ? [
+          { href: `${footerBasePath}mock-test/exam.html?exam=state-judicial-services`, label: 'State Judicial Services' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-je`, label: 'SSC JE' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=rssb-je`, label: 'RSSB JE' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=rpsc-ae`, label: 'RPSC AE' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=mathematics`, label: 'Mathematics' },
+          { href: `${footerBasePath}mock-test/exam.html?exam=reasoning`, label: 'Reasoning' }
+        ]
+      : [
+        { href: `${footerBasePath}mock-test/teaching-exams/bstc.html`, label: 'BSTC' },
+        { href: `${footerBasePath}mock-test/teaching-exams/ptet.html`, label: 'PTET' },
+        { href: `${footerBasePath}mock-test/teaching-exams/reet.html`, label: 'REET' },
+        { href: `${footerBasePath}mock-test/teaching-exams/ctet.html`, label: 'CTET' },
+        { href: `${footerBasePath}mock-test/teaching-exams/kvs.html`, label: 'KVS' },
+        { href: `${footerBasePath}mock-test/teaching-exams/dsssb.html`, label: 'DSSSB' }
+      ];
     const footerTemplate = `
       <div class="footer-shell">
         <div class="footer-grid grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <a href="./index.html" class="brand-logo" aria-label="ToolShala home">
+            <a href="${footerBasePath}index.html" class="brand-logo" aria-label="ToolShala home">
               <span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span>
             </a>
             <p class="footer-intro mt-3 max-w-xs text-sm text-slate-600">
@@ -229,25 +328,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <h3 class="foot-title">Quick Links</h3>
             <ul class="foot-list">
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./tools.html">Tools</a></li>
-              <li><a href="./opportunities.html">Opportunities</a></li>
-              <li><a href="./career.html">Career</a></li>
-              <li><a href="./templates.html">Templates</a></li>
-              <li><a href="./about.html">About</a></li>
-              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="${footerBasePath}index.html">Home</a></li>
+              <li><a href="${footerBasePath}mock-test.html">Mock Test</a></li>
+              <li><a href="${footerBasePath}about.html">About</a></li>
+              <li><a href="${footerBasePath}contact.html">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 class="foot-title">Categories</h3>
+            <h3 class="foot-title">${examLinkHeading}</h3>
             <ul class="foot-list">
-              <li><a href="./tools.html">AI Tools</a></li>
-              <li><a href="./opportunities.html">Internships</a></li>
-              <li><a href="./opportunities.html">Scholarships</a></li>
-              <li><a href="./templates.html">Resume Templates</a></li>
-              <li><a href="./career.html">Career Guides</a></li>
-              <li><a href="./templates.html">LinkedIn Templates</a></li>
+              ${examLinks.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
             </ul>
           </div>
 
@@ -283,10 +374,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>&copy; <span data-year></span> ToolShala. All rights reserved.</p>
           <div class="legal-links flex flex-wrap items-center gap-3 sm:gap-4">
             <span class="legal-label">Legal</span>
-            <a href="./privacy.html">Privacy Policy</a>
-            <a href="./terms.html">Terms &amp; Conditions</a>
-            <a href="./disclaimer.html">Disclaimer</a>
-            <a href="./license.html">License</a>
+            <a href="${footerBasePath}privacy.html">Privacy Policy</a>
+            <a href="${footerBasePath}terms.html">Terms &amp; Conditions</a>
+            <a href="${footerBasePath}disclaimer.html">Disclaimer</a>
+            <a href="${footerBasePath}license.html">License</a>
           </div>
         </div>
       </div>
