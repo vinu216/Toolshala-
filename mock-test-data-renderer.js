@@ -233,8 +233,12 @@
     if (mockList) {
       mockList.innerHTML = Array.from({ length: 10 }, (_, index) => {
         const testNumber = index + 1;
+        const customCtaLink = teachingExamSlug === 'bstc' && testNumber === 1
+          ? './bstc-mock-test-1.html'
+          : exam.ctaLink;
         return cardForExam({
           ...exam,
+          ctaLink: customCtaLink,
           title: `${exam.title} Mock Test ${testNumber}`,
           description: `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
         });
