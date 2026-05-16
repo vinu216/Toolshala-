@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="bg-white text-slate-800">
-    <header class="top-nav sticky top-0 z-50"><nav class="nav-shell" aria-label="Main navigation"><a href="../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a><div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../index.html">Home</a><a class="nav-link nav-active" href="../mock-test.html">Mock Test</a><a class="nav-link" href="../about.html">About</a><a class="nav-link" href="../contact.html">Contact</a></div></nav></header>
+    <header class="top-nav sticky top-0 z-50">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a>
+        <div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../index.html">Home</a><a class="nav-link nav-active" href="../mock-test.html">Mock Test</a><a class="nav-link" href="../about.html">About</a><a class="nav-link" href="../contact.html">Contact</a></div>
+        <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-300 p-2 text-slate-700" type="button" data-menu-toggle aria-label="Open menu"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </nav>
+      <div class="menu-panel md:hidden" data-mobile-panel><a class="mobile-nav-link" href="../index.html">Home</a><a class="mobile-nav-link nav-active" href="../mock-test.html">Mock Test</a><a class="mobile-nav-link" href="../about.html">About</a><a class="mobile-nav-link" href="../contact.html">Contact</a></div>
+    </header>
     <main id="main-content" class="section-wrap">
       <article id="mock-exam-page" class="feature-card reveal mx-auto max-w-3xl text-center">
         <p class="template-badge">Mock Test</p>
@@ -20,6 +27,7 @@
         <div class="template-actions mt-6 justify-center"><a href="../mock-test.html" class="btn-primary">Back to Mock Test Hub</a></div>
       </article>
     </main>
+    <footer></footer>
     <script src="../data/mock-test-categories.js"></script>
     <script src="../mock-test-data-renderer.js"></script>
     <script src="../script.js"></script>

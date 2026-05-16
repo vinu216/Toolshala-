@@ -126,6 +126,22 @@ select {
   color: #475569;
 }
 
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hero-points span {
+  border-radius: 999px;
+  border: 1px solid #dbe4fb;
+  background: #fff;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4338ca;
+}
+
 .hero-support-line {
   margin-top: 0.5rem;
   max-width: 36rem;
