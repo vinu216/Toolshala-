@@ -544,7 +544,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const rawSlug = typeof guide === 'string' ? guide : guide?.slug || '';
     return getValidGuidePath(rawSlug.startsWith('/guides/') ? rawSlug : `/guides/${normalizeGuideSlug(rawSlug)}`);
   };
-  const resolveGuideLink = (guide) => `./guide.html?slug=${encodeURIComponent(normalizeGuideSlug(guide?.slug || guide || ''))}`;
+  const resolveGuideLink = (guide) => {
+    const canonicalPath = getGuidePath(guide);
+    const slug = normalizeGuideSlug(canonicalPath || guide?.slug || guide || '');
+    return `./guide.html?slug=${encodeURIComponent(slug)}`;
+  };
 
   const getRelatedGuides = (currentGuide, limit = 3) => {
     if (!currentGuide || !seoGuides.length) {
@@ -571,7 +575,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return { guide, score };
       })
-      .sort((a, b) => b.score - a.score || a.guide.title.localeCompare(b.guide.title));
+      .sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        return sortGuides([a.guide, b.guide])[0] === a.guide ? -1 : 1;
+      });
 
     return scored.slice(0, limit).map((entry) => entry.guide);
   };
@@ -1100,14 +1109,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const relatedContainer = root.querySelector('#relatedGuidesGrid');
     const relatedGuides = getRelatedGuides(guide, 3);
-    renderCollection({
-      container: relatedContainer,
-      items: relatedGuides,
-      renderer: (entry) =>
-        `<article class="item-card reveal"><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(entry.category)}</p><h3>${escapeHtml(
-          entry.title
-        )}</h3><p>${escapeHtml(entry.shortExcerpt)}</p><a href="${escapeHtml(resolveGuideLink(entry))}" class="btn-secondary mt-4">Read Guide</a></article>`
-    });
+    if (relatedContainer) {
+      if (relatedGuides.length) {
+        renderCollection({
+          container: relatedContainer,
+          items: relatedGuides,
+          renderer: (entry) =>
+            `<article class="item-card reveal"><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(entry.category)}</p><h3>${escapeHtml(
+              entry.title
+            )}</h3><p>${escapeHtml(entry.shortExcerpt)}</p><a href="${escapeHtml(resolveGuideLink(entry))}" class="btn-secondary mt-4">Read Guide</a></article>`
+        });
+      } else {
+        relatedContainer.innerHTML = '<article class="item-card"><h3>No related guides available yet.</h3></article>';
+      }
+    }
 
     const canonicalGuidePath = getGuidePath(guide);
     setMeta('meta[property="og:url"]', `https://toolshala.in${canonicalGuidePath}`);
