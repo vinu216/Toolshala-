@@ -14,30 +14,30 @@
     <main id="main-content">
       <section class="page-hero border-b border-slate-200">
         <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">Rajasthan BSTC Preparation</p>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">राजस्थान BSTC तैयारी</p>
           <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">BSTC Mock Test 1</h1>
-          <p class="mt-4 max-w-3xl text-slate-600">Full-length BSTC practice paper with 150 exam-oriented questions. Pattern covers Mental Ability, Rajasthan GK, Teaching Aptitude, Hindi, and English in balanced 30-30 distribution.</p>
+          <p class="mt-4 max-w-3xl text-slate-600">150 प्रश्नों वाला full-length BSTC practice paper. इसमें Mental Ability, Rajasthan GK, Teaching Aptitude, Hindi और English के 30-30 questions section-wise दिए गए हैं।</p>
           <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
-            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p>
-            <p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 180 Minutes</p>
-            <p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Easy to Moderate</p>
-            <p class="feature-card !m-0 !p-4"><strong>Type:</strong> Full-Length Section-wise MCQ</p>
+            <p class="feature-card !m-0 !p-4"><strong>कुल प्रश्न / Total Questions:</strong> 150</p>
+            <p class="feature-card !m-0 !p-4"><strong>समय / Duration:</strong> 180 मिनट</p>
+            <p class="feature-card !m-0 !p-4"><strong>स्तर / Difficulty:</strong> Easy to Moderate</p>
+            <p class="feature-card !m-0 !p-4"><strong>टेस्ट प्रकार / Type:</strong> Full-Length Section-wise MCQ</p>
           </div>
         </div>
       </section>
 
       <section class="section-wrap">
         <article class="feature-card reveal">
-          <h2 class="text-2xl font-bold">Instructions</h2>
+          <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
           <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
-            <li>Click <strong>Start Test</strong> to begin timer and attempt questions.</li>
-            <li>Use Previous / Next for navigation and jump with question palette.</li>
-            <li>Each question has one correct option. No negative marking in this mock.</li>
-            <li>Submit test to view score, section summary, answer key, and explanations.</li>
+            <li><strong>Test Start Karein</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
           </ul>
-          <div class="template-actions mt-6 flex-wrap">
-            <button id="start-test" class="btn-primary" type="button">Start Test</button>
-            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="start-test" class="btn-primary" type="button">Test Start Karein</button>
+            <p id="timer" class="btn-secondary !cursor-default">बचा हुआ समय / Time Left: 180:00</p>
           </div>
         </article>
       </section>
@@ -48,29 +48,29 @@
             <h2 id="question-meta" class="text-xl font-bold"></h2>
             <p id="section-tag" class="template-badge"></p>
           </div>
-          <p id="question-text" class="mt-4 text-lg leading-relaxed"></p>
+          <p id="question-text" class="mt-4 text-base leading-relaxed sm:text-lg"></p>
           <div id="options" class="mt-5 grid gap-3"></div>
-          <div class="template-actions mt-6 flex-wrap">
-            <button id="prev-btn" class="btn-secondary" type="button">Previous</button>
-            <button id="next-btn" class="btn-primary" type="button">Next</button>
-            <button id="submit-btn" class="btn-secondary" type="button">Finish Test</button>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="prev-btn" class="btn-secondary" type="button">पिछला / Previous</button>
+            <button id="next-btn" class="btn-primary" type="button">अगला / Next</button>
+            <button id="submit-btn" class="btn-secondary" type="button">Test Submit Karein</button>
           </div>
         </article>
         <article class="feature-card reveal mt-6">
-          <h3 class="text-xl font-bold">Question Palette</h3>
-          <div id="palette" class="mt-4 grid grid-cols-6 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div>
+          <h3 class="text-xl font-bold">प्रश्न पैलेट / Question Palette</h3>
+          <div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div>
         </article>
       </section>
 
       <section class="section-wrap hidden" id="result-area">
         <article class="feature-card reveal">
-          <h2 class="text-2xl font-bold">Result Summary</h2>
+          <h2 class="text-2xl font-bold">परिणाम सारांश / Result Summary</h2>
           <div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div>
           <div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div>
-          <div class="template-actions mt-6"><a href="./bstc.html" class="btn-secondary">Back to BSTC Mock Tests</a></div>
+          <div class="template-actions mt-6"><a href="./bstc.html" class="btn-secondary">BSTC Mock Tests पर वापस जाएँ</a></div>
         </article>
         <article class="feature-card reveal mt-6">
-          <h2 class="text-2xl font-bold">Answer Key with Explanations</h2>
+          <h2 class="text-2xl font-bold">उत्तर कुंजी / Answer Key with Explanations</h2>
           <div id="answer-key" class="mt-4 space-y-4"></div>
         </article>
       </section>
@@ -78,9 +78,9 @@
     <script>
       const sections = [
         'Mental Ability / Reasoning',
-        'Rajasthan General Knowledge',
-        'Teaching Aptitude',
-        'Hindi',
+        'Rajasthan GK / राजस्थान सामान्य ज्ञान',
+        'Teaching Aptitude / शिक्षण अभिरुचि',
+        'Hindi / हिंदी',
         'English'
       ];
 
@@ -89,12 +89,12 @@
       const data = [
         ...Array.from({ length: 30 }, (_, i) => {
           const q = [
-            ['Find next number: 5, 10, 20, 40, ?', ['60', '70', '80', '90'], '80', 'Har step me number double ho raha hai.', 'series'],
-            ['Complete series: 2, 5, 8, 11, ?', ['13', '14', '15', '16'], '14', 'Common difference +3 hai.', 'series'],
+            ['अगली संख्या बताइए: 5, 10, 20, 40, ?', ['60', '70', '80', '90'], '80', 'Har step me number double ho raha hai.', 'series'],
+            ['श्रृंखला पूर्ण कीजिए: 2, 5, 8, 11, ?', ['13', '14', '15', '16'], '14', 'Common difference +3 hai.', 'series'],
             ['Book : Read :: Food : ?', ['Cook', 'Eat', 'Buy', 'Serve'], 'Eat', 'Book ko read karte hain, food ko eat karte hain.', 'analogy'],
             ['If CAT = DBU, then RAT = ?', ['SBU', 'SBUU', 'QZS', 'SBU'], 'SBU', 'Har letter +1 shift hua: R->S, A->B, T->U.', 'coding-decoding'],
-            ['A man walks 4 km North and 3 km East. He is in which direction from start?', ['North-West', 'North-East', 'South-East', 'South-West'], 'North-East', 'North aur East move ka resultant North-East hota hai.', 'direction sense'],
-            ['A is brother of B, B is sister of C. Relation of A to C?', ['Brother', 'Sister', 'Father', 'Uncle'], 'Brother', 'A male sibling hai aur C ka sibling relation banta hai.', 'blood relation']
+            ['एक व्यक्ति 4 किमी उत्तर और 3 किमी पूर्व चलता है। वह प्रारम्भ बिंदु से किस दिशा में है?', ['North-West', 'North-East', 'South-East', 'South-West'], 'North-East', 'North aur East move ka resultant North-East hota hai.', 'direction sense'],
+            ['A, B का भाई है और B, C की बहन है। A का C से क्या संबंध है?', ['Brother', 'Sister', 'Father', 'Uncle'], 'Brother', 'A male sibling hai aur C ka sibling relation banta hai.', 'blood relation']
           ][i % 6];
           return createQuestion(i + 1, sections[0], q[0], q[1], q[2], q[3], i < 18 ? 'easy' : 'moderate', q[4]);
         }),
@@ -111,12 +111,12 @@
         }),
         ...Array.from({ length: 30 }, (_, i) => {
           const t = [
-            ['Child-centered teaching ka main focus kya hai?', ['Teacher talk', 'Learner participation', 'Only syllabus', 'Discipline by fear'], 'Learner participation', 'Child-centered approach me learner active hota hai.', 'child-centered education'],
-            ['Formative assessment ka objective kya hota hai?', ['Final grade only', 'Learning improvement', 'Punishment', 'Attendance'], 'Learning improvement', 'Formative assessment se ongoing feedback milta hai.', 'assessment'],
-            ['Inclusive classroom ka matlab?', ['Only toppers', 'Equal opportunities for all', 'No activities', 'Only lecture'], 'Equal opportunities for all', 'Inclusive class me diverse learners ko support milta hai.', 'inclusive education'],
-            ['Primary class me motivation ka best tareeka?', ['Scolding', 'Positive reinforcement', 'Ignore weak students', 'Extra punishment'], 'Positive reinforcement', 'Praise/reward se bacchon ka confidence badhta hai.', 'motivation'],
-            ['Classroom management me pehla step kya hona chahiye?', ['Shouting', 'Clear rules and routines', 'Frequent tests', 'No interaction'], 'Clear rules and routines', 'Spasht niyam se class discipline natural banta hai.', 'classroom management'],
-            ['Good teacher ki ek key quality?', ['Bias', 'Impatience', 'Empathy', 'Rigid behavior'], 'Empathy', 'Empathy se teacher learners ki needs samajh pata hai.', 'teacher qualities']
+            ['बाल-केंद्रित शिक्षण का मुख्य फोकस क्या है?', ['Teacher talk', 'Learner participation', 'Only syllabus', 'Discipline by fear'], 'Learner participation', 'Child-centered approach me learner active hota hai.', 'child-centered education'],
+            ['Formative assessment का उद्देश्य क्या होता है?', ['Final grade only', 'Learning improvement', 'Punishment', 'Attendance'], 'Learning improvement', 'Formative assessment se ongoing feedback milta hai.', 'assessment'],
+            ['Inclusive classroom का अर्थ क्या है?', ['Only toppers', 'Equal opportunities for all', 'No activities', 'Only lecture'], 'Equal opportunities for all', 'Inclusive class me diverse learners ko support milta hai.', 'inclusive education'],
+            ['प्राथमिक कक्षा में प्रेरणा का सबसे अच्छा तरीका क्या है?', ['Scolding', 'Positive reinforcement', 'Ignore weak students', 'Extra punishment'], 'Positive reinforcement', 'Praise/reward se bacchon ka confidence badhta hai.', 'motivation'],
+            ['Classroom management में पहला कदम क्या होना चाहिए?', ['Shouting', 'Clear rules and routines', 'Frequent tests', 'No interaction'], 'Clear rules and routines', 'Spasht niyam se class discipline natural banta hai.', 'classroom management'],
+            ['एक अच्छे शिक्षक का प्रमुख गुण क्या है?', ['Bias', 'Impatience', 'Empathy', 'Rigid behavior'], 'Empathy', 'Empathy se teacher learners ki needs samajh pata hai.', 'teacher qualities']
           ][i % 6];
           return createQuestion(i + 61, sections[2], t[0], t[1], t[2], t[3], i < 18 ? 'easy' : 'moderate', t[4]);
         }),
@@ -134,11 +134,11 @@
         ...Array.from({ length: 30 }, (_, i) => {
           const e = [
             ['Choose correct article: She is ___ honest girl.', ['a', 'an', 'the', 'no article'], 'an', 'Honest starts with vowel sound, so "an".', 'articles'],
-            ['Choose correct preposition: Book is ___ the table.', ['in', 'on', 'at', 'under'], 'on', 'Surface ke liye "on" use hota hai.', 'prepositions'],
-            ['Choose correct tense: They ___ to school daily.', ['goes', 'go', 'gone', 'going'], 'go', 'Plural subject ke sath base verb "go" aata hai.', 'tenses'],
-            ['Synonym of brave is', ['weak', 'bold', 'timid', 'dull'], 'bold', 'Brave ka closest synonym bold hai.', 'vocabulary'],
-            ['Antonym of ancient is', ['old', 'historic', 'modern', 'aged'], 'modern', 'Ancient ka opposite modern hota hai.', 'vocabulary'],
-            ['Choose correct sentence', ['He do not play.', 'He does not plays.', 'He does not play.', 'He not play.'], 'He does not play.', 'Does ke baad base verb aata hai.', 'sentence correction']
+            ['Choose correct preposition: Book is ___ the table.', ['in', 'on', 'at', 'under'], 'on', '"On" is used for something placed on a surface.', 'prepositions'],
+            ['Choose correct tense: They ___ to school daily.', ['goes', 'go', 'gone', 'going'], 'go', 'With a plural subject, the base verb "go" is correct.', 'tenses'],
+            ['Synonym of brave is', ['weak', 'bold', 'timid', 'dull'], 'bold', 'The closest synonym of "brave" is "bold".', 'vocabulary'],
+            ['Antonym of ancient is', ['old', 'historic', 'modern', 'aged'], 'modern', 'The opposite of "ancient" is "modern".', 'vocabulary'],
+            ['Choose correct sentence', ['He do not play.', 'He does not plays.', 'He does not play.', 'He not play.'], 'He does not play.', 'After "does," the base form of the verb is used.', 'sentence correction']
           ][i % 6];
           return createQuestion(i + 121, sections[4], e[0], e[1], e[2], e[3], i < 18 ? 'easy' : 'moderate', e[4]);
         })
@@ -162,10 +162,10 @@
       }
       function renderQuestion() {
         const q = data[state.current];
-        questionMeta.textContent = `Question ${q.id} of 150`;
+        questionMeta.textContent = `प्रश्न / Question ${q.id} of 150`;
         sectionTag.textContent = `${q.section} • ${q.difficulty}`;
         questionText.textContent = q.question;
-        optionsWrap.innerHTML = q.options.map((opt) => `<label class="rounded-xl border p-3 cursor-pointer ${state.answers[q.id] === opt ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300'}"><input class="mr-2" type="radio" name="option" value="${opt}" ${state.answers[q.id] === opt ? 'checked' : ''}/> ${opt}</label>`).join('');
+        optionsWrap.innerHTML = q.options.map((opt) => `<label class="rounded-xl border p-3 sm:p-4 cursor-pointer text-sm sm:text-base leading-relaxed ${state.answers[q.id] === opt ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300'}"><input class="mr-2 align-middle" type="radio" name="option" value="${opt}" ${state.answers[q.id] === opt ? 'checked' : ''}/> ${opt}</label>`).join('');
         optionsWrap.querySelectorAll('input').forEach((input) => input.addEventListener('change', (e) => { state.answers[q.id] = e.target.value; renderPalette(); renderQuestion(); }));
       }
       function sectionStats() {
@@ -184,10 +184,10 @@
         const wrong = attempted - correct;
         const percentage = ((correct / data.length) * 100).toFixed(2);
         document.getElementById('result-summary').innerHTML = [
-          ['Total', data.length], ['Attempted', attempted], ['Correct', correct], ['Wrong', wrong], ['Score %', `${percentage}%`]
+          ['कुल / Total', data.length], ['हल किए / Attempted', attempted], ['सही / Correct', correct], ['गलत / Wrong', wrong], ['स्कोर / Score %', `${percentage}%`]
         ].map(([k,v]) => `<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');
-        document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} correct</p>`).join('');
-        document.getElementById('answer-key').innerHTML = data.map((q) => `<div class="rounded-xl border border-slate-200 p-4"><p class="font-semibold">Q${q.id}. ${q.question}</p><p class="mt-2 text-sm">Your Answer: <strong>${state.answers[q.id] || 'Not Attempted'}</strong></p><p class="text-sm">Correct Answer: <strong>${q.answer}</strong></p><p class="mt-2 text-sm text-slate-600">Explanation: ${q.explanation}</p></div>`).join('');
+        document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} सही / correct</p>`).join('');
+        document.getElementById('answer-key').innerHTML = data.map((q) => `<div class="rounded-xl border border-slate-200 p-4"><p class="font-semibold">Q${q.id}. ${q.question}</p><p class="mt-2 text-sm">आपका उत्तर / Your Answer: <strong>${state.answers[q.id] || 'Not Attempted / प्रयास नहीं किया'}</strong></p><p class="text-sm">सही उत्तर / Correct Answer: <strong>${q.answer}</strong></p><p class="mt-2 text-sm text-slate-600">व्याख्या / Explanation: ${q.explanation}</p></div>`).join('');
       }
 
       document.getElementById('prev-btn').addEventListener('click', () => { if (state.current > 0) { state.current -= 1; renderQuestion(); } });
@@ -202,7 +202,7 @@
         renderQuestion();
         state.timerId = setInterval(() => {
           state.remaining -= 1;
-          timerEl.textContent = `Time Left: ${formatTime(state.remaining)}`;
+          timerEl.textContent = `बचा हुआ समय / Time Left: ${formatTime(state.remaining)}`;
           if (state.remaining <= 0) submitTest();
         }, 1000);
       });
