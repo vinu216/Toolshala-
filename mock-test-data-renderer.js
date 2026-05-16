@@ -1,6 +1,122 @@
 (function () {
   const data = window.mockTestData;
   if (!data) return;
+  const teachingExamHighlights = {
+    bstc: 'BSTC aspirants ke liye foundational pedagogy + Rajasthan-focused MCQ practice sets.',
+    ptet: 'PTET ke liye teaching aptitude, reasoning aur exam pattern based mock practice.',
+    reet: 'REET level-1/2 pattern aligned pedagogy aur subject-mix practice tests.',
+    ctet: 'CTET paper-wise practice with classroom pedagogy and child development topics.',
+    kvs: 'KVS recruitment style teaching + aptitude mock tests for better score confidence.',
+    dsssb: 'DSSSB teaching posts ke liye targeted section-wise and full-length practice.',
+    '2nd-grade': '2nd Grade teacher exam pattern ke saath high-yield revision mock tests.',
+    '3rd-grade': '3rd Grade recruitment prep ke liye easy-to-start progressive mocks.',
+    '1st-grade': '1st Grade lecturer level depth ke liye advanced mock-test sequence.',
+    pti: 'PTI teaching eligibility prep with sports-education and aptitude oriented MCQs.',
+    'assistant-professor': 'Assistant Professor level conceptual + objective exam simulation practice.'
+  };
+  const rajasthanExamHighlights = {
+    ras: 'RAS prelims-focused mock tests with GS coverage, reasoning, and exam-time strategy.',
+    'sub-inspector': 'Sub Inspector prep ke liye reasoning, law-order basics aur mixed-practice sets.',
+    'cet-12th': 'CET 12th level ke liye foundational aptitude + Rajasthan-specific mock practice.',
+    'cet-graduation': 'CET Graduation aspirants ke liye balanced aptitude, GK, and speed practice.',
+    vdo: 'VDO exam pattern aligned village administration + aptitude oriented mock tests.',
+    patwar: 'Patwar preparation ke liye Rajasthan GK, math, and practical objective practice.',
+    'jail-prahari': 'Jail Prahari recruitment style scoring mock tests for consistent practice flow.',
+    'lab-assistant': 'Lab Assistant exams ke liye topic-wise and full-length mixed mock tests.',
+    'woman-supervisor': 'Woman Supervisor role focused section-wise and full exam simulation mocks.',
+    librarian: 'Librarian recruitment pattern ke according objective practice and revision support.',
+    stenographer: 'Stenographer exam practice with aptitude and role-focused objective coverage.',
+    ldc: 'LDC exams ke liye speed, accuracy aur repeated practice-ready mock sets.',
+    constable: 'Constable recruitment ke liye level-based MCQ practice and timed test flow.'
+  };
+  const centralExamHighlights = {
+    'ssc-cgl': 'SSC CGL ke liye tier-wise aptitude, reasoning, English aur GK aligned practice mocks.',
+    'ssc-gd': 'SSC GD aspirants ke liye constable recruitment pattern based speed-focused mock tests.',
+    'delhi-police': 'Delhi Police exam-oriented practice with mixed-difficulty objective question sets.',
+    'ssc-chsl': 'SSC CHSL prep ke liye section-balanced mock tests and progressive revision practice.',
+    mts: 'MTS exams ke liye straightforward mock flow for accuracy and question selection speed.',
+    ntpc: 'NTPC recruitment focused mock tests with aptitude and logic-oriented practice coverage.',
+    'technician-grade-3': 'Technician Grade 3 candidates ke liye level-based exam simulation practice.',
+    'technician-grade-1': 'Technician Grade 1 preparation with structured mixed-topic mock questions.',
+    'crpf-constable': 'CRPF Constable prep ke liye role-specific objective and timed practice support.',
+    army: 'Army recruitment style practice tests with foundational aptitude and general awareness.',
+    nda: 'NDA-oriented mock practice for speed, precision, and exam confidence building.',
+    'airforce-x': 'Airforce X group pattern-focused objective mock tests for consistent preparation.',
+    'airforce-y': 'Airforce Y group exam practice with balanced and accessible question coverage.',
+    'airforce-x-y': 'Combined Airforce X & Y preparation path with broad mock test exposure.'
+  };
+  const civilExamHighlights = {
+    upsc: 'UPSC aspirants ke liye prelims-focused GS, CSAT and current-affairs aligned mock tests.',
+    bpsc: 'BPSC preparation ke liye state + national topic mix ke saath structured mock practice.',
+    uppcs: 'UPPCS ke liye paper pattern aligned objective mocks with balanced section coverage.',
+    ras: 'RAS civil services prep ke liye Rajasthan-focused GS and aptitude mock sets.',
+    'eo-ro': 'EO & RO recruitment prep with administrative aptitude and exam-style objective practice.',
+    'ro-aro': 'RO & ARO candidates ke liye speed, comprehension and accuracy oriented mock tests.',
+    ncert: 'NCERT-based foundational revision mocks for core civil services concept clarity.'
+  };
+  const nursingExamHighlights = {
+    'norcet-12': 'NORCET 12 ke liye AIIMS-style nursing officer pattern based mock practice.',
+    'norcet-11': 'NORCET 11 aspirants ke liye structured nursing aptitude and objective revision.',
+    rrb: 'RRB Nursing recruitment pattern ke saath balanced speed and accuracy practice mocks.',
+    'rajasthan-staff-nurse': 'Rajasthan Staff Nurse exam-specific syllabus coverage ke saath focused mocks.',
+    dsssb: 'DSSSB Nursing posts ke liye targeted section-wise and full-length objective preparation.',
+    'aiims-cre': 'AIIMS-CRE ke liye clinical + general aptitude aligned mock test practice.',
+    'ssc-nursing-officer': 'SSC Nursing Officer exam readiness ke liye practical and high-yield practice sets.'
+  };
+  const schoolExamHighlights = {
+    'class-10': 'Class 10th ke liye board-oriented mock tests with concept + accuracy focus.',
+    'class-9': 'Class 9th students ke liye subject-wise fundamentals and progress-based mock sets.',
+    'class-8': 'Class 8th practice pack with chapter-level objective questions and revision support.',
+    'class-7': 'Class 7th ke liye simple-to-advanced practice flow with regular mock improvement.',
+    'class-6': 'Class 6th foundational mock tests for confidence building and concept clarity.',
+    'class-11-arts': 'Class 11th Arts ke liye stream-focused mock practice and topic reinforcement.',
+    'class-12-arts': 'Class 12th Arts preparation ke liye exam pattern aligned practice support.',
+    'class-11-science': 'Class 11th Science ke liye conceptual mock tests and regular revision flow.',
+    'class-12-science': 'Class 12th Science students ke liye exam-focused timed practice mocks.',
+    'class-11-commerce': 'Class 11th Commerce ke liye subject-mix objective practice and prep.',
+    'class-12-commerce': 'Class 12th Commerce exam readiness ke liye structured mock-test coverage.'
+  };
+  const otherStateExamHighlights = {
+    'up-constable': 'UP Constable ke liye level-based mock tests with speed and accuracy practice.',
+    'up-sub-inspector': 'UP Sub Inspector prep ke liye reasoning, law-order basics and mixed sets.',
+    'up-home-guard': 'UP Home Guard candidates ke liye easy-to-follow progressive mock practice.',
+    'high-court-ro-aro': 'High Court RO/ARO exams ke liye comprehension and objective mock preparation.',
+    'high-court-group-c-d': 'High Court Group C & D ke liye practical recruitment-pattern mock tests.',
+    'forest-guard': 'Forest Guard preparation ke liye state-level mixed-topic timed mock sets.',
+    'up-vdo': 'UP VDO exam-focused objective practice for consistency and exam confidence.'
+  };
+  const agricultureExamHighlights = {
+    'agriculture-supervisor': 'Agriculture Supervisor prep ke liye syllabus-focused objective mock practice.',
+    'veterinary-officer': 'Veterinary Officer candidates ke liye subject-depth and timed practice mocks.',
+    jet: 'JET aspirants ke liye agriculture entrance aligned revision and mock-test coverage.',
+    'rssb-teaching-associate': 'RSSB Teaching Associate exams ke liye recruitment pattern-based practice sets.',
+    'pashu-parichar': 'Pashu Parichar recruitment ke liye accessible level-based mock tests.',
+    'food-safety-officer': 'Food Safety Officer prep ke liye practical, compliance, and aptitude style mocks.',
+    'grade-1-school-lecturer': 'Grade 1st School Lecturer ke liye advanced objective and concept mock practice.',
+    'cuet-ug-agriculture': 'CUET UG Agriculture aspirants ke liye exam-focused mock and speed drills.'
+  };
+  const collegeEntranceExamHighlights = {
+    'jee-12': 'JEE Main & Advanced Class 12 ke liye high-intensity concept + speed mock coverage.',
+    'jee-11': 'JEE Main & Advanced Class 11 students ke liye foundation-first progressive mock tests.',
+    'neet-12': 'NEET UG Class 12 prep ke liye biology-led and mixed-subject timed practice flow.',
+    'neet-11': 'NEET UG Class 11 ke liye concept-building objective practice and revision support.'
+  };
+  const miscellaneousExamHighlights = {
+    'state-judicial-services': 'State Judicial Services prep ke liye law-aptitude and case-style objective practice.',
+    'ssc-je': 'SSC JE candidates ke liye technical reasoning and recruitment-pattern mock support.',
+    'rssb-je': 'RSSB JE prep ke liye section-balanced objective practice with timed mock flow.',
+    'rpsc-ae': 'RPSC AE exam readiness ke liye engineering aptitude and mixed-topic mock tests.',
+    mathematics: 'Mathematics scoring boost ke liye accuracy-focused concept and speed practice sets.',
+    reasoning: 'Reasoning ke liye trick-based, progressive difficulty mock questions and timed drills.',
+    'general-hindi': 'General Hindi ke liye language accuracy and comprehension style mock practice.',
+    'general-english': 'General English prep ke liye grammar, vocabulary and usage-focused mock sets.',
+    'computer-knowledge': 'Computer Knowledge objective prep with practical basics and revision-friendly mocks.',
+    history: 'History preparation ke liye chronology and concept-recall based objective practice.',
+    geography: 'Geography prep with map-awareness and concept-driven mixed mock questions.',
+    psychology: 'Psychology topic practice with easy-to-revise objective format and scoring strategy.',
+    pedagogy: 'Pedagogy section ke liye teaching-concept and learning-model focused practice sets.',
+    'teaching-methods': 'Teaching Methods prep ke liye classroom-application and conceptual MCQ practice.'
+  };
 
   function cardForExam(exam, ctaText = 'Start Mock Test') {
     return `<article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'}</p><div class="template-actions mt-4"><a href="${exam.ctaLink}" class="btn-primary" aria-label="${ctaText} for ${exam.title}">${ctaText}</a></div></article>`;
@@ -27,7 +143,27 @@
     const category = data.categories.find((c) => c.slug === categorySlug);
     if (!category) return;
     document.getElementById('category-title').textContent = category.title;
-    document.getElementById('category-intro').textContent = category.description;
+    document.getElementById('category-intro').textContent = category.slug === 'teaching-exams'
+      ? 'Teaching Exams ke liye exam-wise preparation hub. Apna exam select karo aur BSTC, PTET, REET, CTET, KVS, DSSSB, 2nd Grade, 3rd Grade aur other tracks par smart practice start karo.'
+      : category.slug === 'rajasthan-govt-exams'
+        ? 'Rajasthan Govt Exams ke liye exam-wise preparation hub. RAS, Sub Inspector, CET 12th, CET Graduation, VDO, Patwar, Jail Prahari aur other tracks par structured practice start karo.'
+        : category.slug === 'central-govt-exams'
+          ? 'Central Govt Exams ke liye exam-wise preparation hub. SSC CGL, SSC GD, Delhi Police, SSC CHSL, MTS aur other tracks par structured mock practice start karo.'
+          : category.slug === 'civil-services-exams'
+            ? 'Civil Services Exams ke liye exam-wise preparation hub. UPSC, BPSC, UPPCS, RAS, EO & RO, NCERT aur other tracks par structured mock practice start karo.'
+            : category.slug === 'nursing-exams'
+              ? 'Nursing Exams ke liye exam-wise preparation hub. NORCET 11, NORCET 12, RRB Nursing, Rajasthan Staff Nurse, DSSSB, AIIMS-CRE aur SSC Nursing Officer tracks par focused practice start karo.'
+              : category.slug === 'school-test'
+                ? 'School Test ke liye class-wise preparation hub. Class 6th, 7th, 8th, 9th, 10th aur other streams par focused mock practice start karo.'
+                : category.slug === 'other-state-govt-exams'
+                  ? 'Other State Govt Exams ke liye exam-wise preparation hub. UP Sub Inspector, UP Constable, UP Home Guard, High Court RO/ARO, High Court Group C & D aur other tracks par focused practice start karo.'
+                  : category.slug === 'agriculture-exams'
+                    ? 'Agriculture Exams ke liye exam-wise preparation hub. RSSB Teaching Associate, JET, Agriculture Supervisor, Veterinary Officer, Pashu Parichar, Food Safety Officer aur more tracks par focused practice start karo.'
+                    : category.slug === 'college-entrance-exams'
+                      ? 'College Entrance Exams ke liye class-wise preparation hub. JEE Main & Advanced Class 11/12 aur NEET UG Class 11/12 tracks par focused mock practice start karo.'
+                      : category.slug === 'miscellaneous-exams'
+                        ? 'Miscellaneous Exams ke liye exam-wise preparation hub. State Judicial Services, SSC JE, RSSB JE, RPSC AE, Reasoning, Mathematics aur other technical tracks par focused mock practice start karo.'
+        : category.description;
     const categoryOverview = document.getElementById('category-overview');
     if (categoryOverview) {
       categoryOverview.textContent = `${category.title} includes ${category.exams.length} exam tracks.`;
@@ -43,7 +179,28 @@
           ? `./teaching-exams/${exam.slug}.html`
           : `./exam.html?exam=${exam.slug}`;
 
-        return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2"><article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'} • 10 mock tests</p><div class="template-actions mt-4"><a href="${examLink}" class="btn-primary" aria-label="Explore ${exam.title} mock tests">Explore ${exam.title}</a></div></article></div></section>`;
+        const examDescription = categorySlug === 'teaching-exams'
+          ? (teachingExamHighlights[exam.slug] || exam.description)
+          : categorySlug === 'rajasthan-govt-exams'
+            ? (rajasthanExamHighlights[exam.slug] || exam.description)
+            : categorySlug === 'central-govt-exams'
+              ? (centralExamHighlights[exam.slug] || exam.description)
+              : categorySlug === 'civil-services-exams'
+                ? (civilExamHighlights[exam.slug] || exam.description)
+                : categorySlug === 'nursing-exams'
+                  ? (nursingExamHighlights[exam.slug] || exam.description)
+                  : categorySlug === 'school-test'
+                    ? (schoolExamHighlights[exam.slug] || exam.description)
+                    : categorySlug === 'other-state-govt-exams'
+                      ? (otherStateExamHighlights[exam.slug] || exam.description)
+                      : categorySlug === 'agriculture-exams'
+                        ? (agricultureExamHighlights[exam.slug] || exam.description)
+                        : categorySlug === 'college-entrance-exams'
+                          ? (collegeEntranceExamHighlights[exam.slug] || exam.description)
+                          : categorySlug === 'miscellaneous-exams'
+                            ? (miscellaneousExamHighlights[exam.slug] || exam.description)
+            : exam.description;
+        return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2"><article class="feature-card reveal h-full"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${examDescription}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'} • 10 mock tests</p><div class="template-actions mt-4"><a href="${examLink}" class="btn-primary" aria-label="Explore ${exam.title} mock tests">Explore ${exam.title}</a></div></article></div></section>`;
       }).join('');
     }
 
