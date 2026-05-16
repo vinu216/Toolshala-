@@ -29,13 +29,31 @@
     document.getElementById('category-title').textContent = category.title;
     document.getElementById('category-intro').textContent = category.description;
     const categoryOverview = document.getElementById('category-overview');
-    if (categoryOverview) categoryOverview.textContent = `${category.title} includes ${category.exams.length} exam tracks with mock tests and practice sets.`;
+    if (categoryOverview) {
+      categoryOverview.textContent = categorySlug === 'teaching-exams'
+        ? `${category.title} includes ${category.exams.length} exam tracks with mock tests.`
+        : `${category.title} includes ${category.exams.length} exam tracks with mock tests and practice sets.`;
+    }
 
     const examSections = document.getElementById('category-exam-sections');
     if (examSections) {
       examSections.innerHTML = category.exams.map((key, idx) => {
         const exam = data.exams[key];
         if (!exam) return '';
+
+        if (categorySlug === 'teaching-exams') {
+          const mockTests = Array.from({ length: 10 }, (_, mockIdx) => {
+            const testNumber = mockIdx + 1;
+            return cardForExam({
+              ...exam,
+              title: `${exam.title} Mock Test ${testNumber}`,
+              description: `Full-length mock test ${testNumber} for ${exam.title} exam preparation.`
+            }, 'Start Mock Test');
+          }).join('');
+
+          return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2">${mockTests}</div></section>`;
+        }
+
         return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2">${cardForExam(exam, 'Start Mock Test')}${cardForExam({ ...exam, title: `${exam.title} Practice Set`, description: `Revision-focused practice set for ${exam.title}.`, ctaLink: exam.ctaLink }, 'View Practice Set')}</div></section>`;
       }).join('');
     }
