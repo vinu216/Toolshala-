@@ -62,6 +62,16 @@ Tagline: **AI Tools, Career Help, Opportunities & Templates**
 4. Open the URL shown in terminal (usually `http://localhost:5173`).
 5. Build production bundle:
    `npm run build`
+6. Preview the production build locally:
+   `npm run preview`
+
+## Quick Troubleshooting
+
+- If styles look broken, hard refresh the browser to clear cached CSS.
+- If a tool page does not render, verify the URL uses a valid tool id:
+  `tool.html?tool=<tool-id>`.
+- If guide pages are blank, check the slug parameter format:
+  `guide.html?slug=<article-slug>`.
 
 ## Dynamic-Ready Data Architecture
 
