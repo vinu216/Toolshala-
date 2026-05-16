@@ -25,6 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileLinks = document.querySelectorAll('[data-mobile-panel] a');
 
   const normalizePath = (value = '') => value.replace(/^\.\//, '').replace(/^\//, '');
+  const getRelativeRootPath = () => {
+    const path = window.location.pathname || '';
+    if (path.includes('/mock-test/teaching-exams/')) return '../../';
+    if (path.includes('/mock-test/')) return '../';
+    return './';
+  };
+
+  const isMockTestSectionPage = () => {
+    const path = window.location.pathname || '';
+    return path.endsWith('/mock-test.html') || path.includes('/mock-test/');
+  };
 
   const setupActiveNavigation = () => {
     const currentPath = normalizePath(window.location.pathname.split('/').pop() || 'index.html') || 'index.html';
@@ -144,6 +155,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const setupMockTestHeader = () => {
+    if (!isMockTestSectionPage()) return;
+
+    const base = getRelativeRootPath();
+    const body = document.body;
+    const categorySlug = body?.getAttribute('data-mock-category') || '';
+    const examSlug = body?.getAttribute('data-mock-exam') || new URLSearchParams(window.location.search).get('exam') || '';
+    const categoryLabelMap = {
+      'teaching-exams': 'Teaching Exams',
+      'rajasthan-govt-exams': 'Rajasthan Govt Exams',
+      'central-govt-exams': 'Central Govt Exams',
+      'civil-services-exams': 'Civil Services Exams',
+      'nursing-exams': 'Nursing Exams',
+      'school-test': 'School Test',
+      'other-state-govt-exams': 'Other State Govt Exams',
+      'agriculture-exams': 'Agriculture Exams',
+      'college-entrance-exams': 'College Entrance Exams',
+      'miscellaneous-exams': 'Miscellaneous Exams'
+    };
+
+    const currentContext = categoryLabelMap[categorySlug] || (examSlug ? 'Exam Page' : 'Mock Test Hub');
+    const categoryCrumb = categoryLabelMap[categorySlug] ? `<span aria-hidden="true">/</span><span>${categoryLabelMap[categorySlug]}</span>` : '';
+    const examCrumb = examSlug ? '<span aria-hidden="true">/</span><span>Practice Set</span>' : '';
+    const header = document.querySelector('header.top-nav');
+    if (!header) return;
+
+    header.innerHTML = `
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a href="${base}index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a>
+        <button class="menu-toggle inline-flex items-center justify-center p-2 md:hidden" data-menu-toggle aria-label="Toggle menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+        <div class="hidden items-center gap-2 md:flex" data-menu><a class="nav-link" href="${base}index.html">Home</a><a class="nav-link" href="${base}tools.html">Tools</a><a class="nav-link" href="${base}career.html">Career</a><a class="nav-link" href="${base}templates.html">Templates</a><a class="nav-link nav-active" href="${base}mock-test.html">Mock Test</a><a class="nav-link" href="${base}about.html">About</a><a class="nav-link" href="${base}contact.html">Contact</a><a href="${base}mock-test.html#mock-test-library" class="btn-primary ml-1">Browse Categories</a></div>
+      </nav>
+      <div class="px-4 pb-3 text-xs font-medium text-slate-500 sm:px-6"><div class="mx-auto flex max-w-7xl items-center gap-2"><span>Mock Test</span>${categoryCrumb}${examCrumb}<span class="ml-auto hidden sm:inline">${currentContext}</span></div></div>
+      <div class="menu-panel md:hidden" data-mobile-panel><div class="space-y-1 px-4 py-4"><a class="nav-link mobile-nav-link" href="${base}index.html">Home</a><a class="nav-link mobile-nav-link" href="${base}tools.html">Tools</a><a class="nav-link mobile-nav-link" href="${base}career.html">Career</a><a class="nav-link mobile-nav-link" href="${base}templates.html">Templates</a><a class="nav-link nav-active mobile-nav-link" href="${base}mock-test.html">Mock Test</a><a class="nav-link mobile-nav-link" href="${base}about.html">About</a><a class="nav-link mobile-nav-link" href="${base}contact.html">Contact</a><a href="${base}mock-test.html#mock-test-library" class="btn-primary mt-2 w-full text-center">Browse Categories</a></div></div>
+    `;
+  };
+
+  setupMockTestHeader();
   setupActiveNavigation();
   setupStickyNavShadow();
   setupTelegramFeedback();
@@ -213,8 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const setupPremiumFooter = () => {
-    const footerBasePath = window.location.pathname.includes('/mock-test/') ? '../' : './';
+    const footerBasePath = getRelativeRootPath();
     const currentMockCategory = document.body?.getAttribute('data-mock-category') || '';
+    const currentExamSlug = document.body?.getAttribute('data-mock-exam') || new URLSearchParams(window.location.search).get('exam') || '';
+    const categories = window.mockTestData?.categories || [];
+    const categoryBySlug = Object.fromEntries(categories.map((category) => [category.slug, category]));
+    const examData = window.mockTestData?.exams || {};
     const isRajasthanPage = currentMockCategory === 'rajasthan-govt-exams';
     const isCentralPage = currentMockCategory === 'central-govt-exams';
     const isCivilPage = currentMockCategory === 'civil-services-exams';
@@ -224,8 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const isAgriculturePage = currentMockCategory === 'agriculture-exams';
     const isCollegeEntrancePage = currentMockCategory === 'college-entrance-exams';
     const isMiscPage = currentMockCategory === 'miscellaneous-exams';
-    const examLinkHeading = isRajasthanPage ? 'Rajasthan Exam Links' : isCentralPage ? 'Central Exam Links' : isCivilPage ? 'Civil Services Links' : isNursingPage ? 'Nursing Exam Links' : isSchoolPage ? 'School Class Links' : isOtherStatePage ? 'Other State Exam Links' : isAgriculturePage ? 'Agriculture Exam Links' : isCollegeEntrancePage ? 'College Entrance Links' : isMiscPage ? 'Misc Exam Links' : 'Teaching Exam Links';
-    const examLinks = isRajasthanPage
+    let examLinkHeading = isRajasthanPage ? 'Rajasthan Exam Links' : isCentralPage ? 'Central Exam Links' : isCivilPage ? 'Civil Services Links' : isNursingPage ? 'Nursing Exam Links' : isSchoolPage ? 'School Class Links' : isOtherStatePage ? 'Other State Exam Links' : isAgriculturePage ? 'Agriculture Exam Links' : isCollegeEntrancePage ? 'College Entrance Links' : isMiscPage ? 'Misc Exam Links' : 'Teaching Exam Links';
+    let examLinks = isRajasthanPage
       ? [
         { href: `${footerBasePath}mock-test/exam.html?exam=ras`, label: 'RAS' },
         { href: `${footerBasePath}mock-test/exam.html?exam=sub-inspector`, label: 'Sub Inspector' },
@@ -312,6 +365,48 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}mock-test/teaching-exams/kvs.html`, label: 'KVS' },
         { href: `${footerBasePath}mock-test/teaching-exams/dsssb.html`, label: 'DSSSB' }
       ];
+    let quickLinks = [
+      { href: `${footerBasePath}index.html`, label: 'Home' },
+      { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
+      { href: `${footerBasePath}career.html`, label: 'Career' },
+      { href: `${footerBasePath}contact.html`, label: 'Contact' }
+    ];
+
+    if (currentExamSlug && !currentMockCategory) {
+      const examEntry = Object.values(categoryBySlug).find((category) => category.exams.includes(currentExamSlug));
+      if (examEntry) {
+        quickLinks.splice(1, 0, { href: `${footerBasePath}mock-test/${examEntry.slug}.html`, label: examEntry.title });
+      }
+    }
+
+    if (!currentMockCategory && !currentExamSlug) {
+      examLinkHeading = 'Mock Test Categories';
+      examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
+    } else if (currentMockCategory && categoryBySlug[currentMockCategory]) {
+      const currentCategory = categoryBySlug[currentMockCategory];
+      const relatedExamLinks = currentCategory.exams.slice(0, 6).map((examKey) => {
+        const exam = examData[examKey];
+        if (!exam) return null;
+        const href = currentMockCategory === 'teaching-exams' ? `${footerBasePath}mock-test/teaching-exams/${exam.slug}.html` : `${footerBasePath}mock-test/exam.html?exam=${exam.slug}`;
+        return { href, label: exam.title };
+      }).filter(Boolean);
+
+      examLinkHeading = `${currentCategory.title} Links`;
+      examLinks = [
+        { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
+        { href: `${footerBasePath}mock-test/${currentCategory.slug}.html`, label: currentCategory.title },
+        ...relatedExamLinks
+      ];
+    }
+
+    const seenFooterLinks = new Set();
+    examLinks = examLinks.filter((item) => {
+      if (!item || !item.href || !item.label) return false;
+      if (seenFooterLinks.has(item.href)) return false;
+      seenFooterLinks.add(item.href);
+      return true;
+    });
+
     const footerTemplate = `
       <div class="footer-shell">
         <div class="footer-grid grid gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -328,10 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div>
             <h3 class="foot-title">Quick Links</h3>
             <ul class="foot-list">
-              <li><a href="${footerBasePath}index.html">Home</a></li>
-              <li><a href="${footerBasePath}mock-test.html">Mock Test</a></li>
-              <li><a href="${footerBasePath}about.html">About</a></li>
-              <li><a href="${footerBasePath}contact.html">Contact</a></li>
+              ${quickLinks.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
             </ul>
           </div>
 
