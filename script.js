@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const contentCollections = window.ToolShalaContent?.collections || null;
   const articleCollections = window.ToolShalaArticleContent?.collections || null;
-  const seoGuides = Array.isArray(articleCollections?.seoGuides) ? articleCollections.seoGuides : [];
+  const rawSeoGuides = Array.isArray(articleCollections?.seoGuides) ? articleCollections.seoGuides : [];
 
   const formatPublishedDate = (value) => {
     if (!value) {
@@ -470,6 +470,54 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const normalizeGuideSlug = (value = '') => String(value).replace(/^\/?guides\//, '').replace(/^\/+/, '');
+  const normalizeGuideCategory = (value = '') =>
+    String(value || 'Guide')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+  const toGuideTimestamp = (value = '') => {
+    const parsed = Date.parse(value || '');
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+  const toGuideOrderValue = (value) => {
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      return value;
+    }
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : Number.MAX_SAFE_INTEGER;
+  };
+  const sortGuides = (guides = []) =>
+    [...guides].sort((a, b) => {
+      const featureDiff = Number(Boolean(b?.featured)) - Number(Boolean(a?.featured));
+      if (featureDiff !== 0) return featureDiff;
+
+      const orderDiff = toGuideOrderValue(a?.order) - toGuideOrderValue(b?.order);
+      if (orderDiff !== 0) return orderDiff;
+
+      const publishDiff = toGuideTimestamp(b?.publishDate) - toGuideTimestamp(a?.publishDate);
+      if (publishDiff !== 0) return publishDiff;
+
+      return String(a?.title || '').localeCompare(String(b?.title || ''), 'en', { sensitivity: 'base' });
+    });
+  const ensureUniqueGuidesBySlug = (guides = []) => {
+    const seenSlugs = new Set();
+    return guides.filter((guide) => {
+      const slugKey = normalizeGuideSlug(guide?.slug || '');
+      if (!slugKey || seenSlugs.has(slugKey)) {
+        return false;
+      }
+      seenSlugs.add(slugKey);
+      return true;
+    });
+  };
+  const seoGuides = sortGuides(
+    ensureUniqueGuidesBySlug(
+      rawSeoGuides.map((guide) => ({
+        ...guide,
+        category: normalizeGuideCategory(guide?.category)
+      }))
+    )
+  );
   const guideSlugAliases = {
     'business-analyst-roadmap-for-beginners': 'business-analyst-roadmap',
     'graphic-designer-roadmap-for-beginners': 'graphic-designer-roadmap',
@@ -833,7 +881,9 @@ document.addEventListener('DOMContentLoaded', () => {
             guide.title
           )}</h3><p>${escapeHtml(guide.shortExcerpt)}</p><p class="mt-2 text-xs text-slate-500">${escapeHtml(guide.readingTime)} • ${escapeHtml(
             formatPublishedDate(guide.publishDate)
-          )}</p><a href="${escapeHtml(resolveGuideLink(guide))}" class="mt-3 inline-flex font-semibold text-indigo-700">${escapeHtml(
+          )}</p><a href="${escapeHtml(resolveGuideLink(guide))}" class="mt-3 inline-flex font-semibold text-indigo-700" aria-label="Read guide: ${escapeHtml(
+            guide.title
+          )}">${escapeHtml(
             guide.ctaText || 'Read Guide'
           )}</a></article>`
       });
@@ -841,18 +891,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (listingContainer) {
       const listItems = seoGuides.filter((guide) => !featuredIds.has(guide.id));
-      renderCollection({
-        container: listingContainer,
-        items: listItems,
-        renderer: (guide) =>
-          `<article class="item-card reveal"><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(guide.category)}</p><h3>${escapeHtml(
-            guide.title
-          )}</h3><p>${escapeHtml(guide.shortExcerpt)}</p><p class="mt-2 text-xs text-slate-500">${escapeHtml(guide.readingTime)} • ${escapeHtml(
-            guide.searchIntent
-          )}</p><a href="${escapeHtml(resolveGuideLink(guide))}" class="btn-secondary mt-4">${escapeHtml(
-            guide.ctaText || 'Read Guide'
-          )}</a></article>`
-      });
+      if (!listItems.length) {
+        listingContainer.innerHTML =
+          '<div class="no-results no-results-inline"><p class="empty-title">No additional guides right now.</p><p class="empty-desc">Please check featured guides above.</p></div>';
+      } else {
+        renderCollection({
+          container: listingContainer,
+          items: listItems,
+          renderer: (guide) =>
+            `<article class="item-card reveal"><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(guide.category)}</p><h3>${escapeHtml(
+              guide.title
+            )}</h3><p>${escapeHtml(guide.shortExcerpt)}</p><p class="mt-2 text-xs text-slate-500">${escapeHtml(guide.readingTime)} • ${escapeHtml(
+              guide.searchIntent
+            )}</p><a href="${escapeHtml(resolveGuideLink(guide))}" class="btn-secondary mt-4" aria-label="Read guide: ${escapeHtml(
+              guide.title
+            )}">${escapeHtml(guide.ctaText || 'Read Guide')}</a></article>`
+        });
+      }
     }
   };
 
