@@ -30,9 +30,7 @@
     document.getElementById('category-intro').textContent = category.description;
     const categoryOverview = document.getElementById('category-overview');
     if (categoryOverview) {
-      categoryOverview.textContent = categorySlug === 'teaching-exams'
-        ? `${category.title} includes ${category.exams.length} exam tracks with mock tests.`
-        : `${category.title} includes ${category.exams.length} exam tracks with mock tests and practice sets.`;
+      categoryOverview.textContent = `${category.title} includes ${category.exams.length} exam tracks.`;
     }
 
     const examSections = document.getElementById('category-exam-sections');
@@ -41,26 +39,49 @@
         const exam = data.exams[key];
         if (!exam) return '';
 
-        if (categorySlug === 'teaching-exams') {
-          const mockTests = Array.from({ length: 10 }, (_, mockIdx) => {
-            const testNumber = mockIdx + 1;
-            return cardForExam({
-              ...exam,
-              title: `${exam.title} Mock Test ${testNumber}`,
-              description: `Full-length mock test ${testNumber} for ${exam.title} exam preparation.`
-            }, 'Start Mock Test');
-          }).join('');
+        const examLink = categorySlug === 'teaching-exams'
+          ? `./teaching-exams/${exam.slug}.html`
+          : `./exam.html?exam=${exam.slug}`;
 
-          return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2">${mockTests}</div></section>`;
-        }
-
-        return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2">${cardForExam(exam, 'Start Mock Test')}${cardForExam({ ...exam, title: `${exam.title} Practice Set`, description: `Revision-focused practice set for ${exam.title}.`, ctaLink: exam.ctaLink }, 'View Practice Set')}</div></section>`;
+        return `<section class="mb-8" id="exam-${exam.slug}"><div class="section-head reveal"><h3>${idx + 1}. ${exam.title}</h3><p>${exam.practiceIntro}</p></div><div class="grid gap-5 sm:grid-cols-2"><article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'} • 10 mock tests</p><div class="template-actions mt-4"><a href="${examLink}" class="btn-primary" aria-label="Explore ${exam.title} mock tests">Explore ${exam.title}</a></div></article></div></section>`;
       }).join('');
     }
 
     const related = document.getElementById('related-categories');
     if (related) {
       related.innerHTML = data.categories.filter((c) => c.slug !== category.slug).slice(0, 4).map((c) => `<a href="./${c.slug}.html" class="btn-secondary">${c.title}</a>`).join('');
+    }
+  }
+
+  const teachingExamSlug = document.body.getAttribute('data-mock-exam');
+  if (teachingExamSlug) {
+    const exam = data.exams[teachingExamSlug];
+    if (!exam) return;
+
+    document.title = `${exam.title} Mock Tests | Teaching Exams | ToolShala`;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `Practice ${exam.title} with 10 full-length mock tests, timed questions, and exam-focused preparation on ToolShala.`);
+    }
+
+    const examTitle = document.getElementById('teaching-exam-title');
+    const examIntro = document.getElementById('teaching-exam-intro');
+    const examOverview = document.getElementById('teaching-exam-overview');
+    const mockList = document.getElementById('teaching-exam-mocks');
+
+    if (examTitle) examTitle.textContent = `${exam.title} Mock Tests`;
+    if (examIntro) examIntro.textContent = `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
+    if (examOverview) examOverview.textContent = `${exam.title} practice pack includes 10 mock tests with ${exam.questionsCount || 50} questions each and ${exam.duration || '60 min'} duration.`;
+
+    if (mockList) {
+      mockList.innerHTML = Array.from({ length: 10 }, (_, index) => {
+        const testNumber = index + 1;
+        return cardForExam({
+          ...exam,
+          title: `${exam.title} Mock Test ${testNumber}`,
+          description: `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
+        });
+      }).join('');
     }
   }
 
