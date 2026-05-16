@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
       'contact.html': 'contact.html',
       'privacy.html': 'index.html',
       'terms.html': 'index.html',
-      'disclaimer.html': 'index.html'
+      'disclaimer.html': 'index.html',
+      'license.html': 'index.html'
     };
 
     const targetPath = toolsRelatedPages.has(currentPath) ? 'tools.html' : routeMap[currentPath] || currentPath;
@@ -285,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="./privacy.html">Privacy Policy</a>
             <a href="./terms.html">Terms &amp; Conditions</a>
             <a href="./disclaimer.html">Disclaimer</a>
+            <a href="./license.html">License</a>
           </div>
         </div>
       </div>
@@ -305,7 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const legalMap = {
       'privacy policy': './privacy.html',
       terms: './terms.html',
-      disclaimer: './disclaimer.html'
+      disclaimer: './disclaimer.html',
+      license: './license.html'
     };
 
     document.querySelectorAll('a').forEach((link) => {
@@ -454,6 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '/privacy': './privacy.html',
       '/terms': './terms.html',
       '/disclaimer': './disclaimer.html',
+      '/license': './license.html',
       '/guides': './guides.html'
     };
 
