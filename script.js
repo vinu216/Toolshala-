@@ -269,103 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const categories = window.mockTestData?.categories || [];
     const categoryBySlug = Object.fromEntries(categories.map((category) => [category.slug, category]));
     const examData = window.mockTestData?.exams || {};
-    const isRajasthanPage = currentMockCategory === 'rajasthan-govt-exams';
-    const isCentralPage = currentMockCategory === 'central-govt-exams';
-    const isCivilPage = currentMockCategory === 'civil-services-exams';
-    const isNursingPage = currentMockCategory === 'nursing-exams';
-    const isSchoolPage = currentMockCategory === 'school-test';
-    const isOtherStatePage = currentMockCategory === 'other-state-govt-exams';
-    const isAgriculturePage = currentMockCategory === 'agriculture-exams';
-    const isCollegeEntrancePage = currentMockCategory === 'college-entrance-exams';
-    const isMiscPage = currentMockCategory === 'miscellaneous-exams';
-    let examLinkHeading = isRajasthanPage ? 'Rajasthan Exam Links' : isCentralPage ? 'Central Exam Links' : isCivilPage ? 'Civil Services Links' : isNursingPage ? 'Nursing Exam Links' : isSchoolPage ? 'School Class Links' : isOtherStatePage ? 'Other State Exam Links' : isAgriculturePage ? 'Agriculture Exam Links' : isCollegeEntrancePage ? 'College Entrance Links' : isMiscPage ? 'Misc Exam Links' : 'Teaching Exam Links';
-    let examLinks = isRajasthanPage
-      ? [
-        { href: `${footerBasePath}mock-test/exam.html?exam=ras`, label: 'RAS' },
-        { href: `${footerBasePath}mock-test/exam.html?exam=sub-inspector`, label: 'Sub Inspector' },
-        { href: `${footerBasePath}mock-test/exam.html?exam=cet-12th`, label: 'CET 12th' },
-        { href: `${footerBasePath}mock-test/exam.html?exam=cet-graduation`, label: 'CET Graduation' },
-        { href: `${footerBasePath}mock-test/exam.html?exam=vdo`, label: 'VDO' },
-        { href: `${footerBasePath}mock-test/exam.html?exam=patwar`, label: 'Patwar' }
-      ]
-      : isCentralPage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-cgl`, label: 'SSC CGL' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-gd`, label: 'SSC GD' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=delhi-police`, label: 'Delhi Police' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-chsl`, label: 'SSC CHSL' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=mts`, label: 'MTS' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ntpc`, label: 'NTPC' }
-        ]
-      : isCivilPage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=upsc`, label: 'UPSC' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=bpsc`, label: 'BPSC' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=uppcs`, label: 'UPPCS' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ras`, label: 'RAS' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=eo-ro`, label: 'EO & RO' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ncert`, label: 'NCERT' }
-        ]
-      : isNursingPage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=norcet-12`, label: 'NORCET 12' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=norcet-11`, label: 'NORCET 11' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=aiims-cre`, label: 'AIIMS-CRE' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=rrb`, label: 'RRB Nursing' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=rajasthan-staff-nurse`, label: 'Rajasthan Staff Nurse' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-nursing-officer`, label: 'SSC Nursing Officer' }
-        ]
-      : isSchoolPage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-10`, label: 'Class 10th' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-9`, label: 'Class 9th' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-8`, label: 'Class 8th' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-7`, label: 'Class 7th' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-6`, label: 'Class 6th' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=class-12-science`, label: 'Class 12th Science' }
-        ]
-      : isOtherStatePage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=up-constable`, label: 'UP Constable' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=up-sub-inspector`, label: 'UP Sub Inspector' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=up-home-guard`, label: 'UP Home Guard' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=high-court-ro-aro`, label: 'High Court RO/ARO' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=high-court-group-c-d`, label: 'High Court Group C & D' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=up-vdo`, label: 'UP VDO' }
-        ]
-      : isAgriculturePage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=agriculture-supervisor`, label: 'Agriculture Supervisor' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=veterinary-officer`, label: 'Veterinary Officer' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=jet`, label: 'JET' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=rssb-teaching-associate`, label: 'RSSB Teaching Associate' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=pashu-parichar`, label: 'Pashu Parichar' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=food-safety-officer`, label: 'Food Safety Officer' }
-        ]
-      : isCollegeEntrancePage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=jee-12`, label: 'JEE Adv Class 12' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=jee-11`, label: 'JEE Adv Class 11' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=neet-12`, label: 'NEET UG Class 12' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=neet-11`, label: 'NEET UG Class 11' }
-        ]
-      : isMiscPage
-        ? [
-          { href: `${footerBasePath}mock-test/exam.html?exam=state-judicial-services`, label: 'State Judicial Services' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=ssc-je`, label: 'SSC JE' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=rssb-je`, label: 'RSSB JE' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=rpsc-ae`, label: 'RPSC AE' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=mathematics`, label: 'Mathematics' },
-          { href: `${footerBasePath}mock-test/exam.html?exam=reasoning`, label: 'Reasoning' }
-        ]
-      : [
-        { href: `${footerBasePath}mock-test/teaching-exams/bstc.html`, label: 'BSTC' },
-        { href: `${footerBasePath}mock-test/teaching-exams/ptet.html`, label: 'PTET' },
-        { href: `${footerBasePath}mock-test/teaching-exams/reet.html`, label: 'REET' },
-        { href: `${footerBasePath}mock-test/teaching-exams/ctet.html`, label: 'CTET' },
-        { href: `${footerBasePath}mock-test/teaching-exams/kvs.html`, label: 'KVS' },
-        { href: `${footerBasePath}mock-test/teaching-exams/dsssb.html`, label: 'DSSSB' }
-      ];
+    let contextualHeading = 'Site Sections';
+    let contextualLinks = [];
     const isHomePage = /(^|\/)index\.html$/.test(currentPath) || currentPath === '/';
     const isToolsPage = /(^|\/)tools\.html$/.test(currentPath);
     const isOpportunitiesPage = /(^|\/)opportunities\.html$/.test(currentPath) || /(^|\/)opportunity-details\.html$/.test(currentPath);
@@ -391,8 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isToolsPage) {
-      examLinkHeading = 'AI Tools';
-      examLinks = [
+      contextualHeading = 'AI Tools';
+      contextualLinks = [
         { href: `${footerBasePath}tools.html`, label: 'All AI Tools' },
         { href: `${footerBasePath}tools.html#writing`, label: 'Writing Tools' },
         { href: `${footerBasePath}tools.html#career`, label: 'Career Tools' },
@@ -401,8 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}guides.html`, label: 'Career Guides' }
       ];
     } else if (isOpportunitiesPage) {
-      examLinkHeading = 'Opportunities';
-      examLinks = [
+      contextualHeading = 'Opportunities';
+      contextualLinks = [
         { href: `${footerBasePath}opportunities.html`, label: 'All Opportunities' },
         { href: `${footerBasePath}opportunities.html`, label: 'Internships' },
         { href: `${footerBasePath}opportunities.html`, label: 'Scholarships' },
@@ -411,8 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}career.html`, label: 'Career Guides' }
       ];
     } else if (isTemplatesPage) {
-      examLinkHeading = 'Templates';
-      examLinks = [
+      contextualHeading = 'Templates';
+      contextualLinks = [
         { href: `${footerBasePath}templates.html`, label: 'Template Hub' },
         { href: `${footerBasePath}templates.html#resume`, label: 'Resume Templates' },
         { href: `${footerBasePath}templates.html#email`, label: 'Email Templates' },
@@ -421,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}opportunities.html`, label: 'Opportunities' }
       ];
     } else if (isCareerGuidePage) {
-      examLinkHeading = 'Career Guides';
-      examLinks = [
+      contextualHeading = 'Career Guides';
+      contextualLinks = [
         { href: `${footerBasePath}career.html`, label: 'Career Home' },
         { href: `${footerBasePath}guides.html`, label: 'All Guides' },
         { href: `${footerBasePath}templates.html`, label: 'Templates' },
@@ -433,11 +338,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isHomePage && !isMockTestPage) {
-      examLinkHeading = 'Exam Categories';
-      examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
+      contextualHeading = 'Mock Test Categories';
+      contextualLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
     } else if (!currentMockCategory && !currentExamSlug) {
-      examLinkHeading = 'Mock Test Categories';
-      examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
+      contextualHeading = 'Mock Test Categories';
+      contextualLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
     } else if (currentMockCategory && categoryBySlug[currentMockCategory]) {
       const currentCategory = categoryBySlug[currentMockCategory];
       const relatedExamLinks = currentCategory.exams.slice(0, 6).map((examKey) => {
@@ -447,11 +352,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return { href, label: exam.title };
       }).filter(Boolean);
 
-      examLinkHeading = `${currentCategory.title} Links`;
-      examLinks = [
+      contextualHeading = `${currentCategory.title} Links`;
+      contextualLinks = [
         { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
         { href: `${footerBasePath}mock-test/${currentCategory.slug}.html`, label: currentCategory.title },
         ...relatedExamLinks
+      ];
+    } else if (isMockTestPage && currentExamSlug) {
+      const matchedCategory = categories.find((category) => category.exams.includes(currentExamSlug));
+      contextualHeading = 'Related Exam Categories';
+      contextualLinks = [
+        { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
+        ...(matchedCategory ? [{ href: `${footerBasePath}mock-test/${matchedCategory.slug}.html`, label: matchedCategory.title }] : []),
+        ...categories.slice(0, 5).map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }))
       ];
     }
 
@@ -468,12 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const seenFooterLinks = new Set();
-    examLinks = examLinks.filter((item) => {
+    contextualLinks = contextualLinks.filter((item) => {
       if (!item || !item.href || !item.label) return false;
       if (seenFooterLinks.has(item.href)) return false;
       seenFooterLinks.add(item.href);
       return true;
     });
+    const hasContextualLinks = contextualLinks.length > 0;
 
     const footerTemplate = `
       <div class="footer-shell">
@@ -495,12 +409,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
           </div>
 
+          ${hasContextualLinks ? `
           <div>
-            <h3 class="foot-title">${examLinkHeading}</h3>
+            <h3 class="foot-title">${contextualHeading}</h3>
             <ul class="foot-list">
-              ${examLinks.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
+              ${contextualLinks.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join('')}
             </ul>
           </div>
+          ` : ''}
 
           <div>
             <h3 class="foot-title">Newsletter</h3>
