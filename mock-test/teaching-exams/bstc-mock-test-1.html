@@ -8,6 +8,20 @@
     <meta name="description" content="Attempt BSTC Mock Test 1 with 150 exam-pattern questions for Pre D.El.Ed preparation. Section-wise hard-level practice on reasoning, Rajasthan GK, teaching aptitude, Hindi, and English." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .question-card { border: 1px solid rgb(226 232 240); border-radius: 1rem; padding: 1rem; background: #fff; }
+      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; }
+      .section-chip { display: inline-flex; align-items: center; border-radius: 9999px; background: rgb(224 231 255); color: rgb(55 48 163); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .01em; }
+      .option-item { display:block; border:1px solid rgb(203 213 225); border-radius:.85rem; padding:.8rem .9rem; font-size:.97rem; line-height:1.6; background:#fff; }
+      .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
+      .option-item .option-code { font-weight:700; color: rgb(51 65 85); }
+      .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
+      @media (min-width: 640px) {
+        .question-card { padding: 1.25rem; }
+        .question-title { font-size: 1.125rem; }
+        .option-item { padding: .9rem 1rem; font-size: 1rem; }
+      }
+    </style>
   </head>
   <body class="bg-white text-slate-800">
     <header class="top-nav sticky top-0 z-50"><nav class="nav-shell" aria-label="Main navigation"><a href="../../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a><div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../../index.html">Home</a><a class="nav-link nav-active" href="../../mock-test.html">Mock Test</a><a class="nav-link" href="../../about.html">About</a><a class="nav-link" href="../../contact.html">Contact</a></div></nav></header>
@@ -46,10 +60,10 @@
         <article class="feature-card reveal">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <h2 id="question-meta" class="text-xl font-bold"></h2>
-            <p id="section-tag" class="template-badge"></p>
+            <p id="section-tag" class="section-chip"></p>
           </div>
-          <p id="question-text" class="mt-4 text-base leading-relaxed sm:text-lg"></p>
-          <div id="options" class="mt-5 grid gap-3"></div>
+          <div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p></div>
+          <div id="options" class="mt-5 grid gap-3 sm:gap-4"></div>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
             <button id="prev-btn" class="btn-secondary" type="button">Previous</button>
             <button id="next-btn" class="btn-primary" type="button">Next</button>
@@ -70,8 +84,12 @@
           <div class="template-actions mt-6"><a href="./bstc.html" class="btn-secondary">BSTC Mock Tests पर वापस जाएँ</a></div>
         </article>
         <article class="feature-card reveal mt-6">
-          <h2 class="text-2xl font-bold">Answer Key with Explanations</h2>
+          <h2 class="text-2xl font-bold">Answer Key</h2>
           <div id="answer-key" class="mt-4 space-y-4"></div>
+        </article>
+        <article class="feature-card reveal mt-6">
+          <h2 class="text-2xl font-bold">Explanations</h2>
+          <div id="explanations" class="mt-4 space-y-4"></div>
         </article>
       </section>
     </main>
@@ -333,7 +351,7 @@
         questionMeta.textContent = `प्रश्न / Question ${q.id} of 150`;
         sectionTag.textContent = `${q.section} • ${q.difficulty} • ${q.questionType}`;
         questionText.textContent = q.question;
-        optionsWrap.innerHTML = q.options.map((opt, idx) => { const key = letters[idx]; return `<label class="rounded-xl border p-3 sm:p-4 cursor-pointer text-sm sm:text-base leading-relaxed ${state.answers[q.id] === key ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300'}"><input class="mr-2 align-middle" type="radio" name="option" value="${key}" ${state.answers[q.id] === key ? 'checked' : ''}/> <strong>${key}.</strong> ${opt}</label>`; }).join('');
+        optionsWrap.innerHTML = q.options.map((opt, idx) => { const key = letters[idx]; return `<label class="option-item cursor-pointer ${state.answers[q.id] === key ? 'selected' : ''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${key}" ${state.answers[q.id] === key ? 'checked' : ''}/> <span class="option-code">${key}.</span> <span>${opt}</span></label>`; }).join('');
         optionsWrap.querySelectorAll('input').forEach((input) => input.addEventListener('change', (e) => { state.answers[q.id] = e.target.value; renderPalette(); renderQuestion(); }));
       }
       function sectionStats() {
@@ -357,20 +375,28 @@
         document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} correct</p>`).join('');
         const answerKeyBySection = sections.map((section) => {
           const items = data.filter((q) => q.section === section).map((q) => {
-            const yourAnswer = state.answers[q.id] ? `${state.answers[q.id]}. ${q.options[letters.indexOf(state.answers[q.id])] || ''}` : '—';
-            return `<div class="rounded-xl border border-slate-200 p-4">
+            const selected = state.answers[q.id];
+            const status = selected === q.answer ? '✅ Correct' : (selected ? '❌ Incorrect' : '⚪ Not Attempted');
+            return `<div class="result-block">
               <p class="font-semibold">प्रश्न ${q.id}: ${q.question}</p>
-              <p class="mt-2 text-sm">आपका उत्तर: <strong>${yourAnswer}</strong></p>
-              <p class="text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
-              <p class="mt-2 text-sm text-slate-600"><strong>व्याख्या:</strong> ${q.explanation}</p>
+              <p class="mt-2 text-sm">स्थिति: <strong>${status}</strong></p>
+              <p class="mt-1 text-sm">आपका उत्तर: <strong>${selected ? `${selected}. ${q.options[letters.indexOf(selected)] || ''}` : '—'}</strong></p>
+              <p class="mt-1 text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
             </div>`;
           }).join('');
-          return `<section class="space-y-3">
-            <h3 class="text-lg font-bold text-slate-800">विषय: ${section}</h3>
-            <div class="space-y-3">${items}</div>
-          </section>`;
+          return `<section class="space-y-3"><h3 class="text-lg font-bold text-slate-800">विषय: ${section}</h3><div class="space-y-3">${items}</div></section>`;
         }).join('');
+
+        const explanationBlocks = data.map((q) => {
+          return `<div class="result-block">
+            <p class="font-semibold">प्रश्न ${q.id}: ${q.question}</p>
+            <p class="mt-2 text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700"><strong>व्याख्या:</strong> ${q.explanation || 'Explanation available नहीं है।'}</p>
+          </div>`;
+        }).join('');
+
         document.getElementById('answer-key').innerHTML = answerKeyBySection;
+        document.getElementById('explanations').innerHTML = explanationBlocks;
       }
 
       document.getElementById('prev-btn').addEventListener('click', () => { if (state.current > 0) { state.current -= 1; renderQuestion(); } });
