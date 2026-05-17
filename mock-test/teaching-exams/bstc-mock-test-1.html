@@ -18,10 +18,10 @@
           <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">BSTC Mock Test 1</h1>
           <p class="mt-4 max-w-3xl text-slate-600">150 प्रश्नों वाला full-length BSTC practice paper. इसमें Mental Ability, Rajasthan GK, Teaching Aptitude, Hindi और English के 30-30 questions section-wise दिए गए हैं।</p>
           <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
-            <p class="feature-card !m-0 !p-4"><strong>कुल प्रश्न / Total Questions:</strong> 150</p>
-            <p class="feature-card !m-0 !p-4"><strong>समय / Duration:</strong> 180 मिनट</p>
-            <p class="feature-card !m-0 !p-4"><strong>स्तर / Difficulty:</strong> Easy to Moderate</p>
-            <p class="feature-card !m-0 !p-4"><strong>टेस्ट प्रकार / Type:</strong> Full-Length Section-wise MCQ</p>
+            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p>
+            <p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 180 मिनट</p>
+            <p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Easy to Moderate</p>
+            <p class="feature-card !m-0 !p-4"><strong>Type:</strong> Full-Length Section-wise MCQ</p>
           </div>
         </div>
       </section>
@@ -30,14 +30,14 @@
         <article class="feature-card reveal">
           <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
           <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
-            <li><strong>Test Start Karein</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
             <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
             <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
             <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
           </ul>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
-            <button id="start-test" class="btn-primary" type="button">Test Start Karein</button>
-            <p id="timer" class="btn-secondary !cursor-default">बचा हुआ समय / Time Left: 180:00</p>
+            <button id="start-test" class="btn-primary" type="button">Start Test</button>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
           </div>
         </article>
       </section>
@@ -51,26 +51,26 @@
           <p id="question-text" class="mt-4 text-base leading-relaxed sm:text-lg"></p>
           <div id="options" class="mt-5 grid gap-3"></div>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
-            <button id="prev-btn" class="btn-secondary" type="button">पिछला / Previous</button>
-            <button id="next-btn" class="btn-primary" type="button">अगला / Next</button>
-            <button id="submit-btn" class="btn-secondary" type="button">Test Submit Karein</button>
+            <button id="prev-btn" class="btn-secondary" type="button">Previous</button>
+            <button id="next-btn" class="btn-primary" type="button">Next</button>
+            <button id="submit-btn" class="btn-secondary" type="button">Submit Test</button>
           </div>
         </article>
         <article class="feature-card reveal mt-6">
-          <h3 class="text-xl font-bold">प्रश्न पैलेट / Question Palette</h3>
+          <h3 class="text-xl font-bold">Question Palette</h3>
           <div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div>
         </article>
       </section>
 
       <section class="section-wrap hidden" id="result-area">
         <article class="feature-card reveal">
-          <h2 class="text-2xl font-bold">परिणाम सारांश / Result Summary</h2>
+          <h2 class="text-2xl font-bold">Result Summary</h2>
           <div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div>
           <div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div>
           <div class="template-actions mt-6"><a href="./bstc.html" class="btn-secondary">BSTC Mock Tests पर वापस जाएँ</a></div>
         </article>
         <article class="feature-card reveal mt-6">
-          <h2 class="text-2xl font-bold">उत्तर कुंजी / Answer Key with Explanations</h2>
+          <h2 class="text-2xl font-bold">Answer Key with Explanations</h2>
           <div id="answer-key" class="mt-4 space-y-4"></div>
         </article>
       </section>
@@ -90,8 +90,8 @@
       const data = [
         ...Array.from({ length: 30 }, (_, i) => {
           const q = [
-            [bi('Find the next number: 5, 10, 20, 40, ?', 'अगली संख्या बताइए: 5, 10, 20, 40, ?'), [bi('60', '60'), bi('70', '70'), bi('80', '80'), bi('90', '90')], bi('80', '80'), bi('The number doubles at each step.', 'हर चरण में संख्या दोगुनी हो रही है।'), 'series'],
-            [bi('Complete the series: 2, 5, 8, 11, ?', 'श्रृंखला पूर्ण कीजिए: 2, 5, 8, 11, ?'), [bi('13', '13'), bi('14', '14'), bi('15', '15'), bi('16', '16')], bi('14', '14'), bi('The common difference is +3.', 'समान अंतर +3 है।'), 'series'],
+            [bi('Find the next number: 5, 10, 20, 40, ?', 'अगली संख्या बताइए: 5, 10, 20, 40, ?'), [bi('60'), bi('70'), bi('80'), bi('90')], bi('80'), bi('The number doubles at each step.', 'हर चरण में संख्या दोगुनी हो रही है।'), 'series'],
+            [bi('Complete the series: 2, 5, 8, 11, ?', 'श्रृंखला पूर्ण कीजिए: 2, 5, 8, 11, ?'), [bi('13'), bi('14'), bi('15'), bi('16')], bi('14'), bi('The common difference is +3.', 'समान अंतर +3 है।'), 'series'],
             [bi('Book : Read :: Food : ?', 'Book : Read :: Food : ?'), [bi('Cook', 'पकाना'), bi('Eat', 'खाना'), bi('Buy', 'खरीदना'), bi('Serve', 'परोसना')], bi('Eat', 'खाना'), bi('A book is read; food is eaten.', 'Book को read किया जाता है, food को eat किया जाता है।'), 'analogy'],
             [bi('If CAT = DBU, then RAT = ?', 'यदि CAT = DBU, तो RAT = ?'), [bi('SBU', 'SBU'), bi('SBUU', 'SBUU'), bi('QZS', 'QZS'), bi('SBU', 'SBU')], bi('SBU', 'SBU'), bi('Each letter shifts by +1: R→S, A→B, T→U.', 'हर अक्षर +1 शिफ्ट हुआ: R→S, A→B, T→U।'), 'coding-decoding'],
             [bi('A person moves 4 km north and 3 km east. In which direction is he from the start point?', 'एक व्यक्ति 4 किमी उत्तर और 3 किमी पूर्व चलता है। वह प्रारम्भ बिंदु से किस दिशा में है?'), [bi('North-West', 'उत्तर-पश्चिम'), bi('North-East', 'उत्तर-पूर्व'), bi('South-East', 'दक्षिण-पूर्व'), bi('South-West', 'दक्षिण-पश्चिम')], bi('North-East', 'उत्तर-पूर्व'), bi('Combining north and east movement gives north-east.', 'उत्तर और पूर्व की चाल का परिणामी दिशा उत्तर-पूर्व होती है।'), 'direction sense'],
@@ -185,9 +185,9 @@
         const wrong = attempted - correct;
         const percentage = ((correct / data.length) * 100).toFixed(2);
         document.getElementById('result-summary').innerHTML = [
-          ['कुल / Total', data.length], ['हल किए / Attempted', attempted], ['सही / Correct', correct], ['गलत / Wrong', wrong], ['स्कोर / Score %', `${percentage}%`]
+          ['Total', data.length], ['Attempted', attempted], ['Correct', correct], ['Wrong', wrong], ['Score %', `${percentage}%`]
         ].map(([k,v]) => `<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');
-        document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} सही / correct</p>`).join('');
+        document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} correct</p>`).join('');
         const answerKeyBySection = sections.map((section) => {
           const items = data.filter((q) => q.section === section).map((q) => {
             const yourAnswer = state.answers[q.id] || 'प्रयास नहीं किया';
@@ -218,7 +218,7 @@
         renderQuestion();
         state.timerId = setInterval(() => {
           state.remaining -= 1;
-          timerEl.textContent = `बचा हुआ समय / Time Left: ${formatTime(state.remaining)}`;
+          timerEl.textContent = `Time Left: ${formatTime(state.remaining)}`;
           if (state.remaining <= 0) submitTest();
         }, 1000);
       });
