@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../styles.css" />
     <style>
       .question-card { border: 1px solid rgb(226 232 240); border-radius: 1rem; padding: 1rem; background: #fff; }
-      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; }
+      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; white-space: pre-line; }
       .section-chip { display: inline-flex; align-items: center; border-radius: 9999px; background: rgb(224 231 255); color: rgb(55 48 163); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .01em; }
       .option-item { display:block; border:1px solid rgb(203 213 225); border-radius:.85rem; padding:.8rem .9rem; font-size:.97rem; line-height:1.6; background:#fff; }
       .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
@@ -329,7 +329,56 @@
         });
       });
 
-      const data = bstcHardPaperSkeleton.sections.flatMap((sec) => sec.questions);
+      const bstcExplanationBank = {
+        'Mental Ability / Reasoning': {
+          1: 'हर बार संख्या दुगुनी हो रही है, इसलिए अगला अंक 32 है।', 2: 'प्रत्येक अक्षर को 1 स्थान आगे बढ़ाया गया है।', 3: 'उत्तर–दक्षिण की चाल एक-दूसरे को काट देती है, इसलिए केवल 3 m पूर्व बचता है।', 4: 'A और C एक ही माता-पिता के भाई-बहन हैं, इसलिए A C का भाई है।', 5: 'Circle चतुर्भुज नहीं है, बाकी सभी 4 भुजाओं वाली आकृतियाँ हैं।',
+          6: 'Book पढ़ने के लिए, Pen लिखने के लिए उपयोग होती है।', 7: 'हर संख्या दुगुनी हो रही है।', 8: 'अक्षरों में अंतर क्रमशः 2, 3, 4, 5, 6 है; अगला 7 जोड़ने पर U मिलता है।', 9: 'P, Q का भाई है और Q, R की माँ है; इसलिए P, R का मामा हुआ।', 10: 'A की स्थिति 3rd from left ही लागू होती है।',
+          11: 'A सत्य है, लेकिन R असत्य है।', 12: 'कुछ books pens हैं और all pens tools हैं, इसलिए कुछ books tools हैं।', 13: 'Potato फल नहीं, सब्ज़ी है।', 14: 'प्रत्येक अक्षर 1 आगे बढ़ाया गया है।', 15: 'East से left लेने पर north और फिर right लेने पर east आता है।',
+          16: 'दो बार right turn करने पर south दिशा आती है।', 17: 'Teacher school में और doctor hospital में होता है।', 18: 'हर बार संख्या दुगुनी हो रही है।', 19: '10 mod 7 = 3, इसलिए Monday के 3 दिन बाद Thursday होगा।', 20: 'A > B > C, इसलिए A सबसे ऊँचा है।',
+          21: 'हर अक्षर 1 आगे बढ़ाया गया है।', 22: 'Sphere 3D है, बाकी सभी 2D shapes हैं।', 23: 'Coding-decoding pattern recognition पर आधारित है।', 24: 'दिए गए कथनों से कोई भी निष्कर्ष निश्चित रूप से सिद्ध नहीं होता; यदि आपके answer key में अलग answer है तो इसे verify कर लें।', 25: 'यह पूर्ण वर्ग संख्याओं की श्रृंखला है।',
+          26: 'Glove हाथ के लिए और sock foot के लिए।', 27: 'पूर्व–पश्चिम की चाल कट गई, इसलिए 6 m उत्तर बचा।', 28: 'Coding-decoding, series, blood relation, direction का सही मिलान यही है।', 29: 'Sphere ही 3D है, बाकी flat figures हैं।', 30: 'दिए गए कथनों से यह संभव निष्कर्ष है कि कुछ flowers red हो सकते हैं।'
+        },
+        'Rajasthan General Knowledge': {
+          31: 'ग्रेट इंडियन बस्टर्ड राजस्थान का राज्य पक्षी है।', 32: 'ग्रेट इंडियन बस्टर्ड राजस्थान का राज्य पक्षी है।', 33: 'रोहिड़ा राजस्थान का राज्य पुष्प है।', 34: 'खेजड़ी राजस्थान का राज्य वृक्ष है।', 35: 'केवलादेव राष्ट्रीय उद्यान भरतपुर में स्थित है।',
+          36: 'जैसलमेर क्षेत्रफल के हिसाब से राजस्थान का सबसे बड़ा जिला है।', 37: 'माउंट आबू अपने शीतल वातावरण के कारण प्रसिद्ध है और यह राजस्थान का प्रमुख हिल स्टेशन है।', 38: 'चम्बल यमुना नदी तंत्र की प्रमुख सहायक नदी है।', 39: 'घूमर राजस्थान का प्रसिद्ध लोकनृत्य है।', 40: 'चित्तौड़गढ़ किला राजस्थान के प्रमुख ऐतिहासिक और यूनेस्को से जुड़े स्थलों में गिना जाता है।',
+          41: 'थार मरुस्थल का बड़ा भाग राजस्थान में स्थित है।', 42: 'पुष्कर मेला ऊँटों के लिए विश्व प्रसिद्ध है।', 43: 'हवा महल जयपुर में स्थित है।', 44: 'पिचोला झील उदयपुर की प्रसिद्ध झील है।', 45: 'रणथम्भौर राष्ट्रीय उद्यान सवाई माधोपुर में स्थित है।',
+          46: 'बीकानेर जिला मुख्यालय बीकानेर शहर ही है।', 47: 'कैलादेवी मंदिर और मेला राजस्थान में प्रसिद्ध हैं।', 48: 'आमेर किला कच्छवाहा राजवंश से जुड़ा है।', 49: 'चम्बल परियोजना सिंचाई से संबंधित है।', 50: 'डेजर्ट नेशनल पार्क जैसलमेर में है।',
+          51: 'दिलवाड़ा मंदिर माउंट आबू में स्थित हैं।', 52: 'जयपुर राजस्थान की राजधानी है।', 53: 'जंतर मंतर जयपुर में स्थित है।', 54: 'लूनी नदी राजस्थान के शुष्क/थार क्षेत्र से बहती है।', 55: 'तीज और गणगौर राजस्थान की सांस्कृतिक परंपराओं से जुड़ी हैं।',
+          56: 'मेहरानगढ़ किला जोधपुर में है।', 57: 'अल्बर्ट हॉल संग्रहालय जयपुर में है।', 58: 'राजस्थान की पाकिस्तान से सीमा पश्चिमी भाग में लगती है।', 59: 'कठपुतली कला राजस्थान की प्रसिद्ध लोक कला है।', 60: 'जोधपुर को ‘ब्लू सिटी’ कहा जाता है।'
+        },
+        'Teaching Aptitude / Pedagogy': {
+          61: 'बाल-केंद्रित शिक्षा में विद्यार्थी की सक्रिय भागीदारी मुख्य आधार है।', 62: 'Formative assessment सीखने की प्रक्रिया में सुधार करने के लिए होता है।', 63: 'समावेशी शिक्षा में सभी बच्चों को समान अवसर दिए जाते हैं।', 64: 'कक्षा प्रबंधन का उद्देश्य सीखने के लिए अनुकूल वातावरण बनाना है।', 65: 'प्रोत्साहन विद्यार्थियों को सीखने के लिए प्रेरित करता है।',
+          66: 'धैर्य एक अच्छे शिक्षक का महत्वपूर्ण गुण है।', 67: 'सक्रिय अधिगम (Active learning) अधिक प्रभावी होता है।', 68: 'Evaluation सीखने की प्रगति को मापने में मदद करता है।', 69: 'शिक्षक का संप्रेषण स्पष्ट और सरल होना चाहिए।', 70: 'अच्छे शिक्षण के लिए उद्देश्य विशिष्ट होने चाहिए।',
+          71: 'सक्रिय भागीदारी learner-centered teaching का आधार है।', 72: 'दिए गए कथनों से केवल पहला निष्कर्ष निकलता है।', 73: 'Inclusive classroom में सभी विद्यार्थियों की भागीदारी होती है।', 74: 'Activity-based learning से अवधारणा स्पष्ट होती है।', 75: 'सही feedback सीखने में तुरंत सुधार लाता है।',
+          76: 'Observation formative assessment का महत्वपूर्ण साधन है।', 77: 'प्रेरित विद्यार्थी में जिज्ञासा अधिक होती है।', 78: 'शिक्षक की भूमिका मार्गदर्शक की होती है।', 79: 'कक्षा नियंत्रण के लिए योजना बनाना आवश्यक है।', 80: 'करके सीखना activity method का आधार है।',
+          81: 'Child psychology से शिक्षक विद्यार्थी की आवश्यकताओं को समझता है।', 82: 'Curriculum flexible और relevant होना चाहिए।', 83: 'Diagnostic assessment सीखने की कठिनाइयों की पहचान करता है।', 84: 'शिक्षण में सरल और समझने योग्य भाषा का प्रयोग करना चाहिए।', 85: 'निरंतर मूल्यांकन से दबाव कम होता है और सीखने की स्थिति का नियमित आकलन होता है।',
+          86: 'कुछ शिक्षक शोधकर्ता हो सकते हैं, पर सभी शोधकर्ता शिक्षक हों, यह जरूरी नहीं।', 87: 'Participatory teaching style अधिक छात्र-केन्द्रित होता है।', 88: 'सकारात्मक reinforcement अच्छा व्यवहार बढ़ाता है।', 89: 'यह चारों अवधारणाओं का सही मिलान है: measurement, inspiration, helping, participation.', 90: 'अच्छी lesson plan goal-oriented होती है।'
+        },
+        Hindi: {
+          91: 'नीर जल का पर्यायवाची है।', 92: 'रात्रि दिन का विलोम है।', 93: 'दीर्घ संधि के अनुसार ‘राजा + आलय’ = ‘राजालय’।', 94: 'यह मुहावरा अत्यंत प्रिय व्यक्ति के लिए प्रयोग होता है।', 95: 'सही वर्तनी ‘शुद्ध’ है।',
+          96: 'राजा का पुत्र = तत्पुरुष समास।', 97: '‘असफल’ में ‘अ’ उपसर्ग है।', 98: 'पाठ + अक = पाठक।', 99: 'कर्ता स्त्रीलिंग एकवचन है, इसलिए सही शुद्ध वाक्य ‘वह पुस्तक पढ़ती है।’ होगा।', 100: 'यह मुहावरा पराजित/हरा देने के अर्थ में प्रयोग होता है।',
+          101: 'अग्नि का तद्भव रूप आग है।', 102: 'समास में पदों का संक्षेप होता है और शब्द संक्षिप्त व प्रभावशाली बनते हैं।', 103: 'दिए गए कथनों से कोई भी निष्कर्ष निश्चित रूप से सिद्ध नहीं होता।', 104: 'सही मिलान: पर्यायवाची=समार्थक शब्द, विलोम=विपरीत शब्द, मुहावरा=लक्षणात्मक वाक्यांश, संधि=दो वर्णों का मेल।', 105: '‘भोजन’ शब्द का सही व्युत्पत्तिगत रूप भोज + अन माना जाता है।',
+          106: '‘सुंदर’ संज्ञा की विशेषता बताने वाला शब्द है, इसलिए यह विशेषण है।', 107: 'कर्ता स्त्रीलिंग एकवचन है, इसलिए ‘वह पुस्तक पढ़ती है।’ सही है।', 108: '‘सा’ का प्रयोग होने से उपमा अलंकार है।', 109: 'यह मुहावरा अपमान या मानहानि के अर्थ में प्रयोग होता है।', 110: 'सफल का विलोम असफल है।',
+          111: 'मधुर का अर्थ मीठा/सुहावना होता है।', 112: 'एक ही शब्द की पुनरावृत्ति को पुनरुक्ति कहते हैं।', 113: 'सही वर्तनी ‘अध्ययन’ है।', 114: '‘देव + आलय’ का सही रूप देवालय है।', 115: 'जल का पान = जलपान, जो तत्पुरुष समास का उदाहरण है।',
+          116: 'कर्ता बहुवचन ‘हम’ के साथ क्रिया ‘किया’ का प्रयोग सही है।', 117: 'यह मुहावरा सतर्क हो जाने के अर्थ में है।', 118: 'उपसर्ग शब्द के पहले, प्रत्यय अंत में, संधि वर्णों का मेल, और समास पदों का संक्षेप है।', 119: 'पृथ्वी का तद्भव रूप धरती है।', 120: 'एक ही वर्ण/ध्वनि की पुनरावृत्ति होने से अनुप्रास अलंकार है।'
+        },
+        English: {
+          121: "\"Honest\" starts with a vowel sound, so 'an' is correct.", 122: "The correct preposition is 'interested in'.", 123: "Third person singular in present tense takes 'goes'.", 124: "'Each' is singular, so 'is' is correct.", 125: '"Joyful" means happy.',
+          126: '"Timid" is the opposite of brave.', 127: "Third person singular requires 'does not'.", 128: "The correct preposition is 'under'.", 129: "Present continuous passive uses 'is being'.", 130: 'In reported speech, present tense changes to past tense.',
+          131: 'A unique object like the sun takes "the".', 132: '"Neither" is singular, so "is" is correct.', 133: '"Begin" means "start".', 134: '"Shrink" is the opposite of expand.', 135: "'Must' expresses necessity.",
+          136: "Second conditional uses 'were'.", 137: "Third person singular needs 'does not'.", 138: "An adverb is needed here, so 'clearly' is correct.", 139: 'Teacher-noun, run-verb, happy-adjective, quickly-adverb.', 140: 'Simple past active becomes simple past passive.',
+          141: "'Since' is used with a point in time.", 142: '"European" begins with a consonant sound /y/, so "a" is correct.', 143: "Comparative adjective uses 'taller'.", 144: "'Because' gives the reason.", 145: '"Rapid" means fast.',
+          146: '"Modern" is the opposite of ancient.', 147: "'One of' takes a singular verb, so 'is' is correct.", 148: "In reported speech, 'will' changes to 'would' and 'tomorrow' becomes 'the next day'.", 149: "'Neither...nor' usually takes a singular verb when the nearest subject is singular.", 150: "Modal verbs are followed by the base form, so 'sing' is correct."
+        }
+      };
+      function addBSTCExplanations(questions) {
+        return questions.map((q) => {
+          const bankExplanation = bstcExplanationBank?.[q.section]?.[q.id];
+          return { ...q, explanation: bankExplanation || q.explanation || '' };
+        });
+      }
+
+      const data = addBSTCExplanations(bstcHardPaperSkeleton.sections.flatMap((sec) => sec.questions));
       const state = { started: false, current: 0, answers: {}, remaining: 180 * 60, timerId: null };
       const startBtn = document.getElementById('start-test');
       const timerEl = document.getElementById('timer');
@@ -342,6 +391,17 @@
       const palette = document.getElementById('palette');
 
       function formatTime(sec) { const m = String(Math.floor(sec / 60)).padStart(2, '0'); const s = String(sec % 60).padStart(2, '0'); return `${m}:${s}`; }
+      function escapeHtml(value = '') {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+      function formatQuestionText(question = '') {
+        return escapeHtml(question).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+      }
       function renderPalette() {
         palette.innerHTML = data.map((q, idx) => `<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id] ? 'bg-indigo-100 border-indigo-400' : 'border-slate-300'}">${q.id}</button>`).join('');
         palette.querySelectorAll('button').forEach((btn) => btn.addEventListener('click', () => { state.current = Number(btn.dataset.idx); renderQuestion(); }));
@@ -350,7 +410,7 @@
         const q = data[state.current];
         questionMeta.textContent = `प्रश्न / Question ${q.id} of 150`;
         sectionTag.textContent = `${q.section} • ${q.difficulty} • ${q.questionType}`;
-        questionText.textContent = q.question;
+        questionText.innerHTML = formatQuestionText(q.question);
         optionsWrap.innerHTML = q.options.map((opt, idx) => { const key = letters[idx]; return `<label class="option-item cursor-pointer ${state.answers[q.id] === key ? 'selected' : ''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${key}" ${state.answers[q.id] === key ? 'checked' : ''}/> <span class="option-code">${key}.</span> <span>${opt}</span></label>`; }).join('');
         optionsWrap.querySelectorAll('input').forEach((input) => input.addEventListener('change', (e) => { state.answers[q.id] = e.target.value; renderPalette(); renderQuestion(); }));
       }
@@ -378,10 +438,10 @@
             const selected = state.answers[q.id];
             const status = selected === q.answer ? '✅ Correct' : (selected ? '❌ Incorrect' : '⚪ Not Attempted');
             return `<div class="result-block">
-              <p class="font-semibold">प्रश्न ${q.id}: ${q.question}</p>
+              <p class="font-semibold whitespace-pre-line break-words">प्रश्न ${q.id}: ${formatQuestionText(q.question)}</p>
               <p class="mt-2 text-sm">स्थिति: <strong>${status}</strong></p>
-              <p class="mt-1 text-sm">आपका उत्तर: <strong>${selected ? `${selected}. ${q.options[letters.indexOf(selected)] || ''}` : '—'}</strong></p>
-              <p class="mt-1 text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
+              <p class="mt-1 text-sm">आपका उत्तर: <strong>${selected ? `${selected}. ${escapeHtml(q.options[letters.indexOf(selected)] || '')}` : '—'}</strong></p>
+              <p class="mt-1 text-sm">सही उत्तर: <strong>${q.answer}. ${escapeHtml(q.options[letters.indexOf(q.answer)] || '')}</strong></p>
             </div>`;
           }).join('');
           return `<section class="space-y-3"><h3 class="text-lg font-bold text-slate-800">विषय: ${section}</h3><div class="space-y-3">${items}</div></section>`;
@@ -389,9 +449,9 @@
 
         const explanationBlocks = data.map((q) => {
           return `<div class="result-block">
-            <p class="font-semibold">प्रश्न ${q.id}: ${q.question}</p>
-            <p class="mt-2 text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
-            <p class="mt-2 text-sm leading-relaxed text-slate-700"><strong>व्याख्या:</strong> ${q.explanation || 'Explanation available नहीं है।'}</p>
+            <p class="font-semibold whitespace-pre-line break-words">प्रश्न ${q.id}: ${formatQuestionText(q.question)}</p>
+            <p class="mt-2 text-sm">सही उत्तर: <strong>${q.answer}. ${escapeHtml(q.options[letters.indexOf(q.answer)] || '')}</strong></p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-700 whitespace-pre-line break-words"><strong>व्याख्या:</strong> ${escapeHtml(q.explanation || 'Explanation available नहीं है।')}</p>
           </div>`;
         }).join('');
 
