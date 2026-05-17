@@ -432,13 +432,13 @@ document.addEventListener('DOMContentLoaded', () => {
       ];
     }
 
-    if (isHomePage && !isMockTestPage) {
+    if (isHomePage && !isMockTestPage && categories.length > 0) {
       examLinkHeading = 'Exam Categories';
       examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
-    } else if (!currentMockCategory && !currentExamSlug) {
+    } else if (isMockTestPage && !currentMockCategory && !currentExamSlug && categories.length > 0) {
       examLinkHeading = 'Mock Test Categories';
       examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
-    } else if (currentMockCategory && categoryBySlug[currentMockCategory]) {
+    } else if (isMockTestPage && currentMockCategory && categoryBySlug[currentMockCategory]) {
       const currentCategory = categoryBySlug[currentMockCategory];
       const relatedExamLinks = currentCategory.exams.slice(0, 6).map((examKey) => {
         const exam = examData[examKey];
