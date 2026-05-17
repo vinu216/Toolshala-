@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const setupPremiumFooter = () => {
     const footerBasePath = getRelativeRootPath();
+    const currentPath = window.location.pathname || '';
     const currentMockCategory = document.body?.getAttribute('data-mock-category') || '';
     const currentExamSlug = document.body?.getAttribute('data-mock-exam') || new URLSearchParams(window.location.search).get('exam') || '';
     const categories = window.mockTestData?.categories || [];
@@ -365,21 +366,76 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}mock-test/teaching-exams/kvs.html`, label: 'KVS' },
         { href: `${footerBasePath}mock-test/teaching-exams/dsssb.html`, label: 'DSSSB' }
       ];
+    const isHomePage = /(^|\/)index\.html$/.test(currentPath) || currentPath === '/';
+    const isToolsPage = /(^|\/)tools\.html$/.test(currentPath);
+    const isOpportunitiesPage = /(^|\/)opportunities\.html$/.test(currentPath) || /(^|\/)opportunity-details\.html$/.test(currentPath);
+    const isTemplatesPage = /(^|\/)templates\.html$/.test(currentPath) || /-template\.html$/.test(currentPath);
+    const isCareerGuidePage = /(^|\/)career\.html$/.test(currentPath) || /(^|\/)guides\.html$/.test(currentPath) || /(^|\/)guide\.html$/.test(currentPath);
+    const isMockTestPage = /(^|\/)mock-test\.html$/.test(currentPath) || currentPath.includes('/mock-test/');
+
     let quickLinks = [
       { href: `${footerBasePath}index.html`, label: 'Home' },
-      { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
-      { href: `${footerBasePath}career.html`, label: 'Career' },
+      { href: `${footerBasePath}tools.html`, label: 'AI Tools' },
+      { href: `${footerBasePath}opportunities.html`, label: 'Opportunities' },
+      { href: `${footerBasePath}templates.html`, label: 'Templates' },
+      { href: `${footerBasePath}guides.html`, label: 'Career Guides' },
+      { href: `${footerBasePath}mock-test.html`, label: 'Mock Test' },
       { href: `${footerBasePath}contact.html`, label: 'Contact' }
     ];
 
-    if (currentExamSlug && !currentMockCategory) {
+    if (isMockTestPage && currentExamSlug && !currentMockCategory) {
       const examEntry = Object.values(categoryBySlug).find((category) => category.exams.includes(currentExamSlug));
       if (examEntry) {
         quickLinks.splice(1, 0, { href: `${footerBasePath}mock-test/${examEntry.slug}.html`, label: examEntry.title });
       }
     }
 
-    if (!currentMockCategory && !currentExamSlug) {
+    if (isToolsPage) {
+      examLinkHeading = 'AI Tools';
+      examLinks = [
+        { href: `${footerBasePath}tools.html`, label: 'All AI Tools' },
+        { href: `${footerBasePath}tools.html#writing`, label: 'Writing Tools' },
+        { href: `${footerBasePath}tools.html#career`, label: 'Career Tools' },
+        { href: `${footerBasePath}tools.html#study`, label: 'Study Tools' },
+        { href: `${footerBasePath}templates.html`, label: 'Templates' },
+        { href: `${footerBasePath}guides.html`, label: 'Career Guides' }
+      ];
+    } else if (isOpportunitiesPage) {
+      examLinkHeading = 'Opportunities';
+      examLinks = [
+        { href: `${footerBasePath}opportunities.html`, label: 'All Opportunities' },
+        { href: `${footerBasePath}opportunities.html`, label: 'Internships' },
+        { href: `${footerBasePath}opportunities.html`, label: 'Scholarships' },
+        { href: `${footerBasePath}opportunities.html`, label: 'Free Courses' },
+        { href: `${footerBasePath}templates.html`, label: 'Application Templates' },
+        { href: `${footerBasePath}career.html`, label: 'Career Guides' }
+      ];
+    } else if (isTemplatesPage) {
+      examLinkHeading = 'Templates';
+      examLinks = [
+        { href: `${footerBasePath}templates.html`, label: 'Template Hub' },
+        { href: `${footerBasePath}templates.html#resume`, label: 'Resume Templates' },
+        { href: `${footerBasePath}templates.html#email`, label: 'Email Templates' },
+        { href: `${footerBasePath}templates.html#cover-letter`, label: 'Cover Letter Templates' },
+        { href: `${footerBasePath}tools.html#career`, label: 'Career Tools' },
+        { href: `${footerBasePath}opportunities.html`, label: 'Opportunities' }
+      ];
+    } else if (isCareerGuidePage) {
+      examLinkHeading = 'Career Guides';
+      examLinks = [
+        { href: `${footerBasePath}career.html`, label: 'Career Home' },
+        { href: `${footerBasePath}guides.html`, label: 'All Guides' },
+        { href: `${footerBasePath}templates.html`, label: 'Templates' },
+        { href: `${footerBasePath}tools.html#career`, label: 'Career Tools' },
+        { href: `${footerBasePath}opportunities.html`, label: 'Opportunities' },
+        { href: `${footerBasePath}contact.html`, label: 'Contact' }
+      ];
+    }
+
+    if (isHomePage && !isMockTestPage) {
+      examLinkHeading = 'Exam Categories';
+      examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
+    } else if (!currentMockCategory && !currentExamSlug) {
       examLinkHeading = 'Mock Test Categories';
       examLinks = categories.map((category) => ({ href: `${footerBasePath}mock-test/${category.slug}.html`, label: category.title }));
     } else if (currentMockCategory && categoryBySlug[currentMockCategory]) {
@@ -396,6 +452,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
         { href: `${footerBasePath}mock-test/${currentCategory.slug}.html`, label: currentCategory.title },
         ...relatedExamLinks
+      ];
+    }
+
+    if (isMockTestPage) {
+      quickLinks = [
+        { href: `${footerBasePath}index.html`, label: 'Home' },
+        { href: `${footerBasePath}mock-test.html`, label: 'Mock Test Home' },
+        { href: `${footerBasePath}mock-test/teaching-exams.html`, label: 'Teaching Exams' },
+        { href: `${footerBasePath}mock-test/rajasthan-govt-exams.html`, label: 'Rajasthan Govt Exams' },
+        { href: `${footerBasePath}mock-test/central-govt-exams.html`, label: 'Central Govt Exams' },
+        { href: `${footerBasePath}career.html`, label: 'Career Guides' },
+        { href: `${footerBasePath}contact.html`, label: 'Contact' }
       ];
     }
 
