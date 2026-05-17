@@ -85,7 +85,22 @@
       ];
 
       const createQuestion = (id, section, question, options, answer, explanation, difficulty, topic) => ({ id, section, question, options, answer, explanation, difficulty, topic });
-      const bi = (en, hi) => `${en} / ${hi}`;
+      const normalizeText = (value) => {
+        if (value === undefined || value === null) return '';
+        const text = String(value).trim();
+        return text && text.toLowerCase() !== 'undefined' && text.toLowerCase() !== 'null' ? text : '';
+      };
+      const bi = (en, hi) => {
+        const englishText = normalizeText(en);
+        const hindiText = normalizeText(hi);
+
+        if (englishText && hindiText) {
+          if (englishText.toLowerCase() === hindiText.toLowerCase()) return englishText;
+          return `${englishText} / ${hindiText}`;
+        }
+
+        return englishText || hindiText;
+      };
 
       const data = [
         ...Array.from({ length: 30 }, (_, i) => {
