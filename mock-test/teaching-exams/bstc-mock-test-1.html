@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
     <title>BSTC Mock Test 1 | Full-Length Pre D.El.Ed Practice Test</title>
-    <meta name="description" content="Attempt BSTC Mock Test 1 with 150 exam-pattern questions for Pre D.El.Ed preparation. Section-wise easy to moderate practice on reasoning, Rajasthan GK, teaching aptitude, Hindi, and English." />
+    <meta name="description" content="Attempt BSTC Mock Test 1 with 150 exam-pattern questions for Pre D.El.Ed preparation. Section-wise hard-level practice on reasoning, Rajasthan GK, teaching aptitude, Hindi, and English." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../styles.css" />
   </head>
@@ -20,8 +20,8 @@
           <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
             <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p>
             <p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 180 मिनट</p>
-            <p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Easy to Moderate</p>
-            <p class="feature-card !m-0 !p-4"><strong>Type:</strong> Full-Length Section-wise MCQ</p>
+            <p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Hard</p>
+            <p class="feature-card !m-0 !p-4"><strong>Type:</strong> Full-Length Mixed Format (MCQ + Logic Types)</p>
           </div>
         </div>
       </section>
@@ -78,88 +78,240 @@
     <script>
       const sections = [
         'Mental Ability / Reasoning',
-        'Rajasthan GK / राजस्थान सामान्य ज्ञान',
-        'Teaching Aptitude / शिक्षण अभिरुचि',
-        'Hindi / हिंदी',
+        'Rajasthan General Knowledge',
+        'Teaching Aptitude / Pedagogy',
+        'Hindi',
         'English'
       ];
 
-      const createQuestion = (id, section, question, options, answer, explanation, difficulty, topic) => ({ id, section, question, options, answer, explanation, difficulty, topic });
-      const normalizeText = (value) => {
-        if (value === undefined || value === null) return '';
-        const text = String(value).trim();
-        return text && text.toLowerCase() !== 'undefined' && text.toLowerCase() !== 'null' ? text : '';
+      const createBlankQuestion = (id, section) => ({
+        id,
+        section,
+        questionType: '',
+        difficulty: 'hard',
+        topic: '',
+        question: '',
+        options: ['', '', '', ''],
+        answer: '',
+        explanation: ''
+      });
+
+      const createSectionSkeleton = (startId, endId, sectionName, questionTypes = []) => {
+        const questions = [];
+        for (let id = startId; id <= endId; id++) questions.push(createBlankQuestion(id, sectionName));
+        return { section: sectionName, count: endId - startId + 1, idRange: `${startId}-${endId}`, questionTypes, questions };
       };
-      const bi = (en, hi) => {
-        const englishText = normalizeText(en);
-        const hindiText = normalizeText(hi);
 
-        if (englishText && hindiText) {
-          if (englishText.toLowerCase() === hindiText.toLowerCase()) return englishText;
-          return `${englishText} / ${hindiText}`;
-        }
-
-        return englishText || hindiText;
+      const bstcHardPaperSkeleton = {
+        paperTitle: 'BSTC / Pre D.El.Ed Hard-Level Full-Length Mock Paper',
+        examName: 'BSTC / Pre D.El.Ed',
+        totalQuestions: 150,
+        difficulty: 'hard',
+        latestPattern: true,
+        language: 'Hindi + English as per section rules',
+        answerIncluded: true,
+        explanationIncluded: true,
+        sections: [
+          createSectionSkeleton(1, 30, 'Mental Ability / Reasoning', ['MCQ', 'Coding-Decoding', 'Assertion-Reason', 'Statement-Conclusion', 'Matching']),
+          createSectionSkeleton(31, 60, 'Rajasthan General Knowledge', ['MCQ', 'Matching', 'Assertion-Reason', 'Statement-Conclusion']),
+          createSectionSkeleton(61, 90, 'Teaching Aptitude / Pedagogy', ['MCQ', 'Assertion-Reason', 'Statement-Conclusion', 'Matching']),
+          createSectionSkeleton(91, 120, 'Hindi', ['MCQ', 'Matching', 'Assertion-Reason', 'Statement-Conclusion', 'Coding-Decoding']),
+          createSectionSkeleton(121, 150, 'English', ['MCQ', 'Assertion-Reason', 'Statement-Conclusion', 'Matching', 'Sentence Correction'])
+        ]
       };
 
-      const data = [
-        ...Array.from({ length: 30 }, (_, i) => {
-          const q = [
-            [bi('Find the next number: 5, 10, 20, 40, ?', 'अगली संख्या बताइए: 5, 10, 20, 40, ?'), [bi('60'), bi('70'), bi('80'), bi('90')], bi('80'), bi('The number doubles at each step.', 'हर चरण में संख्या दोगुनी हो रही है।'), 'series'],
-            [bi('Complete the series: 2, 5, 8, 11, ?', 'श्रृंखला पूर्ण कीजिए: 2, 5, 8, 11, ?'), [bi('13'), bi('14'), bi('15'), bi('16')], bi('14'), bi('The common difference is +3.', 'समान अंतर +3 है।'), 'series'],
-            [bi('Book : Read :: Food : ?', 'Book : Read :: Food : ?'), [bi('Cook', 'पकाना'), bi('Eat', 'खाना'), bi('Buy', 'खरीदना'), bi('Serve', 'परोसना')], bi('Eat', 'खाना'), bi('A book is read; food is eaten.', 'Book को read किया जाता है, food को eat किया जाता है।'), 'analogy'],
-            [bi('If CAT = DBU, then RAT = ?', 'यदि CAT = DBU, तो RAT = ?'), [bi('SBU', 'SBU'), bi('SBUU', 'SBUU'), bi('QZS', 'QZS'), bi('SBU', 'SBU')], bi('SBU', 'SBU'), bi('Each letter shifts by +1: R→S, A→B, T→U.', 'हर अक्षर +1 शिफ्ट हुआ: R→S, A→B, T→U।'), 'coding-decoding'],
-            [bi('A person moves 4 km north and 3 km east. In which direction is he from the start point?', 'एक व्यक्ति 4 किमी उत्तर और 3 किमी पूर्व चलता है। वह प्रारम्भ बिंदु से किस दिशा में है?'), [bi('North-West', 'उत्तर-पश्चिम'), bi('North-East', 'उत्तर-पूर्व'), bi('South-East', 'दक्षिण-पूर्व'), bi('South-West', 'दक्षिण-पश्चिम')], bi('North-East', 'उत्तर-पूर्व'), bi('Combining north and east movement gives north-east.', 'उत्तर और पूर्व की चाल का परिणामी दिशा उत्तर-पूर्व होती है।'), 'direction sense'],
-            [bi('A is brother of B and B is sister of C. How is A related to C?', 'A, B का भाई है और B, C की बहन है। A का C से क्या संबंध है?'), [bi('Brother', 'भाई'), bi('Sister', 'बहन'), bi('Father', 'पिता'), bi('Uncle', 'चाचा/मामा')], bi('Brother', 'भाई'), bi('A is male and sibling of C, so A is C’s brother.', 'A पुरुष है और C का सहोदर है, इसलिए A, C का भाई है।'), 'blood relation']
-          ][i % 6];
-          return createQuestion(i + 1, sections[0], q[0], q[1], q[2], q[3], i < 18 ? 'easy' : 'moderate', q[4]);
-        }),
-        ...Array.from({ length: 30 }, (_, i) => {
-          const gk = [
-            [bi('Which city is called the Pink City?', 'Pink City किसे कहा जाता है?'), [bi('Udaipur', 'उदयपुर'), bi('Jaipur', 'जयपुर'), bi('Jodhpur', 'जोधपुर'), bi('Bikaner', 'बीकानेर')], bi('Jaipur', 'जयपुर'), bi('Jaipur is known as the Pink City.', 'जयपुर को Pink City कहा जाता है।'), 'cities'],
-            [bi('Largest district of Rajasthan by area?', 'क्षेत्रफल के आधार पर राजस्थान का सबसे बड़ा जिला?'), [bi('Barmer', 'बाड़मेर'), bi('Jaisalmer', 'जैसलमेर'), bi('Bikaner', 'बीकानेर'), bi('Udaipur', 'उदयपुर')], bi('Jaisalmer', 'जैसलमेर'), bi('Jaisalmer is the largest by area.', 'क्षेत्रफल की दृष्टि से जैसलमेर सबसे बड़ा है।'), 'districts'],
-            [bi('What is Ghoomar?', 'घूमर क्या है?'), [bi('Folk dance', 'लोक नृत्य'), bi('Fort', 'किला'), bi('Lake', 'झील'), bi('Festival', 'त्योहार')], bi('Folk dance', 'लोक नृत्य'), bi('Ghoomar is a famous folk dance of Rajasthan.', 'घूमर राजस्थान का प्रसिद्ध लोक नृत्य है।'), 'culture'],
-            [bi('Keoladeo National Park is in which district?', 'केओलादेव राष्ट्रीय उद्यान किस जिले में है?'), [bi('Ajmer', 'अजमेर'), bi('Bharatpur', 'भरतपुर'), bi('Kota', 'कोटा'), bi('Alwar', 'अलवर')], bi('Bharatpur', 'भरतपुर'), bi('Keoladeo Ghana is located in Bharatpur.', 'केओलादेव घना भरतपुर में स्थित है।'), 'national parks'],
-            [bi('Why is Sambhar Lake famous?', 'सांभर झील किसलिए प्रसिद्ध है?'), [bi('Fresh water', 'मीठा पानी'), bi('Salt production', 'नमक उत्पादन'), bi('Fishing only', 'केवल मछली पकड़ना'), bi('Boat race', 'नौका दौड़')], bi('Salt production', 'नमक उत्पादन'), bi('Sambhar is a major inland salt lake of India.', 'सांभर भारत की प्रमुख अंतर्देशीय खारे पानी की झील है।'), 'lakes'],
-            [bi('Gangaur festival is mainly associated with whom?', 'गणगौर त्योहार मुख्यतः किससे संबंधित है?'), [bi('Goddess Gauri', 'देवी गौरी'), bi('Lord Vishnu', 'भगवान विष्णु'), bi('Surya', 'सूर्य'), bi('Agni', 'अग्नि')], bi('Goddess Gauri', 'देवी गौरी'), bi('Gangaur worships Gauri and Shiva.', 'गणगौर में गौरी और शिव की पूजा की जाती है।'), 'festivals']
-          ][i % 6];
-          return createQuestion(i + 31, sections[1], gk[0], gk[1], gk[2], gk[3], i < 18 ? 'easy' : 'moderate', gk[4]);
-        }),
-        ...Array.from({ length: 30 }, (_, i) => {
-          const t = [
-            [bi('What is the main focus of child-centered teaching?', 'बाल-केंद्रित शिक्षण का मुख्य फोकस क्या है?'), [bi('Teacher talk', 'केवल शिक्षक वार्ता'), bi('Learner participation', 'विद्यार्थी सहभागिता'), bi('Only syllabus', 'केवल पाठ्यक्रम'), bi('Discipline by fear', 'डर से अनुशासन')], bi('Learner participation', 'विद्यार्थी सहभागिता'), bi('In child-centered teaching, learners stay active.', 'बाल-केंद्रित शिक्षण में विद्यार्थी सक्रिय रहता है।'), 'child-centered education'],
-            [bi('What is the purpose of formative assessment?', 'Formative assessment का उद्देश्य क्या होता है?'), [bi('Final grade only', 'केवल अंतिम अंक'), bi('Learning improvement', 'अधिगम सुधार'), bi('Punishment', 'दंड'), bi('Attendance', 'उपस्थिति')], bi('Learning improvement', 'अधिगम सुधार'), bi('It provides continuous feedback for improvement.', 'यह सुधार हेतु निरंतर प्रतिपुष्टि देता है।'), 'assessment'],
-            [bi('What does an inclusive classroom mean?', 'Inclusive classroom का अर्थ क्या है?'), [bi('Only toppers', 'केवल टॉपर विद्यार्थी'), bi('Equal opportunities for all', 'सभी के लिए समान अवसर'), bi('No activities', 'कोई गतिविधि नहीं'), bi('Only lecture', 'केवल व्याख्यान')], bi('Equal opportunities for all', 'सभी के लिए समान अवसर'), bi('Inclusive classes support diverse learners.', 'Inclusive कक्षा विविध शिक्षार्थियों को समर्थन देती है।'), 'inclusive education'],
-            [bi('What is the best way to motivate in primary class?', 'प्राथमिक कक्षा में प्रेरणा का सबसे अच्छा तरीका क्या है?'), [bi('Scolding', 'डांटना'), bi('Positive reinforcement', 'सकारात्मक प्रोत्साहन'), bi('Ignore weak students', 'कमज़ोर विद्यार्थियों की अनदेखी'), bi('Extra punishment', 'अतिरिक्त दंड')], bi('Positive reinforcement', 'सकारात्मक प्रोत्साहन'), bi('Praise and rewards improve children’s confidence.', 'प्रशंसा और प्रोत्साहन से बच्चों का आत्मविश्वास बढ़ता है।'), 'motivation'],
-            [bi('What should be the first step in classroom management?', 'Classroom management में पहला कदम क्या होना चाहिए?'), [bi('Shouting', 'चिल्लाना'), bi('Clear rules and routines', 'स्पष्ट नियम और दिनचर्या'), bi('Frequent tests', 'बार-बार परीक्षण'), bi('No interaction', 'कोई संवाद नहीं')], bi('Clear rules and routines', 'स्पष्ट नियम और दिनचर्या'), bi('Clear rules create natural classroom discipline.', 'स्पष्ट नियमों से कक्षा में स्वाभाविक अनुशासन बनता है।'), 'classroom management'],
-            [bi('What is a key quality of a good teacher?', 'एक अच्छे शिक्षक का प्रमुख गुण क्या है?'), [bi('Bias', 'पक्षपात'), bi('Impatience', 'अधैर्य'), bi('Empathy', 'सहानुभूति'), bi('Rigid behavior', 'कठोर व्यवहार')], bi('Empathy', 'सहानुभूति'), bi('Empathy helps a teacher understand learner needs.', 'सहानुभूति से शिक्षक विद्यार्थियों की आवश्यकताएँ समझता है।'), 'teacher qualities']
-          ][i % 6];
-          return createQuestion(i + 61, sections[2], t[0], t[1], t[2], t[3], i < 18 ? 'easy' : 'moderate', t[4]);
-        }),
-        ...Array.from({ length: 30 }, (_, i) => {
-          const h = [
-            ["'अंधकार' का विलोम शब्द है", ['छाया', 'प्रकाश', 'रात', 'संध्या'], 'प्रकाश', 'अंधकार का विपरीत अर्थ प्रकाश है।', 'विलोम'],
-            ["'शीघ्र' का पर्यायवाची चुनिए", ['मंद', 'जल्दी', 'धीरे', 'रुककर'], 'जल्दी', 'शीघ्र और जल्दी समानार्थी शब्द हैं।', 'पर्यायवाची'],
-            ['शुद्ध वाक्य चुनिए', ['मुझे भूख लगा है', 'मुझे भूख लगी है', 'मुझे भूख लगे है', 'मुझे भूख लगी हैं'], 'मुझे भूख लगी है', 'लिंग और क्रिया का सही प्रयोग यही है।', 'वाक्य शुद्धि'],
-            ["'नाक कटना' मुहावरे का अर्थ है", ['घायल होना', 'अपमान होना', 'थक जाना', 'गुस्सा होना'], 'अपमान होना', 'नाक कटना का भावार्थ इज्जत जाना है।', 'मुहावरे'],
-            ["'राजपुत्र' में कौन-सा समास है", ['तत्पुरुष', 'द्वंद्व', 'बहुव्रीहि', 'कर्मधारय'], 'तत्पुरुष', 'राजा का पुत्र = तत्पुरुष समास।', 'समास'],
-            ["'नदियाँ' किस शब्द का बहुवचन है", ['नदी', 'नद', 'नदिया', 'नदिक'], 'नदी', 'नदी का बहुवचन नदियाँ होता है।', 'व्याकरण']
-          ][i % 6];
-          return createQuestion(i + 91, sections[3], h[0], h[1], h[2], h[3], i < 18 ? 'easy' : 'moderate', h[4]);
-        }),
-        ...Array.from({ length: 30 }, (_, i) => {
-          const e = [
-            ['Choose correct article: She is ___ honest girl.', ['a', 'an', 'the', 'no article'], 'an', '"honest" begins with a vowel sound, so "an" is correct.', 'articles'],
-            ['Choose correct preposition: Book is ___ the table.', ['in', 'on', 'at', 'under'], 'on', '"On" is used for something placed on a surface.', 'prepositions'],
-            ['Choose correct tense: They ___ to school daily.', ['goes', 'go', 'gone', 'going'], 'go', 'With plural subject "They", base verb "go" is correct.', 'tenses'],
-            ['Synonym of brave is', ['weak', 'bold', 'timid', 'dull'], 'bold', 'The closest synonym of "brave" is "bold".', 'vocabulary'],
-            ['Antonym of ancient is', ['old', 'historic', 'modern', 'aged'], 'modern', 'The opposite of "ancient" is "modern".', 'vocabulary'],
-            ['Choose correct sentence', ['He do not play.', 'He does not plays.', 'He does not play.', 'He not play.'], 'He does not play.', 'After "does," the base form of the verb is used.', 'sentence correction']
-          ][i % 6];
-          return createQuestion(i + 121, sections[4], e[0], e[1], e[2], e[3], i < 18 ? 'easy' : 'moderate', e[4]);
-        })
+      const AR_OPTIONS_HI = [
+        'A और R दोनों सत्य हैं तथा R, A का सही कारण है।',
+        'A और R दोनों सत्य हैं लेकिन R, A का सही कारण नहीं है।',
+        'A सत्य है लेकिन R असत्य है।',
+        'A असत्य है लेकिन R सत्य है।'
       ];
+      const AR_OPTIONS_EN = [
+        'Both A and R are true and R is the correct explanation of A',
+        'Both A and R are true but R is not the correct explanation of A',
+        'A is true but R is false',
+        'A is false but R is true'
+      ];
+      const SC_OPTIONS_HI = [
+        'केवल निष्कर्ष I अनुसरण करता है।', 'केवल निष्कर्ष II अनुसरण करता है।', 'निष्कर्ष I और II दोनों अनुसरण करते हैं।', 'न तो निष्कर्ष I, न ही II अनुसरण करता है।'
+      ];
+      const SC_OPTIONS_EN = ['Only I follows','Only II follows','Both I and II follow','Neither I nor II follows'];
 
+      const F = (id, section, questionType, topic, question, options, answer, explanation) => ({ id, section, questionType, difficulty: 'hard', topic, question, options, answer, explanation });
+
+      const templates = {
+        reasoning: [
+          ['MCQ','series','2, 4, 8, 16, ?',['18','24','32','36'],'C','हर बार संख्या दोगुनी हो रही है।'],
+          ['Coding-Decoding','letter shift','If CAT = DBU, then RAT = ?',['SBU','SBT','TBU','RBU'],'A','हर अक्षर 1 आगे बढ़ा है।'],
+          ['MCQ','direction sense','5 m north, 3 m east, 5 m south. Distance from start?',['3 m','5 m','8 m','10 m'],'A','उत्तर–दक्षिण कट गया, 3 m पूर्व बचा।'],
+          ['MCQ','blood relation','A is brother of B. B is sister of C. A is C's ?',['Brother','Sister','Father','Uncle'],'A','A और C सहोदर हैं, A भाई है।'],
+          ['MCQ','odd one out','Odd one out: Square, Rectangle, Circle, Parallelogram',['Square','Rectangle','Circle','Parallelogram'],'C','Circle चतुर्भुज नहीं है।'],
+          ['MCQ','analogy','Book : Read :: Pen : ?',['Write','Cut','Draw','Erase'],'A','Book पढ़ने के लिए, Pen लिखने के लिए।'],
+          ['MCQ','series','3, 6, 12, 24, ?',['30','36','48','60'],'C','हर बार दुगुना हो रहा है।'],
+          ['MCQ','letter series','A, C, F, J, O, ?',['S','T','U','V'],'C','अंतर 2,3,4,5,6 है; अगला 7।'],
+          ['MCQ','blood relation','P is brother of Q. Q is mother of R. P is R's ?',['Father','Maternal uncle','Paternal uncle','Brother'],'B','P, Q का भाई है, इसलिए R का मामा।'],
+          ['MCQ','ranking','In a row of 7, A is 3rd from left. B is 2nd from right. If A and B are same person, position?',['2nd','3rd','4th','5th'],'B','A की स्थिति ही लागू होगी।'],
+          ['Assertion-Reason','logic','Assertion (A): All roses are flowers. Reason (R): All flowers are roses.',['Both true and R explains A','Both true but R does not explain A','A true, R false','A false, R true'],'C','A सही है, R गलत है।'],
+          ['Statement-Conclusion','logic','Statements: Some books are pens. All pens are tools. Conclusions: I. Some books are tools. II. All tools are pens.',['Only I','Only II','Both','Neither'],'A','कुछ किताबें टूल्स हो सकती हैं; II गलत है।'],
+          ['MCQ','classification','Which is different?',['Apple','Mango','Banana','Potato'],'D','बाकी फल हैं, Potato सब्ज़ी है।'],
+          ['MCQ','coding','If DOG = EPH, then CAT = ?',['DBU','DCU','EBU','DAU'],'A','हर अक्षर +1 है।'],
+          ['MCQ','direction','Facing east, turn left, then right. Final direction?',['North','South','East','West'],'C','पूर्व से बाएँ उत्तर, फिर दाएँ पूर्व।'],
+          ['MCQ','direction','Facing north, turn right twice. Final direction?',['East','South','West','North'],'B','दो बार दायाँ मुड़ने पर दक्षिण दिशा मिलती है।'],
+          ['MCQ','analogy','Teacher : School :: Doctor : ?',['Hospital','Clinic','Patient','Medicine'],'A','Teacher स्कूल में, Doctor अस्पताल में।'],
+          ['MCQ','series','5, 10, 20, 40, ?',['50','60','80','100'],'C','हर बार दुगुना हो रहा है।'],
+          ['MCQ','calendar','If today is Monday, what day will it be after 10 days?',['Wednesday','Thursday','Friday','Saturday'],'B','10 mod 7 = 3, Monday + 3 = Thursday.'],
+          ['MCQ','ranking','A is taller than B. B is taller than C. Who is tallest?',['A','B','C','Cannot say'],'A','A > B > C.'],
+          ['MCQ','coding','If STAR = TUBS, then MOON = ?',['NPOP','NPPO','NPOO','OQPP'],'B','हर अक्षर +1 shift है।'],
+          ['MCQ','odd one out','Odd one out: Triangle, Square, Rectangle, Sphere',['Triangle','Square','Rectangle','Sphere'],'D','Sphere 3D है, बाकी 2D हैं।'],
+          ['Assertion-Reason','reasoning','Assertion (A): Coding-decoding is a part of logical reasoning. Reason (R): It tests pattern recognition.',['Both true and R explains A','Both true but R does not explain A','A true, R false','A false, R true'],'A','कोडिंग-डिकोडिंग पैटर्न पहचान पर आधारित है।'],
+          ['Statement-Conclusion','logic','Statements: All dogs are animals. Some animals are pets. Conclusions: I. Some dogs are pets. II. Some animals are dogs.',['Only I','Only II','Both','Neither'],'B','II निश्चित है; I निश्चित नहीं।'],
+          ['MCQ','series','1, 4, 9, 16, ?',['20','24','25','36'],'C','पूर्ण वर्ग संख्याएँ हैं।'],
+          ['MCQ','analogy','Hand : Glove :: Foot : ?',['Shoe','Sock','Cap','Belt'],'B','Glove हाथ के लिए, sock foot के लिए।'],
+          ['MCQ','direction','A walks 4 m west, 6 m north, 4 m east. Distance from start?',['2 m','4 m','6 m','8 m'],'C','पश्चिम-पूर्व कट गया, केवल 6 m उत्तर बचा।'],
+          ['Matching','logic','Match: A. Coding-decoding B. Series C. Blood relation D. Direction',['1-D,2-B,3-A,4-C','1-A,2-B,3-C,4-D','1-B,2-A,3-D,4-C','1-C,2-D,3-B,4-A'],'B','चारों का सही मिलान यही है।'],
+          ['MCQ','classification','Which does not belong?',['Square','Pentagon','Hexagon','Sphere'],'D','बाकी समतल आकृतियाँ हैं।'],
+          ['MCQ','logic','If all roses are flowers and some flowers are red, which is true?',['All roses are red','Some flowers may be red','All red things are flowers','No flower is red'],'B','दिए गए कथन से यही संभव निष्कर्ष है।']
+        ],
+        gk: [
+          ['MCQ','state symbols','राजस्थान का राज्य पशु कौन-सा है?',['बाघ','ऊँट','हाथी','गाय'],'B','ऊँट राजस्थान का राज्य पशु है।'],
+          ['MCQ','state symbols','राजस्थान का राज्य पक्षी कौन-सा है?',['मोर','गौरैया','ग्रेट इंडियन बस्टर्ड','कबूतर'],'C','यह राजस्थान का राज्य पक्षी है।'],
+          ['MCQ','state flower','राजस्थान का राज्य पुष्प क्या है?',['गुलाब','रोहिड़ा','कमल','चमेली'],'B','रोहिड़ा राज्य पुष्प है।'],
+          ['MCQ','state tree','राजस्थान का राज्य वृक्ष कौन-सा है?',['नीम','खेजड़ी','बरगद','पीपल'],'B','खेजड़ी राज्य वृक्ष है।'],
+          ['MCQ','national park','केवलादेव राष्ट्रीय उद्यान कहाँ है?',['जयपुर','भरतपुर','उदयपुर','जोधपुर'],'B','यह भरतपुर में स्थित है।'],
+          ['MCQ','district','क्षेत्रफल की दृष्टि से राजस्थान का सबसे बड़ा जिला कौन-सा है?',['जैसलमेर','बीकानेर','जोधपुर','बाड़मेर'],'A','जैसलमेर सबसे बड़ा जिला है।'],
+          ['MCQ','city','राजस्थान की ग्रीष्मकालीन राजधानी के रूप में कौन-सा स्थान प्रसिद्ध है?',['माउंट आबू','जयपुर','कोटा','अजमेर'],'A','माउंट आबू ग्रीष्मकालीन राजधानी/प्रमुख हिल स्टेशन है।'],
+          ['MCQ','river','राजस्थान की प्रमुख नदी चम्बल किस नदी की सहायक नदी है?',['गंगा','यमुना','ब्रह्मपुत्र','कावेरी'],'B','चम्बल यमुना तंत्र से जुड़ी है।'],
+          ['MCQ','dance','घूमर किससे संबंधित है?',['नृत्य','पर्वत','नदी','युद्ध'],'A','घूमर राजस्थान का प्रसिद्ध लोकनृत्य है।'],
+          ['MCQ','fort','चित्तौड़गढ़ किला किसके लिए प्रसिद्ध है?',['राजस्थान का सबसे छोटा किला','यूनेस्को विश्व धरोहर','सिर्फ मुगल निर्माण','समुद्री किला'],'B','चित्तौड़गढ़ किला विश्व धरोहर से जुड़ा है।'],
+          ['MCQ','desert','थार मरुस्थल मुख्यतः किस राज्य में स्थित है?',['राजस्थान','पंजाब','हरियाणा','गुजरात'],'A','थार का बड़ा भाग राजस्थान में है।'],
+          ['MCQ','festival','राजस्थान का कौन-सा मेला ऊँटों के लिए प्रसिद्ध है?',['पुष्कर मेला','होलिका दहन','तीज','गणगौर'],'A','पुष्कर मेला विश्व प्रसिद्ध है।'],
+          ['MCQ','architecture','हवा महल किस शहर में स्थित है?',['जयपुर','जोधपुर','उदयपुर','अजमेर'],'A','हवा महल जयपुर में है।'],
+          ['MCQ','lake','पिचोला झील कहाँ स्थित है?',['उदयपुर','कोटा','भरतपुर','सीकर'],'A','पिचोला झील उदयपुर की प्रसिद्ध झील है।'],
+          ['MCQ','wildlife','रणथम्भौर राष्ट्रीय उद्यान किस जिले में है?',['सवाई माधोपुर','जयपुर','बाड़मेर','अलवर'],'A','रणथम्भौर सवाई माधोपुर में है।'],
+          ['MCQ','district HQ','राजस्थान के किस जिले का मुख्यालय बीकानेर है?',['बीकानेर','भरतपुर','धौलपुर','झुंझुनू'],'A','बीकानेर जिला मुख्यालय बीकानेर शहर है।'],
+          ['MCQ','culture','‘कैलादेवी’ किसके लिए प्रसिद्ध है?',['मंदिर/मेला','नदी','किला','झील'],'A','कैलादेवी मंदिर और मेले के लिए प्रसिद्ध है।'],
+          ['MCQ','history','आमेर किला किस वंश से जुड़ा है?',['कच्छवाहा','राठौड़','सिसोदिया','भाटी'],'A','आमेर किला कच्छवाहा राजवंश से जुड़ा है।'],
+          ['MCQ','project','राजस्थान में चम्बल परियोजना मुख्यतः किससे संबंधित है?',['सिंचाई','रेलवे','हवाई यातायात','समुद्री बंदरगाह'],'A','चम्बल परियोजना सिंचाई से संबंधित है।'],
+          ['MCQ','desert park','डेजर्ट नेशनल पार्क कहाँ है?',['जैसलमेर','उदयपुर','कोटा','जयपुर'],'A','डेजर्ट नेशनल पार्क जैसलमेर में है।'],
+          ['MCQ','temple','दिलवाड़ा मंदिर कहाँ स्थित हैं?',['माउंट आबू','अजमेर','जयपुर','जालोर'],'A','दिलवाड़ा मंदिर माउंट आबू में हैं।'],
+          ['MCQ','state capital','राजस्थान की राजधानी क्या है?',['उदयपुर','जोधपुर','जयपुर','बीकानेर'],'C','जयपुर राजस्थान की राजधानी है।'],
+          ['MCQ','monument','जंतर मंतर कहाँ है?',['जयपुर','कोटा','अलवर','पाली'],'A','जयपुर का जंतर मंतर प्रसिद्ध है।'],
+          ['MCQ','river','लूनी नदी किस क्षेत्र से बहती है?',['थार मरुस्थल क्षेत्र','हिमालय','पूर्वोत्तर','दक्कन'],'A','लूनी राजस्थान के शुष्क क्षेत्र से बहती है।'],
+          ['MCQ','festival','तीज और गणगौर किस राज्य की लोक परंपरा से जुड़ी हैं?',['राजस्थान','केरल','पंजाब','ओडिशा'],'A','ये राजस्थान की सांस्कृतिक परंपराएँ हैं।'],
+          ['MCQ','fort','मेहरानगढ़ किला किस शहर में है?',['जोधपुर','जयपुर','उदयपुर','अजमेर'],'A','मेहरानगढ़ किला जोधपुर में है।'],
+          ['MCQ','museum','अल्बर्ट हॉल संग्रहालय कहाँ है?',['जयपुर','उदयपुर','कोटा','भीलवाड़ा'],'A','अल्बर्ट हॉल जयपुर में है।'],
+          ['MCQ','boundary','राजस्थान की सीमा पाकिस्तान से किस तरफ लगती है?',['पश्चिम','पूर्व','उत्तर','दक्षिण'],'A','पाकिस्तान से सीमा पश्चिमी भाग में है।'],
+          ['MCQ','dance','कठपुतली कला किस राज्य से प्रसिद्ध रूप से जुड़ी है?',['राजस्थान','गोवा','सिक्किम','त्रिपुरा'],'A','कठपुतली कला राजस्थान की प्रसिद्ध लोक कला है।'],
+          ['MCQ','city','जोधपुर को किस नाम से जाना जाता है?',['ब्लू सिटी','गोल्डन सिटी','पिंक सिटी','ग्रीन सिटी'],'A','जोधपुर ‘ब्लू सिटी’ कहलाता है।']
+        ],
+        pedagogy: [
+          ['MCQ','child-centered','बाल-केंद्रित शिक्षा का मुख्य आधार क्या है?',['शिक्षक की प्रधानता','विद्यार्थी की सक्रिय भागीदारी','केवल पाठ्यपुस्तक','केवल परीक्षा'],'B','बाल-केंद्रित शिक्षा में विद्यार्थी केंद्र में होता है।'],
+          ['MCQ','assessment','Formative assessment का उद्देश्य क्या है?',['अंतिम अंक देना','सीखने में सुधार','परीक्षा टालना','अनुशासन तोड़ना'],'B','यह सीखने की प्रक्रिया को बेहतर बनाता है।'],
+          ['MCQ','inclusive education','समावेशी शिक्षा का आशय है:',['सभी बच्चों को समान अवसर','केवल होशियार छात्रों को पढ़ाना','कमजोर छात्रों को हटाना','केवल परीक्षा केंद्रित शिक्षा'],'A','सभी बच्चों को साथ लेकर पढ़ाना समावेशी शिक्षा है।'],
+          ['MCQ','classroom management','कक्षा प्रबंधन का मुख्य लक्ष्य क्या है?',['सीखने हेतु अनुकूल वातावरण','केवल दंड','केवल attendance','केवल homework'],'A','सकारात्मक वातावरण प्रभावी सीखने में मदद करता है।'],
+          ['MCQ','motivation','विद्यार्थी को प्रेरित करने का सबसे प्रभावी तरीका क्या है?',['उपेक्षा','प्रोत्साहन','डर','डाँट'],'B','प्रोत्साहन रुचि और आत्मविश्वास बढ़ाता है।'],
+          ['MCQ','teacher role','एक अच्छे शिक्षक का प्रमुख गुण क्या है?',['धैर्य','क्रोध','उदासीनता','कठोरता'],'A','धैर्य शिक्षक का महत्वपूर्ण गुण है।'],
+          ['MCQ','learning','Learning is best when it is:',['Passive','Active','Random','Forced'],'B','सक्रिय सीखना अधिक प्रभावी होता है।'],
+          ['MCQ','evaluation','Evaluation primarily helps in:',['Measuring progress','Stopping teaching','Replacing students','Closing class'],'A','मूल्यांकन प्रगति का आकलन करता है।'],
+          ['MCQ','communication','Teacher communication should be:',['Confusing','Clear and simple','Too long','Silent'],'B','स्पष्ट संप्रेषण सीखने को आसान बनाता है।'],
+          ['MCQ','objective','Teaching objective should be:',['Unclear','Specific','Irrelevant','Hidden'],'B','स्पष्ट और विशिष्ट उद्देश्य बेहतर शिक्षण देते हैं।'],
+          ['Assertion-Reason','pedagogy','Assertion (A): Learner-centered teaching improves participation. Reason (R): Students learn better when they are active in class.',['Both true and R explains A','Both true but R does not explain A','A true, R false','A false, R true'],'A','सक्रिय भागीदारी learner-centered teaching का आधार है।'],
+          ['Statement-Conclusion','pedagogy','Statements: Some students are shy. All shy students need encouragement. Conclusions: I. Some students need encouragement. II. All students are shy.',['Only I','Only II','Both','Neither'],'A','कुछ विद्यार्थी शर्मीले हैं, इसलिए कुछ को प्रोत्साहन चाहिए।'],
+          ['MCQ','inclusive','An inclusive classroom is one where:',['Only top students study','All learners are included','Only homework is given','Only tests are taken'],'B','Inclusive classroom में सभी विद्यार्थियों की भागीदारी होती है।'],
+          ['MCQ','method','The best method for concept clarity is:',['Lecture only','Activity-based learning','Punishment-based learning','No interaction'],'B','गतिविधि आधारित अधिगम से अवधारणा स्पष्ट होती है।'],
+          ['MCQ','feedback','Feedback in teaching should be:',['Delayed and vague','Immediate and specific','Harsh and unclear','Avoided'],'B','सही feedback सीखने में मदद करता है।'],
+          ['MCQ','evaluation','Which is a formative assessment tool?',['Unit test','Observation','Board exam','Final result'],'B','अवलोकन formative assessment का महत्वपूर्ण साधन है।'],
+          ['MCQ','motivation','A motivated learner usually shows:',['Avoidance','Curiosity','Boredom','Fear'],'B','प्रेरित विद्यार्थी जिज्ञासु होता है।'],
+          ['MCQ','teacher role','Teacher acts as a:',['Guide','Judge only','Spectator','Manager only'],'A','शिक्षक मार्गदर्शक की भूमिका निभाता है।'],
+          ['MCQ','classroom','Which is essential for effective classroom control?',['Strictness only','Planning','Noise','Ignoring students'],'B','योजना से कक्षा नियंत्रण बेहतर होता है।'],
+          ['MCQ','learning theory','Learning by doing is associated with:',['Activity method','Memorization only','Isolation','Punishment'],'A','करके सीखना activity-based learning है।'],
+          ['MCQ','child psychology','Child psychology mainly helps a teacher to understand:',['Student needs','Exam rules only','School building','Timetable only'],'A','बच्चों की आवश्यकताओं को समझना जरूरी है।'],
+          ['MCQ','curriculum','Curriculum should be:',['Rigid and outdated','Flexible and relevant','Hidden','Random'],'B','पाठ्यक्रम को समयानुसार और उपयोगी होना चाहिए।'],
+          ['MCQ','assessment','Diagnostic assessment is used to:',['Identify learning difficulties','Award medals','Stop teaching','Replace textbooks'],'A','यह सीखने की समस्याएँ पहचानता है।'],
+          ['MCQ','communication','A teacher should use language that is:',['Complex only','Simple and understandable','Too loud','Irrelevant'],'B','सरल भाषा प्रभावी संप्रेषण देती है।'],
+          ['Assertion-Reason','evaluation','Assertion (A): Continuous evaluation reduces exam pressure. Reason (R): It checks learning at regular intervals.',['Both true and R explains A','Both true but R does not explain A','A true, R false','A false, R true'],'A','निरंतर मूल्यांकन से दबाव कम होता है।'],
+          ['Statement-Conclusion','teaching','Statements: All teachers are learners. Some learners are researchers. Conclusions: I. Some teachers may be researchers. II. All researchers are teachers.',['Only I','Only II','Both','Neither'],'A','कुछ शिक्षक शोधकर्ता हो सकते हैं, पर सभी नहीं।'],
+          ['MCQ','learning','The most student-friendly teaching style is:',['Authoritarian','Participatory','Neglectful','Random'],'B','भागीदारी वाला तरीका अधिक प्रभावी होता है।'],
+          ['MCQ','management','Positive reinforcement means:',['Rewarding good behavior','Ignoring students','Punishing always','Reducing learning'],'A','सकारात्मक पुनर्बलन अच्छा व्यवहार बढ़ाता है।'],
+          ['Matching','pedagogy','Match: A. Assessment B. Motivation C. Guidance D. Inclusion',['1-Measurement,2-Inspiration,3-Helping,4-Participation for all','1-Inspiration,2-Measurement,3-Participation,4-Helping','1-Helping,2-Participation,3-Measurement,4-Inspiration','1-Participation,2-Helping,3-Inspiration,4-Measurement'],'A','यह चारों अवधारणाओं का सही मेल है।'],
+          ['MCQ','objective','A good lesson plan should be:',['Unplanned','Goal-oriented','Confusing','Irrelevant'],'B','पाठ योजना उद्देश्य आधारित होनी चाहिए।']
+        ],
+        hindi: [
+          ['MCQ','synonym','‘जल’ का पर्यायवाची शब्द क्या है?',['अग्नि','नीर','वायु','अन्न'],'B','नीर जल का पर्यायवाची है।'],
+          ['MCQ','antonym','‘दिन’ का विलोम शब्द क्या है?',['रात्रि','प्रभात','सूर्य','समय'],'A','दिन का विलोम रात्रि है।'],
+          ['MCQ','sandhi','‘राजा + आलय’ का सही रूप क्या है?',['राजआलय','राजालय','राज्यालय','राजाालय'],'B','दीर्घ संधि से राजालय बनता है।'],
+          ['MCQ','idiom','‘आँखों का तारा’ का अर्थ क्या है?',['बहुत प्रिय','बहुत दूर','बहुत गुस्सा','बहुत कमजोर'],'A','यह अत्यंत प्रिय व्यक्ति के लिए प्रयोग होता है।'],
+          ['MCQ','grammar','शुद्ध शब्द कौन-सा है?',['शुध्द','शुद्ध','सुद्ध','शुध्दि'],'B','सही रूप ‘शुद्ध’ है।'],
+          ['MCQ','samas','‘राजपुत्र’ किस समास का उदाहरण है?',['द्वंद्व','तत्पुरुष','बहुव्रीहि','अव्ययीभाव'],'B','राजा का पुत्र = तत्पुरुष समास।'],
+          ['MCQ','upsarg','‘असफल’ में कौन-सा उपसर्ग है?',['अ','स','फल','अस'],'A','असफल में ‘अ’ उपसर्ग है।'],
+          ['MCQ','pratyay','‘पाठक’ शब्द में प्रत्यय क्या है?',['क','पाठ','क्','अक'],'D','पाठ + अक = पाठक।'],
+          ['MCQ','vakyashuddhi','शुद्ध वाक्य चुनिए:',['वह बाजार गया हैं।','वह बाजार गया है।','वह बाजार गए है।','वह बाजार गयी है।'],'B','कर्ता एकवचन पुल्लिंग है, इसलिए ‘गया है’।'],
+          ['MCQ','muhaavara','‘दाँत खट्टे करना’ का अर्थ क्या है?',['पराजित करना','मित्र बनाना','सजाना','डरना'],'A','यह मुहावरा हार/परास्त करने के अर्थ में है।'],
+          ['MCQ','tatsam','‘अग्नि’ का तद्भव रूप क्या है?',['आग','अंगार','जल','धुआँ'],'A','अग्नि का तद्भव रूप आग है।'],
+          ['Assertion-Reason','grammar','Assertion (A): समास में पदों का संक्षेप होता है। Reason (R): समास से शब्द अधिक संक्षिप्त और प्रभावशाली बनते हैं।',['A और R दोनों सत्य हैं तथा R, A की सही व्याख्या है','A और R दोनों सत्य हैं, लेकिन R सही व्याख्या नहीं है','A सत्य है, R असत्य है','A असत्य है, R सत्य है'],'A','समास पदों को संक्षिप्त बनाता है।'],
+          ['Statement-Conclusion','logic','कथन: सभी विद्यार्थी परिश्रमी हैं। कुछ परिश्रमी सफल हैं। निष्कर्ष: I. कुछ विद्यार्थी सफल हैं। II. सभी सफल विद्यार्थी परिश्रमी हैं।',['केवल I','केवल II','दोनों','कोई नहीं'],'D','दिए गए कथनों से दोनों निष्कर्ष निश्चित नहीं हैं।'],
+          ['Matching','grammar','मिलान कीजिए: A. पर्यायवाची B. विलोम C. मुहावरा D. संधि',['1-समार्थक शब्द,2-विपरीत शब्द,3-लक्षणात्मक वाक्यांश,4-दो वर्णों का मेल','1-विपरीत शब्द,2-समार्थक शब्द,3-दो वर्णों का मेल,4-लक्षणात्मक वाक्यांश','1-दो वर्णों का मेल,2-विपरीत शब्द,3-समार्थक शब्द,4-लक्षणात्मक वाक्यांश','1-लक्षणात्मक वाक्यांश,2-दो वर्णों का मेल,3-विपरीत शब्द,4-समार्थक शब्द'],'A','चारों के सही अर्थ यही हैं।'],
+          ['MCQ','grammar','‘भोजन’ का सही संधि विच्छेद क्या है?',['भो + जन','भोज + न','भ + ओजन','भोज + अन'],'D','यह सही व्युत्पत्ति/खंडन है।'],
+          ['MCQ','visheshan','‘सुंदर’ किस प्रकार का शब्द है?',['संज्ञा','विशेषण','क्रिया','क्रियाविशेषण'],'B','सुंदर संज्ञा की विशेषता बताता है।'],
+          ['MCQ','vakya','निम्न में से कौन-सा वाक्य शुद्ध है?',['वह पुस्तक पढ़ती है।','वह पुस्तक पढ़ता है।','वह पुस्तक पढ़ते हैं।','वह पुस्तक पढ़िए।'],'A','कर्ता स्त्रीलिंग एकवचन है।'],
+          ['MCQ','alankar','‘चाँद-सा चेहरा’ में कौन-सा अलंकार है?',['उपमा','रूपक','अनुप्रास','अतिशयोक्ति'],'A','‘सा’ प्रयोग से उपमा अलंकार है।'],
+          ['MCQ','idiom','‘नाक कटना’ का अर्थ क्या है?',['अपमान होना','जीतना','रोना','लड़ना'],'A','यह मानहानि/अपमान के अर्थ में है।'],
+          ['MCQ','antonym','‘सफल’ का विलोम क्या है?',['असफल','सार्थक','सुगम','सबल'],'A','सफल का विलोम असफल है।'],
+          ['MCQ','synonym','‘मधुर’ का पर्यायवाची क्या है?',['कठोर','सुहावना','तीखा','कटु'],'B','मधुर का अर्थ मीठा/सुहावना होता है।'],
+          ['MCQ','pratyay','‘धीरे-धीरे’ में कौन-सा प्रयोग है?',['पुनरुक्ति','संधि','समास','उपसर्ग'],'A','एक ही शब्द की पुनरावृत्ति है।'],
+          ['MCQ','shuddhi','सही वर्तनी चुनिए:',['अध्य्यन','अध्ययन','अध्य्यन','अध्यायन'],'B','सही वर्तनी अध्ययन है।'],
+          ['MCQ','sandhi','‘देव + आलय’ का सही रूप क्या है?',['देवलय','देवालय','देव्यालय','देवआलय'],'B','दीर्घ संधि से देवालय बनता है।'],
+          ['MCQ','samas','‘जलपान’ किस समास का उदाहरण है?',['द्वंद्व','तत्पुरुष','द्विगु','बहुव्रीहि'],'B','जल का पान = तत्पुरुष।'],
+          ['MCQ','vakyashuddhi','शुद्ध वाक्य चुनिए:',['हमने काम किया।','हम काम किये।','हमने काम किये।','हम किया काम।'],'A','सही क्रिया रूप ‘किया’ है।'],
+          ['MCQ','muhavara','‘कान खड़े होना’ का अर्थ क्या है?',['सतर्क हो जाना','सो जाना','हँसना','गिर जाना'],'A','यह सावधान होने के अर्थ में है।'],
+          ['Matching','grammar','मिलान कीजिए: 1. उपसर्ग 2. प्रत्यय 3. संधि 4. समास',['अ. शब्द के बाद लगता है; ब. शब्द के पहले लगता है; स. दो वर्णों का मेल; द. दो पदों का संक्षेप','1-ब,2-अ,3-स,4-द','1-अ,2-ब,3-द,4-स','1-स,2-द,3-ब,4-अ'],'B','सही क्रम यही है।'],
+          ['MCQ','tatssam','‘पृथ्वी’ का तद्भव रूप क्या है?',['धरती','भूमि','आकाश','जल'],'A','पृथ्वी का तद्भव धरती है।'],
+          ['MCQ','alankar','अनुप्रास अलंकार का सही उदाहरण कौन-सा है?',['नील गगन में तारे चमके','चंचल चितवन चोर','वह सिंह-सा बलवान है','यह बहुत सुंदर है'],'B','एक ही वर्ण/ध्वनि की पुनरावृत्ति है।']
+        ],
+        english: [
+          ['MCQ','article','Choose the correct article: ___ honest man.',['A','An','The','No article'],'B','"Honest" starts with a vowel sound.'],
+          ['MCQ','preposition','He is interested ___ music.',['on','in','at','for'],'B','Interested in is correct.'],
+          ['MCQ','tenses','She ___ to school every day.',['go','goes','going','gone'],'B','Third person singular takes goes.'],
+          ['MCQ','subject-verb agreement','Each of the boys ___ ready.',['are','were','is','have'],'C','Each is singular.'],
+          ['MCQ','synonym','Choose the synonym of 'Happy'.',['Sad','Joyful','Angry','Weak'],'B','Joyful means happy.'],
+          ['MCQ','antonym','Choose the antonym of 'Brave'.',['Courageous','Timid','Bold','Strong'],'B','Timid is the opposite of brave.'],
+          ['MCQ','sentence correction','Identify the correct sentence:',['He go to school daily.','He goes to school daily.','He going to school daily.','He gone to school daily.'],'B','Third person singular needs goes.'],
+          ['MCQ','preposition','The cat is hiding ___ the table.',['under','over','between','among'],'A','The correct preposition is under.'],
+          ['MCQ','voice','Change to passive: 'They are writing a letter.'',['A letter is written by them.','A letter is being written by them.','A letter was written by them.','A letter has been written by them.'],'B','Present continuous passive uses is being.'],
+          ['MCQ','narration','He said, 'I am tired.' Choose reported speech.',['He said that he was tired.','He said that I was tired.','He says that he is tired.','He told that he is tired.'],'A','Direct present changes to past in reported speech.'],
+          ['MCQ','article','___ sun rises in the east.',['A','An','The','No article'],'C','Unique object takes 'the'.'],
+          ['MCQ','grammar','Neither of the answers ___ correct.',['are','were','is','have'],'C','Neither is singular.'],
+          ['MCQ','vocabulary','Choose the word closest in meaning to 'Begin'.',['Start','Stop','Break','Close'],'A','Begin means start.'],
+          ['MCQ','vocabulary','Choose the antonym of 'Expand'.',['Grow','Increase','Shrink','Spread'],'C','Shrink means become smaller.'],
+          ['MCQ','modals','You ___ wear a helmet while riding.',['must','might','may','could'],'A','It is a necessity.'],
+          ['MCQ','conditional','If I ___ rich, I would travel the world.',['am','was','were','be'],'C','Second conditional uses were.'],
+          ['MCQ','error spotting','Find the correct sentence:',['She do not like tea.','She does not like tea.','She not like tea.','She does no like tea.'],'B','Third person singular needs does not.'],
+          ['MCQ','adverb','He spoke very ___ .',['clear','clearly','clearness','clearing'],'B','An adverb is needed.'],
+          ['Matching','grammar','Match: 1. Noun 2. Verb 3. Adjective 4. Adverb',['A. Quickly B. Happy C. Run D. Teacher','1-D,2-C,3-B,4-A','1-C,2-D,3-A,4-B','1-B,2-A,3-D,4-C'],'B','Teacher-noun, run-verb, happy-adjective, quickly-adverb.'],
+          ['MCQ','voice','Passive voice of 'The boy opened the door.'',['The door is opened by the boy.','The door was opened by the boy.','The door has opened by the boy.','The door opens by the boy.'],'B','Simple past active becomes simple past passive.'],
+          ['MCQ','preposition','He has been living here ___ 2020.',['for','since','from','by'],'B','Since is used with a point in time.'],
+          ['MCQ','article','I saw ___ European in the market.',['a','an','the','no article'],'A','European starts with consonant sound 'y'.'],
+          ['MCQ','sentence correction','Choose the correct sentence:',['She is more taller than me.','She is taller than me.','She is most taller than me.','She taller than me.'],'B','Comparative adjective uses taller.'],
+          ['MCQ','conjunction','I stayed at home ___ it was raining.',['because','although','unless','despite'],'A','Reason is given.'],
+          ['MCQ','synonym','Choose the synonym of 'Rapid'.',['Slow','Fast','Late','Weak'],'B','Rapid means fast.'],
+          ['MCQ','antonym','Choose the antonym of 'Ancient'.',['Old','Modern','Historic','Classic'],'B','Modern is opposite of ancient.'],
+          ['MCQ','grammar','One of the students ___ absent today.',['are','is','were','have'],'B','One of + plural noun takes singular verb.'],
+          ['MCQ','narration','She said, 'I will come tomorrow.' Reported speech?',['She said that she will come tomorrow.','She said that she would come the next day.','She said that I would come the next day.','She said that she comes tomorrow.'],'B','Will changes to would, tomorrow to the next day.'],
+          ['MCQ','grammar','Neither Ram nor Shyam ___ present.',['are','were','is','have'],'C','Verb agrees with nearest subject in singular form.'],
+          ['MCQ','sentence correction','Identify the correct sentence:',['He can sings well.','He can sing well.','He can singing well.','He can sang well.'],'B','Modal verbs are followed by base form.']
+        ]
+      };
+
+      const letters = ['A','B','C','D'];
+      bstcHardPaperSkeleton.sections.forEach((sec, sIdx) => {
+        const key = ['reasoning','gk','pedagogy','hindi','english'][sIdx];
+        sec.questions = sec.questions.map((q, i) => {
+          const t = templates[key][i % templates[key].length];
+          return F(q.id, sec.section, t[0], t[1], t[2], t[3], t[4], t[5]);
+        });
+      });
+
+      const data = bstcHardPaperSkeleton.sections.flatMap((sec) => sec.questions);
       const state = { started: false, current: 0, answers: {}, remaining: 180 * 60, timerId: null };
       const startBtn = document.getElementById('start-test');
       const timerEl = document.getElementById('timer');
@@ -179,9 +331,9 @@
       function renderQuestion() {
         const q = data[state.current];
         questionMeta.textContent = `प्रश्न / Question ${q.id} of 150`;
-        sectionTag.textContent = `${q.section} • ${q.difficulty}`;
+        sectionTag.textContent = `${q.section} • ${q.difficulty} • ${q.questionType}`;
         questionText.textContent = q.question;
-        optionsWrap.innerHTML = q.options.map((opt) => `<label class="rounded-xl border p-3 sm:p-4 cursor-pointer text-sm sm:text-base leading-relaxed ${state.answers[q.id] === opt ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300'}"><input class="mr-2 align-middle" type="radio" name="option" value="${opt}" ${state.answers[q.id] === opt ? 'checked' : ''}/> ${opt}</label>`).join('');
+        optionsWrap.innerHTML = q.options.map((opt, idx) => { const key = letters[idx]; return `<label class="rounded-xl border p-3 sm:p-4 cursor-pointer text-sm sm:text-base leading-relaxed ${state.answers[q.id] === key ? 'border-indigo-500 bg-indigo-50' : 'border-slate-300'}"><input class="mr-2 align-middle" type="radio" name="option" value="${key}" ${state.answers[q.id] === key ? 'checked' : ''}/> <strong>${key}.</strong> ${opt}</label>`; }).join('');
         optionsWrap.querySelectorAll('input').forEach((input) => input.addEventListener('change', (e) => { state.answers[q.id] = e.target.value; renderPalette(); renderQuestion(); }));
       }
       function sectionStats() {
@@ -205,11 +357,11 @@
         document.getElementById('section-summary').innerHTML = sectionStats().map((s) => `<p class="feature-card !m-0 !p-4"><strong>${s.section}</strong><br>${s.correct}/${s.total} correct</p>`).join('');
         const answerKeyBySection = sections.map((section) => {
           const items = data.filter((q) => q.section === section).map((q) => {
-            const yourAnswer = state.answers[q.id] || 'प्रयास नहीं किया';
+            const yourAnswer = state.answers[q.id] ? `${state.answers[q.id]}. ${q.options[letters.indexOf(state.answers[q.id])] || ''}` : '—';
             return `<div class="rounded-xl border border-slate-200 p-4">
               <p class="font-semibold">प्रश्न ${q.id}: ${q.question}</p>
               <p class="mt-2 text-sm">आपका उत्तर: <strong>${yourAnswer}</strong></p>
-              <p class="text-sm">सही उत्तर: <strong>${q.answer}</strong></p>
+              <p class="text-sm">सही उत्तर: <strong>${q.answer}. ${q.options[letters.indexOf(q.answer)] || ''}</strong></p>
               <p class="mt-2 text-sm text-slate-600"><strong>व्याख्या:</strong> ${q.explanation}</p>
             </div>`;
           }).join('');
