@@ -400,7 +400,21 @@
           .replace(/'/g, '&#39;');
       }
       function formatQuestionText(question = '') {
-        return escapeHtml(question).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+        const withSafeHtmlBreaks = escapeHtml(question)
+          .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
+          .replace(/\r?\n/g, '<br>');
+
+        const hasLineBreak = /<br>/i.test(withSafeHtmlBreaks);
+        if (hasLineBreak) return withSafeHtmlBreaks;
+
+        const readableByLabel = withSafeHtmlBreaks
+          .replace(/\s*(Assertions?|Statements?|Conclusions?|Reason\s*\(R\)|Assertion\s*\(A\)|I\.|II\.)\s*:/gi, '<br>$1:')
+          .replace(/^<br>/, '');
+
+        const isLongStructuredQuestion = readableByLabel.length > 90 || /(Assertions?|Statements?|Conclusions?|Reason\s*\(R\)|Assertion\s*\(A\)|I\.|II\.)/i.test(readableByLabel);
+        if (!isLongStructuredQuestion) return readableByLabel;
+
+        return readableByLabel.replace(/([.?!])\s+(?=[^<])/g, '$1<br>');
       }
       function renderPalette() {
         palette.innerHTML = data.map((q, idx) => `<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id] ? 'bg-indigo-100 border-indigo-400' : 'border-slate-300'}">${q.id}</button>`).join('');
