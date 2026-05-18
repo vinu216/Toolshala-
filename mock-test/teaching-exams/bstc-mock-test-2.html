@@ -939,7 +939,7 @@
       const sections = [...new Set(data.map((q) => q.section))];
       const letters = ['A','B','C','D'];
       const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
-      const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
+      const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
       const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
       const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
       const formatQuestionText=(q='')=>escapeHtml(q).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
@@ -951,14 +951,16 @@
         const prevBtn=document.getElementById('prev-btn');
         const nextBtn=document.getElementById('next-btn');
         const submitBtn=document.getElementById('submit-btn');
-        if(!startBtn || !timerEl || !testArea || !resultArea || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
+        if(!startBtn || !timerEl || !testArea || !resultArea || !testIntro || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
           console.error('BSTC Mock Test 2: Required DOM elements are missing.');
           return;
         }
         prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});
         nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});
         submitBtn.addEventListener('click',submitTest);
-        startBtn.addEventListener('click',()=>{if(state.started) return; console.log('BSTC Mock Test start clicked:',{paperTitle:testConfig?.paperTitle,totalQuestions:data.length,sections:sections.length}); if(!data.length){questionMeta.textContent='Questions unavailable';questionText.textContent='Question data could not be loaded.';console.error('BSTC Mock Test: Question data array is empty.',{testConfig});return;} state.started=true; startBtn.disabled=true; testArea.classList.remove('hidden'); testArea.scrollIntoView({behavior:'smooth',block:'start'}); renderPalette(); const rendered=renderQuestion(); if(!rendered){console.error('BSTC Mock Test: Rendering failed, timer not started.');return;} state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);});
+        testArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        resultArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        startBtn.addEventListener('click',()=>{if(state.started) return; console.log('BSTC Mock Test start clicked:',{paperTitle:testConfig?.paperTitle,totalQuestions:data.length,sections:sections.length}); if(!data.length){questionMeta.textContent='Questions unavailable';questionText.textContent='Question data could not be loaded.';console.error('BSTC Mock Test: Question data array is empty.',{testConfig});return;} state.started=true; startBtn.disabled=true; testIntro.classList.add('hidden'); testArea.classList.remove('hidden'); testArea.scrollIntoView({behavior:'smooth',block:'start'}); renderPalette(); const rendered=renderQuestion(); if(!rendered){console.error('BSTC Mock Test: Rendering failed, timer not started.');return;} state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);});
       });
     </script>
   </body>
