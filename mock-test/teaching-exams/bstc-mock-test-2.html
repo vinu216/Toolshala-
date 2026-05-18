@@ -19,6 +19,7 @@
       .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
       .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
       .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
       @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
     </style>
   </head>
@@ -36,7 +37,7 @@
         </div>
       </section>
       <section class="section-wrap">
-        <article class="feature-card reveal visible">
+        <article id="test-intro" class="feature-card reveal visible">
           <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
           <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
             <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
@@ -49,6 +50,9 @@
             <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
           </div>
         </article>
+        <noscript>
+          <p class="mt-3 text-sm text-slate-600">JavaScript is disabled. Instructions, Start Test button, and timer are shown as static content.</p>
+        </noscript>
       </section>
       <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
       <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Explanations</h2><div id="explanations" class="mt-4 space-y-4"></div></article></section>
@@ -935,7 +939,19 @@
       function renderPalette(){palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx);renderQuestion();}));}
       function renderQuestion(){const q=data[state.current];questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;questionText.innerHTML=formatQuestionText(q.question);const matching=extractMatching(q.question||'');matchingBlock.innerHTML=matching?`<div class="matching-grid"><div class="matching-list"><strong>सूची 1</strong><p class="mt-2">${escapeHtml(matching.l1)}</p></div><div class="matching-list"><strong>सूची 2</strong><p class="mt-2">${escapeHtml(matching.l2)}</p></div></div>`:'';optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${escapeHtml(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));}
       function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;document.getElementById('result-summary').innerHTML=[['Total',data.length],['Attempted',attempted],['Correct',correct],['Wrong',wrong]].map(([k,v])=>`<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');document.getElementById('answer-key').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatQuestionText(q.question)}</p><p class="mt-2 text-sm">Your: ${state.answers[q.id]||'—'} | Correct: ${q.answer}</p></div>`).join('');document.getElementById('explanations').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatQuestionText(q.question)}</p><p class="mt-2 text-sm">${escapeHtml(q.explanation||'Explanation available नहीं है।')}</p></div>`).join('');}
-      document.getElementById('prev-btn').addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});document.getElementById('next-btn').addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});document.getElementById('submit-btn').addEventListener('click',submitTest);startBtn.addEventListener('click',()=>{if(state.started) return; state.started=true; startBtn.disabled=true; testArea.classList.remove('hidden'); renderPalette(); renderQuestion(); state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);});
+      document.addEventListener('DOMContentLoaded',()=>{
+        const prevBtn=document.getElementById('prev-btn');
+        const nextBtn=document.getElementById('next-btn');
+        const submitBtn=document.getElementById('submit-btn');
+        if(!startBtn || !timerEl || !testArea || !resultArea || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
+          console.error('BSTC Mock Test 2: Required DOM elements are missing.');
+          return;
+        }
+        prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});
+        nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});
+        submitBtn.addEventListener('click',submitTest);
+        startBtn.addEventListener('click',()=>{if(state.started) return; state.started=true; startBtn.disabled=true; testArea.classList.remove('hidden'); renderPalette(); renderQuestion(); state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);});
+      });
     </script>
   </body>
 </html>
