@@ -35,7 +35,21 @@
           </div>
         </div>
       </section>
-      <section class="section-wrap"><article class="feature-card reveal"><h2 class="text-2xl font-bold">निर्देश / Instructions</h2><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="start-test" class="btn-primary" type="button">Start Test</button><p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p></div></article></section>
+      <section class="section-wrap">
+        <article class="feature-card reveal visible">
+          <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+            <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
+          </ul>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="start-test" class="btn-primary" type="button">Start Test</button>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
+          </div>
+        </article>
+      </section>
       <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
       <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Explanations</h2><div id="explanations" class="mt-4 space-y-4"></div></article></section>
     </main>
@@ -909,6 +923,7 @@
       };
 
       const data = bstcMockTest2.sections.flatMap((sec) => sec.questions);
+
       const sections = [...new Set(data.map((q) => q.section))];
       const letters = ['A','B','C','D'];
       const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
