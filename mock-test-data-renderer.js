@@ -235,7 +235,9 @@
         const testNumber = index + 1;
         const customCtaLink = teachingExamSlug === 'bstc' && testNumber === 1
           ? './bstc-mock-test-1.html'
-          : exam.ctaLink;
+          : teachingExamSlug === 'bstc' && testNumber === 2
+            ? './bstc-mock-test-2.html'
+            : exam.ctaLink;
         return cardForExam({
           ...exam,
           ctaLink: customCtaLink,
