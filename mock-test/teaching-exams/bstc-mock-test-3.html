@@ -1520,16 +1520,64 @@ III. चौराहा`, options: ['केवल I और II', 'केवल II
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
       const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statements:m[3],conclusions:m[5]};};
       const parseMatching=(q='')=>{
-        const text=String(q||'');
-        const m=text.match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：]?\s*([\s\S]*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：]?\s*([\s\S]*)$/i);
-        if(!m) return null;
-        const intro=String(m[1]||'').trim();
-        let l1=String(m[3]||'').trim();
-        let l2=String(m[5]||'').trim();
-        const stripInlineHeading=(value='')=>String(value).replace(/^\s*सूची[-\s]*(?:I+|1|II|2)(?:\s*\([^)]+\))?\s*[:：]?\s*/i,'').trim();
-        l1=stripInlineHeading(l1);
-        l2=stripInlineHeading(l2);
-        return {intro,l1,l2};
+        const text=String(q||'').replace(/\r/g,'').trim();
+        if(!text) return null;
+        const lines=text.split('\n').map((line)=>line.trim()).filter(Boolean);
+        const listLabelPattern=/(सूची[-\s]*(?:I+|1))(?:\s*\([^)]+\))?/i;
+        const list2LabelPattern=/(सूची[-\s]*(?:II|2))(?:\s*\([^)]+\))?/i;
+        let markerIdx=lines.findIndex((line)=>listLabelPattern.test(line)&&list2LabelPattern.test(line));
+        if(markerIdx===-1) markerIdx=lines.findIndex((line)=>listLabelPattern.test(line));
+        if(markerIdx===-1) return null;
+        const intro=lines.slice(0,markerIdx).join('\n').trim();
+        const bodyLines=lines.slice(markerIdx);
+        let l1=[];
+        let l2=[];
+        let sawList2=false;
+        bodyLines.forEach((line,idx)=>{
+          if(/^कूट\s*[:：]?\s*$/i.test(line)) return;
+          if(listLabelPattern.test(line) && list2LabelPattern.test(line)){
+            const lineWithoutLabels=line
+              .replace(listLabelPattern,'')
+              .replace(list2LabelPattern,'')
+              .replace(/\s+/g,' ')
+              .trim();
+            if(lineWithoutLabels){
+              const chunks=line.split(/\s{2,}/).map((v)=>v.trim()).filter(Boolean);
+              if(chunks.length>=2){
+                l1.push(chunks[0].replace(listLabelPattern,'').trim());
+                l2.push(chunks[chunks.length-1].replace(list2LabelPattern,'').trim());
+              }
+            }
+            return;
+          }
+          if(list2LabelPattern.test(line)){
+            sawList2=true;
+            const onlyLine=line.replace(list2LabelPattern,'').replace(/^[:：]\s*/,'').trim();
+            if(onlyLine) l2.push(onlyLine);
+            return;
+          }
+          if(idx===0 && listLabelPattern.test(line)){
+            const onlyLine=line.replace(listLabelPattern,'').replace(/^[:：]\s*/,'').trim();
+            if(onlyLine){
+              const chunks=onlyLine.split(/\s{2,}/).map((v)=>v.trim()).filter(Boolean);
+              if(chunks.length>=2){l1.push(chunks[0]);l2.push(chunks[chunks.length-1]);}
+              else l1.push(onlyLine);
+            }
+            return;
+          }
+          const chunks=line.split(/\s{2,}/).map((v)=>v.trim()).filter(Boolean);
+          if(chunks.length>=2 && !sawList2){
+            l1.push(chunks[0]);
+            l2.push(chunks[chunks.length-1]);
+            return;
+          }
+          if(sawList2){
+            l2.push(line);
+          }else{
+            l1.push(line);
+          }
+        });
+        return {intro,l1:l1.join('\n').trim(),l2:l2.join('\n').trim()};
       };
       const parseCodeBlock=(q='')=>{const m=String(q).match(/(.*?)(कूट\s*[:：])\s*(.*)$/is);if(!m) return null;return {body:m[1],code:m[3]};};
       const listifyLines=(v='')=>{
