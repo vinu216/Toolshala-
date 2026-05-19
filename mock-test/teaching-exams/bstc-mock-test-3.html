@@ -1519,9 +1519,30 @@ III. चौराहा`, options: ['केवल I और II', 'केवल II
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
       const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statements:m[3],conclusions:m[5]};};
-      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：]?\s*(.*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：]?\s*(.*)$/is);if(!m) return null;return {intro:m[1],l1:m[3],l2:m[5]};};
+      const parseMatching=(q='')=>{
+        const text=String(q||'');
+        const m=text.match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：]?\s*([\s\S]*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：]?\s*([\s\S]*)$/i);
+        if(!m) return null;
+        const intro=String(m[1]||'').trim();
+        let l1=String(m[3]||'').trim();
+        let l2=String(m[5]||'').trim();
+        const stripInlineHeading=(value='')=>String(value).replace(/^\s*सूची[-\s]*(?:I+|1|II|2)(?:\s*\([^)]+\))?\s*[:：]?\s*/i,'').trim();
+        l1=stripInlineHeading(l1);
+        l2=stripInlineHeading(l2);
+        return {intro,l1,l2};
+      };
       const parseCodeBlock=(q='')=>{const m=String(q).match(/(.*?)(कूट\s*[:：])\s*(.*)$/is);if(!m) return null;return {body:m[1],code:m[3]};};
-      const listifyLines=(v='')=>{const items=String(v).split(/\r?\n/).map((line)=>line.trim()).filter(Boolean);if(!items.length) return '';return `<ul class="question-lines">${items.map((line)=>`<li>${formatPreservedText(line)}</li>`).join('')}</ul>`;};
+      const listifyLines=(v='')=>{
+        const raw=String(v||'').replace(/\u00a0/g,' ').trim();
+        if(!raw) return '';
+        const normalized=raw
+          .replace(/([a-hA-H]\.)\s*/g,'\n$1 ')
+          .replace(/(\d+\.)\s*/g,'\n$1 ')
+          .replace(/\r/g,'');
+        const items=normalized.split(/\n+/).map((line)=>line.trim()).filter(Boolean);
+        if(!items.length) return '';
+        return `<ul class="question-lines">${items.map((line)=>`<li>${formatPreservedText(line)}</li>`).join('')}</ul>`;
+      };
       function renderStructuredQuestion(q){
         const questionRaw=String(q.question||'');
         const codeData=q.id<=10?parseCodeBlock(questionRaw):null;
@@ -1545,10 +1566,10 @@ III. चौराहा`, options: ['केवल I और II', 'केवल II
         const matching=q.questionType==='Matching'?parseMatching(normalizedQuestion):null;
         if(matching){
           questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
-          const l1=(q.id<=10?listifyLines(matching.l1):formatPreservedText(matching.l1));
-          const l2=(q.id<=10?listifyLines(matching.l2):formatPreservedText(matching.l2));
+          const l1=listifyLines(matching.l1);
+          const l2=listifyLines(matching.l2);
           const codeBlock=codeData?`<div class="question-block mt-3"><span class="question-block-title">कूट:</span><div>${formatPreservedText(codeData.code)}</div></div>`:'';
-          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-1:</strong><div class="mt-2">${l1}</div></div><div class="matching-list"><strong>सूची-2:</strong><div class="mt-2">${l2}</div></div></div>${codeBlock}`;
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-I</strong><div class="mt-2">${l1||formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>सूची-II</strong><div class="mt-2">${l2||formatPreservedText(matching.l2)}</div></div></div>${codeBlock}`;
           return;
         }
         questionText.innerHTML=formatPreservedText(normalizedQuestion);
