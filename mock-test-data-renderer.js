@@ -247,8 +247,10 @@
                       ? './bstc-mock-test-6.html'
                       : teachingExamSlug === 'bstc' && testNumber === 7
                           ? './bstc-mock-test-7.html'
-                          : teachingExamSlug === 'bstc' && testNumber === 8
+                      : teachingExamSlug === 'bstc' && testNumber === 8
                             ? './bstc-mock-test-8.html'
+                            : teachingExamSlug === 'bstc' && testNumber === 9
+                              ? './bstc-mock-test-9.html'
               : exam.ctaLink;
         return cardForExam({
           ...exam,
