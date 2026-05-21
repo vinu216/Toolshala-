@@ -122,6 +122,10 @@
     return `<article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'}</p><div class="template-actions mt-4"><a href="${exam.ctaLink}" class="btn-primary" aria-label="${ctaText} for ${exam.title}">${ctaText}</a></div></article>`;
   }
 
+  function createInfoCard(label, value, hint) {
+    return `<article class="feature-card reveal h-full"><p class="text-xs font-semibold uppercase tracking-[0.12em] text-indigo-700">${label}</p><p class="mt-2 text-2xl font-bold tracking-tight text-slate-900">${value}</p><p class="mt-2 text-sm text-slate-600">${hint}</p></article>`;
+  }
+
   const grid = document.getElementById('mock-test-categories');
   if (grid) {
     const renderCategories = (categories) => {
@@ -224,11 +228,47 @@
     const examTitle = document.getElementById('teaching-exam-title');
     const examIntro = document.getElementById('teaching-exam-intro');
     const examOverview = document.getElementById('teaching-exam-overview');
+    const examDetails = document.getElementById('teaching-exam-details');
+    const bstcSyllabusGrid = document.getElementById('bstc-syllabus-grid');
+    const bstcSyllabusSection = document.getElementById('bstc-syllabus-section');
     const mockList = document.getElementById('teaching-exam-mocks');
 
     if (examTitle) examTitle.textContent = `${exam.title} Mock Tests`;
     if (examIntro) examIntro.textContent = `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
-    if (examOverview) examOverview.textContent = `${exam.title} practice pack includes 10 mock tests with ${exam.questionsCount || 50} questions each and ${exam.duration || '60 min'} duration.`;
+    if (examOverview) examOverview.textContent = teachingExamSlug === 'bstc'
+      ? `${exam.title} practice pack me full-length pattern tests hain. Har mock test aapko real exam stamina, time-management aur section coverage par focus karne me help karega.`
+      : `${exam.title} practice pack includes 10 mock tests with ${exam.questionsCount || 50} questions each and ${exam.duration || '60 min'} duration.`;
+
+    if (examDetails) {
+      const detailsConfig = teachingExamSlug === 'bstc'
+        ? [
+          { label: 'Total Questions', value: '200', hint: 'Full-length BSTC / PRE D.El.Ed pattern based question count.' },
+          { label: 'Duration', value: '180 Minutes', hint: 'Real exam style time window for speed + accuracy practice.' },
+          { label: 'Difficulty Level', value: 'Beginner to Intermediate', hint: 'Foundation se progressive level tak balanced question mix.' },
+          { label: 'Test Format', value: 'MCQ | Full Mock Test', hint: 'Objective pattern, exam-like sequence and scoring practice.' }
+        ]
+        : [
+          { label: 'Total Questions', value: `${exam.questionsCount || 50}`, hint: 'Per mock test question count.' },
+          { label: 'Duration', value: `${exam.duration || '60 min'}`, hint: 'Time bound practice for exam pace building.' },
+          { label: 'Difficulty Level', value: `${exam.difficulty || 'All levels'}`, hint: 'Preparation stages ke liye suitable level mix.' },
+          { label: 'Test Format', value: 'MCQ Mock Practice', hint: 'Objective question format with timed attempt flow.' }
+        ];
+      examDetails.innerHTML = detailsConfig.map((item) => createInfoCard(item.label, item.value, item.hint)).join('');
+    }
+
+    if (bstcSyllabusSection) {
+      if (teachingExamSlug !== 'bstc') {
+        bstcSyllabusSection.remove();
+      } else if (bstcSyllabusGrid) {
+        const syllabusBlocks = [
+          { title: 'Mental Ability', points: ['Reasoning and logical thinking', 'Series, analogy, classification', 'Problem-solving speed practice'] },
+          { title: 'General Knowledge of Rajasthan', points: ['History, art and culture of Rajasthan', 'Geography and current state awareness', 'Important events and civic knowledge'] },
+          { title: 'Teaching Aptitude', points: ['Learning process and child-centered teaching', 'Classroom management and evaluation basics', 'Teacher role, ethics and pedagogy awareness'] },
+          { title: 'Language Ability (Hindi / English / Sanskrit)', points: ['Comprehension and grammar fundamentals', 'Vocabulary and sentence usage', 'Language accuracy for objective questions'] }
+        ];
+        bstcSyllabusGrid.innerHTML = syllabusBlocks.map((block) => `<article class="feature-card reveal h-full"><h3 class="text-xl font-bold tracking-tight text-slate-900">${block.title}</h3><ul class="mt-4 space-y-2 text-sm text-slate-700">${block.points.map((point) => `<li class="flex gap-2"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-indigo-600"></span><span>${point}</span></li>`).join('')}</ul></article>`).join('');
+      }
+    }
 
     if (mockList) {
       mockList.innerHTML = Array.from({ length: 10 }, (_, index) => {
