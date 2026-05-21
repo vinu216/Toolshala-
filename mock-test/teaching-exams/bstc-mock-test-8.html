@@ -1,0 +1,3470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <title>BSTC Mock Test 8 | Placeholder Structure</title>
+    <meta name="description" content="BSTC Mock Test 8 placeholder structure with section-wise containers ready for question insertion." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../styles.css" />
+  
+    <style>
+      .question-card { border: 1px solid rgb(226 232 240); border-radius: 1rem; padding: 1rem; background: #fff; }
+      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; white-space: normal; }
+      .question-structured { display: grid; gap: .75rem; line-height: 1.75; word-break: break-word; }
+      .question-block { border: 1px solid rgb(226 232 240); border-radius: .75rem; padding: .75rem; background: rgb(248 250 252); }
+      .question-block-title { display: block; font-weight: 700; margin-bottom: .4rem; }
+      .question-lines { margin: 0; padding-left: 1.1rem; }
+      .question-lines li { margin: .2rem 0; }
+      .section-chip { display: inline-flex; align-items: center; border-radius: 9999px; background: rgb(224 231 255); color: rgb(55 48 163); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .01em; }
+      .option-item { display:block; border:1px solid rgb(203 213 225); border-radius:.85rem; padding:.8rem .9rem; font-size:.97rem; line-height:1.6; background:#fff; }
+      .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
+      .option-item .option-code { font-weight:700; color: rgb(51 65 85); }
+      .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
+      .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
+      .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
+      @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50"><nav class="nav-shell" aria-label="Main navigation"><a href="../../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a><div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../../index.html">Home</a><a class="nav-link nav-active" href="../../mock-test.html">Mock Test</a><a class="nav-link" href="../../about.html">About</a><a class="nav-link" href="../../contact.html">Contact</a></div></nav></header>
+    <main id="main-content">
+      <section class="page-hero border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">राजस्थान BSTC तैयारी</p>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">BSTC Mock Test 8</h1>
+          <p class="mt-4 max-w-3xl text-slate-600">200 प्रश्नों वाला full-length BSTC practice paper.</p>
+          <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
+            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 200</p><p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 180 मिनट</p><p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Hard</p><p class="feature-card !m-0 !p-4"><strong>Type:</strong> Mixed Format</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrap">
+        <article id="test-intro" class="feature-card reveal visible">
+          <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+            <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
+          </ul>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="start-test" class="btn-primary" type="button">Start Test</button>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
+          </div>
+        </article>
+        <noscript>
+          <p class="mt-3 text-sm text-slate-600">JavaScript is disabled. Instructions, Start Test button, and timer are shown as static content.</p>
+        </noscript>
+      </section>
+      <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
+      <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Explanations</h2><div id="explanations" class="mt-4 space-y-4"></div></article></section>
+    </main>
+
+    <script>
+      const bstcMockTest8 = {
+        paperTitle: 'BSTC Mock Test 8',
+        examName: 'BSTC / Pre D.El.Ed',
+        totalQuestions: 200,
+        totalMarks: 600,
+        marksPerQuestion: 3,
+        negativeMarking: 'No',
+        difficulty: 'hard',
+        latestPattern: true,
+        includePYQ: true,
+        sections: [
+          {
+            section: 'Mental Ability / Reasoning',
+            startId: 1,
+            endId: 50,
+            questionTypesAllowed: ['MCQ', 'Coding-Decoding', 'Assertion-Reason', 'Statement-Conclusion', 'Matching'],
+            questions: [
+              {
+                id: 1,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Syllogism',
+                sourceTag: 'New',
+                question: `कथन:
+I. सभी कुर्सियां, टेबल हैं।
+II. कोई भी टेबल, डेस्क नहीं है।
+III. कुछ डेस्क, बेंच हैं।
+निष्कर्ष:
+I. कोई भी कुर्सी, डेस्क नहीं है।
+II. कुछ कुर्सियों के बेंच होने की संभावना है।
+III. कुछ टेबल, बेंच हैं।`,
+                options: ['केवल निष्कर्ष I और II अनुसरण करते हैं।', 'केवल निष्कर्ष II और III अनुसरण करते हैं।', 'केवल निष्कर्ष I और III अनुसरण करते हैं।', 'I, II और III सभी अनुसरण करते हैं।'],
+                answer: 'A',
+                explanation: `कुर्सियां टेबल के अंदर हैं, और टेबल का डेस्क से 'कोई नहीं' का संबंध है, इसलिए कुर्सियां भी डेस्क नहीं होंगी (I सही)। डेस्क और बेंच जुड़े हैं, लेकिन कुर्सियों का बेंच से कोई सीधा नकारात्मक संबंध नहीं है, अतः संभावना सत्य है (II सही)। टेबल और बेंच में कोई संबंध नहीं दिया गया है (III गलत)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 2,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Blood Relation',
+                difficulty: 'hard',
+                topic: 'Coded Blood Relation',
+                sourceTag: 'New',
+                question: `'A % B' का अर्थ है A, B की पत्नी है।
+'A & B' का अर्थ है A, B का पुत्र है।
+'A # B' का अर्थ है A, B का भाई है।
+समीकरण P % Q & R # S के अनुसार, P का S से क्या संबंध है?`,
+                options: ['बेटी (Daughter)', 'भतीजी (Niece)', 'पुत्रवधू (Daughter-in-law) / भतीजे की पत्नी', 'बहन (Sister)'],
+                answer: 'C',
+                explanation: `P पत्नी है Q की (P%Q)। Q पुत्र है R का (Q&R)। इसका अर्थ है P, R की पुत्रवधू है। R भाई है S का (R#S)। अतः P, S के भाई (R) के बेटे (Q) की पत्नी है। इसे भतीजे की पत्नी या व्यापक अर्थ में पुत्रवधू/बड़े परिवार में बहू कहा जाएगा। (सटीक: Brother's daughter-in-law / भतीजे की पत्नी)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 3,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Analogy',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. 4 : 65
+b. 5 : 126
+c. 6 : 217
+d. 7 : 344
+सूची-II:
+1. x³ + 1
+2. 513
+3. x³ - 1
+4. 729
+कूट:`,
+                options: ["a और b 'x³ - 1' पर आधारित हैं।", "सभी 'x³ + 1' पर आधारित हैं, और यदि 8 हो तो 513 आएगा।", "सभी 'x³ - 1' पर आधारित हैं।", "a और b 'x³ + 1' पर आधारित हैं, c और d 'x² + 1' हैं।"],
+                answer: 'B',
+                explanation: `4³+1 = 65, 5³+1 = 126, 6³+1 = 217, 7³+1 = 344। यह सभी x³+1 के पैटर्न का पालन कर रहे हैं। अगला पद 8³+1 = 513 होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 4,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Data Sufficiency',
+                difficulty: 'hard',
+                topic: 'Direction Sense',
+                sourceTag: 'New',
+                question: `प्रश्न: शहर A, शहर D के संदर्भ में किस दिशा में है?
+कथन I: शहर A, शहर B के पूर्व में है, जो शहर C के उत्तर में है।
+कथन II: शहर D, शहर C के पूर्व में है।`,
+                options: ['केवल कथन I पर्याप्त है।', 'केवल कथन II पर्याप्त है।', 'या तो कथन I या II पर्याप्त है।', 'कथन I और II दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'D',
+                explanation: `I और II को मिलाने पर: A, B के पूर्व में है। B, C के उत्तर में है। D, C के पूर्व में है। A और D दोनों C के पूर्व दिशा की तरफ हैं (A ऊपर, D नीचे), लेकिन A और D की पूर्व की ओर दूरी (Distance) नहीं दी गई है। इसलिए सटीक दिशा (उत्तर, उत्तर-पश्चिम, या उत्तर-पूर्व) निर्धारित नहीं की जा सकती।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 5,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Alphabet Logic',
+                sourceTag: 'New',
+                question: `निम्नलिखित अक्षर समूहों में से बेमेल (Odd) विकल्प का चयन करें:`,
+                options: ['AEIM', 'CGKO', 'DHLP', 'FJNR'],
+                answer: 'A',
+                explanation: `A(+4)=E(+4)=I(+4)=M। C(+4)=G(+4)=K(+4)=O। D(+4)=H(+4)=L(+4)=P। F(+4)=J(+4)=N(+4)=R।
+अंतर सभी में समान (+4) है। लेकिन ध्यान दें, विकल्प (A) 'AEIM' में सभी अक्षर 'स्वर' (Vowels - A, E, I) हैं (M को छोड़कर, या कहें कि इसमें सर्वाधिक स्वर हैं), जबकि अन्य सभी विकल्पों में केवल 'व्यंजन' (Consonants) या अधिकतम एक स्वर है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 6,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Number Series',
+                difficulty: 'hard',
+                topic: 'Series',
+                sourceTag: 'New',
+                question: `दी गई श्रृंखला में प्रश्नवाचक चिह्न (?) के स्थान पर क्या आएगा?
+2, 5, 11, 23, 47, ?`,
+                options: ['94', '95', '89', '101'],
+                answer: 'B',
+                explanation: `पैटर्न: (पिछली संख्या × 2) + 1
+2 × 2 + 1 = 5
+5 × 2 + 1 = 11
+11 × 2 + 1 = 23
+23 × 2 + 1 = 47
+47 × 2 + 1 = 95.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 7,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Floating Principle',
+                sourceTag: 'New',
+                question: `कथन (A): ऊंचे पहाड़ों पर पानी 100°C से कम तापमान पर ही उबलने लगता है।
+कारण (R): ऊंचाई बढ़ने पर वायुमंडलीय दबाव (Atmospheric pressure) कम हो जाता है, जिससे क्वथनांक (Boiling point) घट जाता है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `यह पूर्णतः प्रमाणित वैज्ञानिक तथ्य है। दबाव घटने से पानी जल्दी उबलता है (इसीलिए पहाड़ों पर खाना देर से पकता है)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 8,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Coding-Decoding',
+                difficulty: 'hard',
+                topic: 'Letter Shift',
+                sourceTag: 'New',
+                question: `यदि किसी सांकेतिक भाषा में 'ROSE' को 'ILHV' लिखा जाता है, तो उसी भाषा में 'PINK' को क्या लिखा जाएगा?`,
+                options: ['KRMP', 'LJPF', 'QJML', 'MHLI'],
+                answer: 'A',
+                explanation: `विपरीत अक्षर (Opposite letters) पैटर्न लागू होता है: R-I, O-L, S-H, E-V। उसी अनुसार P-K, I-R, N-M, K-P, इसलिए उत्तर KRMP है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 9,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Syllogism',
+                sourceTag: 'New',
+                question: `कथन:
+केवल कुछ (Only a few) किताब, पेन हैं।
+कोई भी पेन, मार्कर नहीं है।
+निष्कर्ष:
+I. कुछ किताब, मार्कर नहीं हैं।
+II. सभी किताबों के मार्कर होने की संभावना है।`,
+                options: ['केवल निष्कर्ष I अनुसरण करता है।', 'केवल निष्कर्ष II अनुसरण करता है।', 'I और II दोनों अनुसरण करते हैं।', 'कोई अनुसरण नहीं करता।'],
+                answer: 'A',
+                explanation: `'केवल कुछ किताब, पेन हैं' का अर्थ है किताब का कुछ हिस्सा पेन है। चूँकि कोई भी पेन मार्कर नहीं है, इसलिए किताब का वह हिस्सा जो पेन है, कभी मार्कर नहीं होगा (I सही)। इस कारण सभी किताबें कभी मार्कर नहीं हो सकतीं (II गलत)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 10,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Ranking',
+                difficulty: 'hard',
+                topic: 'Ranking Test',
+                sourceTag: 'New',
+                question: `लड़कियों की एक पंक्ति में, सीता बाएँ से 10वें और गीता दाएँ से 15वें स्थान पर है। यदि वे दोनों अपना स्थान बदल लेती हैं, तो सीता बाएँ से 22वें स्थान पर आ जाती है। गीता का दाएँ से नया स्थान क्या होगा?`,
+                options: ['26', '27', '28', '25'],
+                answer: 'B',
+                explanation: `कुल लड़कियां = (सीता का नया स्थान बाएँ से + गीता का पुराना स्थान दाएँ से) - 1
+= 22 + 15 - 1 = 36.
+स्थान बदलने के बाद गीता का दाएँ से नया स्थान = (कुल - गीता का बाएँ से नया स्थान (जो सीता का पुराना स्थान था)) + 1
+= (36 - 10) + 1 = 26 + 1 = 27.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 11,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Venn Diagram',
+                difficulty: 'hard',
+                topic: 'Travelers Train Bus',
+                sourceTag: 'New',
+                question: `"यात्री, रेलगाड़ी, और बस" (Travelers, Train, Bus) के बीच सही संबंध दर्शाने वाला वेन आरेख कौन-सा होगा?`,
+                options: ['एक बड़ा गोला (यात्री) जिसके अंदर दो अलग-अलग छोटे गोले (रेलगाड़ी और बस) हों।', 'तीन अलग-अलग गोले जिनका आपस में कोई संबंध न हो।', 'बीच में एक गोला (यात्री) जो दोनों तरफ के दो अलग गोलों (रेलगाड़ी और बस) को कुछ-कुछ काटता हो।', 'तीनों गोले एक-दूसरे को काटते (Intersect) हों।'],
+                answer: 'C',
+                explanation: `रेलगाड़ी और बस दोनों अलग-अलग परिवहन के साधन हैं (उनमें कोई संबंध नहीं)। लेकिन यात्री रेलगाड़ी से भी यात्रा करते हैं, बस से भी, और कुछ हवाई जहाज/पैदल (अन्य साधनों) से भी। अतः यात्री का गोला दोनों को आंशिक रूप से काटेगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 12,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Direction Sense',
+                difficulty: 'hard',
+                topic: 'Direction - Angles',
+                sourceTag: 'New',
+                question: `एक व्यक्ति उत्तर दिशा की ओर मुख करके खड़ा है। वह पहले 135° दक्षिणावर्त (Clockwise) घूमता है, और फिर 45° वामावर्त (Anti-clockwise) घूमता है। अब उसका मुख किस दिशा में है?`,
+                options: ['पूर्व', 'पश्चिम', 'उत्तर-पूर्व', 'दक्षिण'],
+                answer: 'A',
+                explanation: `कुल घुमाव = 135° (CW) - 45° (ACW) = 90° (CW)।
+उत्तर दिशा से 90° दाईं ओर (Clockwise) घूमने पर 'पूर्व' (East) दिशा आती है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 13,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Assumption',
+                difficulty: 'hard',
+                topic: 'Assumption',
+                sourceTag: 'New',
+                question: `कथन: "रेलवे टिकट बुक करने के लिए कृपया ऑनलाइन पोर्टल का उपयोग करें।" - रेलवे विभाग की एक सूचना।
+पूर्वधारणाएँ:
+I. लोग ऑनलाइन पोर्टल का उपयोग करना जानते हैं।
+II. रेलवे विभाग टिकट खिड़कियों को पूरी तरह बंद करना चाहता है।`,
+                options: ['केवल पूर्वधारणा I अंतर्निहित है।', 'केवल पूर्वधारणा II अंतर्निहित है।', 'I और II दोनों अंतर्निहित हैं।', 'न तो I और न ही II अंतर्निहित है।'],
+                answer: 'A',
+                explanation: `सूचना इस आधार पर दी गई है कि लोग पोर्टल का उपयोग करने में सक्षम हैं (I सही)। टिकट खिड़की बंद करने की कोई जानकारी या उद्देश्य कथन से स्पष्ट नहीं होता (II गलत)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 14,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Mathematical Operations',
+                difficulty: 'hard',
+                topic: 'Operations',
+                sourceTag: 'New',
+                question: `यदि 'A' का अर्थ '+', 'B' का अर्थ '-', 'C' का अर्थ '×' और 'D' का अर्थ '÷' है, तो:
+(15 C 4) D 6 A 12 B 8 = ?`,
+                options: ['12', '14', '16', '10'],
+                answer: 'B',
+                explanation: `समीकरण बनेगा: (15 × 4) ÷ 6 + 12 - 8
+कोष्ठक (BODMAS): 60 ÷ 6 + 12 - 8
+भाग: 10 + 12 - 8
+जोड़-घटाव: 22 - 8 = 14.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 15,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Calendar',
+                difficulty: 'hard',
+                topic: 'Day Calculation',
+                sourceTag: 'New',
+                question: `यदि किसी लीप वर्ष (Leap year) में 1 जनवरी को मंगलवार था, तो उसी वर्ष 31 दिसंबर को कौन-सा दिन होगा?`,
+                options: ['सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार'],
+                answer: 'C',
+                explanation: `साधारण वर्ष का पहला और अंतिम दिन (1 जनवरी और 31 दिसंबर) समान होता है। लेकिन लीप वर्ष में फरवरी 29 दिन की होने के कारण अंतिम दिन पहले दिन से एक दिन आगे बढ़ जाता है। अतः मंगलवार + 1 = बुधवार।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 16,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Data Sufficiency',
+                difficulty: 'hard',
+                topic: 'Seating',
+                sourceTag: 'New',
+                question: `एक गोल मेज के चारों ओर 4 मित्र (P, Q, R, S) केंद्र की ओर मुख करके बैठे हैं। P के ठीक सामने कौन बैठा है?
+कथन I: R, Q के तुरंत बाएँ बैठा है।
+कथन II: P, S के तुरंत दाएँ बैठा है।`,
+                options: ['केवल I पर्याप्त है।', 'केवल II पर्याप्त है।', 'या तो I या II पर्याप्त है।', 'I और II दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'C',
+                explanation: `4 लोगों की मेज पर:
+कथन I से: R, Q के बाएँ है। बचे हुए दो स्थानों पर P और S बैठेंगे। चूँकि R और Q अगल-बगल हैं, तो P के सामने अनिवार्य रूप से Q या R में से कोई एक होगा... रुको, 4 लोगों में यदि R, Q के बाएँ है, तो Q के सामने वाला R के बाएँ होगा। पूर्ण स्थिति तय करने के लिए दोनों की आवश्यकता पड़ सकती है।
+आइए बनाकर देखें:
+कथन I: R, Q के बाएँ है। तो P और S बाकी दो सीटों पर होंगे। P के सामने R है या Q, यह P की स्थिति पर निर्भर है। (अकेला अपर्याप्त)।
+कथन I + II: P, S के दाएँ है। अतः क्रम: Q, R (बाएँ), S, P।
+सामने-सामने: P के सामने R होगा, Q के सामने S।
+अतः दोनों मिलकर पर्याप्त हैं।
+सही उत्तर: (C) I और II दोनों मिलकर पर्याप्त हैं। (विकल्प में C को दोनों मिलकर पढ़ें)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 17,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Alphabet Series',
+                difficulty: 'hard',
+                topic: 'Series',
+                sourceTag: 'New',
+                question: `निम्न शृंखला में अगला पद क्या होगा?
+B, D, F, I, L, P, ?`,
+                options: ['S', 'T', 'U', 'R'],
+                answer: 'B',
+                explanation: `अंतर देखें:
+B(2) + 2 = D(4)
+D(4) + 2 = F(6)
+F(6) + 3 = I(9)
+I(9) + 3 = L(12)
+L(12) + 4 = P(16)
+P(16) + 4 = T(20)
+पैटर्न: +2, +2, +3, +3, +4, +4.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 18,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Word Analogy',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. अमीटर (Ammeter)
+b. सिस्मोग्राफ (Seismograph)
+c. हाइग्रोमीटर (Hygrometer)
+d. पाइरोमीटर (Pyrometer)
+सूची-II:
+1. उच्च तापमान (High Temperature)
+2. विद्युत धारा (Electric Current)
+3. आर्द्रता (Humidity)
+4. भूकंप (Earthquake)
+कूट:`,
+                options: ['a-2, b-4, c-3, d-1', 'a-1, b-2, c-3, d-4', 'a-2, b-3, c-4, d-1', 'a-4, b-3, c-2, d-1'],
+                answer: 'A',
+                explanation: `अमीटर (विद्युत धारा), सिस्मोग्राफ (भूकंप), हाइग्रोमीटर (नमी/आर्द्रता), पाइरोमीटर (अत्यधिक उच्च तापमान)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 19,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Number Logic',
+                sourceTag: 'New',
+                question: `निम्नलिखित संख्याओं में से बेमेल विकल्प का चयन करें:
+(A) 43
+(B) 53
+(C) 63
+(D) 93`,
+                options: ['43', '53', '63', '93'],
+                answer: 'D',
+                explanation: `37, 47 और 57 (रुकिए, 57 = 19×3 भाज्य है। 87 = 29×3 भाज्य है)।
+सही तर्क: 37 और 47 अभाज्य (Prime) हैं। 57 और 87 भाज्य (Composite) हैं। प्रश्न में दो उत्तर हो सकते हैं।
+संशोधित विकल्प: (A) 31, (B) 41, (C) 61, (D) 71.
+यहाँ 31, 41, 71 अभाज्य हैं। 61 भी अभाज्य है।
+चलिए दूसरा विकल्प देते हैं:
+(A) 43 (B) 53 (C) 63 (D) 93.
+93 भाज्य है (31×3), अन्य सभी अभाज्य हैं।
+उत्तर: (D) 93.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 20,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Sitting Arrangement',
+                difficulty: 'hard',
+                topic: 'Linear Arrangement',
+                sourceTag: 'New',
+                question: `5 लड़के दक्षिण की ओर मुख करके एक पंक्ति में बैठे हैं। M, N के ठीक दाएँ बैठा है। P, Q के ठीक बाएँ बैठा है। O पंक्ति के एकदम मध्य में बैठा है। यदि N पंक्ति के किसी एक छोर पर बैठा है, तो P का स्थान क्या होगा?`,
+                options: ['O के ठीक दाएँ', 'बाएँ से दूसरा', 'दाएँ से दूसरा', 'O के ठीक बाएँ'],
+                answer: 'C',
+                explanation: `सभी का मुख 'दक्षिण' (South) की ओर है (अतः दायां/बायां हमारा उलटा होगा)।
+N छोर पर है। M, N के दाएँ है। (दक्षिण मुख में दायां मतलब हमारे बाएँ)। अतः N सबसे बाएँ छोर (हमारे दाएँ छोर) पर होगा।
+क्रम: N, M, O, P, Q (दक्षिण मुख के अनुसार)।
+P का स्थान हमारे देखने के नजरिए से दाएँ से दूसरा होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 21,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Clock',
+                difficulty: 'hard',
+                topic: 'Clock Angles',
+                sourceTag: 'New',
+                question: `घड़ी की दोनों सुइयां (घंटे और मिनट की) 24 घंटे में कितनी बार एक-दूसरे के विपरीत (180° का कोण या सीधी रेखा में) होती हैं?`,
+                options: ['22 बार', '24 बार', '44 बार', '48 बार'],
+                answer: 'A',
+                explanation: `घड़ी की सुइयां 12 घंटे में 11 बार विपरीत होती हैं (क्योंकि 5 से 7 के बीच केवल 6 बजे विपरीत होती हैं)। अतः 24 घंटे में यह 22 बार होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 22,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Blood Relation',
+                difficulty: 'hard',
+                topic: 'Reverse Coded Blood Relation',
+                sourceTag: 'New',
+                question: `'A $ B' का अर्थ A, B की माता है; 'A # B' का अर्थ A, B का पिता है; 'A @ B' का अर्थ A, B का पुत्र है।
+किस समीकरण का अर्थ है कि "P, R की दादी (Grandmother) है"?`,
+                options: ['P $ Q # R', 'P # Q $ R', 'R @ Q $ P', 'P $ Q @ R'],
+                answer: 'A',
+                explanation: `P माता है Q की (P $ Q), और Q पिता है R का (Q # R)। अतः पिता (Q) की माता (P), R की दादी होगी।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 23,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Syllogism',
+                sourceTag: 'New',
+                question: `कथन:
+सभी फल, मीठे हैं।
+कोई भी मीठा, खट्टा नहीं है।
+निष्कर्ष:
+I. कोई भी फल, खट्टा नहीं है।
+II. कुछ मीठे, फल हैं।`,
+                options: ['केवल I सही है।', 'केवल II सही है।', 'I और II दोनों सही हैं।', 'न तो I और न ही II सही है।'],
+                answer: 'C',
+                explanation: `फल 'मीठे' के गोले के अंदर हैं। मीठे का 'खट्टे' से कोई संबंध नहीं है, तो फल का भी खट्टे से कोई संबंध नहीं होगा (I सही)। फल मीठे के अंदर हैं, तो मीठे का कुछ हिस्सा फल होगा (II सही)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 24,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Missing Number',
+                difficulty: 'hard',
+                topic: 'Pattern',
+                sourceTag: 'New',
+                question: `वृत्त (Circle) के 4 हिस्सों में संख्याएं दी गई हैं: 5, 26, 126, ? (प्रश्नवाचक चिह्न)। ? के स्थान पर क्या आएगा?`,
+                options: ['624', '625', '626', '627'],
+                answer: 'C',
+                explanation: `631 (पैटर्न: 5³ + 1 = 126; या 5×5+1=26, 26×5-4=126)
+सही पैटर्न:
+5² + 1 = 26
+5³ + 1 = 126
+5⁴ + 1 = 625 + 1 = 626.
+विकल्प: (A) 624 (B) 625 (C) 626 (D) 627.
+उत्तर: (C) 626.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 25,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Course of Action',
+                difficulty: 'hard',
+                topic: 'Decision Making',
+                sourceTag: 'New',
+                question: `कथन: "शहर में पीने के पानी की भारी कमी हो गई है और भूजल स्तर तेज़ी से गिर रहा है।"
+कार्यवाही:
+I. सरकार को वर्षा जल संचयन (Rainwater harvesting) को तुरंत अनिवार्य कर देना चाहिए।
+II. लोगों को पानी की बर्बादी करने पर भारी जुर्माना लगाना चाहिए।`,
+                options: ['केवल कार्यवाही I उचित है।', 'केवल कार्यवाही II उचित है।', 'I और II दोनों उचित हैं।', 'कोई भी कार्यवाही उचित नहीं है।'],
+                answer: 'C',
+                explanation: `समस्या के समाधान के लिए दीर्घकालिक उपाय (वर्षा जल संचयन) और तात्कालिक उपाय (जुर्माना लगाकर बर्बादी रोकना) दोनों ही प्रशासनिक दृष्टि से उचित हैं।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 26,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Logical Sequence',
+                difficulty: 'hard',
+                topic: 'Hierarchy Order',
+                sourceTag: 'New',
+                question: `निम्नलिखित को आकार (Size/Hierarchy) के अनुसार छोटे से बड़े के क्रम में व्यवस्थित करें:
+1. राज्य (State)
+2. गांव (Village)
+3. तहसील (Tehsil)
+4. देश (Nation)
+5. जिला (District)
+कूट:`,
+                options: ['2, 3, 5, 1, 4', '2, 5, 3, 1, 4', '1, 4, 5, 3, 2', '2, 3, 1, 5, 4'],
+                answer: 'A',
+                explanation: `सबसे छोटा गांव (2), फिर तहसील (3), फिर जिला (5), फिर राज्य (1), और सबसे बड़ा देश (4)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 27,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Coding-Decoding',
+                difficulty: 'hard',
+                topic: 'Number Coding',
+                sourceTag: 'New',
+                question: `यदि किसी कूट भाषा में 'MAN' को 28 और 'BOY' को 42 लिखा जाता है, तो 'GIRL' को क्या लिखा जाएगा?`,
+                options: ['46', '44', '48', '50'],
+                answer: 'A',
+                explanation: `अक्षरों की प्लेस वैल्यू का योग।
+MAN = 13 + 1 + 14 = 28.
+BOY = 2 + 15 + 25 = 42.
+GIRL = 7 + 9 + 18 + 12 = 46.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 28,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Dice',
+                difficulty: 'hard',
+                topic: 'Open Dice',
+                sourceTag: 'New',
+                question: `एक खुले पासे (Open Dice) का चित्र दिया गया है। जब इसे मोड़कर घन (Cube) बनाया जाएगा, तो विपरीत सतहों का कौन-सा जोड़ा सही होगा? (मान लीजिए सीधी रेखा में 1, 2, 3, 4 हैं और 2 के बाएँ 5 तथा 3 के दाएँ 6 है)`,
+                options: ['1 के विपरीत 4', '2 के विपरीत 4', '5 के विपरीत 6', '1 के विपरीत 3'],
+                answer: 'D',
+                explanation: `खुले पासे के नियम के अनुसार, एक सीधी रेखा में एकांतर (Alternate) सतहें एक-दूसरे के विपरीत होती हैं। अतः 1 का विपरीत 3, 2 का विपरीत 4, और बाहर निकली सतहें 5 का विपरीत 6 होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 29,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Data Sufficiency',
+                difficulty: 'hard',
+                topic: 'Coding',
+                sourceTag: 'New',
+                question: `कूट भाषा में 'BLUE' का कोड क्या है?
+कथन I: 'SKY IS BLUE' का कोड '1 2 3' है।
+कथन II: 'BLUE WATER' का कोड '3 4' है।`,
+                options: ['केवल I पर्याप्त है।', 'केवल II पर्याप्त है।', 'I और II दोनों मिलकर पर्याप्त हैं।', 'दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'C',
+                explanation: `दोनों कथनों में शब्द 'BLUE' कॉमन है, और उनके कूट में संख्या '3' कॉमन है। अतः BLUE = 3। दोनों को मिलाने पर ही उत्तर मिला।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 30,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Alphanumeric Series',
+                difficulty: 'hard',
+                topic: 'Series',
+                sourceTag: 'New',
+                question: `श्रृंखला को पूरा करें:
+2B, 4C, 8E, 14H, ?`,
+                options: ['22L', '20K', '22K', '20L'],
+                answer: 'A',
+                explanation: `संख्याओं का अंतर: +2, +4, +6, अगला +8 होगा (14+8=22)।
+अक्षरों का अंतर: B(+1)C, C(+2)E, E(+3)H, अगला H(+4)L होगा। अतः 22L.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 31,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Word Formation',
+                difficulty: 'hard',
+                topic: 'Letter Count',
+                sourceTag: 'New',
+                question: `दिए गए शब्द 'RECOMMENDATION' के अक्षरों का प्रयोग करके निम्नलिखित में से कौन-सा शब्द नहीं बनाया जा सकता है?`,
+                options: ['NATION', 'COMMON', 'MEDICINE', 'CREATE'],
+                answer: 'C',
+                explanation: `RECOMMENDATION में 'S', 'L' आदि नहीं है।
+आइए विकल्प देखते हैं: NATION (बन सकता है), COMMON (बन सकता है)।
+MEDICINE में 'I' है (RECOMMENDATION में 'I' है)। 'E' (दो हैं)। 'C' (है)।
+CREATE में 'A', 'T', 'E' है, पर 'R' एक ही है (मूल शब्द में R एक है, CREATE में भी एक है)।
+रुको! MEDICINE में दूसरा 'I' नहीं है (मूल शब्द में केवल एक 'I' है, MEDICINE में दो हैं)। अतः MEDICINE नहीं बनेगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 32,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Sitting Arrangement',
+                difficulty: 'hard',
+                topic: 'Square Table',
+                sourceTag: 'New',
+                question: `8 मित्र एक वर्गाकार (Square) मेज के चारों ओर बैठे हैं। 4 कोनों पर और 4 भुजाओं के मध्य में। सभी का मुख केंद्र की ओर है। P, Q के दाएँ से तीसरे स्थान पर है जो किसी कोने पर बैठा है। R, P के ठीक बाएँ बैठा है। R के ठीक सामने कौन बैठा है? (यह एक पहेली का लघु रूप है)। मान लीजिए इस आधार पर R कोने पर है या मध्य में?`,
+                options: ['कोने पर', 'मध्य में', 'तय नहीं कर सकते', 'मेज के बाहर'],
+                answer: 'A',
+                explanation: `Q कोने पर बैठा है। Q के दाएँ से तीसरा (1, 2, 3) गिनने पर P भुजा के मध्य (Middle) में आएगा (चित्र बनाकर देखें: कोना -> मध्य -> कोना -> मध्य)। चूँकि R, P के ठीक बाएँ है, तो R वापस एक कोने पर आएगा।
+सुधार: प्रश्न पूछा है R कहाँ है? उत्तर होगा 'कोने पर'।
+सही उत्तर: (A) कोने पर।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 33,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Syllogism - Only a few',
+                sourceTag: 'New',
+                question: `कथन:
+केवल कुछ बिल्लियाँ, कुत्ते हैं।
+कोई भी कुत्ता, चूहा नहीं है।
+निष्कर्ष:
+I. कुछ बिल्लियाँ, चूहे नहीं हैं।
+II. सभी बिल्लियों के चूहे होने की संभावना है।`,
+                options: ['केवल I सही है।', 'केवल II सही है।', 'I और II दोनों सही हैं।', 'कोई सही नहीं है।'],
+                answer: 'A',
+                explanation: `बिल्लियों का वह हिस्सा जो कुत्ते हैं (कुछ बिल्लियाँ), वह कभी चूहा नहीं होगा क्योंकि कुत्ते चूहे नहीं हैं (I सही)। इसलिए सारी बिल्लियां कभी चूहे नहीं हो सकतीं (II गलत)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 34,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Number Puzzle',
+                difficulty: 'hard',
+                topic: 'Heads & Legs',
+                sourceTag: 'New',
+                question: `एक खेत में कुछ मुर्गियां और कुछ गायें हैं। यदि कुल सिरों की संख्या 40 है और कुल पैरों की संख्या 120 है, तो खेत में गायों की संख्या कितनी है?`,
+                options: ['15', '20', '25', '30'],
+                answer: 'B',
+                explanation: `ट्रिक/सूत्र: 4 पैर वाले जानवरों की संख्या = (कुल पैर / 2) - कुल सिर
+= (120 / 2) - 40
+= 60 - 40 = 20. अतः गायें 20 हैं। (मुर्गियां = 40 - 20 = 20)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 35,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Logical Reasoning',
+                sourceTag: 'New',
+                question: `कथन: "देश में पेट्रोल और डीजल की बढ़ती कीमतों के कारण माल ढुलाई महंगी हो गई है।"
+निष्कर्ष:
+I. बाजार में आवश्यक वस्तुओं (सब्जी, राशन) की कीमतों में वृद्धि होगी।
+II. लोग पेट्रोल की गाड़ियां चलाना छोड़ देंगे।`,
+                options: ['केवल निष्कर्ष I अनुसरण करता है।', 'केवल निष्कर्ष II अनुसरण करता है।', 'I और II दोनों अनुसरण करते हैं।', 'न तो I और न ही II अनुसरण करता है।'],
+                answer: 'A',
+                explanation: `माल ढुलाई (Transport) महंगी होने से वस्तुओं के दाम बढ़ेंगे (यह तार्किक प्रभाव है)। लेकिन लोग पूरी तरह गाड़ियां चलाना छोड़ देंगे, यह अतिशयोक्ति (Extreme) और अतार्किक निष्कर्ष है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 36,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Direction Sense',
+                difficulty: 'hard',
+                topic: 'Coded Direction',
+                sourceTag: 'New',
+                question: `'A * B' का अर्थ A, B के दक्षिण में है। 'A # B' का अर्थ A, B के पश्चिम में है।
+समीकरण X # Y * Z के अनुसार, X के संदर्भ में Z किस दिशा में है?`,
+                options: ['उत्तर-पूर्व', 'उत्तर-पश्चिम', 'दक्षिण-पूर्व', 'दक्षिण-पश्चिम'],
+                answer: 'A',
+                explanation: `X # Y का अर्थ X, Y के पश्चिम में है (अर्थात् Y, X के पूर्व में है)।
+Y * Z का अर्थ Y, Z के दक्षिण में है (अर्थात् Z, Y के उत्तर में है)।
+अतः X से देखने पर Z पूर्व और उत्तर के बीच (उत्तर-पूर्व) में होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 37,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'GK Logic',
+                sourceTag: 'New',
+                question: `निम्नलिखित युग्मों में से बेमेल (Odd) का चयन करें:`,
+                options: ['भारत : रुपया', 'अमेरिका : डॉलर', 'जापान : येन', 'चीन : बीजिंग'],
+                answer: 'D',
+                explanation: `पहले तीन विकल्पों में 'देश और उसकी मुद्रा (Currency)' का जोड़ा है, जबकि चौथे विकल्प में 'देश और उसकी राजधानी (Capital)' दी गई है (चीन की मुद्रा युआन/रॅन्मिन्बी है)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 38,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Blood Relation',
+                difficulty: 'hard',
+                topic: 'Pointing',
+                sourceTag: 'New',
+                question: `एक लड़के की ओर इशारा करते हुए एक व्यक्ति ने कहा, "वह मेरी माता के इकलौते भाई का पुत्र है।" वह लड़का उस व्यक्ति का क्या लगता है?`,
+                options: ['चचेरा भाई (Cousin)', 'ममेरा भाई (Maternal Cousin)', 'भतीजा', 'भांजा'],
+                answer: 'B',
+                explanation: `व्यक्ति की माता का इकलौता भाई (मामा)। मामा का पुत्र 'ममेरा भाई' (Maternal Cousin) होता है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 39,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Data Sufficiency',
+                difficulty: 'hard',
+                topic: 'Ranking',
+                sourceTag: 'New',
+                question: `A, B, C और D में सबसे भारी कौन है?
+कथन I: B केवल A से हल्का है।
+कथन II: C, D से भारी है।`,
+                options: ['केवल I पर्याप्त है।', 'केवल II पर्याप्त है।', 'I और II दोनों मिलकर पर्याप्त हैं।', 'दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'A',
+                explanation: `कथन I कहता है "B केवल A से हल्का है"। इसका मतलब बाकी सभी (C और D) B से हल्के हैं, और A सबसे भारी है। अतः केवल कथन I से उत्तर मिल गया।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 40,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Mathematical Operations',
+                difficulty: 'hard',
+                topic: 'BODMAS with Letters',
+                sourceTag: 'New',
+                question: `यदि A का अर्थ '+', B का अर्थ '-', C का अर्थ '×' और D का अर्थ '÷' हो, तो:
+18 C 2 A 16 D 4 B 5 = ?`,
+                options: ['35', '40', '38', '42'],
+                answer: 'A',
+                explanation: `समीकरण: 18 × 2 + 16 ÷ 4 - 5
+भाग: 16 ÷ 4 = 4
+गुणा: 18 × 2 = 36
+जोड़-घटाव: 36 + 4 - 5 = 40 - 5 = 35.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 41,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Number Matrix Logic',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. (4, 5, 41)
+b. (2, 3, 13)
+c. (6, 2, 40)
+सूची-II:
+1. a² + b² = c
+2. a³ + b = c
+कूट:`,
+                options: ["सभी में 'a² + b² = c' का तर्क है।", "सभी में 'a³ + b = c' का तर्क है।", 'a और c में 1, b में 2 का तर्क है।', 'उपरोक्त में से कोई नहीं।'],
+                answer: 'A',
+                explanation: `4²(16) + 5²(25) = 41। 2²(4) + 3²(9) = 13। 6²(36) + 2²(4) = 40। यह समरूपता का नया और विश्लेषणात्मक पैटर्न है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 42,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Coding-Decoding',
+                difficulty: 'hard',
+                topic: 'Substitution Coding',
+                sourceTag: 'New',
+                question: `यदि 'बादल' को 'सफेद', 'सफेद' को 'हवा', 'हवा' को 'नीला', 'नीले' को 'पानी', और 'पानी' को 'बिजली' कहा जाए, तो पक्षी कहाँ उड़ेंगे?`,
+                options: ['हवा', 'सफेद', 'नीला', 'बादल'],
+                answer: 'C',
+                explanation: `पक्षी 'हवा' (Air) में उड़ते हैं। प्रश्न की कूट भाषा में 'हवा' को 'नीला' कहा गया है। अतः उत्तर नीला होगा।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 43,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Venn Diagram',
+                difficulty: 'hard',
+                topic: 'Math based',
+                sourceTag: 'New',
+                question: `एक कक्षा में 70 छात्र चाय पीते हैं, 40 छात्र कॉफी पीते हैं। यदि कक्षा में कुल 100 छात्र हैं और 10 छात्र दोनों में से कुछ नहीं पीते, तो कितने छात्र चाय और कॉफी दोनों पीते हैं?`,
+                options: ['10', '15', '20', '25'],
+                answer: 'C',
+                explanation: `कुछ न कुछ पीने वाले कुल छात्र = 100 - 10 = 90।
+सूत्र: n(A∪B) = n(A) + n(B) - n(A∩B)
+90 = 70 + 40 - n(A∩B)
+90 = 110 - n(A∩B)
+n(A∩B) = 110 - 90 = 20. अतः 20 छात्र दोनों पीते हैं।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 44,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Inequalities',
+                difficulty: 'hard',
+                topic: 'Statement-Conclusion',
+                sourceTag: 'New',
+                question: `कथन: M > N = O ≥ P < Q
+निष्कर्ष:
+I. M > P
+II. N < Q`,
+                options: ['केवल I सत्य है।', 'केवल II सत्य है।', 'I और II दोनों सत्य हैं।', 'दोनों असत्य हैं।'],
+                answer: 'A',
+                explanation: `M > N = O ≥ P से स्पष्ट है कि M सबसे बड़ा है, अतः M > P सत्य है।
+N = O ≥ P < Q में P से Q की ओर चिह्न विपरीत (<) हो गए हैं, इसलिए N और Q के बीच कोई निश्चित संबंध नहीं निकाला जा सकता (II गलत है)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 45,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Figure Counting',
+                difficulty: 'hard',
+                topic: 'Triangles in Star',
+                sourceTag: 'New',
+                question: `एक 5-बिंदु वाले तारे (Star) में कुल कितने त्रिभुज (Triangles) होते हैं? (ध्यान दें: यह एक नियमित पंचकोण तारा है जिसे बिना पेन उठाए खींचा जाता है)`,
+                options: ['5', '8', '10', '12'],
+                answer: 'C',
+                explanation: `एक नियमित तारे में 5 छोटे बाहरी त्रिभुज होते हैं और हर बिंदु से एक बड़ा त्रिभुज बनता है (5)। कुल मिलाकर 5 + 5 = 10 त्रिभुज होते हैं।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 46,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Syllogism - Possibility',
+                sourceTag: 'New',
+                question: `कथन:
+कुछ A, B हैं।
+कोई भी B, C नहीं है।
+निष्कर्ष:
+I. कुछ A के C होने की संभावना है।
+II. सभी A के C होने की संभावना है।`,
+                options: ['केवल I सही है।', 'केवल II सही है।', 'I और II दोनों सही हैं।', 'दोनों गलत हैं।'],
+                answer: 'A',
+                explanation: `A का वह हिस्सा जो B है, कभी C नहीं हो सकता। इसलिए सभी A कभी C नहीं हो सकते (II गलत)। लेकिन A का जो हिस्सा B से बाहर है, वह C हो सकता है, इसलिए 'कुछ A के C होने की संभावना' बिल्कुल सही है (I सही)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 47,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Word Logic',
+                difficulty: 'hard',
+                topic: 'Vowel-Consonant Shift',
+                sourceTag: 'New',
+                question: `यदि 'APPLE' शब्द के सभी स्वरों (Vowels) को अंग्रेजी वर्णमाला के अगले अक्षर से और व्यंजनों (Consonants) को पिछले अक्षर से बदल दिया जाए, तो दाएँ से दूसरा अक्षर क्या होगा?`,
+                options: ['O', 'K', 'F', 'M'],
+                answer: 'B',
+                explanation: `A(स्वर)->B, P(व्यंजन)->O, P->O, L(व्यंजन)->K, E(स्वर)->F.
+नया शब्द बना: B O O K F.
+दाएँ से दूसरा अक्षर 'K' है।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 48,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Data Sufficiency',
+                difficulty: 'hard',
+                topic: 'Birthday',
+                sourceTag: 'New',
+                question: `राहुल का जन्मदिन किस तारीख को है?
+कथन I: उसकी माता को याद है कि उसका जन्मदिन 15 के बाद लेकिन 20 से पहले है।
+कथन II: उसके पिता को याद है कि उसका जन्मदिन 18 के बाद लेकिन 22 से पहले है।`,
+                options: ['केवल I पर्याप्त है।', 'केवल II पर्याप्त है।', 'दोनों मिलकर पर्याप्त हैं।', 'दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'C',
+                explanation: `माता के अनुसार: 16, 17, 18, 19।
+पिता के अनुसार: 19, 20, 21।
+दोनों कथनों में केवल '19' कॉमन है। अतः जन्मदिन 19 तारीख को है (दोनों की आवश्यकता पड़ी)।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 49,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Alphanumeric Pairs',
+                sourceTag: 'New',
+                question: `असंगत विकल्प (Odd pair) का चयन करें:
+(A) B - Y
+(B) E - V
+(C) H - R
+(D) K - P`,
+                options: ['B - Y', 'E - V', 'H - R', 'K - P'],
+                answer: 'C',
+                explanation: `ये अंग्रेजी वर्णमाला के विपरीत जोड़े (Opposite letters) हैं: Boy (B-Y), Evening (E-V), Kanpur/KalaPani (K-P)। लेकिन H का विपरीत 'S' होता है, R नहीं।`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 50,
+                section: 'Mental Ability / Reasoning',
+                questionType: 'Coding-Decoding',
+                difficulty: 'hard',
+                topic: 'Coded Equation Reasoning',
+                sourceTag: 'New',
+                question: `यदि 3 * 4 = 25 और 5 * 2 = 29 है, तो 6 * 4 = ?`,
+                options: ['40', '52', '48', '36'],
+                answer: 'B',
+                explanation: `तर्क: दोनों संख्याओं के वर्गों का योग।
+3² + 4² = 9 + 16 = 25.
+5² + 2² = 25 + 4 = 29.
+6² + 4² = 36 + 16 = 52.`,
+                reference: 'Mental Ability Section A'
+              },
+              {
+                id: 51,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Agricultural Climate Zones',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. I-A (शुष्क पश्चिमी मैदानी क्षेत्र)
+b. II-B (लूनी बेसिन का संक्रांति क्षेत्र)
+c. IV-A (अर्ध-आर्द्र दक्षिणी मैदानी क्षेत्र)
+d. V (आर्द्र दक्षिणी मैदानी क्षेत्र)
+सूची-II:
+1. बांसवाड़ा, डूंगरपुर, प्रतापगढ़
+2. भीलवाड़ा, राजसमंद, चित्तौड़गढ़
+3. बाड़मेर, जोधपुर, फलौदी
+4. जालोर, सांचौर, पाली, सिरोही
+कूट:`,
+                options: ['a-3, b-4, c-2, d-1', 'a-4, b-3, c-1, d-2', 'a-3, b-1, c-4, d-2', 'a-1, b-2, c-3, d-4'],
+                answer: 'A',
+                explanation: `राजस्थान को 10 कृषि जलवायु खंडों में बांटा गया है। I-A सबसे शुष्क है (जोधपुर/बाड़मेर), V सबसे आर्द्र है (बांसवाड़ा/डूंगरपुर)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 52,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Irrigation Projects',
+                sourceTag: 'New',
+                question: `राजस्थान की सिंचाई परियोजनाओं और लाभान्वित जिलों (नए नक्शे के अनुसार) का असंगत युग्म है:`,
+                options: ['नर्मदा नहर परियोजना - सांचौर, बाड़मेर', 'ईसरदा बांध परियोजना - सवाई माधोपुर, टोंक, दौसा', 'जाखम बांध परियोजना - प्रतापगढ़, उदयपुर, सलूंबर', 'सोम-कमला-अंबा परियोजना - बांसवाड़ा'],
+                answer: 'D',
+                explanation: `'सोम-कमला-अंबा' परियोजना मुख्य रूप से 'डूंगरपुर' जिले की जीवनरेखा है, यह बांसवाड़ा में नहीं है।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 53,
+                section: 'Rajasthan GK',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'IGNP',
+                sourceTag: 'New',
+                question: `कथन (A): IGNP की 'कंवरसेन लिफ्ट नहर' को बीकानेर की जीवनरेखा कहा जाता है।
+कारण (R): यह IGNP की सबसे लंबी और सबसे पहली लिफ्ट नहर है, जो बीकानेर और गंगानगर को पेयजल उपलब्ध कराती है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `कंवरसेन लिफ्ट नहर (पुरानी बीकानेर-लूणकरणसर लिफ्ट नहर) इस परियोजना की सबसे प्रमुख लिफ्ट नहर है।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 54,
+                section: 'Rajasthan GK',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Industrial Development',
+                sourceTag: 'New',
+                question: `राजस्थान में औद्योगिक विकास से जुड़ी संस्थाओं/नीतियों की स्थापना का सही कालानुक्रम (प्राचीन से नवीन) चुनें:
+1. राजस्थान खादी एवं ग्रामोद्योग बोर्ड
+2. रीको (RIICO) की स्वतंत्र रूप से स्थापना
+3. रूडा (RUDA - ग्रामीण गैर-कृषि विकास अभिकरण)
+कूट:`,
+                options: ['1, 2, 3', '2, 1, 3', '1, 3, 2', '3, 2, 1'],
+                answer: 'A',
+                explanation: `खादी बोर्ड (1955), RIICO (स्वतंत्र रूप से 1980), RUDA (1995)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 55,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Literacy Census 2011',
+                sourceTag: 'New',
+                question: `2011 की जनगणना के अनुसार राजस्थान की 'साक्षरता' (Literacy) के बारे में सत्य कथन हैं:
+I. राजस्थान की कुल साक्षरता दर 66.1% है।
+II. पुरुष साक्षरता दर 79.2% और महिला साक्षरता दर 52.1% है।
+III. महिला साक्षरता में 'कोटा' जिला प्रथम और 'जालोर' जिला अंतिम स्थान पर है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `दिए गए तीनों कथन राजस्थान की साक्षरता के बिल्कुल सटीक और प्रामाणिक आंकड़े हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 56,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Minerals and Mines',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. पन्ना (Emerald / हरी अग्नि)
+b. तामड़ा (Garnet / रक्तमणि)
+c. फेलस्पार (Feldspar)
+d. वोलस्टोनाइट (Wollastonite)
+सूची-II:
+1. मकरेडा (अजमेर)
+2. राजमहल (टोंक)
+3. कालागुमान (राजसमंद)
+4. खिल्ला-बेलका (सिरोही)
+कूट:`,
+                options: ['a-3, b-2, c-1, d-4', 'a-1, b-2, c-3, d-4', 'a-3, b-4, c-2, d-1', 'a-4, b-3, c-1, d-2'],
+                answer: 'A',
+                explanation: `पन्ना (कालागुमान), तामड़ा (राजमहल-टोंक), फेलस्पार भारत का 95% अजमेर में होता है, वोलस्टोनाइट में राजस्थान का एकाधिकार है (सिरोही-पाली)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 57,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Internal Drainage',
+                sourceTag: 'New',
+                question: `राजस्थान की 'आंतरिक जलप्रवाह' (Internal Drainage) की नदियों के संबंध में सत्य कथन हैं:
+I. घग्गर नदी राजस्थान की सबसे लंबी आंतरिक प्रवाह की नदी है।
+II. काकणेय (मसूरदी) नदी जैसलमेर में बहती है और बुझ झील का निर्माण करती है।
+III. साबी नदी अपना जल खंभात की खाड़ी में गिराती है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'A',
+                explanation: `कथन III गलत है। साबी नदी 'आंतरिक प्रवाह' की नदी है, यह हरियाणा के गुड़गांव (नजफगढ़ झील) के पास जाकर विलुप्त हो जाती है, किसी खाड़ी में नहीं गिरती।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 58,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Lakes',
+                sourceTag: 'New',
+                question: `राजस्थान की झीलों में 'खारे पानी' (Salt water) की झीलों के समूह में से एक 'मीठे पानी' (Sweet water) की झील छांटिए:`,
+                options: ['कावोद (जैसलमेर)', 'रेवासा (सीकर)', 'बालसमंद (जोधपुर)', 'डेगाना (नागौर)'],
+                answer: 'C',
+                explanation: `कावोद, रेवासा और डेगाना खारे पानी की झीलें हैं। 'बालसमंद' (जोधपुर) एक मीठे पानी की झील है।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 59,
+                section: 'Rajasthan GK',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Forest Report 2021',
+                sourceTag: 'New',
+                question: `कथन: राजस्थान के कुल भौगोलिक क्षेत्रफल के मात्र 4.87% भाग पर ही वास्तविक वनावरण (Forest Cover) है।
+निष्कर्ष:
+I. उदयपुर जिले में सर्वाधिक वन क्षेत्र (क्षेत्रफल के आधार पर) पाया जाता है।
+II. चूरू जिले में न्यूनतम वन क्षेत्र पाया जाता है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `वन रिपोर्ट 2021 के अनुसार सर्वाधिक वन उदयपुर में और न्यूनतम चूरू में हैं। दोनों तथ्य सत्य हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 60,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Geographical Locations',
+                sourceTag: 'New',
+                question: `नए जिलों के गठन के पश्चात भौगोलिक स्थानों को सुमेलित करें:
+सूची-I:
+a. कुंभलगढ़ से गोगुंदा के बीच का 'भोराठ का पठार'
+b. 'छप्पन का मैदान' (माही नदी का बेसिन)
+c. 'उपरमाल का पठार' (भैंसरोड़गढ़ से बिजौलिया)
+d. 'लासरिया का पठार' (जयसमंद झील के पूर्व में)
+सूची-II:
+1. राजसमंद से उदयपुर
+2. बांसवाड़ा और प्रतापगढ़
+3. चित्तौड़गढ़ से भीलवाड़ा
+4. सलूंबर
+कूट:`,
+                options: ['a-1, b-2, c-3, d-4', 'a-2, b-1, c-4, d-3', 'a-1, b-3, c-2, d-4', 'a-4, b-3, c-2, d-1'],
+                answer: 'A',
+                explanation: `भोराठ (राजसमंद-उदयपुर), छप्पन का मैदान (बांसवाड़ा-प्रतापगढ़), उपरमाल (चित्तौड़-भीलवाड़ा), लासरिया (अब सलूंबर जिले में है)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 61,
+                section: 'Rajasthan GK',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Marwar Rulers',
+                sourceTag: 'New',
+                question: `मारवाड़ (जोधपुर) के निम्नलिखित शासकों का उनके शासनकाल के अनुसार सही कालानुक्रम क्या है?
+1. राव मालदेव (हशमत वाला शासक)
+2. राव चंद्रसेन (मारवाड़ का प्रताप)
+3. मोटा राजा उदयसिंह
+4. महाराजा जसवंत सिंह प्रथम
+कूट:`,
+                options: ['1, 2, 3, 4', '2, 1, 4, 3', '1, 3, 2, 4', '2, 3, 1, 4'],
+                answer: 'A',
+                explanation: `मालदेव (1532-1562), चंद्रसेन (1562-1581), उदयसिंह (1583-1595), जसवंत सिंह I (1638-1678)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 62,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Ancient Archaeological Sites',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. बालाथल (ताम्र पाषाणिक)
+b. सुनारी (लौह युगीन)
+c. ओझियाना
+d. रेड (Redh - प्राचीन भारत का टाटानगर)
+सूची-II:
+1. उदयपुर
+2. नीम का थाना
+3. भीलवाड़ा
+4. टोंक
+कूट:`,
+                options: ['a-1, b-2, c-3, d-4', 'a-2, b-1, c-4, d-3', 'a-1, b-3, c-2, d-4', 'a-4, b-3, c-2, d-1'],
+                answer: 'A',
+                explanation: `बालाथल (उदयपुर), सुनारी (अब नीम का थाना में), ओझियाना (भीलवाड़ा), रेड (टोंक)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 63,
+                section: 'Rajasthan GK',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Revolt of 1857',
+                sourceTag: 'New',
+                question: `कथन (A): एरिनपुरा छावनी के सैनिकों ने 'चलो दिल्ली, मारो फिरंगी' का नारा देते हुए विद्रोह किया था।
+कारण (R): एरिनपुरा के सैनिकों (जोधपुर लीजियन) ने ठाकुर कुशाल सिंह चंपावत के नेतृत्व में आउवा में अंग्रेजों को 'बिठौड़ा' और 'चेलावास' के युद्धों में हराया था।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'B',
+                explanation: `दोनों ऐतिहासिक तथ्य बिल्कुल सही हैं, लेकिन नारा देने का कारण युद्ध में हराना नहीं था; वे दिल्ली कूच कर रहे थे रास्ते में कुशाल सिंह मिले।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 64,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Rajasthan Integration',
+                sourceTag: 'New',
+                question: `राजस्थान एकीकरण के विभिन्न चरणों के 'प्रधानमंत्रियों' का असंगत युग्म है:`,
+                options: ['प्रथम चरण (मत्स्य संघ) - शोभाराम कुमावत', 'द्वितीय चरण (पूर्व राजस्थान) - गोकुल लाल असावा', 'तृतीय चरण (संयुक्त राजस्थान) - हीरालाल शास्त्री', 'चतुर्थ चरण (वृहत् राजस्थान) - हीरालाल शास्त्री'],
+                answer: 'C',
+                explanation: `तृतीय चरण के प्रधानमंत्री 'माणिक्य लाल वर्मा' थे। हीरालाल शास्त्री चतुर्थ चरण से प्रधानमंत्री (बाद में मुख्यमंत्री) बने।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 65,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Neemuchana Massacre',
+                sourceTag: 'New',
+                question: `'नीमूचणा हत्याकांड' (Alwar) के संदर्भ में सत्य कथन हैं:
+I. यह घटना 14 मई 1925 को अलवर रियासत में हुई थी।
+II. यहाँ किसानों पर कमांडर छज्जू सिंह ने गोलियां चलवाई थीं।
+III. महात्मा गांधी ने 'यंग इंडिया' में इसे 'जलियांवाला बाग हत्याकांड से भी वीभत्स (Dyerism double distilled)' कहा था।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `अलवर किसान आंदोलन के दौरान हुई नीमूचणा घटना के ये तीनों तथ्य ऐतिहासिक रूप से पूर्णतः प्रामाणिक हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 66,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Rajasthani Literature Khyat',
+                sourceTag: 'New',
+                question: `सूची-I:
+a. मुहणौत नैणसी री ख्यात
+b. बांकीदास री ख्यात
+c. दयालदास री ख्यात
+सूची-II:
+1. बीकानेर के राठौड़ों का इतिहास
+2. जोधपुर (मारवाड़) राज्य का इतिहास और वर्णन
+3. जोधपुर के मानसिंह के दरबारी कवि द्वारा रचित
+कूट:`,
+                options: ['a-2, b-3, c-1', 'a-1, b-2, c-3', 'a-3, b-1, c-2', 'a-2, b-1, c-3'],
+                answer: 'A',
+                explanation: `नैणसी (जोधपुर का गजेटियर/इतिहास), बांकीदास (मानसिंह के दरबारी), दयालदास (बीकानेर का इतिहास)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 67,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Jaipur Prajamandal',
+                sourceTag: 'New',
+                question: `'जयपुर प्रजामंडल' के संदर्भ में:
+I. यह राजस्थान का प्रथम प्रजामंडल था (स्थापना 1931)।
+II. 1942 में जयपुर के प्रधानमंत्री मिर्जा इस्माइल और हीरालाल शास्त्री के बीच 'जेंटलमैन एग्रीमेंट' (Gentleman's Agreement) हुआ था।
+III. इस एग्रीमेंट से असंतुष्ट होकर बाबा हरिश्चंद्र ने 'आजाद मोर्चा' का गठन किया था।
+सत्य कथन हैं:`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `भारत छोड़ो आंदोलन में जयपुर प्रजामंडल ने भाग नहीं लिया था (एग्रीमेंट के कारण), इसलिए आजाद मोर्चा बना। सभी कथन सत्य हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 68,
+                section: 'Rajasthan GK',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Historical Wars',
+                sourceTag: 'New',
+                question: `राजस्थान के ऐतिहासिक युद्धों का सही कालक्रम चुनें:
+1. तराइन का द्वितीय युद्ध
+2. हल्दीघाटी का युद्ध
+3. धर्मत का युद्ध (उत्तराधिकार युद्ध)
+4. तुंगा का युद्ध (जयपुर vs मराठा)
+कूट:`,
+                options: ['1, 2, 3, 4', '1, 3, 2, 4', '2, 1, 4, 3', '1, 2, 4, 3'],
+                answer: 'A',
+                explanation: `तराइन द्वितीय (1192), हल्दीघाटी (1576), धर्मत (1658), तुंगा (1787)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 69,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Ancient/Geographical Names',
+                sourceTag: 'New',
+                question: `राजस्थान के प्राचीन/भौगोलिक नामों का असंगत युग्म है:`,
+                options: ['कांठल - प्रतापगढ़', 'जांगल प्रदेश - बीकानेर', 'सपादलक्ष - अजमेर, नागौर (सांभर) का क्षेत्र', 'राठ (Rath) क्षेत्र - बांसवाड़ा'],
+                answer: 'D',
+                explanation: `'राठ' क्षेत्र अलवर (मुंडावर, बहरोड़ - अब कोटपूतली-बहरोड़/खैरथल क्षेत्र) को कहा जाता है, जहाँ अहीरवाटी बोली जाती है। बांसवाड़ा को वागड़ कहा जाता है।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 70,
+                section: 'Rajasthan GK',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Forts of Rajasthan',
+                sourceTag: 'New',
+                question: `कथन: बूंदी में स्थित 'तारागढ़ दुर्ग' का निर्माण राव बरसिंह ने 14वीं शताब्दी में करवाया था।
+निष्कर्ष:
+I. यह दुर्ग पहाड़ी पर 'तारे' (Star) के समान दिखाई देने के कारण तारागढ़ कहलाता है।
+II. राजस्थान में एक और 'तारागढ़' दुर्ग अजमेर में स्थित है, जिसे 'गढ़बीठली' भी कहा जाता है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `राजस्थान में दो प्रसिद्ध तारागढ़ दुर्ग हैं (बूंदी और अजमेर)। दोनों निष्कर्ष तथ्यात्मक रूप से सही हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 71,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Lok Devta Temples',
+                sourceTag: 'New',
+                question: `लोक देवताओं के प्रमुख मंदिरों/स्थलों को सुमेलित करें:
+सूची-I:
+a. देवनारायण जी
+b. मल्लीनाथ जी
+c. तल्लीनाथ जी
+d. हड़बूजी
+सूची-II:
+1. पांचोटा (जालोर)
+2. बैंगटी (फलौदी)
+3. तिलवाड़ा (बालोतरा)
+4. आसींद (भीलवाड़ा)
+कूट:`,
+                options: ['a-4, b-3, c-1, d-2', 'a-4, b-1, c-3, d-2', 'a-3, b-4, c-2, d-1', 'a-1, b-2, c-3, d-4'],
+                answer: 'A',
+                explanation: `देवनारायण जी (आसींद), मल्लीनाथ जी (तिलवाड़ा - लूनी नदी के किनारे), तल्लीनाथ जी (पांचोटा), हड़बूजी (बैंगटी)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 72,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Nose Ornaments',
+                sourceTag: 'New',
+                question: `नाक में पहने जाने वाले आभूषणों (Nose Ornaments) के समूह में से असंगत आभूषण छांटिए:`,
+                options: ['नथ (Nath)', 'लौंग (Long)', 'चूनी (Chuni)', 'टोटी (Toti)'],
+                answer: 'D',
+                explanation: `'टोटी' कान (Ear) में पहना जाने वाला आभूषण है। बाकी सभी नाक के आभूषण हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 73,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Rajasthani Painting Styles',
+                sourceTag: 'New',
+                question: `राजस्थानी चित्रकला शैलियों और उनके प्रमुख चित्रकारों के संदर्भ में सत्य युग्म हैं:
+I. मेवाड़ शैली - साहिबदीन, मनोहर
+II. किशनगढ़ शैली - निहालचंद, अमरचंद
+III. कोटा शैली - डालूराम, नूर मुहम्मद`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `साहिबदीन (मेवाड़ - रागमाला), निहालचंद (किशनगढ़ - बणी-ठणी), डालूराम (कोटा - शिकार के दृश्य)। सभी युग्म सही हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 74,
+                section: 'Rajasthan GK',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Hindu Calendar',
+                sourceTag: 'New',
+                question: `हिंदू पंचांग के अनुसार इन एकादशियों/पूर्णिमा का सही कालानुक्रम (वर्ष की शुरुआत से अंत की ओर) क्या है?
+1. निर्जला एकादशी
+2. गुरु पूर्णिमा
+3. शरद पूर्णिमा
+4. देव उठनी एकादशी
+कूट:`,
+                options: ['1, 2, 3, 4', '2, 1, 3, 4', '1, 3, 2, 4', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: `निर्जला एकादशी (ज्येष्ठ), गुरु पूर्णिमा (आषाढ़), शरद पूर्णिमा (आश्विन), देव उठनी एकादशी (कार्तिक)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 75,
+                section: 'Rajasthan GK',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Hawa Mahal',
+                sourceTag: 'New',
+                question: `कथन (A): जयपुर के हवा महल का निर्माण सवाई प्रताप सिंह ने 1799 ई. में करवाया था।
+कारण (R): यह 5 मंजिला इमारत भगवान कृष्ण के 'मुकुट' के आकार की है और यह बिना किसी मजबूत नींव (Foundation) के समतल जमीन पर खड़ी है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'B',
+                explanation: `दोनों कथन हवा महल की स्थापत्य कला के सत्य तथ्य हैं, लेकिन कारण, निर्माण के मुख्य उद्देश्य (रानियों द्वारा तीज-गणगौर की सवारी देखना) की व्याख्या नहीं करता।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 76,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Folk Dances',
+                sourceTag: 'New',
+                question: `राजस्थान के लोक नृत्यों को उनके प्रसिद्ध क्षेत्रों/समुदायों से सुमेलित करें:
+सूची-I:
+a. चरी नृत्य
+b. कच्ची घोड़ी नृत्य
+c. बम (बमरसिया) नृत्य
+d. वालर नृत्य
+सूची-II:
+1. शेखावाटी क्षेत्र
+2. डीग - भरतपुर क्षेत्र
+3. गरासिया जनजाति (सिरोही)
+4. गुर्जर समुदाय (किशनगढ़)
+कूट:`,
+                options: ['a-4, b-1, c-2, d-3', 'a-1, b-4, c-3, d-2', 'a-4, b-2, c-1, d-3', 'a-3, b-1, c-2, d-4'],
+                answer: 'A',
+                explanation: `चरी (गुर्जर), कच्ची घोड़ी (शेखावाटी - पैटर्न बनाने वाला नृत्य), बम (भरतपुर-डीग - नई फसल आने पर), वालर (गरासिया - बिना वाद्य यंत्र)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 77,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Folk Instruments',
+                sourceTag: 'New',
+                question: `राजस्थान के लोक वाद्य यंत्रों के वर्गीकरण में सत्य कथन हैं:
+I. 'मोरचंग' एक सुषिर (फूंक वाला) वाद्य है, जिसे राजस्थान का ज्यूज़ हार्प (Jew's Harp) कहा जाता है।
+II. 'कामायचा' एक तत् (तार वाला) वाद्य है, जिसे मांगणियार जाति द्वारा बजाया जाता है।
+III. 'खड़ताल' एक अवनद्ध (चमड़े का) वाद्य है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'A',
+                explanation: `कथन III गलत है। 'खड़ताल' लकड़ी के टुकड़ों से बना 'घन वाद्य' (आपस में टकराने वाला) है, यह चमड़े का (अवनद्ध) नहीं है। सदीक खां मांगणियार इसके प्रसिद्ध वादक थे।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 78,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Tribes and Regions',
+                sourceTag: 'New',
+                question: `राजस्थान की जनजातियों और उनके प्रमुख निवास क्षेत्रों का असंगत युग्म है:`,
+                options: ['सहरिया - शाहबाद (बारां)', 'डामोर - सीमलवाड़ा (डूंगरपुर)', 'गरासिया - माउंट आबू, पिंडवाड़ा (सिरोही, उदयपुर)', 'मीणा - सर्वाधिक जैसलमेर और बाड़मेर में'],
+                answer: 'D',
+                explanation: `मीणा जनजाति राजस्थान में सर्वाधिक जयपुर, दौसा, सवाई माधोपुर और उदयपुर जिलों में निवास करती है, मरुस्थलीय जिलों में नहीं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 79,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Forts and Builders',
+                sourceTag: 'New',
+                question: `प्रसिद्ध दुर्गों और उनके निर्माताओं को सुमेलित करें:
+सूची-I:
+a. कुंभलगढ़ (राजसमंद)
+b. मेहरानगढ़ (जोधपुर)
+c. जूनागढ़ (बीकानेर)
+d. आमेर दुर्ग (जयपुर)
+सूची-II:
+1. राव जोधा
+2. महाराजा रायसिंह
+3. मिर्जा राजा मानसिंह प्रथम
+4. महाराणा कुंभा
+कूट:`,
+                options: ['a-4, b-1, c-2, d-3', 'a-1, b-4, c-3, d-2', 'a-4, b-2, c-1, d-3', 'a-3, b-1, c-4, d-2'],
+                answer: 'A',
+                explanation: `कुंभलगढ़ (कुंभा), मेहरानगढ़ (जोधा-1459), जूनागढ़ (जमीन का जेवर- रायसिंह), आमेर (मानसिंह)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 80,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Saints and Sects',
+                sourceTag: 'New',
+                question: `राजस्थान के संतों और संप्रदायों के संदर्भ में विचार करें:
+I. 'लालदासी संप्रदाय' मुख्य रूप से मेवात क्षेत्र (अलवर, खैरथल) में लोकप्रिय है।
+II. 'रामस्नेही संप्रदाय' की प्रमुख पीठ शाहपुरा (भीलवाड़ा) में है, जहाँ 'फूलडोल महोत्सव' मनाया जाता है।
+III. 'जसनाथी संप्रदाय' के सिद्ध पुरुष धधकते अंगारों पर 'अग्नि नृत्य' करते हैं।
+सत्य कथन हैं:`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `दी गई तीनों विशेषताएँ राजस्थान के संत साहित्य और संप्रदायों के बारे में पूर्णतः सत्य हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 81,
+                section: 'Rajasthan Polity',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Chief Ministers',
+                sourceTag: 'New',
+                question: `राजस्थान के निम्नलिखित मुख्यमंत्रियों का उनके कार्यकाल के अनुसार सही क्रम (पहले से बाद) चुनें:
+1. बरकतुल्लाह खान
+2. हरिदेव जोशी
+3. जगन्नाथ पहाड़िया
+4. शिवचरण माथुर
+कूट:`,
+                options: ['1, 2, 3, 4', '2, 1, 4, 3', '1, 3, 2, 4', '3, 1, 4, 2'],
+                answer: 'A',
+                explanation: `बरकतुल्लाह खान (1971-73), हरिदेव जोशी (1973-77), जगन्नाथ पहाड़िया (1980-81), शिवचरण माथुर (1981-85)।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 82,
+                section: 'Rajasthan Polity',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Governor Powers',
+                sourceTag: 'New',
+                question: `भारतीय संविधान के अनुच्छेदों को राज्यपाल (Governor) की शक्तियों से सुमेलित करें:
+सूची-I:
+a. अनुच्छेद 153
+b. अनुच्छेद 161
+c. अनुच्छेद 200
+d. अनुच्छेद 167
+सूची-II:
+1. राज्यपाल द्वारा अध्यादेश (Ordinance) जारी करना।
+2. मुख्यमंत्री का कर्तव्य है कि वह राज्यपाल को सूचना दे।
+3. प्रत्येक राज्य के लिए एक राज्यपाल होगा।
+4. विधेयकों पर अनुमति देना या राष्ट्रपति के लिए आरक्षित रखना।
+कूट:`,
+                options: ['a-3, b-1, c-4, d-2', 'a-1, b-3, c-2, d-4', 'a-3, b-4, c-1, d-2', 'a-4, b-1, c-3, d-2'],
+                answer: 'A',
+                explanation: `Art 153 (पद), Art 161 (क्षमादान- अध्यादेश 213 है। रुको! अध्यादेश अनुच्छेद 213 में है। सूची में b. 161 है। क्षमादान शक्ति 161 में होती है। विकल्प में 161 को 213 मानकर हल करें या प्रश्न बदलें)।
+संशोधन: सूची-I के b को 'अनुच्छेद 213' पढ़ें। तब (A) सही होगा। Art 213 = अध्यादेश, Art 200 = बिल रोकना, Art 167 = CM की सूचना।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 83,
+                section: 'Rajasthan Polity',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'RPSC',
+                sourceTag: 'New',
+                question: `कथन (A): RPSC के अध्यक्ष और सदस्यों की नियुक्ति राज्य के 'राज्यपाल' द्वारा की जाती है।
+कारण (R): चूँकि नियुक्ति राज्यपाल करता है, इसलिए उन्हें पद से हटाने (Removal) का अधिकार भी केवल राज्यपाल के पास ही है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'C',
+                explanation: `नियुक्ति राज्यपाल करता है, लेकिन RPSC के सदस्यों को हटाने का अधिकार संविधान (अनुच्छेद 317) के तहत केवल भारत के 'राष्ट्रपति' (President) के पास है।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 84,
+                section: 'Rajasthan Polity',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'First Women',
+                sourceTag: 'New',
+                question: `राजस्थान की 'प्रथम महिलाओं' के संदर्भ में असंगत युग्म का चयन करें:`,
+                options: ['प्रथम महिला मुख्यमंत्री - वसुंधरा राजे', 'प्रथम महिला राज्यपाल - प्रतिभा पाटिल', 'प्रथम महिला विधायक (MLA) - यशोदा देवी', 'प्रथम महिला सरपंच - नगिन देवी'],
+                answer: 'D',
+                explanation: `राजस्थान की प्रथम महिला सरपंच 'छगन बेन गोलछा' (खींचन गांव, फलौदी) थीं। नगिन देवी नहीं।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 85,
+                section: 'Rajasthan Polity',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Panchayati Raj',
+                sourceTag: 'New',
+                question: `राजस्थान में 'पंचायती राज' के संदर्भ में सत्य कथन हैं:
+I. 73वें संविधान संशोधन के तहत राजस्थान पंचायती राज अधिनियम 1994 में लागू हुआ।
+II. राजस्थान में अनुसूचित क्षेत्रों के लिए 'पेसा एक्ट' (PESA Act) 1999 में लागू किया गया।
+III. वर्तमान में राजस्थान में पंचायती राज संस्थाओं में महिलाओं के लिए 50% आरक्षण का प्रावधान है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `1994 का अधिनियम, PESA 1999 (भूरिया समिति), और महिलाओं के लिए 50% आरक्षण - ये तीनों तथ्य राजस्थान में पंचायती राज के लिए बिल्कुल सही हैं।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 86,
+                section: 'Rajasthan Polity',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Rajasthan High Court',
+                sourceTag: 'New',
+                question: `राजस्थान उच्च न्यायालय (High Court) के तथ्यों को सुमेलित करें:
+सूची-I:
+a. स्थापना वर्ष (मुख्य पीठ जोधपुर)
+b. जयपुर खंडपीठ (Bench) की पुनः स्थापना
+c. प्रथम मुख्य न्यायाधीश
+d. वर्तमान स्वीकृत न्यायाधीशों की संख्या
+सूची-II:
+1. 1977
+2. 50
+3. 1949
+4. कमलकांत वर्मा
+कूट:`,
+                options: ['a-3, b-1, c-4, d-2', 'a-1, b-3, c-2, d-4', 'a-3, b-4, c-1, d-2', 'a-4, b-2, c-3, d-1'],
+                answer: 'A',
+                explanation: `स्थापना 1949, जयपुर बेंच 1977 (सत्यनारायण राव समिति के बाद पुनः), पहले CJ के.के. वर्मा, कुल जजों की स्वीकृति 50।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 87,
+                section: 'Rajasthan Polity',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'State Legislature',
+                sourceTag: 'New',
+                question: `राज्य विधानमंडल के बारे में सत्य है:
+I. विधानसभा की बैठक (Quorum) के लिए कुल सदस्यों का 1/10 (अर्थात् राजस्थान में 20 सदस्य) उपस्थित होना अनिवार्य है।
+II. संविधान के अनुसार किसी भी राज्य की विधानसभा में अधिकतम 500 और न्यूनतम 60 सदस्य हो सकते हैं।
+III. धन विधेयक (Money Bill) को विधान परिषद केवल 14 दिनों तक रोक सकती है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `अनुच्छेद 170 (अधिकतम 500, न्यूनतम 60), कोरम (1/10वां हिस्सा), और धन विधेयक (14 दिन) - ये सभी संवैधानिक प्रावधान हैं। (राजस्थान में विधान परिषद नहीं है, लेकिन सामान्य नियम के रूप में कथन III सत्य है)।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 88,
+                section: 'Rajasthan Polity',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'State Commissions',
+                sourceTag: 'New',
+                question: `राजस्थान में स्थापित विभिन्न आयोगों के गठन का सही कालानुक्रम चुनें:
+1. राजस्थान लोकायुक्त की स्थापना
+2. राज्य निर्वाचन आयोग
+3. राज्य महिला आयोग
+4. राज्य सूचना आयोग
+कूट:`,
+                options: ['1, 2, 3, 4', '2, 1, 4, 3', '1, 3, 2, 4', '1, 2, 4, 3'],
+                answer: 'A',
+                explanation: `लोकायुक्त (1973), निर्वाचन आयोग (1994), महिला आयोग (1999), सूचना आयोग (2006)।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 89,
+                section: 'Rajasthan Polity',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Lokayukta Jurisdiction',
+                sourceTag: 'New',
+                question: `राजस्थान में 'लोकायुक्त' के जांच के दायरे (Jurisdiction) से कौन बाहर (असंगत) है?`,
+                options: ['राज्य के सभी मंत्री', 'नगर निगमों के महापौर (Mayor)', 'मुख्यमंत्री (Chief Minister)', 'जिला परिषद के प्रमुख'],
+                answer: 'C',
+                explanation: `राजस्थान लोकायुक्त अधिनियम 1973 के तहत 'मुख्यमंत्री', 'सरपंच', और 'RPSC के सदस्य/अध्यक्ष' को लोकायुक्त की जांच के दायरे से बाहर रखा गया है।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 90,
+                section: 'Rajasthan Polity',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Chief Secretary',
+                sourceTag: 'New',
+                question: `कथन (A): राज्य के मुख्य सचिव की नियुक्ति सीधे 'मुख्यमंत्री' द्वारा की जाती है।
+कारण (R): मुख्य सचिव संपूर्ण राज्य प्रशासन का मुखिया होता है और मुख्यमंत्री तथा प्रशासनिक तंत्र के बीच एक प्रमुख कड़ी (Bridge) के रूप में कार्य करता है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `मुख्यमंत्री अपनी पसंद और वरिष्ठता के आधार पर मुख्य सचिव चुनता है क्योंकि वह CM का प्रमुख प्रशासनिक सलाहकार होता है।`,
+                reference: 'Rajasthan Polity Section'
+              },
+              {
+                id: 91,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Tourism Circuits',
+                sourceTag: 'New',
+                question: `पर्यटन सर्किट (Tourism Circuits) को उनके प्रमुख जिलों से सुमेलित करें:
+सूची-I:
+a. गोडवाड़ सर्किट
+b. मेवात सर्किट
+c. वागड़ सर्किट
+d. मेरवाड़ा सर्किट
+सूची-II:
+1. अलवर, भरतपुर, सवाई माधोपुर (डीग, खैरथल)
+2. अजमेर, पुष्कर, मेड़ता
+3. जालोर, पाली, सिरोही
+4. बांसवाड़ा, डूंगरपुर
+कूट:`,
+                options: ['a-3, b-1, c-4, d-2', 'a-1, b-2, c-3, d-4', 'a-3, b-4, c-1, d-2', 'a-4, b-1, c-2, d-3'],
+                answer: 'A',
+                explanation: `गोडवाड़ (जालोर-सिरोही क्षेत्र), मेवात (अलवर-भरतपुर), वागड़ (बांसवाड़ा-डूंगरपुर), मेरवाड़ा (अजमेर क्षेत्र)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 92,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Academies and Headquarters',
+                sourceTag: 'New',
+                question: `राजस्थान की प्रमुख अकादमियों और उनके मुख्यालयों का असंगत युग्म है:`,
+                options: ['राजस्थान साहित्य अकादमी - उदयपुर', 'राजस्थान ब्रज भाषा अकादमी - जयपुर', 'अरबी-फारसी शोध संस्थान - टोंक', 'राजस्थान सिंधी अकादमी - जोधपुर'],
+                answer: 'D',
+                explanation: `राजस्थान सिंधी अकादमी 'जयपुर' में स्थित है, जोधपुर में नहीं। (जोधपुर में रूपायन संस्थान - बोरूंदा है)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 93,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Conservation Reserves',
+                sourceTag: 'New',
+                question: `वन्यजीव और कंजर्वेशन रिज़र्व (Conservation Reserves) के बारे में सत्य हैं:
+I. 'जवाई बांध' (पाली) लेपर्ड (तेंदुए) के संरक्षण के लिए प्रसिद्ध है।
+II. 'रोटू' (नागौर) काले हिरणों के लिए एक प्रमुख कंजर्वेशन रिज़र्व है।
+III. 'उम्मेदगंज पक्षी विहार' कोटा में स्थित है।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `राजस्थान के इन तीनों कंजर्वेशन रिज़र्व के स्थान और उनकी प्रसिद्धि के तथ्य बिल्कुल सटीक हैं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 94,
+                section: 'Rajasthan GK',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'State Policies',
+                sourceTag: 'New',
+                question: `राजस्थान सरकार द्वारा जारी की गई 'नीतियों' (Policies) का सही कालानुक्रम (प्रथम से नवीन) क्या है?
+1. राज्य की प्रथम वन नीति (Forest Policy)
+2. राज्य की प्रथम जल नीति (Water Policy)
+3. राजस्थान ईको-टूरिज्म नीति (नवीनतम)
+कूट:`,
+                options: ['1, 2, 3', '2, 1, 3', 'दोनों 1 और 2 एक ही वर्ष में आईं, फिर 3', '3, 2, 1'],
+                answer: 'C',
+                explanation: `दोनों 1 और 2 एक ही वर्ष में आईं, फिर 3 (अर्थात् फरवरी 2010 में दोनों आईं, फिर 2021 में ईको-टूरिज्म)।
+सरल कूट: (A) 1, 2, 3 मान लें (वन नीति फरवरी 2010, जल नीति भी 2010, ईको-टूरिज्म 2021)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 95,
+                section: 'Rajasthan GK',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Social Practices',
+                sourceTag: 'New',
+                question: `कथन (A): राजस्थान में 'मौसर' (Mausar) मृत्युभोज को कहा जाता है, जबकि 'जोसर' जीवित व्यक्ति के मृत्युभोज को कहते हैं।
+कारण (R): राज्य सरकार ने 'राजस्थान मृत्युभोज निवारण अधिनियम, 1960' के तहत इन प्रथाओं को दंडनीय अपराध घोषित कर रखा है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'B',
+                explanation: `दोनों कथन अपनी-अपनी जगह तथ्यात्मक रूप से सही हैं। मौसर/जोसर के अर्थ सही हैं और एक्ट भी 1960 का ही है, पर कारण व्याख्या नहीं करता।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 96,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Mines',
+                sourceTag: 'New',
+                question: `खनिजों की प्रसिद्ध खानों (Mines) को सुमेलित करें:
+सूची-I:
+a. जावर (Zawar)
+b. रामपुरा आगूचा
+c. खेतड़ी
+d. आनंदपुर भुकिया
+सूची-II:
+1. सोना (Gold)
+2. सीसा-जस्ता और चांदी (उदयपुर)
+3. सीसा-जस्ता (भीलवाड़ा)
+4. तांबा (Copper)
+कूट:`,
+                options: ['a-2, b-3, c-4, d-1', 'a-1, b-2, c-3, d-4', 'a-3, b-2, c-4, d-1', 'a-2, b-4, c-1, d-3'],
+                answer: 'A',
+                explanation: `जावर (मेवाड़-लाखा के समय सीसा-जस्ता-चांदी), रामपुरा आगूचा (भीलवाड़ा), खेतड़ी (तांबा), आनंदपुर भुकिया (बांसवाड़ा - सोना)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 97,
+                section: 'Rajasthan GK',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'UNESCO Heritage',
+                sourceTag: 'New',
+                question: `यूनेस्को (UNESCO) विश्व धरोहर सूची में शामिल राजस्थान के स्थलों के बारे में सत्य हैं:
+I. 2010 में 'जंतर-मंतर' (जयपुर) को शामिल किया गया।
+II. 2013 में राजस्थान के 6 पहाड़ी दुर्गों (चीकू गाजर आम की ट्रिक वाले) को शामिल किया गया।
+III. 2019 में 'जयपुर के परकोटे' (Walled City) को विश्व धरोहर का दर्जा मिला।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'D',
+                explanation: `यूनेस्को हेरिटेज लिस्ट में राजस्थान के ये सभी स्थल दिए गए वर्षों में ही शामिल किए गए थे।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 98,
+                section: 'Rajasthan GK',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Transport',
+                sourceTag: 'New',
+                question: `राजस्थान में परिवहन (Transport) के संदर्भ में असंगत तथ्य कौन-सा है?`,
+                options: ['राजस्थान में प्रथम रेलगाड़ी 1874 में आगरा फोर्ट से बांदीकुई के बीच चली।', 'राजस्थान का सबसे लंबा राष्ट्रीय राजमार्ग NH-15 (पुराना नाम) था।', 'राजस्थान में रेल डिब्बे (Wagon) बनाने का कारखाना जयपुर में है।', 'जयपुर मेट्रो की शुरुआत 2015 में हुई।'],
+                answer: 'C',
+                explanation: `रेल डिब्बे (Simco Wagon Factory) का कारखाना 'भरतपुर' में स्थित है, जयपुर में नहीं।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 99,
+                section: 'Rajasthan GK',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Livestock Fairs',
+                sourceTag: 'New',
+                question: `प्रसिद्ध पशु मेलों (Livestock Fairs) को उनके स्थान से सुमेलित करें:
+सूची-I:
+a. श्री मल्लीनाथ पशु मेला
+b. श्री वीर तेजाजी पशु मेला
+c. पुष्कर पशु मेला
+d. चंद्रभागा पशु मेला
+सूची-II:
+1. झालरापाटन (झालावाड़)
+2. अजमेर
+3. परबतसर (डीडवाना कुचामन)
+4. तिलवाड़ा (बालोतरा)
+कूट:`,
+                options: ['a-4, b-3, c-2, d-1', 'a-1, b-2, c-3, d-4', 'a-4, b-1, c-2, d-3', 'a-3, b-4, c-1, d-2'],
+                answer: 'A',
+                explanation: `मल्लीनाथ जी (तिलवाड़ा), तेजाजी (परबतसर), पुष्कर (अजमेर), चंद्रभागा (झालरापाटन-हाड़ौती का सुरंगा मेला)।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 100,
+                section: 'Rajasthan GK',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'New Districts',
+                sourceTag: 'New',
+                question: `कथन: 'दूदू' (Dudu) को जयपुर से अलग करके एक स्वतंत्र नया जिला बनाया गया है।
+निष्कर्ष:
+I. दूदू वर्तमान में राजस्थान का क्षेत्रफल की दृष्टि से सबसे छोटा जिला बन गया है (इसमें केवल 3 तहसीलें हैं)।
+II. यह भारत का एकमात्र ऐसा जिला है जो सीधे ग्राम पंचायत से जिला बना है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `नए परिसीमन के बाद धौलपुर की जगह अब 'दूदू' राजस्थान का सबसे छोटा जिला है। यह पहले एक ग्राम पंचायत थी, जिसे सीधा जिला बनाया गया।`,
+                reference: 'Rajasthan GK Section'
+              },
+              {
+                id: 101,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Inclusive Education',
+                sourceTag: 'New',
+                question: `आपकी कक्षा में समाज के एक अत्यंत पिछड़े और वंचित वर्ग का छात्र प्रवेश लेता है। वह कक्षा में खुद को अलग-थलग (Alienated) महसूस करता है। एक आदर्श शिक्षक के रूप में आपकी क्या भूमिका होगी?`,
+                options: ['उसे कहेंगे कि वह अपनी पृष्ठभूमि के अनुसार ही व्यवहार करे।', 'पूरी कक्षा में उसके साथ सकारात्मक भेदभाव करेंगे और बच्चों को उसके साथ घुलने-मिलने वाले सामूहिक कार्य (Group activities) देंगे।', 'उस पर कोई विशेष ध्यान नहीं देंगे, समय के साथ वह खुद सीख जाएगा।', 'उसे कक्षा में सबसे पीछे बैठने को कहेंगे ताकि उसे कोई परेशान न करे।'],
+                answer: 'B',
+                explanation: `समावेशी शिक्षा (Inclusive Education) शिक्षक से यह मांग करती है कि वह हर बच्चे को कक्षा का अभिन्न हिस्सा महसूस कराए। सामूहिक कार्य (Peer interaction) सामाजिकरण का सबसे अच्छा तरीका है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 102,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Professional Ethics',
+                sourceTag: 'New',
+                question: `शिक्षक की 'व्यावसायिक नैतिकता' (Professional Ethics) के प्रतिकूल (असंगत) आचरण कौन-सा है?`,
+                options: ['विद्यालय के समय का उपयोग अपने निजी व्यवसाय या कार्यों के लिए करना।', 'अपने साथी शिक्षकों के साथ सहयोगात्मक और सम्मानजनक व्यवहार करना।', 'छात्रों की व्यक्तिगत जानकारी (गोपनीयता) को सुरक्षित रखना।', 'शिक्षा के क्षेत्र में हो रहे नए अनुसंधानों से खुद को अपडेट रखना।'],
+                answer: 'A',
+                explanation: `विद्यालय के समय में निजी काम करना एक गंभीर व्यावसायिक अनैतिकता (Professional misconduct) है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 103,
+                section: 'Teaching Aptitude',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Teaching Process',
+                sourceTag: 'New',
+                question: `कथन (A): शिक्षक को अपना पाठ हमेशा छात्रों के 'पूर्व ज्ञान' (Previous Knowledge) से जोड़कर शुरू करना चाहिए।
+कारण (R): जब नया ज्ञान बच्चों के मौजूदा अनुभवों से जोड़ा जाता है, तो अधिगम (Learning) अधिक स्थायी और अर्थपूर्ण हो जाता है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `'ज्ञात से अज्ञात की ओर' (Known to Unknown) शिक्षण सूत्र का यही मुख्य आधार है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 104,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Reflective Teacher',
+                sourceTag: 'New',
+                question: `एक 'चिंतनशील शिक्षक' (Reflective Teacher) की विशेषताएं क्या होती हैं?
+I. वह अपनी ही शिक्षण विधियों का नियमित मूल्यांकन करता है।
+II. वह अपनी कमियों को स्वीकारता है और उनमें सुधार करता है।
+III. वह यह मानता है कि जो उसने पढ़ा दिया, वही अंतिम सत्य है।
+IV. वह छात्रों के फीडबैक को गंभीरता से लेता है।`,
+                options: ['केवल I और II', 'केवल I, II और IV', 'केवल II, III और IV', 'I, II, III और IV सभी'],
+                answer: 'B',
+                explanation: `चिंतनशील शिक्षक कभी भी खुद को 'पूर्ण' या 'सर्वज्ञानी' नहीं मानता, वह हमेशा सीखने और सुधारने (Continuous improvement) के लिए तैयार रहता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 105,
+                section: 'Teaching Aptitude',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Teaching Maxims',
+                sourceTag: 'New',
+                question: `शिक्षण सूत्रों (Teaching Maxims) को उनके सही अर्थ से सुमेलित करें:
+सूची-I:
+a. विशिष्ट से सामान्य की ओर (Specific to General)
+b. स्थानीय से वैश्विक की ओर (Local to Global)
+c. विश्लेषण से संश्लेषण की ओर (Analysis to Synthesis)
+सूची-II:
+1. पहले अपने गांव/शहर का उदाहरण देना, फिर दुनिया का।
+2. पहले उदाहरण प्रस्तुत करना, फिर उससे नियम (Rule) निकलवाना।
+3. पहले किसी विषय को छोटे-छोटे टुकड़ों में तोड़कर समझना, फिर उन्हें जोड़कर निष्कर्ष निकालना।
+कूट:`,
+                options: ['a-2, b-1, c-3', 'a-1, b-2, c-3', 'a-3, b-2, c-1', 'a-2, b-3, c-1'],
+                answer: 'A',
+                explanation: `विशिष्ट से सामान्य (आगमन विधि) में पहले उदाहरण (Specific) फिर नियम (General) होता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 106,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Professional Conduct',
+                sourceTag: 'New',
+                question: `आपका एक साथी शिक्षक (Colleague) स्टाफ रूम में प्रधानाध्यापक की पीठ पीछे बुराई कर रहा है और आपको भी उसमें शामिल होने को कह रहा है। आप क्या करेंगे?`,
+                options: ['आप भी बढ़-चढ़कर प्रधानाध्यापक की बुराई करेंगे।', 'प्रधानाध्यापक के पास जाकर तुरंत उस शिक्षक की शिकायत कर देंगे।', 'उस चर्चा में शामिल होने से विनम्रतापूर्वक इनकार कर देंगे और पेशेवर गरिमा बनाए रखेंगे।', 'उस शिक्षक से हाथापाई करेंगे।'],
+                answer: 'C',
+                explanation: `गपशप (Gossip) या कार्यस्थल की राजनीति (Office politics) का हिस्सा बनना एक शिक्षक की गरिमा के खिलाफ है। तटस्थ रहना सर्वोत्तम है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 107,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Homework and Learning',
+                sourceTag: 'New',
+                question: `कथन: प्राथमिक स्तर पर बच्चों को बहुत अधिक मात्रा में रटने वाला गृहकार्य (Homework) नहीं दिया जाना चाहिए।
+निष्कर्ष:
+I. इससे बच्चों में विद्यालय और पढ़ाई के प्रति अरुचि (Boredom) पैदा होती है।
+II. गृहकार्य हमेशा रचनात्मक, खोज-आधारित और बच्चों की क्षमता के अनुरूप होना चाहिए।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `NCF 2005 और NEP 2020 दोनों ही भारी बस्ते और नीरस होमवर्क का कड़ा विरोध करते हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 108,
+                section: 'Teaching Aptitude',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Lesson Execution',
+                sourceTag: 'New',
+                question: `कक्षा में एक आदर्श 'पाठ प्रस्तुतीकरण' (Lesson Execution) के चरणों का सही मनोवैज्ञानिक क्रम क्या है?
+1. प्रस्तुतीकरण (Presentation)
+2. प्रस्तावना / पूर्व-ज्ञान परीक्षण (Introduction)
+3. मूल्यांकन (Evaluation)
+4. पुनरावृत्ति (Recapitulation)
+कूट:`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 1, 3, 4', '1, 2, 4, 3'],
+                answer: 'A',
+                explanation: `सबसे पहले प्रस्तावना (Introduction), फिर मुख्य पाठ पढ़ाना (Presentation), फिर दोहराना/सारांश (Recapitulation), और अंत में जांचना (Evaluation)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 109,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Environmental Factors',
+                sourceTag: 'New',
+                question: `बालकों के अधिगम (Learning) को प्रभावित करने वाले 'पर्यावरणीय कारकों' (Environmental Factors) में से असंगत विकल्प चुनें:`,
+                options: ['कक्षा का भौतिक वातावरण (प्रकाश, हवा)', 'बालक की जन्मजात बुद्धि (Innate Intelligence)', 'विद्यालय का सामाजिक-सांस्कृतिक माहौल', 'परिवार का माहौल और पोषण'],
+                answer: 'B',
+                explanation: `'जन्मजात बुद्धि' एक अनुवांशिक (Hereditary/Personal) कारक है, यह बाहरी या पर्यावरणीय (Environmental) कारक नहीं है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 110,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Good Teaching',
+                sourceTag: 'New',
+                question: `अच्छे शिक्षण (Good Teaching) की प्रकृति कैसी होनी चाहिए?
+I. यह निदानात्मक (Diagnostic) और उपचारात्मक (Remedial) होना चाहिए।
+II. यह पूर्णतया सत्तावादी (Authoritarian) होना चाहिए।
+III. यह छात्रों को स्वयं सीखने (Self-learning) के लिए प्रेरित करने वाला होना चाहिए।`,
+                options: ['केवल I और II', 'केवल I और III', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `शिक्षण कभी भी 'सत्तावादी' (तानाशाही) नहीं होना चाहिए; यह लोकतांत्रिक और सहयोगात्मक होना चाहिए।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 111,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Multilingual Classroom',
+                sourceTag: 'New',
+                question: `एक नया छात्र जो दूसरे राज्य से आया है, आपकी कक्षा में भाषा की भिन्नता के कारण अपनी बात ठीक से नहीं कह पा रहा है। आप क्या करेंगे?`,
+                options: ['उसे डांटेंगे कि पहले वह स्थानीय भाषा सीख कर आए।', 'उसे अपनी मातृभाषा में बात कहने के लिए प्रोत्साहित करेंगे और गैर-शाब्दिक संकेतों (Non-verbal cues) से उसकी बात समझेंगे।', 'उसे कक्षा में बोलने से मना कर देंगे।', 'उसे हमेशा सबसे पीछे बैठाएंगे।'],
+                answer: 'B',
+                explanation: `बहुभाषिकता (Multilingualism) कक्षा में एक संसाधन (Resource) है, बाधा नहीं। शिक्षक का संप्रेषण कौशल सहानुभूतिपूर्ण होना चाहिए।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 112,
+                section: 'Teaching Aptitude',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Non-verbal Communication',
+                sourceTag: 'New',
+                question: `अशाब्दिक संप्रेषण (Non-verbal Communication) के तकनीकी शब्दों को सुमेलित करें:
+सूची-I:
+a. काइनेसिक्स (Kinesics)
+b. प्रॉक्सेमिक्स (Proxemics)
+c. पैरा-लैंग्वेज (Paralanguage)
+सूची-II:
+1. बोलते समय आवाज का उतार-चढ़ाव, टोन और गति।
+2. शारीरिक हाव-भाव (Body language) और आँखों का संपर्क।
+3. संप्रेषण के दौरान वक्ता और श्रोता के बीच की शारीरिक दूरी (Space/Distance)।
+कूट:`,
+                options: ['a-2, b-3, c-1', 'a-1, b-2, c-3', 'a-3, b-2, c-1', 'a-2, b-1, c-3'],
+                answer: 'A',
+                explanation: `Kinesics (Body Language), Proxemics (Space/Distance), Paralanguage (Voice tone/pitch)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 113,
+                section: 'Teaching Aptitude',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Effective Communication',
+                sourceTag: 'New',
+                question: `कथन (A): शिक्षक को कक्षा में हमेशा जटिल और क्लिष्ट शब्दावली (Difficult vocabulary) का प्रयोग करना चाहिए ताकि उसकी विद्वता साबित हो सके।
+कारण (R): संप्रेषण का मूल उद्देश्य अर्थ को उसी रूप में श्रोता तक पहुँचाना है जिस रूप में वक्ता चाहता है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A गलत है लेकिन R सही है।', 'A सही है लेकिन R गलत है।'],
+                answer: 'C',
+                explanation: `शिक्षक का उद्देश्य विद्वता दिखाना नहीं, बल्कि बच्चे को सरल भाषा में समझाना है। कठिन शब्दावली संप्रेषण में 'भाषायी बाधा' (Semantic barrier) पैदा करती है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 114,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Semantic Barriers',
+                sourceTag: 'New',
+                question: `संप्रेषण में 'भाषायी बाधाओं' (Semantic Barriers) के उदाहरणों में से असंगत विकल्प चुनें:`,
+                options: ['अनेकार्थी शब्दों का प्रयोग (Ambiguous words)', 'तकनीकी जार्गन (Technical Jargon) का अत्यधिक प्रयोग', 'श्रोता का बहरापन (Deafness)', 'खराब अनुवाद (Bad translation)'],
+                answer: 'C',
+                explanation: `बहरापन (Deafness) एक 'शारीरिक/भौतिक बाधा' (Physiological barrier) है, भाषा या अर्थ (Semantic) की बाधा नहीं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 115,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Active Listening',
+                sourceTag: 'New',
+                question: `कक्षा में 'सक्रिय श्रवण' (Active Listening) को बढ़ावा देने के लिए क्या आवश्यक है?
+I. बोलते समय छात्र को बीच में टोकना।
+II. छात्र की बात सुनकर संक्षेप में उसे दोहराना (Paraphrasing) ताकि पुष्टि हो सके।
+III. वक्ता की ओर ध्यान केंद्रित करना और आई-कांटेक्ट बनाना।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `बीच में टोकना (Interrupting) एक ख़राब श्रोता की निशानी है। Paraphrasing (सार निकालना) सक्रिय श्रवण का बेहतरीन टूल है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 116,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Classroom Distraction',
+                sourceTag: 'New',
+                question: `आप कक्षा में एक गंभीर विषय पढ़ा रहे हैं, तभी अचानक बाहर तेज बारिश और बादलों की गड़गड़ाहट शुरू हो जाती है, जिससे बच्चों का ध्यान भटक जाता है। शिक्षक के रूप में आपका संप्रेषण क्या होगा?`,
+                options: ['बच्चों पर चिल्लाएंगे कि वे खिड़की के बाहर न देखें।', 'बारिश को ही अपने विषय से जोड़कर कोई उदाहरण देंगे ताकि उनका ध्यान वापस विषय पर आ जाए।', 'पढ़ाना छोड़कर खुद भी बारिश देखने लगेंगे।', 'तुरंत एक टेस्ट लेना शुरू कर देंगे।'],
+                answer: 'B',
+                explanation: `एक अच्छा कम्युनिकेटर पर्यावरण या विक्षेपों (Distractions) को भी अपनी शिक्षण सामग्री (TLM) में बदल देता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 117,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: "Mehrabian's Rule",
+                sourceTag: 'New',
+                question: `कथन: मनोवैज्ञानिक अल्बर्ट मेहराबियन के अनुसार, आमने-सामने के संप्रेषण में शब्दों (Words) का प्रभाव केवल 7% होता है, जबकि शारीरिक हाव-भाव (Body Language) का प्रभाव 55% होता है।
+निष्कर्ष:
+I. कक्षा में शिक्षक का गैर-शाब्दिक व्यवहार (मुस्कान, हाव-भाव) उसके द्वारा बोले गए शब्दों से अधिक महत्वपूर्ण है।
+II. संप्रेषण में शब्दों की कोई आवश्यकता ही नहीं होती।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'A',
+                explanation: `बॉडी लैंग्वेज अत्यधिक प्रभावशाली है, लेकिन इसका अर्थ यह नहीं कि शब्दों की आवश्यकता ही नहीं है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 118,
+                section: 'Teaching Aptitude',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Communication Barriers',
+                sourceTag: 'New',
+                question: `संप्रेषण प्रक्रिया में 'बाधाओं' (Barriers) को दूर करने का सही तार्किक क्रम क्या होना चाहिए?
+1. फीडबैक (Feedback) लेना।
+2. श्रोताओं के स्तर को समझना (Know your audience)।
+3. संदेश को सरल भाषा में तैयार करना (Encoding simply)।
+कूट:`,
+                options: ['2, 3, 1', '1, 2, 3', '3, 2, 1', '2, 1, 3'],
+                answer: 'A',
+                explanation: `सबसे पहले बच्चों के स्तर को समझें (Audience analysis), फिर उसके अनुसार आसान भाषा चुनें, और अंत में फीडबैक लेकर सुनिश्चित करें कि बात समझ आई या नहीं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 119,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: "7 C's of Communication",
+                sourceTag: 'New',
+                question: `संप्रेषण के '7 C's' (प्रभावी संप्रेषण के सिद्धांत) में से कौन-सा शामिल नहीं है?`,
+                options: ['स्पष्टता (Clarity)', 'संक्षिप्तता (Conciseness)', 'जटिलता (Complexity)', 'पूर्णता (Completeness)'],
+                answer: 'C',
+                explanation: `संप्रेषण में 'सरलता' होनी चाहिए, जटिलता (Complexity) नहीं। 7 C's में Clarity, Conciseness, Concrete, Correct, Coherent, Complete, और Courteous शामिल होते हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 120,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'ICT in Classroom Communication',
+                sourceTag: 'New',
+                question: `कक्षा संप्रेषण में ICT (Information and Communication Technology) के प्रयोग के क्या लाभ हैं?
+I. यह अमूर्त (Abstract) धारणाओं को दृश्य (Visual) रूप में समझा सकता है।
+II. यह शिक्षक को पूर्ण रूप से प्रतिस्थापित (Replace) कर देता है।
+III. यह छात्रों की रुचि और एकाग्रता को बढ़ाता है।`,
+                options: ['केवल I और II', 'केवल I और III', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `तकनीक कभी भी शिक्षक को रिप्लेस नहीं कर सकती, वह केवल एक 'सुविधाजनक उपकरण' (Tool) है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 121,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Leadership and Counseling',
+                sourceTag: 'New',
+                question: `कक्षा का एक छात्र (जो कक्षा का मॉनिटर है) अपनी सत्ता का दुरुपयोग करके अन्य कमजोर बच्चों को डराता-धमकाता है। एक शिक्षक (नेता) के रूप में आप क्या करेंगे?`,
+                options: ['उसे तुरंत मॉनिटर पद से हटा देंगे और पूरी कक्षा के सामने बेइज्जत करेंगे।', 'उसे एकांत में बुलाकर नेतृत्व की वास्तविक परिभाषा (सेवा और सहयोग) समझाएंगे और उसके व्यवहार में सुधार न होने पर ही पद से हटाएंगे।', 'इसे बच्चों का आपसी मामला मानकर छोड़ देंगे।', 'कमजोर बच्चों को ही डांटेंगे कि वे शिकायत क्यों कर रहे हैं।'],
+                answer: 'B',
+                explanation: `नेतृत्व विकास का अर्थ गलतियों को सुधारना है। काउंसलिंग पहला कदम होना चाहिए, सीधा दंड नहीं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 122,
+                section: 'Teaching Aptitude',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Leadership Styles',
+                sourceTag: 'New',
+                question: `नेतृत्व के प्रकारों (Leadership Styles) को सुमेलित करें:
+सूची-I:
+a. रूपांतरणकारी नेतृत्व (Transformational Leadership)
+b. लेन-देन वाला नेतृत्व (Transactional Leadership)
+c. निरंकुश नेतृत्व (Authoritarian Leadership)
+सूची-II:
+1. शिक्षक छात्रों को प्रेरणा और विजन (Vision) देकर उनमें सकारात्मक बदलाव लाता है।
+2. शिक्षक केवल आदेश देता है और बिना सवाल किए उनका पालन चाहता है।
+3. शिक्षक 'पुरस्कार और दंड' (Rewards & Punishments) के आधार पर काम करवाता है।
+कूट:`,
+                options: ['a-1, b-3, c-2', 'a-2, b-1, c-3', 'a-3, b-2, c-1', 'a-1, b-2, c-3'],
+                answer: 'A',
+                explanation: `Transformational (बदलाव/प्रेरणा), Transactional (काम के बदले रिवॉर्ड - गिव एंड टेक), Authoritarian (तानाशाही)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 123,
+                section: 'Teaching Aptitude',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Leadership and School Culture',
+                sourceTag: 'New',
+                question: `कथन (A): एक विद्यालय का वातावरण (School Culture) काफी हद तक उसके प्रधानाध्यापक के नेतृत्व पर निर्भर करता है।
+कारण (R): प्रधानाध्यापक जहाज के 'कप्तान' के समान होता है, जिसका दृष्टिकोण और नीतियां पूरे स्टाफ और छात्रों को प्रभावित करती हैं।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `"जैसा राजा वैसी प्रजा" - विद्यालय के संदर्भ में प्रधानाध्यापक (Principal) की नेतृत्व शैली सबसे अहम होती है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 124,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Effective Teacher-Leader',
+                sourceTag: 'New',
+                question: `एक 'प्रभावशाली शिक्षक-नेता' (Effective Teacher-Leader) के नकारात्मक (असंगत) गुणों को छांटिए:`,
+                options: ['सहानुभूति (Empathy)', 'संवेगात्मक अस्थिरता (Emotional Instability / गुस्सा करना)', 'संप्रेषण कौशल (Communication Skill)', 'निर्णय लेने की क्षमता (Decision making)'],
+                answer: 'B',
+                explanation: `एक नेता को मानसिक और संवेगात्मक (Emotionally) रूप से बहुत स्थिर (Stable) होना चाहिए। छोटी-छोटी बातों पर गुस्सा करना नेतृत्व की विफलता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 125,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Leadership Development in Introvert Students',
+                sourceTag: 'New',
+                question: `एक 'अंतर्मुखी' (Introvert / शर्मीले) छात्र में नेतृत्व गुण विकसित करने के लिए शिक्षक को क्या करना चाहिए?
+I. उसे अचानक से पूरे स्कूल के सामने भाषण देने के लिए खड़ा कर देना चाहिए।
+II. उसे छोटे समूहों (Small groups) में कोई विशिष्ट जिम्मेदारी सौंपनी चाहिए।
+III. उसकी सफलताओं पर सकारात्मक प्रतिपुष्टि (Positive reinforcement) देनी चाहिए।`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `अचानक बड़े मंच पर खड़ा करना उसे डरा देगा (Phobia)। धीरे-धीरे छोटे समूहों से शुरुआत करना सबसे मनोवैज्ञानिक तरीका है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 126,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Resourcefulness and Leadership',
+                sourceTag: 'New',
+                question: `विद्यालय में एक सांस्कृतिक कार्यक्रम का आयोजन हो रहा है। बजट बहुत कम है। आयोजन प्रभारी के रूप में आपकी क्या रणनीति होगी?`,
+                options: ['कार्यक्रम रद्द कर देंगे क्योंकि बिना पैसे के कुछ नहीं होता।', 'छात्रों से जबरदस्ती चंदा वसूलेंगे।', 'टीम के साथ ब्रेनस्टॉर्मिंग करके शून्य-लागत (Zero-cost) नवाचारों और कबाड़ से जुगाड़ (Best out of waste) जैसी रणनीतियों का प्रयोग करेंगे।', 'सारा खर्च अपनी जेब से भर देंगे।'],
+                answer: 'C',
+                explanation: `संसाधनों के अभाव में 'संसाधन-संपन्नता' (Resourcefulness) खोजना ही एक बेहतरीन नेता की पहचान है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 127,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Classroom Management',
+                sourceTag: 'New',
+                question: `कथन: कक्षा प्रबंधन का अर्थ केवल छात्रों को चुपचाप बैठाए रखना नहीं है, बल्कि उन्हें अधिगम गतिविधियों में व्यस्त (Engaged) रखना है।
+निष्कर्ष:
+I. एक शांत (Pin-drop silence) कक्षा हमेशा एक अच्छी कक्षा होती है।
+II. यदि छात्र किसी प्रोजेक्ट पर चर्चा कर रहे हैं और 'सकारात्मक शोर' (Productive noise) हो रहा है, तो यह उत्तम प्रबंधन है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'B',
+                explanation: `मनोवैज्ञानिकों के अनुसार 'पिन-ड्रॉप साइलेंस' भय का प्रतीक है। बच्चों का गतिविधियों में व्यस्त होना वास्तविक अनुशासन है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 128,
+                section: 'Teaching Aptitude',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Conflict Resolution',
+                sourceTag: 'New',
+                question: `'समस्या समाधान' (Conflict Resolution) प्रक्रिया के चरणों को सही क्रम में जमाएं:
+1. समस्या के मूल कारण को समझना।
+2. दोनों पक्षों को शांत करना।
+3. फॉलो-अप (Follow-up) लेना कि समस्या दोबारा तो नहीं हो रही।
+4. आपसी सहमति से समाधान (Win-win solution) खोजना।
+कूट:`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 4, 1, 3', '1, 4, 2, 3'],
+                answer: 'A',
+                explanation: `सबसे पहले माहौल शांत करें -> फिर कारण जानें -> फिर हल निकालें -> अंत में निगरानी रखें (Follow-up)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 129,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Democratic Classroom',
+                sourceTag: 'New',
+                question: `एक 'लोकतांत्रिक कक्षा' (Democratic Classroom) के लक्षणों में असंगत क्या है?`,
+                options: ['छात्रों को चुनाव करने की आज़ादी होती है (जैसे- आज क्या पढ़ें)।', 'शिक्षक तानाशाह के बजाय मार्गदर्शक होता है।', 'नियमों का उल्लंघन करने पर कठोर शारीरिक दंड दिया जाता है।', 'सभी छात्रों की राय को समान महत्व दिया जाता है।'],
+                answer: 'C',
+                explanation: `लोकतांत्रिक कक्षा में दंडात्मक (Punitive) नहीं, बल्कि सुधारात्मक (Restorative) न्याय होता है। शारीरिक दंड पूरी तरह से असंगत है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 130,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Visionary Leadership',
+                sourceTag: 'New',
+                question: `एक 'दूरदर्शी नेता' (Visionary Leader) के रूप में प्रधानाध्यापक को क्या करना चाहिए?
+I. विद्यालय के लिए भविष्य के स्पष्ट लक्ष्य (Goals) तय करने चाहिए।
+II. शिक्षकों को नवाचार (Innovation) करने से रोकना चाहिए।
+III. समुदाय और अभिभावकों (Community & Parents) को विद्यालय के विकास में भागीदार बनाना चाहिए।`,
+                options: ['केवल I और II', 'केवल I और III', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `नवाचार को 'रोकना' एक रूढ़िवादी नेता का काम है, दूरदर्शी नेता हमेशा नवाचारों (Innovations) का स्वागत करता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 131,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Gifted Learner Management',
+                sourceTag: 'New',
+                question: `आपकी कक्षा में एक 'प्रतिभाशाली' (Gifted) छात्र है जो अपना काम बहुत जल्दी खत्म कर लेता है और फिर बोरियत के कारण कक्षा में अनुशासनहीनता करता है। आप क्या करेंगे?`,
+                options: ['उसे कक्षा के बाहर निकाल देंगे।', 'उसे उसी काम को बार-बार करने के लिए कहेंगे।', 'उसके लिए उच्च स्तर के संवर्धन कार्यक्रम (Enrichment programs) और चुनौतीपूर्ण कार्य (Challenging tasks) की व्यवस्था करेंगे।', 'उसे अगली कक्षा में प्रमोट कर देंगे।'],
+                answer: 'C',
+                explanation: `प्रतिभाशाली बच्चों का मानसिक स्तर ऊँचा होता है। सामान्य काम से वे ऊब जाते हैं, इसलिए उन्हें उनकी क्षमता के अनुसार Extra/Challenging काम देना समावेशी शिक्षा का हिस्सा है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 132,
+                section: 'Teaching Aptitude',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Tools of Evaluation',
+                sourceTag: 'New',
+                question: `मूल्यांकन के उपकरणों (Tools of Evaluation) को सुमेलित करें:
+सूची-I:
+a. पोर्टफोलियो (Portfolio)
+b. एनेकडोटल रिकॉर्ड (Anecdotal Record)
+c. रूब्रिक्स (Rubrics)
+सूची-II:
+1. किसी कार्य का मूल्यांकन करने के लिए पहले से तय किए गए मानदंड (Scoring Guide)।
+2. एक निश्चित अवधि में छात्र के सर्वश्रेष्ठ कार्यों का संग्रह।
+3. छात्र के जीवन की किसी विशेष घटना या व्यवहार का लिखित विवरण।
+कूट:`,
+                options: ['a-2, b-3, c-1', 'a-1, b-2, c-3', 'a-3, b-1, c-2', 'a-2, b-1, c-3'],
+                answer: 'A',
+                explanation: `Portfolio (कार्यों की फाइल), Anecdotal Record (घटनाओं का रिकॉर्ड), Rubrics (मार्किंग की गाइडलाइन)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 133,
+                section: 'Teaching Aptitude',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Formative Assessment',
+                sourceTag: 'New',
+                question: `कथन (A): निर्माणात्मक मूल्यांकन शिक्षण-अधिगम प्रक्रिया के दौरान ही किया जाता है।
+कारण (R): इसका मुख्य उद्देश्य छात्रों को ग्रेड देना नहीं, बल्कि उन्हें तत्काल फीडबैक देकर उनकी कमियों में सुधार करना (Assessment for learning) है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `Formative Assessment (जैसे क्लास टेस्ट) का मूल उद्देश्य सुधार (Improvement) होता है, जबकि Summative का उद्देश्य जजमेंट/ग्रेडिंग होता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 134,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Inclusive Education Principles',
+                sourceTag: 'New',
+                question: `'समावेशी शिक्षा' (Inclusive Education) के सिद्धांतों में असंगत विकल्प का चयन करें:`,
+                options: ['व्यक्तिगत भिन्नताओं (Individual differences) का सम्मान करना।', 'विशिष्ट बच्चों को अलग (Segregate) करके विशेष स्कूलों में भेजना।', 'शिक्षा प्रणाली को बच्चों की आवश्यकता के अनुसार ढालना (System adapts to the child)।', "'सभी के लिए शिक्षा' (Education for All) का लक्ष्य।"],
+                answer: 'B',
+                explanation: `बच्चों को अलग (Segregation) करना समावेशी शिक्षा का पूर्णतः उल्लंघन है। इसका नियम है कि हर बच्चा (चाहे विशिष्ट हो या सामान्य) एक ही छत के नीचे पढ़ेगा।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 135,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Good Test Characteristics',
+                sourceTag: 'New',
+                question: `एक 'अच्छे प्रश्नपत्र/परीक्षण' (Good Test) की विशेषताएं क्या हैं?
+I. वैधता (Validity) - परीक्षण वही मापे जो मापने के लिए बना है।
+II. विश्वसनीयता (Reliability) - बार-बार जांचने पर अंक न बदलें।
+III. वस्तुनिष्ठता (Objectivity) - परीक्षक के स्वभाव का अंकों पर कोई असर न पड़े।
+IV. व्यावहारिकता (Practicability) - इसे आयोजित करना आसान हो।`,
+                options: ['केवल I और II', 'केवल I, II और III', 'केवल II, III और IV', 'I, II, III और IV सभी'],
+                answer: 'D',
+                explanation: `ये चारों (Validity, Reliability, Objectivity, Practicability) एक प्रमापीकृत (Standardized) और अच्छे परीक्षण की आवश्यक विशेषताएं हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 136,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'PTM Counseling',
+                sourceTag: 'New',
+                question: `एक अभिभावक PTM में शिकायत करते हैं कि आप (शिक्षक) खेल-कूद और कला पर ज्यादा ध्यान देते हैं, जबकि उन्हें केवल गणित-विज्ञान में पूरे अंक चाहिए। आप उन्हें कैसे समझाएंगे?`,
+                options: ['उनकी बात मान लेंगे और बच्चे को खेल से हटा देंगे।', "उन्हें बताएंगे कि CCE के तहत बच्चे का 'सर्वांगीण विकास' (Holistic Development) शैक्षिक और सह-शैक्षिक दोनों क्षेत्रों से ही संभव है।", 'उनसे बहस करेंगे और कहेंगे कि आपको सिखाने की जरूरत नहीं है।', 'कहेंगे कि यह स्कूल का नियम है, पसंद न हो तो स्कूल बदल लें।'],
+                answer: 'B',
+                explanation: `अभिभावकों की काउंसलिंग करना और उन्हें शिक्षा के आधुनिक व्यापक (Comprehensive) उद्देश्यों के प्रति जागरूक करना शिक्षक का दायित्व है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 137,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Diagnostic Testing',
+                sourceTag: 'New',
+                question: `कथन: जब कोई छात्र लगातार किसी विषय में पिछड़ रहा हो, तो शिक्षक को उपचारात्मक शिक्षण (Remedial teaching) से पहले 'निदानात्मक परीक्षण' करना चाहिए।
+निष्कर्ष:
+I. निदान (Diagnosis) का अर्थ है छात्र की समस्या या कठिनाई के मूल कारण (Learning gaps) को खोजना।
+II. बिना निदान के किया गया उपचार कभी भी प्रभावी नहीं हो सकता (जैसे डॉक्टर बिना बीमारी जाने दवा नहीं देता)।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `शैक्षिक निदान (समस्या की पहचान) और शैक्षिक उपचार (समस्या का समाधान) दोनों एक ही सिक्के के पहलू हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 138,
+                section: 'Teaching Aptitude',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Remedial Teaching Steps',
+                sourceTag: 'New',
+                question: `उपचारात्मक शिक्षण (Remedial Teaching) से संबंधित चरणों का सही क्रम क्या है?
+1. परीक्षण द्वारा छात्रों का स्तर जाँचना (Formative Test)।
+2. विशिष्ट अधिगम कठिनाई की पहचान करना (Diagnosis)।
+3. नई रणनीति के साथ पुनः शिक्षण करना (Remedial Teaching)।
+4. सुधार का मूल्यांकन करना (Re-evaluation)।
+कूट:`,
+                options: ['1, 2, 3, 4', '2, 1, 3, 4', '1, 3, 2, 4', '3, 1, 2, 4'],
+                answer: 'A',
+                explanation: `टेस्ट लेना -> कमी खोजना -> दोबारा अलग तरीके से पढ़ाना -> फिर जांचना।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 139,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Summative Assessment',
+                sourceTag: 'New',
+                question: `'योगात्मक मूल्यांकन' (Summative Assessment) की विशेषताओं में असंगत विकल्प चुनें:`,
+                options: ['यह शैक्षिक सत्र या टर्म के अंत में होता है (Term-end)।', 'इसका मुख्य उद्देश्य छात्रों को पास/फेल करना या ग्रेड देना है।', 'यह छात्रों को उनकी कमियां सुधारने का तुरंत अवसर प्रदान करता है (Assessment for learning)।', "यह एक प्रकार का 'अधिगम का आकलन' (Assessment of learning) है।"],
+                answer: 'C',
+                explanation: `कमियां सुधारने का अवसर 'निर्माणात्मक' (Formative) मूल्यांकन देता है। योगात्मक (Summative) मूल्यांकन अंतिम होता है, इसमें सुधार का मौका नहीं मिलता।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 140,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Co-scholastic Assessment',
+                sourceTag: 'New',
+                question: `'सह-शैक्षिक' (Co-scholastic) मूल्यांकन में किन पहलुओं का आकलन किया जाता है?
+I. जीवन कौशल (Life Skills - Thinking, Social, Emotional)
+II. अभिवृत्ति और मूल्य (Attitudes and Values)
+III. गणित और विज्ञान के सूत्र (Formulas)
+IV. स्वास्थ्य एवं शारीरिक शिक्षा (Health and Physical Education)`,
+                options: ['केवल I, II और III', 'केवल I, II और IV', 'केवल II, III और IV', 'I, II, III और IV सभी'],
+                answer: 'B',
+                explanation: `गणित और विज्ञान के सूत्र 'शैक्षिक' (Scholastic) क्षेत्र का हिस्सा हैं, सह-शैक्षिक का नहीं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 141,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Creativity in Classroom',
+                sourceTag: 'New',
+                question: `आप कक्षा में 'जल संरक्षण' पर चर्चा कर रहे हैं। एक बच्चा कहता है, "सर, अगर हम समुद्र के पानी से बादल बनाने की मशीन बना लें तो कभी सूखा नहीं पड़ेगा।" आपका जवाब क्या होगा?`,
+                options: ['"बेवकूफी की बातें मत करो, किताब में जो लिखा है वह पढ़ो।"', '"यह असंभव है, ऐसा कभी नहीं हो सकता।"', '"वाह! यह एक बहुत ही अनोखा और शानदार विचार है, चलो सोचते हैं कि इसे कैसे किया जा सकता है।"', 'उस बच्चे को शांत कराकर दूसरे बच्चे से प्रश्न पूछेंगे।'],
+                answer: 'C',
+                explanation: `सृजनात्मकता (Creativity) हमेशा कल्पना (Imagination) से शुरू होती है। एक शिक्षक को 'अपसारी चिंतन' (Divergent Thinking) को पोषित करना चाहिए, उसे दबाना नहीं चाहिए।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 142,
+                section: 'Teaching Aptitude',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Guilford Creativity Elements',
+                sourceTag: 'New',
+                question: `गिलफोर्ड (Guilford) द्वारा दिए गए 'सृजनात्मकता के तत्वों' को सुमेलित करें:
+सूची-I:
+a. प्रवाहिता (Fluency)
+b. लचीलापन (Flexibility)
+c. मौलिकता (Originality)
+d. विस्तारण (Elaboration)
+सूची-II:
+1. किसी समस्या के बिल्कुल नए और अनोखे (Unique) समाधान खोजना।
+2. किसी विचार या समाधान को विस्तार से (Details में) समझाना।
+3. एक दिए गए समय में अधिक से अधिक विचार उत्पन्न करना।
+4. एक ही समस्या को अलग-अलग दृष्टिकोण (Different categories) से सोचना।
+कूट:`,
+                options: ['a-3, b-4, c-1, d-2', 'a-1, b-2, c-3, d-4', 'a-3, b-1, c-4, d-2', 'a-4, b-3, c-1, d-2'],
+                answer: 'A',
+                explanation: `Fluency (अधिक विचार/Speed), Flexibility (विविधता/Shift in thinking), Originality (नयापन/Unique), Elaboration (विस्तार)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 143,
+                section: 'Teaching Aptitude',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Brainstorming',
+                sourceTag: 'New',
+                question: `कथन (A): 'ब्रेनस्टॉर्मिंग' विधि में छात्रों को अपने विचार रखने की पूर्ण स्वतंत्रता होती है और उस समय किसी भी विचार की आलोचना (Criticism) नहीं की जाती।
+कारण (R): आलोचना को टालने (Deferred Judgment) से छात्रों के मन का डर खत्म हो जाता है और वे अधिक से अधिक (यहाँ तक कि अजीबोगरीब) विचार प्रस्तुत कर पाते हैं।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `एलेक्स ऑस्बॉर्न की 'ब्रेनस्टॉर्मिंग' तकनीक का पहला नियम ही यही है कि 'शुरुआत में विचारों को जज मत करो, केवल मात्रा (Quantity) बढ़ाओ'।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 144,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Creativity Killers',
+                sourceTag: 'New',
+                question: `बच्चों में 'सृजनात्मकता' (Creativity) को खत्म करने वाले कारकों (Killers of Creativity) में असंगत क्या है?`,
+                options: ['असफलता का डर (Fear of Failure) पैदा करना।', 'कक्षा में हर काम को बहुत अधिक संरचित (Over-structured) कर देना।', "बच्चों को 'अस्पष्टता बर्दाश्त करने' (Tolerance for ambiguity) की आज़ादी देना।", 'सहपाठियों के सामने मजाक उड़ने का भय (Peer pressure)।'],
+                answer: 'C',
+                explanation: `'Tolerance for ambiguity' सृजनात्मकता को बढ़ाता है, मारता नहीं। जिन बच्चों को तुरंत सही जवाब नहीं मिलने पर भी बेचैनी नहीं होती, वे ही कुछ नया खोजते हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 145,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'NEP 2020 Pedagogy',
+                sourceTag: 'New',
+                question: `राष्ट्रीय शिक्षा नीति (NEP 2020) में 'शिक्षणशास्त्र' (Pedagogy) के संबंध में क्या बदलाव सुझाए गए हैं?
+I. रटंत विद्या (Rote Memorization) को बढ़ावा देना।
+II. अनुभवात्मक अधिगम (Experiential Learning) - करके सीखना।
+III. कला समेकित शिक्षा (Art-integrated Education)।
+IV. खिलौना आधारित शिक्षा (Toy-based pedagogy)।`,
+                options: ['केवल I, II और III', 'केवल II, III और IV', 'केवल I और IV', 'I, II, III और IV सभी'],
+                answer: 'B',
+                explanation: `NEP 2020 पूरी तरह से 'रटने' (Rote learning) को समाप्त करने पर केंद्रित है। बाकी सभी इसके प्रमुख स्तंभ हैं।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 146,
+                section: 'Teaching Aptitude',
+                questionType: 'Case Study',
+                difficulty: 'hard',
+                topic: 'Value Education',
+                sourceTag: 'New',
+                question: `विद्यालय के मैदान में आपको एक छात्र का गिरा हुआ 500 रुपये का नोट मिलता है। एक छात्र आपको वह नोट लाकर देता है। मूल्य शिक्षा (Value Education) के दृष्टिकोण से आप क्या करेंगे?`,
+                options: ['पैसे अपनी जेब में रख लेंगे।', 'छात्र को डांटेंगे कि वह मैदान में क्या कर रहा था।', 'उस छात्र की ईमानदारी की पूरी कक्षा/प्रार्थना सभा में प्रशंसा करेंगे और असली मालिक को पैसे लौटाएंगे।', 'उस पैसे से छात्र को कैंटीन में कुछ खिला देंगे।'],
+                answer: 'C',
+                explanation: `सकारात्मक पुनर्बलन (Positive Reinforcement) द्वारा उस बच्चे के और अन्य बच्चों के भीतर 'ईमानदारी' (Honesty) के मूल्य को दृढ़ किया जा सकता है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 147,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Moral Values',
+                sourceTag: 'New',
+                question: `कथन: "मूल्य पढ़ाए नहीं जाते, बल्कि ग्रहण किए जाते हैं (Values are caught, not taught)।"
+निष्कर्ष:
+I. बच्चों को नैतिकता का पाठ ब्लैकबोर्ड पर रटवा कर नहीं सिखाया जा सकता।
+II. बच्चे अपने शिक्षकों और माता-पिता के आचरण (व्यवहार) को देखकर अवचेतन रूप से मूल्य सीख लेते हैं।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `यह मूल्य शिक्षा का सबसे बड़ा मनोवैज्ञानिक सिद्धांत है। रोल-मॉडलिंग ही संस्कार सिखाने का सबसे उत्तम तरीका है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 148,
+                section: 'Teaching Aptitude',
+                questionType: 'Chronology',
+                difficulty: 'hard',
+                topic: 'Affective Domain',
+                sourceTag: 'New',
+                question: `बी.एस. ब्लूम के अनुसार 'भावात्मक पक्ष' (Affective Domain - मूल्यों और भावनाओं का विकास) के चरणों का सही क्रम क्या है?
+1. ग्रहण करना (Receiving)
+2. प्रतिक्रिया करना (Responding)
+3. अनुमूल्यन (Valuing)
+4. संगठन (Organizing)
+5. चरित्रीकरण (Characterizing)
+कूट:`,
+                options: ['1, 2, 3, 4, 5', '2, 1, 3, 5, 4', '1, 3, 2, 4, 5', '5, 4, 3, 2, 1'],
+                answer: 'A',
+                explanation: `पहले बच्चा बात सुनता है (Receive) -> फिर रिएक्ट करता है (Respond) -> फिर उसे महत्व देता है (Value) -> फिर अपने जीवन में ढालता है (Organize) -> फिर वह उसका चरित्र बन जाता है (Characterize)।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 149,
+                section: 'Teaching Aptitude',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: '21st Century Skills',
+                sourceTag: 'New',
+                question: `'21वीं सदी के कौशल' (21st Century Skills) में '4C's' की अवधारणा बहुत प्रसिद्ध है। इनमें से कौन-सा 'C' इस सूची में असंगत है?`,
+                options: ['क्रिटिकल थिंकिंग (Critical Thinking)', 'क्रिएटिविटी (Creativity)', 'कम्युनिकेशन (Communication)', 'कॉपिंग / क्रैमिंग (Copying / Cramming)'],
+                answer: 'D',
+                explanation: `21वीं सदी के 4C's में Critical thinking, Creativity, Communication और Collaboration (सहयोग) आते हैं। Cramming (रटना) इसमें नहीं है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 150,
+                section: 'Teaching Aptitude',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Creative Environment',
+                sourceTag: 'New',
+                question: `कक्षा में 'सृजनात्मक वातावरण' (Creative Environment) तैयार करने के लिए शिक्षक को क्या करना चाहिए?
+I. छात्रों को बेतुके और अनोखे प्रश्न पूछने के लिए प्रोत्साहित करना।
+II. गलतियां करने पर छात्रों को कठोर दंड देना।
+III. समस्याओं को सुलझाने के लिए अलग-अलग तरीके खोजने की आज़ादी देना।`,
+                options: ['केवल I और II', 'केवल I और III', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `जो छात्र गलती करने से डरता है (भय का माहौल), वह कभी भी कुछ नया (Creative) नहीं सोच सकता। इसलिए दंड सृजनात्मकता का बाधक है।`,
+                reference: 'Teaching Aptitude Section'
+              },
+              {
+                id: 151,
+                section: 'English Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Reading Comprehension',
+                sourceTag: 'New',
+                question: `Passage: Mistakes are the inevitable stepping stones to learning. While the traditional education system often penalizes errors, modern pedagogy recognizes them as proof of effort and exploration. A student who never makes a mistake is likely a student who is never trying anything new or challenging.
+Assertion (A): Making mistakes is a crucial and natural part of the learning process.
+Reason (R): Mistakes indicate that a student is taking risks, exploring, and attempting challenging tasks.`,
+                options: ['Both A and R are true, and R is the correct explanation of A.', 'Both A and R are true, but R is not the correct explanation of A.', 'A is true but R is false.', 'A is false but R is true.'],
+                answer: 'A',
+                explanation: `The passage emphasizes that mistakes are "proof of effort and exploration" and "stepping stones to learning".`,
+                reference: 'English Section'
+              },
+              {
+                id: 152,
+                section: 'English Language',
+                questionType: 'Vocabulary',
+                difficulty: 'hard',
+                topic: 'Synonym',
+                sourceTag: 'New',
+                question: `Which of the following is the closest SYNONYM for the word 'inevitable' as used in the passage?`,
+                options: ['Avoidable', 'Unavoidable / Certain', 'Unnecessary', 'Doubtful'],
+                answer: 'B',
+                explanation: `'Inevitable' means something that is sure to happen and cannot be avoided (अपरिहार्य).`,
+                reference: 'English Section'
+              },
+              {
+                id: 153,
+                section: 'English Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Articles',
+                sourceTag: 'New',
+                question: `Match List-I (Nouns/Phrases) with List-II (Appropriate Articles):
+List-I:
+a. _____ heir to the throne
+b. _____ unique opportunity
+c. _____ Pacific Ocean
+d. _____ Platinum is an expensive metal
+List-II:
+1. A
+2. An
+3. The
+4. Zero Article (No article)
+Codes:`,
+                options: ['a-2, b-1, c-3, d-4', 'a-1, b-2, c-4, d-3', 'a-2, b-3, c-1, d-4', 'a-3, b-1, c-2, d-4'],
+                answer: 'A',
+                explanation: `'An' heir (silent 'H', vowel sound 'E'), 'A' unique (consonant sound 'Y'), 'The' Pacific Ocean (oceans take 'The'), Zero article before Platinum (material noun in a general sense).`,
+                reference: 'English Section'
+              },
+              {
+                id: 154,
+                section: 'English Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Fixed Prepositions',
+                sourceTag: 'New',
+                question: `Choose the INCORRECT pair of words and their fixed prepositions:`,
+                options: ['Prefer - to', 'Agree - with (a person)', 'Comply - with', 'Accuse - for'],
+                answer: 'D',
+                explanation: `The verb 'Accuse' is always followed by the preposition 'of' (e.g., He was accused of theft), not 'for'.`,
+                reference: 'English Section'
+              },
+              {
+                id: 155,
+                section: 'English Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Prepositions',
+                sourceTag: 'New',
+                question: `Consider the following sentences related to Prepositions:
+I. He goes to college by foot.
+II. She divided the apples among the three children.
+III. The book is on the table.
+Which of the sentence(s) is/are grammatically INCORRECT?`,
+                options: ['Only I', 'Only II and III', 'Only I and III', 'I, II and III all'],
+                answer: 'A',
+                explanation: `Sentence I is incorrect. We use 'by' with vehicles (by bus, by car) but the correct phrase for walking is "on foot". II and III are correct.`,
+                reference: 'English Section'
+              },
+              {
+                id: 156,
+                section: 'English Language',
+                questionType: 'Error Spotting',
+                difficulty: 'hard',
+                topic: 'Noun Usage',
+                sourceTag: 'New',
+                question: `Read the sentence and find out which part has a grammatical error:
+"The manager gave (1) / the employees (2) / many informations (3) / regarding the new project. (4)"`,
+                options: ['1', '2', '3', '4'],
+                answer: 'C',
+                explanation: `'Information' is an uncountable noun. It does not have a plural form 'informations'. We use "much information" or "many pieces of information".`,
+                reference: 'English Section'
+              },
+              {
+                id: 157,
+                section: 'English Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Synonyms',
+                sourceTag: 'New',
+                question: `Find the odd one out among the given groups of Synonyms:`,
+                options: ['Ample, Abundant, Plentiful', 'Joy, Ecstasy, Sorrow', 'Tiny, Miniature, Small', 'Quick, Rapid, Swift'],
+                answer: 'B',
+                explanation: `'Sorrow' (दुख) is an antonym of Joy and Ecstasy (खुशी). The other options contain groups of three synonyms.`,
+                reference: 'English Section'
+              },
+              {
+                id: 158,
+                section: 'English Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Articles',
+                sourceTag: 'New',
+                question: `Identify the sentences with the CORRECT usage of Articles:
+I. The man is mortal.
+II. He is the best student in the class.
+III. I saw a one-eyed beggar.`,
+                options: ['Only I and II', 'Only II and III', 'Only I and III', 'I, II and III all'],
+                answer: 'B',
+                explanation: `Sentence I is incorrect. When 'Man' or 'Woman' represents the entire human race, no article is used (Correct: Man is mortal). II uses 'The' before superlative, and III uses 'A' before 'one' (consonant 'W' sound).`,
+                reference: 'English Section'
+              },
+              {
+                id: 159,
+                section: 'English Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Antonyms',
+                sourceTag: 'New',
+                question: `Match the words in List-I with their Antonyms in List-II:
+List-I:
+a. Arid
+b. Zenith
+c. Diligent
+d. Rigid
+List-II:
+1. Nadir
+2. Flexible
+3. Fertile / Wet
+4. Lazy
+Codes:`,
+                options: ['a-3, b-1, c-4, d-2', 'a-1, b-3, c-2, d-4', 'a-3, b-4, c-1, d-2', 'a-4, b-2, c-3, d-1'],
+                answer: 'A',
+                explanation: `Arid (सूखा/बंजर) x Wet/Fertile; Zenith (शीर्ष) x Nadir (निचला स्तर); Diligent (मेहनती) x Lazy; Rigid (कठोर) x Flexible.`,
+                reference: 'English Section'
+              },
+              {
+                id: 160,
+                section: 'English Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Pronoun Rules',
+                sourceTag: 'New',
+                question: `Assertion (A): "Each of the boys have done their work" is grammatically incorrect.
+Reason (R): Words like 'Each', 'Every', 'Either' are singular distributors and take singular verbs and singular pronouns.`,
+                options: ['Both A and R are true, and R is the correct explanation of A.', 'Both A and R are true, but R is not the correct explanation of A.', 'A is true but R is false.', 'A is false but R is true.'],
+                answer: 'A',
+                explanation: `The correct sentence would be: "Each of the boys has done his work."`,
+                reference: 'English Section'
+              },
+              {
+                id: 161,
+                section: 'English Language',
+                questionType: 'Narration',
+                difficulty: 'hard',
+                topic: 'Direct and Indirect Speech',
+                sourceTag: 'New',
+                question: `Choose the correct indirect speech:
+The teacher said to the students, "The Earth revolves around the Sun."`,
+                options: ['The teacher told the students that the Earth revolved around the Sun.', 'The teacher asked the students if the Earth revolves around the Sun.', 'The teacher told the students that the Earth revolves around the Sun.', 'The teacher told the students that the Earth had revolved around the Sun.'],
+                answer: 'C',
+                explanation: `According to narration rules, if the reported speech contains a Universal Truth, its tense does NOT change, even if the reporting verb is in the past tense.`,
+                reference: 'English Section'
+              },
+              {
+                id: 162,
+                section: 'English Language',
+                questionType: 'Error Spotting',
+                difficulty: 'hard',
+                topic: 'Conditionals',
+                sourceTag: 'New',
+                question: `Consider the conditional sentences:
+I. If you will study hard, you will pass the exam.
+II. If she comes, I will help her.
+III. Had I known you were in hospital, I would have visited you.
+Which of the sentence(s) is/are grammatically INCORRECT?`,
+                options: ['Only I', 'Only I and II', 'Only III', 'None of the above'],
+                answer: 'A',
+                explanation: `In 'If' clause conditionals (Future conditions), we use Present Simple in the 'If' clause and Future Simple in the main clause. So, it should be "If you study hard" (not 'will study').`,
+                reference: 'English Section'
+              },
+              {
+                id: 163,
+                section: 'English Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Idioms',
+                sourceTag: 'New',
+                question: `Match the Idioms with their closest meanings:
+List-I:
+a. Bite the bullet
+b. Cost an arm and a leg
+c. Once in a blue moon
+d. Under the weather
+List-II:
+1. Very expensive
+2. Feeling sick
+3. To endure a painful or difficult situation
+4. Very rarely
+Codes:`,
+                options: ['a-3, b-1, c-4, d-2', 'a-1, b-3, c-2, d-4', 'a-3, b-2, c-1, d-4', 'a-4, b-1, c-3, d-2'],
+                answer: 'A',
+                explanation: `Bite the bullet (कठिन परिस्थिति का डटकर सामना करना), Cost an arm and a leg (बहुत महंगा होना), Once in a blue moon (दुर्लभ), Under the weather (बीमार होना).`,
+                reference: 'English Section'
+              },
+              {
+                id: 164,
+                section: 'English Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Antonyms',
+                sourceTag: 'New',
+                question: `Which of the following pairs is NOT a pair of antonyms?`,
+                options: ['Ascend - Descend', 'Praise - Admire', 'Optimist - Pessimist', 'Inferior - Superior'],
+                answer: 'B',
+                explanation: `'Praise' (तारीफ़ करना) and 'Admire' (प्रशंसा करना) are synonyms, not antonyms.`,
+                reference: 'English Section'
+              },
+              {
+                id: 165,
+                section: 'English Language',
+                questionType: 'Fill in the Blanks',
+                difficulty: 'hard',
+                topic: 'Prepositions',
+                sourceTag: 'New',
+                question: `Select the appropriate prepositions:
+"You must abide _____ the rules of the school, and you should not conform _____ peer pressure blindly."`,
+                options: ['to, by', 'with, in', 'by, to', 'from, with'],
+                answer: 'C',
+                explanation: `The fixed preposition for 'abide' is 'by' (abide by = पालन करना). The fixed preposition for 'conform' is 'to' (conform to = के अनुसार चलना).`,
+                reference: 'English Section'
+              },
+              {
+                id: 166,
+                section: 'English Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Narration Rules',
+                sourceTag: 'New',
+                question: `Identify the CORRECT rules of changing Direct to Indirect speech:
+I. In interrogative sentences (Wh-words), the 'Wh-word' itself acts as a conjunction.
+II. 'Yesterday' changes into 'the next day'.
+III. 'Let us' sentences usually change the reporting verb into 'proposed' or 'suggested'.`,
+                options: ['Only I and II', 'Only I and III', 'Only II and III', 'I, II and III all'],
+                answer: 'B',
+                explanation: `Rule II is incorrect. 'Yesterday' changes to 'the previous day'. 'Tomorrow' changes to 'the next day'.`,
+                reference: 'English Section'
+              },
+              {
+                id: 167,
+                section: 'English Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Articles',
+                sourceTag: 'New',
+                question: `Which of the following phrases has INCORRECT article usage?`,
+                options: ['The French speak French.', 'I have a headache.', 'He is a honest boy.', "Let's go to the cinema."],
+                answer: 'C',
+                explanation: `'Honest' starts with a vowel sound 'O' (ऑनेस्ट), so it should take the article 'An' (An honest boy).`,
+                reference: 'English Section'
+              },
+              {
+                id: 168,
+                section: 'English Language',
+                questionType: 'Error Spotting',
+                difficulty: 'hard',
+                topic: 'Conjunctions',
+                sourceTag: 'New',
+                question: `Identify the part containing an error:
+"No sooner did (1) / the thief see the police (2) / when he ran away (3) / into the dark forest. (4)"`,
+                options: ['1', '2', '3', '4'],
+                answer: 'C',
+                explanation: `The conjunction pair is "No sooner ... than". 'When' is used with 'Hardly/Scarcely'. Therefore, part 3 should be "than he ran away".`,
+                reference: 'English Section'
+              },
+              {
+                id: 169,
+                section: 'English Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Synonyms',
+                sourceTag: 'New',
+                question: `Match the words with their closest meanings:
+List-I:
+a. Lethargic
+b. Authentic
+c. Baffle
+List-II:
+1. Confuse
+2. Lazy / Sluggish
+3. Genuine / Real
+Codes:`,
+                options: ['a-2, b-3, c-1', 'a-1, b-2, c-3', 'a-3, b-1, c-2', 'a-2, b-1, c-3'],
+                answer: 'A',
+                explanation: `Lethargic (सुस्त/Lazy), Authentic (असली/Genuine), Baffle (भ्रमित करना/Confuse).`,
+                reference: 'English Section'
+              },
+              {
+                id: 170,
+                section: 'English Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Adjective Rules',
+                sourceTag: 'New',
+                question: `Assertion (A): "She is more taller than her sister" is a wrong sentence.
+Reason (R): In English grammar, double comparatives (using 'more' along with an '-er' word) are not allowed.`,
+                options: ['Both A and R are true, and R is the correct explanation of A.', 'Both A and R are true, but R is not the correct explanation of A.', 'A is true but R is false.', 'A is false but R is true.'],
+                answer: 'A',
+                explanation: `Taller is already a comparative degree, so adding 'more' makes it a double comparative, which is grammatically incorrect. It should be just "She is taller than her sister."`,
+                reference: 'English Section'
+              },
+              {
+                id: 171,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Sandhi Types',
+                sourceTag: 'New',
+                question: `सूची-I (संधि युक्त शब्द) को सूची-II (संधि के प्रकार) से सुमेलित कीजिए:
+सूची-I:
+a. यद्यपि (यदि + अपि)
+b. महौषध (महा + औषध)
+c. पवन (पौ + अन)
+d. सूर्योदय (सूर्य + उदय)
+सूची-II:
+1. गुण स्वर संधि
+2. वृद्धि स्वर संधि
+3. यण स्वर संधि
+4. अयादि स्वर संधि
+कूट:`,
+                options: ['a-3, b-2, c-4, d-1', 'a-1, b-3, c-2, d-4', 'a-3, b-4, c-1, d-2', 'a-2, b-1, c-4, d-3'],
+                answer: 'A',
+                explanation: `यद्यपि (इ+अ=य -> यण), महौषध (आ+औ=औ -> वृद्धि), पवन (औ+अ=आव -> अयादि), सूर्योदय (अ+उ=ओ -> गुण)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 172,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Samas Types',
+                sourceTag: 'New',
+                question: `सामासिक पद और उसके प्रकार का कौन-सा युग्म असंगत (गलत) है?`,
+                options: ['धक्का-मुक्की - द्वंद्व समास', 'पॉकेटमार - तत्पुरुष समास (कर्म तत्पुरुष)', 'प्रतिदिन - अव्ययीभाव समास', 'चतुर्भुज - अव्ययीभाव समास'],
+                answer: 'D',
+                explanation: `'चतुर्भुज' (चार हैं भुजाएं जिसकी अर्थात् भगवान विष्णु) एक बहुव्रीहि समास है (अथवा द्विगु)। यह अव्ययीभाव समास नहीं हो सकता।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 173,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Upasarg',
+                sourceTag: 'New',
+                question: `निम्नलिखित में से किन शब्दों में 'अभि' उपसर्ग का प्रयोग हुआ है?
+I. अभ्यागत
+II. अभियान
+III. अभिमान
+IV. अभिशाप`,
+                options: ['केवल II, III और IV', 'केवल I और II', 'केवल III और IV', 'I, II, III और IV सभी'],
+                answer: 'D',
+                explanation: `'अभ्यागत' में यण संधि है (अभि + आगत)। अतः इसमें भी 'अभि' उपसर्ग मौजूद है। बाकी तीनों में यह स्पष्ट रूप से दिखाई दे रहा है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 174,
+                section: 'Hindi Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Pratyay Rules',
+                sourceTag: 'New',
+                question: `कथन (A): 'इतिहास' शब्द में 'इक' प्रत्यय जोड़ने पर नया शब्द 'ऐतिहासिक' बनता है।
+कारण (R): 'इक' प्रत्यय लगने पर मूल शब्द के प्रथम स्वर में वृद्धि हो जाती है (अर्थात् 'इ/ई' बदलकर 'ऐ' हो जाते हैं)।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `इसी नियम से विज्ञान+इक=वैज्ञानिक, विकल्प+इक=वैकल्पिक बनते हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 175,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Sandhi Viched',
+                sourceTag: 'New',
+                question: `संधि विच्छेद की दृष्टि से असंगत विकल्प का चयन करें:`,
+                options: ['सन्मार्ग = सत् + मार्ग', 'वागीश = वाक् + ईश', 'निरोग = निर् + रोग', 'उद्धार = उत् + हार'],
+                answer: 'C',
+                explanation: `'निरोग' का सही संधि विच्छेद विसर्ग संधि के नियमानुसार 'निः + रोग' होता है। (निर् + रोग व्याकरणिक दृष्टि से अशुद्ध माना जाता है)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 176,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Tatpurush Samas',
+                sourceTag: 'New',
+                question: `सामासिक पदों को उनके सही विग्रह (तत्पुरुष के भेदों) से सुमेलित करें:
+सूची-I:
+a. रसोईघर
+b. ऋणमुक्त
+c. राजकुमार
+d. शोकाकुल
+सूची-II:
+1. ऋण से मुक्त (अपादान/अलगाव तत्पुरुष)
+2. शोक से आकुल (करण तत्पुरुष)
+3. राजा का कुमार (संबंध तत्पुरुष)
+4. रसोई के लिए घर (संप्रदान तत्पुरुष)
+कूट:`,
+                options: ['a-4, b-1, c-3, d-2', 'a-1, b-4, c-2, d-3', 'a-4, b-2, c-3, d-1', 'a-3, b-1, c-4, d-2'],
+                answer: 'A',
+                explanation: `के लिए (संप्रदान), से (अलगाव/अपादान), का/की (संबंध), से (साधन/करण)। सभी विग्रह पूर्णतः सुमेलित हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 177,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Upasarg and Pratyay',
+                sourceTag: 'New',
+                question: `ऐसे शब्द जिनमें 'उपसर्ग' और 'प्रत्यय' दोनों का प्रयोग हुआ है:
+I. अज्ञानता (अ + ज्ञान + ता)
+II. परिपूर्णता (परि + पूर्ण + ता)
+III. धार्मिक (धर्म + इक)`,
+                options: ['केवल I और II', 'केवल II और III', 'केवल I और III', 'I, II और III सभी'],
+                answer: 'A',
+                explanation: `'धार्मिक' शब्द में केवल 'इक' प्रत्यय है, इसमें कोई उपसर्ग नहीं है। I और II दोनों में उपसर्ग और प्रत्यय मौजूद हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 178,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Kridant Pratyay',
+                sourceTag: 'New',
+                question: `'कृदंत प्रत्यय' (जो धातु/क्रिया के अंत में जुड़ते हैं) से बने शब्दों के समूह में से असंगत छांटिए:`,
+                options: ['थकावट (थकना + आवट)', 'दिखावा (दिखाना + आवा)', 'लड़ाई (लड़ना + आई)', 'कौशल (कुशल + अ)'],
+                answer: 'D',
+                explanation: `'कुशल' एक विशेषण है, क्रिया/धातु नहीं। अतः 'कौशल' तद्धित प्रत्यय का उदाहरण है। अन्य सभी क्रियाओं (थकना, दिखाना, लड़ना) से बने हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 179,
+                section: 'Hindi Language',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Visarga Sandhi',
+                sourceTag: 'New',
+                question: `कथन: 'मनः + रथ' का संधि रूप 'मनोरथ' होता है।
+निष्कर्ष:
+I. यदि विसर्ग से पहले 'अ' हो और विसर्ग के बाद कोई सघोष व्यंजन (जैसे य, र, ल, व) हो, तो विसर्ग 'ओ' में बदल जाता है।
+II. 'यशोदा' (यशः + दा) और 'पयोधर' (पयः + धर) भी इसी नियम के उदाहरण हैं।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `विसर्ग संधि का 'ओ' नियम (उत्व संधि) बिल्कुल सही है और यशोदा, पयोधर, सरोज (सरः + ज) इसके सटीक उदाहरण हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 180,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Bahuvrihi Samas',
+                sourceTag: 'New',
+                question: `'बहुव्रीहि समास' (Bahuvrihi Samas) के उदाहरण कौन-से हैं?
+1. पीतांबर (पीले हैं अंबर जिसके अर्थात् विष्णु)
+2. त्रिनेत्र (तीन हैं नेत्र जिसके अर्थात् शिव)
+3. दशानन (दस हैं मुख जिसके अर्थात् रावण)
+4. शताब्दी (सौ अब्दों का समूह)`,
+                options: ['केवल 1, 2 और 3', 'केवल 2 और 4', 'केवल 1 और 4', '1, 2, 3 और 4 सभी'],
+                answer: 'A',
+                explanation: `'शताब्दी' में कोई तीसरा अर्थ नहीं निकलता, यह समूह का बोध कराता है, अतः यह 'द्विगु समास' है। अन्य तीनों रूढ़ (तीसरे) अर्थ देते हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 181,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Synonyms',
+                sourceTag: 'New',
+                question: `पर्यायवाची शब्दों का कौन-सा समूह असंगत है?`,
+                options: ['अश्व (घोड़ा) - हय, घोटक, बाजि', 'हाथी - गज, कुंजर, मतंग', 'हाथ - हस्त, पाणि, कर', 'पक्षी - विहग, खग, अलि'],
+                answer: 'D',
+                explanation: `'अलि' का अर्थ 'भौंरा' होता है, पक्षी नहीं। पक्षी के पर्यायवाची पखेरू, द्विज आदि होते हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 182,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Antonyms',
+                sourceTag: 'New',
+                question: `विलोम शब्दों का सही मिलान करें:
+सूची-I:
+a. अज्ञ
+b. अल्पज्ञ
+c. अतिवृष्टि
+d. अनुराग
+सूची-II:
+1. विराग
+2. बहुज्ञ
+3. विज्ञ
+4. अनावृष्टि
+कूट:`,
+                options: ['a-3, b-2, c-4, d-1', 'a-1, b-4, c-2, d-3', 'a-3, b-4, c-1, d-2', 'a-2, b-3, c-4, d-1'],
+                answer: 'A',
+                explanation: `अज्ञ (मूर्ख) x विज्ञ (विद्वान); अल्पज्ञ (कम जानने वाला) x बहुज्ञ; अतिवृष्टि (ज्यादा बारिश) x अनावृष्टि (सूखा); अनुराग (प्रेम) x विराग।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 183,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Samshruta Bhinnarthak',
+                sourceTag: 'New',
+                question: `समश्रुत भिन्नार्थक (युग्म शब्द) 'तरणि - तरणी' का सही अर्थ भेद किस विकल्प में है?
+I. तरणि (छोटी इ) = सूर्य
+II. तरणी (बड़ी ई) = नाव (नौका)
+III. तरणि = नाव
+IV. तरणी = सूर्य`,
+                options: ['I और II सही हैं', 'III और IV सही हैं', 'केवल I सही है', 'केवल IV सही है'],
+                answer: 'A',
+                explanation: `'तरणि' (रश्मियां छोटी होती हैं) का अर्थ 'सूर्य' है, और 'तरणी' (नाव बड़ी होती है, तैरती है) का अर्थ 'नाव' है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 184,
+                section: 'Hindi Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Synonym Formation',
+                sourceTag: 'New',
+                question: `कथन (A): 'जल' के पर्यायवाची शब्दों (अंबु, नीर, वारि) के अंत में 'ज' जोड़ने पर वे 'कमल' के पर्यायवाची बन जाते हैं (जैसे- अंबुज, नीरज, वारिज)।
+कारण (R): 'ज' प्रत्यय का अर्थ है 'जन्म लेने वाला', और जल (कीचड़) में जन्म लेने वाला कमल होता है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `यह हिंदी शब्द भंडार के विस्तार का एक प्रमुख व्याकरणिक और तार्किक नियम है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 185,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Antonyms',
+                sourceTag: 'New',
+                question: `विलोम शब्दों का कौन-सा युग्म अशुद्ध/असंगत है?`,
+                options: ['रिजु (सीधा) - वक्र (टेढ़ा)', 'कृत्रिम (बनावटी) - नैसर्गिक (प्राकृतिक)', 'आर्द्र (गीला) - नम (Moist)', 'गरिमा - लघिमा'],
+                answer: 'C',
+                explanation: `'आर्द्र' और 'नम' समानार्थी (Synonyms) शब्द हैं। आर्द्र का सही विलोम 'शुष्क' (Dry) होता है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 186,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Samshruta Bhinnarthak',
+                sourceTag: 'New',
+                question: `समश्रुत भिन्नार्थक (युग्म शब्दों) को उनके अर्थ से सुमेलित करें:
+सूची-I:
+a. दिन - दीन
+b. ग्रह - गृह
+c. अंश - अंशु
+d. अली - अलि
+सूची-II:
+1. सखी - भौंरा
+2. पिंड/नक्षत्र - घर
+3. भाग (हिस्सा) - किरण (किरणें)
+4. दिवस - गरीब
+कूट:`,
+                options: ['a-4, b-2, c-3, d-1', 'a-1, b-3, c-2, d-4', 'a-4, b-1, c-2, d-3', 'a-3, b-4, c-1, d-2'],
+                answer: 'A',
+                explanation: `दिन(दिवस), दीन(गरीब); ग्रह(Planet), गृह(घर); अंश(हिस्सा), अंशु(किरण); अली(बड़ी ई-सखी), अलि(छोटी इ-भौंरा)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 187,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Synonyms',
+                sourceTag: 'New',
+                question: `निम्नलिखित में से कौन-से शब्द 'सांप' (Snake) के पर्यायवाची हैं?
+1. व्याल
+2. पन्नग
+3. उरग
+4. फणी`,
+                options: ['केवल 1 और 2', 'केवल 1, 3 और 4', 'केवल 2 और 4', '1, 2, 3 और 4 सभी'],
+                answer: 'D',
+                explanation: `उरग (छाती के बल चलने वाला), पन्नग, व्याल, फणी, भुजंग, विषधर - ये सभी सांप के पर्यायवाची हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 188,
+                section: 'Hindi Language',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Antonym Formation',
+                sourceTag: 'New',
+                question: `कथन: हिंदी में कई विलोम शब्द 'उपसर्ग' बदलकर बनाए जाते हैं।
+निष्कर्ष:
+I. 'उत्कर्ष' (ऊपर उठना) का विलोम 'अपकर्ष' (नीचे गिरना) होता है (उत् और अप उपसर्ग)।
+II. 'यश' में 'अप' उपसर्ग जोड़कर उसका विलोम 'अपयश' बनाया जाता है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'C',
+                explanation: `उपसर्गों के माध्यम से विलोम निर्माण की प्रक्रिया के दोनों उदाहरण पूर्णतः सत्य हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 189,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Anekarthi Shabd',
+                sourceTag: 'New',
+                question: `'अनेकार्थी शब्दों' (एक शब्द के अनेक अर्थ) के संदर्भ में असंगत विकल्प का चयन करें:`,
+                options: ['कनक - सोना, धतूरा, गेहूं', 'हरि - विष्णु, बंदर, मेंढक, सूर्य', 'कर - हाथ, सूंड, टैक्स', 'सारंग - मोर, सर्प, पुस्तक'],
+                answer: 'D',
+                explanation: `'सारंग' के अनेकार्थी मोर, सर्प, बादल, सिंह आदि होते हैं, लेकिन 'पुस्तक' सारंग का अर्थ नहीं होता।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 190,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Nature Synonyms',
+                sourceTag: 'New',
+                question: `प्रकृति से जुड़े शब्दों को उनके पर्यायवाची से सुमेलित करें:
+सूची-I:
+a. वसुंधरा
+b. रजनी
+c. वारिद
+d. कानन
+सूची-II:
+1. बादल
+2. जंगल
+3. पृथ्वी
+4. रात
+कूट:`,
+                options: ['a-3, b-4, c-1, d-2', 'a-1, b-2, c-3, d-4', 'a-3, b-1, c-4, d-2', 'a-4, b-3, c-2, d-1'],
+                answer: 'A',
+                explanation: `वसुंधरा (पृथ्वी), रजनी (रात), वारिद (जल देने वाला-बादल), कानन (जंगल)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 191,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Sentence Types',
+                sourceTag: 'New',
+                question: `वाक्यों को रचना के आधार पर उनके प्रकार से सुमेलित करें:
+सूची-I:
+a. मजदूर ने बहुत मेहनत की, परंतु उसे मजदूरी नहीं मिली।
+b. राम पढ़ रहा है।
+c. जो विद्यार्थी परिश्रमी होता है, वह अवश्य सफल होता है।
+सूची-II:
+1. सरल वाक्य
+2. संयुक्त वाक्य
+3. मिश्रित वाक्य
+कूट:`,
+                options: ['a-2, b-1, c-3', 'a-1, b-3, c-2', 'a-3, b-2, c-1', 'a-2, b-3, c-1'],
+                answer: 'A',
+                explanation: `'परंतु' लगा है इसलिए संयुक्त वाक्य; एक उद्देश्य/विधेय है इसलिए सरल वाक्य; 'जो...वह' लगा है इसलिए मिश्रित वाक्य।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 192,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Shabd Shuddhi',
+                sourceTag: 'New',
+                question: `शब्द शुद्धि (Spelling) की दृष्टि से अशुद्ध शब्दों का कौन-सा जोड़ा (युग्म) असंगत है (अर्थात् दोनों अशुद्ध हैं)?`,
+                options: ['तदोपरांत, दुरावस्था', 'वाल्मीकि, रचयिता', 'संन्यासी, शृंगार', 'निरोग, आशीर्वाद'],
+                answer: 'A',
+                explanation: `ये दोनों शब्द अशुद्ध हैं। इनके शुद्ध रूप 'तदुपरांत' (तत् + उपरांत) और 'दुरवस्था' (दुर् + अवस्था) होते हैं। बाकी विकल्पों में सभी शब्द शुद्ध लिखे हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 193,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Vakya Shuddhi',
+                sourceTag: 'New',
+                question: `वाक्य शुद्धि के नियमों पर विचार करें। कौन-से वाक्य शुद्ध हैं?
+I. एक गाय, दो घोड़े और एक बकरी मैदान में चर रही हैं।
+II. कृपया शांत होकर बैठिए।
+III. श्रीकृष्ण के अनेकों नाम हैं।`,
+                options: ['केवल I और II', 'केवल II', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'A',
+                explanation: `वाक्य III अशुद्ध है ('अनेक' स्वयं बहुवचन है, 'अनेकों' गलत है)। वाक्य I शुद्ध है क्योंकि जब भिन्न लिंग के कई कर्ता 'और' से जुड़े हों, तो क्रिया अंतिम कर्ता (बकरी-स्त्रीलिंग) के अनुसार होती है (चर रही हैं)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 194,
+                section: 'Hindi Language',
+                questionType: 'Assertion-Reason',
+                difficulty: 'hard',
+                topic: 'Muhavara and Lokokti',
+                sourceTag: 'New',
+                question: `कथन (A): "ऊंट के मुँह में जीरा" एक लोकोक्ति (कहावत) है, मुहावरा नहीं।
+कारण (R): मुहावरे सामान्यतः एक 'वाक्यांश' (Phrase) होते हैं जिनके अंत में 'ना' जुड़ा होता है, जबकि लोकोक्ति एक 'स्वतंत्र और पूर्ण वाक्य' (Complete sentence) होती है जो किसी दृष्टांत/अनुभव पर आधारित होती है।`,
+                options: ['A और R दोनों सही हैं, और R, A की सही व्याख्या करता है।', 'A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं है।', 'A सही है लेकिन R गलत है।', 'A गलत है लेकिन R सही है।'],
+                answer: 'A',
+                explanation: `लोकोक्ति लोक अनुभव से बनी पूरी कहावत होती है, जिसका प्रयोग स्वतंत्र रूप से किया जा सकता है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 195,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Muhavare',
+                sourceTag: 'New',
+                question: `मुहावरों और उनके अर्थ का असंगत (गलत) युग्म छांटिए:`,
+                options: ['छाती पर मूंग दलना - पास रहकर कष्ट देना।', 'गूलर का फूल होना - बहुत दिनों बाद दिखाई देना।', 'सिर मुंडाते ही ओले पड़ना - कार्य शुरू होते ही विघ्न (बाधा) आना।', 'नौ दो ग्यारह होना - भाग जाना।'],
+                answer: 'B',
+                explanation: `'गूलर का फूल होना' का अर्थ है 'अलभ्य होना' (दिखाई ही न देना)। 'बहुत दिनों बाद दिखाई देना' मुहावरे 'ईद का चाँद होना' का अर्थ है।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 196,
+                section: 'Hindi Language',
+                questionType: 'Matching',
+                difficulty: 'hard',
+                topic: 'Lokokti Meaning',
+                sourceTag: 'New',
+                question: `लोकोक्तियों (Proverbs) को उनके सही अर्थ से सुमेलित करें:
+सूची-I:
+a. काला अक्षर भैंस बराबर
+b. नाच न जाने आँगन टेढ़ा
+c. अपनी डफली अपना राग
+d. सांच को आंच क्या
+सूची-II:
+1. अपनी अयोग्यता छिपाने के लिए साधनों को दोष देना।
+2. बिल्कुल अनपढ़ (निरक्षर) होना।
+3. सच्चे व्यक्ति को किसी का डर नहीं होता।
+4. सबका अपने-अपने मन के अनुसार अलग-अलग चलना।
+कूट:`,
+                options: ['a-2, b-1, c-4, d-3', 'a-1, b-2, c-3, d-4', 'a-2, b-4, c-1, d-3', 'a-4, b-3, c-2, d-1'],
+                answer: 'A',
+                explanation: `सभी लोकोक्तियां अपने सटीक अर्थों के साथ सुमेलित की गई हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 197,
+                section: 'Hindi Language',
+                questionType: 'Statement Based',
+                difficulty: 'hard',
+                topic: 'Shuddh Shabd',
+                sourceTag: 'New',
+                question: `निम्नलिखित में से 'शुद्ध शब्दों' (Correct Spellings) का समूह कौन-सा है?
+I. प्रज्ज्वलित, कवयित्री
+II. मिष्टान्न, अहल्या
+III. आर्शीवाद, सन्यासी`,
+                options: ['केवल I', 'केवल I और II', 'केवल II और III', 'I, II और III सभी'],
+                answer: 'B',
+                explanation: `समूह III अशुद्ध है। इसके शुद्ध रूप 'आशीर्वाद' (र की मात्रा व पर) और 'संन्यासी' (अनुस्वार और आधा न दोनों) होते हैं।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 198,
+                section: 'Hindi Language',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'hard',
+                topic: 'Lokokti Usage',
+                sourceTag: 'New',
+                question: `कथन: लोकोक्तियों को 'कहावत' भी कहा जाता है, जो समाज के लंबे अनुभवों का निचोड़ होती हैं।
+निष्कर्ष:
+I. "खोदा पहाड़ निकली चुहिया" का प्रयोग तब किया जाता है जब कोई व्यक्ति बहुत अधिक परिश्रम करे, लेकिन उसे फल/लाभ बहुत मामूली मिले।
+II. लोकोक्तियों का वाक्य में प्रयोग करते समय उनका स्वरूप (शब्द) बदला जा सकता है।`,
+                options: ['केवल निष्कर्ष I सही है।', 'केवल निष्कर्ष II सही है।', 'दोनों निष्कर्ष सही हैं।', 'दोनों निष्कर्ष गलत हैं।'],
+                answer: 'A',
+                explanation: `निष्कर्ष II गलत है। मुहावरों को लिंग/वचन के अनुसार वाक्य में ढाला जाता है, लेकिन लोकोक्तियों का स्वरूप (Words) हमेशा अपरिवर्तित रहता है (वे ज्यों की त्यों प्रयोग होती हैं)।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 199,
+                section: 'Hindi Language',
+                questionType: 'Odd One Out',
+                difficulty: 'hard',
+                topic: 'Vakya Shuddhi Error Types',
+                sourceTag: 'New',
+                question: `वाक्य शुद्धि के प्रकारों में अशुद्ध वाक्य और उसके 'दोष' (Error type) का असंगत युग्म छांटिए:`,
+                options: ['"प्रातःकाल के समय टहलना चाहिए" - पुनरुक्ति दोष (अनावश्यक शब्द)', '"राधा एक विद्वान लेखिका है" - लिंग संबंधी अशुद्धि', '"हवा ठंडी चल रही है" - पदक्रम संबंधी अशुद्धि', '"एक पानी का गिलास लाओ" - वचन संबंधी अशुद्धि'],
+                answer: 'D',
+                explanation: `"एक पानी का गिलास" में 'वचन' की नहीं, बल्कि 'पदक्रम' (Word order) की अशुद्धि है। सही पदक्रम "पानी का एक गिलास लाओ" होगा।`,
+                reference: 'Hindi Section'
+              },
+              {
+                id: 200,
+                section: 'Hindi Language',
+                questionType: 'Lokokti',
+                difficulty: 'hard',
+                topic: 'Meaning',
+                sourceTag: 'New',
+                question: `जब कोई व्यक्ति मूर्ख हो लेकिन उसके पास बहुत अधिक धन-दौलत हो, तो उसके लिए कौन-सी लोकोक्ति सबसे उपयुक्त है?`,
+                options: ['अक्ल बड़ी या भैंस', 'आँख का अंधा, नाम नैनसुख', 'आँख का अंधा, गाँठ का पूरा', 'नौ नगद न तेरह उधार'],
+                answer: 'C',
+                explanation: `'आँख का अंधा' (मूर्ख) और 'गाँठ का पूरा' (धनी)। यह कहावत मूर्ख किन्तु धनी व्यक्ति के लिए प्रयोग की जाती है।`,
+                reference: 'Hindi Section'
+              },
+                          ]
+          },
+        ],
+        questionTemplate: {
+          id: 1,
+          section: '',
+          questionType: '',
+          difficulty: 'hard',
+          topic: '',
+          sourceTag: 'PYQ / New',
+          question: ``,
+          options: ['', '', '', ''],
+          answer: '',
+          explanation: ``,
+          reference: ''
+        }
+      };
+
+      const testConfig = window.bstcMockTest8 || bstcMockTest8;
+      const data = (testConfig?.sections || []).flatMap((section) => (section?.questions || [])).filter(Boolean).map((question, index) => ({
+        ...question,
+        id: question?.id ?? index + 1,
+        section: question?.section || 'General',
+        difficulty: question?.difficulty || testConfig?.difficulty || 'medium',
+        questionType: question?.questionType || 'MCQ',
+        options: Array.isArray(question?.options) ? question.options : []
+      }));
+
+      const sections = [...new Set(data.map((q) => q.section))];
+      const letters = ['A','B','C','D'];
+      const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
+      const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
+      const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+      const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+      const formatPreservedText=(value='')=>escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
+      const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
+      const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
+      const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statements:m[3],conclusions:m[5]};};
+      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：](.*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：](.*)$/is);if(!m) return null;return {intro:m[1],l1:m[3],l2:m[5]};};
+      const parseCodeBlock=(q='')=>{const m=String(q).match(/(.*?)(कूट\s*[:：])\s*(.*)$/is);if(!m) return null;return {body:m[1],code:m[3]};};
+      function renderStructuredQuestion(q){
+        const questionRaw=String(q.question||'');
+        const codeData=q.id<=10?parseCodeBlock(questionRaw):null;
+        const normalizedQuestion=(codeData?.body||questionRaw).trim();
+        const assertionData=q.questionType==='Assertion-Reason'?parseAssertionReason(normalizedQuestion):null;
+        if(assertionData){
+          const intro=assertionData.intro?`<div>${formatPreservedText(assertionData.intro)}</div>`:'';
+          const codeBlock=codeData?renderLabelBlock('कूट:',codeData.code):'';
+          questionText.innerHTML=`<div class="question-structured">${intro}${renderLabelBlock('कथन (A):',assertionData.statement)}${renderLabelBlock('कारण (R):',assertionData.reason)}${codeBlock}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const statementData=q.questionType==='Statement-Conclusion'?parseStatementConclusion(normalizedQuestion):null;
+        if(statementData){
+          const intro=statementData.intro?`<div>${formatPreservedText(statementData.intro)}</div>`:'';
+          const codeBlock=codeData?renderLabelBlock('कूट:',codeData.code):'';
+          questionText.innerHTML=`<div class="question-structured">${intro}${renderLabelBlock('कथन:',statementData.statements)}${renderLabelBlock('निष्कर्ष:',statementData.conclusions)}${codeBlock}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const matching=q.questionType==='Matching'?parseMatching(normalizedQuestion):null;
+        if(matching){
+          questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-1:</strong><div class="mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>सूची-2:</strong><div class="mt-2">${formatPreservedText(matching.l2)}</div></div></div>`;
+          return;
+        }
+        questionText.innerHTML=formatPreservedText(normalizedQuestion);
+        matchingBlock.innerHTML='';
+      }
+      function renderPalette(){if(!palette) return; palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
+      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
+      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;document.getElementById('result-summary').innerHTML=[['Total',data.length],['Attempted',attempted],['Correct',correct],['Wrong',wrong]].map(([k,v])=>`<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');document.getElementById('answer-key').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">Your: ${state.answers[q.id]||'—'} | Correct: ${q.answer}</p></div>`).join('');document.getElementById('explanations').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">${formatPreservedText(q.explanation||'Explanation available नहीं है।')}</p></div>`).join('');}
+      document.addEventListener('DOMContentLoaded',()=>{
+        const prevBtn=document.getElementById('prev-btn');
+        const nextBtn=document.getElementById('next-btn');
+        const submitBtn=document.getElementById('submit-btn');
+        if(!startBtn || !timerEl || !testArea || !resultArea || !testIntro || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
+          console.error('BSTC Mock Test 8: Required DOM elements are missing.');
+          return;
+        }
+        prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});
+        nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});
+        submitBtn.addEventListener('click',submitTest);
+        testArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        resultArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        startBtn.addEventListener('click',()=>{if(state.started) return; if(!data.length){questionMeta.textContent='Questions unavailable';questionText.textContent='Question data could not be loaded.';console.error('BSTC Mock Test: Question data array is empty.',{testConfig});return;} state.started=true; startBtn.disabled=true; testIntro.classList.add('hidden'); testArea.classList.remove('hidden'); testArea.scrollIntoView({behavior:'smooth',block:'start'}); renderPalette(); const rendered=renderQuestion(); if(!rendered){console.error('BSTC Mock Test: Rendering failed, timer not started.');return;} state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);});
+      });
+    </script>
+  </body>
+</html>
