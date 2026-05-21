@@ -118,6 +118,20 @@
     'teaching-methods': 'Teaching Methods prep ke liye classroom-application and conceptual MCQ practice.'
   };
 
+
+  const bstcMockDescriptions = {
+    1: 'Full BSTC pattern simulation with mixed pedagogy, reasoning, language, and Rajasthan GK practice in one timed set.',
+    2: 'Balanced BSTC revision test to strengthen accuracy across all major sections with steady difficulty progression.',
+    3: 'Exam-paced BSTC mock focused on question selection, time control, and consistent scoring across topics.',
+    4: 'Comprehensive BSTC practice set for concept recall, elimination skills, and section-wise performance tuning.',
+    5: 'Structured BSTC mock for mid-phase preparation with practical coverage of frequently tested objective formats.',
+    6: 'High-utility BSTC test designed to improve speed while maintaining accuracy in mixed-topic MCQ attempts.',
+    7: 'Readiness-focused BSTC mock that helps identify weak areas before final revision and full-length practice.',
+    8: 'Advanced BSTC revision set for improving consistency under timed conditions and tighter attempt strategy.',
+    9: 'Near-exam BSTC mock to practice endurance, maintain focus, and refine your final attempt plan.',
+    10: 'Final BSTC full-length practice set for complete self-check before exam day with overall readiness review.'
+  };
+
   function cardForExam(exam, ctaText = 'Start Mock Test') {
     return `<article class="feature-card reveal"><p class="template-badge">${exam.difficulty || 'All levels'}</p><h3 class="mt-3">${exam.title}</h3><p>${exam.description}</p><p class="template-meta">${exam.questionsCount || 50} questions • ${exam.duration || '60 min'}</p><div class="template-actions mt-4"><a href="${exam.ctaLink}" class="btn-primary" aria-label="${ctaText} for ${exam.title}">${ctaText}</a></div></article>`;
   }
@@ -256,7 +270,9 @@
           ...exam,
           ctaLink: customCtaLink,
           title: `${exam.title} Mock Test ${testNumber}`,
-          description: `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
+          description: teachingExamSlug === 'bstc'
+            ? (bstcMockDescriptions[testNumber] || `BSTC full-length practice set ${testNumber} for exam-ready revision and timed preparation.`)
+            : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
         });
       }).join('');
     }
