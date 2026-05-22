@@ -190,7 +190,7 @@
         if (!exam) return '';
 
         const examLink = categorySlug === 'teaching-exams'
-          ? (exam.slug === 'bstc' ? './teaching-exams/Bstc/bstc.html' : `./teaching-exams/${exam.slug}.html`)
+          ? `./teaching-exams/${exam.slug}.html`
           : `./exam.html?exam=${exam.slug}`;
 
         const examDescription = categorySlug === 'teaching-exams'
