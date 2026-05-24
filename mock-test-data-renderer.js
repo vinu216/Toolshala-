@@ -247,7 +247,9 @@
     if (mockList) {
       mockList.innerHTML = Array.from({ length: 10 }, (_, index) => {
         const testNumber = index + 1;
-        const customCtaLink = teachingExamSlug === 'bstc' && testNumber === 1
+        const customCtaLink = teachingExamSlug === 'ptet' && testNumber === 1
+          ? './ptet-mock-test-1.html'
+          : teachingExamSlug === 'bstc' && testNumber === 1
           ? './bstc-mock-test-1.html'
           : teachingExamSlug === 'bstc' && testNumber === 2
             ? './bstc-mock-test-2.html'
