@@ -48,7 +48,7 @@ const nextBtn = document.getElementById("next-btn");
 function renderQuestion() {
   const item = languageEnglishQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${languageEnglishQuestions.length}`;
-  questionEl.textContent = item.question;
+  questionEl.textContent = window.formatQuestionText ? window.formatQuestionText(item.question) : item.question;
 
   optionsFormEl.innerHTML = "";
 
