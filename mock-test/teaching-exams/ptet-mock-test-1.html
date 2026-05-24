@@ -1,0 +1,3533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <title>PTET Mock Test 1 | Placeholder Structure</title>
+    <meta name="description" content="PTET Mock Test 1 placeholder structure with section-wise containers ready for question insertion." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <style>
+      .question-card { border: 1px solid rgb(226 232 240); border-radius: 1rem; padding: 1rem; background: #fff; }
+      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; white-space: normal; }
+      .question-structured { display: grid; gap: .75rem; line-height: 1.75; word-break: break-word; }
+      .question-block { border: 1px solid rgb(226 232 240); border-radius: .75rem; padding: .75rem; background: rgb(248 250 252); }
+      .question-block-title { display: block; font-weight: 700; margin-bottom: .4rem; }
+      .question-lines { margin: 0; padding-left: 1.1rem; }
+      .question-lines li { margin: .2rem 0; }
+      .section-chip { display: inline-flex; align-items: center; border-radius: 9999px; background: rgb(224 231 255); color: rgb(55 48 163); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .01em; }
+      .option-item { display:block; border:1px solid rgb(203 213 225); border-radius:.85rem; padding:.8rem .9rem; font-size:.97rem; line-height:1.6; background:#fff; }
+      .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
+      .option-item .option-code { font-weight:700; color: rgb(51 65 85); }
+      .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
+      .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
+      .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
+      @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50"><nav class="nav-shell" aria-label="Main navigation"><a href="../../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a><div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../../index.html">Home</a><a class="nav-link nav-active" href="../../mock-test.html">Mock Test</a><a class="nav-link" href="../../about.html">About</a><a class="nav-link" href="../../contact.html">Contact</a></div></nav></header>
+    <main id="main-content">
+      <section class="page-hero border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">राजस्थान PTET तैयारी</p>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">PTET Mock Test 1</h1>
+          <p class="mt-4 max-w-3xl text-slate-600">200 प्रश्नों वाला full-length PTET practice paper.</p>
+          <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
+            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 200</p><p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 180 मिनट</p><p class="feature-card !m-0 !p-4"><strong>Difficulty:</strong> Hard</p><p class="feature-card !m-0 !p-4"><strong>Type:</strong> Mixed Format</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrap" id="intro-area">
+        <article id="test-intro" class="feature-card reveal visible">
+          <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+            <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
+          </ul>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="start-test" class="btn-primary" type="button">Start Test</button>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
+          </div>
+        </article>
+        <noscript>
+          <p class="mt-3 text-sm text-slate-600">JavaScript is disabled. Instructions, Start Test button, and timer are shown as static content.</p>
+        </noscript>
+      </section>
+      <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
+      <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Explanations</h2><div id="explanations" class="mt-4 space-y-4"></div></article></section>
+    </main>
+
+    <script>
+      const bstcMockTest1 = {
+        paperTitle: 'PTET Mock Test 1',
+        examName: 'PTET',
+        totalQuestions: 200,
+        totalMarks: 600,
+        marksPerQuestion: 3,
+        negativeMarking: 'No',
+        difficulty: 'hard',
+        latestPattern: true,
+        includePYQ: true,
+        sections: [
+          {
+            section: 'Section A Mental Ability (मानसिक योग्यता)',
+            startId: 1,
+            endId: 50,
+            questionTypesAllowed: ['MCQ', 'Coding-Decoding', 'Assertion-Reason', 'Statement-Conclusion', 'Matching'],
+            questions: [
+              {
+                id: 1,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Syllogism',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन:
+1. सभी किताबें, पेन हैं।
+2. कोई भी पेन, पेंसिल नहीं है।
+3. कुछ पेंसिल, रबर हैं।
+निष्कर्ष:
+I. कोई भी किताब, पेंसिल नहीं है।
+II. कुछ रबर के पेन होने की संभावना है।
+III. सभी पेन, किताबें हैं।`,
+                options: ['केवल I अनुसरण करता है', 'केवल I और II अनुसरण करते हैं', 'केवल II और III अनुसरण करते हैं', 'सभी अनुसरण करते हैं'],
+                answer: 'B',
+                explanation: `किताबें पेन के अंदर हैं और पेन का पेंसिल से कोई संबंध नहीं है, इसलिए किताब भी पेंसिल नहीं होगी। रबर का कुछ हिस्सा पेंसिल है, बाकी हिस्सा पेन हो सकता है (संभावना सत्य है)।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 2,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Latest Trend',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन:
+1. केवल कुछ मोबाइल, लैपटॉप हैं। (Only a few concept)
+2. सभी लैपटॉप, कंप्यूटर हैं।
+निष्कर्ष:
+I. कुछ मोबाइल, कंप्यूटर हैं।
+II. सभी मोबाइल के लैपटॉप होने की संभावना है।`,
+                options: ['केवल I सत्य है', 'केवल II सत्य है', 'दोनों सत्य हैं', 'दोनों असत्य हैं'],
+                answer: 'A',
+                explanation: `'केवल कुछ' का अर्थ है कि कुछ मोबाइल लैपटॉप हैं और कुछ नहीं हैं। इसलिए सभी मोबाइल कभी लैपटॉप नहीं हो सकते। निष्कर्ष II गलत है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 3,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Equation based',
+                difficulty: 'moderate',
+                topic: 'Blood Relation - Coding',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि,
+A + B का अर्थ है 'A, B का पिता है'
+A - B का अर्थ है 'A, B की माता है'
+A × B का अर्थ है 'A, B का भाई है'
+A ÷ B का अर्थ है 'A, B की बहन है'
+तो समीकरण P × Q - R + S में P का S से क्या संबंध है?`,
+                options: ['दादा', 'मामा', 'चाचा', 'भाई'],
+                answer: 'B',
+                explanation: `P, Q का भाई है। Q, R की माता है। R, S का पिता है। अतः P, R का मामा हुआ और S के पिता का मामा (Grand-uncle) हुआ, लेकिन विकल्पों के अनुसार निकटतम संबंध P, S की दादी (Q) का भाई है। यदि हम R के संदर्भ में देखें तो P मामा है। यहाँ सटीक उत्तर 'दादा/नाना की पीढ़ी' का होगा, लेकिन दिए गए विकल्पों में सबसे उपयुक्त लॉजिक Q(माता) का भाई P = मामा माना जाएगा।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 4,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Direction Test',
+                difficulty: 'moderate',
+                topic: 'Direction - Code Based',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक व्यक्ति बिंदु A से पूर्व की ओर 4 किमी चलता है। फिर वह बाएं मुड़ता है और 3 किमी चलता है। फिर से वह बाएं मुड़ता है और 8 किमी चलता है। अब वह अपने प्रारंभिक बिंदु से किस दिशा में और कितनी दूरी पर है?`,
+                options: ['5 किमी, उत्तर-पश्चिम', '4 किमी, दक्षिण-पश्चिम', '5 किमी, उत्तर-पूर्व', '7 किमी, पश्चिम'],
+                answer: 'A',
+                explanation: `आधार = 8-4 = 4 किमी, लंब = 3 किमी। कर्ण = √(4² + 3²) = √25 = 5 किमी। दिशा: उत्तर-पश्चिम।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 5,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Coding-Decoding',
+                difficulty: 'moderate',
+                topic: 'Substitution',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि 'आसमान' को 'जल' कहा जाए, 'जल' को 'हरा' कहा जाए, 'हरा' को 'हवा' कहा जाए, 'हवा' को 'नीला' कहा जाए और 'नीला' को 'बादल' कहा जाए, तो मछलियां कहां रहेंगी?`,
+                options: ['जल', 'आसमान', 'हरा', 'हवा'],
+                answer: 'C',
+                explanation: `मछलियां 'जल' में रहती हैं, और कूट भाषा में 'जल' को 'हरा' कहा गया है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 6,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Comparative',
+                sourceTag: 'PTET Mock Test 1',
+                question: `पांच मित्र A, B, C, D और E की ऊँचाई अलग-अलग है। B केवल E से लंबा है। C, A से लंबा है लेकिन D से छोटा है। इनमें से दूसरा सबसे लंबा कौन है?`,
+                options: ['C', 'A', 'D', 'B'],
+                answer: 'A',
+                explanation: `क्रम (लंबे से छोटे): D > C > A > B > E. दूसरा सबसे लंबा C है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 7,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Venn Diagram',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कौन सा वेन आरेख "न्यायाधीश, चोर, अपराधी" के बीच सही संबंध को दर्शाता है?`,
+                options: ['तीनों अलग-अलग गोले।', 'एक बड़े गोले के अंदर दो अलग-अलग छोटे गोले।', 'एक बड़े गोले के अंदर एक छोटा गोला, और तीसरा गोला दोनों से अलग।', 'तीनों गोले एक दूसरे को काटते हुए।'],
+                answer: 'C',
+                explanation: `सभी 'चोर', 'अपराधी' की श्रेणी में आते हैं (बड़े गोले में छोटा गोला)। 'न्यायाधीश' दोनों से पूरी तरह अलग है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 8,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Analytical',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): जंगलों की कटाई से ग्लोबल वार्मिंग में वृद्धि हो रही है।
+कारण (R): पेड़ कार्बन डाइऑक्साइड को अवशोषित करते हैं; उनकी कमी से वायुमंडल में ग्रीनहाउस गैसें बढ़ती हैं।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन (R), (A) की व्याख्या नहीं है।', '(A) सत्य है, लेकिन (R) असत्य है।', '(A) असत्य है, लेकिन (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 9,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Word Structure',
+                sourceTag: 'PTET Mock Test 1',
+                question: `दिए गए शब्द "REPRESENTATION" के अक्षरों का प्रयोग करके निम्नलिखित में से कौन सा शब्द नहीं बनाया जा सकता है?`,
+                options: ['PRESENT', 'STRICT', 'TENT', 'ROSE'],
+                answer: 'B',
+                explanation: `STRICT में 'C' है, जो REPRESENTATION में नहीं है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 10,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Alphabet Series',
+                sourceTag: 'PTET Mock Test 1',
+                question: `अगला पद ज्ञात करें: BZA, DYC, FXE, ?`,
+                options: ['HWG', 'HUG', 'WHG', 'GUH'],
+                answer: 'A',
+                explanation: `पहला अक्षर: B(+2) -> D(+2) -> F(+2) -> H. दूसरा अक्षर: Z(-1) -> Y(-1) -> X(-1) -> W. तीसरा अक्षर: A(+2) -> C(+2) -> E(+2) -> G. उत्तर: HWG`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 11,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Seating Arrangement',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निर्देश (प्रश्न 11-13): बैठक व्यवस्था (Seating Arrangement)
+छह मित्र P, Q, R, S, T और U एक वृत्ताकार मेज के चारो ओर केंद्र की ओर मुख करके बैठे हैं।
+1. P, T के ठीक बायीं ओर बैठा है।
+2. R, S और U के बीच में बैठा है।
+3. Q, T और S के बीच में बैठा है।
+
+प्रश्न: U के ठीक दायीं ओर कौन बैठा है?`,
+                options: ['P', 'R', 'T', 'S'],
+                answer: 'A',
+                explanation: `क्रम (घड़ी की सुई की दिशा में): T, Q, S, R, U, P`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 12,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Seating Arrangement',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निर्देश (प्रश्न 11-13): बैठक व्यवस्था (Seating Arrangement)
+छह मित्र P, Q, R, S, T और U एक वृत्ताकार मेज के चारो ओर केंद्र की ओर मुख करके बैठे हैं।
+1. P, T के ठीक बायीं ओर बैठा है।
+2. R, S और U के बीच में बैठा है।
+3. Q, T और S के बीच में बैठा है।
+
+प्रश्न: P और S के बीच में कितने लोग बैठे हैं (यदि P के दायीं ओर से गिना जाए)?`,
+                options: ['1', '2', '3', 'कोई नहीं'],
+                answer: 'B',
+                explanation: `P के दायीं ओर U और R हैं, फिर S आता है। अतः 2 लोग हैं।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 13,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Seating Arrangement',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निर्देश (प्रश्न 11-13): बैठक व्यवस्था (Seating Arrangement)
+छह मित्र P, Q, R, S, T और U एक वृत्ताकार मेज के चारो ओर केंद्र की ओर मुख करके बैठे हैं।
+1. P, T के ठीक बायीं ओर बैठा है।
+2. R, S और U के बीच में बैठा है।
+3. Q, T और S के बीच में बैठा है।
+
+प्रश्न: निम्नलिखित में से कौन सा युग्म एक-दूसरे के आमने-सामने बैठा है?`,
+                options: ['P और Q', 'T और R', 'U और S', 'T और S'],
+                answer: 'B',
+                explanation: `व्यवस्था के अनुसार T के सामने R है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 14,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Number Series - Wrong Term',
+                sourceTag: 'PTET Mock Test 1',
+                question: `दी गई शृंखला में गलत संख्या ज्ञात कीजिए:
+5, 11, 24, 51, 106, 217`,
+                options: ['24', '51', '106', '217'],
+                answer: 'B',
+                explanation: `पैटर्न (×2) + 1, (×2) + 2 वाला है।
+5×2+1=11, 11×2+2=24. अब 24×2+4 = 52 होना चाहिए था, ताकि 52×2+2 = 106 हो सके। यदि शृंखला में +6, +13, +27 का अंतर देखें तो भी 51 गलत बैठता है। सही शृंखला 5, 11, 24, 52, 106 बनेगी। अतः 51 गलत है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 15,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Nyaya Nigman',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन:
+1. सभी नदियां, पहाड़ हैं।
+2. कुछ पहाड़, जंगल हैं।
+निष्कर्ष:
+I. कुछ नदियां, जंगल हैं।
+II. कोई नदी, जंगल नहीं है।`,
+                options: ['केवल I सही है', 'केवल II सही है', 'या तो I या II सही है', 'न तो I ना ही II सही है'],
+                answer: 'C',
+                explanation: `नदी और जंगल के बीच कोई सीधा संबंध नहीं दिया गया है। इसलिए "कुछ हैं" और "कोई नहीं है" के बीच 'Either/Or' (या तो) की स्थिति बनेगी।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 16,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Direction Test',
+                difficulty: 'moderate',
+                topic: 'Shadow',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक सुबह सूर्योदय के बाद, राम और श्याम एक दूसरे के आमने-सामने खड़े होकर बात कर रहे थे। यदि राम की परछाई श्याम के ठीक बायीं ओर पड़ रही थी, तो श्याम का मुख किस दिशा में था?`,
+                options: ['उत्तर', 'दक्षिण', 'पूर्व', 'पश्चिम'],
+                answer: 'A',
+                explanation: `सुबह परछाई पश्चिम में पड़ती है। श्याम के बायीं ओर पश्चिम है, इसका मतलब श्याम का मुख उत्तर की ओर है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 17,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Blood Relation',
+                difficulty: 'moderate',
+                topic: 'Conversation Based',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक तस्वीर की ओर इशारा करते हुए एक महिला ने कहा, "यह मेरे दादाजी के इकलौते पुत्र का पुत्र है।" तस्वीर वाला व्यक्ति उस महिला का कौन है?`,
+                options: ['भाई', 'चाचा', 'चचेरा भाई', 'पिता'],
+                answer: 'A',
+                explanation: `महिला के दादाजी का इकलौता पुत्र = महिला का पिता। पिता का पुत्र = महिला का भाई।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 18,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Logical Sequence',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित को तार्किक और सार्थक क्रम में व्यवस्थित करें और सही कूट चुनें:
+1. बीज (Seed)
+2. पौधा (Plant)
+3. फल (Fruit)
+4. भोजन (Food)
+5. पेड़ (Tree)`,
+                options: ['1, 2, 5, 3, 4', '1, 5, 2, 3, 4', '2, 1, 5, 3, 4', '1, 2, 3, 5, 4'],
+                answer: 'A',
+                explanation: `सबसे पहले बीज बोया जाता है, वह पौधा बनता है, फिर पेड़, उस पर फल लगते हैं और उसे भोजन के रूप में खाया जाता है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 19,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Coding-Decoding',
+                difficulty: 'moderate',
+                topic: 'Numerical',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि BAT = 23 और CAT = 24 है, तो BALL = ?`,
+                options: ['27', '28', '32', '39'],
+                answer: 'A',
+                explanation: `वर्णमाला में स्थान का योग: B(2)+A(1)+T(20) = 23. B(2)+A(1)+L(12)+L(12) = 27.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 20,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Data Sufficiency',
+                difficulty: 'moderate',
+                topic: 'Class Ranking',
+                sourceTag: 'PTET Mock Test 1',
+                question: `प्रश्न: कक्षा में कुल कितने छात्र हैं?
+कथन I: राम का स्थान ऊपर से 15वां है।
+कथन II: राम का स्थान नीचे से 20वां है।`,
+                options: ['केवल I पर्याप्त है।', 'केवल II पर्याप्त है।', 'I और II दोनों मिलकर पर्याप्त हैं।', 'दोनों मिलकर भी पर्याप्त नहीं हैं।'],
+                answer: 'C',
+                explanation: `कुल छात्र = (ऊपर से स्थान + नीचे से स्थान) - 1 = (15 + 20) - 1 = 34. दोनों कथनों की आवश्यकता है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 21,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Argument',
+                difficulty: 'moderate',
+                topic: 'Statement & Argument',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन: क्या भारत में सभी स्कूली शिक्षा मुफ्त कर दी जानी चाहिए?
+तर्क I: हाँ, इससे साक्षरता दर में वृद्धि होगी और गरीब बच्चों को भी शिक्षा मिलेगी।
+तर्क II: नहीं, इससे सरकारी खजाने पर भारी बोझ पड़ेगा और शिक्षा की गुणवत्ता गिर सकती है।`,
+                options: ['केवल तर्क I मजबूत है।', 'केवल तर्क II मजबूत है।', 'न तो I और न ही II मजबूत है।', 'I और II दोनों मजबूत हैं।'],
+                answer: 'D',
+                explanation: `दोनों ही तर्क अपने-अपने नजरिए से व्यावहारिक और मजबूत हैं।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 22,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Missing Number',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक 3x3 की ग्रिड में संख्याएं दी गई हैं:
+6   8   10
+18  24  ?
+3   4   5
+लुप्त संख्या (?) ज्ञात करें।`,
+                options: ['20', '30', '25', '15'],
+                answer: 'B',
+                explanation: `कॉलम अनुसार: (पहली पंक्ति × तीसरी पंक्ति) = दूसरी पंक्ति। 6×3=18, 8×4=24, 10×5=30.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 23,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Course of Action',
+                difficulty: 'moderate',
+                topic: 'Statement & Action',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन: शहर के मुख्य बाजार में भारी बारिश के कारण जलभराव हो गया है, जिससे यातायात बाधित हो गया है।
+कार्यवाही:
+1. नगर निगम को तुरंत जल निकासी के लिए पंप लगाने चाहिए।
+2. सरकार को बारिश रुकने तक लोगों को घर से बाहर न निकलने की सलाह देनी चाहिए।`,
+                options: ['केवल 1 सही है', 'केवल 2 सही है', '1 और 2 दोनों सही हैं', 'कोई भी सही नहीं है'],
+                answer: 'C',
+                explanation: `तात्कालिक समस्या सुलझाने के लिए पंप लगाना (1) और सुरक्षा के लिए एडवाइजरी जारी करना (2) दोनों उचित कदम हैं।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 24,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Direction Test',
+                difficulty: 'moderate',
+                topic: 'Angle Based',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक आदमी पश्चिम की ओर मुख करके खड़ा है। वह घड़ी की सुई की दिशा (Clockwise) में 45° घूमता है और फिर उसी दिशा में 180° घूमता है। अंत में वह वामावर्त (Anti-clockwise) दिशा में 270° घूमता है। अब उसका मुख किस दिशा में है?`,
+                options: ['दक्षिण-पश्चिम', 'दक्षिण', 'उत्तर-पश्चिम', 'पश्चिम'],
+                answer: 'A',
+                explanation: `कुल घुमाव = (45+180) Clockwise - 270 Anti-clockwise = 225 CW - 270 ACW = -45° (यानी 45° वामावर्त)। पश्चिम से 45° वामावर्त = दक्षिण-पश्चिम।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 25,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Blood Relation',
+                difficulty: 'moderate',
+                topic: 'Puzzle',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक परिवार में 6 सदस्य A, B, C, D, E, F हैं। A और B एक विवाहित जोड़ा है। A पुरुष सदस्य है। D, C का इकलौता पुत्र है, जो A का भाई है। E, D की बहन है। B, F की बहू है, जिसके पति की मृत्यु हो चुकी है। E का C से क्या संबंध है?`,
+                options: ['पुत्री', 'बहन', 'भतीजी', 'माता'],
+                answer: 'A',
+                explanation: `C पिता है D का। E, D की बहन है। इसलिए E, C की पुत्री हुई।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 26,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Venn Diagram - Mathematical',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक कक्षा में 100 छात्र हैं। 60 छात्र क्रिकेट खेलते हैं, 50 छात्र फुटबॉल खेलते हैं और 20 छात्र दोनों खेल खेलते हैं। कितने छात्र कोई भी खेल नहीं खेलते हैं?`,
+                options: ['10', '20', '30', '0'],
+                answer: 'A',
+                explanation: `खेलने वाले कुल छात्र = n(C) + n(F) - n(C∩F) = 60 + 50 - 20 = 90. कोई खेल न खेलने वाले = 100 - 90 = 10.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 27,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Coding-Decoding',
+                difficulty: 'moderate',
+                topic: 'Sentence Code',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक निश्चित कूट भाषा में:
+'pit na som' का अर्थ है 'bring me water'
+'na jo tod' का अर्थ है 'water is life'
+'tub od pit' का अर्थ है 'give me toy'
+उस भाषा में 'bring' के लिए क्या कूट है?`,
+                options: ['pit', 'na', 'som', 'tod'],
+                answer: 'C',
+                explanation: `पहले और दूसरे वाक्य में 'water' और 'na' कॉमन हैं। पहले और तीसरे वाक्य में 'me' और 'pit' कॉमन हैं। पहले वाक्य में बचा 'bring' और कूट 'som' बचा। अतः bring = som.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 28,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Letter Series',
+                sourceTag: 'PTET Mock Test 1',
+                question: `रिक्त स्थानों की पूर्ति करें: a_ca_ca_c_a_c`,
+                options: ['b b b b b', 'c c c c c', 'a b c d e', 'b b a a c'],
+                answer: 'A',
+                explanation: `'b' भरने पर शृंखला abc / abc / abc / abc बन जाएगी।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 29,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Practical Knowledge',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): गर्मियों में सूती कपड़े पहनना अधिक आरामदायक होता है।
+कारण (R): सूती कपड़े पसीने के अच्छे अवशोषक होते हैं और वाष्पीकरण को बढ़ाते हैं, जिससे शरीर ठंडा रहता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य, (R) असत्य।', '(A) असत्य, (R) सत्य।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 30,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Clock',
+                sourceTag: 'PTET Mock Test 1',
+                question: `शाम 4:30 बजे घड़ी की घंटे और मिनट की सुइयों के बीच कितने डिग्री का कोण बनेगा?`,
+                options: ['45°', '30°', '60°', '15°'],
+                answer: 'A',
+                explanation: `कोण = |(11×M)/2 - 30×H| = |(11×30)/2 - 30×4| = |165 - 120| = 45°.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 31,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Calendar',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि 15 अगस्त 2011 को सोमवार था, तो 15 अगस्त 2013 को सप्ताह का कौन सा दिन रहा होगा?`,
+                options: ['मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार'],
+                answer: 'C',
+                explanation: `2011 से 2012 (लीप वर्ष, 29 फरवरी शामिल) = +2 विषम दिन (Odd days)। 2012 से 2013 = +1 विषम दिन। कुल +3 दिन। सोमवार + 3 = गुरुवार।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 32,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Ranking',
+                difficulty: 'moderate',
+                topic: 'Ranking Test',
+                sourceTag: 'PTET Mock Test 1',
+                question: `40 छात्रों की एक पंक्ति में, रमेश बायीं ओर से 18वें स्थान पर है और दिनेश दायीं ओर से 16वें स्थान पर है। यदि वे अपना स्थान आपस में बदल लेते हैं, तो रमेश बायीं ओर से 25वें स्थान पर आ जाता है। दिनेश का दायीं ओर से नया स्थान क्या होगा?`,
+                options: ['21', '22', '23', '24'],
+                answer: 'C',
+                explanation: `कुल छात्र = (रमेश का नया स्थान + दिनेश का पुराना स्थान) - 1 = 25+16-1 = 40 (सत्यापित)। दिनेश का नया दायीं ओर से स्थान = (कुल - दिनेश का नया बायां स्थान (जो रमेश का पुराना था)) + 1 = (40 - 18) + 1 = 23.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 33,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Multi-level Puzzle',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निर्देश (प्रश्न 33-34): बहु-चरणीय पहेली (Multi-level Puzzle)
+P, Q, R, S, T और U छह अलग-अलग विषयों (हिंदी, अंग्रेजी, गणित, विज्ञान, इतिहास, भूगोल) के शिक्षक हैं, जरूरी नहीं कि इसी क्रम में हों।
+1. P विज्ञान और गणित नहीं पढ़ाता है।
+2. S इतिहास पढ़ाता है।
+3. R हिंदी पढ़ाता है।
+4. Q न तो गणित पढ़ाता है और न ही भूगोल।
+5. U भूगोल पढ़ाता है।
+
+प्रश्न: गणित कौन पढ़ाता है?`,
+                options: ['P', 'Q', 'T', 'U'],
+                answer: 'C',
+                explanation: `विषयों के अनुसार: S=इतिहास, R=हिंदी, U=भूगोल। बचे: P, Q, T और विषय: विज्ञान, गणित, अंग्रेजी। P गणित/विज्ञान नहीं पढ़ाता, तो P=अंग्रेजी। Q गणित नहीं पढ़ाता, तो Q=विज्ञान। बचा T, जो गणित पढ़ाता है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 34,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Multi-level Puzzle',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निर्देश (प्रश्न 33-34): बहु-चरणीय पहेली (Multi-level Puzzle)
+P, Q, R, S, T और U छह अलग-अलग विषयों (हिंदी, अंग्रेजी, गणित, विज्ञान, इतिहास, भूगोल) के शिक्षक हैं, जरूरी नहीं कि इसी क्रम में हों।
+1. P विज्ञान और गणित नहीं पढ़ाता है।
+2. S इतिहास पढ़ाता है।
+3. R हिंदी पढ़ाता है।
+4. Q न तो गणित पढ़ाता है और न ही भूगोल।
+5. U भूगोल पढ़ाता है।
+
+प्रश्न: Q कौन सा विषय पढ़ाता है?`,
+                options: ['अंग्रेजी', 'गणित', 'विज्ञान', 'भूगोल'],
+                answer: 'C',
+                explanation: `उपरोक्त पहेली के हल के अनुसार Q विज्ञान पढ़ाता है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 35,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Analogy',
+                difficulty: 'moderate',
+                topic: 'Analogy',
+                sourceTag: 'PTET Mock Test 1',
+                question: `7 : 50 :: 11 : ?`,
+                options: ['120', '122', '121', '123'],
+                answer: 'B',
+                explanation: `(7)² + 1 = 50. उसी प्रकार, (11)² + 1 = 121 + 1 = 122.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 36,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Inequality',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन: A > B ≥ C = D < E
+निष्कर्ष:
+I. A > D
+II. C < E`,
+                options: ['केवल I सत्य है', 'केवल II सत्य है', 'I और II दोनों सत्य हैं', 'कोई भी सत्य नहीं है'],
+                answer: 'C',
+                explanation: `A > B ≥ C = D से, A > D स्पष्ट है। C = D < E से, C < E स्पष्ट है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 37,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Mirror Image',
+                sourceTag: 'PTET Mock Test 1',
+                question: `शब्दों को उनके दर्पण प्रतिबिंब (Mirror Image) के लॉजिक से सुमेलित करें।
+(यहाँ लॉजिक है: कौनसे अक्षरों का दर्पण प्रतिबिंब समान रहता है)
+1. A, H, I, M
+2. B, C, D, E
+3. O, T, U, V
+कूट:`,
+                options: ['1 और 3 दोनों के अक्षरों का दर्पण प्रतिबिंब समान रहता है।', 'केवल 2 के अक्षरों का दर्पण प्रतिबिंब समान रहता है।', 'केवल 1 के अक्षरों का दर्पण प्रतिबिंब समान रहता है।', '1, 2, 3 तीनों के समान रहते हैं।'],
+                answer: 'A',
+                explanation: `A, H, I, M, O, T, U, V का दर्पण प्रतिबिंब (दायां-बायां) अपरिवर्तित रहता है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 38,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Dice',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक ही पासे की दो स्थितियाँ दी गई हैं। यदि फलक पर '3' बिंदु हैं, तो उसके विपरीत फलक पर कितने बिंदु होंगे?
+स्थिति 1: फलक पर 1, 2, 3 बिंदु हैं।
+स्थिति 2: फलक पर 1, 3, 5 बिंदु हैं।`,
+                options: ['4', '6', 'ज्ञात नहीं किया जा सकता', '2'],
+                answer: 'C',
+                explanation: `चूँकि दोनों स्थितियों में '1' और '3' कॉमन हैं, हम केवल यह बता सकते हैं कि 2 के विपरीत 5 है। 3 के विपरीत 4 या 6 में से कोई भी हो सकता है। अतः निश्चित ज्ञात नहीं किया जा सकता।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 39,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Syllogism - 3 Statements',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन:
+सभी कुर्सियां, टेबल हैं।
+सभी टेबल, पंखे हैं।
+कोई भी पंखा, कूलर नहीं है।
+निष्कर्ष:
+1. कोई भी कुर्सी, कूलर नहीं है।
+2. कुछ पंखे, कुर्सियां हैं।`,
+                options: ['केवल 1 सही है', 'केवल 2 सही है', '1 और 2 दोनों सही हैं', 'कोई सही नहीं है'],
+                answer: 'C',
+                explanation: `कुर्सियां पूरी तरह पंखे के अंदर हैं और पंखे का कूलर से संबंध नहीं है, तो कुर्सी का भी कूलर से कोई संबंध नहीं होगा (1 सही)। कुछ पंखे टेबल/कुर्सी के क्षेत्र को घेरते हैं (2 सही)।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 40,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Age',
+                sourceTag: 'PTET Mock Test 1',
+                question: `पिता की आयु उसके पुत्र की आयु की तिगुनी है। 5 वर्ष बाद, उनकी आयु का योग 70 वर्ष होगा। पिता की वर्तमान आयु क्या है?`,
+                options: ['40 वर्ष', '45 वर्ष', '50 वर्ष', '60 वर्ष'],
+                answer: 'B',
+                explanation: `माना पुत्र=x, पिता=3x. 5 वर्ष बाद: (x+5) + (3x+5) = 70 => 4x + 10 = 70 => 4x = 60 => x = 15. पिता की आयु = 3(15) = 45 वर्ष।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 41,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Direction Test',
+                difficulty: 'moderate',
+                topic: 'Direction and Distance - Advance',
+                sourceTag: 'PTET Mock Test 1',
+                question: `नीता उत्तर की ओर 15 किमी चलती है, फिर वह दायीं ओर मुड़ती है और 15 किमी चलती है। वहां से वह प्रत्येक बार बायीं ओर मुड़कर क्रमशः 10, 15 और 25 किमी चलती है। अब वह अपने प्रारंभिक स्थान से कितनी दूर है?`,
+                options: ['0 किमी (प्रारंभिक बिंदु पर)', '10 किमी', '20 किमी', '25 किमी'],
+                answer: 'A',
+                explanation: `1. उत्तर (15)
+2. दायां मुड़ी = पूर्व (15)
+3. बायां मुड़ी = उत्तर (10)
+4. बायां मुड़ी = पश्चिम (15)
+5. बायां मुड़ी = दक्षिण (25)
+उत्तर की ओर कुल दूरी = 15+10 = 25. दक्षिण की ओर कुल = 25. (शून्य)
+पूर्व की ओर कुल = 15. पश्चिम की ओर = 15. (शून्य)
+वह वापस प्रारंभिक बिंदु पर है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 42,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Dictionary Order',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित शब्दों को अंग्रेजी शब्दकोश के अनुसार व्यवस्थित करें:
+1. Manifest
+2. Meticulous
+3. Meridian
+4. Merchant
+5. Mandate`,
+                options: ['5, 1, 4, 3, 2', '5, 1, 4, 2, 3', '1, 5, 4, 3, 2', '5, 1, 3, 4, 2'],
+                answer: 'A',
+                explanation: `Mandate(5), Manifest(1), Merchant(4), Meridian(3), Meticulous(2).`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 43,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Equation based',
+                difficulty: 'moderate',
+                topic: 'Mathematical Operations',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि '+' का अर्थ 'भाग (÷)', '-' का अर्थ 'गुणा (×)', '×' का अर्थ 'जोड़ (+)' और '÷' का अर्थ 'घटाव (-)' है, तो:
+15 - 5 ÷ 10 × 20 + 4 = ?`,
+                options: ['70', '65', '80', '75'],
+                answer: 'A',
+                explanation: `चिह्न बदलने पर: 15 × 5 - 10 + 20 ÷ 4. BODMAS के अनुसार: 15 × 5 - 10 + 5 = 75 - 10 + 5 = 80 - 10 = 70.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 44,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Figure Counting',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक शतरंज के बोर्ड (Chessboard) में कुल कितने वर्ग (Squares) होते हैं?`,
+                options: ['64', '128', '204', '256'],
+                answer: 'C',
+                explanation: `8x8 ग्रिड में वर्गों की संख्या = 8² + 7² + 6² + 5² + 4² + 3² + 2² + 1² = 64+49+36+25+16+9+4+1 = 204.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 45,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Statement-Assumption',
+                difficulty: 'moderate',
+                topic: 'Statement & Assumption',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन: "कृपया इस सॉफ्टवेयर को इंस्टॉल करने से पहले 'Read Me' फाइल पढ़ें।" - एक आईटी कंपनी का निर्देश।
+पूर्वधारणाएं:
+I. लोग आमतौर पर सॉफ्टवेयर इंस्टॉल करने से पहले निर्देश पढ़ना पसंद नहीं करते हैं।
+II. 'Read Me' फाइल में इंस्टॉलेशन से जुड़ी महत्वपूर्ण जानकारी होती है।`,
+                options: ['केवल I अंतर्निहित है', 'केवल II अंतर्निहित है', 'I और II दोनों अंतर्निहित हैं', 'कोई भी अंतर्निहित नहीं है'],
+                answer: 'B',
+                explanation: `निर्देश इसलिए दिया गया है क्योंकि फाइल में महत्वपूर्ण जानकारी है (II सही)। लोग पढ़ते हैं या नहीं, यह नकारात्मक पूर्वधारणा है जिसे सीधे तौर पर नहीं माना जा सकता।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 46,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Analogy',
+                difficulty: 'moderate',
+                topic: 'Letters',
+                sourceTag: 'PTET Mock Test 1',
+                question: `ACEG : ZXVT :: BDFH : ?`,
+                options: ['YWUS', 'YWSU', 'WUSY', 'SUWY'],
+                answer: 'A',
+                explanation: `प्रत्येक अक्षर का विपरीत अक्षर (Opposite letter) लिखा गया है। A=Z, C=X. उसी प्रकार B=Y, D=W, F=U, H=S. उत्तर YWUS.`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 47,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Alphabet Logic',
+                sourceTag: 'PTET Mock Test 1',
+                question: `अंग्रेजी वर्णमाला के संदर्भ में निम्नलिखित कथनों पर विचार करें:
+1. बायीं ओर से 10वें अक्षर के दायीं ओर 5वां अक्षर 'O' है।
+2. वर्णमाला को उल्टे क्रम में लिखने पर दायीं ओर से 7वां अक्षर 'G' होगा।
+उपरोक्त में से कौन-सा/से कथन सत्य है/हैं?`,
+                options: ['केवल 1', 'केवल 2', '1 और 2 दोनों', 'कोई नहीं'],
+                answer: 'C',
+                explanation: `1. बायीं से (10+5) = 15वां अक्षर O होता है (सत्य)। 2. उल्टे क्रम में दायीं ओर से गिनने का मतलब सीधे क्रम में बायीं ओर से गिनना (A, B, C...) = 7वां अक्षर G होता है (सत्य)।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 48,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Odd One Out',
+                difficulty: 'moderate',
+                topic: 'Odd One Out',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन सा विकल्प अन्य तीन से भिन्न है?`,
+                options: ['ऋग्वेद', 'यजुर्वेद', 'आयुर्वेद', 'अथर्ववेद'],
+                answer: 'C',
+                explanation: `ऋग्वेद, यजुर्वेद और अथर्ववेद चार मुख्य वेदों में से हैं, जबकि 'आयुर्वेद' ऋग्वेद/अथर्ववेद का उपवेद (चिकित्सा शास्त्र) है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 49,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Puzzle',
+                difficulty: 'moderate',
+                topic: 'Seating Arrangement - Row',
+                sourceTag: 'PTET Mock Test 1',
+                question: `5 लड़कियां एक पंक्ति में उत्तर की ओर मुख करके बैठी हैं। A, C के बायीं ओर है और D के दायीं ओर है। E, B के दायीं ओर है लेकिन D के बायीं ओर है। बीच में कौन बैठा है?`,
+                options: ['D', 'A', 'E', 'C'],
+                answer: 'A',
+                explanation: `क्रम: B, E, D, A, C. ठीक बीच में D है।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 50,
+                section: 'Section A Mental Ability (मानसिक योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Logical Conclusion',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): भारत में अधिकांश सड़क दुर्घटनाएं ओवर-स्पीडिंग (तेज गति) के कारण होती हैं।
+कारण (R): आधुनिक कारों में शक्तिशाली इंजन होते हैं जो बहुत कम समय में उच्च गति प्राप्त कर सकते हैं।`,
+                options: ['(A) और (R) दोनों सही हैं, और (R), (A) का सही कारण है।', '(A) और (R) दोनों सही हैं, लेकिन (R), (A) का सही कारण नहीं है।', '(A) सही है, लेकिन (R) गलत है।', '(A) गलत है, लेकिन (R) सही है।'],
+                answer: 'B',
+                explanation: `दोनों कथन अपने आप में सत्य हैं, लेकिन कारों में शक्तिशाली इंजन होना दुर्घटना का "मूल कारण" नहीं है; मूल कारण मानवीय लापरवाही और यातायात नियमों का उल्लंघन है। इसलिए (R), (A) की सही व्याख्या नहीं करता।`,
+                reference: 'PTET Section A'
+              },
+              {
+                id: 51,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'NEP 2020 Academic Structure',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राष्ट्रीय शिक्षा नीति (NEP) 2020 के नए 5+3+3+4 ढांचे को उनके चरणों (Stages) से सुमेलित करें:
+सूची-I (वर्ष)
+a. 5 वर्ष
+b. 3 वर्ष (कक्षा 3 से 5)
+c. 3 वर्ष (कक्षा 6 से 8)
+d. 4 वर्ष (कक्षा 9 से 12)
+
+सूची-II (चरण)
+1. मिडिल स्टेज (Middle Stage)
+2. सेकेंडरी स्टेज (Secondary Stage)
+3. फाउंडेशनल स्टेज (Foundational Stage)
+4. प्रिपरेटरी स्टेज (Preparatory Stage)
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '4, 3, 2, 1', '3, 1, 4, 2', '1, 4, 3, 2'],
+                answer: 'A',
+                explanation: `5 वर्ष (फाउंडेशनल), 3 वर्ष (प्रिपरेटरी), 3 वर्ष (मिडिल), 4 वर्ष (सेकेंडरी)।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 52,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Inclusive Education',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): शारीरिक रूप से अक्षम बच्चों को विशेष स्कूलों की बजाय सामान्य स्कूलों में पढ़ाया जाना चाहिए।
+कारण (R): समावेशी शिक्षा बच्चों में सहानुभूति, सहयोग और सामाजिक परिपक्वता का विकास करती है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या करता है।', '(A) और (R) दोनों सत्य हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: `समावेशी शिक्षा का मूल उद्देश्य सभी बच्चों को एक साथ पढ़ाकर भेदभाव मिटाना है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 53,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Practical Scenario',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आपकी कक्षा में एक छात्र बोलते समय हकलाता है, जिसके कारण अन्य छात्र उस पर हंसते हैं। एक शिक्षक के रूप में आपकी क्या प्रतिक्रिया होगी?`,
+                options: ['उस छात्र को कक्षा में बोलने से मना कर देंगे ताकि उसका मजाक न बने।', 'हकलाने वाले छात्र को अलग बैठाएंगे।', 'कक्षा के अन्य छात्रों को सहानुभूति और व्यक्तिगत भिन्नताओं का सम्मान करना सिखाएंगे।', 'छात्रों को डांटकर चुप करा देंगे।'],
+                answer: 'C',
+                explanation: `छात्रों में संवेदनशीलता और नैतिक मूल्यों का विकास करना शिक्षक का दायित्व है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 54,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'NEP 2020',
+                sourceTag: 'PTET Mock Test 1',
+                question: `NEP 2020 के प्रमुख लक्ष्यों के संबंध में निम्नलिखित कथनों पर विचार करें:
+1. कक्षा 5 तक शिक्षा का माध्यम मातृभाषा/स्थानीय भाषा होना चाहिए।
+2. रटने (Rote Learning) की बजाय आलोचनात्मक सोच (Critical Thinking) पर जोर।
+3. बोर्ड परीक्षाओं को पूरी तरह समाप्त करना।
+इनमें से कौन-सा/से कथन सत्य है/हैं?`,
+                options: ['केवल 1 और 2', 'केवल 2 और 3', 'केवल 1', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `NEP 2020 में बोर्ड परीक्षाओं को समाप्त नहीं किया गया है, बल्कि उन्हें आसान और बहु-विकल्पीय/विश्लेषणात्मक बनाने का सुझाव दिया गया है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 55,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Evaluation',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): रचनात्मक मूल्यांकन (Formative Assessment) शिक्षण-अधिगम प्रक्रिया के दौरान किया जाता है।
+कारण (R): इसका उद्देश्य छात्रों की कमियों को पहचानकर उनमें समय रहते सुधार करना है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 56,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Professional Commitment',
+                sourceTag: 'PTET Mock Test 1',
+                question: `स्कूल में एक शिक्षक के रूप में आपका मुख्य दायित्व क्या है?`,
+                options: ['केवल अपना पाठ्यक्रम समय पर पूरा करना।', 'स्कूल के प्रशासनिक कार्यों में प्रधानाचार्य की मदद करना।', 'छात्रों के सर्वांगीण विकास के लिए निरंतर प्रयास करना।', 'छात्रों को परीक्षा में उच्च अंक लाने के लिए रटने पर मजबूर करना।'],
+                answer: 'C',
+                explanation: `शिक्षक की सर्वोच्च प्रतिबद्धता छात्र के समग्र (शारीरिक, मानसिक, नैतिक) विकास के प्रति होती है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 57,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Progressive Classroom',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक 'प्रगतिशील कक्षा' (Progressive Classroom) की क्या विशेषताएं होती हैं?
+1. शिक्षक तानाशाह के रूप में कार्य करता है।
+2. छात्र ज्ञान के सक्रिय निर्माता होते हैं।
+3. बैठने की व्यवस्था लचीली (Flexible) होती है।
+4. मूल्यांकन केवल वार्षिक परीक्षाओं पर आधारित होता है।`,
+                options: ['1 और 4', '2 और 3', '1, 2 और 3', '2, 3 और 4'],
+                answer: 'B',
+                explanation: `प्रगतिशील शिक्षा (जॉन डीवी) बाल-केंद्रित होती है, जहाँ छात्र सक्रिय होते हैं और व्यवस्था लचीली होती है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 58,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Learning Disabilities',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. डिस्लेक्सिया (Dyslexia)
+b. डिस्ग्राफिया (Dysgraphia)
+c. डिस्कैल्कुलिया (Dyscalculia)
+
+सूची-II
+1. लिखने में कठिनाई
+2. गणितीय गणना में कठिनाई
+3. पढ़ने में कठिनाई
+
+कूट (a, b, c):`,
+                options: ['3, 1, 2', '1, 2, 3', '2, 3, 1', '3, 2, 1'],
+                answer: 'A',
+                explanation: `Dyslexia-पढ़ना, Dysgraphia-लिखना, Dyscalculia-गणित।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 59,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Social Maturity',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि आपके विद्यालय में एक अलग धर्म या जाति का शिक्षक नियुक्त होता है, तो आपका व्यवहार कैसा होगा?`,
+                options: ['उससे दूरी बनाकर रखेंगे।', 'उसके साथ उसी प्रकार सहजता से काम करेंगे जैसे अन्य शिक्षकों के साथ करते हैं।', 'केवल काम से काम रखेंगे, व्यक्तिगत बात नहीं करेंगे।', 'उसके धर्म/जाति के बारे में जानने का प्रयास करेंगे।'],
+                answer: 'B',
+                explanation: `यह सामाजिक परिपक्वता और धर्मनिरपेक्ष दृष्टिकोण को दर्शाता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 60,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'ICT Usage',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): कक्षा में शिक्षण-अधिगम सामग्री (ICT/स्मार्ट बोर्ड) का प्रयोग कम से कम करना चाहिए।
+कारण (R): इससे छात्रों का ध्यान पढ़ाई से भटककर केवल तकनीक पर चला जाता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं।', '(A) और (R) दोनों असत्य हैं।', '(A) सत्य है, लेकिन (R) असत्य है।', '(A) असत्य है, लेकिन (R) सत्य है।'],
+                answer: 'B',
+                explanation: `ICT का प्रयोग बढ़ाना चाहिए क्योंकि यह अधिगम को रोचक और प्रभावी बनाता है। अतः दोनों कथन गलत हैं।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 61,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Leadership - Practical Scenario',
+                sourceTag: 'PTET Mock Test 1',
+                question: `प्रधानाचार्य द्वारा आपको स्कूल के वार्षिक उत्सव का प्रभारी बनाया गया है, लेकिन कुछ वरिष्ठ शिक्षक आपके निर्देशों का पालन नहीं कर रहे हैं। आप क्या करेंगे?`,
+                options: ['तुरंत प्रधानाचार्य से उनकी शिकायत करेंगे।', 'प्रभारी का पद छोड़ देंगे।', 'उनके साथ बैठक कर विनम्रतापूर्वक उत्सव की सफलता के लिए उनके सहयोग और अनुभव का आग्रह करेंगे।', 'उन्हें नजरअंदाज कर अकेले सारा काम करेंगे।'],
+                answer: 'C',
+                explanation: `एक अच्छा नेता सभी को साथ लेकर चलता है और टकराव की बजाय संवाद से समस्या सुलझाता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 62,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Democratic Leadership',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): एक सफल शिक्षक को अपनी कक्षा में 'लोकतांत्रिक नेतृत्व' (Democratic Leadership) अपनाना चाहिए।
+कारण (R): इससे छात्रों को अपने विचार व्यक्त करने की स्वतंत्रता मिलती है और उनमें आत्मविश्वास बढ़ता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन व्याख्या सही नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 63,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Practical Scenario',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कक्षा में पढ़ाते समय दो छात्र आपस में बुरी तरह लड़ने लगते हैं। शिक्षक के रूप में आपका पहला कदम क्या होगा?`,
+                options: ['दोनों को तुरंत कक्षा से बाहर निकाल देंगे।', 'दोनों को अलग-अलग करेंगे और शांत होने के बाद लड़ाई का कारण जानेंगे।', 'तुरंत उनके अभिभावकों को फोन करेंगे।', 'उन्हें कड़ी शारीरिक सजा देंगे।'],
+                answer: 'B',
+                explanation: `तात्कालिक समस्या को सुलझाकर मनोवैज्ञानिक तरीके से कारण जानना सबसे उचित कदम है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 64,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Multilingualism',
+                sourceTag: 'PTET Mock Test 1',
+                question: `भारतीय कक्षाओं में 'बहुभाषिकता' (Multilingualism) को किस रूप में देखा जाना चाहिए?
+1. एक संसाधन (Resource) के रूप में।
+2. शिक्षण में एक बाधा के रूप में।
+3. संज्ञानात्मक विकास में सहायक के रूप में।
+सही कूट चुनें:`,
+                options: ['1 और 2', 'केवल 2', '1 और 3', '1, 2 और 3'],
+                answer: 'C',
+                explanation: `NEP 2020 और NCF के अनुसार बहुभाषिकता एक সম্পদ है जो बच्चों के बौद्धिक विकास में मदद करती है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 65,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Professional Development',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): एक शिक्षक को समय-समय पर प्रशिक्षण कार्यशालाओं (Workshops) में भाग लेना चाहिए।
+कारण (R): शिक्षा के क्षेत्र में नए शोध और शिक्षण विधियों से अपडेट रहना व्यावसायिक वृद्धि के लिए आवश्यक है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन व्याख्या सही नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 66,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Interpersonal Relationship',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक अभिभावक पीटीएम (PTM) में आपके पढ़ाने के तरीके की तीखी आलोचना करता है। आप क्या करेंगे?`,
+                options: ['अभिभावक को अपमानित कर वापस भेज देंगे।', 'उसकी बातों को ध्यान से सुनेंगे, धैर्य रखेंगे और सकारात्मक सुझावों को स्वीकार करेंगे।', 'तर्क-वितर्क करके यह साबित करेंगे कि आप सही हैं।', 'छात्र को स्कूल से निकाल देने की धमकी देंगे।'],
+                answer: 'B',
+                explanation: `यह शिक्षक की सामाजिक और भावनात्मक परिपक्वता (Emotional Intelligence) को दर्शाता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 67,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Maxims of Teaching',
+                sourceTag: 'PTET Mock Test 1',
+                question: `शिक्षण के सूत्रों (Maxims of Teaching) को उनके अर्थ से सुमेलित करें:
+सूची-I
+a. ज्ञात से अज्ञात की ओर
+b. सरल से जटिल की ओर
+c. मूर्त से अमूर्त की ओर
+
+सूची-II
+1. पहले आसान अवधारणाएं, फिर कठिन
+2. पहले भौतिक वस्तुएं दिखाना, फिर उनके विचारों पर चर्चा
+3. पूर्व ज्ञान से जोड़कर नई जानकारी देना
+
+कूट (a, b, c):`,
+                options: ['3, 1, 2', '1, 2, 3', '2, 3, 1', '3, 2, 1'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 68,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Counselor Role',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आपकी कक्षा का एक होशियार छात्र अचानक से उदास रहने लगा है और उसके ग्रेड भी गिर रहे हैं। आप क्या करेंगे?`,
+                options: ['उसे डांटेंगे कि वह पढ़ाई पर ध्यान क्यों नहीं दे रहा।', 'उसे एकांत में विश्वास में लेकर उसकी परेशानी का कारण जानने का प्रयास करेंगे।', 'यह मान लेंगे कि अब उसकी रुचि पढ़ाई में नहीं रही।', 'तुरंत प्रधानाचार्य के पास भेज देंगे।'],
+                answer: 'B',
+                explanation: `शिक्षक को एक मार्गदर्शक और काउंसलर की भूमिका निभानी चाहिए।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 69,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'NCF 2005',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): NCF 2005 के अनुसार शिक्षक की भूमिका एक 'ज्ञान प्रदाता' (Knowledge Provider) की बजाय एक 'सुविधादाता' (Facilitator) की है।
+कारण (R): बच्चे खाली बर्तन नहीं हैं; वे अपने पूर्व अनुभवों के आधार पर ज्ञान का निर्माण स्वयं करते हैं।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन व्याख्या सही नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 70,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Ideal Teacher',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि कोई छात्र आपसे ऐसा प्रश्न पूछता है जिसका उत्तर आपको नहीं पता है, तो एक आदर्श शिक्षक के रूप में आप क्या करेंगे?`,
+                options: ['प्रश्न को बेतुका बताकर छात्र को डांट देंगे।', 'कोई भी गलत उत्तर दे देंगे ताकि सम्मान बना रहे।', 'ईमानदारी से स्वीकार करेंगे कि आपको उत्तर नहीं पता और अगले दिन पढ़कर बताने का वादा करेंगे।', 'छात्र को स्वयं उत्तर ढूंढने के लिए कहेंगे।'],
+                answer: 'C',
+                explanation: `अपनी अज्ञानता को स्वीकार कर उसे दूर करने का प्रयास करना एक सच्चे शिक्षक की निशानी है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 71,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Communication',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): कक्षा में संचार हमेशा 'एकतरफा' (One-way) होना चाहिए, जहां शिक्षक बोले और छात्र केवल सुनें।
+कारण (R): इससे कक्षा में अनुशासन बना रहता है और पाठ्यक्रम समय पर पूरा होता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं।', '(A) और (R) दोनों असत्य हैं।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'B',
+                explanation: `प्रभावी संचार 'दो-तरफा' (Two-way) होता है, जिसमें छात्रों की सहभागिता आवश्यक है। अतः दोनों कथन गलत हैं।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 72,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Elements of Communication',
+                sourceTag: 'PTET Mock Test 1',
+                question: `संचार प्रक्रिया (Communication Process) के तत्वों को सही क्रम/अर्थ से सुमेलित करें:
+सूची-I
+a. प्रेषक (Sender)
+b. संदेश (Message)
+c. माध्यम (Medium)
+d. फीडबैक (Feedback)
+
+सूची-II
+1. जो सूचना दी जानी है
+2. संचार की प्रभावशीलता जानने की प्रक्रिया
+3. सूचना देने वाला (जैसे शिक्षक)
+4. जिसके द्वारा सूचना दी जाए (जैसे भाषा/दृश्य)
+
+कूट (a, b, c, d):`,
+                options: ['3, 1, 4, 2', '1, 3, 2, 4', '3, 4, 1, 2', '2, 1, 4, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 73,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Practical Scenario',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आपकी कक्षा में एक छात्र बहुत शर्मीला है और कक्षा की चर्चाओं में भाग नहीं लेता है। उसे संप्रेषण में कैसे शामिल करेंगे?`,
+                options: ['उसे हर दिन सबसे पहले उत्तर देने के लिए मजबूर करेंगे।', 'उसे छोटे-छोटे और आसान प्रश्न पूछकर बोलने के लिए प्रोत्साहित करेंगे और उसकी प्रशंसा करेंगे।', 'उसे उसके हाल पर छोड़ देंगे।', 'उसके माता-पिता को बुलाकर शिकायत करेंगे।'],
+                answer: 'B',
+                explanation: `आत्मविश्वास बढ़ाने के लिए सकारात्मक सुदृढीकरण (Positive Reinforcement) आवश्यक है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 74,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Communication Barriers',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कक्षा में प्रभावी संचार (Effective Communication) में निम्नलिखित में से कौन-सी बाधाएं (Barriers) हैं?
+1. शोरगुल (Physical noise)
+2. शिक्षक की स्पष्ट आवाज
+3. छात्रों का ध्यान भटकना
+4. विषय की जटिलता`,
+                options: ['1 और 3', '1, 3 और 4', '2 और 4', 'उपरोक्त सभी'],
+                answer: 'B',
+                explanation: `'शिक्षक की स्पष्ट आवाज' संचार में सहायक है, बाधा नहीं। बाकी सभी बाधाएं हैं।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 75,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Social Maturity',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक शिक्षक में 'सहानुभूति' (Sympathy) की तुलना में 'तदनुभूति/समानुभूति' (Empathy) होना अधिक आवश्यक है, क्योंकि:`,
+                options: ['तदनुभूति का अर्थ है छात्र की स्थिति में खुद को रखकर उसकी भावनाओं को समझना।', 'सहानुभूति से छात्र शिक्षक से डरने लगते हैं।', 'तदनुभूति से शिक्षक कक्षा में कठोर अनुशासन लागू कर सकता है।', 'इनमें से कोई नहीं।'],
+                answer: 'A',
+                explanation: `Empathy का अर्थ है खुद को दूसरे की जगह रखकर सोचना, जो एक बेहतरीन शिक्षक का गुण है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 76,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Staff Politics',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आपके विद्यालय के कुछ शिक्षक गुटबाजी (Groupism) करते हैं और आपको भी अपने गुट में शामिल होने के लिए कहते हैं। आपकी क्या प्रतिक्रिया होगी?`,
+                options: ['जो गुट अधिक शक्तिशाली है, उसमें शामिल हो जाएंगे।', 'प्रधानाचार्य से सभी की शिकायत करेंगे।', 'गुटबाजी से दूर रहेंगे और सभी के साथ सौहार्दपूर्ण व्यावसायिक संबंध बनाए रखेंगे।', 'अपना एक अलग गुट बना लेंगे।'],
+                answer: 'C',
+                explanation: `शिक्षक को विद्यालय की राजनीति से दूर रहकर अपने मुख्य कर्तव्य (शिक्षण) पर ध्यान देना चाहिए।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 77,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Non-verbal Communication',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): कक्षा में शिक्षक के चेहरे के भाव, आंखों का संपर्क (Eye contact) और हाव-भाव (Body language) शिक्षण को प्रभावी बनाते हैं।
+कारण (R): गैर-शाब्दिक संचार (Non-verbal communication) छात्रों को शिक्षक के संदेश को बेहतर ढंग से समझने में मदद करता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 78,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Effective Communicator',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आप एक कठिन अवधारणा पढ़ा रहे हैं, लेकिन छात्रों के चेहरों से लग रहा है कि उन्हें समझ नहीं आ रहा है। एक अच्छे संचारक के रूप में आप क्या करेंगे?`,
+                options: ['उसी तरीके से पढ़ाना जारी रखेंगे।', 'छात्रों को डांटेंगे कि वे ध्यान नहीं दे रहे हैं।', 'रुकेंगे, छात्रों से फीडबैक लेंगे और दैनिक जीवन के उदाहरणों के साथ विधि बदलकर समझाएंगे।', 'उस टॉपिक को छोड़कर अगला टॉपिक शुरू कर देंगे।'],
+                answer: 'C',
+                explanation: `प्रभावी संचार में श्रोता (छात्र) के अनुसार अपनी शैली में बदलाव करना आवश्यक है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 79,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Leadership Decision Making',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक नेता (शिक्षक) के रूप में निर्णय लेते समय आपको किस बात को सर्वोच्च प्राथमिकता देनी चाहिए?`,
+                options: ['अपना व्यक्तिगत लाभ।', 'विद्यालय के नियमों का कठोरता से पालन, चाहे छात्रों का नुकसान हो।', 'छात्रों का अधिकतम कल्याण और उनका समग्र विकास।', 'अन्य शिक्षकों को खुश रखना।'],
+                answer: 'C',
+                explanation: `शैक्षिक नेतृत्व में छात्र का हित सर्वोपरि होता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 80,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Gifted Child',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक 'प्रतिभाशाली' (Gifted) छात्र कक्षा में पढ़ाए जा रहे सामान्य कार्य से ऊब (Boredom) महसूस कर रहा है। आप क्या करेंगे?`,
+                options: ['उसे कक्षा के बाहर निकाल देंगे।', 'उसे कक्षा का मॉनिटर बना देंगे ताकि वह व्यस्त रहे।', 'उसे उसकी क्षमता के अनुसार अधिक चुनौतीपूर्ण और संवर्धित (Enriched) कार्य देंगे।', 'उस पर ध्यान नहीं देंगे।'],
+                answer: 'C',
+                explanation: `समावेशी कक्षा में हर स्तर के बच्चे (मंदबुद्धि और प्रतिभाशाली दोनों) की शैक्षिक आवश्यकताओं को पूरा करना होता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 81,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'RTE Act 2009',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): शिक्षा का अधिकार (RTE) अधिनियम 2009 के तहत स्कूलों में बच्चों को शारीरिक दंड देना (Corporal Punishment) पूरी तरह से प्रतिबंधित है।
+कारण (R): शारीरिक दंड बच्चों में भय पैदा करता है, जिससे स्कूल छोड़ने (Dropout) की दर बढ़ती है और मानसिक विकास बाधित होता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 82,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Ethics',
+                sourceTag: 'PTET Mock Test 1',
+                question: `परीक्षा के दौरान आप एक छात्र को नकल (Copying) करते हुए पकड़ते हैं। आपकी त्वरित कार्रवाई क्या होनी चाहिए?`,
+                options: ['उसे पूरी कक्षा के सामने थप्पड़ मारेंगे।', 'उसकी उत्तर पुस्तिका लेकर उसे परीक्षा कक्ष से बाहर कर देंगे।', 'शांति से उसकी उत्तर पुस्तिका ले लेंगे, उसे नई कॉपी देंगे और बाद में उसे नकल के नुकसान समझाएंगे (नियमों के अनुसार कार्रवाई)।', 'उसे नजरअंदाज कर देंगे क्योंकि वह गरीब परिवार से है।'],
+                answer: 'C',
+                explanation: `शिक्षक को नियमानुसार कार्य करना चाहिए, लेकिन छात्र के प्रति हिंसक या अपमानजनक व्यवहार नहीं करना चाहिए।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 83,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Portfolio',
+                sourceTag: 'PTET Mock Test 1',
+                question: `NEP 2020 में 'पोर्टफोलियो' (Portfolio) मूल्यांकन पर जोर दिया गया है। पोर्टफोलियो के संदर्भ में सत्य कथन चुनें:
+1. यह छात्र के कार्यों का एक व्यवस्थित संग्रह है।
+2. यह केवल अंतिम परीक्षा के अंकों को दर्शाता है।
+3. यह समय के साथ छात्र की प्रगति और उपलब्धियों को दर्शाता है।`,
+                options: ['1 और 2', 'केवल 3', '1 और 3', '1, 2 और 3'],
+                answer: 'C',
+                explanation: `पोर्टफोलियो में अंकों की बजाय बच्चे की कला, असाइनमेंट, और समग्र प्रगति का रिकॉर्ड होता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 84,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Motivation',
+                sourceTag: 'PTET Mock Test 1',
+                question: `छात्रों को गृहकार्य (Homework) नियमित रूप से करने के लिए प्रेरित करने का सबसे अच्छा तरीका कौन सा है?`,
+                options: ['गृहकार्य न करने पर कड़ा दंड देना।', 'गृहकार्य की कक्षा में नियमित रूप से जाँच करना और अच्छे कार्य पर रचनात्मक प्रतिक्रिया (Feedback) देना।', 'गृहकार्य के बदले चॉकलेट देना।', 'माता-पिता को डराना।'],
+                answer: 'B',
+                explanation: `नियमित जाँच और सकारात्मक फीडबैक आंतरिक प्रेरणा (Intrinsic Motivation) बढ़ाते हैं।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 85,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Cultural Diversity',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): शिक्षक को कक्षा में विभिन्न संस्कृतियों के त्योहारों और परंपराओं पर चर्चा करनी चाहिए।
+कारण (R): इससे छात्रों में सांस्कृतिक सहिष्णुता (Tolerance) और राष्ट्रीय एकता की भावना विकसित होती है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 86,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Classroom Discipline',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आप कक्षा में प्रवेश करते हैं और देखते हैं कि छात्र बहुत शोर मचा रहे हैं। कक्षा को नियंत्रित करने का सबसे अच्छा तरीका क्या है?`,
+                options: ['आप भी जोर से चिल्लाने लगेंगे।', 'मेज पर डंडा मारेंगे।', 'चुपचाप ब्लैकबोर्ड के पास जाकर खड़े हो जाएंगे और छात्रों के शांत होने का इंतजार करेंगे (आंखों से संपर्क बनाते हुए)।', 'सीधे पढ़ाना शुरू कर देंगे।'],
+                answer: 'C',
+                explanation: `शांत रहकर और आंखों का संपर्क (Eye contact) बनाकर ध्यान आकर्षित करना सबसे परिपक्व तरीका है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 87,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Types of Motivation',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. आंतरिक अभिप्रेरणा (Intrinsic)
+b. बाह्य अभिप्रेरणा (Extrinsic)
+
+सूची-II
+1. पुरस्कार जीतने के लिए पढ़ना
+2. ज्ञान प्राप्त करने की जिज्ञासा के लिए पढ़ना
+3. सजा से बचने के लिए काम करना
+
+कूट (a, b):`,
+                options: ['a-2, b-(1,3)', 'a-1, b-(2,3)', 'a-3, b-(1,2)', 'a-(1,2), b-3'],
+                answer: 'A',
+                explanation: `जब रुचि अंदर से हो तो आंतरिक; जब कारण बाहरी (पुरस्कार/सजा) हो तो बाह्य प्रेरणा।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 88,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Root Cause',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक छात्र लगातार कई दिनों से स्कूल देरी से आ रहा है। एक शिक्षक के रूप में आप क्या करेंगे?`,
+                options: ['उसे कक्षा में प्रवेश नहीं करने देंगे।', 'सबके सामने अपमानित करेंगे।', 'अकेले में बुलाकर देरी का वास्तविक कारण (जैसे पारिवारिक काम या परिवहन समस्या) जानने का प्रयास करेंगे।', 'बिना कारण जाने माता-पिता को नोटिस भेज देंगे।'],
+                answer: 'C',
+                explanation: `समस्या के मूल कारण (Root cause) को जानना पहला कदम होना चाहिए।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 89,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Social Maturity',
+                difficulty: 'moderate',
+                topic: 'PTA',
+                sourceTag: 'PTET Mock Test 1',
+                question: `विद्यालय में अभिभावक-शिक्षक संघ (PTA) की बैठकों का मुख्य उद्देश्य क्या होना चाहिए?`,
+                options: ['स्कूल की फीस इकट्ठा करना।', 'बच्चे की कमियों की शिकायत करना।', 'स्कूल और घर के बीच एक सेतु बनाना ताकि बच्चे के समग्र विकास पर साझा रणनीति बन सके।', 'अभिभावकों को स्कूल के नियम सिखाना।'],
+                answer: 'C',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 90,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Creativity',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): बच्चों को कक्षा में प्रश्न पूछने के लिए हतोत्साहित करना चाहिए।
+कारण (R): ज्यादा प्रश्न पूछने से शिक्षक का समय बर्बाद होता है और सिलेबस पीछे रह जाता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।', '(A) और (R) दोनों असत्य हैं।'],
+                answer: 'D',
+                explanation: `प्रश्न पूछना रचनात्मकता और जिज्ञासा का प्रतीक है, इसे प्रोत्साहित किया जाना चाहिए। अतः दोनों गलत हैं।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 91,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'NEP 2020',
+                sourceTag: 'PTET Mock Test 1',
+                question: `NEP 2020 के तहत छात्रों के समग्र मूल्यांकन के लिए एक राष्ट्रीय मूल्यांकन केंद्र स्थापित किया गया है। उसका नाम क्या है?`,
+                options: ['DIKSHA', 'PARAKH (परख)', 'NIPUN', 'SWAYAM'],
+                answer: 'B',
+                explanation: `PARAKH - Performance Assessment, Review, and Analysis of Knowledge for Holistic Development.`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 92,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Play-way Method',
+                sourceTag: 'PTET Mock Test 1',
+                question: `आपकी कक्षा के छात्र पढ़ाई की बजाय बाहर जाकर खेल खेलने/पिकनिक की जिद कर रहे हैं। आप क्या करेंगे?`,
+                options: ['उन्हें डांट कर चुप करा देंगे।', 'उनकी बात मान लेंगे और पढ़ाई बंद कर देंगे।', 'विषय को किसी खेल या गतिविधि से जोड़कर पढ़ाएंगे ताकि उनकी रुचि भी बनी रहे और पढ़ाई भी हो जाए।', 'प्रधानाचार्य को बुला लाएंगे।'],
+                answer: 'C',
+                explanation: `यह शिक्षक की रचनात्मकता और खेल-खेल में शिक्षा (Play-way method) को दर्शाता है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 93,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Gender Stereotyping',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): पाठ्यपुस्तकों में महिलाओं को केवल खाना बनाते हुए और पुरुषों को ऑफिस जाते हुए नहीं दिखाया जाना चाहिए।
+कारण (R): इससे बच्चों में जेंडर रूढ़िवादिता (Gender Stereotyping) को बढ़ावा मिलता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) और (R) दोनों असत्य हैं।'],
+                answer: 'A',
+                explanation: `शिक्षा को लैंगिक समानता (Gender Equality) को बढ़ावा देना चाहिए।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 94,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Value Education',
+                sourceTag: 'PTET Mock Test 1',
+                question: `विद्यालयों में 'मूल्य शिक्षा' (Value Education) प्रदान करने का सबसे प्रभावी तरीका कौन सा है?
+1. नैतिक शिक्षा की एक अलग पुस्तक पढ़ाना।
+2. शिक्षक द्वारा स्वयं आदर्श आचरण प्रस्तुत करना (Role Modeling)।
+3. सुबह की प्रार्थना सभा में महापुरुषों की कहानियां सुनाना।`,
+                options: ['केवल 1', 'केवल 1 और 3', 'केवल 2 और 3', '1, 2 और 3 (लेकिन 2 सबसे प्रभावी है)'],
+                answer: 'C',
+                explanation: `बच्चे अनुकरण से सीखते हैं, इसलिए शिक्षक का अपना आचरण (Role modeling) सबसे बड़ा मूल्य-शिक्षण है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 95,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Professional Commitment',
+                sourceTag: 'PTET Mock Test 1',
+                question: `शिक्षक को 'समाज का दर्पण' क्यों कहा जाता है?`,
+                options: ['क्योंकि वह समाज की बुराइयों को वैसे ही अपना लेता है।', 'क्योंकि वह छात्रों के माध्यम से समाज के भविष्य का निर्माण करता है और सामाजिक मूल्यों को प्रतिबिंबित करता है।', 'क्योंकि वह हमेशा साफ-सुथरा रहता है।', 'क्योंकि वह राजनीति में हिस्सा लेता है।'],
+                answer: 'B',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 96,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Situation-based',
+                difficulty: 'moderate',
+                topic: 'Sensitivity',
+                sourceTag: 'PTET Mock Test 1',
+                question: `एक छात्र जो आर्थिक रूप से बहुत कमजोर है, स्कूल की यूनिफॉर्म या किताबें नहीं ला पाता। आपकी क्या भूमिका होगी?`,
+                options: ['उसे कक्षा से बाहर खड़ा कर देंगे।', 'स्कूल प्रबंधन या अपने स्तर पर बिना उसके आत्मसम्मान को ठेस पहुँचाए उसकी गुप्त रूप से मदद करेंगे।', 'पूरी कक्षा के सामने उसकी स्थिति पर दया दिखाएंगे।', 'उसे कहेंगे कि जब तक सामान न हो, स्कूल न आए।'],
+                answer: 'B',
+                explanation: `सहानुभूति के साथ-साथ बच्चे के आत्मसम्मान (Self-respect) की रक्षा करना जरूरी है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 97,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Educational Thinkers',
+                sourceTag: 'PTET Mock Test 1',
+                question: `शिक्षाविदों को उनके मुख्य विचारों से सुमेलित करें:
+सूची-I
+a. महात्मा गांधी
+b. रवींद्रनाथ टैगोर
+c. जॉन डीवी
+
+सूची-II
+1. प्रकृति के सानिध्य में शिक्षा (शांतिनिकेतन)
+2. बुनियादी शिक्षा / क्राफ्ट आधारित शिक्षा (वर्धा योजना)
+3. करके सीखना (Learning by Doing / प्रगतिशील शिक्षा)
+
+कूट (a, b, c):`,
+                options: ['2, 1, 3', '1, 2, 3', '3, 2, 1', '2, 3, 1'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 98,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Action Research',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): शिक्षकों को स्कूल में 'क्रियात्मक अनुसंधान' (Action Research) करना चाहिए।
+कारण (R): यह शिक्षकों को कक्षा की दैनिक समस्याओं (जैसे अनुशासन, छात्रों का पिछड़ना) का वैज्ञानिक तरीके से समाधान खोजने में मदद करता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 99,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Social Awareness',
+                difficulty: 'moderate',
+                topic: 'Divyang',
+                sourceTag: 'PTET Mock Test 1',
+                question: `यदि कक्षा में कोई विकलांग (Divyang) बच्चा है, तो आप अन्य बच्चों को उसके साथ कैसा व्यवहार करने के लिए प्रेरित करेंगे?`,
+                options: ['उस पर दया करने के लिए।', 'उसके साथ सामान्य बच्चों की तरह व्यवहार करने और आवश्यकता पड़ने पर सहयोग करने के लिए।', 'उसे विशेष महसूस कराने के लिए।', 'उससे दूर रहने के लिए ताकि उसे चोट न लगे।'],
+                answer: 'B',
+                explanation: `दया (Pity) विकलांग बच्चों को कमजोर महसूस कराती है; उन्हें सहयोग और सामान्य व्यवहार की आवश्यकता होती है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 100,
+                section: 'Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Ultimate Goal of Teaching',
+                sourceTag: 'PTET Mock Test 1',
+                question: `NEP 2020 और आधुनिक शिक्षाशास्त्र के अनुसार, शिक्षा का अंतिम लक्ष्य (Ultimate Goal) क्या है?`,
+                options: ['छात्रों को अच्छी नौकरी दिलवाना।', 'परीक्षा में 100% परिणाम प्राप्त करना।', "छात्रों का 'सर्वांगीण विकास' (Holistic Development - शारीरिक, मानसिक, भावनात्मक और नैतिक)।", 'पाठ्यक्रम को समय पर पूरा करना।'],
+                answer: 'C',
+                explanation: `शिक्षा का वास्तविक उद्देश्य एक अच्छा और पूर्ण इंसान बनाना है।`,
+                reference: 'PTET Section B'
+              },
+              {
+                id: 101,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'New Districts Perspective',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान के पुनर्गठन के बाद, निम्नलिखित प्रसिद्ध स्थलों को उनके वर्तमान जिलों से सुमेलित करें:
+सूची-I (स्थल)
+a. पचपदरा झील
+b. गणेश्वर सभ्यता
+c. जयसमंद झील
+d. बाप (Bap) बोल्डर्स
+
+सूची-II (वर्तमान जिला)
+1. फलौदी
+2. सलूम्बर
+3. बालोतरा
+4. नीम का थाना
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 2, 1', '1, 2, 3, 4', '4, 3, 1, 2', '3, 1, 4, 2'],
+                answer: 'A',
+                explanation: `पचपदरा अब बालोतरा में है, गणेश्वर (कांतली नदी) नीम का थाना में, जयसमंद झील सलूम्बर में और बाप बोल्डर क्ले फलौदी में स्थित है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 102,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Aravalli Peaks',
+                sourceTag: 'PTET Mock Test 1',
+                question: `अरावली पर्वतमाला की निम्नलिखित चोटियों को उनकी ऊंचाई के अनुसार 'अवरोही क्रम' (घटते क्रम) में व्यवस्थित करें:
+1. सेर (Ser)
+2. गुरु शिखर (Guru Shikhar)
+3. जरगा (Jarga)
+4. अचलगढ़ (Achalgarh)`,
+                options: ['2, 1, 4, 3', '2, 1, 3, 4', '1, 2, 3, 4', '2, 3, 1, 4'],
+                answer: 'B',
+                explanation: `ऊंचाई - गुरु शिखर (1722m), सेर (1597m), जरगा (1431m), अचलगढ़ (1380m)। ट्रिक: "गुरु से दिल जरा अचल रखो"`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 103,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Rajasthan Rivers',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): लूनी नदी का पानी बालोतरा तक मीठा रहता है और उसके बाद खारा हो जाता है।
+कारण (R): बालोतरा के बाद लूनी नदी नमक युक्त मरुस्थलीय मिट्टी (लवणीय भूमि) और पचपदरा क्षेत्र से होकर गुजरती है, जिससे पानी में लवणता बढ़ जाती है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन (R), (A) की व्याख्या नहीं है।', '(A) सत्य है, लेकिन (R) असत्य है।', '(A) असत्य है, लेकिन (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 104,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Lok Devta',
+                sourceTag: 'PTET Mock Test 1',
+                question: `पंच पीरों में शामिल लोक देवताओं के संबंध में कथनों पर विचार करें:
+1. पाबूजी को ऊंटों का देवता माना जाता है।
+2. गोगाजी का मुख्य मेला गोगामेड़ी (हनुमानगढ़) में भाद्रपद माह में भरता है।
+3. तेजाजी राजस्थान के पंच पीरों में शामिल हैं।
+उपरोक्त में से कौन-सा/से कथन सत्य है/हैं?`,
+                options: ['केवल 1 और 2', 'केवल 2 और 3', '1, 2 और 3', 'केवल 1'],
+                answer: 'A',
+                explanation: `तेजाजी अत्यधिक लोकप्रिय लोक देवता हैं, लेकिन वे मारवाड़ के 'पंच पीरों' (गोगाजी, पाबूजी, रामदेवजी, हड़बूजी, मेहाजी) में शामिल नहीं हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 105,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Handicraft and Place',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I (हस्तकला)
+a. थेवा कला
+b. ब्लू पॉटरी
+c. उस्ता कला
+d. अजरक प्रिंट
+
+सूची-II (स्थान)
+1. जयपुर
+2. प्रतापगढ़
+3. बालोतरा (पूर्व में बाड़मेर)
+4. बीकानेर
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 4, 1, 3', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: `थेवा-प्रतापगढ़, ब्लू पॉटरी-जयपुर, उस्ता-बीकानेर, अजरक/मलीर प्रिंट-बालोतरा/बाड़मेर।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 106,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Rajasthan Climate',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कोपेन (Koeppen) के जलवायु वर्गीकरण के अनुसार राजस्थान के संदर्भ में कौन सा युग्म सुमेलित **नहीं** है?
+1. BWhw - शुष्क उष्ण मरुस्थलीय (जैसलमेर, बीकानेर)
+2. BShw - अर्द्ध-शुष्क (सीकर, नागौर)
+3. Cwg - दक्षिणी राजस्थान (बांसवाड़ा, डूंगरपुर)
+4. Aw - पूर्वी राजस्थान (भरतपुर, धौलपुर)`,
+                options: ['केवल 1 और 2', 'केवल 3 और 4', 'केवल 2 और 3', 'केवल 1 और 4'],
+                answer: 'B',
+                explanation: `Cwg अरावली के पूर्वी और मध्य भाग (जैसे जयपुर, भरतपुर) के लिए है। Aw अति आर्द्र क्षेत्र यानी दक्षिणी राजस्थान (बांसवाड़ा, डूंगरपुर, झालावाड़) के लिए है। अतः 3 और 4 गलत सुमेलित हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 107,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'New Districts',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): राजस्थान सरकार ने अगस्त 2023 में राज्य में 19 नए जिलों का गठन किया।
+कारण (R): यह कदम प्रशासनिक विकेंद्रीकरण (Administrative Decentralization) को बढ़ावा देने और आमजन को सरकारी सुविधाओं तक आसान पहुँच प्रदान करने के लिए रामलुभाया समिति की सिफारिश पर उठाया गया।`,
+                options: ['(A) और (R) दोनों सत्य हैं, और (R), (A) की सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 108,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Ornaments',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान की महिलाओं द्वारा पहने जाने वाले आभूषणों को उनके शरीर के अंग से सुमेलित करें:
+सूची-I
+a. रखड़ी (Rakhdi)
+b. चूप (Choop)
+c. तिमणिया (Timaniya)
+d. कंदोरा (Kandora)
+
+सूची-II
+1. दांत
+2. सिर/मस्तक
+3. कमर
+4. गला
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 4, 1, 3', '3, 1, 4, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 109,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Conceptual',
+                difficulty: 'moderate',
+                topic: 'Folk Dance',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन सा कथन 'कालबेलिया नृत्य' के बारे में **असत्य** है?`,
+                options: ['इसे 2010 में UNESCO की अमूर्त सांस्कृतिक विरासत सूची में शामिल किया गया था।', 'गुलाबो सपेरा इस नृत्य की प्रसिद्ध नृत्यांगना हैं।', 'इस नृत्य में मुख्य वाद्य यंत्र पुंगी और खंजरी होते हैं।', 'यह मुख्य रूप से पुरुषों द्वारा किया जाने वाला वीर-रस प्रधान नृत्य है।'],
+                answer: 'D',
+                explanation: `कालबेलिया मुख्य रूप से महिलाओं द्वारा किया जाने वाला नृत्य है, पुरुष केवल वाद्य यंत्र बजाते हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 110,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Wildlife Sanctuaries',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन-सा/से सुमेलित है/हैं?
+1. सीतामाता अभयारण्य - उड़न गिलहरी
+2. तालछापर अभयारण्य - काले हिरण (Blackbuck)
+3. राष्ट्रीय मरु उद्यान - गोडावण (Great Indian Bustard)`,
+                options: ['केवल 1 और 2', 'केवल 2 और 3', 'केवल 1', '1, 2 और 3 सभी'],
+                answer: 'D',
+                explanation: `तीनों युग्म बिल्कुल सही सुमेलित हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 111,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Word/Number logic',
+                difficulty: 'moderate',
+                topic: 'Chronology of Historical Events',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान के इतिहास के निम्नलिखित युद्धों को उनके घटित होने के कालक्रमानुसार (सबसे पहले से नवीनतम) व्यवस्थित करें:
+1. खानवा का युद्ध
+2. तराइन का प्रथम युद्ध
+3. हल्दीघाटी का युद्ध
+4. गिरी-सुमेल का युद्ध`,
+                options: ['2, 1, 4, 3', '2, 4, 1, 3', '1, 2, 3, 4', '2, 1, 3, 4'],
+                answer: 'A',
+                explanation: `तराइन-I (1191), खानवा (1527), गिरी-सुमेल (1544), हल्दीघाटी (1576)।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 112,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Prajamandal Movement',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान के प्रजामंडलों को उनके संस्थापकों से सुमेलित करें:
+सूची-I
+a. जयपुर प्रजामंडल
+b. मेवाड़ प्रजामंडल
+c. मारवाड़ (जोधपुर) प्रजामंडल
+d. बीकानेर प्रजामंडल
+
+सूची-II
+1. माणिक्यलाल वर्मा
+2. जयनारायण व्यास
+3. कपूरचंद पाटनी / जमनालाल बजाज
+4. मघाराम वैद्य
+
+कूट (a, b, c, d):`,
+                options: ['3, 1, 2, 4', '1, 3, 2, 4', '3, 2, 1, 4', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 113,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: '1857 Revolution',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 1857 की क्रांति में कोटा का विद्रोह सबसे सुनियोजित और व्यापक था, हालांकि वहां कोई छावनी नहीं थी।
+कारण (R): कोटा के विद्रोह का नेतृत्व जयदयाल और मेहराब खान ने किया था, जिन्हें आम जनता और राज्य की सेना का पूरा समर्थन प्राप्त था।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन (R) व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 114,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Integration of Rajasthan',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान के एकीकरण के चरणों के संदर्भ में सत्य कथनों का चयन करें:
+1. प्रथम चरण (मत्स्य संघ) में अलवर, भरतपुर, धौलपुर और करौली शामिल थे।
+2. राजस्थान दिवस 30 मार्च को मनाया जाता है क्योंकि इसी दिन वृहत राजस्थान का निर्माण हुआ था।
+3. एकीकरण की प्रक्रिया 1 नवंबर 1956 को 7वें चरण के साथ पूरी हुई।`,
+                options: ['1 और 2', '2 और 3', '1 और 3', '1, 2 और 3 सभी'],
+                answer: 'D',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 115,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Historical Books and Authors',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. पृथ्वीराज रासो
+b. कान्हड़दे प्रबंध
+c. वंश भास्कर
+d. वीर विनोद
+
+सूची-II
+1. सूर्यमल्ल मीसण
+2. श्यामलदास
+3. चंदबरदाई
+4. पद्मनाभ
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '3, 1, 4, 2', '4, 3, 2, 1', '1, 2, 3, 4'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 116,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Statement-Conclusion',
+                difficulty: 'moderate',
+                topic: 'Indus Valley Civilization',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन: हड़प्पा सभ्यता के स्थल 'कालीबंगा' (हनुमानगढ़) में जुते हुए खेत के साक्ष्य, अग्नि वेदिकाएं और भूकंप के प्रमाण मिले हैं।
+निष्कर्ष:
+I. कालीबंगा के लोग कृषि कार्य से परिचित थे।
+II. कालीबंगा के लोग केवल मांसाहारी थे।`,
+                options: ['केवल I सही है', 'केवल II सही है', 'I और II दोनों सही हैं', 'कोई सही नहीं है'],
+                answer: 'A',
+                explanation: `जुते हुए खेत का मिलना कृषि को दर्शाता है, लेकिन केवल मांसाहारी होने का कोई प्रमाण नहीं है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 117,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Indian National Movement',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित घटनाओं पर विचार करें:
+1. जलियांवाला बाग हत्याकांड (1919)
+2. चौरी-चौरा कांड (1922)
+3. दांडी मार्च (1930)
+4. भारत छोड़ो आंदोलन (1942)
+उपरोक्त में से किस घटना के कारण महात्मा गांधी ने असहयोग आंदोलन (Non-Cooperation Movement) वापस ले लिया था?`,
+                options: ['1', '2', '3', '4'],
+                answer: 'B',
+                explanation: `1922 की चौरी-चौरा की हिंसक घटना के कारण गांधीजी ने असहयोग आंदोलन स्थगित कर दिया था।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 118,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Social Reformers',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (संस्था)
+a. ब्रह्म समाज
+b. आर्य समाज
+c. रामकृष्ण मिशन
+d. सत्यशोधक समाज
+
+सूची-II (संस्थापक)
+1. स्वामी दयानंद सरस्वती
+2. ज्योतिराव फुले
+3. राजा राममोहन राय
+4. स्वामी विवेकानंद
+
+कूट (a, b, c, d):`,
+                options: ['3, 1, 4, 2', '1, 3, 4, 2', '3, 1, 2, 4', '4, 1, 3, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 119,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'History of Mewar',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): महाराणा कुंभा को राजस्थान की स्थापत्य कला (Architecture) का जनक कहा जाता है।
+कारण (R): वीर विनोद के लेखक श्यामलदास के अनुसार, मेवाड़ के 84 दुर्गों में से 32 दुर्गों का निर्माण अकेले महाराणा कुंभा ने करवाया था।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 120,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'UNESCO World Heritage',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन से किले राजस्थान के उन 6 पहाड़ी किलों में शामिल हैं जिन्हें UNESCO द्वारा विश्व धरोहर सूची (2013) में शामिल किया गया था?
+1. आमेर का किला
+2. मेहरानगढ़ का किला
+3. गागरोन का किला
+4. कुंभलगढ़ का किला`,
+                options: ['1, 2 और 4', '1, 3 और 4', '2, 3 और 4', '1, 2, 3 और 4'],
+                answer: 'B',
+                explanation: `ट्रिक - "चीकू गाजर आम" = चित्तौड़गढ़, कुंभलगढ़, गागरोन, जैसलमेर, रणथंभौर, आमेर। मेहरानगढ़ इसमें शामिल नहीं है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 121,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Sources of Indian Constitution',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I (प्रावधान)
+a. मौलिक अधिकार (Fundamental Rights)
+b. नीति निर्देशक तत्व (DPSP)
+c. संविधान संशोधन प्रक्रिया
+d. समवर्ती सूची (Concurrent List)
+
+सूची-II (स्रोत देश)
+1. आयरलैंड
+2. संयुक्त राज्य अमेरिका (USA)
+3. ऑस्ट्रेलिया
+4. दक्षिण अफ्रीका
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 1, 3, 4', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 122,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Fundamental Rights',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): भारतीय संविधान के अनुच्छेद 21 के तहत प्राप्त 'जीवन और व्यक्तिगत स्वतंत्रता का अधिकार' राष्ट्रीय आपातकाल के दौरान भी निलंबित नहीं किया जा सकता है।
+कारण (R): 44वें संविधान संशोधन (1978) द्वारा यह प्रावधान किया गया कि अनुच्छेद 20 और 21 को आपातकाल (अनुच्छेद 359) के दौरान भी निलंबित नहीं किया जाएगा।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 123,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Panchayati Raj',
+                sourceTag: 'PTET Mock Test 1',
+                question: `पंचायती राज व्यवस्था के संदर्भ में असत्य कथन/कथनों का चयन करें:
+1. 73वें संविधान संशोधन अधिनियम द्वारा इसे संवैधानिक दर्जा दिया गया।
+2. बलवंत राय मेहता समिति ने द्वि-स्तरीय (Two-tier) पंचायती राज की सिफारिश की थी।
+3. भारत में पंचायती राज का शुभारंभ 2 अक्टूबर 1959 को राजस्थान के नागौर जिले से हुआ था।`,
+                options: ['केवल 1', 'केवल 2', 'केवल 3', '1 और 3'],
+                answer: 'B',
+                explanation: `बलवंत राय मेहता समिति ने त्रि-स्तरीय (Three-tier) व्यवस्था की सिफारिश की थी। द्वि-स्तरीय की सिफारिश अशोक मेहता समिति ने की थी।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 124,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Important Articles',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. अनुच्छेद 17
+b. अनुच्छेद 32
+c. अनुच्छेद 61
+d. अनुच्छेद 356
+
+सूची-II
+1. राष्ट्रपति पर महाभियोग (Impeachment)
+2. अस्पृश्यता का अंत (Abolition of Untouchability)
+3. संवैधानिक उपचारों का अधिकार
+4. राज्यों में राष्ट्रपति शासन
+
+कूट (a, b, c, d):`,
+                options: ['2, 3, 1, 4', '1, 2, 3, 4', '3, 2, 4, 1', '2, 1, 3, 4'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 125,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Parliament',
+                sourceTag: 'PTET Mock Test 1',
+                question: `भारतीय संसद (Parliament) के संबंध में निम्नलिखित कथनों पर विचार करें:
+1. राज्यसभा एक स्थायी सदन है जिसे कभी भंग नहीं किया जा सकता।
+2. धन विधेयक (Money Bill) केवल लोकसभा में ही पेश किया जा सकता है।
+3. राज्यसभा के सदस्यों का कार्यकाल 5 वर्ष होता है।
+इनमें से कौन-सा/से कथन सत्य है/हैं?`,
+                options: ['1 और 2', '2 और 3', 'केवल 1', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `राज्यसभा के सदस्यों का कार्यकाल 6 वर्ष होता है, न कि 5 वर्ष। अतः कथन 3 गलत है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 126,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Rivers of India',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित नदियों को उनके उद्गम स्थल से सुमेलित करें:
+सूची-I
+a. गंगा
+b. नर्मदा
+c. गोदावरी
+d. कावेरी
+
+सूची-II
+1. अमरकंटक (मध्य प्रदेश)
+2. गंगोत्री ग्लेशियर (उत्तराखंड)
+3. ब्रह्मगिरी पहाड़ियाँ (कर्नाटक)
+4. त्र्यंबकेश्वर (महाराष्ट्र)
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 4, 1, 3', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 127,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Climate of India',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): भारत में अधिकांश वर्षा दक्षिण-पश्चिम मानसून (South-West Monsoon) से होती है।
+कारण (R): थार का मरुस्थल और हिमालय पर्वत मानसून की हवाओं को आकर्षित करने और उन्हें भारत में वर्षा करने के लिए प्रेरित करने में महत्वपूर्ण भूमिका निभाते हैं।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 128,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Passes of India',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित पर्वतीय दर्रों (Passes) और उनके राज्यों के युग्मों पर विचार करें:
+1. नाथू ला - सिक्किम
+2. रोहतांग दर्रा - हिमाचल प्रदेश
+3. जोजिला दर्रा - उत्तराखंड
+इनमें से कौन-सा/से युग्म सही सुमेलित है/हैं?`,
+                options: ['1 और 2', '2 और 3', 'केवल 1', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `जोजिला दर्रा लद्दाख/जम्मू-कश्मीर क्षेत्र में है, उत्तराखंड में नहीं। उत्तराखंड में लिपुलेख, माना और नीति दर्रे हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 129,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Geography of India',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कर्क रेखा (Tropic of Cancer) भारत के कितने राज्यों से होकर गुजरती है और इनमें से कौन सा राज्य इसमें शामिल **नहीं** है?`,
+                options: ['7 राज्य; राजस्थान', '8 राज्य; ओडिशा', '8 राज्य; मध्य प्रदेश', '7 राज्य; गुजरात'],
+                answer: 'B',
+                explanation: `कर्क रेखा 8 राज्यों से गुजरती है - गुजरात, राजस्थान, मप्र, छत्तीसगढ़, झारखंड, प. बंगाल, त्रिपुरा, मिजोरम। ओडिशा इसमें शामिल नहीं है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 130,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Judiciary',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): भारत में सर्वोच्च न्यायालय को 'संविधान का संरक्षक' (Guardian of the Constitution) कहा जाता है।
+कारण (R): सर्वोच्च न्यायालय के पास 'न्यायिक समीक्षा' (Judicial Review) की शक्ति है, जिससे वह असंवैधानिक कानूनों को रद्द कर सकता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, लेकिन (R) व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 131,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Vitamins and Deficiency Diseases',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I (विटामिन)
+a. विटामिन A
+b. विटामिन B1
+c. विटामिन C
+d. विटामिन D
+
+सूची-II (रोग)
+1. स्कर्वी
+2. रिकेट्स
+3. रतौंधी (Night Blindness)
+4. बेरी-बेरी
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '1, 2, 3, 4', '3, 1, 4, 2', '4, 3, 1, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 132,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Human Blood',
+                sourceTag: 'PTET Mock Test 1',
+                question: `मानव रक्त (Human Blood) के संबंध में निम्नलिखित कथनों पर विचार करें:
+1. लाल रक्त कणिकाओं (RBC) में हीमोग्लोबिन पाया जाता है जो ऑक्सीजन का परिवहन करता है।
+2. श्वेत रक्त कणिकाएं (WBC) शरीर को रोगों से लड़ने की क्षमता (प्रतिरक्षा) प्रदान करती हैं।
+3. रक्त समूह 'O' को 'सर्वग्राही' (Universal Acceptor) कहा जाता है।
+इनमें से सत्य कथन कौन-सा/से है/हैं?`,
+                options: ['1 और 2', '2 और 3', '1 और 3', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `रक्त समूह 'O' सर्वदाता (Universal Donor) है, जबकि 'AB' सर्वग्राही (Universal Acceptor) होता है। अतः कथन 3 गलत है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 133,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Cell Biology',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): पादप कोशिकाओं (Plant Cells) में कोशिका भित्ति (Cell Wall) पाई जाती है, जबकि जंतु कोशिकाओं (Animal Cells) में यह अनुपस्थित होती है।
+कारण (R): कोशिका भित्ति सेल्यूलोज की बनी होती है और पौधों को कठोरता तथा संरचनात्मक सहारा प्रदान करती है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 134,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Scientific Instruments',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. बैरोमीटर
+b. लैक्टोमीटर
+c. स्फिग्मोमैनोमीटर
+d. सिस्मोग्राफ
+
+सूची-II
+1. भूकंप की तीव्रता मापना
+2. रक्तचाप (Blood Pressure) मापना
+3. वायुमंडलीय दाब मापना
+4. दूध की शुद्धता मापना
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 2, 1', '1, 2, 3, 4', '3, 2, 4, 1', '4, 3, 1, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 135,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Current Affairs - ISRO Mission',
+                sourceTag: 'PTET Mock Test 1',
+                question: `भारत के ऐतिहासिक चंद्र मिशन 'चंद्रयान-3' के संदर्भ में निम्नलिखित कथनों पर विचार करें:
+1. इसे 14 जुलाई 2023 को LVM3-M4 रॉकेट द्वारा लॉन्च किया गया था।
+2. इसके लैंडर का नाम 'प्रज्ञान' और रोवर का नाम 'विक्रम' था।
+3. भारत चंद्रमा के दक्षिणी ध्रुव के पास सफलतापूर्वक उतरने वाला दुनिया का पहला देश बन गया है।
+सत्य कथन चुनें:`,
+                options: ['1 और 3', '2 और 3', '1 और 2', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `लैंडर का नाम 'विक्रम' और रोवर का नाम 'प्रज्ञान' था। कथन 2 में नाम उल्टे दिए गए हैं।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 136,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Current Affairs - G20 Summit',
+                sourceTag: 'PTET Mock Test 1',
+                question: `वर्ष 2023 में भारत की अध्यक्षता में आयोजित G20 शिखर सम्मेलन की 'थीम' (Theme) क्या थी?`,
+                options: ['One Earth, One Family, One Future (वसुधैव कुटुंबकम्)', 'Recover Together, Recover Stronger', 'Global Action for Climate Change', 'Sabka Saath, Sabka Vikas'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 137,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Current Affairs - Rajasthan Schemes',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान सरकार द्वारा स्वास्थ्य क्षेत्र में चलाई जा रही किस प्रमुख योजना के तहत राज्य के परिवारों को 25 लाख रुपये तक का कैशलेस स्वास्थ्य बीमा प्रदान किया गया था (जिसे अब आयुष्मान भारत से इंटीग्रेट किया जा रहा है)?`,
+                options: ['मुख्यमंत्री चिरंजीवी स्वास्थ्य बीमा योजना', 'मुख्यमंत्री नि:शुल्क दवा योजना', 'आयुष्मान भव: योजना', 'भामाशाह स्वास्थ्य योजना'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 138,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'Recent Constitutional Amendment',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'नारी शक्ति वंदन अधिनियम' (106वां संविधान संशोधन) के संदर्भ में सत्य कथन हैं:
+1. यह लोकसभा और राज्य विधानसभाओं में महिलाओं के लिए 33% (एक-तिहाई) आरक्षण का प्रावधान करता है।
+2. यह आरक्षण अगले 50 वर्षों के लिए लागू रहेगा।
+3. इसे नई संसद भवन में पारित होने वाला पहला विधेयक होने का गौरव प्राप्त है।`,
+                options: ['1 और 3', '1 और 2', 'केवल 1', '1, 2 और 3'],
+                answer: 'A',
+                explanation: `यह आरक्षण प्रारंभ में 15 वर्षों के लिए लागू किया गया है, न कि 50 वर्षों के लिए। अतः कथन 2 गलत है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 139,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Physics',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): अंतरिक्ष में अंतरिक्ष यात्रियों को आकाश नीले की बजाय काला दिखाई देता है।
+कारण (R): अंतरिक्ष में वायुमंडल नहीं है, जिसके कारण सूर्य के प्रकाश का प्रकीर्णन (Scattering of Light) नहीं हो पाता।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 140,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'General Chemistry',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I (रासायनिक नाम)
+a. सोडियम क्लोराइड (NaCl)
+b. सोडियम बाइकार्बोनेट (NaHCO3)
+c. सोडियम कार्बोनेट (Na2CO3)
+
+सूची-II (सामान्य नाम)
+1. बेकिंग सोडा (खाने का सोडा)
+2. धावन सोडा (Washing Soda)
+3. साधारण नमक
+
+कूट (a, b, c):`,
+                options: ['3, 1, 2', '1, 2, 3', '3, 2, 1', '2, 1, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 141,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Current Affairs - Sports',
+                sourceTag: 'PTET Mock Test 1',
+                question: `चीन के हांगझोऊ में आयोजित 'एशियाई खेल 2022' (जो 2023 में हुए) में भारत ने कुल कितने पदक जीतकर इतिहास रचा?`,
+                options: ['107', '111', '75', '104'],
+                answer: 'A',
+                explanation: `भारत ने 28 स्वर्ण, 38 रजत और 41 कांस्य सहित कुल 107 पदक जीते और पदक तालिका में चौथा स्थान प्राप्त किया।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 142,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'International Organizations',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित अंतर्राष्ट्रीय संगठनों को उनके मुख्यालय (Headquarters) से सुमेलित करें:
+सूची-I
+a. विश्व स्वास्थ्य संगठन (WHO)
+b. संयुक्त राष्ट्र (UN)
+c. विश्व व्यापार संगठन (WTO)
+d. अंतर्राष्ट्रीय मुद्रा कोष (IMF)
+
+सूची-II
+1. जिनेवा (स्विट्जरलैंड)
+2. वाशिंगटन डी.सी. (USA)
+3. न्यूयॉर्क (USA)
+4. जिनेवा (स्विट्जरलैंड)
+
+(नोट: WHO और WTO दोनों का मुख्यालय जिनेवा में है)
+कूट (a, b, c, d):`,
+                options: ['1, 3, 4, 2', '3, 1, 2, 4', '1, 2, 3, 4', '4, 3, 2, 1'],
+                answer: 'A',
+                explanation: `WHO-जिनेवा(1), UN-न्यूयॉर्क(3), WTO-जिनेवा(4), IMF-वाशिंगटन(2)।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 143,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Current Affairs',
+                difficulty: 'moderate',
+                topic: 'Awards',
+                sourceTag: 'PTET Mock Test 1',
+                question: `भारत सरकार द्वारा 2024 में बिहार के किस पूर्व मुख्यमंत्री को मरणोपरांत देश का सर्वोच्च नागरिक सम्मान 'भारत रत्न' देने की घोषणा की गई (जिनके साथ बाद में अन्य 4 को भी दिया गया)?`,
+                options: ['कर्पूरी ठाकुर', 'लाल कृष्ण आडवाणी', 'रामविलास पासवान', 'डॉ. एम.एस. स्वामीनाथन'],
+                answer: 'A',
+                explanation: `कर्पूरी ठाकुर को सबसे पहले घोषित किया गया, बाद में एल.के. आडवाणी, पी.वी. नरसिम्हा राव, चौ. चरण सिंह और एम.एस. स्वामीनाथन को भी दिया गया।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 144,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'GI Tags',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान के किन उत्पादों को हाल ही में (2023-24) भौगोलिक संकेतक (GI Tag) प्रदान किया गया है?
+1. बीकानेर की उस्ता कला और कशीदाकारी क्राफ्ट
+2. जोधपुर का बंधेज
+3. नाथद्वारा की पिछवाई कला
+4. जयपुर का सांगानेरी प्रिंट (पुराना है, नया नहीं)
+नवीनतम GI टैग के लिए सही कूट चुनें:`,
+                options: ['1, 2 और 3', 'केवल 1 और 2', 'केवल 3', 'उपरोक्त सभी'],
+                answer: 'A',
+                explanation: `2023 में बीकानेर की उस्ता व कशीदाकारी, जोधपुर बंधेज, नाथद्वारा पिछवाई और उदयपुर की कोफ्तगिरी को GI टैग मिला है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 145,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'Economy',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): जब देश में महंगाई (Inflation) बहुत अधिक बढ़ जाती है, तो रिज़र्व बैंक (RBI) 'रेपो रेट' (Repo Rate) बढ़ा देता है।
+कारण (R): रेपो रेट बढ़ने से बैंकों का कर्ज महंगा हो जाता है, जिससे बाजार में पैसे का प्रवाह (Liquidity) कम होता है और महंगाई पर नियंत्रण लगता है।`,
+                options: ['(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सत्य हैं, (R) सही व्याख्या नहीं है।', '(A) सत्य है, (R) असत्य है।', '(A) असत्य है, (R) सत्य है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 146,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Awareness',
+                difficulty: 'moderate',
+                topic: 'Rajasthan Schemes',
+                sourceTag: 'PTET Mock Test 1',
+                question: `राजस्थान सरकार की अन्नपूर्णा रसोई योजना (पूर्व में इंदिरा रसोई योजना) के तहत अब जरूरतमंदों को प्रति थाली कितने ग्राम भोजन सामग्री देने का प्रावधान किया गया है (जनवरी 2024 के संशोधनानुसार)?`,
+                options: ['450 ग्राम', '600 ग्राम', '500 ग्राम', '800 ग्राम'],
+                answer: 'B',
+                explanation: `सरकार ने 450 ग्राम से बढ़ाकर 600 ग्राम (300g चपाती, 100g दाल, 100g सब्जी, 100g चावल/खिचड़ी/अचार) कर दिया है। लाभार्थी का अंशदान ₹8 ही है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 147,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Current Affairs',
+                difficulty: 'moderate',
+                topic: 'Index',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'विश्व प्रेस स्वतंत्रता सूचकांक' (World Press Freedom Index) 2023 में भारत का कौन सा स्थान रहा?`,
+                options: ['136वां', '142वां', '161वां', '150वां'],
+                answer: 'C',
+                explanation: `180 देशों में भारत 161वें स्थान पर फिसल गया है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 148,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Rajasthan Key Personalities',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें (करंट / चर्चित):
+सूची-I
+a. भजनलाल शर्मा
+b. वासुदेव देवनानी
+c. दीया कुमारी
+d. सुधांश पंत
+
+सूची-II
+1. राजस्थान के मुख्यमंत्री
+2. राजस्थान विधानसभा अध्यक्ष
+3. राजस्थान की उप-मुख्यमंत्री
+4. राजस्थान के मुख्य सचिव
+
+कूट (a, b, c, d):`,
+                options: ['1, 2, 3, 4', '2, 1, 4, 3', '1, 3, 2, 4', '1, 4, 3, 2'],
+                answer: 'A',
+                explanation: `यह 2024 के नए प्रशासनिक और राजनीतिक सेट-अप का एकदम सटीक मिलान है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 149,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Current Affairs',
+                difficulty: 'moderate',
+                topic: 'Science and Technology',
+                sourceTag: 'PTET Mock Test 1',
+                question: `हाल ही में भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) द्वारा सूर्य के अध्ययन के लिए भेजे गए पहले भारतीय मिशन का नाम क्या है?`,
+                options: ['भास्कर-1', 'आदित्य-L1', 'सूर्ययान', 'मार्तंड'],
+                answer: 'B',
+                explanation: `इसे L1 (Lagrange Point 1) कक्षा में स्थापित किया गया है।`,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 150,
+                section: 'Section C General Awareness (सामान्य ज्ञान)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'Important Days',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सुमेलित करें:
+सूची-I
+a. अंतर्राष्ट्रीय योग दिवस
+b. राष्ट्रीय मतदाता दिवस
+c. विश्व पर्यावरण दिवस
+d. राष्ट्रीय विज्ञान दिवस
+
+सूची-II
+1. 21 जून
+2. 25 जनवरी
+3. 5 जून
+4. 28 फरवरी
+
+कूट (a, b, c, d):`,
+                options: ['1, 2, 3, 4', '3, 1, 4, 2', '2, 3, 1, 4', '4, 2, 3, 1'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section C'
+              },
+              {
+                id: 151,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'स्वर संधि के भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (शब्द) को सूची-II (संधि के भेद) से सुमेलित करें:
+सूची-I
+a. भानूदय (भानु+उदय)
+b. महोर्मि (महा+ऊर्मि)
+c. मतैक्य (मत+ऐक्य)
+d. अन्वय (अनु+अय)
+
+सूची-II
+1. यण संधि
+2. वृद्धि संधि
+3. गुण संधि
+4. दीर्घ संधि
+
+कूट (a, b, c, d):`,
+                options: ['4, 3, 2, 1', '1, 2, 3, 4', '4, 2, 3, 1', '3, 4, 1, 2'],
+                answer: 'A',
+                explanation: `भानूदय = दीर्घ, महोर्मि = गुण, मतैक्य = वृद्धि, अन्वय = यण।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 152,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'व्यंजन संधि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'जगन्नाथ' शब्द का सही संधि विच्छेद 'जगत् + नाथ' होता है।
+कारण (R): व्यंजन संधि के नियमानुसार यदि 'त्' या 'द्' के बाद 'न्' या 'म्' आए, तो 'त्/द्' अपने ही वर्ग के पांचवें वर्ण (न्) में बदल जाता है।`,
+                options: ['(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 153,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'संधि विच्छेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित संधि विच्छेदों पर विचार करें:
+1. पावक = पो + अक
+2. निरोग = निः + रोग
+3. उच्छ्वास = उत् + श्वास
+4. रामायण = राम + अयण
+उपरोक्त में से कौन-से संधि विच्छेद पूर्णतः शुद्ध हैं?`,
+                options: ['1 और 2', '2, 3 और 4', '1, 2 और 3', '1, 3 और 4'],
+                answer: 'B',
+                explanation: `'पावक' का विच्छेद 'पौ + अक' (अयादि संधि) होता है। 'पो + अक' = 'पवक' होता है। बाकी तीनों सही हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 154,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'समास के भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (सामासिक पद) को सूची-II (समास के प्रकार) से सुमेलित करें:
+सूची-I
+a. यथाशीघ्र
+b. राजपुत्र
+c. शीतोष्ण (शीत और उष्ण)
+d. चक्रपाणि
+
+सूची-II
+1. द्वंद्व समास
+2. बहुव्रीहि समास
+3. अव्ययीभाव समास
+4. तत्पुरुष समास
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '4, 3, 2, 1', '3, 1, 4, 2', '1, 4, 2, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 155,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'समास का अपवाद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'नीलकंठ' शब्द में सामान्यतः 'कर्मधारय समास' भी है और 'बहुव्रीहि समास' भी, लेकिन परीक्षा में दोनों विकल्प होने पर 'बहुव्रीहि' को प्राथमिकता दी जाती है।
+कारण (R): जब कोई शब्द किसी विशेष व्यक्ति या ईश्वर (जैसे शिव) के लिए रूढ़ हो जाता है, तो वहाँ बहुव्रीहि समास माना जाता है जो अन्य सभी समासों पर हावी होता है।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 156,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'संधि और समास दोनों',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से किन शब्दों में **संधि और समास दोनों** का प्रयोग हुआ है?
+1. देशाटन (देश + अटन)
+2. नीलकमल
+3. विद्यालय (विद्या + आलय)
+4. माता-पिता
+सही विकल्प चुनें:`,
+                options: ['1 और 3', '2 और 4', '1, 2 और 3', 'केवल 3'],
+                answer: 'A',
+                explanation: `देशाटन (देश+अटन-दीर्घ संधि, तत्पुरुष समास), विद्यालय (विद्या+आलय-दीर्घ संधि, तत्पुरुष समास)। नीलकमल और माता-पिता में केवल समास है, संधि नहीं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 157,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'विसर्ग संधि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. मनः + बल
+b. निः + चल
+c. नमः + कार
+d. दुः + कर
+
+सूची-II
+1. नमस्कार
+2. दुष्कर
+3. मनोबल
+4. निश्छल
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '1, 2, 3, 4', '3, 1, 4, 2', '4, 3, 2, 1'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 158,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Samas Vigrah',
+                difficulty: 'moderate',
+                topic: 'समास विग्रह',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन सा समास विग्रह **असत्य** है?
+(A) हवनसामग्री = हवन के लिए सामग्री (संप्रदान तत्पुरुष)
+(B) हस्तलिखित = हाथ के लिए लिखित (संप्रदान तत्पुरुष)
+(C) मालगाड़ी = माल ढोने वाली गाड़ी (लुप्तपद तत्पुरुष)
+(D) दहीबड़ा = दही में डूबा हुआ बड़ा (लुप्तपद तत्पुरुष)`,
+                options: ['A', 'B', 'C', 'D'],
+                answer: 'B',
+                explanation: `हस्तलिखित = हाथ के लिए लिखित (असत्य)।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 159,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'अव्ययीभाव समास',
+                sourceTag: 'PTET Mock Test 1',
+                question: `अव्ययीभाव समास के उदाहरणों की पहचान करें:
+1. रातोंरात
+2. बेकाम
+3. त्रिफला
+4. भरपेट`,
+                options: ['1, 2 और 4', 'केवल 1 और 4', '2, 3 और 4', '1, 3 और 4'],
+                answer: 'A',
+                explanation: `रातोंरात (रात ही रात में), बेकाम (बिना काम के), भरपेट (पेट भरकर)। 'त्रिफला' द्विगु समास का उदाहरण है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 160,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'द्विगु समास',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'चतुर्भुज' शब्द में द्विगु समास है।
+कारण (R): जिस समास का पहला पद संख्यावाचक हो, वहाँ द्विगु समास होता है, लेकिन यदि वह किसी तीसरे अर्थ (जैसे विष्णु जी) की ओर संकेत करे, तो वह बहुव्रीहि हो जाता है।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) गलत है, लेकिन (R) सही है।', '(A) सही है, लेकिन (R) गलत है।', 'दोनों गलत हैं।'],
+                answer: 'B',
+                explanation: `'चतुर्भुज' भगवान विष्णु के लिए रूढ़ है, अतः इसमें बहुव्रीहि समास माना जाएगा, द्विगु नहीं। इसलिए कथन A गलत है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 161,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'उपसर्ग और मूल शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `उपसर्गों को उनके सही अर्थ/प्रयोग से सुमेलित करें:
+सूची-I (उपसर्ग)
+a. अति
+b. अधि
+c. अनु
+d. अप
+
+सूची-II (उदाहरण)
+1. अध्यक्ष (अधि + अक्ष)
+2. अत्यधिक (अति + अधिक)
+3. अपमान (अप + मान)
+4. अन्वेषण (अनु + एषण)
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '4, 3, 2, 1', '2, 4, 1, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 162,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'एकाधिक उपसर्ग',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से किन शब्दों में **एक से अधिक (दो या अधिक)** उपसर्गों का प्रयोग हुआ है?
+1. निराभिमान (निर् + अभि + मान)
+2. व्याकरण (वि + आ + करण)
+3. पर्यावरण (परि + आ + वरण)
+4. सफलता (स + फल + ता)`,
+                options: ['1, 2 और 3', '2 और 3 केवल', '1 और 4', '1, 2, 3 और 4'],
+                answer: 'A',
+                explanation: `सफलता में केवल एक उपसर्ग 'स' है और 'ता' प्रत्यय है। 1, 2, 3 में दो-दो उपसर्ग हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 163,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: "'इक' प्रत्यय का नियम",
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'समाज' शब्द में 'इक' प्रत्यय जोड़ने पर यह 'समाजिक' न बनकर 'सामाजिक' बन जाता है।
+कारण (R): 'इक', 'य', 'अ', 'आय' आदि प्रत्यय जब किसी शब्द में जुड़ते हैं, तो शब्द के प्रथम स्वर में वृद्धि (जैसे 'अ' का 'आ', 'इ' का 'ऐ') हो जाती है।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: `यही कारण है कि इतिहास+इक = ऐतिहासिक, और भूगोल+इक = भौगोलिक होता है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 164,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'प्रत्यय के भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (शब्द) को सूची-II (प्रत्यय के प्रकार) से सुमेलित करें:
+सूची-I
+a. लिखावट (लिखना + आवट)
+b. बुढ़ापा (बूढ़ा + पा)
+c. सुनार (सोना + आर)
+d. तैराक (तैरना + आक)
+
+सूची-II
+1. कृत् प्रत्यय (क्रिया के साथ)
+2. तद्धित प्रत्यय (संज्ञा/विशेषण के साथ)
+3. कृत् प्रत्यय
+4. तद्धित प्रत्यय
+
+कूट (a, b, c, d):`,
+                options: ['1, 2, 4, 3', '1, 4, 2, 3', '3, 2, 4, 1', 'a-(1,3), b-2, c-4, d-(1,3) (सटीक: a-1, b-2, c-4, d-3)'],
+                answer: 'A',
+                explanation: `जो क्रिया (Verb) की धातु में जुड़ते हैं वे कृत् (लिखावट, तैराक), जो संज्ञा/सर्वनाम में जुड़ते हैं वे तद्धित (बुढ़ापा, सुनार)।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 165,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Word Analysis',
+                difficulty: 'moderate',
+                topic: 'उपसर्ग',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से किस विकल्प में शब्द और उसके उपसर्ग का विच्छेद **असत्य** है?`,
+                options: ['उल्लास = उत् + लास', 'दुर्व्यवहार = दुर् + वि + अव + हार', 'संकल्प = सम् + कल्प', 'स्वागत = स्व + आगत'],
+                answer: 'D',
+                explanation: `'स्वागत' का सही विच्छेद 'सु + आगत' होता है (यण संधि)। 'स्व' का अर्थ 'अपना' होता है जो यहाँ गलत है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 166,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'उपसर्ग रहित शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन-से शब्द उपसर्ग रहित हैं (जिनमें उपसर्ग नहीं है)?
+1. सुरेश
+2. सुयोग
+3. विदेश
+4. विमल (वि+मल) - रुको, सुरेश (सुर+ईश) संधि है, उपसर्ग नहीं।
+सटीक प्रश्न: किन शब्दों में 'सु' उपसर्ग का प्रयोग नहीं हुआ है?
+1. सुयोग
+2. सुकर्म
+3. सुरेश
+4. सुनार`,
+                options: ['3 और 4', '1 और 2', 'केवल 3', 'केवल 4'],
+                answer: 'A',
+                explanation: `सुरेश (सुर+ईश), सुनार (सोना+आर)। इनमें 'सु' उपसर्ग नहीं है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 167,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'विदेशी उपसर्ग',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (विदेशी उपसर्ग) को सूची-II (उदाहरण) से सुमेलित करें:
+सूची-I
+a. ला (बिना)
+b. बे (बिना)
+c. बद (बुरा)
+d. हम (साथ)
+
+सूची-II
+1. हमसफर
+2. बदनाम
+3. बेईमान
+4. लावारिस
+
+कूट (a, b, c, d):`,
+                options: ['4, 3, 2, 1', '1, 2, 3, 4', '4, 2, 3, 1', '3, 4, 1, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 168,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'प्रत्यय और मूल शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'माधुर्यता' शब्द व्याकरण की दृष्टि से अशुद्ध है।
+कारण (R): 'मधुर' शब्द में 'य' प्रत्यय लगने से 'माधुर्य' बनता है। एक ही अर्थ वाले दो भाववाचक प्रत्यय ('य' और 'ता') का प्रयोग एक साथ नहीं किया जा सकता।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: `या तो 'माधुर्य' शुद्ध है या 'मधुरता' शुद्ध है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 169,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'प्रत्यय निर्माण',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'य' प्रत्यय के प्रयोग से बने शुद्ध शब्दों का समूह चुनें:
+1. स्वस्थ + य = स्वास्थ्य
+2. सुंदर + य = सौंदर्य
+3. अदिति + य = आदित्य
+4. कवि + य = काव्य`,
+                options: ['1, 2 और 4', '2, 3 और 4', '1, 2, 3 और 4', 'केवल 1 और 2'],
+                answer: 'C',
+                explanation: `ये सभी 'य' प्रत्यय के विशिष्ट नियम (प्रथम स्वर में वृद्धि) के अनुसार बिल्कुल शुद्ध बने हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 170,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Analysis',
+                difficulty: 'moderate',
+                topic: 'उपसर्ग-प्रत्यय मिश्रित',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'वैज्ञानिक' शब्द का सही विश्लेषण है:`,
+                options: ['वै + ज्ञान + इक', 'वि + ज्ञान + इक', 'विद्या + ज्ञान + इक', 'वि + ज्ञ + आनिक'],
+                answer: 'B',
+                explanation: `'वि' (उपसर्ग) + 'ज्ञान' (मूल शब्द) + 'इक' (प्रत्यय)। 'इक' के प्रभाव से 'वि' का 'वै' हो गया।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 171,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'शब्द शुद्धि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन-सा/से शब्द समूह पूर्णतः **शुद्ध** है/हैं?
+1. कवयित्री, उज्वल, सन्यासी
+2. शृंगार, आशीर्वाद, निरोग
+3. ज्योत्सना, अहल्या, प्रज्वलित`,
+                options: ['केवल 1', 'केवल 2', '2 और 3', 'कोई नहीं'],
+                answer: 'D',
+                explanation: `1 में 'उज्ज्वल' (दोनों 'ज्' आधे होंगे) और 'संन्यासी' गलत है। 2 में 'शृंगार' (श्रृ नहीं, शृ होगा - यदि टाइपिंग में 'श्रृ' हो तो गलत)। 3 में 'ज्योत्स्ना' (त और स दोनों आधे होंगे) गलत है। अतः कोई भी समूह पूर्णतः शुद्ध नहीं है।
+नोट: शुद्ध रूप - कवयित्री, उज्ज्वल, संन्यासी, शृंगार, आशीर्वाद, नीरोग, ज्योत्स्ना, अहल्या, प्रज्वलित।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 172,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'अशुद्धियों के प्रकार',
+                sourceTag: 'PTET Mock Test 1',
+                question: `वाक्य की अशुद्धि को उसके प्रकार से सुमेलित करें:
+सूची-I (अशुद्ध वाक्य)
+a. दही बहुत खट्टी है।
+b. मेरे को घर जाना है।
+c. कृपया यहाँ बैठने की कृपा करें।
+d. वह भारी भरकम भीड़ थी।
+
+सूची-II (अशुद्धि का कारण)
+1. सर्वनाम संबंधी अशुद्धि
+2. लिंग संबंधी अशुद्धि
+3. अनावश्यक शब्द (पुनरावृत्ति)
+4. विशेषण/शब्द-चयन संबंधी अशुद्धि
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 3, 4', '1, 2, 4, 3', '3, 1, 2, 4', '2, 3, 1, 4'],
+                answer: 'A',
+                explanation: `दही खट्टा होता है (पुल्लिंग), मेरे को (मुझे होगा), कृपया-कृपा (दो बार), भारी-भरकम (भीड़ बहुत/बड़ी होती है)।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 173,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'वाक्य शुद्धि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): "मैं सोमवार के दिन जयपुर जाऊंगा।" - यह वाक्य अशुद्ध है।
+कारण (R): 'सोमवार' स्वयं एक दिन का नाम है, इसलिए इसके साथ 'के दिन' शब्द का प्रयोग पुनरावृत्ति (Redundancy) दोष उत्पन्न करता है।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', 'दोनों गलत हैं।'],
+                answer: 'A',
+                explanation: `शुद्ध वाक्य: "मैं सोमवार को जयपुर जाऊंगा।"`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 174,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'शुद्ध वाक्य चयन',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से शुद्ध वाक्य/वाक्यों का चयन करें:
+1. साहित्य और जीवन का घोर संबंध है।
+2. आपकी महती कृपा होगी।
+3. बंदूख एक बहुत ही उपयोगी अस्त्र है।
+4. श्रीकृष्ण के अनेकों नाम हैं।`,
+                options: ['केवल 2', '1 और 4', '2 और 3', '3 और 4'],
+                answer: 'A',
+                explanation: `1. 'घोर' नहीं 'घनिष्ठ' संबंध होता है। 3. बंदूक हाथ में रखकर चलाई जाती है इसलिए 'शस्त्र' है। 4. 'अनेकों' गलत है, 'अनेक' स्वयं बहुवचन है। केवल 2 शुद्ध है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 175,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'शुद्ध-अशुद्ध शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (अशुद्ध) को सूची-II (शुद्ध) से सुमेलित करें:
+सूची-I
+a. अनाधिकार
+b. उपरोक्त
+c. द्वारिका
+d. पूज्यनीय
+
+सूची-II
+1. उपर्युक्त
+2. अनधिकार
+3. पूजनीय (या पूज्य)
+4. द्वारका
+
+कूट (a, b, c, d):`,
+                options: ['2, 1, 4, 3', '1, 2, 3, 4', '2, 4, 1, 3', '4, 1, 3, 2'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 176,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'वर्तनी शुद्धि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'मिष्टान्न' शब्द शुद्ध है, जबकि दुकानों पर लिखा 'मिष्ठान' अशुद्ध है।
+कारण (R): यह शब्द 'मिष्ट' (मीठा) + 'अन्न' (अनाज) से मिलकर बना है, इसलिए इसमें ट् + अ = टा होता है।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 177,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Vakya Shuddhi',
+                difficulty: 'moderate',
+                topic: 'मुहावरा दोष',
+                sourceTag: 'PTET Mock Test 1',
+                question: `"उसकी बातों ने मेरे घाव पर नमक छिड़क दिया।"
+इस वाक्य में किस प्रकार की अशुद्धि है?`,
+                options: ['लिंग संबंधी', 'मुहावरे संबंधी', 'सर्वनाम संबंधी', 'पदक्रम संबंधी'],
+                answer: 'B',
+                explanation: `सही मुहावरा "जले पर नमक छिड़कना" या "घाव पर नमक मलना/लगाना" होता है। यहाँ 'घाव पर नमक छिड़कना' मिश्रित कर दिया गया है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 178,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'शब्द शुद्धि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `नियम: "यदि शब्द के अंत में 'करन' या 'करण' जुड़े तो उससे पहले वाली 'इ' की मात्रा हमेशा बड़ी (ई) हो जाती है।"
+इस नियम के आधार पर अशुद्ध शब्द चुनें:
+1. पुष्टिकरण
+2. स्पष्टीकरण
+3. वृद्धिकरण
+4. शुद्धिकरण
+(A) 1 और 2
+(B) 1, 2 और 3
+(C) 1, 2, 3 और 4
+(D) कोई नहीं (सभी अशुद्ध हैं, सही रूप: पुष्टीकरण, स्पष्टीकरण (ये सही है), वृध्दीकरण (अशुद्ध), शुद्धीकरण)
+सही कूट: इनमें से कौन से **अशुद्ध** लिखे हैं?
+(A) 1, 3 और 4
+(B) 2 और 4
+(C) 1 और 2
+(D) केवल 4`,
+                options: ['1, 3 और 4', '2 और 4', '1 और 2', 'केवल 4'],
+                answer: 'A',
+                explanation: `शुद्ध रूप - पुष्टीकरण, वृद्धीकरण, शुद्धीकरण। 2 (स्पष्टीकरण) पहले से ही शुद्ध लिखा है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 179,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Vakya Shuddhi',
+                difficulty: 'moderate',
+                topic: 'पदक्रम',
+                sourceTag: 'PTET Mock Test 1',
+                question: `"बच्चों को काटकर सेब खिलाओ।"
+इस वाक्य का शुद्ध रूप क्या होगा?`,
+                options: ['काटकर बच्चों को सेब खिलाओ।', 'सेब काटकर बच्चों को खिलाओ।', 'बच्चों को सेब खिलाओ काटकर।', 'सेब बच्चों को काटकर खिलाओ।'],
+                answer: 'B',
+                explanation: `पदक्रम (Word Order) की अशुद्धि। वाक्य ऐसा लग रहा है जैसे बच्चों को काटना है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 180,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'वचन अशुद्धि',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): "मेरे आँसू निकल पड़े।" - यह शुद्ध वाक्य है।
+कारण (R): 'आँसू', 'प्राण', 'दर्शन', 'हस्ताक्षर' आदि शब्द हिंदी में हमेशा बहुवचन में ही प्रयुक्त होते हैं।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, (R) व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', 'दोनों गलत हैं।'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 181,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'पर्यायवाची का सूक्ष्म अंतर',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'जल' (पानी) के पर्यायवाची शब्दों में प्रत्यय जोड़ने से अर्थ बदल जाता है। सुमेलित करें:
+सूची-I
+a. जलज (जल में जन्म लेने वाला)
+b. जलद (जल देने वाला)
+c. जलधि (जल को धारण करने वाला)
+
+सूची-II
+1. बादल
+2. समुद्र
+3. कमल
+
+कूट (a, b, c):`,
+                options: ['3, 1, 2', '1, 2, 3', '2, 3, 1', '3, 2, 1'],
+                answer: 'A',
+                explanation: `'ज' प्रत्यय = कमल (जलज, नीरज), 'द' प्रत्यय = बादल (जलद, नीरद), 'धि' प्रत्यय = समुद्र (जलधि, नीरधि)।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 182,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'विलोम शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित विलोम युग्मों पर विचार करें:
+1. अतरंग - बहिरंग
+2. अर्वाचीन - प्राचीन
+3. जंगम - स्थावर
+4. मूक - वाचाल
+इनमें से कौन-से युग्म पूर्णतः सही हैं?`,
+                options: ['1, 2 और 3', '1, 3 और 4', '2, 3 और 4', '1, 2, 3 और 4'],
+                answer: 'D',
+                explanation: `अतरंग-बहिरंग, अर्वाचीन(नया)-प्राचीन(पुराना), जंगम(चलने वाला)-स्थावर(स्थिर), मूक(गूंगा)-वाचाल(बहुत बोलने वाला)। सभी सही हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 183,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'श्रुतिसम भिन्नार्थक',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'अनल' का अर्थ अग्नि (आग) है और 'अनिल' का अर्थ वायु (हवा) है।
+कारण (R): 'अस्त्र' वह हथियार है जो हाथ में पकड़कर चलाया जाता है, जबकि 'शस्त्र' वह है जो फेंककर चलाया जाता है।`,
+                options: ['(A) और (R) दोनों सही हैं।', '(A) सही है, लेकिन (R) गलत है।', '(A) गलत है, लेकिन (R) सही है।', 'दोनों गलत हैं।'],
+                answer: 'B',
+                explanation: `'अनल-अनिल' वाला कथन बिल्कुल सत्य है। लेकिन कारण (R) उल्टा लिखा है - 'अस्त्र' फेंककर (जैसे तीर, मिसाइल) और 'शस्त्र' हाथ में रखकर (जैसे तलवार) चलाए जाते हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 184,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'वाक्यांश के लिए एक शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I को सूची-II से सुमेलित करें:
+सूची-I
+a. जिसका कोई शत्रु पैदा न हुआ हो
+b. जो उपकार को मानता हो
+c. जो सब कुछ जानता हो
+d. जिसे जीता न जा सके
+
+सूची-II
+1. सर्वज्ञ
+2. कृतज्ञ
+3. अजातशत्रु
+4. अजेय
+
+कूट (a, b, c, d):`,
+                options: ['3, 2, 1, 4', '1, 2, 3, 4', '3, 1, 2, 4', '2, 3, 1, 4'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 185,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'अशुद्ध पर्यायवाची युग्म',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन-सा/से पर्यायवाची समूह **असंगत (गलत)** है/हैं?
+1. सूर्य - दिनकर, दिवाकर, भानु, राकेश
+2. रात - रजनी, निशा, विभावरी, यामिनी
+3. आँख - नयन, चक्षु, दृग, लोचन`,
+                options: ['केवल 1', 'केवल 2', '1 और 3', 'कोई नहीं'],
+                answer: 'A',
+                explanation: `'राकेश' चंद्रमा का पर्यायवाची है (राका+ईश = रात का स्वामी), सूर्य का नहीं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 186,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'श्रुतिसम भिन्नार्थक शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (शब्द युग्म) को सूची-II (अर्थ) से सुमेलित करें:
+सूची-I
+a. तरणि - तरणी
+b. कुल - कूल
+c. अली - आली
+
+सूची-II
+1. वंश - किनारा
+2. भँवरा - सखी
+3. सूर्य - नाव
+
+कूट (a, b, c):`,
+                options: ['3, 1, 2', '1, 2, 3', '3, 2, 1', '2, 1, 3'],
+                answer: 'A',
+                explanation: `तरणि(सूर्य)-तरणी(नाव), कुल(वंश)-कूल(किनारा), अली(भँवरा)-आली(सखी)। यह PTET का बहुत पसंदीदा पैटर्न है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 187,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'One Word Substitution',
+                difficulty: 'moderate',
+                topic: 'वाक्यांश के लिए एक शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'वह स्त्री जिसका पति परदेस से आने वाला हो' - इसके लिए एक शब्द क्या होगा?`,
+                options: ['प्रोषितपतिका', 'आगमिष्यत्पतिका', 'आगतपतिका', 'खंडिता'],
+                answer: 'B',
+                explanation: `प्रोषितपतिका = जिसका पति परदेस चला गया हो; आगतपतिका = जिसका पति आ गया हो; आगमिष्यत्पतिका = जिसका पति आने वाला हो।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 188,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'विलोम शब्द',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): 'अभिज्ञ' (जानने वाला) का विलोम 'अनभिज्ञ' (अनजान) होता है।
+कारण (R): 'अभिज्ञ' में 'अ' उपसर्ग लगने से उसका अर्थ नकारात्मक हो जाता है, इसलिए 'अभिज्ञ' का विलोम 'अज्ञ' होता है।`,
+                options: ['(A) और (R) दोनों सही हैं।', '(A) सही है, लेकिन (R) गलत है।', '(A) गलत है, लेकिन (R) सही है।', 'दोनों गलत हैं।'],
+                answer: 'B',
+                explanation: `'अभिज्ञ' का विलोम 'अनभिज्ञ' होता है (कथन A सही)। 'अज्ञ' का विलोम 'विज्ञ' या 'प्रज्ञ' होता है। कारण R गलत है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 189,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'तत्सम-तद्भव',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से कौन-से तत्सम-तद्भव युग्म सुमेलित हैं?
+1. अग्नि - आग
+2. मक्षिका - मक्खी
+3. घृत - घी
+4. उष्ट्र - ऊंट`,
+                options: ['1, 2 और 3', '1, 3 और 4', '2, 3 और 4', '1, 2, 3 और 4'],
+                answer: 'D',
+                explanation: `सभी युग्म संस्कृत (तत्सम) से हिंदी (तद्भव) में बिल्कुल सही बदले गए हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 190,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Paryayvachi',
+                difficulty: 'moderate',
+                topic: 'पर्यायवाची - विविध',
+                sourceTag: 'PTET Mock Test 1',
+                question: `'मृगेंद्र' शब्द किसका पर्यायवाची है?`,
+                options: ['हिरण', 'सिंह (शेर)', 'हाथी', 'साँप'],
+                answer: 'B',
+                explanation: `मृग (पशुओं) का इंद्र (स्वामी) = शेर/सिंह।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 191,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'मुहावरे',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (मुहावरा) को सूची-II (अर्थ) से सुमेलित करें:
+सूची-I
+a. गागर में सागर भरना
+b. आकाश-पाताल एक करना
+c. ईंट से ईंट बजाना
+d. उँगली पर नचाना
+
+सूची-II
+1. बहुत अधिक परिश्रम करना
+2. वश में करना
+3. थोड़े शब्दों में बहुत कुछ कह देना
+4. पूरी तरह नष्ट कर देना / कड़ा मुकाबला करना
+
+कूट (a, b, c, d):`,
+                options: ['3, 1, 4, 2', '1, 2, 3, 4', '3, 4, 1, 2', '4, 1, 2, 3'],
+                answer: 'A',
+                explanation: ``,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 192,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'लोकोक्तियाँ',
+                sourceTag: 'PTET Mock Test 1',
+                question: `लोकोक्ति और उनके अर्थ के संबंध में **सत्य** युग्म चुनें:
+1. अधजल गगरी छलकत जाय - कम ज्ञान या गुण वाले का अधिक दिखावा करना।
+2. खिसियानी बिल्ली खंभा नोचे - अपनी शर्मिंदगी छिपाने के लिए दूसरों पर क्रोध करना।
+3. घर का भेदी लंका ढाए - आपसी फूट से सर्वनाश होता है।`,
+                options: ['1 और 2', '2 और 3', '1 और 3', '1, 2 और 3'],
+                answer: 'D',
+                explanation: `तीनों लोकोक्तियाँ और उनके अर्थ पूरी तरह सटीक हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 193,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'मुहावरा vs लोकोक्ति',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): मुहावरा वाक्य का एक अंश (वाक्यांश) होता है, जबकि लोकोक्ति अपने आप में एक पूर्ण वाक्य होती है।
+कारण (R): मुहावरों के अंत में प्रायः 'ना' (जैसे- आँख मारना, कान भरना) आता है और ये लिंग/वचन के अनुसार बदल जाते हैं, जबकि लोकोक्ति का स्वरूप स्वतंत्र और अपरिवर्तित रहता है।`,
+                options: ['(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।', '(A) और (R) दोनों सही हैं, लेकिन व्याख्या नहीं है।', '(A) सही है, (R) गलत है।', '(A) गलत है, (R) सही है।'],
+                answer: 'A',
+                explanation: `यह मुहावरे और लोकोक्ति के बीच मुख्य व्याकरणिक अंतर है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 194,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Fill in the blank',
+                difficulty: 'moderate',
+                topic: 'लोकोक्ति',
+                sourceTag: 'PTET Mock Test 1',
+                question: `"राम ने श्याम को व्यापार में धोखा दिया, लेकिन कुछ दिन बाद राम का अपना घर भी चोरी में लुट गया। सच ही कहा है: ___________।"
+रिक्त स्थान के लिए सर्वाधिक उपयुक्त लोकोक्ति चुनें:`,
+                options: ['जैसी करनी, वैसी भरनी।', 'चोर-चोर मौसेरे भाई।', 'आ बैल मुझे मार।', 'अंधों में काना राजा।'],
+                answer: 'A',
+                explanation: `कर्मों का फल अवश्य मिलता है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 195,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Matching',
+                difficulty: 'moderate',
+                topic: 'संज्ञा के भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `सूची-I (शब्द) को सूची-II (संज्ञा के प्रकार) से सुमेलित करें:
+सूची-I
+a. हिमालय
+b. नदी
+c. मिठास
+d. सोना (Gold)
+
+सूची-II
+1. भाववाचक संज्ञा
+2. द्रव्यवाचक संज्ञा
+3. व्यक्तिवाचक संज्ञा
+4. जातिवाचक संज्ञा
+
+कूट (a, b, c, d):`,
+                options: ['3, 4, 1, 2', '4, 3, 2, 1', '3, 1, 4, 2', '1, 4, 2, 3'],
+                answer: 'A',
+                explanation: `हिमालय (विशेष नाम - व्यक्ति), नदी (सामान्य वर्ग - जाति), मिठास (भाव), सोना (पदार्थ - द्रव्य)।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 196,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Multi-statement',
+                difficulty: 'moderate',
+                topic: 'क्रिया के भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित वाक्यों में 'सकर्मक क्रिया' (Transitive Verb) वाले वाक्य पहचानें:
+1. पक्षी आकाश में उड़ रहे हैं।
+2. राम ने मोहन को पुस्तक दी।
+3. बच्चा जोर से रो रहा है।
+4. सीता गाना गा रही है।`,
+                options: ['1 और 3', '2 और 4', '1, 2 और 4', 'केवल 2'],
+                answer: 'B',
+                explanation: `सकर्मक क्रिया की पहचान 'क्या' या 'किसको' का उत्तर मिलने से होती है। राम ने क्या दी? पुस्तक (सकर्मक)। सीता क्या गा रही है? गाना (सकर्मक)। उड़ना और रोना स्वाभाविक अकर्मक क्रियाएँ हैं।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 197,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Assertion-Reason',
+                difficulty: 'moderate',
+                topic: 'विशेषण',
+                sourceTag: 'PTET Mock Test 1',
+                question: `कथन (A): "वह बहुत तेज दौड़ता है।" इस वाक्य में 'तेज' प्रविशेषण (Prabisheshan) है।
+कारण (R): जो शब्द विशेषण की भी विशेषता बताते हैं, उन्हें प्रविशेषण कहते हैं।`,
+                options: ['(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।', '(A) गलत है, लेकिन (R) सही है।', '(A) सही है, लेकिन (R) गलत है।', 'दोनों गलत हैं।'],
+                answer: 'B',
+                explanation: `दौड़ना क्रिया है। क्रिया की विशेषता बताने वाले (तेज) 'क्रिया-विशेषण' कहलाते हैं। यहाँ 'बहुत' क्रिया-विशेषण का प्रविशेषण (या परिमाणवाचक) है। कथन A गलत है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 198,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Muhavara',
+                difficulty: 'moderate',
+                topic: 'मुहावरे का गलत अर्थ पहचानें',
+                sourceTag: 'PTET Mock Test 1',
+                question: `निम्नलिखित में से किस मुहावरे का अर्थ **गलत** दिया गया है?`,
+                options: ['अक्ल का अंधा = मूर्ख होना', 'गुदड़ी का लाल = गरीब परिवार में जन्मा गुणी व्यक्ति', 'छाती पर मूँग दलना = बहुत अधिक प्रेम करना', 'नौ दो ग्यारह होना = भाग जाना'],
+                answer: 'C',
+                explanation: `'छाती पर मूँग दलना' का सही अर्थ होता है 'पास रहकर बहुत कष्ट/दुख देना' न कि प्रेम करना।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 199,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Grammar',
+                difficulty: 'moderate',
+                topic: 'वाच्य / Voice',
+                sourceTag: 'PTET Mock Test 1',
+                question: `"मुझसे चला नहीं जाता।" इस वाक्य में कौन-सा वाच्य है?`,
+                options: ['कर्तृवाच्य (Active Voice)', 'कर्मवाच्य (Passive Voice)', 'भाववाच्य (Impersonal Voice)', 'इनमें से कोई नहीं'],
+                answer: 'C',
+                explanation: `जब क्रिया न तो कर्ता के अनुसार हो और न कर्म के अनुसार, बल्कि केवल असमर्थता या 'भाव' प्रधान हो, वहाँ भाववाच्य होता है।`,
+                reference: 'PTET Section D'
+              },
+              {
+                id: 200,
+                section: 'Section D Language Proficiency - Hindi/English (भाषा योग्यता)',
+                questionType: 'Grammar',
+                difficulty: 'moderate',
+                topic: 'सर्वनाम - भेद',
+                sourceTag: 'PTET Mock Test 1',
+                question: `"कोई आ रहा है।" वाक्य में 'कोई' किस प्रकार का सर्वनाम है?`,
+                options: ['निश्चयवाचक सर्वनाम', 'अनिश्चयवाचक सर्वनाम', 'प्रश्नवाचक सर्वनाम', 'संबंधवाचक सर्वनाम'],
+                answer: 'B',
+                explanation: `'कोई' और 'कुछ' शब्दों से किसी निश्चित व्यक्ति या वस्तु का बोध नहीं होता, अतः ये अनिश्चयवाचक सर्वनाम हैं।`,
+                reference: 'PTET Section D'
+              },
+            ]
+          }
+        ],
+        questionTemplate: {
+          id: 1,
+          section: '',
+          questionType: '',
+          difficulty: 'hard',
+          topic: '',
+          sourceTag: 'PYQ / New',
+          question: ``,
+          options: ['', '', '', ''],
+          answer: '',
+          explanation: ``,
+          reference: ''
+        }
+      };
+
+      const testConfig = window.bstcMockTest1 || bstcMockTest1;
+      const data = (testConfig?.sections || []).flatMap((section) => (section?.questions || [])).filter(Boolean).map((question, index) => ({
+        ...question,
+        id: question?.id ?? index + 1,
+        section: question?.section || 'General',
+        difficulty: question?.difficulty || testConfig?.difficulty || 'medium',
+        questionType: question?.questionType || 'MCQ',
+        options: Array.isArray(question?.options) ? question.options : []
+      }));
+
+      const sections = [...new Set(data.map((q) => q.section))];
+      const letters = ['A','B','C','D'];
+      const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
+      const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
+      const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+      const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+      const formatPreservedText=(value='')=>escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
+      const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
+      const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
+      const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statements:m[3],conclusions:m[5]};};
+      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：](.*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：](.*)$/is);if(!m) return null;return {intro:m[1],l1:m[3],l2:m[5]};};
+      function renderStructuredQuestion(q){
+        const questionRaw=String(q.question||'');
+        const assertionData=q.questionType==='Assertion-Reason'?parseAssertionReason(questionRaw):null;
+        if(assertionData){
+          questionText.innerHTML=`<div class="question-structured">${assertionData.intro?`<div>${formatPreservedText(assertionData.intro)}</div>`:''}${renderLabelBlock('कथन (A):',assertionData.statement)}${renderLabelBlock('कारण (R):',assertionData.reason)}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const statementData=q.questionType==='Statement-Conclusion'?parseStatementConclusion(questionRaw):null;
+        if(statementData){
+          questionText.innerHTML=`<div class="question-structured">${statementData.intro?`<div>${formatPreservedText(statementData.intro)}</div>`:''}${renderLabelBlock('कथन:',statementData.statements)}${renderLabelBlock('निष्कर्ष:',statementData.conclusions)}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const matching=q.questionType==='Matching'?parseMatching(questionRaw):null;
+        if(matching){
+          questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-1:</strong><div class="mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>सूची-2:</strong><div class="mt-2">${formatPreservedText(matching.l2)}</div></div></div>`;
+          return;
+        }
+        questionText.innerHTML=formatPreservedText(questionRaw);
+        matchingBlock.innerHTML='';
+      }
+      function renderPalette(){if(!palette) return; palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
+      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
+      function showQuiz(){
+        resultArea.classList.add('hidden');
+        testArea.classList.remove('hidden');
+        testArea.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function initQuizState(){
+        state.started=true;
+        state.current=0;
+        state.answers={};
+        state.remaining=180*60;
+        clearInterval(state.timerId);
+        startBtn.disabled=true;
+        timerEl.textContent=`Time Left: ${formatTime(state.remaining)}`;
+      }
+      function startTimer(){
+        state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);
+      }
+      function startTestFlow(){
+        if(state.started) return;
+        if(!data.length){questionMeta.textContent='Questions unavailable';questionText.textContent='Question data could not be loaded.';console.error('PTET Mock Test: Question data array is empty.',{testConfig});return;}
+        showQuiz();
+        initQuizState();
+        const rendered=renderQuestion();
+        if(!rendered){console.error('PTET Mock Test: Rendering failed, timer not started.');return;}
+        renderPalette();
+        startTimer();
+      }
+      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;document.getElementById('result-summary').innerHTML=[['Total',data.length],['Attempted',attempted],['Correct',correct],['Wrong',wrong]].map(([k,v])=>`<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');document.getElementById('answer-key').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">Your: ${state.answers[q.id]||'—'} | Correct: ${q.answer}</p></div>`).join('');document.getElementById('explanations').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">${formatPreservedText(q.explanation||'Explanation available नहीं है।')}</p></div>`).join('');}
+      document.addEventListener('DOMContentLoaded',()=>{
+        const prevBtn=document.getElementById('prev-btn');
+        const nextBtn=document.getElementById('next-btn');
+        const submitBtn=document.getElementById('submit-btn');
+        if(!startBtn || !timerEl || !testArea || !resultArea || !testIntro || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
+          console.error('PTET Mock Test 1: Required DOM elements are missing.');
+          return;
+        }
+        prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});
+        nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});
+        submitBtn.addEventListener('click',submitTest);
+        testArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        resultArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        startBtn.addEventListener('click',startTestFlow);
+      });
+    </script>
+  </body>
+</html>
