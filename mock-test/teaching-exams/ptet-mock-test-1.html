@@ -22,6 +22,20 @@
       .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
       .option-item .option-code { font-weight:700; color: rgb(51 65 85); }
       .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
+      .summary-card { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; transition:all .2s ease; text-align:left; width:100%; }
+      .summary-card.is-clickable { cursor:pointer; }
+      .summary-card.is-clickable:hover { border-color: rgb(148 163 184); }
+      .summary-card.active { border-color: rgb(79 70 229); background: rgb(238 242 255); }
+      .review-card { border:1px solid rgb(226 232 240); border-radius:1rem; padding:1rem; background:#fff; }
+      .status-badge { display:inline-flex; padding:.2rem .6rem; border-radius:9999px; font-size:.75rem; font-weight:700; }
+      .status-correct { background:rgb(220 252 231); color:rgb(22 101 52); }
+      .status-wrong { background:rgb(254 226 226); color:rgb(153 27 27); }
+      .status-attempted { background:rgb(254 243 199); color:rgb(146 64 14); }
+      .answer-pill { display:inline-block; margin-right:.4rem; margin-top:.3rem; padding:.2rem .55rem; border-radius:.5rem; font-size:.82rem; border:1px solid rgb(203 213 225); }
+      .answer-pill.user-wrong { border-color:rgb(239 68 68); background:rgb(254 226 226); color:rgb(153 27 27); }
+      .answer-pill.correct { border-color:rgb(34 197 94); background:rgb(220 252 231); color:rgb(22 101 52); }
+      .empty-review { border:1px dashed rgb(203 213 225); border-radius:.9rem; padding:1rem; color:rgb(71 85 105); background:rgb(248 250 252); }
+
       .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
       .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
       #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
@@ -48,7 +62,7 @@
             <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
             <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
             <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
-            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary और interactive filtered review दिखेगा।</li>
           </ul>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
             <button id="start-test" class="btn-primary" type="button">Start Test</button>
@@ -60,7 +74,7 @@
         </noscript>
       </section>
       <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
-      <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Explanations</h2><div id="explanations" class="mt-4 space-y-4"></div></article></section>
+      <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6" id="review-panel"><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="text-2xl font-bold">Filtered Review</h2><p id="review-meta" class="text-sm text-slate-600"></p></div><div id="review-list" class="mt-4 space-y-4"></div></article></section>
     </main>
 
     <script>
@@ -3451,7 +3465,8 @@ d. सोना (Gold)
 
       const sections = [...new Set(data.map((q) => q.section))];
       const letters = ['A','B','C','D'];
-      const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
+      const filterLabels={all:'All',attempted:'Attempted',correct:'Correct',wrong:'Wrong'};
+      const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null,activeFilter:'all' };
       const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
       const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
       const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
@@ -3512,7 +3527,11 @@ d. सोना (Gold)
         renderPalette();
         startTimer();
       }
-      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;document.getElementById('result-summary').innerHTML=[['Total',data.length],['Attempted',attempted],['Correct',correct],['Wrong',wrong]].map(([k,v])=>`<p class="feature-card !m-0 !p-4"><strong>${k}:</strong> ${v}</p>`).join('');document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');document.getElementById('answer-key').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">Your: ${state.answers[q.id]||'—'} | Correct: ${q.answer}</p></div>`).join('');document.getElementById('explanations').innerHTML=data.map((q)=>`<div class="result-block"><p><strong>Q${q.id}</strong> ${formatPreservedText(q.question)}</p><p class="mt-2 text-sm">${formatPreservedText(q.explanation||'Explanation available नहीं है।')}</p></div>`).join('');}
+      function getReviewItems(){return data.map((q)=>{const selectedAnswer=state.answers[q.id]||null;const attempted=Boolean(selectedAnswer);const isCorrect=attempted && selectedAnswer===q.answer;const status=isCorrect?'correct':(attempted?'wrong':'unattempted');return {...q,selectedAnswer,attempted,isCorrect,status,correctAnswer:q.answer,explanation:q.explanation||'Explanation available नहीं है।'};});}
+      function getFilteredReviewItems(items,filter){if(filter==='correct') return items.filter((i)=>i.isCorrect); if(filter==='wrong') return items.filter((i)=>i.attempted && !i.isCorrect); if(filter==='attempted') return items.filter((i)=>i.attempted); return items;}
+      function renderReview(filter='all',shouldScroll=false){const items=getReviewItems();const filtered=getFilteredReviewItems(items,filter);state.activeFilter=filter;const reviewMeta=document.getElementById('review-meta');const reviewList=document.getElementById('review-list');if(reviewMeta) reviewMeta.textContent=`${filterLabels[filter]||'All'} Review • ${filtered.length} question(s)`;if(!reviewList) return; if(!filtered.length){reviewList.innerHTML=`<div class="empty-review">No questions found in <strong>${filterLabels[filter]||'All'}</strong> filter.</div>`;} else {reviewList.innerHTML=filtered.map((item)=>{const statusClass=item.isCorrect?'status-correct':(item.attempted?'status-wrong':'status-attempted');const statusLabel=item.isCorrect?'Correct':(item.attempted?'Wrong':'Unattempted');const selectedText=item.selectedAnswer?`${item.selectedAnswer}. ${item.options[letters.indexOf(item.selectedAnswer)]||''}`:'—';const correctText=`${item.correctAnswer}. ${item.options[letters.indexOf(item.correctAnswer)]||''}`;const userPillClass=item.isCorrect?'correct':(item.attempted?'user-wrong':'');return `<article class="review-card"><div class="flex flex-wrap items-center justify-between gap-2"><p class="font-bold">Q${item.id}</p><span class="status-badge ${statusClass}">${statusLabel}</span></div><p class="mt-2">${formatPreservedText(item.question)}</p><p class="mt-3 text-sm"><strong>User Answer:</strong> <span class="answer-pill ${userPillClass}">${formatPreservedText(selectedText)}</span></p><p class="mt-2 text-sm"><strong>Correct Answer:</strong> <span class="answer-pill correct">${formatPreservedText(correctText)}</span></p><p class="mt-3 text-sm"><strong>Explanation:</strong> ${formatPreservedText(item.explanation)}</p></article>`;}).join('');}document.querySelectorAll('[data-filter-card]').forEach((card)=>card.classList.toggle('active',card.dataset.filterCard===filter));if(shouldScroll){document.getElementById('review-panel')?.scrollIntoView({behavior:'smooth',block:'start'});}}
+      function bindSummaryFilters(){document.querySelectorAll('[data-filter-card]').forEach((card)=>{if(card.dataset.bound==='1') return;card.dataset.bound='1';card.addEventListener('click',()=>renderReview(card.dataset.filterCard||'all',true));});}
+      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;document.getElementById('result-summary').innerHTML=[['Total',data.length,'all'],['Attempted',attempted,'attempted'],['Correct',correct,'correct'],['Wrong',wrong,'wrong']].map(([k,v,f])=>`<button type="button" data-filter-card="${f}" class="summary-card is-clickable ${f==='all'?'active':''}"><strong>${k}:</strong> ${v}</button>`).join('');document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');bindSummaryFilters();renderReview('all',false);}
       document.addEventListener('DOMContentLoaded',()=>{
         const prevBtn=document.getElementById('prev-btn');
         const nextBtn=document.getElementById('next-btn');
