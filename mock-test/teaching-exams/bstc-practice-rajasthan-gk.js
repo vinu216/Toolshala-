@@ -1204,6 +1204,7 @@ const checkedState = Array(rajasthanGkQuestions.length).fill(false);
 
 const progressEl = document.getElementById("progress");
 const questionEl = document.getElementById("question");
+questionEl.style.whiteSpace = "pre-line";
 const optionsFormEl = document.getElementById("options-form");
 const feedbackEl = document.getElementById("feedback");
 const explanationEl = document.getElementById("explanation");
