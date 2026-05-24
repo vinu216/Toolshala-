@@ -1237,7 +1237,7 @@ const nextBtn = document.getElementById("next-btn");
 function renderQuestion() {
   const item = teachingAptitudeQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${teachingAptitudeQuestions.length}`;
-  questionEl.textContent = window.formatQuestionText ? window.formatQuestionText(item.question) : item.question;
+  questionEl.textContent = item.question;
 
   optionsFormEl.innerHTML = "";
 

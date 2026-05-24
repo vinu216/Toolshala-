@@ -686,7 +686,7 @@ const nextBtn = document.getElementById("next-btn");
 function renderQuestion() {
   const item = mentalAbilityQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${mentalAbilityQuestions.length}`;
-  questionEl.textContent = window.formatQuestionText ? window.formatQuestionText(item.question) : item.question;
+  questionEl.textContent = item.question;
 
   optionsFormEl.innerHTML = "";
 
