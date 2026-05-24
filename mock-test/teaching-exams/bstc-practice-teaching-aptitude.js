@@ -1227,12 +1227,6 @@ const checkedState = Array(teachingAptitudeQuestions.length).fill(false);
 const progressEl = document.getElementById("progress");
 const questionEl = document.getElementById("question");
 questionEl.style.whiteSpace = "pre-line";
-questionEl.style.fontSize = "clamp(0.98rem, 1.15vw, 1.08rem)";
-questionEl.style.lineHeight = "1.7";
-questionEl.style.fontWeight = "700";
-questionEl.style.color = "rgb(15 23 42)";
-questionEl.style.wordBreak = "break-word";
-questionEl.style.overflowWrap = "break-word";
 const optionsFormEl = document.getElementById("options-form");
 const feedbackEl = document.getElementById("feedback");
 const explanationEl = document.getElementById("explanation");
@@ -1241,35 +1235,10 @@ const checkBtn = document.getElementById("check-btn");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 
-function normalizeQuestionText(text) {
-  if (!text) return "";
-  return String(text)
-    .replace(/\\n/g, "\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-}
-
-function formatQuestionText(text) {
-  return normalizeQuestionText(text)
-    .replace(/\s*(सूची[- ]?I|सूची 1|List[- ]?I)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(सूची[- ]?II|सूची 2|List[- ]?II)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(कथन|Statement|Statements)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(निष्कर्ष|Conclusion|Conclusions)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(कारण|Reason)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(अभिकथन|Assertion)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(पूर्वधारणा|Assumption|Assumptions)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s*(कूट\s*\(Codes\)|कूट|Codes)\s*:?\s*/gi, "\n\n$1:\n")
-    .replace(/\s+([abcd])\.\s+/gi, "\n$1. ")
-    .replace(/\s+([1-4])\.\s+/g, "\n$1. ")
-    .replace(/\s+(I|II|III|IV)\.\s+/g, "\n$1. ")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-}
-
 function renderQuestion() {
   const item = teachingAptitudeQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${teachingAptitudeQuestions.length}`;
-  questionEl.textContent = formatQuestionText(item.question);
+  questionEl.textContent = item.question;
 
   optionsFormEl.innerHTML = "";
 
