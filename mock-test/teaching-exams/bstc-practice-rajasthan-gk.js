@@ -1212,10 +1212,47 @@ const checkBtn = document.getElementById("check-btn");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 
+function formatQuestionText(rawQuestion) {
+  const text = (rawQuestion || "").replace(/\r\n?/g, "\n").trim();
+  if (!text) return "";
+
+  let formatted = text;
+
+  if (!formatted.includes("\n")) {
+    formatted = formatted
+      .replace(/\s*(सूची-I|List-I)\s*/gi, "\n\n$1 ")
+      .replace(/\s*(सूची-II|List-II)\s*/gi, "\n\n$1 ")
+      .replace(/\s*(कूट|Codes?)\s*[:：]?/gi, "\n\n$1:")
+      .replace(/\s*(कथन|निष्कर्ष|कारण|व्याख्या|निम्नलिखित)\s*[:：]/gi, "\n\n$1:")
+      .replace(/\s+([a-dA-D]\.)\s*/g, "\n$1 ")
+      .replace(/\s+([1-9][0-9]?\.)\s*/g, "\n$1 ")
+      .replace(/\s+([IVX]+\.)\s*/g, "\n$1 ");
+  }
+
+  formatted = formatted
+    .replace(/\(\s*सूची मिलान\s*-\s*([^)]+)\)/gi, "सूची मिलान - $1")
+    .replace(/\(\s*([^)]+)\)/g, (match, inner) => {
+      if (/^प्रश्न\s*\d+/.test(inner)) return inner;
+      if (/^[A-Za-z]/.test(inner) || /[ऀ-ॿ]/.test(inner)) return match;
+      return match;
+    })
+    .replace(/\n?\s*(सूची-I|List-I)\s*(\([^)]+\))?\s*को\s*(सूची-II|List-II)\s*(\([^)]+\))?\s*से\s*सुमेलित कीजिए\s*[:：]?/gi, "\n\n$1$2 को $3$4 से सुमेलित कीजिए:")
+    .replace(/\n\s*(सूची-I|List-I)\s*(\([^)]+\))?\s*[:：]?/gi, "\n\n$1$2:")
+    .replace(/\n\s*(सूची-II|List-II)\s*(\([^)]+\))?\s*[:：]?/gi, "\n\n$1$2:")
+    .replace(/\n\s*(कूट|Codes?)\s*[:：]?/gi, "\n\n$1:")
+    .replace(/\n\s*(कथन|निष्कर्ष|कारण|व्याख्या|निम्नलिखित)\s*[:：]/gi, "\n\n$1:")
+    .replace(/([:\n])\s*([a-dA-D]\.)\s*/g, "$1\n$2 ")
+    .replace(/([:\n])\s*([1-9][0-9]?\.)\s*/g, "$1\n$2 ")
+    .replace(/([:\n])\s*([IVX]+\.)\s*/g, "$1\n$2 ")
+    .replace(/\n{3,}/g, "\n\n");
+
+  return formatted.trim();
+}
+
 function renderQuestion() {
   const item = rajasthanGkQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${rajasthanGkQuestions.length}`;
-  questionEl.textContent = item.question;
+  questionEl.textContent = formatQuestionText(item.question);
 
   optionsFormEl.innerHTML = "";
 
