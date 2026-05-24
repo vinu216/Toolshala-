@@ -683,10 +683,42 @@ const checkBtn = document.getElementById("check-btn");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 
+function formatQuestionText(rawQuestion) {
+  const text = (rawQuestion || "").replace(/\r\n?/g, "\n").trim();
+  if (!text) return "";
+
+  let formatted = text;
+
+  if (!formatted.includes("\n")) {
+    formatted = formatted
+      .replace(/\s*(सूची-I|List-I)\s*/gi, "\n\n$1 ")
+      .replace(/\s*(सूची-II|List-II)\s*/gi, "\n\n$1 ")
+      .replace(/\s*(कूट|Codes?)\s*[:：]?/gi, "\n\n$1:")
+      .replace(/\s*(कथन|Statement|निष्कर्ष|Conclusion|पूर्वधारणाएं|कार्यवाही|तर्क|कारण|व्याख्या|निम्नलिखित)\s*[:：]/gi, "\n\n$1:")
+      .replace(/\s+([a-dA-D]\.)\s*/g, "\n$1 ")
+      .replace(/\s+([1-9][0-9]?\.)\s*/g, "\n$1 ")
+      .replace(/\s+([IVX]+\.)\s*/g, "\n$1 ");
+  }
+
+  formatted = formatted
+    .replace(/\(([^)\n]*Syllogism[^)\n]*)\)/gi, "$1")
+    .replace(/\n?\s*(सूची-I|List-I)\s*(\([^)]+\))?\s*को\s*(सूची-II|List-II)\s*(\([^)]+\))?\s*से\s*सुमेलित कीजिए\s*[:：]?/gi, "\n\n$1$2 को $3$4 से सुमेलित कीजिए:")
+    .replace(/\n\s*(सूची-I|List-I)\s*(\([^)]+\))?\s*[:：]?/gi, "\n\n$1$2:")
+    .replace(/\n\s*(सूची-II|List-II)\s*(\([^)]+\))?\s*[:：]?/gi, "\n\n$1$2:")
+    .replace(/\n\s*(कूट|Codes?)\s*[:：]?/gi, "\n\n$1:")
+    .replace(/\n\s*(कथन|Statement|निष्कर्ष|Conclusion|पूर्वधारणाएं|कार्यवाही|तर्क|कारण|व्याख्या|निम्नलिखित)\s*[:：]/gi, "\n\n$1:")
+    .replace(/([:\n])\s*([a-dA-D]\.)\s*/g, "$1\n$2 ")
+    .replace(/([:\n])\s*([1-9][0-9]?\.)\s*/g, "$1\n$2 ")
+    .replace(/([\n:])\s*([IVX]+\.)\s*/g, "$1\n$2 ")
+    .replace(/\n{3,}/g, "\n\n");
+
+  return formatted.trim();
+}
+
 function renderQuestion() {
   const item = mentalAbilityQuestions[currentIndex];
   progressEl.textContent = `Question ${currentIndex + 1} of ${mentalAbilityQuestions.length}`;
-  questionEl.textContent = item.question;
+  questionEl.textContent = formatQuestionText(item.question);
 
   optionsFormEl.innerHTML = "";
 
