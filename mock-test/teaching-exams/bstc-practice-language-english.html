@@ -7,6 +7,16 @@
     <title>BSTC Practice | Language English</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .practice-question-title {
+        font-weight: 700;
+        line-height: 1.7;
+        color: rgb(15 23 42);
+        word-break: break-word;
+        white-space: pre-line;
+        font-size: clamp(1rem, 1.15vw, 1.125rem);
+      }
+    </style>
   </head>
   <body class="bg-white text-slate-800">
     <header class="top-nav sticky top-0 z-50">
@@ -32,7 +42,7 @@
             <a href="./bstc-practice-sets.html" class="btn-secondary">Back to Practice Hub</a>
           </div>
 
-          <h2 id="question" class="text-xl font-bold leading-snug text-slate-900"></h2>
+          <h2 id="question" class="practice-question-title"></h2>
 
           <form id="options-form" class="mt-5 space-y-3" aria-label="Question options"></form>
 
