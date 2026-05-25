@@ -1,0 +1,30 @@
+const OPENAI_AUDIO_MODEL = process.env.OPENAI_TRANSCRIPTION_MODEL || 'gpt-4o-mini-transcribe';
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) return res.status(500).json({ error: 'OPENAI_API_KEY is missing on the server.' });
+
+  const { fileName, mimeType, contentBase64, language } = req.body || {};
+  if (!fileName || !mimeType || !contentBase64) return res.status(400).json({ error: 'fileName, mimeType, and contentBase64 are required.' });
+
+  try {
+    const bytes = Buffer.from(contentBase64, 'base64');
+    const file = new File([bytes], fileName, { type: mimeType });
+    const form = new FormData();
+    form.append('file', file);
+    form.append('model', OPENAI_AUDIO_MODEL);
+    if (language) form.append('language', String(language));
+
+    const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}` },
+      body: form
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) return res.status(response.status >= 500 ? 502 : response.status).json({ error: data?.error?.message || 'Transcription request failed.' });
+    return res.status(200).json({ text: String(data?.text || '').trim() });
+  } catch (_error) {
+    return res.status(502).json({ error: 'Transcription request failed. Please try again.' });
+  }
+}
