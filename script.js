@@ -368,6 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ];
     const isHomePage = /(^|\/)index\.html$/.test(currentPath) || currentPath === '/';
     const isToolsPage = /(^|\/)tools\.html$/.test(currentPath);
+    const isTranscriptionPage = /(^|\/)transcription-tool\.html$/.test(currentPath);
     const isOpportunitiesPage = /(^|\/)opportunities\.html$/.test(currentPath) || /(^|\/)opportunity-details\.html$/.test(currentPath);
     const isTemplatesPage = /(^|\/)templates\.html$/.test(currentPath) || /-template\.html$/.test(currentPath);
     const isCareerGuidePage = /(^|\/)career\.html$/.test(currentPath) || /(^|\/)guides\.html$/.test(currentPath) || /(^|\/)guide\.html$/.test(currentPath);
@@ -399,6 +400,16 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}tools.html#study`, label: 'Study Tools' },
         { href: `${footerBasePath}templates.html`, label: 'Templates' },
         { href: `${footerBasePath}guides.html`, label: 'Career Guides' }
+      ];
+    } else if (isTranscriptionPage) {
+      examLinkHeading = 'Other AI Tools';
+      examLinks = [
+        { href: `${footerBasePath}tool.html?tool=photo-to-text`, label: 'Photo to Text' },
+        { href: `${footerBasePath}tool.html?tool=instagram-caption-generator`, label: 'Instagram Caption Generator' },
+        { href: `${footerBasePath}tool.html?tool=content-idea-generator`, label: 'Content Idea Generator' },
+        { href: `${footerBasePath}tool.html?tool=notes-to-bullet-points-converter`, label: 'Notes to Bullet Points' },
+        { href: `${footerBasePath}tool.html?tool=reel-shorts-hook-generator`, label: 'Reel & Shorts Hook Generator' },
+        { href: `${footerBasePath}tools.html`, label: 'All AI Tools' }
       ];
     } else if (isOpportunitiesPage) {
       examLinkHeading = 'Opportunities';
