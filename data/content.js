@@ -19,6 +19,20 @@ window.ToolShalaContent = {
         ctaLabel: 'Extract Text',
         url: './tool.html?tool=photo-to-text'
       },
+
+      {
+        id: 'tool-transcription-tool',
+        slug: 'transcription-tool',
+        title: 'Transcription Tool',
+        category: 'ai',
+        categoryLabel: 'Creator Tool',
+        description: 'Transcribe live voice into clean editable text for interviews, meetings, podcast clips, and client notes.',
+        publishedAt: '2026-05-25',
+        featured: true,
+        tags: ['transcription', 'meeting-notes', 'voice-to-text', 'creator', 'freelance'],
+        ctaLabel: 'Open Tool',
+        url: './transcription-tool.html'
+      },
       {
         id: 'tool-ats-resume-optimizer',
         slug: 'ats-resume-optimizer',
