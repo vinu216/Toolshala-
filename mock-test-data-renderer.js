@@ -251,6 +251,8 @@
           ? './ptet-mock-test-1.html'
           : teachingExamSlug === 'ptet' && testNumber === 2
           ? './ptet-mock-test-2.html'
+          : teachingExamSlug === 'ptet' && testNumber === 3
+          ? './ptet-mock-test-3.html'
           : teachingExamSlug === 'bstc' && testNumber === 1
           ? './bstc-mock-test-1.html'
           : teachingExamSlug === 'bstc' && testNumber === 2
