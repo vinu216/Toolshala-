@@ -14,7 +14,7 @@ window.mockTestData = (() => {
 
   const exams = {
     bstc: createExam('bstc', 'BSTC', 'Teaching Exams', 'Beginner', 180, 200),
-    ptet: createExam('ptet', 'PTET', 'Teaching Exams'),
+    ptet: createExam('ptet', 'PTET', 'Teaching Exams', 'Intermediate', 180, 200),
     reet: createExam('reet', 'REET', 'Teaching Exams'),
     ctet: createExam('ctet', 'CTET', 'Teaching Exams'),
     '3rd-grade': createExam('3rd-grade', '3rd GRADE', 'Teaching Exams'),

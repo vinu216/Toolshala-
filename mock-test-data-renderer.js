@@ -119,6 +119,20 @@
   };
 
 
+
+  const ptetMockDescriptions = {
+    1: 'PTET exam-pattern full-length mock to balance reasoning, teaching aptitude, language skills, and Rajasthan awareness in one attempt.',
+    2: 'Focused PTET practice set for improving speed and accuracy with mixed-difficulty questions across all key sections.',
+    3: 'Section-balanced PTET mock designed for better time allocation and cleaner question selection under exam pressure.',
+    4: 'Concept-reinforcement PTET test to strengthen reasoning flow, pedagogy judgment, and language usage accuracy.',
+    5: 'Mid-preparation PTET mock for tracking consistency and building confidence in full-paper timed attempts.',
+    6: 'PTET revision mock aimed at sharper accuracy, faster solving rhythm, and reduced guesswork in mixed questions.',
+    7: 'Readiness-driven PTET set for identifying weak areas before final exam-phase practice and correction.',
+    8: 'Advanced PTET full-length practice for maintaining focus and stable performance through all sections.',
+    9: 'Near-exam PTET simulation to refine final strategy, attempt order, and time control across the complete paper.',
+    10: 'Final PTET mock for comprehensive self-evaluation before exam day with end-to-end pattern practice.'
+  };
+
   const bstcMockDescriptions = {
     1: 'Full BSTC pattern simulation with mixed pedagogy, reasoning, language, and Rajasthan GK practice in one timed set.',
     2: 'Balanced BSTC revision test to strengthen accuracy across all major sections with steady difficulty progression.',
@@ -278,7 +292,9 @@
           title: `${exam.title} Mock Test ${testNumber}`,
           description: teachingExamSlug === 'bstc'
             ? (bstcMockDescriptions[testNumber] || `BSTC full-length practice set ${testNumber} for exam-ready revision and timed preparation.`)
-            : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
+            : teachingExamSlug === 'ptet'
+              ? (ptetMockDescriptions[testNumber] || `PTET full-length practice set ${testNumber} for exam-focused revision and timed preparation.`)
+              : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
         });
       }).join('');
     }
