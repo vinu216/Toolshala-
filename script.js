@@ -865,6 +865,100 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuredContainer = document.getElementById('featuredToolsGrid');
     const tools = contentCollections?.tools;
 
+    const toolsCategoryConfig = [
+      {
+        key: 'writing',
+        title: 'Writing Tool',
+        subtitle: 'Draft, improve, humanize, and format practical writing for applications, messages, and everyday work.',
+        icon: '✍️',
+        accent: 'indigo'
+      },
+      {
+        key: 'ai',
+        title: 'AI Tool',
+        subtitle: 'Use AI-powered helpers for text extraction, notes, summaries, flashcards, and quick content generation.',
+        icon: '✨',
+        accent: 'violet'
+      },
+      {
+        key: 'freelance',
+        title: 'Freelance Tool',
+        subtitle: 'Create client-ready proposals, invoices, rate cards, checklists, and project communication faster.',
+        icon: '🤝',
+        accent: 'emerald'
+      },
+      {
+        key: 'career',
+        title: 'Career Tool',
+        subtitle: 'Build stronger resumes, LinkedIn profiles, job applications, portfolios, and interview communication.',
+        icon: '💼',
+        accent: 'sky'
+      },
+      {
+        key: 'productivity',
+        title: 'Productivity Tool',
+        subtitle: 'Plan priorities, organize tasks, and turn messy work into simple next actions.',
+        icon: '✅',
+        accent: 'amber'
+      },
+      {
+        key: 'social',
+        title: 'Social Tool',
+        subtitle: 'Generate captions, hashtags, bios, hooks, calendars, and short-form ideas for social platforms.',
+        icon: '📣',
+        accent: 'pink'
+      },
+      {
+        key: 'creator',
+        title: 'Creator Tool',
+        subtitle: 'Plan creator workflows for videos, newsletters, repurposing, scripts, and content production.',
+        icon: '🎬',
+        accent: 'orange'
+      },
+      {
+        key: 'study',
+        title: 'Student Tool',
+        subtitle: 'Study smarter with planners, revision timetables, explainers, flashcards, quizzes, and scholarship helpers.',
+        icon: '📚',
+        accent: 'cyan'
+      },
+      {
+        key: 'teacher',
+        title: 'Teacher Tool',
+        subtitle: 'Prepare lesson plans, classroom activities, worksheets, quiz sets, and parent communication notes.',
+        icon: '🧑‍🏫',
+        accent: 'lime'
+      }
+    ];
+
+    const categoryMeta = new Map(toolsCategoryConfig.map((category) => [category.key, category]));
+    const resolveToolCategoryKey = (tool = {}) => {
+      const label = String(tool.categoryLabel || '').toLowerCase();
+      const category = String(tool.category || '').toLowerCase();
+      const tags = normalizeTags(tool.tags).toLowerCase();
+      const haystack = `${label} ${category} ${tags}`;
+
+      if (label.includes('freelance')) return 'freelance';
+      if (label.includes('creator')) return 'creator';
+      if (label.includes('productivity')) return 'productivity';
+      if (label.includes('social')) return 'social';
+      if (label.includes('writing')) return 'writing';
+      if (label.includes('teacher')) return 'teacher';
+      if (label.includes('student')) return 'study';
+      if (label.includes('career')) return 'career';
+      if (label.includes('ai') || label.includes('ocr')) return 'ai';
+      if (haystack.includes('freelance')) return 'freelance';
+      if (haystack.includes('creator') || haystack.includes('youtube') || haystack.includes('newsletter')) return 'creator';
+      if (haystack.includes('productivity') || haystack.includes('priority') || haystack.includes('to-do')) return 'productivity';
+      if (haystack.includes('social') || haystack.includes('instagram') || haystack.includes('whatsapp') || haystack.includes('hashtag') || haystack.includes('reel')) return 'social';
+      if (haystack.includes('writing') || haystack.includes('email') || haystack.includes('letter') || haystack.includes('paragraph')) return 'writing';
+      if (haystack.includes('teacher') || haystack.includes('classroom') || haystack.includes('lesson') || haystack.includes('worksheet')) return 'teacher';
+      if (haystack.includes('student') || haystack.includes('study') || haystack.includes('exam') || haystack.includes('quiz') || haystack.includes('scholarship')) return 'study';
+      if (haystack.includes('career') || haystack.includes('resume') || haystack.includes('linkedin') || haystack.includes('job')) return 'career';
+      if (haystack.includes('ai') || haystack.includes('ocr') || category === 'ai') return 'ai';
+      return category || 'ai';
+    };
+
     if (featuredContainer && Array.isArray(tools) && tools.length) {
       const featuredOrder = [
         'photo-to-text',
@@ -915,26 +1009,67 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    renderCollection({
-      container,
-      items: tools,
-      renderer: (tool) => {
-        const tags = normalizeTags(tool.tags);
-        const cta = resolveToolLink(tool);
-        const attrs = createDataAttributes({
-          'data-id': tool.id,
-          'data-slug': tool.slug,
-          'data-featured': tool.featured ? 'true' : 'false',
-          'data-published': tool.publishedAt,
-          'data-tags': tags,
-          'data-name': tool.title,
-          'data-category': tool.category,
-          'data-description': `${tool.description} ${tags}`
-        });
+    if (!container || !Array.isArray(tools) || !tools.length) {
+      return;
+    }
 
-        return `<article class="item-card reveal tool-card"${attrs}><p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">${escapeHtml(tool.categoryLabel || tool.category)}</p><h3>${escapeHtml(tool.title)}</h3><p>${escapeHtml(tool.description)}</p><p class="card-helper-text">Quick, practical, and built to save time.</p><p class="mt-3 text-xs text-slate-500">Updated ${formatPublishedDate(tool.publishedAt)}</p><a href="${escapeHtml(cta.href)}">${escapeHtml(cta.label)}</a></article>`;
+    const groupedTools = tools.reduce((groups, tool) => {
+      const key = resolveToolCategoryKey(tool);
+      if (!groups.has(key)) {
+        groups.set(key, []);
       }
-    });
+      groups.get(key).push(tool);
+      return groups;
+    }, new Map());
+
+    const orderedSections = toolsCategoryConfig
+      .filter((category) => groupedTools.has(category.key))
+      .concat(
+        Array.from(groupedTools.keys())
+          .filter((key) => !categoryMeta.has(key))
+          .map((key) => ({
+            key,
+            title: `${key.replace(/-/g, ' ')} Tool`,
+            subtitle: 'Browse practical ToolShala tools in this category.',
+            icon: '🧰',
+            accent: 'slate'
+          }))
+      );
+
+    container.innerHTML = orderedSections
+      .map((category) => {
+        const sectionTools = groupedTools.get(category.key) || [];
+        const toolCountLabel = `${sectionTools.length} tool${sectionTools.length === 1 ? '' : 's'}`;
+        const cards = sectionTools
+          .map((tool) => {
+            const tags = normalizeTags(tool.tags);
+            const cta = resolveToolLink(tool);
+            const attrs = createDataAttributes({
+              'data-id': tool.id,
+              'data-slug': tool.slug,
+              'data-featured': tool.featured ? 'true' : 'false',
+              'data-published': tool.publishedAt,
+              'data-tags': tags,
+              'data-name': tool.title,
+              'data-category': category.key,
+              'data-original-category': tool.category,
+              'data-category-label': tool.categoryLabel,
+              'data-description': `${tool.description} ${tool.categoryLabel || ''} ${tags}`
+            });
+            const topTags = tags
+              .split(' ')
+              .filter(Boolean)
+              .slice(0, 2)
+              .map((tag) => `<span>${escapeHtml(tag.replace(/-/g, ' '))}</span>`)
+              .join('');
+
+            return `<article class="item-card reveal tool-card tools-modern-card"${attrs}><div class="tools-card-top"><span class="tools-card-badge">${escapeHtml(tool.categoryLabel || category.title)}</span>${tool.featured ? '<span class="tools-popular-badge">Popular</span>' : ''}</div><h3>${escapeHtml(tool.title)}</h3><p>${escapeHtml(tool.description)}</p>${topTags ? `<div class="tools-card-tags" aria-label="Tool tags">${topTags}</div>` : ''}<p class="tools-card-meta">Updated ${formatPublishedDate(tool.publishedAt)}</p><a href="${escapeHtml(cta.href)}">${escapeHtml(cta.label || 'Open Tool')}</a></article>`;
+          })
+          .join('');
+
+        return `<section id="${escapeHtml(category.key)}" class="tools-category-section reveal" data-tool-section="${escapeHtml(category.key)}"><div class="tools-category-head"><div class="tools-category-title-wrap"><span class="tools-category-icon tools-category-icon-${escapeHtml(category.accent)}" aria-hidden="true">${escapeHtml(category.icon)}</span><div><p class="tools-category-kicker">${escapeHtml(toolCountLabel)}</p><h2>${escapeHtml(category.title)}</h2><p>${escapeHtml(category.subtitle)}</p></div></div><a class="tools-section-anchor" href="#${escapeHtml(category.key)}">#${escapeHtml(category.key)}</a></div><div class="tools-category-grid">${cards}</div></section>`;
+      })
+      .join('');
   };
 
   const renderOpportunitiesFromData = () => {
@@ -945,19 +1080,54 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const opportunityCategoryConfig = [
+      {
+        key: 'internships',
+        title: 'Internships for Students',
+        subtitle: 'Remote, paid, part-time, and domain-focused internship tracks for Indian students and freshers.',
+        icon: '🎓'
+      },
+      {
+        key: 'student-programs',
+        title: 'Student Programs',
+        subtitle: 'Scholarships, fellowships, bootcamps, hackathons, competitions, certifications, and campus programs.',
+        icon: '🏆'
+      },
+      {
+        key: 'freelance-gigs',
+        title: 'Freelance Gigs',
+        subtitle: 'Project-based writing, design, video editing, web, no-code, and AI automation work for freelancers.',
+        icon: '💼'
+      },
+      {
+        key: 'creator-opportunities',
+        title: 'Creator Opportunities',
+        subtitle: 'UGC projects, creator collabs, affiliate programs, ambassador roles, and social media work.',
+        icon: '🎬'
+      },
+      {
+        key: 'career-jobs',
+        title: 'Career / Fresher Roles',
+        subtitle: 'Entry-level jobs, apprenticeships, trainee roles, graduate openings, and skill-based hiring tracks.',
+        icon: '🚀'
+      }
+    ];
+    const categoryMeta = new Map(opportunityCategoryConfig.map((category) => [category.key, category]));
+
     const badgeClassMap = {
       'Closing Soon': 'op-badge-soon',
       New: 'op-badge-new',
       Popular: 'op-badge-popular'
     };
 
-    const createOpportunityCard = (opportunity, isFeatured) => {
+    const createOpportunityCard = (opportunity, isFeatured = false, index = 0) => {
       const tags = normalizeTags(opportunity.tags);
       const badge = opportunity.badge || '';
       const badgeClass = badgeClassMap[badge] || 'op-badge-new';
       const ctaClass = isFeatured ? 'btn-primary mt-4' : 'btn-secondary mt-4';
-      const wrapperClass = isFeatured ? 'op-featured' : 'op-card';
+      const wrapperClass = isFeatured ? 'op-featured opportunity-card-modern' : 'op-card opportunity-card-modern';
       const applyLink = resolveOpportunityLink(opportunity);
+      const isRemote = `${opportunity.mode || ''} ${opportunity.location || ''} ${tags}`.toLowerCase().includes('remote');
       const attrs = createDataAttributes({
         'data-id': opportunity.id,
         'data-slug': opportunity.slug,
@@ -970,31 +1140,64 @@ document.addEventListener('DOMContentLoaded', () => {
         'data-eligibility': opportunity.eligibility,
         'data-deadline': opportunity.deadline,
         'data-mode': opportunity.mode,
-        'data-description': opportunity.description,
-        'data-apply-link': applyLink
+        'data-location': opportunity.location || opportunity.mode,
+        'data-description': `${opportunity.description} ${opportunity.categoryLabel || ''} ${opportunity.location || ''} ${tags}`,
+        'data-apply-link': applyLink,
+        'data-remote': isRemote ? 'true' : 'false',
+        'data-sort-index': index
       });
-      return `<article class="${wrapperClass} reveal opportunity-card"${attrs}><div class="flex items-center justify-between gap-2"><span class="op-badge ${badgeClass}">${escapeHtml(badge || 'New')}</span><span class="op-mode">${escapeHtml(opportunity.mode)}</span></div><h3 class="mt-3">${escapeHtml(opportunity.title)}</h3><p class="mt-2 text-sm text-slate-600">${escapeHtml(opportunity.description)}</p><p class="card-helper-text">Always verify details from the official source before applying.</p><div class="op-meta"><p><strong>Category:</strong> ${escapeHtml(opportunity.categoryLabel)}</p><p><strong>Eligibility:</strong> ${escapeHtml(opportunity.eligibility)}</p></div><span class="op-deadline mt-3">Deadline: ${escapeHtml(opportunity.deadline)}</span><p class="mt-2 text-xs text-slate-500">Published ${formatPublishedDate(opportunity.publishedAt)}</p><button type="button" class="${ctaClass}" data-op-detail-button>${escapeHtml(opportunity.ctaLabel || 'View Details')}</button></article>`;
+      const topTags = tags
+        .split(' ')
+        .filter(Boolean)
+        .slice(0, 3)
+        .map((tag) => `<span>${escapeHtml(tag.replace(/-/g, ' '))}</span>`)
+        .join('');
+
+      return `<article class="${wrapperClass} reveal opportunity-card"${attrs}><div class="op-card-top"><span class="op-badge ${badgeClass}">${escapeHtml(badge || 'New')}</span><span class="op-mode">${escapeHtml(opportunity.mode || 'India')}</span></div><h3>${escapeHtml(opportunity.title)}</h3><p class="op-card-desc">${escapeHtml(opportunity.description)}</p><div class="op-card-meta"><p><strong>For:</strong> ${escapeHtml(opportunity.eligibility)}</p><p><strong>Location:</strong> ${escapeHtml(opportunity.location || opportunity.mode || 'India')}</p><p><strong>Type:</strong> ${escapeHtml(opportunity.categoryLabel)}</p></div>${topTags ? `<div class="op-card-tags" aria-label="Opportunity tags">${topTags}</div>` : ''}<div class="op-card-footer"><span class="op-deadline">${escapeHtml(opportunity.deadline)}</span><span class="op-published">Updated ${formatPublishedDate(opportunity.publishedAt)}</span></div><button type="button" class="${ctaClass}" data-op-detail-button>${escapeHtml(opportunity.ctaLabel || 'View Opportunity')}</button></article>`;
     };
 
-    let featuredIds = [];
-    if (featuredContainer) {
-      const featuredItems = opportunities.filter((opportunity) => opportunity.featured).slice(0, 2);
-      featuredIds = featuredItems.map((item) => item.id);
-      if (featuredItems.length) {
-        renderCollection({
-          container: featuredContainer,
-          items: featuredItems,
-          renderer: (opportunity) => createOpportunityCard(opportunity, true)
-        });
-      }
+    const featuredItems = opportunities.filter((opportunity) => opportunity.featured).slice(0, 3);
+    if (featuredContainer && featuredItems.length) {
+      renderCollection({
+        container: featuredContainer,
+        items: featuredItems,
+        renderer: (opportunity, index) => createOpportunityCard(opportunity, true, index)
+      });
     }
 
-    const listingItems = opportunities.filter((opportunity) => !featuredIds.includes(opportunity.id));
-    renderCollection({
-      container: listContainer,
-      items: listingItems,
-      renderer: (opportunity) => createOpportunityCard(opportunity, false)
-    });
+    const groupedOpportunities = opportunities.reduce((groups, opportunity) => {
+      const key = opportunity.category || 'student-programs';
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+      groups.get(key).push(opportunity);
+      return groups;
+    }, new Map());
+
+    const orderedSections = opportunityCategoryConfig
+      .filter((category) => groupedOpportunities.has(category.key))
+      .concat(
+        Array.from(groupedOpportunities.keys())
+          .filter((key) => !categoryMeta.has(key))
+          .map((key) => ({
+            key,
+            title: key.replace(/-/g, ' '),
+            subtitle: 'India-focused opportunities for students, freelancers, creators, and freshers.',
+            icon: '📌'
+          }))
+      );
+
+    let cardIndex = 0;
+    listContainer.innerHTML = orderedSections
+      .map((category) => {
+        const sectionItems = groupedOpportunities.get(category.key) || [];
+        const cards = sectionItems
+          .map((opportunity) => createOpportunityCard(opportunity, false, cardIndex++))
+          .join('');
+        const countLabel = `${sectionItems.length} opportunity${sectionItems.length === 1 ? '' : 'ies'}`;
+        return `<section id="${escapeHtml(category.key)}" class="op-category-section reveal" data-op-section="${escapeHtml(category.key)}"><div class="op-category-head"><div><p class="op-section-kicker"><span aria-hidden="true">${escapeHtml(category.icon)}</span> ${escapeHtml(countLabel)}</p><h3>${escapeHtml(category.title)}</h3><p>${escapeHtml(category.subtitle)}</p></div><a href="#${escapeHtml(category.key)}" class="op-section-link">#${escapeHtml(category.key)}</a></div><div class="op-category-grid">${cards}</div></section>`;
+      })
+      .join('');
   };
 
   const renderTemplatesFromData = () => {
@@ -1520,6 +1723,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearButton,
     noResultsNode,
     resultCountNode,
+    resultLabel = 'tool',
     syncHash = false
   }) => {
     const cards = Array.from(document.querySelectorAll(cardSelector));
@@ -1578,13 +1782,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      if (cardSelector.includes('tool-card')) {
+        const toolSections = Array.from(document.querySelectorAll('[data-tool-section]'));
+        toolSections.forEach((section) => {
+          const visibleCards = Array.from(section.querySelectorAll('.tool-card')).filter(
+            (card) => !card.classList.contains('hidden')
+          );
+          section.classList.toggle('hidden', visibleCards.length === 0);
+        });
+      }
+
+      if (cardSelector.includes('opportunity-card')) {
+        const opportunitySections = Array.from(document.querySelectorAll('[data-op-section]'));
+        opportunitySections.forEach((section) => {
+          const visibleCards = Array.from(section.querySelectorAll('.opportunity-card')).filter(
+            (card) => !card.classList.contains('hidden')
+          );
+          section.classList.toggle('hidden', visibleCards.length === 0);
+        });
+      }
+
       if (noResultsNode) {
         noResultsNode.classList.toggle('hidden', visibleCount > 0);
       }
 
       if (resultCountNode) {
-        const suffix = visibleCount === 1 ? '' : 's';
-        resultCountNode.textContent = `${visibleCount} tool${suffix} found`;
+        const label = resultLabel === 'opportunity'
+          ? visibleCount === 1 ? 'opportunity' : 'opportunities'
+          : `${resultLabel}${visibleCount === 1 ? '' : 's'}`;
+        resultCountNode.textContent = `${visibleCount} ${label} found`;
       }
 
       if (clearButton) {
@@ -1652,6 +1878,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearButton: document.getElementById('toolClearFilters'),
       noResultsNode: document.getElementById('toolNoResults'),
       resultCountNode: document.getElementById('toolResultsCount'),
+      resultLabel: 'tool',
       syncHash: true
     },
     {
@@ -1659,9 +1886,11 @@ document.addEventListener('DOMContentLoaded', () => {
       filterSelector: '[data-op-filter]',
       filterAttr: 'data-op-filter',
       searchInput: document.getElementById('opportunitySearch'),
-      searchAttrs: ['data-name', 'data-category', 'data-eligibility', 'data-mode', 'data-description'],
+      searchAttrs: ['data-name', 'data-category', 'data-category-label', 'data-eligibility', 'data-mode', 'data-location', 'data-description', 'data-tags'],
       clearButton: document.getElementById('opportunityClearFilters'),
-      noResultsNode: document.getElementById('opportunityNoResults')
+      noResultsNode: document.getElementById('opportunityNoResults'),
+      resultCountNode: document.getElementById('opportunityResultsCount'),
+      resultLabel: 'opportunity'
     },
     {
       cardSelector: '#templateLibraryGrid .template-card',
@@ -1675,6 +1904,43 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   filterConfigs.forEach((config) => setupFilter(config));
+
+  const setupOpportunitySort = () => {
+    const sortSelect = document.getElementById('opportunitySort');
+    if (!sortSelect) {
+      return;
+    }
+
+    const getTime = (card) => Date.parse(card.getAttribute('data-published') || '') || 0;
+    const getOriginalIndex = (card) => Number(card.getAttribute('data-sort-index') || 0);
+
+    const sortCards = () => {
+      const sortValue = sortSelect.value || 'featured';
+      document.querySelectorAll('[data-op-section] .op-category-grid').forEach((grid) => {
+        const cards = Array.from(grid.querySelectorAll('.opportunity-card'));
+        cards
+          .sort((a, b) => {
+            if (sortValue === 'newest') {
+              return getTime(b) - getTime(a) || getOriginalIndex(a) - getOriginalIndex(b);
+            }
+            if (sortValue === 'remote') {
+              const aRemote = a.getAttribute('data-remote') === 'true' ? 1 : 0;
+              const bRemote = b.getAttribute('data-remote') === 'true' ? 1 : 0;
+              return bRemote - aRemote || getTime(b) - getTime(a) || getOriginalIndex(a) - getOriginalIndex(b);
+            }
+            const aFeatured = a.getAttribute('data-featured') === 'true' ? 1 : 0;
+            const bFeatured = b.getAttribute('data-featured') === 'true' ? 1 : 0;
+            return bFeatured - aFeatured || getTime(b) - getTime(a) || getOriginalIndex(a) - getOriginalIndex(b);
+          })
+          .forEach((card) => grid.appendChild(card));
+      });
+    };
+
+    sortSelect.addEventListener('change', sortCards);
+    sortCards();
+  };
+
+  setupOpportunitySort();
 
   const setupOpportunityModal = () => {
     const modal = document.getElementById('opportunityModal');
