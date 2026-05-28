@@ -83,19 +83,21 @@
           <a class="nav-link" href="./index.html">Home</a>
           <div class="nav-dropdown">
             <a class="nav-link nav-active" href="./tools.html">Tools</a>
-            <div class="nav-dropdown-menu"><a href="./tools.html">All AI Tools</a><a href="./tools.html#writing">Writing Tools</a><a href="./tools.html#career">Career Tools</a><a href="./tools.html#study">Study Tools</a></div>
+            <div class="nav-dropdown-menu"><a href="./tools.html">All Tools</a><a href="./tools.html#writing">Writing Tools</a><a href="./tools.html#ai">AI Tools</a><a href="./tools.html#freelance">Freelance Tools</a><a href="./tools.html#career">Career Tools</a><a href="./tools.html#social">Social Tools</a><a href="./tools.html#creator">Creator Tools</a></div>
           </div>
           <a class="nav-link" href="./opportunities.html">Opportunities</a><a class="nav-link" href="./career.html">Career</a><a class="nav-link" href="./templates.html">Templates</a><a class="nav-link" href="./about.html">About</a><a class="nav-link" href="./contact.html">Contact</a><a href="./tools.html" class="btn-primary ml-1">Explore Tools</a>
         </div>
       </nav>
-      <div class="menu-panel md:hidden" data-mobile-panel><div class="space-y-1 px-4 py-4"><a class="nav-link mobile-nav-link" href="./index.html">Home</a><a class="nav-link nav-active mobile-nav-link" href="./tools.html">Tools</a><a class="nav-link mobile-nav-link" href="./opportunities.html">Opportunities</a><a class="nav-link mobile-nav-link" href="./career.html">Career</a><a class="nav-link mobile-nav-link" href="./templates.html">Templates</a><a class="nav-link mobile-nav-link" href="./about.html">About</a><a class="nav-link mobile-nav-link" href="./contact.html">Contact</a><div class="rounded-xl bg-slate-50 p-3 text-xs text-slate-600"><p class="font-semibold text-slate-700">Tool Categories</p><div class="mt-2 flex flex-wrap gap-2"><a href="./tools.html#writing" class="filter-btn">Writing</a><a href="./tools.html#career" class="filter-btn">Career</a><a href="./tools.html#study" class="filter-btn">Study</a></div></div><a href="./tools.html" class="btn-primary mt-2 w-full text-center">Explore Tools</a></div></div>
+      <div class="menu-panel md:hidden" data-mobile-panel><div class="space-y-1 px-4 py-4"><a class="nav-link mobile-nav-link" href="./index.html">Home</a><a class="nav-link nav-active mobile-nav-link" href="./tools.html">Tools</a><a class="nav-link mobile-nav-link" href="./opportunities.html">Opportunities</a><a class="nav-link mobile-nav-link" href="./career.html">Career</a><a class="nav-link mobile-nav-link" href="./templates.html">Templates</a><a class="nav-link mobile-nav-link" href="./about.html">About</a><a class="nav-link mobile-nav-link" href="./contact.html">Contact</a><div class="rounded-xl bg-slate-50 p-3 text-xs text-slate-600"><p class="font-semibold text-slate-700">Tool Categories</p><div class="mt-2 flex flex-wrap gap-2"><a href="./tools.html#writing" class="filter-btn">Writing</a><a href="./tools.html#ai" class="filter-btn">AI</a><a href="./tools.html#freelance" class="filter-btn">Freelance</a><a href="./tools.html#career" class="filter-btn">Career</a><a href="./tools.html#social" class="filter-btn">Social</a><a href="./tools.html#creator" class="filter-btn">Creator</a></div></div><a href="./tools.html" class="btn-primary mt-2 w-full text-center">Explore Tools</a></div></div>
     </header>
 
     <main id="main-content">
       <section class="page-hero border-b border-slate-200">
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h1 class="reveal text-4xl font-extrabold tracking-tight text-slate-900">Useful Tools for Students, Freshers, and Creators</h1>
-          <p class="reveal mt-4 max-w-3xl text-slate-600">Use free practical tools to write faster, build better resumes, improve profiles, and stay productive in academics and career growth.</p>
+          <p class="reveal trust-badge mb-4">Free practical tools for daily work</p>
+          <h1 class="reveal text-4xl font-extrabold tracking-tight text-slate-900">Tools</h1>
+          <p class="reveal mt-4 max-w-3xl text-slate-600">Browse writing, AI, career, productivity, freelance, social, and creator tools in clean sections built for students, freelancers, creators, and everyday users.</p>
+          <div class="tools-hero-chips reveal" aria-label="Popular tool sections"><a href="#writing">Writing</a><a href="#ai">AI</a><a href="#freelance">Freelance</a><a href="#career">Career</a><a href="#productivity">Productivity</a><a href="#social">Social</a><a href="#creator">Creator</a></div>
         </div>
       </section>
 
@@ -127,15 +129,19 @@
           <div class="search-filter-actions tools-filter-actions flex flex-wrap items-center gap-2" aria-label="Tool categories">
             <button class="filter-btn active" data-tool-filter="all">All</button>
             <button class="filter-btn" data-tool-filter="writing">Writing</button>
-            <button class="filter-btn" data-tool-filter="career">Career</button>
-            <button class="filter-btn" data-tool-filter="study">Study</button>
-            <button class="filter-btn" data-tool-filter="social">Social</button>
             <button class="filter-btn" data-tool-filter="ai">AI</button>
+            <button class="filter-btn" data-tool-filter="freelance">Freelance</button>
+            <button class="filter-btn" data-tool-filter="career">Career</button>
+            <button class="filter-btn" data-tool-filter="productivity">Productivity</button>
+            <button class="filter-btn" data-tool-filter="social">Social</button>
+            <button class="filter-btn" data-tool-filter="creator">Creator</button>
+            <button class="filter-btn" data-tool-filter="study">Student</button>
+            <button class="filter-btn" data-tool-filter="teacher">Teacher</button>
             <button id="toolClearFilters" class="filter-clear-btn" type="button">Clear filters</button>
           </div>
         </div>
 
-        <div id="toolsGrid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+        <div id="toolsGrid" class="tools-sections-wrap mt-8" aria-live="polite">
           <!-- Tools are rendered from data/content.js by renderToolsFromData() in script.js -->
         </div>
 
