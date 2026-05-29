@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="350 290 950 950" role="img" aria-labelledby="title desc">
   <title id="title">ToolShala favicon</title>
-  <desc id="desc">Gray hexagonal ring and cube mark matching the ToolShala logo.</desc>
-  <g fill="none" stroke="#969696" stroke-width="4.9" stroke-linejoin="miter" stroke-linecap="butt">
-    <polygon points="128 8 234 70 234 188 128 250 22 188 22 70"/>
-    <polygon points="128 25 221 80 221 180 128 235 35 180 35 80"/>
-    <polygon points="128 42 208 90 208 171 128 219 48 171 48 90"/>
+  <desc id="desc">Monochrome hexagonal ring and geometric cube mark reproduced from the ToolShala logo.</desc>
+  <g fill="none" stroke="#969696" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
+    <polygon points="824 314 1212 545 1211 997 821 1222 427 979 438 537"/>
+    <polygon points="824 344 1180 557 1180 971 821 1184 458 965 468 558"/>
+    <polygon points="823 374 1150 572 1149 945 822 1147 489 943 498 573"/>
   </g>
   <g fill="#969696">
-    <polygon points="128 56 105 75 151 75"/>
-    <polygon points="97 82 159 82 183 97 73 97"/>
-    <polygon points="70 104 186 104 214 122 42 122"/>
-    <polygon points="40 126 216 126 128 158"/>
-    <polygon points="40 132 125 165 125 230 40 184"/>
-    <polygon points="131 165 216 132 216 184 131 230"/>
+    <polygon points="822 413 745 457 898 457"/>
+    <polygon points="726 469 918 469 996 514 647 514"/>
+    <polygon points="629 526 1012 526 1094 570 548 570"/>
+    <polygon points="528 584 1118 584 823 701"/>
+    <polygon points="527 599 814 713 814 1094 527 931"/>
+    <polygon points="830 713 1118 599 1118 928 830 1094"/>
   </g>
 </svg>
