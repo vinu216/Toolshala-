@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">ToolShala favicon</title>
-  <desc id="desc">Gray hexagonal ring and cube mark matching the ToolShala logo.</desc>
-  <g fill="none" stroke="#969696" stroke-width="4.9" stroke-linejoin="miter" stroke-linecap="butt">
-    <polygon points="128 8 234 70 234 188 128 250 22 188 22 70"/>
-    <polygon points="128 25 221 80 221 180 128 235 35 180 35 80"/>
-    <polygon points="128 42 208 90 208 171 128 219 48 171 48 90"/>
+  <desc id="desc">A clean white ToolShala T monogram centered on a blue and violet gradient badge.</desc>
+  <defs>
+    <linearGradient id="toolshalaBadge" x1="9" y1="7" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="0.52" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="badgeShine" cx="18" cy="12" r="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="0.58" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.15" flood-color="#0f172a" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="url(#toolshalaBadge)"/>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="url(#badgeShine)"/>
+  <g fill="#ffffff" filter="url(#softShadow)">
+    <rect x="15" y="15" width="34" height="10" rx="3"/>
+    <rect x="27" y="23" width="10" height="28" rx="3"/>
   </g>
-  <g fill="#969696">
-    <polygon points="128 56 105 75 151 75"/>
-    <polygon points="97 82 159 82 183 97 73 97"/>
-    <polygon points="70 104 186 104 214 122 42 122"/>
-    <polygon points="40 126 216 126 128 158"/>
-    <polygon points="40 132 125 165 125 230 40 184"/>
-    <polygon points="131 165 216 132 216 184 131 230"/>
-  </g>
+  <rect x="4" y="4" width="56" height="56" rx="13" fill="none" stroke="#ffffff" stroke-opacity="0.24" stroke-width="2"/>
 </svg>
