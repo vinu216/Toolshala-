@@ -816,7 +816,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Sports Nutrition Toolkit',
             text: 'ToolShala resources use karke meal-planning projects, hydration trackers, resume bullets, and professional outreach emails ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -1273,7 +1273,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to generate content ideas, create briefs, improve LinkedIn copy, and prepare resume bullets for your first internship or freelance pitch.',
             primaryLabel: 'Explore ToolShala Tools',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -1574,7 +1574,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to write outreach emails, create project proposals, improve resume bullets, and present your automation case studies professionally.',
             primaryLabel: 'Generate Outreach Email',
-            primaryLink: './tool.html?tool=professional-email-generator',
+            primaryLink: './tools/professional-email-generator',
             secondaryLabel: 'Use Project Proposal Template',
             secondaryLink: './project-proposal-template.html'
           }
@@ -1862,7 +1862,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala AI tools to test prompt workflows for career planning, content ideas, summaries, resume bullets, LinkedIn profile copy, and professional writing.',
             primaryLabel: 'Try AI Career Path Suggestor',
-            primaryLink: './tool.html?tool=ai-career-path-suggestor',
+            primaryLink: './tools/ai-career-path-suggestor',
             secondaryLabel: 'Explore AI Tools',
             secondaryLink: './tools.html'
           }
@@ -2151,7 +2151,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala resume tools and templates to write stronger data analyst project bullets, improve your headline, and prepare fresher-friendly applications.',
             primaryLabel: 'Generate Resume Bullets',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use ATS Resume Template',
             secondaryLink: './ats-friendly-resume-template.html'
           }
@@ -2455,9 +2455,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to generate BA portfolio ideas, write stronger resume bullets, improve your LinkedIn profile, and send professional outreach emails for internships or entry-level roles.',
             primaryLabel: 'Generate BA Project Ideas',
-            primaryLink: './tool.html?tool=project-idea-generator-students-freshers',
+            primaryLink: './tools/project-idea-generator-students-freshers',
             secondaryLabel: 'Create Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -2747,9 +2747,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to generate practical project ideas, write stronger developer resume bullets, improve your headline, and prepare professional internship outreach messages.',
             primaryLabel: 'Generate Full Stack Project Ideas',
-            primaryLink: './tool.html?tool=project-idea-generator-students-freshers',
+            primaryLink: './tools/project-idea-generator-students-freshers',
             secondaryLabel: 'Create Developer Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -3057,7 +3057,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala resume tools and templates to write stronger design project bullets, improve your LinkedIn profile, and prepare portfolio-ready application material.',
             primaryLabel: 'Generate Resume Bullets',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Project Proposal Template',
             secondaryLink: './project-proposal-template.html'
           }
@@ -3367,7 +3367,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Create Design Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -3660,7 +3660,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala resume tools and templates to convert lab write-ups into stronger resume bullets, improve your cybersecurity headline, and prepare internship outreach emails.',
             primaryLabel: 'Generate Resume Bullets',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Resume Keywords Bank',
             secondaryLink: './resume-keywords-bank-template.html'
           }
@@ -3953,7 +3953,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala content, email, resume, and template resources to create campaign ideas, captions, hashtags, emails, content briefs, and internship-ready resume bullets.',
             primaryLabel: 'Generate Content Ideas',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Content Calendar Template',
             secondaryLink: './instagram-content-calendar-template.html'
           }
@@ -4264,7 +4264,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala social tools to generate short-form scripts, content ideas, captions, hashtags, and content calendars for your creator portfolio or freelance client work.',
             primaryLabel: 'Generate Shorts Script',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
+            primaryLink: './tools/youtube-shorts-script-generator',
             secondaryLabel: 'Use Content Calendar Template',
             secondaryLink: './instagram-content-calendar-template.html'
           }
@@ -4575,9 +4575,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala career tools and templates to turn product case studies into resume bullets, improve your LinkedIn profile, and prepare internship outreach messages.',
             primaryLabel: 'Try AI Career Path Suggestor',
-            primaryLink: './tool.html?tool=ai-career-path-suggestor',
+            primaryLink: './tools/ai-career-path-suggestor',
             secondaryLabel: 'Generate Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -4885,7 +4885,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to generate community prompts, event invites, outreach messages, LinkedIn copy, content calendars, and resume bullets for your growth portfolio.',
             primaryLabel: 'Generate Community Content Ideas',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Event Invitation Template',
             secondaryLink: './event-invitation-template.html'
           }
@@ -5446,7 +5446,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala resume tools and templates to create a clear headline, stronger project bullets, ATS-friendly format, keyword bank, and fresher objective for your first resume.',
             primaryLabel: 'Generate Resume Headline',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Open ATS Resume Template',
             secondaryLink: './ats-friendly-resume-template.html'
           }
@@ -5725,9 +5725,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala LinkedIn tools to create a strong headline, about section, networking messages, and resume-aligned student profile for internships and career opportunities.',
             primaryLabel: 'Generate LinkedIn Headline',
-            primaryLink: './tool.html?tool=linkedin-headline-generator',
+            primaryLink: './tools/linkedin-headline-generator',
             secondaryLabel: 'Create Networking Message',
-            secondaryLink: './tool.html?tool=linkedin-networking-message-generator'
+            secondaryLink: './tools/linkedin-networking-message-generator'
           }
         }
       },
@@ -6040,7 +6040,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Open Project Proposal Template',
             primaryLink: './project-proposal-template.html',
             secondaryLabel: 'Generate Project Resume Bullets',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -6359,7 +6359,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Open Weekly Study Planner',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Convert Notes to Bullets',
-            secondaryLink: './tool.html?tool=notes-to-bullet-points-converter'
+            secondaryLink: './tools/notes-to-bullet-points-converter'
           }
         }
       },
@@ -6625,9 +6625,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala scholarship, SOP, writing, and resume resources to find opportunities, structure your essay, polish your draft, and prepare supporting documents.',
             primaryLabel: 'Find Scholarship Matches',
-            primaryLink: './tool.html?tool=scholarship-finder',
+            primaryLink: './tools/scholarship-finder',
             secondaryLabel: 'Generate SOP Draft',
-            secondaryLink: './tool.html?tool=sop-generator'
+            secondaryLink: './tools/sop-generator'
           }
         }
       },
@@ -6889,7 +6889,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala cover letter, resume, and email tools to create a customized student application for internships, fresher jobs, volunteering, and campus opportunities.',
             primaryLabel: 'Generate Cover Letter',
-            primaryLink: './tool.html?tool=cover-letter-generator',
+            primaryLink: './tools/cover-letter-generator',
             secondaryLabel: 'Open Internship Cover Letter Template',
             secondaryLink: './internship-cover-letter-template.html'
           }
@@ -7197,7 +7197,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala study tools and templates to create weekly schedules, track priorities, convert notes into revision points, and build a realistic student time-management routine.',
             primaryLabel: 'Generate Study Timetable',
-            primaryLink: './tool.html?tool=study-timetable-generator',
+            primaryLink: './tools/study-timetable-generator',
             secondaryLabel: 'Open Weekly Study Planner',
             secondaryLink: './weekly-study-planner-template.html'
           }
@@ -7468,9 +7468,9 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala resume, LinkedIn, cover letter, interview, aptitude, and email tools to move from college applications to corporate readiness with a structured plan.',
             primaryLabel: 'Generate Resume Headline',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Practice Interview Answers',
-            secondaryLink: './tool.html?tool=interview-answer-generator'
+            secondaryLink: './tools/interview-answer-generator'
           }
         }
       },
@@ -8345,7 +8345,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to polish your resume, LinkedIn profile, outreach emails, and daily sales communication practice.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Open Job Application Template',
             secondaryLink: './job-application-email-template.html'
           }
@@ -8599,7 +8599,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala writing and career tools to improve clarity, craft better application emails, and create strong resume bullets for technical writing roles.',
             primaryLabel: 'Use Improve Text Tool',
-            primaryLink: './tool.html?tool=paragraph-rewriter-humanizer',
+            primaryLink: './tools/paragraph-rewriter-humanizer',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -8764,7 +8764,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to sharpen case study writing, resume bullets, and outreach communication while preparing for product design internships.',
             primaryLabel: 'Create Resume Bullet Points',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -8920,7 +8920,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to draft better client emails, build stronger resume bullets, and organize daily follow-ups while preparing for customer success opportunities.',
             primaryLabel: 'Use Professional Email Generator',
-            primaryLink: './tool.html?tool=professional-email-generator',
+            primaryLink: './tools/professional-email-generator',
             secondaryLabel: 'Use Resume Headline Generator',
             secondaryLink: './resume-headline-generator.html'
           }
@@ -9080,7 +9080,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to improve writing clarity, draft better outreach emails, and create stronger resume bullets for content and copywriting roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -9237,7 +9237,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools to write better project bullets, polish your resume headline, and prepare professional outreach while applying for data science internships and junior roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Resume Headline Generator',
             secondaryLink: './resume-headline-generator.html'
           }
@@ -9394,7 +9394,7 @@ window.ToolShalaArticleContent = {
             text:
               'Use ToolShala tools and templates to organize your learning sprint, write stronger resume bullets, and draft professional outreach for DevOps internship applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -9609,7 +9609,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your AI/ML Career Toolkit with ToolShala',
             text: 'Use ToolShala tools to polish resume bullets, improve your profile headline, and draft professional outreach for AI/ML internship applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Resume Headline Generator',
             secondaryLink: './resume-headline-generator.html'
           }
@@ -9666,7 +9666,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your QA Career Toolkit with ToolShala',
             text: 'Use ToolShala resources to improve resume quality, create professional outreach emails, and stay consistent with your QA practice plan.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -9725,7 +9725,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -9782,7 +9782,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -9837,7 +9837,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Product Analytics Career Toolkit',
             text: 'Use ToolShala tools and templates to polish case study writeups, improve resume bullets, and prepare professional outreach for product analyst roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -9953,7 +9953,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use To-Do List Template',
             primaryLink: './to-do-list-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10008,7 +10008,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Data Engineering Career Toolkit',
             text: 'Use ToolShala tools and templates to organize your learning sprints, improve resume bullets, and create better outreach for data engineering opportunities.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -10067,7 +10067,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10124,7 +10124,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10181,7 +10181,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10236,7 +10236,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Power BI Career Toolkit',
             text: 'Use ToolShala resources to improve project documentation, polish resume bullets, and prepare professional outreach for Power BI opportunities.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -10293,7 +10293,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Cloud Security Career Toolkit',
             text: 'Use ToolShala tools and templates to organize your lab workflow, improve resume bullets, and draft professional outreach for cloud security opportunities.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -10350,7 +10350,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Salesforce Admin Career Toolkit',
             text: 'Use ToolShala tools and templates to organize workflows, improve resume bullets, and send professional outreach for Salesforce admin opportunities.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -10407,7 +10407,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your UI Developer Career Toolkit',
             text: 'Use ToolShala resources to organize your project practice, improve resume bullets, and draft professional outreach for UI developer opportunities.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use To-Do List Template',
             secondaryLink: './to-do-list-template.html'
           }
@@ -10466,7 +10466,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use To-Do List Template',
             primaryLink: './to-do-list-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10523,7 +10523,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10578,9 +10578,9 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Android Developer Career Toolkit',
             text: 'Use ToolShala tools and templates to polish resume, create project summaries, and send professional internship outreach.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10635,7 +10635,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your iOS Developer Career Toolkit',
             text: 'Use ToolShala resources to improve your resume, sharpen project summaries, and send professional internship outreach messages.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Interview Thank You Email Template',
             secondaryLink: './interview-thank-you-email-template.html'
           }
@@ -10692,7 +10692,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Backend Developer Career Toolkit',
             text: 'Use ToolShala resources to polish your resume, structure project summaries, and send professional internship outreach.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -10749,7 +10749,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your QA Automation Career Toolkit',
             text: 'Use ToolShala resources to improve resume quality, document your projects, and send professional outreach messages for QA automation roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -10808,7 +10808,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Project Proposal Template',
             primaryLink: './project-proposal-template.html',
             secondaryLabel: 'Use Resume Headline Generator',
-            secondaryLink: './tool.html?tool=resume-headline-generator'
+            secondaryLink: './tools/resume-headline-generator'
           }
         }
       },
@@ -10865,7 +10865,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Project Proposal Template',
             primaryLink: './project-proposal-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -10977,7 +10977,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Embedded Engineering Career Toolkit',
             text: 'Use ToolShala resources to strengthen your resume bullets, organize project notes, and send professional internship outreach.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Weekly Study Planner Template',
             secondaryLink: './weekly-study-planner-template.html'
           }
@@ -11034,7 +11034,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Tableau Career Toolkit',
             text: 'Use ToolShala resources to improve resume bullets, prepare dashboard case summaries, and send professional application outreach.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -11148,7 +11148,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Weekly Study Planner Template',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Use AI Career Path Suggestor',
-            secondaryLink: './tool.html?tool=ai-career-path-suggestor'
+            secondaryLink: './tools/ai-career-path-suggestor'
           }
         }
       },
@@ -11202,7 +11202,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Weekly Study Planner Template',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Use AI Career Path Suggestor',
-            secondaryLink: './tool.html?tool=ai-career-path-suggestor'
+            secondaryLink: './tools/ai-career-path-suggestor'
           }
         }
       },
@@ -11255,7 +11255,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Weekly Study Planner Template',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Use AI Career Path Suggestor',
-            secondaryLink: './tool.html?tool=ai-career-path-suggestor'
+            secondaryLink: './tools/ai-career-path-suggestor'
           }
         }
       },
@@ -11308,7 +11308,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Weekly Study Planner Template',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Use AI Career Path Suggestor',
-            secondaryLink: './tool.html?tool=ai-career-path-suggestor'
+            secondaryLink: './tools/ai-career-path-suggestor'
           }
         }
       },
@@ -11629,7 +11629,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Data Visualization Career Toolkit',
             text: 'Use ToolShala resources to improve resume quality, structure dashboard case summaries, and send better job applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -11686,7 +11686,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your CRM Career Toolkit',
             text: 'Use ToolShala resources to improve resume quality, structure workflow case studies, and send professional role-specific outreach.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -11743,7 +11743,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your E-commerce Career Toolkit',
             text: 'Use ToolShala resources to polish resume bullets, organize case studies, and send better ecommerce role applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Project Proposal Template',
             secondaryLink: './project-proposal-template.html'
           }
@@ -11916,7 +11916,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -11973,7 +11973,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -12085,7 +12085,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Bookkeeping Career Toolkit',
             text: 'Use ToolShala resources to improve resume quality, organize finance workflow samples, and send better accounting job applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -12316,7 +12316,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Accessibility Career Toolkit',
             text: 'Use ToolShala resources to structure audit notes, improve resume positioning, and send professional outreach for accessibility roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -12545,7 +12545,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Prompt Engineering Fresher Toolkit',
             text: 'Use ToolShala resources to sharpen prompt outputs, improve resume quality, and send better AI-role outreach.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Explore Career Tools',
             secondaryLink: './career.html'
           }
@@ -12716,7 +12716,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Teacher Career Starter Kit',
             text: 'Use ToolShala resources to craft a stronger teacher resume, organize your prep plan, and send better school job applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Weekly Study Planner',
             secondaryLink: './weekly-study-planner-template.html'
           }
@@ -12775,7 +12775,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Weekly Study Planner',
             primaryLink: './weekly-study-planner-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -12830,7 +12830,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Special Education Career Toolkit',
             text: 'Use ToolShala resources to improve your teaching resume, organize classroom plans, and prepare better school applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Weekly Study Planner',
             secondaryLink: './weekly-study-planner-template.html'
           }
@@ -12944,7 +12944,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your English Teaching Starter Toolkit',
             text: 'Use ToolShala resources to improve your teaching resume, plan lessons, and send professional applications for English teaching roles.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13003,7 +13003,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -13060,7 +13060,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Content Brief Template',
             primaryLink: './content-brief-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -13400,7 +13400,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Career Counseling Transition Toolkit',
             text: 'Use ToolShala resources to improve your counselor resume, organize guidance templates, and send professional role applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13457,7 +13457,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Assessment Design Career Toolkit',
             text: 'Use ToolShala resources to sharpen your resume, structure your assessment portfolio, and send professional job applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13514,7 +13514,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Teacher-to-LXD Transition Toolkit',
             text: 'Use ToolShala resources to improve your transition resume, structure case studies, and send professional learning-design applications.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13571,7 +13571,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your School Counseling Transition Toolkit',
             text: 'Use ToolShala resources to improve your counselor resume, draft professional communication, and prepare better role applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13628,7 +13628,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your STEM Teacher Job Toolkit',
             text: 'Use ToolShala resources to polish your teaching resume, structure stronger lesson communication, and prepare professional job applications.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13685,7 +13685,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Corporate Trainer Transition Toolkit',
             text: 'Use ToolShala resources to refine your trainer resume, improve session communication, and send professional role applications.',
             primaryLabel: 'Use Resume Bullet Point Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13742,7 +13742,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your LMS Transition Toolkit',
             text: 'Use ToolShala resources to polish your transition resume, improve professional communication, and apply confidently for LMS/eLearning roles.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13799,9 +13799,9 @@ window.ToolShalaArticleContent = {
             title: 'Build Your YouTube Growth Career Toolkit',
             text: 'Use ToolShala resources to strengthen your strategy resume, generate content ideas, and pitch growth services professionally.',
             primaryLabel: 'Use YouTube / Shorts Script Generator',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
+            primaryLink: './tools/youtube-shorts-script-generator',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -13856,7 +13856,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your UGC Creator Toolkit',
             text: 'Use ToolShala resources to generate better scripts, polish your creator profile, and send professional brand pitches.',
             primaryLabel: 'Use YouTube / Shorts Script Generator',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
+            primaryLink: './tools/youtube-shorts-script-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -13913,9 +13913,9 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Short-Form Creator Toolkit',
             text: 'Use ToolShala resources to generate better scripts, plan content calendars, and pitch your creator services professionally.',
             primaryLabel: 'Use YouTube / Shorts Script Generator',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
+            primaryLink: './tools/youtube-shorts-script-generator',
             secondaryLabel: 'Use Instagram Caption Generator',
-            secondaryLink: './tool.html?tool=instagram-caption-generator'
+            secondaryLink: './tools/instagram-caption-generator'
           }
         }
       },
@@ -13970,7 +13970,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Thumbnail Designer Toolkit',
             text: 'Use ToolShala resources to improve your profile messaging, generate better video hooks, and pitch design services professionally.',
             primaryLabel: 'Use Resume Headline Generator',
-            primaryLink: './tool.html?tool=resume-headline-generator',
+            primaryLink: './tools/resume-headline-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14027,7 +14027,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Podcast Creator Toolkit',
             text: 'Use ToolShala resources to generate episode ideas, polish your profile messaging, and send professional collaboration pitches.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14084,7 +14084,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Newsletter Creator Toolkit',
             text: 'Use ToolShala resources to generate issue ideas, sharpen writing quality, and send professional sponsorship or collaboration outreach.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14143,7 +14143,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Professional Email Template',
             primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -14198,7 +14198,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Creator SEO Toolkit',
             text: 'Use ToolShala resources to generate content ideas, sharpen profile messaging, and send professional growth outreach.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14257,7 +14257,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Professional Email Template',
             primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Resume Headline Generator',
-            secondaryLink: './tool.html?tool=resume-headline-generator'
+            secondaryLink: './tools/resume-headline-generator'
           }
         }
       },
@@ -14314,7 +14314,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Professional Email Template',
             primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Content Idea Generator',
-            secondaryLink: './tool.html?tool=content-idea-generator'
+            secondaryLink: './tools/content-idea-generator'
           }
         }
       },
@@ -14369,7 +14369,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Monetization Strategy Toolkit',
             text: 'Use ToolShala resources to plan better offers, improve outreach communication, and build stronger monetization-ready profiles.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14426,7 +14426,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Repurposing Strategy Toolkit',
             text: 'Use ToolShala resources to generate content angles, improve outreach communication, and build stronger repurposing portfolios.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14483,7 +14483,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your YouTube Analytics Toolkit',
             text: 'Use ToolShala resources to prepare content insights, improve reporting communication, and pitch analytics services professionally.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14540,7 +14540,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Reels Script Writer Toolkit',
             text: 'Use ToolShala resources to generate script ideas, improve creator communication, and prepare professional outreach.',
             primaryLabel: 'Use YouTube / Shorts Script Generator',
-            primaryLink: './tool.html?tool=youtube-shorts-script-generator',
+            primaryLink: './tools/youtube-shorts-script-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-format-template.html'
           }
@@ -14599,7 +14599,7 @@ window.ToolShalaArticleContent = {
             primaryLabel: 'Use Professional Email Template',
             primaryLink: './professional-email-format-template.html',
             secondaryLabel: 'Use Content Idea Generator',
-            secondaryLink: './tool.html?tool=content-idea-generator'
+            secondaryLink: './tools/content-idea-generator'
           }
         }
       },
@@ -14654,9 +14654,9 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Affiliate Content Strategy Toolkit',
             text: 'Use ToolShala resources to plan content, improve messaging, and create strong application or client-pitch assets.',
             primaryLabel: 'Use Content Idea Generator',
-            primaryLink: './tool.html?tool=content-idea-generator',
+            primaryLink: './tools/content-idea-generator',
             secondaryLabel: 'Use Resume Bullet Point Generator',
-            secondaryLink: './tool.html?tool=resume-bullet-point-generator'
+            secondaryLink: './tools/resume-bullet-point-generator'
           }
         }
       },
@@ -21252,7 +21252,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Sports Psychology Career Toolkit',
             text: 'ToolShala resources use karke study planning, case documentation, resume bullets, outreach messaging, and interview preparation ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -21311,7 +21311,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Strength and Conditioning Toolkit',
             text: 'ToolShala resources use karke coaching plan design, resume bullets, communication templates, and profile-ready documentation ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -21660,7 +21660,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Local SEO Toolkit',
             text: 'ToolShala resources use karke audit templates, outreach communication, resume bullets, and local SEO case studies ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -21718,7 +21718,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your WhatsApp Marketing Toolkit',
             text: 'ToolShala resources use karke campaign scripts, message templates, resume bullets, and outreach communication ko structured banao.',
             primaryLabel: 'Use WhatsApp Message Generator',
-            primaryLink: './tool.html?tool=whatsapp-message-generator',
+            primaryLink: './tools/whatsapp-message-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -21776,7 +21776,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your E-commerce Growth Toolkit',
             text: 'ToolShala resources use karke growth case studies, campaign communication, and resume-ready outputs ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -22762,7 +22762,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Bookkeeping + GST Toolkit',
             text: 'ToolShala resources use karke accounting trackers, resume bullets, and professional client communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -22820,7 +22820,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Retention Toolkit',
             text: 'ToolShala resources use karke follow-up systems, retention case studies, resume bullets, and outreach communication ko structured banao.',
             primaryLabel: 'Use WhatsApp Message Generator',
-            primaryLink: './tool.html?tool=whatsapp-message-generator',
+            primaryLink: './tools/whatsapp-message-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -22878,7 +22878,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your BDE Growth Toolkit',
             text: 'ToolShala resources use karke outreach scripts, CRM-ready trackers, resume bullets, and professional follow-up communication ko structured banao.',
             primaryLabel: 'Use WhatsApp Message Generator',
-            primaryLink: './tool.html?tool=whatsapp-message-generator',
+            primaryLink: './tools/whatsapp-message-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -22936,7 +22936,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Retail Operations Toolkit',
             text: 'ToolShala resources use karke operations checklists, reporting templates, resume bullets, and professional communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -22994,7 +22994,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your SME CRM Toolkit',
             text: 'ToolShala resources use karke CRM workflows, automation scripts, resume bullets, and professional client communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23052,7 +23052,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Market Research Toolkit',
             text: 'ToolShala resources use karke survey frameworks, insight summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -23110,7 +23110,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Procurement Career Toolkit',
             text: 'ToolShala resources use karke sourcing templates, resume bullets, and professional vendor communication drafts ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23168,7 +23168,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Category Management Toolkit',
             text: 'ToolShala resources use karke category case studies, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Content Brief Template',
             secondaryLink: './content-brief-template.html'
           }
@@ -23226,7 +23226,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Franchise Growth Toolkit',
             text: 'ToolShala resources use karke expansion playbooks, pitch summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23284,7 +23284,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Success Toolkit',
             text: 'ToolShala resources use karke customer communication, resume positioning, and outreach workflows ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23342,7 +23342,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Strategy Consulting Toolkit',
             text: 'ToolShala resources use karke case summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23401,7 +23401,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your B2B Sales Toolkit',
             text: 'ToolShala resources use karke outreach messages, resume bullets, and professional follow-up communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23459,7 +23459,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Market Expansion Toolkit',
             text: 'ToolShala resources use karke expansion case summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23517,7 +23517,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your RevOps Analyst Toolkit',
             text: 'ToolShala resources use karke resume bullets, reporting summaries, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23575,7 +23575,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Success Operations Toolkit',
             text: 'ToolShala resources use karke process summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23633,7 +23633,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your SME BI Toolkit',
             text: 'ToolShala resources use karke dashboard summaries, resume bullets, and professional reporting communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23691,7 +23691,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Growth PM Toolkit',
             text: 'ToolShala resources use karke case summaries, resume bullets, and professional product-growth communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23749,7 +23749,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Partnership Strategy Toolkit',
             text: 'ToolShala resources use karke outreach summaries, resume bullets, and professional partner communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23807,7 +23807,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Vendor Management Toolkit',
             text: 'ToolShala resources use karke vendor case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23865,7 +23865,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Revenue Analyst Toolkit',
             text: 'ToolShala resources use karke revenue case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23923,7 +23923,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Deal Desk Toolkit',
             text: 'ToolShala resources use karke deal summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -23981,7 +23981,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Sales Enablement Toolkit',
             text: 'ToolShala resources use karke onboarding notes, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24039,7 +24039,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Contract Management Toolkit',
             text: 'ToolShala resources use karke contract case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24097,7 +24097,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Portfolio Management Toolkit',
             text: 'ToolShala resources use karke strategy case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24155,7 +24155,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your SME Business Analyst Toolkit',
             text: 'ToolShala resources use karke case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24213,7 +24213,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Onboarding Toolkit',
             text: 'ToolShala resources use karke onboarding case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24271,7 +24271,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your BI Analyst Toolkit',
             text: 'ToolShala resources use karke dashboard case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24329,7 +24329,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Pricing Strategy Toolkit',
             text: 'ToolShala resources use karke pricing case summaries, resume bullets, and professional client outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24387,7 +24387,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Process Consulting Toolkit',
             text: 'ToolShala resources use karke process case summaries, resume bullets, and professional client communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24445,7 +24445,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Assistant PMM Toolkit',
             text: 'ToolShala resources use karke launch case summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24503,7 +24503,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Lifecycle Marketing Toolkit',
             text: 'ToolShala resources use karke lifecycle campaign summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24561,7 +24561,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Demand Generation Toolkit',
             text: 'ToolShala resources use karke demand-gen case summaries, resume bullets, and professional outreach communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24619,7 +24619,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Insights Toolkit',
             text: 'ToolShala resources use karke research summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24677,7 +24677,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your BI Architecture Toolkit',
             text: 'ToolShala resources use karke architecture case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24735,7 +24735,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Supply Chain Planning Toolkit',
             text: 'ToolShala resources use karke planning case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24793,7 +24793,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Sales Compensation Toolkit',
             text: 'ToolShala resources use karke compensation case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24851,7 +24851,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Market Expansion Analyst Toolkit',
             text: 'ToolShala resources use karke expansion case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24909,7 +24909,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Revenue Intelligence Toolkit',
             text: 'ToolShala resources use karke revenue intelligence case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }
@@ -24967,7 +24967,7 @@ window.ToolShalaArticleContent = {
             title: 'Build Your Customer Lifecycle Analytics Toolkit',
             text: 'ToolShala resources use karke lifecycle case summaries, resume bullets, and professional stakeholder communication ko structured banao.',
             primaryLabel: 'Use Resume Bullet Generator',
-            primaryLink: './tool.html?tool=resume-bullet-point-generator',
+            primaryLink: './tools/resume-bullet-point-generator',
             secondaryLabel: 'Use Professional Email Template',
             secondaryLink: './professional-email-template.html'
           }

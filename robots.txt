@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /components.html
+Disallow: /404.html
+Disallow: /tool.html
+Disallow: /guide.html
+Disallow: /opportunity-details.html
+Disallow: /mock-test/exam.html
 
 Sitemap: https://toolshala.in/sitemap.xml
