@@ -282,13 +282,28 @@
           submitButton.textContent = 'Sending...';
 
           try {
-            await new Promise((resolve) => setTimeout(resolve, 900));
-            setStatus('success', 'Message sent successfully. Thanks for reaching out to ToolShala. Thanks for being part of ToolShala.');
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                name: fields.contactName.node.value.trim(),
+                email: fields.contactEmail.node.value.trim(),
+                subject: fields.contactSubject.node.value.trim(),
+                message: fields.contactMessage.node.value.trim(),
+                page: `${window.location.pathname || '/'}${window.location.search || ''}`
+              })
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || data?.ok === false) {
+              throw new Error(data?.error || "We couldn't send your message right now. Please try again.");
+            }
+            setStatus('success', 'Message sent successfully. Thanks for reaching out to ToolShala.');
             window.ToolShalaToast?.show('success', 'Message sent successfully.', 'Thanks for reaching out to ToolShala.');
             form.reset();
           } catch (error) {
-            setStatus('error', "We couldn't send your message right now. Please try again.");
-            window.ToolShalaToast?.show('error', "We couldn't send your message right now.", 'Please try again.');
+            const message = error?.message || "We couldn't send your message right now. Please try again.";
+            setStatus('error', message);
+            window.ToolShalaToast?.show('error', "We couldn't send your message right now.", message);
           } finally {
             submitButton.disabled = false;
             submitButton.textContent = 'Send Message';

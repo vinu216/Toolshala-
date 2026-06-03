@@ -33,6 +33,17 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/api/newsletter"
+  to = "/.netlify/functions/newsletter"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

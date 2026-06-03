@@ -2124,6 +2124,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+  const postJson = async (url, payload) => {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || data?.ok === false) {
+      throw new Error(data?.error || 'Request failed.');
+    }
+
+    return data;
+  };
+
+  const getCurrentPagePath = () => `${window.location.pathname || '/'}${window.location.search || ''}`;
+
   const copyText = async (text) => {
     if (!text) {
       return false;
@@ -2353,13 +2370,18 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = loadingLabel;
 
         try {
-          await wait(750);
+          await postJson('/api/newsletter', {
+            email,
+            source: form.getAttribute('data-newsletter-source') || (form.closest('footer') ? 'footer' : 'newsletter'),
+            page: getCurrentPagePath()
+          });
           setNewsletterStatus(statusNode, 'success', FEEDBACK_MESSAGES.newsletterSuccess);
           showToast('success', "You're subscribed successfully.", 'Useful updates will reach your inbox soon.');
           form.reset();
         } catch (error) {
-          setNewsletterStatus(statusNode, 'error', FEEDBACK_MESSAGES.newsletterError);
-          showToast('error', 'Something went wrong.', 'Please try again in a moment.');
+          const message = error?.message || FEEDBACK_MESSAGES.newsletterError;
+          setNewsletterStatus(statusNode, 'error', message);
+          showToast('error', 'Something went wrong.', message);
         } finally {
           submitButton.disabled = false;
           submitButton.textContent = defaultLabel;
