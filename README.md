@@ -28,9 +28,9 @@ Tagline: **AI Tools, Career Help, Opportunities & Templates**
 - `data/articles.js`: SEO guide architecture data (25 metadata-first article entries)
 - `data/tool-definitions.js`: metadata + input schema for all working tools
 - `tools-engine.js`: reusable tool runtime (form rendering, validation, loading, output, copy)
-- `tool.html`: reusable tool detail template for canonical `/tools/<tool-id>` routes
+- `tool.html`: reusable tool detail page (`tool.html?tool=<tool-id>`)
 - `guides.html`: listing page for SEO guide topics
-- `guide.html`: reusable guide detail template for canonical `/guides/<article-slug>` routes
+- `guide.html`: reusable guide detail template powered by `slug` query param
 - `data.js`: legacy compatibility adapter mapped from `data/content.js`
 
 ## Refactor Notes
@@ -69,9 +69,9 @@ Tagline: **AI Tools, Career Help, Opportunities & Templates**
 
 - If styles look broken, hard refresh the browser to clear cached CSS.
 - If a tool page does not render, verify the URL uses a valid tool id:
-  `/tools/<tool-id>`.
+  `tool.html?tool=<tool-id>`.
 - If guide pages are blank, check the slug parameter format:
-  `/guides/<article-slug>`.
+  `guide.html?slug=<article-slug>`.
 
 ## Dynamic-Ready Data Architecture
 
@@ -138,8 +138,10 @@ ToolShala now includes a scalable SEO guide architecture without full article bo
 ### Routing Strategy
 
 - Listing page: `guides.html`
-- Detail route: `/guides/<article-slug>`
-- Netlify rewrites `/guides/<slug>` to `guide.html` and `/tools/<tool-id>` to `tool.html` while preserving canonical clean URLs.
+- Detail template: `guide.html?slug=<article-slug>`
+- Future pretty URL target: `/guides/<slug>`
+
+Current static implementation maps `/guides/<slug>` style internal links to the template route automatically in `script.js`.
 
 ### Listing and Related Logic
 

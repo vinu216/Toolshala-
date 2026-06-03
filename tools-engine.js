@@ -2666,7 +2666,7 @@ ${senderName}`;
         disclaimer: 'Choose ideas that match your audience’s questions, not just trends.',
         cta: platform === 'instagram'
           ? {
-            href: './tools/instagram-caption-generator',
+            href: './tool.html?tool=instagram-caption-generator',
             label: 'Generate Instagram Captions',
             text: 'Turn your selected Instagram idea into ready-to-post captions in one click.'
           }
@@ -5364,8 +5364,7 @@ ${senderName}`;
     }
 
     const params = new URLSearchParams(window.location.search);
-    const pathToolMatch = window.location.pathname.match(/\/tools\/([^/]+)\/?$/);
-    const requestedToolId = pathToolMatch ? decodeURIComponent(pathToolMatch[1]) : params.get('tool');
+    const requestedToolId = params.get('tool');
     const toolId = requestedToolId || toolDefinitions[0].id;
     const hasInvalidToolQuery = Boolean(requestedToolId) && !isValidToolId(requestedToolId);
     const tool = hasInvalidToolQuery ? null : getToolById(toolId);
@@ -5426,11 +5425,6 @@ ${senderName}`;
     if (ogDescription) ogDescription.setAttribute('content', searchableDescription);
     if (twitterTitle) twitterTitle.setAttribute('content', `${tool.title} | ToolShala`);
     if (twitterDescription) twitterDescription.setAttribute('content', searchableDescription);
-    const canonicalToolUrl = `https://toolshala.in/tools/${encodeURIComponent(tool.id)}`;
-    const canonicalNode = document.querySelector('link[rel="canonical"]');
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (canonicalNode) canonicalNode.setAttribute('href', canonicalToolUrl);
-    if (ogUrl) ogUrl.setAttribute('content', canonicalToolUrl);
     titleNode.textContent = tool.title;
     descriptionNode.textContent = tool.description;
     categoryNode.textContent = tool.category;

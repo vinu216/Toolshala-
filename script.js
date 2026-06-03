@@ -404,11 +404,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (isTranscriptionPage) {
       examLinkHeading = 'Other AI Tools';
       examLinks = [
-        { href: `${footerBasePath}tools/photo-to-text`, label: 'Photo to Text' },
-        { href: `${footerBasePath}tools/instagram-caption-generator`, label: 'Instagram Caption Generator' },
-        { href: `${footerBasePath}tools/content-idea-generator`, label: 'Content Idea Generator' },
-        { href: `${footerBasePath}tools/notes-to-bullet-points-converter`, label: 'Notes to Bullet Points' },
-        { href: `${footerBasePath}tools/reel-shorts-hook-generator`, label: 'Reel & Shorts Hook Generator' },
+        { href: `${footerBasePath}tool.html?tool=photo-to-text`, label: 'Photo to Text' },
+        { href: `${footerBasePath}tool.html?tool=instagram-caption-generator`, label: 'Instagram Caption Generator' },
+        { href: `${footerBasePath}tool.html?tool=content-idea-generator`, label: 'Content Idea Generator' },
+        { href: `${footerBasePath}tool.html?tool=notes-to-bullet-points-converter`, label: 'Notes to Bullet Points' },
+        { href: `${footerBasePath}tool.html?tool=reel-shorts-hook-generator`, label: 'Reel & Shorts Hook Generator' },
         { href: `${footerBasePath}tools.html`, label: 'All AI Tools' }
       ];
     } else if (isOpportunitiesPage) {
@@ -725,7 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (path.startsWith('/guides/')) {
       const slug = path.replace('/guides/', '').replace(/^\/+/, '');
-      return `./guides/${encodeURIComponent(slug)}`;
+      return `./guide.html?slug=${encodeURIComponent(slug)}`;
     }
 
     return routeMap[path] || path;
@@ -809,7 +809,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resolveGuideLink = (guide) => {
     const canonicalPath = getGuidePath(guide);
     const slug = normalizeGuideSlug(canonicalPath || guide?.slug || guide || '');
-    return `./guides/${encodeURIComponent(slug)}`;
+    return `./guide.html?slug=${encodeURIComponent(slug)}`;
   };
 
   const getRelatedGuides = (currentGuide, limit = 3) => {
@@ -1392,8 +1392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const params = new URLSearchParams(window.location.search);
-    const pathGuideMatch = window.location.pathname.match(/\/guides\/([^/]+)\/?$/);
-    const slug = normalizeGuideSlug(pathGuideMatch ? decodeURIComponent(pathGuideMatch[1]) : params.get('slug') || '');
+    const slug = normalizeGuideSlug(params.get('slug') || '');
     const guide = seoGuides.find((entry) => normalizeGuideSlug(entry.slug) === slug);
 
     if (!guide) {
