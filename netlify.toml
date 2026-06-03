@@ -3,6 +3,16 @@
   publish = "."
 
 [[redirects]]
+  from = "/tools/:tool"
+  to = "/tool.html?tool=:tool"
+  status = 200
+
+[[redirects]]
+  from = "/guides/:slug"
+  to = "/guide.html?slug=:slug"
+  status = 200
+
+[[redirects]]
   from = "/api/generate"
   to = "/.netlify/functions/generate"
   status = 200

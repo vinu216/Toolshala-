@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run sitemap && vite build",
     "lint": "node --check data/articles.js",
     "preview": "vite preview",
-    "start": "vite preview"
+    "start": "vite preview",
+    "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",
