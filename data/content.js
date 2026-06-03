@@ -17,7 +17,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['ocr', 'image-to-text', 'photo', 'productivity', 'ai'],
         ctaLabel: 'Extract Text',
-        url: './tools/photo-to-text'
+        url: './tool.html?tool=photo-to-text'
       },
 
       {
@@ -45,7 +45,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['ats-resume', 'resume-optimizer', 'resume-keywords', 'jobs', 'fresher'],
         ctaLabel: 'Optimize Resume',
-        url: './tools/ats-resume-optimizer'
+        url: './tool.html?tool=ats-resume-optimizer'
       },
 
       {
@@ -60,7 +60,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['resume-tailor', 'job-description-parser', 'resume-keyword-match', 'jobs', 'career'],
         ctaLabel: 'Tailor Resume',
-        url: './tools/job-description-to-resume-tailor'
+        url: './tool.html?tool=job-description-to-resume-tailor'
       },
 
       {
@@ -75,7 +75,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['salary-negotiation-script', 'counter-offer', 'offer-discussion', 'salary', 'career'],
         ctaLabel: 'Generate Scripts',
-        url: './tools/salary-negotiation-script-generator'
+        url: './tool.html?tool=salary-negotiation-script-generator'
       },
 
       {
@@ -89,7 +89,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['resume', 'jobs', 'fresher'],
         ctaLabel: 'Use Tool',
-        url: './tools/resume-headline-generator'
+        url: './tool.html?tool=resume-headline-generator'
       },
       {
         id: 'tool-leave-application-generator',
@@ -102,7 +102,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['letter', 'formal-writing'],
         ctaLabel: 'Generate Now',
-        url: './tools/leave-application-generator'
+        url: './tool.html?tool=leave-application-generator'
       },
       {
         id: 'tool-instagram-caption-generator',
@@ -115,7 +115,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['captions', 'instagram', 'creators'],
         ctaLabel: 'Try Tool',
-        url: './tools/instagram-caption-generator'
+        url: './tool.html?tool=instagram-caption-generator'
       },
       {
         id: 'tool-instagram-bio-generator',
@@ -128,7 +128,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['instagram', 'bio', 'branding', 'creator'],
         ctaLabel: 'Generate Bio',
-        url: './tools/instagram-bio-generator'
+        url: './tool.html?tool=instagram-bio-generator'
       },
 
       {
@@ -142,7 +142,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['linkedin', 'headline', 'personal-branding', 'job-search'],
         ctaLabel: 'Generate Headlines',
-        url: './tools/linkedin-headline-generator'
+        url: './tool.html?tool=linkedin-headline-generator'
       },
 
       {
@@ -156,7 +156,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['linkedin', 'profile', 'branding'],
         ctaLabel: 'Build Bio',
-        url: './tools/linkedin-bio-generator'
+        url: './tool.html?tool=linkedin-bio-generator'
       },
       {
         id: 'tool-cover-letter-generator',
@@ -169,7 +169,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['cover-letter', 'application', 'jobs'],
         ctaLabel: 'Create Letter',
-        url: './tools/cover-letter-generator'
+        url: './tool.html?tool=cover-letter-generator'
       },
       {
         id: 'tool-study-timetable-generator',
@@ -182,7 +182,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['study-plan', 'exam', 'planner'],
         ctaLabel: 'Plan My Week',
-        url: './tools/study-timetable-generator'
+        url: './tool.html?tool=study-timetable-generator'
       },
       {
         id: 'tool-daily-priority-planner',
@@ -196,7 +196,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['daily-priority-planner', 'to-do-planner', 'task-planner', 'productivity', 'planner'],
         ctaLabel: 'Plan My Day',
-        url: './tools/daily-priority-planner'
+        url: './tool.html?tool=daily-priority-planner'
       },
 
       {
@@ -211,7 +211,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['study-planner', 'student-timetable-generator', 'exam-study-plan', 'revision', 'planner'],
         ctaLabel: 'Generate Planner',
-        url: './tools/student-study-planner-generator'
+        url: './tool.html?tool=student-study-planner-generator'
       },
 
       {
@@ -226,7 +226,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['exam-revision-timetable', 'revision-planner', 'study-timetable', 'exam-prep', 'revision'],
         ctaLabel: 'Generate Timetable',
-        url: './tools/exam-revision-timetable-generator'
+        url: './tool.html?tool=exam-revision-timetable-generator'
       },
 
       {
@@ -241,7 +241,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['project-idea-generator', 'student-project-ideas', 'fresher-projects', 'portfolio', 'career'],
         ctaLabel: 'Generate Ideas',
-        url: './tools/project-idea-generator-students-freshers'
+        url: './tool.html?tool=project-idea-generator-students-freshers'
       },
 
       {
@@ -256,7 +256,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['freelance-proposal-generator', 'proposal-writer', 'client-pitch', 'freelance', 'career'],
         ctaLabel: 'Generate Proposal',
-        url: './tools/freelance-proposal-generator'
+        url: './tool.html?tool=freelance-proposal-generator'
       },
 
       {
@@ -271,7 +271,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['client-onboarding-checklist', 'freelancer-onboarding', 'client-welcome-checklist', 'freelance', 'checklist'],
         ctaLabel: 'Generate Checklist',
-        url: './tools/client-onboarding-checklist-generator'
+        url: './tool.html?tool=client-onboarding-checklist-generator'
       },
 
       {
@@ -286,7 +286,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['freelancer-invoice-generator', 'invoice-maker', 'billing-text-generator', 'freelance', 'invoice'],
         ctaLabel: 'Generate Invoice',
-        url: './tools/freelancer-invoice-generator'
+        url: './tool.html?tool=freelancer-invoice-generator'
       },
 
       {
@@ -301,7 +301,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['freelance-rate-card-generator', 'pricing-calculator', 'service-packages', 'freelance', 'rate-card'],
         ctaLabel: 'Generate Rate Card',
-        url: './tools/freelance-rate-card-generator'
+        url: './tool.html?tool=freelance-rate-card-generator'
       },
 
       {
@@ -315,7 +315,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['career', 'ai', 'skills'],
         ctaLabel: 'Explore Path',
-        url: './tools/ai-career-path-suggestor'
+        url: './tool.html?tool=ai-career-path-suggestor'
       },
       {
         id: 'tool-scholarship-recommendation-tool',
@@ -328,7 +328,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['scholarship', 'opportunities', 'students'],
         ctaLabel: 'Find Scholarships',
-        url: './tools/scholarship-recommendation-tool'
+        url: './tool.html?tool=scholarship-recommendation-tool'
       },
 
       {
@@ -342,7 +342,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['formal-letter', 'application', 'request', 'complaint'],
         ctaLabel: 'Generate Letter',
-        url: './tools/formal-letter-generator'
+        url: './tool.html?tool=formal-letter-generator'
       },
 
       {
@@ -357,7 +357,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['follow-up-email-generator', 'interview-follow-up', 'application-follow-up', 'email', 'job-search'],
         ctaLabel: 'Generate Follow-up',
-        url: './tools/follow-up-email-generator'
+        url: './tool.html?tool=follow-up-email-generator'
       },
 
       {
@@ -371,7 +371,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['email', 'writing', 'internship'],
         ctaLabel: 'Generate Now',
-        url: './tools/professional-email-generator'
+        url: './tool.html?tool=professional-email-generator'
       },
       {
         id: 'tool-newsletter-subject-line-generator',
@@ -385,7 +385,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['newsletter-subject-line-generator', 'email-subject-generator', 'open-rates', 'newsletter', 'creator'],
         ctaLabel: 'Generate Subjects',
-        url: './tools/newsletter-subject-line-generator'
+        url: './tool.html?tool=newsletter-subject-line-generator'
       },
 
       {
@@ -399,7 +399,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['email', 'subject-line', 'professional-writing'],
         ctaLabel: 'Generate Subjects',
-        url: './tools/email-subject-line-generator'
+        url: './tool.html?tool=email-subject-line-generator'
       },
       {
         id: 'tool-whatsapp-message-generator',
@@ -412,7 +412,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['whatsapp', 'messages', 'communication'],
         ctaLabel: 'Generate Messages',
-        url: './tools/whatsapp-message-generator'
+        url: './tool.html?tool=whatsapp-message-generator'
       },
 
       {
@@ -426,7 +426,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['hashtag', 'social-media', 'instagram', 'linkedin'],
         ctaLabel: 'Generate Hashtags',
-        url: './tools/hashtag-generator'
+        url: './tool.html?tool=hashtag-generator'
       },
 
       {
@@ -441,7 +441,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['reel-hook-generator', 'shorts-hook-generator', 'viral-hook-ideas', 'reels', 'shorts'],
         ctaLabel: 'Generate Hooks',
-        url: './tools/reel-shorts-hook-generator'
+        url: './tool.html?tool=reel-shorts-hook-generator'
       },
 
       {
@@ -456,7 +456,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['content-repurposing-generator', 'content-repurpose-tool', 'creator-workflow', 'repurpose-content', 'social-media'],
         ctaLabel: 'Repurpose Content',
-        url: './tools/content-repurposing-generator-creators'
+        url: './tool.html?tool=content-repurposing-generator-creators'
       },
 
       {
@@ -471,7 +471,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['social-media-content-calendar-generator', 'content-planner', 'posting-schedule', 'creator', 'social-media'],
         ctaLabel: 'Generate Calendar',
-        url: './tools/social-media-content-calendar-generator'
+        url: './tool.html?tool=social-media-content-calendar-generator'
       },
 
       {
@@ -485,7 +485,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['content', 'creator', 'ideas'],
         ctaLabel: 'Try Tool',
-        url: './tools/content-idea-generator'
+        url: './tool.html?tool=content-idea-generator'
       },
 
       {
@@ -499,7 +499,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['resume', 'bullet-points', 'ats', 'internship'],
         ctaLabel: 'Generate Bullets',
-        url: './tools/resume-bullet-point-generator'
+        url: './tool.html?tool=resume-bullet-point-generator'
       },
 
       {
@@ -513,7 +513,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['resume', 'summary', 'ats', 'fresher'],
         ctaLabel: 'Generate Summaries',
-        url: './tools/resume-summary-generator'
+        url: './tool.html?tool=resume-summary-generator'
       },
       {
         id: 'tool-interview-answer-generator',
@@ -526,7 +526,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['interview', 'star-method', 'fresher'],
         ctaLabel: 'Generate Answers',
-        url: './tools/interview-answer-generator'
+        url: './tool.html?tool=interview-answer-generator'
       },
       {
         id: 'tool-sop-generator',
@@ -539,7 +539,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['sop', 'admissions', 'scholarship'],
         ctaLabel: 'Generate SOP',
-        url: './tools/sop-generator'
+        url: './tool.html?tool=sop-generator'
       },
       {
         id: 'tool-cold-dm-outreach-message-generator',
@@ -553,7 +553,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['cold-dm-generator', 'outreach-message', 'linkedin-dm', 'networking', 'communication'],
         ctaLabel: 'Generate Outreach',
-        url: './tools/cold-dm-outreach-message-generator'
+        url: './tool.html?tool=cold-dm-outreach-message-generator'
       },
 
       {
@@ -567,7 +567,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['linkedin', 'networking', 'message'],
         ctaLabel: 'Generate Messages',
-        url: './tools/linkedin-networking-message-generator'
+        url: './tool.html?tool=linkedin-networking-message-generator'
       },
       {
         id: 'tool-job-description-analyzer',
@@ -580,7 +580,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['job-description', 'resume-keywords', 'skills'],
         ctaLabel: 'Analyze JD',
-        url: './tools/job-description-analyzer'
+        url: './tool.html?tool=job-description-analyzer'
       },
 
       {
@@ -594,7 +594,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['grammar', 'sentence-improver', 'writing', 'clarity'],
         ctaLabel: 'Improve Text',
-        url: './tools/grammar-corrector-sentence-improver'
+        url: './tool.html?tool=grammar-corrector-sentence-improver'
       },
       {
         id: 'tool-paragraph-rewriter-humanizer',
@@ -607,7 +607,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['paragraph', 'rewriter', 'humanizer', 'writing'],
         ctaLabel: 'Humanize Paragraph',
-        url: './tools/paragraph-rewriter-humanizer'
+        url: './tool.html?tool=paragraph-rewriter-humanizer'
       },
       {
         id: 'tool-assignment-rewriter',
@@ -620,7 +620,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['assignment', 'rewriter', 'paraphraser'],
         ctaLabel: 'Rewrite Assignment',
-        url: './tools/assignment-rewriter'
+        url: './tool.html?tool=assignment-rewriter'
       },
       {
         id: 'tool-youtube-video-title-generator',
@@ -634,7 +634,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['youtube-title-generator', 'video-title-ideas', 'seo-video-titles', 'youtube', 'creator'],
         ctaLabel: 'Generate Titles',
-        url: './tools/youtube-video-title-generator'
+        url: './tool.html?tool=youtube-video-title-generator'
       },
 
       {
@@ -648,7 +648,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['youtube', 'shorts', 'script', 'creator'],
         ctaLabel: 'Generate Scripts',
-        url: './tools/youtube-shorts-script-generator'
+        url: './tool.html?tool=youtube-shorts-script-generator'
       },
 
       {
@@ -662,7 +662,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['notes', 'bullet-points', 'image-notes', 'revision', 'exam-prep'],
         ctaLabel: 'Convert Notes',
-        url: './tools/notes-to-bullet-points-converter'
+        url: './tool.html?tool=notes-to-bullet-points-converter'
       },
 
       {
@@ -677,7 +677,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['concept-simplifier', 'topic-explainer', 'study-explainer', 'student-tool', 'study'],
         ctaLabel: 'Explain Topic',
-        url: './tools/concept-simplifier-topic-explainer'
+        url: './tool.html?tool=concept-simplifier-topic-explainer'
       },
 
       {
@@ -692,7 +692,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['lecture-notes-summarizer', 'notes-to-summary', 'study-notes-generator', 'image-notes-summary', 'revision'],
         ctaLabel: 'Summarize Notes',
-        url: './tools/lecture-notes-summarizer'
+        url: './tool.html?tool=lecture-notes-summarizer'
       },
       {
         id: 'tool-flashcard-generator',
@@ -706,7 +706,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['flashcard-generator', 'study-flashcards', 'notes-to-flashcards', 'image-flashcards', 'revision', 'study'],
         ctaLabel: 'Generate Flashcards',
-        url: './tools/flashcard-generator'
+        url: './tool.html?tool=flashcard-generator'
       },
 
       {
@@ -721,7 +721,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['quiz-generator', 'mcq-generator', 'question-generator', 'image-to-quiz', 'study', 'teacher-tool'],
         ctaLabel: 'Generate Quiz',
-        url: './tools/quiz-mcq-generator'
+        url: './tool.html?tool=quiz-mcq-generator'
       },
 
       {
@@ -736,7 +736,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['lesson-plan-generator', 'teacher-lesson-plan', 'class-plan-generator', 'teacher-tool', 'study'],
         ctaLabel: 'Generate Lesson Plan',
-        url: './tools/lesson-plan-generator-for-teachers'
+        url: './tool.html?tool=lesson-plan-generator-for-teachers'
       },
 
       {
@@ -751,7 +751,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['classroom-activity-planner', 'teacher-activity-generator', 'class-activity-ideas', 'teacher-tool', 'study'],
         ctaLabel: 'Plan Activities',
-        url: './tools/classroom-activity-planner-teachers'
+        url: './tool.html?tool=classroom-activity-planner-teachers'
       },
 
       {
@@ -766,7 +766,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['parent-teacher-meeting-notes', 'meeting-summary-generator', 'teacher-report-notes', 'ptm-notes', 'teacher-tool'],
         ctaLabel: 'Generate PTM Notes',
-        url: './tools/parent-teacher-meeting-note-generator'
+        url: './tool.html?tool=parent-teacher-meeting-note-generator'
       },
 
       {
@@ -781,7 +781,7 @@ window.ToolShalaContent = {
         featured: true,
         tags: ['worksheet-generator', 'practice-sheet-generator', 'homework-sheet-maker', 'teacher-tool', 'study'],
         ctaLabel: 'Generate Worksheet',
-        url: './tools/worksheet-practice-sheet-generator'
+        url: './tool.html?tool=worksheet-practice-sheet-generator'
       },
 
       {
@@ -795,7 +795,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['scholarship', 'finder', 'recommendation'],
         ctaLabel: 'Get Recommendations',
-        url: './tools/scholarship-finder'
+        url: './tool.html?tool=scholarship-finder'
       },
       {
         id: 'tool-career-path-quiz',
@@ -808,7 +808,7 @@ window.ToolShalaContent = {
         featured: false,
         tags: ['career', 'quiz', 'path', 'skills'],
         ctaLabel: 'Suggest Paths',
-        url: './tools/career-path-quiz'
+        url: './tool.html?tool=career-path-quiz'
       }
     ],
     opportunities: [
