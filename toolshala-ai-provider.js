@@ -516,7 +516,12 @@
 
     if (items.length !== 5) return null;
     if (!items.some((item) => item.bestPick)) items[0].bestPick = true;
-    return { type: 'cards', items };
+    const visualAnalysis = String(payload?.visualAnalysis || '').trim();
+    const copyText = [
+      visualAnalysis ? `Image / Context Analysis: ${visualAnalysis}` : '',
+      items.map((item) => item.copyText).join('\n\n')
+    ].filter(Boolean).join('\n\n');
+    return { type: 'cards', items, copyText, disclaimer: visualAnalysis || null };
   };
 
   const normalizeLinkedinResult = (payload) => {

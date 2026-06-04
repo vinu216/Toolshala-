@@ -2,7 +2,7 @@ import visionConfig from './_vision-config.cjs';
 
 const { buildVisionConfig: buildSharedVisionConfig, getEnvString, getVisionConfigError } = visionConfig;
 
-const PROVIDER_TIMEOUT_MS = 25000;
+const PROVIDER_TIMEOUT_MS = 45000;
 const MAX_SAFE_REQUEST_BYTES = 7 * 1024 * 1024;
 const DEFAULT_MAX_FILE_MB = 4;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
@@ -44,7 +44,7 @@ const buildVisionConfig = () => buildSharedVisionConfig({
   modelEnv: 'FLASHCARD_IMAGE_MODEL',
   baseUrlEnv: 'FLASHCARD_IMAGE_BASE_URL',
   defaultOpenAiModel: 'gpt-4o-mini',
-  defaultNvidiaModel: 'meta/llama-3.2-90b-vision-instruct'
+  defaultNvidiaModel: 'meta/llama-3.2-11b-vision-instruct'
 });
 
 const clampFlashcardCount = (value) => {
@@ -148,7 +148,7 @@ export const handler = async (event) => {
     if (!text) return jsonResponse(422, { error: 'No readable study content was found in this image. Try a clearer or higher-resolution photo.' });
     return jsonResponse(200, { text });
   } catch (error) {
-    if (error?.name === 'AbortError') return jsonResponse(504, { error: 'Vision provider timed out. Please try a smaller or clearer image.' });
+    if (error?.name === 'AbortError') return jsonResponse(504, { error: 'Vision provider timed out while analyzing the image. The upload was received, but the provider took too long. Please crop to the notes area or try a clearer, smaller image.' });
     return jsonResponse(502, { error: error?.message || 'Vision provider failed. Please try another clear image.' });
   } finally {
     clearTimeout(timeout);

@@ -80,12 +80,17 @@ Strength: ${v.strength || 'Not provided'}`
   'instagram-caption-generator': {
     schema: {
       name: 'instagram_caption_response', strict: true,
-      schema: { type: 'object', additionalProperties: false, properties: { captions: { type: 'array', minItems: 5, maxItems: 5, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, style: { type: 'string' }, bestPick: { type: 'boolean' }, hashtags: { type: 'array', items: { type: 'string' } } }, required: ['text', 'style', 'bestPick', 'hashtags'] } } }, required: ['captions'] }
+      schema: { type: 'object', additionalProperties: false, properties: { visualAnalysis: { type: 'string' }, captions: { type: 'array', minItems: 5, maxItems: 5, items: { type: 'object', additionalProperties: false, properties: { text: { type: 'string' }, style: { type: 'string' }, bestPick: { type: 'boolean' }, hashtags: { type: 'array', items: { type: 'string' } } }, required: ['text', 'style', 'bestPick', 'hashtags'] } } }, required: ['visualAnalysis', 'captions'] }
     },
     validate: (v) => v.topic && v.contentType && v.tone,
     prompt: (v) => ({
       system: 'You are an Instagram content strategist. Generate practical, natural captions with style variety.',
-      user: `Generate 5 caption options JSON with one bestPick=true.\nTopic: ${v.topic}\nContent Type: ${v.contentType}\nTone: ${v.tone}\nKeywords: ${v.keywords || 'Not provided'}`
+      user: `Generate JSON with visualAnalysis and exactly 5 caption options with one bestPick=true.
+Topic: ${v.topic}
+Content Type: ${v.contentType}
+Tone: ${v.tone}
+Keywords: ${v.keywords || 'Not provided'}
+Caption styles in order: catchy, minimal, playful, aesthetic, CTA-style.`
     })
   },
   'linkedin-bio-generator': {
