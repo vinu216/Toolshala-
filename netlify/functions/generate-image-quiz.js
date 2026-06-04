@@ -59,7 +59,7 @@ const buildSystemPrompt = () => [
   'If the image shows a diagram, chart, page, object, or scene, base questions on clearly visible elements and labels.',
   'Do not invent unsupported facts or include unrelated questions.',
   'If there is not enough visible content for the requested count, create fewer grounded questions and mention that limitation briefly.',
-  'Return clean Markdown only. Include a short quiz title and a numbered list.',
+  'Return clean Markdown only. Include a short quiz title and a numbered list. Do not use markdown tables, pipe-delimited rows, or raw | separators.',
   'Each question must include exactly these labels: Difficulty, Question, Options, Correct Answer, Short Explanation.',
   'For MCQ questions, Options must include A, B, C, and D and only one correct answer.',
   'For short-answer questions, write Options: N/A (Short Answer).',

@@ -63,7 +63,7 @@ const buildPrompt = ({ topicTitle, flashcardCount, difficulty, outputStyle, file
   'Read only the visible content in the image: notes, document text, textbook page, slide text, chart labels, diagram labels, or whiteboard content.',
   'Do not invent facts, examples, labels, definitions, or answers that are not visible or strongly supported by the image.',
   'If part of the image is unclear, avoid making flashcards from that unclear part.',
-  'Return clean Markdown only with a short heading and numbered flashcards.',
+  'Return clean Markdown only with a short heading and numbered flashcards. Do not use markdown tables, pipe-delimited rows, or raw | separators.',
   'Each flashcard must include exactly these labels:',
   '- Question: one short direct question',
   '- Answer: one short accurate answer',

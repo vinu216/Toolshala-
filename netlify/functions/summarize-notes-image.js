@@ -56,7 +56,7 @@ const buildPrompt = ({ subject, summaryLength, summaryStyle, fileName }) => [
   'Read only the visible content in the image: class notes, textbook text, slides, diagrams, or whiteboard notes.',
   'Do not invent facts, definitions, examples, formulas, dates, or headings that are not visible or strongly supported by the image.',
   'If text is unclear, mention that the image text is unclear instead of guessing.',
-  'Return clean Markdown with these sections:',
+  'Return clean Markdown with these sections. Do not use markdown tables, pipe-delimited rows, or raw | separators:',
   '## Concise Summary',
   '## Key Points',
   '## Important Definitions',

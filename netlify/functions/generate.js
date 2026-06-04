@@ -52,7 +52,7 @@ exports.handler = async (event) => {
         messages: [
           {
             role: 'system',
-            content: 'You create clean, readable Markdown responses for ToolShala. Use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.'
+            content: 'You create clean, readable Markdown responses for ToolShala. Use short headings, bold labels, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML, markdown tables, pipe-delimited rows, or raw | separators.'
           },
           { role: 'user', content: prompt }
         ],

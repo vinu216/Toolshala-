@@ -28,7 +28,7 @@ const buildPrompt = ({ topicTitle, flashcardCount, difficulty, outputStyle, file
   `Output style: ${outputStyle || 'simple'}.`,
   'Use only visible image content. Do not invent unsupported facts.',
   'If image text or diagram elements are unclear, do not create cards from unclear content.',
-  'Return clean Markdown with numbered flashcards. Each card must include Question, Answer, Memory Hint, and optional Difficulty.'
+  'Return clean Markdown with numbered flashcards. Each card must include Question, Answer, Memory Hint, and optional Difficulty. Do not use markdown tables, pipe-delimited rows, or raw | separators.'
 ].join('\n');
 
 export default async function handler(req, res) {
