@@ -79,9 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const topNav = document.querySelector('.top-nav');
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const mobilePanel = document.querySelector('[data-mobile-panel]');
-  const mobileLinks = document.querySelectorAll('[data-mobile-panel] a');
 
   const normalizePath = (value = '') => value.replace(/^\.\//, '').replace(/^\//, '');
   const getRelativeRootPath = () => {
@@ -255,6 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
   setupActiveNavigation();
   setupStickyNavShadow();
   setupTelegramFeedback();
+
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobilePanel = document.querySelector('[data-mobile-panel]');
+  const mobileLinks = document.querySelectorAll('[data-mobile-panel] a');
 
   if (menuToggle && mobilePanel) {
     const iconPath = menuToggle.querySelector('path');
