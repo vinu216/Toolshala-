@@ -1,7 +1,9 @@
 import visionConfig from './_vision-config.cjs';
 
-const { buildVisionConfig: buildSharedVisionConfig, getEnvString, getVisionConfigError } = visionConfig;
+const { getEnvString, getVisionConfigError } = visionConfig;
 
+const NVIDIA_CHAT_COMPLETIONS_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions';
+const NVIDIA_PHOTO_TO_TEXT_MODEL = 'meta/llama-3.2-11b-vision-instruct';
 const PROVIDER_TIMEOUT_MS = 25000;
 const MAX_SAFE_REQUEST_BYTES = 11 * 1024 * 1024;
 const DEFAULT_MAX_FILE_MB = 8;
@@ -37,13 +39,11 @@ const parseImagePayload = (imageBase64 = '') => {
   return { mimeType: '', base64: value };
 };
 
-const buildPhotoToTextConfig = () => buildSharedVisionConfig({
-  providerEnv: 'PHOTO_TO_TEXT_PROVIDER',
-  apiKeyEnv: 'PHOTO_TO_TEXT_API_KEY',
-  modelEnv: 'PHOTO_TO_TEXT_MODEL',
-  baseUrlEnv: 'PHOTO_TO_TEXT_BASE_URL',
-  defaultOpenAiModel: 'gpt-4o-mini',
-  defaultNvidiaModel: 'meta/llama-3.2-11b-vision-instruct'
+const buildPhotoToTextConfig = () => ({
+  provider: 'nvidia',
+  apiKey: getEnvString('PHOTO_TO_TEXT_API_KEY', getEnvString('NVIDIA_API_KEY')),
+  model: NVIDIA_PHOTO_TO_TEXT_MODEL,
+  endpoint: NVIDIA_CHAT_COMPLETIONS_ENDPOINT
 });
 
 const OCR_SYSTEM_PROMPT = [
@@ -103,7 +103,7 @@ const callVisionChatOcr = async ({ config, base64, mimeType, fileName, signal })
     throw new Error(configError);
   }
 
-  const response = await fetch(`${config.baseUrl}/chat/completions`, {
+  const response = await fetch(config.endpoint, {
     method: 'POST',
     signal,
     headers: {

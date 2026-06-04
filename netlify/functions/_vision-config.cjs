@@ -48,12 +48,12 @@ const getVisionConfigError = (toolName, config) => {
     return `Unsupported ${toolName} provider "${config.provider}". Set a supported provider: nvidia, openai, or openai-compatible.`;
   }
   if (!config.apiKey) {
-    if (config.provider === 'nvidia') return `${toolName} is not configured. Add NVIDIA_API_KEY on the server, or set ${toolName.includes('Photo') ? 'PHOTO_TO_TEXT_PROVIDER' : 'VISION_PROVIDER'}=openai with OPENAI_API_KEY.`;
+    if (config.provider === 'nvidia') return `${toolName} is not configured. Add NVIDIA_API_KEY${toolName.includes('Photo') ? ' or PHOTO_TO_TEXT_API_KEY' : ''} on the server.`;
     if (config.provider === 'openai') return `${toolName} is not configured. Add OPENAI_API_KEY on the server, or set VISION_PROVIDER=nvidia with NVIDIA_API_KEY.`;
     return `${toolName} is not configured. Add VISION_API_KEY (or the tool-specific API key), VISION_BASE_URL, and a vision-capable model on the server.`;
   }
   if (!config.model) return `${toolName} model is not configured. Add a vision-capable model env var.`;
-  if (!config.baseUrl) return `${toolName} base URL is not configured. Add the provider base URL env var.`;
+  if (!config.baseUrl && !config.endpoint) return `${toolName} endpoint is not configured. Add the provider endpoint/base URL env var.`;
   return '';
 };
 

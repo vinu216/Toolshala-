@@ -3,6 +3,16 @@
   publish = "."
 
 [[redirects]]
+  from = "/photo-to-text"
+  to = "/tool.html?tool=photo-to-text"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/photo-to-text.html"
+  to = "/tool.html?tool=photo-to-text"
+  status = 301
+  force = true
+[[redirects]]
   from = "/api/generate"
   to = "/.netlify/functions/generate"
   status = 200
