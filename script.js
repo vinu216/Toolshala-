@@ -2732,45 +2732,124 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateButton = form.querySelector('button[type="submit"]');
     const resetButton = document.getElementById('instagramCaptionReset');
     const outputGrid = document.getElementById('instagramCaptionOutput');
+    const analysisNode = document.getElementById('instagramCaptionAnalysis');
     const errorNode = document.getElementById('instagramCaptionError');
     const loadingNode = document.getElementById('instagramCaptionLoading');
+    const imageInput = document.getElementById('captionImage');
+    const previewWrap = document.getElementById('captionImagePreviewWrap');
+    const previewImage = document.getElementById('captionImagePreview');
+    const imageNameNode = document.getElementById('captionImageName');
+    const imageMetaNode = document.getElementById('captionImageMeta');
+    const removeImageButton = document.getElementById('captionImageRemove');
+    const allowedImageTypes = new Set(['image/jpeg', 'image/png', 'image/webp']);
+    const maxImageBytes = 4 * 1024 * 1024;
+    let selectedImage = null;
+    let previewUrl = '';
 
-    const toneTemplates = {
-      professional: [
-        '{topic} - consistent progress, clean execution, real outcomes.',
-        'Building with intent: {topic}. One focused step every day.',
-        '{topic} in motion. Learning, shipping, improving.'
-      ],
-      motivational: [
-        '{topic} journey starts now. Small wins, big energy.',
-        'No shortcuts, just daily effort and {topic} grind.',
-        '{topic} mode: on. Believe, build, repeat.'
-      ],
-      funny: [
-        'POV: I said 10 mins, spent 3 hours on {topic}.',
-        '{topic} is easy... said no one ever.',
-        'Mood: pretending to relax while still thinking about {topic}.'
-      ],
-      casual: [
-        'Current vibe: {topic} and chill.',
-        '{topic} update. Slow and steady, but solid.',
-        'Aaj ka focus: {topic}. Let us go.'
-      ]
+    const formatFileSize = (bytes = 0) => {
+      if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
     };
 
-    const platformTags = {
-      instagram: '#Instagram #CreatorsOfIndia #DailyPost',
-      reels: '#ReelsIndia #ReelItFeelIt #ContentCreator',
-      linkedin: '#CareerGrowth #Students #Freshers',
-      youtube: '#YouTubeShorts #BuildInPublic #CreatorLife'
+    const clearSelectedImage = () => {
+      selectedImage = null;
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = '';
+      if (imageInput) imageInput.value = '';
+      if (previewImage) previewImage.removeAttribute('src');
+      if (imageNameNode) imageNameNode.textContent = '';
+      if (imageMetaNode) imageMetaNode.textContent = '';
+      previewWrap?.classList.add('hidden');
     };
+
+    const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Could not read the selected image. Please try again.'));
+      reader.readAsDataURL(file);
+    });
 
     const clearOutput = () => {
+      if (analysisNode) {
+        analysisNode.textContent = '';
+        analysisNode.classList.add('hidden');
+      }
       outputGrid.innerHTML = '<p class="tool-empty">Generate captions to see 5 unique options here.</p>';
       showMessage(errorNode, '');
     };
 
+    const renderCaptions = ({ visualAnalysis, captions }) => {
+      const safeAnalysis = String(visualAnalysis || '').trim();
+      if (analysisNode) {
+        if (safeAnalysis) {
+          analysisNode.innerHTML = `<p class="text-xs font-semibold uppercase tracking-wide text-indigo-700">Image / Context Analysis</p><p class="mt-2">${escapeHtml(safeAnalysis)}</p>`;
+          analysisNode.classList.remove('hidden');
+        } else {
+          analysisNode.textContent = '';
+          analysisNode.classList.add('hidden');
+        }
+      }
+
+      outputGrid.innerHTML = '';
+      captions.forEach((entry, index) => {
+        const hashtags = Array.isArray(entry.hashtags) ? entry.hashtags.filter(Boolean).join(' ') : '';
+        const content = [entry.text, hashtags].filter(Boolean).join('\n\n');
+        const card = createGeneratedOutputCard({
+          label: String(index + 1),
+          content,
+          copyTextValue: content,
+          labelPrefix: entry.bestPick ? 'Best Caption' : 'Caption'
+        });
+        const styleNode = document.createElement('p');
+        styleNode.className = 'mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500';
+        styleNode.textContent = `Style: ${entry.style || 'General'}`;
+        card.insertBefore(styleNode, card.querySelector('.mt-4'));
+        outputGrid.appendChild(card);
+      });
+    };
+
     clearOutput();
+
+    imageInput?.addEventListener('change', async () => {
+      showMessage(errorNode, '');
+      const file = imageInput.files?.[0];
+      clearSelectedImage();
+      if (!file) return;
+
+      if (!allowedImageTypes.has(file.type)) {
+        showMessage(errorNode, 'Unsupported image type. Please upload a JPEG, PNG, or WEBP image.');
+        showToast('error', FEEDBACK_MESSAGES.toolValidation);
+        return;
+      }
+
+      if (file.size > maxImageBytes) {
+        showMessage(errorNode, 'Image is too large. Please upload an image up to 4 MB.');
+        showToast('error', FEEDBACK_MESSAGES.toolValidation);
+        return;
+      }
+
+      try {
+        const imageData = await readFileAsDataUrl(file);
+        selectedImage = {
+          imageBase64: imageData,
+          mimeType: file.type,
+          fileName: file.name
+        };
+        previewUrl = URL.createObjectURL(file);
+        if (previewImage) previewImage.src = previewUrl;
+        if (imageNameNode) imageNameNode.textContent = file.name;
+        if (imageMetaNode) imageMetaNode.textContent = `${file.type.replace('image/', '').toUpperCase()} • ${formatFileSize(file.size)}`;
+        previewWrap?.classList.remove('hidden');
+      } catch (error) {
+        clearSelectedImage();
+        showMessage(errorNode, error instanceof Error ? error.message : 'Could not read the selected image. Please try again.');
+      }
+    });
+
+    removeImageButton?.addEventListener('click', () => {
+      clearSelectedImage();
+      showMessage(errorNode, '');
+    });
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -2787,49 +2866,47 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (loadingNode) {
-        loadingNode.textContent = FEEDBACK_MESSAGES.loadingResult;
+        loadingNode.textContent = selectedImage ? 'Analyzing image and generating captions...' : FEEDBACK_MESSAGES.loadingResult;
       }
-      setButtonLoading(generateButton, true, FEEDBACK_MESSAGES.loadingResult);
-      loadingNode.classList.remove('hidden');
-      await wait(820);
+      setButtonLoading(generateButton, true, selectedImage ? 'Analyzing image...' : FEEDBACK_MESSAGES.loadingResult);
+      loadingNode?.classList.remove('hidden');
 
-      const templates = toneTemplates[tone] || toneTemplates.casual;
-      const hashtags = platformTags[platform] || platformTags.instagram;
-      const captions = new Set();
-
-      for (let index = 0; captions.size < 5 && index < 14; index += 1) {
-        const template = templates[index % templates.length];
-        const suffix = [
-          'DM for collab ideas.',
-          'Save this for later.',
-          'Tag your study buddy.',
-          'Share if this is relatable.',
-          'More coming soon.'
-        ][index % 5];
-
-        const caption = `${template.replace('{topic}', topic)} ${suffix} ${hashtags}`;
-        captions.add(caption);
-      }
-
-      outputGrid.innerHTML = '';
-      Array.from(captions).forEach((caption, index) => {
-        outputGrid.appendChild(
-          createGeneratedOutputCard({
-            label: String(index + 1),
-            content: caption,
-            copyTextValue: caption,
-            labelPrefix: 'Caption'
+      try {
+        const response = await fetch('/api/generate-instagram-caption', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic,
+            tone,
+            contentType: platform,
+            ...(selectedImage || {})
           })
-        );
-      });
+        });
 
-      showToast('success', FEEDBACK_MESSAGES.toolSuccess);
-      setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingResult);
-      loadingNode?.classList.add('hidden');
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(String(payload?.error || 'Could not generate captions right now.'));
+        }
+
+        const captions = Array.isArray(payload?.captions) ? payload.captions : [];
+        if (captions.length !== 5) {
+          throw new Error('The caption response was incomplete. Please try again.');
+        }
+
+        renderCaptions({ visualAnalysis: payload.visualAnalysis, captions });
+        showToast('success', FEEDBACK_MESSAGES.toolSuccess);
+      } catch (error) {
+        showMessage(errorNode, error instanceof Error ? error.message : 'Could not generate captions right now.');
+        showToast('error', FEEDBACK_MESSAGES.generalError);
+      } finally {
+        setButtonLoading(generateButton, false, FEEDBACK_MESSAGES.loadingResult);
+        loadingNode?.classList.add('hidden');
+      }
     });
 
     resetButton?.addEventListener('click', () => {
       form.reset();
+      clearSelectedImage();
       clearOutput();
       loadingNode?.classList.add('hidden');
     });

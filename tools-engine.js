@@ -4124,6 +4124,91 @@ ${senderName}`;
       reader.readAsDataURL(file);
     });
 
+  const loadImageFromDataUrl = (file, imageDataUrl) =>
+    new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error(`Could not decode ${file?.name || 'the selected image'} in this browser. Please try a different clear JPEG, PNG, or WEBP image.`));
+      image.src = imageDataUrl;
+    });
+
+  const canvasToBlobSafe = (canvas, type, quality) =>
+    new Promise((resolve) => {
+      if (typeof canvas.toBlob === 'function') {
+        canvas.toBlob(resolve, type, quality);
+        return;
+      }
+
+      const dataUrl = canvas.toDataURL(type, quality);
+      const [header = '', base64 = ''] = dataUrl.split(',');
+      const mimeMatch = header.match(/^data:([^;]+)/i);
+      const mimeType = mimeMatch?.[1] || type;
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) {
+        bytes[index] = binary.charCodeAt(index);
+      }
+      resolve(new Blob([bytes], { type: mimeType }));
+    });
+
+  const blobToDataUrl = (blob) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Could not prepare the optimized image. Please try another file.'));
+      reader.readAsDataURL(blob);
+    });
+
+  const optimizeVisionImageForUpload = async (file, {
+    maxDimension = 1400,
+    maxOutputBytes = Math.floor(1.35 * 1024 * 1024),
+    qualities = [0.82, 0.74, 0.66, 0.58, 0.5]
+  } = {}) => {
+    const sourceDataUrl = await readFileAsDataUrl(file);
+    const image = await loadImageFromDataUrl(file, sourceDataUrl);
+    const width = image.naturalWidth || image.width;
+    const height = image.naturalHeight || image.height;
+    if (!width || !height) throw new Error('Invalid image payload. Please upload a readable JPEG, PNG, or WEBP image.');
+
+    const scale = Math.min(1, maxDimension / Math.max(width, height));
+    const targetWidth = Math.max(1, Math.round(width * scale));
+    const targetHeight = Math.max(1, Math.round(height * scale));
+    const canvas = document.createElement('canvas');
+    canvas.width = targetWidth;
+    canvas.height = targetHeight;
+    const context = canvas.getContext('2d', { alpha: false });
+    if (!context) throw new Error('Could not optimize this image in your browser. Please try another image.');
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, targetWidth, targetHeight);
+    context.drawImage(image, 0, 0, targetWidth, targetHeight);
+
+    let optimizedBlob = null;
+    for (const quality of qualities) {
+      const candidate = await canvasToBlobSafe(canvas, 'image/jpeg', quality);
+      if (!candidate) continue;
+      optimizedBlob = candidate;
+      if (candidate.size <= maxOutputBytes) break;
+    }
+
+    if (!optimizedBlob || optimizedBlob.size > maxOutputBytes) {
+      throw new Error('Image is too detailed to process safely. Please crop it to the notes area or upload a smaller/clearer image.');
+    }
+
+    const optimizedDataUrl = await blobToDataUrl(optimizedBlob);
+    const imageBase64 = optimizedDataUrl.replace(/^data:[^;]+;base64,/i, '');
+    if (!imageBase64) throw new Error('Invalid image payload. Please upload the image again.');
+
+    return {
+      imageBase64,
+      mimeType: 'image/jpeg',
+      fileName: file.name || 'uploaded-study-image',
+      originalSize: file.size,
+      optimizedSize: optimizedBlob.size,
+      width: targetWidth,
+      height: targetHeight
+    };
+  };
+
   const getSelectedPhoto = (formNode) => formNode.querySelector('input[type="file"][name="image"]')?.files?.[0] || null;
 
   const validatePhotoFile = (file) => {
@@ -4183,7 +4268,6 @@ ${senderName}`;
     const clearImageButton = preview.querySelector('[data-clear-quiz-image]');
 
     let activeMode = 'text';
-    let previewUrl = '';
     let lastValues = null;
     let variantCount = 0;
 
@@ -4197,10 +4281,6 @@ ${senderName}`;
     };
 
     const clearPreview = () => {
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl);
-        previewUrl = '';
-      }
       preview.classList.add('hidden');
       previewImage?.removeAttribute('src');
       if (previewMeta) previewMeta.textContent = '';
@@ -4226,31 +4306,21 @@ ${senderName}`;
     };
 
 
-    const loadImageElement = (file) =>
-      new Promise((resolve, reject) => {
-        const url = URL.createObjectURL(file);
+    const loadImageElement = async (file) => {
+      let imageDataUrl = '';
+      try {
+        imageDataUrl = await readFileAsDataUrl(file);
+      } catch (error) {
+        throw new Error(error?.message || 'Could not read the selected image. Please try another file.');
+      }
+
+      return new Promise((resolve, reject) => {
         const image = new Image();
-        image.onload = () => {
-          URL.revokeObjectURL(url);
-          resolve(image);
-        };
-        image.onerror = () => {
-          URL.revokeObjectURL(url);
-          reject(new Error('Could not load the selected image. Please try another clear JPEG, PNG, or WEBP image.'));
-        };
-        image.src = url;
+        image.onload = () => resolve(image);
+        image.onerror = () => reject(new Error(`Could not decode ${file?.name || 'the selected image'} in this browser. Please try a different clear JPEG, PNG, or WEBP image.`));
+        image.src = imageDataUrl;
       });
-
-    const canvasToBlob = (canvas, type, quality) =>
-      new Promise((resolve) => canvas.toBlob(resolve, type, quality));
-
-    const blobToDataUrl = (blob) =>
-      new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(String(reader.result || ''));
-        reader.onerror = () => reject(new Error('Could not prepare the optimized image. Please try another file.'));
-        reader.readAsDataURL(blob);
-      });
+    };
 
     const getPayloadByteSize = (payload) => new TextEncoder().encode(JSON.stringify(payload)).length;
 
@@ -4279,7 +4349,7 @@ ${senderName}`;
 
       let optimizedBlob = null;
       for (const quality of IMAGE_QUIZ_CONFIG.jpegQualities) {
-        const candidate = await canvasToBlob(canvas, 'image/jpeg', quality);
+        const candidate = await canvasToBlobSafe(canvas, 'image/jpeg', quality);
         if (!candidate) continue;
         optimizedBlob = candidate;
         if (candidate.size <= IMAGE_QUIZ_CONFIG.maxOptimizedImageSize) break;
@@ -4453,10 +4523,20 @@ ${senderName}`;
         showToast('error', 'Please check the image.', validationMessage);
         return;
       }
-      previewUrl = URL.createObjectURL(file);
-      if (previewImage) previewImage.src = previewUrl;
-      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
-      preview.classList.remove('hidden');
+      readFileAsDataUrl(file)
+        .then((imageDataUrl) => {
+          if (previewImage) previewImage.src = imageDataUrl;
+          if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+          preview.classList.remove('hidden');
+        })
+        .catch((error) => {
+          const message = error?.message || 'Could not read the selected image. Please try another file.';
+          setFieldError(formNode, 'quizImage', message);
+          errorNode.textContent = message;
+          errorNode.classList.remove('hidden');
+          fileInput.value = '';
+          showToast('error', 'Please check the image.', message);
+        });
     });
 
     clearImageButton?.addEventListener('click', () => {
@@ -4542,7 +4622,6 @@ ${senderName}`;
     const clearImageButton = preview.querySelector('[data-clear-flashcard-image]');
 
     let activeMode = 'text';
-    let previewUrl = '';
     let lastValues = null;
     let variantCount = 0;
 
@@ -4554,8 +4633,6 @@ ${senderName}`;
       return '';
     };
     const clearPreview = () => {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      previewUrl = '';
       preview.classList.add('hidden');
       previewImage?.removeAttribute('src');
       if (previewMeta) previewMeta.textContent = '';
@@ -4591,13 +4668,11 @@ ${senderName}`;
         setFieldError(formNode, 'flashcardImage', validationMessage);
         throw new Error(validationMessage);
       }
-      const imageData = await readFileAsDataUrl(file);
-      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
-      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      const optimizedImage = await optimizeVisionImageForUpload(file);
       return {
-        imageBase64,
-        mimeType: file.type,
-        fileName: file.name || 'flashcard-study-image',
+        imageBase64: optimizedImage.imageBase64,
+        mimeType: optimizedImage.mimeType,
+        fileName: optimizedImage.fileName || 'flashcard-study-image',
         topicTitle: commonValues.topicTitle,
         flashcardCount: commonValues.flashcardCount,
         difficulty: commonValues.difficulty,
@@ -4712,10 +4787,20 @@ ${senderName}`;
         fileInput.value = '';
         return;
       }
-      previewUrl = URL.createObjectURL(file);
-      previewImage.src = previewUrl;
-      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
-      preview.classList.remove('hidden');
+      readFileAsDataUrl(file)
+        .then((imageDataUrl) => {
+          if (previewImage) previewImage.src = imageDataUrl;
+          if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+          preview.classList.remove('hidden');
+        })
+        .catch((error) => {
+          const message = error?.message || 'Could not read the selected image. Please try another file.';
+          setFieldError(formNode, 'flashcardImage', message);
+          errorNode.textContent = message;
+          errorNode.classList.remove('hidden');
+          fileInput.value = '';
+          showToast('error', 'Please check the image.', message);
+        });
       lastValues = null;
     });
     clearImageButton.addEventListener('click', () => {
@@ -4796,7 +4881,6 @@ ${senderName}`;
     const clearImageButton = preview.querySelector('[data-clear-bullets-image]');
 
     let activeMode = 'text';
-    let previewUrl = '';
     let lastValues = null;
     let variantCount = 0;
 
@@ -4808,8 +4892,6 @@ ${senderName}`;
       return '';
     };
     const clearPreview = () => {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      previewUrl = '';
       preview.classList.add('hidden');
       previewImage?.removeAttribute('src');
       if (previewMeta) previewMeta.textContent = '';
@@ -4830,14 +4912,12 @@ ${senderName}`;
         setFieldError(formNode, 'bulletsImage', validationMessage);
         throw new Error(validationMessage);
       }
-      const imageData = await readFileAsDataUrl(file);
-      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
-      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      const optimizedImage = await optimizeVisionImageForUpload(file);
       const commonValues = collectTextValues();
       return {
-        imageBase64,
-        mimeType: file.type,
-        fileName: file.name || 'notes-to-bullets-image',
+        imageBase64: optimizedImage.imageBase64,
+        mimeType: optimizedImage.mimeType,
+        fileName: optimizedImage.fileName || 'notes-to-bullets-image',
         topic: commonValues.topic,
         educationLevel: commonValues.educationLevel,
         summaryStyle: commonValues.summaryStyle,
@@ -4952,10 +5032,20 @@ ${senderName}`;
         fileInput.value = '';
         return;
       }
-      previewUrl = URL.createObjectURL(file);
-      previewImage.src = previewUrl;
-      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
-      preview.classList.remove('hidden');
+      readFileAsDataUrl(file)
+        .then((imageDataUrl) => {
+          if (previewImage) previewImage.src = imageDataUrl;
+          if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+          preview.classList.remove('hidden');
+        })
+        .catch((error) => {
+          const message = error?.message || 'Could not read the selected image. Please try another file.';
+          setFieldError(formNode, 'bulletsImage', message);
+          errorNode.textContent = message;
+          errorNode.classList.remove('hidden');
+          fileInput.value = '';
+          showToast('error', 'Please check the image.', message);
+        });
       lastValues = null;
     });
     clearImageButton.addEventListener('click', () => {
@@ -5036,7 +5126,6 @@ ${senderName}`;
     const clearImageButton = preview.querySelector('[data-clear-lecture-image]');
 
     let activeMode = 'text';
-    let previewUrl = '';
     let lastValues = null;
     let variantCount = 0;
 
@@ -5048,8 +5137,6 @@ ${senderName}`;
       return '';
     };
     const clearPreview = () => {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      previewUrl = '';
       preview.classList.add('hidden');
       previewImage?.removeAttribute('src');
       if (previewMeta) previewMeta.textContent = '';
@@ -5070,14 +5157,12 @@ ${senderName}`;
         setFieldError(formNode, 'lectureImage', validationMessage);
         throw new Error(validationMessage);
       }
-      const imageData = await readFileAsDataUrl(file);
-      const imageBase64 = imageData.replace(/^data:[^;]+;base64,/i, '');
-      if (!imageBase64) throw new Error('Could not read the selected image. Please try another file.');
+      const optimizedImage = await optimizeVisionImageForUpload(file);
       const commonValues = collectTextValues();
       return {
-        imageBase64,
-        mimeType: file.type,
-        fileName: file.name || 'lecture-notes-image',
+        imageBase64: optimizedImage.imageBase64,
+        mimeType: optimizedImage.mimeType,
+        fileName: optimizedImage.fileName || 'lecture-notes-image',
         subject: commonValues.subject,
         summaryLength: commonValues.summaryLength,
         summaryStyle: commonValues.summaryStyle
@@ -5191,10 +5276,20 @@ ${senderName}`;
         fileInput.value = '';
         return;
       }
-      previewUrl = URL.createObjectURL(file);
-      previewImage.src = previewUrl;
-      if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
-      preview.classList.remove('hidden');
+      readFileAsDataUrl(file)
+        .then((imageDataUrl) => {
+          if (previewImage) previewImage.src = imageDataUrl;
+          if (previewMeta) previewMeta.textContent = `${file.name || 'Selected image'} · ${formatFileSize(file.size)}`;
+          preview.classList.remove('hidden');
+        })
+        .catch((error) => {
+          const message = error?.message || 'Could not read the selected image. Please try another file.';
+          setFieldError(formNode, 'lectureImage', message);
+          errorNode.textContent = message;
+          errorNode.classList.remove('hidden');
+          fileInput.value = '';
+          showToast('error', 'Please check the image.', message);
+        });
       lastValues = null;
     });
     clearImageButton.addEventListener('click', () => {
@@ -5252,7 +5347,6 @@ ${senderName}`;
 
     const previewImage = preview.querySelector('img');
     const previewMeta = preview.querySelector('[data-photo-file-meta]');
-    let previewUrl = '';
 
     const clearPreview = () => {
       if (previewUrl) {

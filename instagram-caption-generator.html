@@ -33,7 +33,7 @@
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <p class="reveal text-sm font-semibold text-indigo-700">Social Tool</p>
           <h1 class="reveal mt-2 text-4xl font-extrabold tracking-tight text-slate-900">Instagram Caption Generator</h1>
-          <p class="reveal mt-4 max-w-2xl text-slate-600">Topic aur tone choose karo, aur 5 ready-to-post captions pao with relevant hashtags.</p>
+          <p class="reveal mt-4 max-w-2xl text-slate-600">Topic, tone, aur optional image add karo, aur 5 ready-to-post captions pao with visual analysis and relevant hashtags.</p>
         </div>
       </section>
 
@@ -65,8 +65,23 @@
                   <option value="youtube">YouTube Shorts</option>
                 </select>
               </div>
+              <div class="field-wrap">
+                <label class="field-label" for="captionImage">Upload Image (optional)</label>
+                <p class="field-helper">Upload an image to help AI understand the visuals and generate captions with better context. Supports JPG, PNG, or WEBP up to 4 MB.</p>
+                <input class="field-input" id="captionImage" type="file" accept="image/jpeg,image/png,image/webp" />
+                <div id="captionImagePreviewWrap" class="mt-3 hidden rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                  <div class="flex items-start gap-3">
+                    <img id="captionImagePreview" class="h-24 w-24 rounded-xl object-cover" alt="Selected upload preview" />
+                    <div class="min-w-0 flex-1">
+                      <p id="captionImageName" class="truncate text-sm font-semibold text-slate-800"></p>
+                      <p id="captionImageMeta" class="mt-1 text-xs text-slate-500"></p>
+                      <button class="btn-secondary mt-3" id="captionImageRemove" type="button">Remove Image</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div id="instagramCaptionError" class="tool-error hidden"></div>
-              <div id="instagramCaptionLoading" class="tool-loading hidden">Generating unique captions...</div>
+              <div id="instagramCaptionLoading" class="tool-loading hidden">Generating unique captions and image insights...</div>
               <div class="tool-actions">
                 <button class="btn-primary" type="submit">Generate Captions</button>
                 <button class="btn-secondary" id="instagramCaptionReset" type="button">Reset</button>
@@ -84,6 +99,7 @@
 
           <article class="tool-panel reveal">
             <h3>Generated Captions</h3>
+            <div id="instagramCaptionAnalysis" class="mt-4 hidden rounded-2xl border border-indigo-100 bg-indigo-50 p-4 text-sm text-slate-700"></div>
             <div id="instagramCaptionOutput" class="mt-4 grid gap-4"></div>
           </article>
         </div>

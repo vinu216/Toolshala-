@@ -28,6 +28,11 @@
   status = 200
   force = true
 [[redirects]]
+  from = "/api/generate-instagram-caption"
+  to = "/.netlify/functions/generate-instagram-caption"
+  status = 200
+  force = true
+[[redirects]]
   from = "/api/summarize-notes-image"
   to = "/.netlify/functions/summarize-notes-image"
   status = 200
@@ -63,7 +68,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://toolshala.in; font-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://toolshala.in; font-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
