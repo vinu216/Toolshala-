@@ -1,5 +1,9 @@
 const DEFAULT_MAX_FILE_MB = 3.5;
 const MAX_SAFE_REQUEST_BYTES = Math.floor(5.5 * 1024 * 1024);
+import visionConfig from './_vision-config.cjs';
+
+const { buildVisionConfig: buildSharedVisionConfig, getEnvString, getVisionConfigError } = visionConfig;
+
 const PROVIDER_TIMEOUT_MS = 25000;
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
@@ -16,8 +20,6 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body)
 });
 
-const getEnvString = (key, fallback = '') => String(process.env[key] || fallback).trim();
-
 const getMaxImageBytes = () => {
   const configuredMaxMb = Number(getEnvString('IMAGE_QUIZ_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
   const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
@@ -33,59 +35,14 @@ const parseImagePayload = (imageBase64 = '') => {
   return { mimeType: '', base64: value };
 };
 
-const normalizeBaseUrl = (baseUrl = '') => String(baseUrl || '').trim().replace(/\/+$/, '');
-
-const hasExplicitOpenAiModel = () => Boolean(getEnvString('IMAGE_QUIZ_MODEL') || getEnvString('OPENAI_MODEL'));
-
-// Provider selection is explicit and environment-driven: prefer IMAGE_QUIZ_PROVIDER,
-// otherwise use an existing NVIDIA deployment. OpenAI is only auto-selected when
-// both OPENAI_API_KEY and an explicit OPENAI_MODEL/IMAGE_QUIZ_MODEL are set.
-const resolveImageQuizProvider = () => {
-  const explicitProvider = getEnvString('IMAGE_QUIZ_PROVIDER').toLowerCase();
-  if (explicitProvider) return explicitProvider;
-
-  const photoProvider = getEnvString('PHOTO_TO_TEXT_PROVIDER').toLowerCase();
-  if (photoProvider === 'nvidia' && getEnvString('NVIDIA_API_KEY')) return 'nvidia';
-
-  if (getEnvString('NVIDIA_API_KEY')) return 'nvidia';
-
-  if (getEnvString('OPENAI_API_KEY') && hasExplicitOpenAiModel()) return 'openai';
-
-  return '';
-};
-
-const buildVisionConfig = () => {
-  const provider = resolveImageQuizProvider();
-
-  if (provider === 'nvidia') {
-    return {
-      provider,
-      apiKey: getEnvString('IMAGE_QUIZ_API_KEY', getEnvString('NVIDIA_API_KEY')),
-      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('NVIDIA_MODEL', getEnvString('PHOTO_TO_TEXT_MODEL', 'meta/llama-3.2-11b-vision-instruct'))),
-      baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
-    };
-  }
-
-  if (provider === 'openai') {
-    return {
-      provider,
-      apiKey: getEnvString('IMAGE_QUIZ_API_KEY', getEnvString('OPENAI_API_KEY')),
-      model: getEnvString('IMAGE_QUIZ_MODEL', getEnvString('OPENAI_MODEL')),
-      baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL', 'https://api.openai.com/v1'))
-    };
-  }
-
-  if (provider === 'openai-compatible') {
-    return {
-      provider,
-      apiKey: getEnvString('IMAGE_QUIZ_API_KEY'),
-      model: getEnvString('IMAGE_QUIZ_MODEL'),
-      baseUrl: normalizeBaseUrl(getEnvString('IMAGE_QUIZ_BASE_URL'))
-    };
-  }
-
-  return { provider, apiKey: '', model: '', baseUrl: '' };
-};
+const buildVisionConfig = () => buildSharedVisionConfig({
+  providerEnv: 'IMAGE_QUIZ_PROVIDER',
+  apiKeyEnv: 'IMAGE_QUIZ_API_KEY',
+  modelEnv: 'IMAGE_QUIZ_MODEL',
+  baseUrlEnv: 'IMAGE_QUIZ_BASE_URL',
+  defaultOpenAiModel: 'gpt-4o-mini',
+  defaultNvidiaModel: 'meta/llama-3.2-11b-vision-instruct'
+});
 
 const extractMessageContent = (payload = {}) => {
   const content = payload?.choices?.[0]?.message?.content ?? payload?.choices?.[0]?.delta?.content ?? '';
@@ -120,7 +77,7 @@ const buildUserPrompt = ({ topicSubject, questionCount, difficulty, questionType
 
 const isBodyTooLarge = (body = '') => Buffer.byteLength(String(body || ''), 'utf8') > MAX_SAFE_REQUEST_BYTES;
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: corsHeaders, body: '' };
   }
@@ -189,12 +146,9 @@ exports.handler = async (event) => {
   }
 
   const config = buildVisionConfig();
-  if (!['openai', 'openai-compatible', 'nvidia'].includes(config.provider)) {
-    return jsonResponse(500, { error: 'Provider not configured' });
-  }
-
-  if (!config.apiKey || !config.model || !config.baseUrl) {
-    return jsonResponse(500, { error: 'Provider not configured' });
+  const configError = getVisionConfigError('Image quiz generator', config);
+  if (configError) {
+    return jsonResponse(500, { error: configError });
   }
 
   const controller = new AbortController();
