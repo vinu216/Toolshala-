@@ -425,7 +425,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}mock-test/teaching-exams/kvs.html`, label: 'KVS' },
         { href: `${footerBasePath}mock-test/teaching-exams/dsssb.html`, label: 'DSSSB' }
       ];
-    const isHomePage = /(^|\/)index\.html$/.test(currentPath) || currentPath === '/';
+    const isHomePage = /(^|\/)index\.html$/.test(currentPath) || currentPath === '/' || (currentPath.endsWith('/') && !currentPath.includes('/mock-test/'));
+    const isAboutPage = /(^|\/)about\.html$/.test(currentPath);
+    const isContactPage = /(^|\/)contact\.html$/.test(currentPath);
+    const usesPrimaryCategoryFooter = isHomePage || isAboutPage || isContactPage;
+    const primaryCategoryLinks = [
+      { href: `${footerBasePath}tools.html`, label: 'AI Tools' },
+      { href: `${footerBasePath}opportunities.html#internships`, label: 'Internships' },
+      { href: `${footerBasePath}opportunities.html#student-programs`, label: 'Scholarships' },
+      { href: `${footerBasePath}ats-friendly-resume-template.html`, label: 'Resume Templates' },
+      { href: `${footerBasePath}guides.html`, label: 'View All Guides' },
+      { href: `${footerBasePath}linkedin-summary-template.html`, label: 'LinkedIn Templates' }
+    ];
     const isToolsPage = /(^|\/)tools\.html$/.test(currentPath);
     const isTranscriptionPage = /(^|\/)transcription-tool\.html$/.test(currentPath);
     const isOpportunitiesPage = /(^|\/)opportunities\.html$/.test(currentPath) || /(^|\/)opportunity-details\.html$/.test(currentPath);
@@ -535,6 +546,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: `${footerBasePath}career.html`, label: 'Career Guides' },
         { href: `${footerBasePath}contact.html`, label: 'Contact' }
       ];
+    }
+
+    if (usesPrimaryCategoryFooter) {
+      examLinkHeading = 'Categories';
+      examLinks = primaryCategoryLinks;
     }
 
     const seenFooterLinks = new Set();
