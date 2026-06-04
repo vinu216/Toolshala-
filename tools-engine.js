@@ -12,6 +12,38 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
 
+  const SITE_ORIGIN = 'https://toolshala.in';
+
+  const setSeoMetaContent = (selector, value) => {
+    if (!value) return;
+    const node = document.querySelector(selector);
+    if (node) {
+      node.setAttribute('content', value);
+    }
+  };
+
+  const setCanonicalUrl = (absoluteUrl) => {
+    if (!absoluteUrl) return;
+    let canonicalNode = document.querySelector('link[rel="canonical"]');
+    if (!canonicalNode) {
+      canonicalNode = document.createElement('link');
+      canonicalNode.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalNode);
+    }
+    canonicalNode.setAttribute('href', absoluteUrl);
+    setSeoMetaContent('meta[property="og:url"]', absoluteUrl);
+  };
+
+  const setRobotsMeta = (value) => {
+    let robotsNode = document.querySelector('meta[name="robots"]');
+    if (!robotsNode) {
+      robotsNode = document.createElement('meta');
+      robotsNode.setAttribute('name', 'robots');
+      document.head.appendChild(robotsNode);
+    }
+    robotsNode.setAttribute('content', value);
+  };
+
   const renderInlineMarkdown = (value = '') =>
     escapeHtml(value)
       .replace(/`([^`]+)`/g, '<code>$1</code>')
@@ -5403,6 +5435,8 @@ ${senderName}`;
       loadingNode.classList.add('hidden');
       outputNode.setAttribute('aria-busy', 'false');
       outputNode.innerHTML = '<p class="text-slate-600">Invalid tool URL. Go back to <a href="./tools.html" class="text-teal-700 underline">Tools</a> and choose a valid tool.</p>';
+      setRobotsMeta('noindex, follow');
+      setCanonicalUrl(`${SITE_ORIGIN}/tools.html`);
       if (window.console && typeof window.console.warn === 'function') {
         window.console.warn(`[ToolShala] Invalid tool query value: ${requestedToolId}`);
       }
@@ -5419,7 +5453,10 @@ ${senderName}`;
     const ogDescription = document.querySelector('meta[property="og:description"]');
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const canonicalToolUrl = `${SITE_ORIGIN}/tool.html?tool=${encodeURIComponent(tool.id)}`;
     const searchableDescription = tool.metaDescription || tool.description;
+    setCanonicalUrl(canonicalToolUrl);
+    setRobotsMeta('index, follow');
     if (metaDescription) metaDescription.setAttribute('content', searchableDescription);
     if (ogTitle) ogTitle.setAttribute('content', `${tool.title} | ToolShala`);
     if (ogDescription) ogDescription.setAttribute('content', searchableDescription);

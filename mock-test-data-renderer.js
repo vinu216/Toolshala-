@@ -1,6 +1,24 @@
 (function () {
   const data = window.mockTestData;
   if (!data) return;
+
+  const SITE_ORIGIN = 'https://toolshala.in';
+  const setSeoMetaContent = (selector, value) => {
+    if (!value) return;
+    const node = document.querySelector(selector);
+    if (node) node.setAttribute('content', value);
+  };
+  const setCanonicalUrl = (absoluteUrl) => {
+    if (!absoluteUrl) return;
+    let canonicalNode = document.querySelector('link[rel="canonical"]');
+    if (!canonicalNode) {
+      canonicalNode = document.createElement('link');
+      canonicalNode.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalNode);
+    }
+    canonicalNode.setAttribute('href', absoluteUrl);
+    setSeoMetaContent('meta[property="og:url"]', absoluteUrl);
+  };
   const teachingExamHighlights = {
     bstc: 'BSTC aspirants ke liye foundational pedagogy + Rajasthan-focused MCQ practice sets.',
     ptet: 'PTET ke liye teaching aptitude, reasoning aur exam pattern based mock practice.',
@@ -248,6 +266,7 @@
     if (metaDescription) {
       metaDescription.setAttribute('content', `Practice ${exam.title} with 10 full-length mock tests, timed questions, and exam-focused preparation on ToolShala.`);
     }
+    setCanonicalUrl(`${SITE_ORIGIN}/mock-test/teaching-exams/${encodeURIComponent(teachingExamSlug)}.html`);
 
     const examTitle = document.getElementById('teaching-exam-title');
     const examIntro = document.getElementById('teaching-exam-intro');
@@ -321,6 +340,9 @@
   if (examPage && examSlug) {
     const exam = data.exams[examSlug];
     if (!exam) return;
+    document.title = `${exam.title} Mock Test Practice | ToolShala`;
+    setSeoMetaContent('meta[name="description"]', `${exam.title} mock test practice with exam-focused MCQs, timing guidance, and preparation support on ToolShala.`);
+    setCanonicalUrl(`${SITE_ORIGIN}/mock-test/exam.html?exam=${encodeURIComponent(exam.slug)}`);
     document.getElementById('exam-title').textContent = exam.title;
     document.getElementById('exam-description').textContent = exam.description;
     document.getElementById('exam-meta').textContent = `${exam.category} • ${exam.questionsCount} questions • ${exam.duration}`;
