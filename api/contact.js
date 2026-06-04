@@ -6,16 +6,36 @@ const json = (res, status, body) => res.status(status).json(body);
 const normalizeText = (value, maxLength) => String(value || '').trim().slice(0, maxLength);
 const getRequestSize = (body) => Buffer.byteLength(JSON.stringify(body || {}), 'utf8');
 
+const normalizeSupabaseProjectUrl = (rawUrl) => {
+  const value = String(rawUrl || '').trim();
+  if (!value) {
+    return { url: '', error: '' };
+  }
+
+  try {
+    const parsed = new URL(value);
+    if (!['http:', 'https:'].includes(parsed.protocol)) {
+      return { url: '', error: 'Supabase URL must start with http:// or https://.' };
+    }
+
+    return { url: parsed.origin, error: '' };
+  } catch (_error) {
+    return { url: '', error: 'Supabase URL is invalid. Use your project URL, for example https://your-project-ref.supabase.co.' };
+  }
+};
+
+const buildSupabaseRestUrl = (projectUrl, tableName) => new URL(`/rest/v1/${tableName}`, projectUrl).toString();
+
+const shouldSendBearerAuth = (key) => !String(key || '').trim().startsWith('sb_');
+
 const readSupabaseInsertConfig = () => {
-  const url = String(
+  const rawUrl =
     process.env.SUPABASE_URL ||
-      process.env.VITE_SUPABASE_URL ||
-      process.env.NEXT_PUBLIC_SUPABASE_URL ||
-      process.env.PUBLIC_SUPABASE_URL ||
-      ''
-  )
-    .trim()
-    .replace(/\/$/, '');
+    process.env.VITE_SUPABASE_URL ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    process.env.PUBLIC_SUPABASE_URL ||
+    '';
+  const { url, error: urlError } = normalizeSupabaseProjectUrl(rawUrl);
 
   const serviceRoleKey = String(process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE || process.env.SUPABASE_SERVICE_KEY || '').trim();
   const anonKey = String(
@@ -30,10 +50,13 @@ const readSupabaseInsertConfig = () => {
       ''
   ).trim();
 
-  return { url, insertKey: serviceRoleKey || anonKey };
+  return { url, insertKey: serviceRoleKey || anonKey, urlError };
 };
 
-const getSupabaseConfigError = ({ url, insertKey }, storageLabel) => {
+const getSupabaseConfigError = ({ url, insertKey, urlError }, storageLabel) => {
+  if (urlError) {
+    return `${storageLabel} storage is not configured correctly on the server. ${urlError}`;
+  }
   if (!url && !insertKey) {
     return `${storageLabel} storage is not configured on the server. Missing Supabase URL and insert key.`;
   }
@@ -67,8 +90,9 @@ export default async function handler(req, res) {
   if (subject.length < 4) return json(res, 400, { error: 'Subject should be at least 4 characters.' });
   if (message.length < 20) return json(res, 400, { error: 'Please add more detail in your message.' });
 
-  const { url, insertKey } = readSupabaseInsertConfig();
-  const configError = getSupabaseConfigError({ url, insertKey }, 'Contact message');
+  const supabaseConfig = readSupabaseInsertConfig();
+  const { url, insertKey } = supabaseConfig;
+  const configError = getSupabaseConfigError(supabaseConfig, 'Contact message');
   if (configError) {
     return json(res, 500, { error: configError });
   }
@@ -77,14 +101,18 @@ export default async function handler(req, res) {
   const timeout = setTimeout(() => controller.abort(), SUPABASE_REST_TIMEOUT_MS);
 
   try {
-    const response = await fetch(`${url}/rest/v1/contact_messages`, {
+    const headers = {
+      apikey: insertKey,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal'
+    };
+    if (shouldSendBearerAuth(insertKey)) {
+      headers.Authorization = `Bearer ${insertKey}`;
+    }
+
+    const response = await fetch(buildSupabaseRestUrl(url, 'contact_messages'), {
       method: 'POST',
-      headers: {
-        apikey: insertKey,
-        Authorization: `Bearer ${insertKey}`,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal'
-      },
+      headers,
       signal: controller.signal,
       body: JSON.stringify({ name, email, subject, message, page, status: 'new' })
     });
