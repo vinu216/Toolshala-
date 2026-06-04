@@ -3572,13 +3572,13 @@ d. जो कम बोलता हो
       const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
       const formatPreservedText=(value='')=>escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
-      const embeddedOptionLine=/^\s*(?:[A-D]|[एबीसीडी])\s*[.)।:-]\s+/i;
+      const embeddedOptionLine=/^\s*(?:[A-D]|[एबीसीडी])\s*[.)।:-]\s+/;
       const optionGuideLabel=/^(.*?)(?:\n\s*)?((?:सही\s+|अशुद्ध वाक्यों का\s+|असंगत\s+)?कूट|विकल्प)(?:\s*\([^)]*\))?\s*[:：]\s*(.*)$/is;
       const stripEmbeddedOptionLines=(value='')=>String(value).split(/\r?\n/).filter((line)=>!embeddedOptionLine.test(line)).join('\n').replace(/(?:\n\s*)?(?:कूट|विकल्प)(?:\s*\([^)]*\))?\s*[:：]\s*$/i,'').trim();
       const splitOptionGuide=(value='')=>{const m=String(value).match(optionGuideLabel);if(!m) return {body:stripEmbeddedOptionLines(value),guide:''};return {body:stripEmbeddedOptionLines(m[1]),guide:stripEmbeddedOptionLines(m[3])};};
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;const reason=splitOptionGuide(m[5]);return {intro:m[1].trim(),statement:stripEmbeddedOptionLines(m[3]),reason:reason.body,guide:reason.guide};};
       const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：]?)(.*)$/is);if(!m) return null;const conclusions=splitOptionGuide(m[5]);return {intro:m[1].trim(),statements:stripEmbeddedOptionLines(m[3]),conclusions:conclusions.body,guide:conclusions.guide};};
-      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(सूची[-\s]*1|सूची[-\s]*I+)\s*[:：](.*?)(?:[;।]\s*)?(सूची[-\s]*2|सूची[-\s]*II)\s*[:：](.*)$/is);if(!m) return null;const l2=splitOptionGuide(m[5]);return {intro:stripEmbeddedOptionLines(m[1]),l1:stripEmbeddedOptionLines(m[3]),l2:l2.body,guide:l2.guide};};
+      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(सूची[-\s]*(?:1|I+)[^\n\r:：]*)(?:\s*[:：])?\s*\r?\n(.*?)(?:\r?\n\s*)+(सूची[-\s]*(?:2|II)[^\n\r:：]*)(?:\s*[:：])?\s*\r?\n(.*)$/is);if(!m) return null;const l2=splitOptionGuide(m[5]);return {intro:stripEmbeddedOptionLines(m[1]),l1Title:m[2].trim(),l1:stripEmbeddedOptionLines(m[3]),l2Title:m[4].trim(),l2:l2.body,guide:l2.guide};};
       function renderStructuredQuestion(q){
         const questionRaw=String(q.question||'');
         const assertionData=q.questionType==='Assertion-Reason'?parseAssertionReason(questionRaw):null;
@@ -3596,7 +3596,7 @@ d. जो कम बोलता हो
         const matching=q.questionType==='Matching'?parseMatching(questionRaw):null;
         if(matching){
           questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
-          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-1:</strong><div class="mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>सूची-2:</strong><div class="mt-2">${formatPreservedText(matching.l2)}</div></div></div>`;
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.l1Title||'सूची-1')}</strong><div class="mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.l2Title||'सूची-2')}</strong><div class="mt-2">${formatPreservedText(matching.l2)}</div></div></div>`;
           return;
         }
         questionText.innerHTML=formatPreservedText(stripEmbeddedOptionLines(questionRaw));
