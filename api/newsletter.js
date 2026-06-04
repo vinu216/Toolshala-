@@ -4,10 +4,44 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
 const json = (res, status, body) => res.status(status).json(body);
 
-const readSupabaseEnv = () => {
-  const url = String(process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || '').trim().replace(/\/$/, '');
-  const serviceRoleKey = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
-  return { url, serviceRoleKey };
+const readSupabaseInsertConfig = () => {
+  const url = String(
+    process.env.SUPABASE_URL ||
+      process.env.VITE_SUPABASE_URL ||
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.PUBLIC_SUPABASE_URL ||
+      ''
+  )
+    .trim()
+    .replace(/\/$/, '');
+
+  const serviceRoleKey = String(process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE || process.env.SUPABASE_SERVICE_KEY || '').trim();
+  const anonKey = String(
+    process.env.SUPABASE_ANON_KEY ||
+      process.env.SUPABASE_PUBLISHABLE_KEY ||
+      process.env.VITE_SUPABASE_ANON_KEY ||
+      process.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.PUBLIC_SUPABASE_ANON_KEY ||
+      process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      ''
+  ).trim();
+
+  return { url, insertKey: serviceRoleKey || anonKey };
+};
+
+const getSupabaseConfigError = ({ url, insertKey }, storageLabel) => {
+  if (!url && !insertKey) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase URL and insert key.`;
+  }
+  if (!url) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase URL.`;
+  }
+  if (!insertKey) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase service-role or anon insert key.`;
+  }
+  return '';
 };
 
 const normalizeText = (value, maxLength = 120) => String(value || '').trim().slice(0, maxLength);
@@ -32,9 +66,10 @@ export default async function handler(req, res) {
     return json(res, 400, { error: 'Please enter a valid email address.' });
   }
 
-  const { url, serviceRoleKey } = readSupabaseEnv();
-  if (!url || !serviceRoleKey) {
-    return json(res, 500, { error: 'Newsletter storage is not configured on the server.' });
+  const { url, insertKey } = readSupabaseInsertConfig();
+  const configError = getSupabaseConfigError({ url, insertKey }, 'Newsletter');
+  if (configError) {
+    return json(res, 500, { error: configError });
   }
 
   const controller = new AbortController();
@@ -44,8 +79,8 @@ export default async function handler(req, res) {
     const response = await fetch(`${url}/rest/v1/subscribers`, {
       method: 'POST',
       headers: {
-        apikey: serviceRoleKey,
-        Authorization: `Bearer ${serviceRoleKey}`,
+        apikey: insertKey,
+        Authorization: `Bearer ${insertKey}`,
         'Content-Type': 'application/json',
         Prefer: 'return=minimal'
       },
