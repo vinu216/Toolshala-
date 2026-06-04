@@ -13,10 +13,44 @@ const jsonResponse = (statusCode, body) => ({ statusCode, headers: corsHeaders, 
 const normalizeText = (value, maxLength) => String(value || '').trim().slice(0, maxLength);
 const isBodyTooLarge = (body = '') => Buffer.byteLength(String(body || ''), 'utf8') > MAX_REQUEST_BYTES;
 
-const readSupabaseEnv = () => {
-  const url = String(process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || '').trim().replace(/\/$/, '');
-  const serviceRoleKey = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
-  return { url, serviceRoleKey };
+const readSupabaseInsertConfig = () => {
+  const url = String(
+    process.env.SUPABASE_URL ||
+      process.env.VITE_SUPABASE_URL ||
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.PUBLIC_SUPABASE_URL ||
+      ''
+  )
+    .trim()
+    .replace(/\/$/, '');
+
+  const serviceRoleKey = String(process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE || process.env.SUPABASE_SERVICE_KEY || '').trim();
+  const anonKey = String(
+    process.env.SUPABASE_ANON_KEY ||
+      process.env.SUPABASE_PUBLISHABLE_KEY ||
+      process.env.VITE_SUPABASE_ANON_KEY ||
+      process.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.PUBLIC_SUPABASE_ANON_KEY ||
+      process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      ''
+  ).trim();
+
+  return { url, insertKey: serviceRoleKey || anonKey };
+};
+
+const getSupabaseConfigError = ({ url, insertKey }, storageLabel) => {
+  if (!url && !insertKey) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase URL and insert key.`;
+  }
+  if (!url) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase URL.`;
+  }
+  if (!insertKey) {
+    return `${storageLabel} storage is not configured on the server. Missing Supabase service-role or anon insert key.`;
+  }
+  return '';
 };
 
 exports.handler = async (event) => {
@@ -42,8 +76,9 @@ exports.handler = async (event) => {
   if (subject.length < 4) return jsonResponse(400, { error: 'Subject should be at least 4 characters.' });
   if (message.length < 20) return jsonResponse(400, { error: 'Please add more detail in your message.' });
 
-  const { url, serviceRoleKey } = readSupabaseEnv();
-  if (!url || !serviceRoleKey) return jsonResponse(500, { error: 'Contact message storage is not configured on the server.' });
+  const { url, insertKey } = readSupabaseInsertConfig();
+  const configError = getSupabaseConfigError({ url, insertKey }, 'Contact message');
+  if (configError) return jsonResponse(500, { error: configError });
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), SUPABASE_REST_TIMEOUT_MS);
@@ -52,8 +87,8 @@ exports.handler = async (event) => {
     const response = await fetch(`${url}/rest/v1/contact_messages`, {
       method: 'POST',
       headers: {
-        apikey: serviceRoleKey,
-        Authorization: `Bearer ${serviceRoleKey}`,
+        apikey: insertKey,
+        Authorization: `Bearer ${insertKey}`,
         'Content-Type': 'application/json',
         Prefer: 'return=minimal'
       },
