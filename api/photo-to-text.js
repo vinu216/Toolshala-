@@ -1,4 +1,5 @@
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const NVIDIA_CHAT_COMPLETIONS_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions';
+const NVIDIA_PHOTO_TO_TEXT_MODEL = 'meta/llama-3.2-11b-vision-instruct';
 const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
 
@@ -23,8 +24,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed. Use POST.' });
   }
 
-  const apiKey = String(process.env.PHOTO_TO_TEXT_API_KEY || process.env.VISION_API_KEY || process.env.OPENAI_API_KEY || '').trim();
-  if (!apiKey) return res.status(500).json({ error: 'Photo to Text OCR is not configured. Add PHOTO_TO_TEXT_API_KEY, VISION_API_KEY, or OPENAI_API_KEY on the server.' });
+  const apiKey = String(process.env.PHOTO_TO_TEXT_API_KEY || process.env.NVIDIA_API_KEY || '').trim();
+  if (!apiKey) return res.status(500).json({ error: 'Photo to Text OCR is not configured. Add PHOTO_TO_TEXT_API_KEY or NVIDIA_API_KEY on the server.' });
 
   const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(req.body?.imageBase64 || req.body?.imageData || '');
   const mimeType = String(req.body?.mimeType || dataUrlMimeType || '').toLowerCase();
@@ -38,11 +39,11 @@ export default async function handler(req, res) {
   if (Buffer.from(normalizedBase64, 'base64').length > MAX_IMAGE_BYTES) return res.status(413).json({ error: 'Image is too large. Please upload an image up to 8 MB.' });
 
   try {
-    const response = await fetch(OPENAI_API_URL, {
+    const response = await fetch(NVIDIA_CHAT_COMPLETIONS_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
-        model: process.env.PHOTO_TO_TEXT_MODEL || process.env.VISION_MODEL || 'gpt-4o-mini',
+        model: NVIDIA_PHOTO_TO_TEXT_MODEL,
         temperature: 0,
         max_tokens: 4096,
         messages: [
@@ -59,7 +60,7 @@ export default async function handler(req, res) {
     });
 
     const payload = await response.json().catch(() => ({}));
-    if (!response.ok) return res.status(response.status).json({ error: payload?.error?.message || 'OpenAI OCR request failed.' });
+    if (!response.ok) return res.status(response.status).json({ error: payload?.error?.message || 'NVIDIA OCR request failed.' });
     const text = normalizeText(payload?.choices?.[0]?.message?.content || '');
     if (!text) return res.status(422).json({ error: 'No readable text was found in this image. Try a clearer or higher-resolution photo.' });
     return res.status(200).json({ text });
