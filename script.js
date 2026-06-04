@@ -1,4 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  const SITE_ORIGIN = 'https://toolshala.in';
+
+  const setSeoMetaContent = (selector, value) => {
+    if (!value) return;
+    const node = document.querySelector(selector);
+    if (node) {
+      node.setAttribute('content', value);
+    }
+  };
+
+  const setCanonicalUrl = (absoluteUrl) => {
+    if (!absoluteUrl) return;
+    let canonicalNode = document.querySelector('link[rel="canonical"]');
+    if (!canonicalNode) {
+      canonicalNode = document.createElement('link');
+      canonicalNode.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalNode);
+    }
+    canonicalNode.setAttribute('href', absoluteUrl);
+    setSeoMetaContent('meta[property="og:url"]', absoluteUrl);
+  };
+
+  const setRobotsMeta = (value) => {
+    let robotsNode = document.querySelector('meta[name="robots"]');
+    if (!robotsNode) {
+      robotsNode = document.createElement('meta');
+      robotsNode.setAttribute('name', 'robots');
+      document.head.appendChild(robotsNode);
+    }
+    robotsNode.setAttribute('content', value);
+  };
+
+  const getCanonicalPathWithAllowedQuery = () => {
+    const path = window.location.pathname || '/';
+    const filePath = path.endsWith('/index.html') ? path.replace(/index\.html$/, '') : path;
+    const params = new URLSearchParams(window.location.search);
+
+    if (filePath.endsWith('/tool.html') && params.get('tool')) {
+      return `${filePath}?tool=${encodeURIComponent(params.get('tool'))}`;
+    }
+
+    if (filePath.endsWith('/guide.html') && params.get('slug')) {
+      return `${filePath}?slug=${encodeURIComponent(params.get('slug'))}`;
+    }
+
+    if (filePath.endsWith('/mock-test/exam.html') && params.get('exam')) {
+      return `${filePath}?exam=${encodeURIComponent(params.get('exam'))}`;
+    }
+
+    return filePath || '/';
+  };
+
+  const setupCanonicalDefaults = () => {
+    setCanonicalUrl(`${SITE_ORIGIN}${getCanonicalPathWithAllowedQuery()}`);
+  };
+
+  setupCanonicalDefaults();
+
   const FEEDBACK_MESSAGES = {
     newsletterSuccess: "You're subscribed successfully. Useful updates will reach your inbox soon.",
     newsletterError: 'Something went wrong. Please try again in a moment.',
@@ -1396,10 +1455,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const guide = seoGuides.find((entry) => normalizeGuideSlug(entry.slug) === slug);
 
     if (!guide) {
+      setRobotsMeta('noindex, follow');
+      setCanonicalUrl(`${SITE_ORIGIN}/guides.html`);
       root.innerHTML = `<section class="section-wrap"><div class="no-results"><p class="empty-title">This page doesn't seem to exist.</p><p class="empty-desc">Let's get you back to something useful.</p><div class="empty-actions"><a href="./guides.html" class="btn-primary">Browse All Guides</a><a href="./index.html" class="btn-secondary">Go Back Home</a></div></div></section>`;
       return;
     }
 
+    setRobotsMeta('index, follow');
     document.title = guide.metaTitle;
     const setMeta = (selector, value) => {
       const node = document.querySelector(selector);
@@ -1590,11 +1652,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const canonicalGuidePath = getGuidePath(guide);
-    setMeta('meta[property="og:url"]', `https://toolshala.in${canonicalGuidePath}`);
-    const canonicalNode = document.querySelector('link[rel="canonical"]');
-    if (canonicalNode) {
-      canonicalNode.setAttribute('href', `https://toolshala.in${canonicalGuidePath}`);
-    }
+    const canonicalGuideUrl = `${SITE_ORIGIN}/guide.html?slug=${encodeURIComponent(normalizeGuideSlug(canonicalGuidePath))}`;
+    setCanonicalUrl(canonicalGuideUrl);
 
     const schemaNode = document.getElementById('guideSchema');
     if (schemaNode) {
@@ -1614,7 +1673,7 @@ document.addEventListener('DOMContentLoaded', () => {
           name: 'ToolShala',
           url: 'https://toolshala.in/'
         },
-        mainEntityOfPage: `https://toolshala.in${canonicalGuidePath}`
+        mainEntityOfPage: canonicalGuideUrl
       };
 
       if (Array.isArray(content?.faq) && content.faq.length) {
