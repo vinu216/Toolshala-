@@ -5619,3 +5619,209 @@ select:focus-visible {
     width: 100%;
   }
 }
+
+/* Home page polish: scoped refinements keep the shared site styles stable. */
+.home-page {
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 48%, #ffffff 100%);
+}
+
+.home-page .hero-bg {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(79, 70, 229, 0.16), transparent 32rem),
+    radial-gradient(circle at 88% 18%, rgba(124, 58, 237, 0.14), transparent 30rem),
+    linear-gradient(155deg, #f4f6ff 0%, #ffffff 54%, #f7f3ff 100%);
+}
+
+.home-hero-inner {
+  min-height: min(44rem, calc(100svh - 5rem));
+}
+
+.home-page .hero-kicker {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08);
+}
+
+.home-page .hero-copy {
+  line-height: 1.72;
+}
+
+.home-page .hero-trust-inline {
+  letter-spacing: 0.01em;
+}
+
+.home-page .hero-showcase {
+  overflow: hidden;
+  isolation: isolate;
+  border-color: #cfd9ff;
+  box-shadow: 0 24px 54px rgba(79, 70, 229, 0.18);
+}
+
+.home-page .hero-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(238, 242, 255, 0.34));
+}
+
+.home-page .hero-stat-grid {
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.home-page .hero-stat-grid article {
+  border-color: #dbe4fb;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.08);
+}
+
+.home-page .section-wrap {
+  padding-block: clamp(3.25rem, 7vw, 5.25rem);
+}
+
+.home-page .home-final-section {
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.home-page .section-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+.home-page .section-head h2 {
+  max-width: 48rem;
+}
+
+.home-page .section-head p {
+  line-height: 1.75;
+}
+
+.home-page .section-kicker {
+  width: fit-content;
+  border-radius: 999px;
+  background: #eef2ff;
+  padding: 0.28rem 0.68rem;
+}
+
+.home-page :is(.feature-card, .item-card, .op-card, .quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card, .trust-stat, .who-card) {
+  border-color: #e1e8f8;
+  border-radius: 1.15rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.055);
+}
+
+.home-page :is(.feature-card, .item-card, .op-card, .quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card, .trust-stat, .who-card):hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 18px 38px rgba(79, 70, 229, 0.13);
+}
+
+.home-page :is(.feature-card, .item-card, .op-card, .quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card) h3 {
+  color: #1e1b4b;
+  line-height: 1.35;
+}
+
+.home-page :is(.feature-card, .item-card, .op-card, .quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card) p {
+  line-height: 1.68;
+}
+
+.home-page :is(.quick-action-grid, .popular-tools-grid, .category-grid, .career-preview-grid, .template-preview-grid, .trust-stats-grid, .who-grid) {
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.home-page :is(.quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card) {
+  padding: clamp(1.05rem, 2.2vw, 1.35rem);
+}
+
+.home-page :is(.quick-action-icon, .popular-tool-icon, .category-icon, .template-preview-icon, .trust-stat-icon, .who-icon) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 18px rgba(79, 70, 229, 0.1);
+}
+
+.home-page :is(.quick-action-cta, .category-cta, .career-guide-link, .latest-op-link, .template-preview-download) {
+  font-weight: 750;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.08);
+}
+
+.home-page :is(.quick-action-cta, .category-cta, .career-guide-link, .latest-op-link, .template-preview-download):focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
+}
+
+.home-page .newsletter,
+.home-page .telegram-cta {
+  border-color: #cfd9ff;
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.9), transparent 18rem),
+    linear-gradient(120deg, rgba(238, 242, 255, 0.96), rgba(245, 243, 255, 0.96));
+  box-shadow: 0 20px 44px rgba(79, 70, 229, 0.13);
+}
+
+.home-page .lead-points {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+}
+
+.home-page .newsletter-input {
+  min-height: 3rem;
+  border-color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.home-page .faq-list {
+  gap: 0.85rem;
+}
+
+.home-page .faq-item {
+  border-color: #e1e8f8;
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.045);
+}
+
+.home-page .faq-item summary {
+  padding-block: 1.05rem;
+}
+
+.home-page .faq-item p {
+  line-height: 1.75;
+}
+
+.home-final-cta {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.home-final-cta::before {
+  content: '';
+  position: absolute;
+  inset: -40% auto auto -10%;
+  z-index: -1;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 70%);
+}
+
+@media (max-width: 767px) {
+  .home-hero-inner {
+    min-height: auto;
+  }
+
+  .home-page .hero-cta-row {
+    gap: 0.65rem;
+  }
+
+  .home-page .hero-trust-inline,
+  .home-page .hero-support-line {
+    line-height: 1.55;
+  }
+
+  .home-page .section-wrap {
+    padding-block: 3rem;
+  }
+
+  .home-page .lead-points {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page :is(.quick-action-card, .popular-tool-card, .category-card, .career-guide-card, .template-preview-card) {
+    padding: 1rem;
+  }
+}
