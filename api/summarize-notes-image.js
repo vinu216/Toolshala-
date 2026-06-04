@@ -32,8 +32,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed. Use POST.' });
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) return res.status(500).json({ error: 'OPENAI_API_KEY is missing on the server.' });
+  const apiKey = String(process.env.LECTURE_NOTES_IMAGE_API_KEY || process.env.VISION_API_KEY || process.env.OPENAI_API_KEY || '').trim();
+  if (!apiKey) return res.status(500).json({ error: 'Lecture Notes image summarizer is not configured. Add LECTURE_NOTES_IMAGE_API_KEY, VISION_API_KEY, or OPENAI_API_KEY on the server.' });
 
   const { mimeType: dataUrlMimeType, base64 } = parseImagePayload(req.body?.imageBase64 || req.body?.imageData || '');
   const mimeType = String(req.body?.mimeType || dataUrlMimeType || '').toLowerCase();

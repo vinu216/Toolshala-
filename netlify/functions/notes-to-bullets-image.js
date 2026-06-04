@@ -1,3 +1,7 @@
+import visionConfig from './_vision-config.cjs';
+
+const { buildVisionConfig: buildSharedVisionConfig, getEnvString, getVisionConfigError } = visionConfig;
+
 const PROVIDER_TIMEOUT_MS = 25000;
 const MAX_SAFE_REQUEST_BYTES = 7 * 1024 * 1024;
 const DEFAULT_MAX_FILE_MB = 4;
@@ -11,8 +15,6 @@ const corsHeaders = {
 };
 
 const jsonResponse = (statusCode, body) => ({ statusCode, headers: corsHeaders, body: JSON.stringify(body) });
-const getEnvString = (key, fallback = '') => String(process.env[key] || fallback).trim();
-const normalizeBaseUrl = (baseUrl = '') => String(baseUrl || '').trim().replace(/\/+$/, '');
 const getMaxImageBytes = () => {
   const configuredMaxMb = Number(getEnvString('NOTES_TO_BULLETS_IMAGE_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
   const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
@@ -36,26 +38,14 @@ const extractMessageContent = (payload = {}) => {
   if (Array.isArray(content)) return content.map((part) => (typeof part === 'string' ? part : part?.text || '')).join('\n');
   return String(content || '');
 };
-const buildVisionConfig = () => {
-  const provider = getEnvString('NOTES_TO_BULLETS_IMAGE_PROVIDER', 'openai').toLowerCase();
-  if (provider === 'nvidia') {
-    return {
-      provider,
-      apiKey: getEnvString('NVIDIA_API_KEY'),
-      model: getEnvString('NOTES_TO_BULLETS_IMAGE_MODEL', 'meta/llama-3.2-90b-vision-instruct'),
-      baseUrl: normalizeBaseUrl(getEnvString('NOTES_TO_BULLETS_IMAGE_BASE_URL', 'https://integrate.api.nvidia.com/v1'))
-    };
-  }
-  if (provider === 'openai' || provider === 'openai-compatible') {
-    return {
-      provider,
-      apiKey: getEnvString('NOTES_TO_BULLETS_IMAGE_API_KEY', getEnvString('OPENAI_API_KEY')),
-      model: getEnvString('NOTES_TO_BULLETS_IMAGE_MODEL', 'gpt-4o-mini'),
-      baseUrl: normalizeBaseUrl(getEnvString('NOTES_TO_BULLETS_IMAGE_BASE_URL', provider === 'openai' ? 'https://api.openai.com/v1' : ''))
-    };
-  }
-  return { provider, apiKey: '', model: '', baseUrl: '' };
-};
+const buildVisionConfig = () => buildSharedVisionConfig({
+  providerEnv: 'NOTES_TO_BULLETS_IMAGE_PROVIDER',
+  apiKeyEnv: 'NOTES_TO_BULLETS_IMAGE_API_KEY',
+  modelEnv: 'NOTES_TO_BULLETS_IMAGE_MODEL',
+  baseUrlEnv: 'NOTES_TO_BULLETS_IMAGE_BASE_URL',
+  defaultOpenAiModel: 'gpt-4o-mini',
+  defaultNvidiaModel: 'meta/llama-3.2-90b-vision-instruct'
+});
 
 const buildPrompt = ({ topic, educationLevel, summaryStyle, focus, fileName }) => [
   `Analyze the uploaded notes image${fileName ? ` (${fileName})` : ''} and convert its visible content into bullet points.`,
@@ -79,9 +69,8 @@ const buildPrompt = ({ topic, educationLevel, summaryStyle, focus, fileName }) =
 ].join('\n');
 
 const callVisionBullets = async ({ config, base64, mimeType, fileName, topic, educationLevel, summaryStyle, focus, signal }) => {
-  if (!config.apiKey) throw new Error('Notes image bullet converter is not configured. Add a vision-capable provider API key on the server.');
-  if (!config.model) throw new Error('Notes image bullet converter model is not configured.');
-  if (!config.baseUrl) throw new Error('Notes image bullet converter base URL is not configured.');
+  const configError = getVisionConfigError('Notes image bullet converter', config);
+  if (configError) throw new Error(configError);
 
   const response = await fetch(`${config.baseUrl}/chat/completions`, {
     method: 'POST',
@@ -113,7 +102,7 @@ const callVisionBullets = async ({ config, base64, mimeType, fileName, topic, ed
   return normalizeText(extractMessageContent(payload));
 };
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers: corsHeaders, body: '' };
   if (event.httpMethod !== 'POST') return jsonResponse(405, { error: 'Method not allowed' });
   if (isBodyTooLarge(event.body)) return jsonResponse(413, { error: 'Image payload is too large.' });
@@ -133,9 +122,8 @@ exports.handler = async (event) => {
   }
 
   const config = buildVisionConfig();
-  if (!['nvidia', 'openai', 'openai-compatible'].includes(config.provider)) {
-    return jsonResponse(500, { error: `Unsupported Notes to Bullets image provider "${config.provider}".` });
-  }
+  const configError = getVisionConfigError('Notes image bullet converter', config);
+  if (configError) return jsonResponse(500, { error: configError });
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);

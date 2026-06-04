@@ -1,3 +1,7 @@
+import visionConfig from './_vision-config.cjs';
+
+const { buildVisionConfig: buildSharedVisionConfig, getEnvString, getVisionConfigError } = visionConfig;
+
 const PROVIDER_TIMEOUT_MS = 25000;
 const MAX_SAFE_REQUEST_BYTES = 11 * 1024 * 1024;
 const DEFAULT_MAX_FILE_MB = 8;
@@ -16,8 +20,6 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body)
 });
 
-const getEnvString = (key, fallback = '') => String(process.env[key] || fallback).trim();
-
 const getMaxImageBytes = () => {
   const configuredMaxMb = Number(getEnvString('PHOTO_TO_TEXT_MAX_FILE_MB', String(DEFAULT_MAX_FILE_MB)));
   const maxMb = Number.isFinite(configuredMaxMb) && configuredMaxMb > 0 ? configuredMaxMb : DEFAULT_MAX_FILE_MB;
@@ -35,33 +37,14 @@ const parseImagePayload = (imageBase64 = '') => {
   return { mimeType: '', base64: value };
 };
 
-const normalizeBaseUrl = (baseUrl = '') => String(baseUrl || '').trim().replace(/\/+$/, '');
-
-const buildPhotoToTextConfig = () => {
-  const provider = getEnvString('PHOTO_TO_TEXT_PROVIDER', 'nvidia').toLowerCase();
-
-  if (provider === 'nvidia') {
-    return {
-      provider,
-      apiKey: getEnvString('NVIDIA_API_KEY'),
-      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'nemotron-ocr-v1'),
-      baseUrl: normalizeBaseUrl(getEnvString('PHOTO_TO_TEXT_BASE_URL', 'https://ai.api.nvidia.com/v1/cv/nvidia/nemotron-ocr-v1'))
-    };
-  }
-
-  if (provider === 'openai' || provider === 'openai-compatible') {
-    return {
-      provider,
-      apiKey: getEnvString('PHOTO_TO_TEXT_API_KEY'),
-      model: getEnvString('PHOTO_TO_TEXT_MODEL', 'gpt-4o-mini'),
-      baseUrl: normalizeBaseUrl(
-        getEnvString('PHOTO_TO_TEXT_BASE_URL', provider === 'openai' ? 'https://api.openai.com/v1' : '')
-      )
-    };
-  }
-
-  return { provider, apiKey: '', model: '', baseUrl: '' };
-};
+const buildPhotoToTextConfig = () => buildSharedVisionConfig({
+  providerEnv: 'PHOTO_TO_TEXT_PROVIDER',
+  apiKeyEnv: 'PHOTO_TO_TEXT_API_KEY',
+  modelEnv: 'PHOTO_TO_TEXT_MODEL',
+  baseUrlEnv: 'PHOTO_TO_TEXT_BASE_URL',
+  defaultOpenAiModel: 'gpt-4o-mini',
+  defaultNvidiaModel: 'meta/llama-3.2-11b-vision-instruct'
+});
 
 const OCR_SYSTEM_PROMPT = [
   'You are a strict OCR transcription engine.',
@@ -115,20 +98,9 @@ const extractMessageContent = (payload = {}) => {
 };
 
 const callVisionChatOcr = async ({ config, base64, mimeType, fileName, signal }) => {
-  if (!config.apiKey) {
-    throw new Error(
-      config.provider === 'nvidia'
-        ? 'Photo to Text OCR is not configured. Add NVIDIA_API_KEY and PHOTO_TO_TEXT_MODEL for a vision-capable NVIDIA model.'
-        : 'Photo to Text OCR is not configured. Add PHOTO_TO_TEXT_API_KEY, PHOTO_TO_TEXT_PROVIDER, and PHOTO_TO_TEXT_MODEL.'
-    );
-  }
-
-  if (!config.model) {
-    throw new Error('Photo to Text OCR model is not configured. Add PHOTO_TO_TEXT_MODEL.');
-  }
-
-  if (!config.baseUrl) {
-    throw new Error('Photo to Text OCR base URL is not configured. Add PHOTO_TO_TEXT_BASE_URL.');
+  const configError = getVisionConfigError('Photo to Text OCR', config);
+  if (configError) {
+    throw new Error(configError);
   }
 
   const response = await fetch(`${config.baseUrl}/chat/completions`, {
@@ -165,7 +137,7 @@ const callVisionChatOcr = async ({ config, base64, mimeType, fileName, signal })
   return normalizeExtractedText(extractMessageContent(payload));
 };
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: corsHeaders, body: '' };
   }
@@ -211,11 +183,8 @@ exports.handler = async (event) => {
   }
 
   const config = buildPhotoToTextConfig();
-  if (!['nvidia', 'openai', 'openai-compatible'].includes(config.provider)) {
-    return jsonResponse(500, {
-      error: `Unsupported Photo to Text provider "${config.provider}". Use PHOTO_TO_TEXT_PROVIDER=nvidia, openai, or openai-compatible.`
-    });
-  }
+  const configError = getVisionConfigError('Photo to Text OCR', config);
+  if (configError) return jsonResponse(500, { error: configError });
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);
