@@ -320,7 +320,7 @@
                               ? './bstc-mock-test-9.html'
                                 : teachingExamSlug === 'bstc' && testNumber === 10
                                  ? './bstc-mock-test-10.html'
-              : exam.ctaLink;
+              : `../exam.html?exam=${exam.slug}`;
         return cardForExam({
           ...exam,
           ctaLink: customCtaLink,

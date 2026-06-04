@@ -34,6 +34,12 @@
   force = true
 
 [[redirects]]
+  from = "/api/transcribe"
+  to = "/.netlify/functions/transcribe"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/newsletter"
   to = "/.netlify/functions/newsletter"
   status = 200
