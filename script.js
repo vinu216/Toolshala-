@@ -611,7 +611,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a class="social-link" href="https://www.instagram.com/toolshala1" target="_blank" rel="noopener noreferrer" aria-label="Follow ToolShala on Instagram"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm8.35 1.73h-8.2a4.17 4.17 0 00-4.17 4.17v8.2a4.17 4.17 0 004.17 4.17h8.2a4.17 4.17 0 004.17-4.17v-8.2a4.17 4.17 0 00-4.17-4.17zm-4.1 3.93A4.34 4.34 0 1112 16.34a4.34 4.34 0 010-8.68zm0 1.73a2.61 2.61 0 102.61 2.61A2.61 2.61 0 0012 9.39zm4.61-2.5a1.04 1.04 0 11-1.04 1.04 1.04 1.04 0 011.04-1.04z"/></svg></a>
                 <a class="social-link" href="https://t.me/toolshala" target="_blank" rel="noopener noreferrer" aria-label="Join ToolShala on Telegram"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.93 4.37a1.62 1.62 0 00-1.64-.26L3.18 10.72c-1.17.45-1.15 2.1.03 2.52l4.34 1.54 1.66 5.08c.36 1.1 1.78 1.39 2.54.51l2.42-2.79 4.44 3.25c.96.71 2.34.16 2.53-1.02l2.78-13.82c.13-.64-.14-1.27-.67-1.62Zm-3.05 3.31-8.43 7.61-.32 3.02-1.07-3.27 9.82-7.36Z"/></svg></a>
                 <a class="social-link" href="https://www.reddit.com/user/Toolshala" target="_blank" rel="noopener noreferrer" aria-label="Follow ToolShala on Reddit"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.75 11.84a2.19 2.19 0 00-3.71-1.58 10.62 10.62 0 00-5.37-1.61l.91-4.29 2.98.63a1.7 1.7 0 103.38-.34 1.7 1.7 0 00-2.75-1.34l-3.86-.82a.74.74 0 00-.88.57L11.28 8.7a10.79 10.79 0 00-5.33 1.61 2.19 2.19 0 10-2.41 3.55c-.03.21-.05.43-.05.65 0 3.21 3.82 5.82 8.52 5.82s8.52-2.61 8.52-5.82c0-.23-.02-.46-.06-.68.77-.38 1.28-1.15 1.28-2Zm-14.16 1.6a1.49 1.49 0 112.98 0 1.49 1.49 0 01-2.98 0Zm7.77 3.92c-.97.72-2.04.91-3.36.91s-2.39-.19-3.36-.91a.68.68 0 11.81-1.09c.62.46 1.37.65 2.55.65s1.93-.19 2.55-.65a.68.68 0 11.81 1.09Zm.23-2.43a1.49 1.49 0 110-2.98 1.49 1.49 0 010 2.98Z"/></svg></a>
-                <a class="social-link" href="https://www.linkedin.com/company/toolshala" target="_blank" rel="noopener noreferrer" aria-label="Follow ToolShala on LinkedIn"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5v9H3.95v-9h2.99zM5.44 3.92a1.73 1.73 0 110 3.46 1.73 1.73 0 010-3.46zM20.05 12.32v5.18h-2.99v-4.84c0-1.22-.43-2.05-1.52-2.05-.83 0-1.32.56-1.54 1.1-.08.19-.1.46-.1.74v5.05h-2.99v-9h2.99v1.27c.4-.61 1.11-1.47 2.7-1.47 1.96 0 3.45 1.28 3.45 4.02z"/></svg></a>
               </nav>
             </div>
           </div>
@@ -657,13 +656,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (href === '#') {
         if (legalMap[label]) {
           link.setAttribute('href', legalMap[label]);
-          return;
-        }
-
-        if (aria === 'linkedin') {
-          link.setAttribute('href', 'https://www.linkedin.com/company/toolshala');
-          link.setAttribute('target', '_blank');
-          link.setAttribute('rel', 'noopener noreferrer');
           return;
         }
 
