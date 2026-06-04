@@ -1118,7 +1118,7 @@ Suggested next step: ${nextStep}`
       const prompt = [
         `Tool ID: ${toolId}`,
         'Generate a high-quality response based on the following user inputs.',
-        'Format any plain-text response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
+        'Format any plain-text response in clean Markdown only: use short headings, bold labels, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML, markdown tables, pipe-delimited rows, or raw | separators.',
         ...promptInstructions,
         ...promptLines
       ].join('\n');

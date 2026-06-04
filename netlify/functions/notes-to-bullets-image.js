@@ -57,7 +57,7 @@ const buildPrompt = ({ topic, educationLevel, summaryStyle, focus, fileName }) =
   'Read only the visible image content: notes, lecture content, textbook text, slide text, or document content.',
   'Do not invent facts, definitions, examples, formulas, dates, or headings that are not visible or strongly supported by the image.',
   'If text is unclear, mention that the image text is unclear instead of guessing.',
-  'Return clean Markdown only with:',
+  'Return clean Markdown only with no markdown tables, pipe-delimited rows, or raw | separators:',
   '## Bullet Points',
   '- concise bullets based only on the image content',
   '- nested bullets only if the source has clear hierarchy',
@@ -81,7 +81,7 @@ const callVisionBullets = async ({ config, base64, mimeType, fileName, topic, ed
       messages: [
         {
           role: 'system',
-          content: 'You are a strict notes-to-bullet-points converter. Read visible image content accurately and convert only that content into concise Markdown bullet points.'
+          content: 'You are a strict notes-to-bullet-points converter. Read visible image content accurately and convert only that content into concise Markdown bullet points. Do not use markdown tables, pipe-delimited rows, or raw | separators.'
         },
         {
           role: 'user',

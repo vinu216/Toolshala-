@@ -52,8 +52,95 @@
       .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>')
       .replace(/(^|[^_])_([^_]+)_/g, '$1<em>$2</em>');
 
-  const safeMarkdownToHtml = (markdown = '') => {
+  const isPipeTableSeparator = (line = '') => {
+    const trimmed = String(line || '').trim();
+    return /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(trimmed);
+  };
+
+  const splitStructuralPipeCells = (line = '') =>
+    String(line || '')
+      .trim()
+      .replace(/^\|+|\|+$/g, '')
+      .split(' | ')
+      .flatMap((chunk) => chunk.split(/\s*\|\s*/))
+      .map((cell) => cell.trim())
+      .filter(Boolean);
+
+  const looksLikeStructuralPipeLine = (line = '') => {
+    const trimmed = String(line || '').trim();
+    if (!trimmed || !trimmed.includes('|')) return false;
+    if (isPipeTableSeparator(trimmed)) return true;
+    const pipeCount = (trimmed.match(/\|/g) || []).length;
+    return trimmed.startsWith('|') || trimmed.endsWith('|') || pipeCount >= 2 || /\s\|\s/.test(trimmed);
+  };
+
+  const pipeCellsToMarkdownLine = (cells = [], { header = false } = {}) => {
+    const cleanCells = cells.map((cell) => cell.replace(/\s+/g, ' ').trim()).filter(Boolean);
+    if (!cleanCells.length) return '';
+    if (cleanCells.length === 1) {
+      return header ? `### ${cleanCells[0]}` : cleanCells[0];
+    }
+
+    const [label, ...rest] = cleanCells;
+    const joined = rest.join(' — ');
+    return header ? `- **${label}** — ${joined}` : `- **${label}** — ${joined}`;
+  };
+
+  const normalizePipeDelimitedMarkdown = (markdown = '') => {
     const lines = String(markdown || '').replace(/\r\n?/g, '\n').split('\n');
+    const output = [];
+    let inCodeBlock = false;
+
+    for (let index = 0; index < lines.length; index += 1) {
+      const line = lines[index];
+      const trimmed = line.trim();
+
+      if (/^```/.test(trimmed)) {
+        inCodeBlock = !inCodeBlock;
+        output.push(line);
+        continue;
+      }
+
+      if (inCodeBlock || !looksLikeStructuralPipeLine(line)) {
+        output.push(line);
+        continue;
+      }
+
+      if (isPipeTableSeparator(line)) {
+        continue;
+      }
+
+      const cells = splitStructuralPipeCells(line);
+      if (!cells.length) {
+        continue;
+      }
+
+      const nextLine = lines[index + 1] || '';
+      const prevLine = lines[index - 1] || '';
+      const isHeaderRow = isPipeTableSeparator(nextLine);
+      const isStandaloneSection = cells.length === 1 && (!prevLine.trim() || !nextLine.trim());
+
+      if (isHeaderRow && cells.length > 1) {
+        const firstCell = cells[0];
+        const remainingCells = cells.slice(1).join(' / ');
+        output.push(`### ${firstCell}${remainingCells ? ` (${remainingCells})` : ''}`);
+        index += 1;
+        continue;
+      }
+
+      output.push(pipeCellsToMarkdownLine(cells, { header: isStandaloneSection }));
+    }
+
+    return output
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  };
+
+  const formatGeneratedTextForDisplay = (text = '') => normalizePipeDelimitedMarkdown(text);
+
+  const safeMarkdownToHtml = (markdown = '') => {
+    const lines = formatGeneratedTextForDisplay(markdown).split('\n');
     const html = [];
     const paragraph = [];
     let listType = null;
@@ -113,7 +200,7 @@
         return;
       }
 
-      const unorderedMatch = trimmed.match(/^[-*]\s+(.+)$/);
+      const unorderedMatch = trimmed.match(/^[-*•]\s+(.+)$/);
       const orderedMatch = trimmed.match(/^\d+[.)]\s+(.+)$/);
       if (unorderedMatch || orderedMatch) {
         closeParagraph();
@@ -207,7 +294,7 @@
     return [
       `Tool ID: ${toolId}`,
       'Generate a high-quality response based on the following user inputs.',
-      'Format the response in clean Markdown only: use short headings, bold emphasis, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML.',
+      'Format the response in clean Markdown only: use short headings, bold labels, bullets or numbered lists, and concise paragraphs when helpful. Do not return raw HTML, markdown tables, pipe-delimited rows, or raw | separators.',
       ...promptInstructions,
       ...promptLines
     ].join('\n');
@@ -3780,7 +3867,7 @@ ${senderName}`;
 
       const bodyBox = document.createElement('pre');
       bodyBox.className = 'tool-output-text mt-4';
-      bodyBox.textContent = result.bodyText || '';
+      bodyBox.textContent = formatGeneratedTextForDisplay(result.bodyText || '');
       outputNode.appendChild(bodyBox);
 
       if (result.note) {
@@ -3798,7 +3885,7 @@ ${senderName}`;
       copyButton.textContent = 'Copy Email';
       copyButton.addEventListener('click', async () => {
         try {
-          const payload = `Subject: ${result.subject || ''}\n\n${result.bodyText || ''}`;
+          const payload = `Subject: ${result.subject || ''}\n\n${formatGeneratedTextForDisplay(result.bodyText || '')}`;
           await copyText(payload);
           showToast('success', 'Copied to clipboard.');
         } catch (error) {
@@ -3812,7 +3899,8 @@ ${senderName}`;
     if (result.type === 'text') {
       const contentNode = document.createElement('div');
       contentNode.className = `tool-output-text tool-output-markdown ${result.className || ''}`.trim();
-      renderMarkdownInto(contentNode, result.text);
+      const formattedText = formatGeneratedTextForDisplay(result.text);
+      renderMarkdownInto(contentNode, formattedText);
       outputNode.appendChild(contentNode);
 
       const actions = document.createElement('div');
@@ -3823,7 +3911,7 @@ ${senderName}`;
       button.textContent = result.copyLabel || 'Copy';
       button.addEventListener('click', async () => {
         try {
-          await copyText(result.text);
+          await copyText(formattedText);
           showToast('success', 'Copied to clipboard.');
         } catch (error) {
           showToast('error', 'Could not copy right now.', 'Please copy manually.');
@@ -3837,7 +3925,7 @@ ${senderName}`;
       shareButton.textContent = 'Share';
       shareButton.addEventListener('click', async () => {
         try {
-          const shared = await shareText(tool.title, result.text);
+          const shared = await shareText(tool.title, formattedText);
           showToast('success', shared ? 'Share dialog opened.' : 'Copied to clipboard.', shared ? '' : 'Share is unavailable. Content copied instead.');
         } catch (error) {
           showToast('error', 'Could not share right now.', 'Please try again.');
@@ -3850,7 +3938,7 @@ ${senderName}`;
       downloadButton.className = 'btn-secondary';
       downloadButton.textContent = 'Download';
       downloadButton.addEventListener('click', () => {
-        const blob = new Blob([result.text || ''], { type: 'text/plain;charset=utf-8' });
+        const blob = new Blob([formattedText || ''], { type: 'text/plain;charset=utf-8' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
@@ -3908,7 +3996,7 @@ ${senderName}`;
       if (content.text) {
         const textNode = document.createElement('div');
         textNode.className = content.multiline ? 'tool-output-text tool-output-markdown mt-2' : 'tool-output-markdown item-card-markdown mt-2 text-sm text-slate-700';
-        renderMarkdownInto(textNode, content.text);
+        renderMarkdownInto(textNode, formatGeneratedTextForDisplay(content.text));
         card.appendChild(textNode);
       }
 
@@ -3917,7 +4005,7 @@ ${senderName}`;
         list.className = 'item-card-list';
         content.rows.forEach((row) => {
           const li = document.createElement('li');
-          li.textContent = row;
+          li.textContent = formatGeneratedTextForDisplay(row);
           list.appendChild(li);
         });
         card.appendChild(list);

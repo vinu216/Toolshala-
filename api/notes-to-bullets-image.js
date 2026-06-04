@@ -22,7 +22,7 @@ const buildPrompt = ({ topic, educationLevel, summaryStyle, focus, fileName }) =
   `Bullet style: ${summaryStyle || 'short-bullets'}.`,
   `Optional focus: ${focus || 'not provided'}.`,
   'Use only visible image content. Do not invent unsupported facts.',
-  'Return clean Markdown with: Bullet Points, Important Keywords, and Quick Revision Points. Use nested bullets only when the source has clear hierarchy.'
+  'Return clean Markdown with: Bullet Points, Important Keywords, and Quick Revision Points. Use nested bullets only when the source has clear hierarchy. Do not use markdown tables, pipe-delimited rows, or raw | separators.'
 ].join('\n');
 
 export default async function handler(req, res) {
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         temperature: 0.25,
         max_tokens: 1800,
         messages: [
-          { role: 'system', content: 'You are a strict notes-to-bullet-points converter. Convert only visible image content into concise Markdown bullet points.' },
+          { role: 'system', content: 'You are a strict notes-to-bullet-points converter. Convert only visible image content into concise Markdown bullet points. Do not use markdown tables, pipe-delimited rows, or raw | separators.' },
           {
             role: 'user',
             content: [

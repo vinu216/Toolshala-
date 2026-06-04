@@ -22,7 +22,7 @@ const buildPrompt = ({ subject, summaryLength, summaryStyle, fileName }) => [
   `Summary style: ${summaryStyle || 'bullet-points'}.`,
   'Read only the visible image content and do not invent unsupported facts.',
   'If text is unclear, mention that it is unclear instead of guessing.',
-  'Return clean Markdown with: Concise Summary, Key Points, Important Definitions, Revision-Friendly Bullets, Exam Notes, and Quick Recap / Memory Hook.'
+  'Return clean Markdown with: Concise Summary, Key Points, Important Definitions, Revision-Friendly Bullets, Exam Notes, and Quick Recap / Memory Hook. Do not use markdown tables, pipe-delimited rows, or raw | separators.'
 ].join('\n');
 
 export default async function handler(req, res) {
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         temperature: 0.3,
         max_tokens: 2200,
         messages: [
-          { role: 'system', content: 'You are a strict lecture notes image summarizer. Summarize only visible image content into clean Markdown study notes.' },
+          { role: 'system', content: 'You are a strict lecture notes image summarizer. Summarize only visible image content into clean Markdown study notes. Do not use markdown tables, pipe-delimited rows, or raw | separators.' },
           {
             role: 'user',
             content: [
