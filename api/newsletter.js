@@ -22,9 +22,44 @@ const normalizeSupabaseProjectUrl = (rawUrl) => {
   }
 };
 
-const buildSupabaseRestUrl = (projectUrl, tableName) => new URL(`/rest/v1/${tableName}`, projectUrl).toString();
+const PUBLIC_SUPABASE_SCHEMA = 'public';
+
+const buildSupabaseRestUrl = (projectUrl, tableName) => {
+  if (String(tableName).includes('.')) {
+    throw new Error('Supabase table names must not include a schema prefix.');
+  }
+  return new URL(`/rest/v1/${tableName}`, projectUrl).toString();
+};
 
 const shouldSendBearerAuth = (key) => !String(key || '').trim().startsWith('sb_');
+
+const createSupabaseRestClient = (projectUrl, insertKey, signal) => ({
+  from(tableName) {
+    return {
+      async insert(rows) {
+        const headers = {
+          apikey: insertKey,
+          'Content-Type': 'application/json',
+          'Accept-Profile': PUBLIC_SUPABASE_SCHEMA,
+          'Content-Profile': PUBLIC_SUPABASE_SCHEMA,
+          Prefer: 'return=minimal'
+        };
+        if (shouldSendBearerAuth(insertKey)) {
+          headers.Authorization = `Bearer ${insertKey}`;
+        }
+
+        const response = await fetch(buildSupabaseRestUrl(projectUrl, tableName), {
+          method: 'POST',
+          headers,
+          signal,
+          body: JSON.stringify(rows)
+        });
+        const data = await response.json().catch(() => null);
+        return { data, error: response.ok ? null : data || { message: response.statusText }, status: response.status };
+      }
+    };
+  }
+});
 
 const readSupabaseInsertConfig = () => {
   const rawUrl =
@@ -82,9 +117,6 @@ export default async function handler(req, res) {
   }
 
   const email = normalizeText(req.body?.email, 254).toLowerCase();
-  const source = normalizeText(req.body?.source || 'newsletter');
-  const page = normalizeText(req.body?.page || req.headers.referer || '');
-
   if (!EMAIL_PATTERN.test(email)) {
     return json(res, 400, { error: 'Please enter a valid email address.' });
   }
@@ -100,25 +132,13 @@ export default async function handler(req, res) {
   const timeout = setTimeout(() => controller.abort(), SUPABASE_REST_TIMEOUT_MS);
 
   try {
-    const headers = {
-      apikey: insertKey,
-      'Content-Type': 'application/json',
-      Prefer: 'return=minimal'
-    };
-    if (shouldSendBearerAuth(insertKey)) {
-      headers.Authorization = `Bearer ${insertKey}`;
-    }
+    const supabase = createSupabaseRestClient(url, insertKey, controller.signal);
+    const { data, error, status } = await supabase
+      .from('subscribers')
+      .insert([{ email }]);
 
-    const response = await fetch(buildSupabaseRestUrl(url, 'subscribers'), {
-      method: 'POST',
-      headers,
-      signal: controller.signal,
-      body: JSON.stringify({ email, source, page })
-    });
-
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      if (response.status === 409 || data?.code === '23505') {
+    if (error) {
+      if (status === 409 || data?.code === '23505') {
         return json(res, 200, { ok: true, duplicate: true });
       }
       const message = String(data?.message || data?.error || '').trim();
