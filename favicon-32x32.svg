@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="350 290 950 950" role="img" aria-labelledby="title desc">
+  <title id="title">ToolShala favicon</title>
+  <desc id="desc">Monochrome hexagonal ring and geometric cube mark reproduced from the ToolShala logo.</desc>
+  <g fill="none" stroke="#969696" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
+    <polygon points="824 314 1212 545 1211 997 821 1222 427 979 438 537"/>
+    <polygon points="824 344 1180 557 1180 971 821 1184 458 965 468 558"/>
+    <polygon points="823 374 1150 572 1149 945 822 1147 489 943 498 573"/>
+  </g>
+  <g fill="#969696">
+    <polygon points="822 413 745 457 898 457"/>
+    <polygon points="726 469 918 469 996 514 647 514"/>
+    <polygon points="629 526 1012 526 1094 570 548 570"/>
+    <polygon points="528 584 1118 584 823 701"/>
+    <polygon points="527 599 814 713 814 1094 527 931"/>
+    <polygon points="830 713 1118 599 1118 928 830 1094"/>
+  </g>
+</svg>
