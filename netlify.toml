@@ -3,6 +3,12 @@
   publish = "."
 
 [[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.svg"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/photo-to-text"
   to = "/tool.html?tool=photo-to-text"
   status = 301
@@ -64,6 +70,12 @@
   to = "/.netlify/functions/contact"
   status = 200
   force = true
+
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Content-Type = "image/svg+xml; charset=utf-8"
 
 [[headers]]
   for = "/*"
