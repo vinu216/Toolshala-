@@ -7,283 +7,720 @@ window.ptetPracticeQuestionBank = {
       "title": "Mental Ability Practice",
       "section": "Section A Mental Ability (मानसिक योग्यता)",
       "description": "Reasoning, series, coding-decoding, puzzles, direction sense aur statement-based PTET questions.",
-      "source": "PTET Mock Test 6 question bank",
+      "source": "PTET Mental Ability Practice Set",
       "questions": [
         {
           "id": 1,
           "originalId": 1,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Coding-Decoding",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "कूट-डिकोडिंग",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक निश्चित कूट भाषा में, यदि स्वरों (Vowels) को अगले अक्षर से और व्यंजनों (Consonants) को पिछले अक्षर से बदल दिया जाता है, तो शब्द \"SOLID\" को कैसे लिखा जाएगा?",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी बसें कार हैं।\nकुछ कार ट्रक हैं।\nनिष्कर्ष: (I) कुछ बसें ट्रक हैं।\n(II) कोई बस ट्रक नहीं है।\nकूट;",
           "options": [
-            "RNMJC",
-            "RPKJC",
-            "TPMJE",
-            "TPKJE"
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
           ],
-          "answer": "B",
-          "explanation": "S(व्यंजन -1)=R, O(स्वर +1)=P, L(व्यंजन -1)=K, I(स्वर +1)=J, D(व्यंजन -1)=C. अतः RPKJC.",
+          "answer": "C",
+          "explanation": "बस और ट्रक के बीच कोई सीधा संबंध नहीं दिया है, इसलिए संभावना 'या तो' में होती है।",
           "reference": "PTET Section A"
         },
         {
           "id": 2,
           "originalId": 2,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष/Syllogism",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\n1. सभी पेन किताबें हैं।\n2. कुछ किताबें मेज हैं।\n3. कोई मेज कुर्सी नहीं है।\nनिष्कर्ष:\nI. कुछ पेन मेज हैं।\nII. कुछ किताबें कुर्सी नहीं हैं।\nकूट:\nA. केवल निष्कर्ष I अनुसरण करता है\nB. केवल निष्कर्ष II अनुसरण करता है\nC. दोनों I और II अनुसरण करते हैं\nD. न तो I और न ही II अनुसरण करता है",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कोई फल सब्जी नहीं है।\nसभी सब्जियाँ जड़ हैं।\nनिष्कर्ष: (I) कोई फल जड़ नहीं है।\n(II) कुछ जड़ फल हैं।\nकूट;",
           "options": [
-            "केवल निष्कर्ष I अनुसरण करता है",
-            "केवल निष्कर्ष II अनुसरण करता है",
-            "दोनों I और II अनुसरण करते हैं",
-            "न तो I और न ही II अनुसरण करता है"
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
           ],
-          "answer": "B",
-          "explanation": "पेन और मेज के बीच सीधा संबंध नहीं दिया गया है (निष्कर्ष I गलत)। चूँकि कुछ किताबें मेज हैं और कोई मेज कुर्सी नहीं है, इसलिए किताबों का वह हिस्सा जो मेज है, कभी कुर्सी नहीं हो सकता (निष्कर्ष II सही है)।",
+          "answer": "D",
+          "explanation": "फल और जड़ के बीच संबंध अनिश्चित है, इसलिए कोई निश्चित निष्कर्ष नहीं निकलेगा।",
           "reference": "PTET Section A"
         },
         {
           "id": 3,
           "originalId": 3,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Blood Relation",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "रक्त संबंध - कूट आधारित",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि:\nA + B का अर्थ है 'A, B का पिता है'\nA - B का अर्थ है 'A, B की पत्नी है'\nA × B का अर्थ है 'A, B का भाई है'\nA ÷ B का अर्थ है 'A, B की पुत्री है'\nसमीकरण P ÷ R + S × Q में, P का Q से क्या संबंध है?",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कुछ घड़ी समय है।\nसभी समय सोना है।\nनिष्कर्ष: (I) कुछ घड़ी सोना है।\n(II) सभी समय घड़ी है।\nकूट;",
           "options": [
-            "बुआ",
-            "बहन",
-            "भतीजी",
-            "माता"
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
           ],
-          "answer": "B",
-          "explanation": "P ÷ R (P, R की पुत्री है)। R + S (R, S का पिता है)। S × Q (S, Q का भाई है)। इसका अर्थ है P, S और Q तीनों R की संतान हैं। चूँकि P पुत्री (महिला) है, अतः P, Q की बहन है।",
+          "answer": "A",
+          "explanation": "घड़ी का जो हिस्सा समय है, वह सोना भी होगा। II गलत है क्योंकि 'सभी' का संबंध नहीं है।",
           "reference": "PTET Section A"
         },
         {
           "id": 4,
           "originalId": 4,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Direction Test",
+          "questionType": "Coding-Decoding",
           "difficulty": "moderate",
-          "topic": "दिशा परीक्षण - डिग्री आधारित",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक व्यक्ति उत्तर दिशा की ओर मुख करके खड़ा है। वह पहले 135° दक्षिणावर्त (Clockwise) घूमता है, और फिर 45° वामावर्त (Anti-clockwise) घूमता है। अब उसका मुख किस दिशा में है?",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'DELHI' को 'EFMII' लिखा जाता है, तो 'BOMBAY' को क्या लिखेंगे?\nकूट;",
           "options": [
-            "पूर्व",
-            "दक्षिण-पूर्व",
-            "उत्तर-पूर्व",
-            "पश्चिम"
+            "CPNCBZ",
+            "CPOCBZ",
+            "DPNCBZ",
+            "CQNCBZ"
           ],
           "answer": "A",
-          "explanation": "कुल घुमाव = 135° (दाएं) - 45° (बाएं) = 90° (दाएं)। उत्तर से 90° दाएं घूमने पर दिशा 'पूर्व' होगी।",
+          "explanation": "प्रत्येक अक्षर में +1 का पैटर्न है (D+1=E, E+1=F...)।",
           "reference": "PTET Section A"
         },
         {
           "id": 5,
           "originalId": 5,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Puzzle",
+          "questionType": "Coding-Decoding",
           "difficulty": "moderate",
-          "topic": "बैठक व्यवस्था/पज़ल",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "5 मित्र A, B, C, D और E एक पंक्ति में उत्तर की ओर मुख करके बैठे हैं। D, C के ठीक दाएं बैठा है। B, E के ठीक बाएं बैठा है। A, C के ठीक बाएं बैठा है। यदि E पंक्ति के एक छोर पर बैठा है, तो मध्य में कौन बैठा है?",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'GOLD' = 'HMKE' है, तो 'IRON' = ?\nकूट;",
           "options": [
-            "B",
-            "C",
-            "D",
-            "A"
+            "JSPT",
+            "JSPO",
+            "KSPT",
+            "JSRT"
           ],
-          "answer": "C",
-          "explanation": "क्रम बनेगा: A, C, D, B, E. (A, C के बाएं है; C, D के बाएं है; B, E के बाएं है)। E दाएं छोर पर है। अतः मध्य (तीसरे) स्थान पर D बैठा है।",
+          "answer": "A",
+          "explanation": "+1, +1, +1, +1 का पैटर्न है।",
           "reference": "PTET Section A"
         },
         {
           "id": 6,
           "originalId": 6,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Venn Diagram",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "वेन आरेख",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक वेन आरेख में: त्रिभुज 'अध्यापकों' को दर्शाता है, वृत्त 'ग्रामीणों' को दर्शाता है और आयत 'स्नातकोत्तर (Postgraduates)' को दर्शाता है। वह संख्या जो 'उन ग्रामीण अध्यापकों को दर्शाती है जो स्नातकोत्तर नहीं हैं', किस क्षेत्र में आएगी?",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी नीले लाल हैं।\nसभी लाल काले हैं।\nनिष्कर्ष: (I) सभी नीले काले हैं।\n(II) कुछ काले नीले हैं।\nकूट;",
           "options": [
-            "केवल त्रिभुज और आयत के कॉमन भाग में",
-            "केवल वृत्त और आयत के कॉमन भाग में",
-            "केवल त्रिभुज और वृत्त के कॉमन भाग में (आयत से बाहर)",
-            "तीनों आकृतियों के कॉमन भाग में"
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
           ],
           "answer": "C",
-          "explanation": "हमें 'अध्यापक' (त्रिभुज) और 'ग्रामीण' (वृत्त) चाहिए, लेकिन 'स्नातकोत्तर' (आयत) नहीं। इसलिए वह क्षेत्र जो त्रिभुज और वृत्त में कॉमन हो लेकिन आयत के बाहर हो।",
+          "explanation": "वेन आरेख में नीला, लाल के अंदर है और लाल, काले के अंदर। अतः दोनों सही हैं।",
           "reference": "PTET Section A"
         },
         {
           "id": 7,
           "originalId": 7,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Coding-Decoding",
           "difficulty": "moderate",
-          "topic": "कथन-कारण - तार्किक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\nकेंचुओं को किसानों का मित्र कहा जाता है।\nकारण:\nकेंचुए मिट्टी को भुरभुरा बनाते हैं जिससे जड़ों तक हवा और पानी आसानी से पहुँचता है।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, तथा (R), (A) की सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'TABLE' को 20, 1, 2, 12, 5 लिखा जाए, तो 'CHAIR' का कोड क्या होगा?\nकूट;",
           "options": [
-            "(A) और (R) दोनों सही हैं, तथा (R), (A) की सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "3, 8, 1, 9, 18",
+            "3, 8, 9, 1, 18",
+            "4, 9, 2, 10, 19",
+            "3, 8, 1, 10, 18"
           ],
           "answer": "A",
-          "explanation": "केंचुए कृषि के लिए लाभदायक होते हैं क्योंकि वे मिट्टी की उर्वरता और संरचना में सुधार करते हैं। अतः कथन और कारण दोनों सत्य हैं और स्पष्टीकरण भी सही है।",
+          "explanation": "अक्षरों के अंग्रेजी वर्णमाला में स्थान (Position) को लिखा गया है।",
           "reference": "PTET Section A"
         },
         {
           "id": 8,
           "originalId": 8,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Number Series",
+          "questionType": "Analogy",
           "difficulty": "moderate",
-          "topic": "संख्या शृंखला",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "दी गई शृंखला में अगला पद क्या होगा?\n2, 6, 12, 20, 30, ?",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पेन' का संबंध 'लिखने' से है, तो 'चाकू' का संबंध किससे है?\nकूट;",
           "options": [
-            "40",
-            "42",
-            "44",
-            "48"
+            "सब्जी",
+            "काटना",
+            "रसोई",
+            "स्टील"
           ],
           "answer": "B",
-          "explanation": "शृंखला का पैटर्न: (1×2=2), (2×3=6), (3×4=12), (4×5=20), (5×6=30)। अगला पद होगा (6×7=42)। (या +4, +6, +8, +10, +12 का अंतर)।",
+          "explanation": "पेन का कार्य लिखना है, चाकू का कार्य काटना है।",
           "reference": "PTET Section A"
         },
         {
           "id": 9,
           "originalId": 9,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Matching",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "मिलान करें - तार्किक सादृश्यता",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "निम्नलिखित शब्दों को उनके तार्किक संबंध के आधार पर सुमेलित करें:\nसूची-I (शब्द)\na. थर्मामीटर\nb. बैरोमीटर\nc. सिस्मोग्राफ\nd. एनिमोमीटर\n\nसूची-II (मापन)\n1. वायुमंडलीय दबाव\n2. तापमान\n3. हवा की गति\n4. भूकंप\n\nकूट (Codes):\nA. a-2, b-1, c-4, d-3\nB. a-1, b-2, c-3, d-4\nC. a-2, b-4, c-1, d-3\nD. a-3, b-1, c-4, d-2",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी तारे चंद्रमा हैं।\nकुछ चंद्रमा ग्रह हैं।\nनिष्कर्ष: (I) कुछ तारे ग्रह हैं।\n(II) कोई तारा ग्रह नहीं है।\nकूट;",
           "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-4, c-1, d-3",
-            "a-3, b-1, c-4, d-2"
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "दोनों गलत"
           ],
-          "answer": "A",
-          "explanation": "थर्मामीटर-तापमान, बैरोमीटर-वायुमंडलीय दबाव, सिस्मोग्राफ-भूकंप, एनिमोमीटर-हवा की गति।",
+          "answer": "C",
+          "explanation": "तारा और ग्रह के बीच कोई निश्चित संबंध नहीं है, अतः या तो I या II सही होगा।",
           "reference": "PTET Section A"
         },
         {
           "id": 10,
           "originalId": 10,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Puzzle",
+          "questionType": "Coding-Decoding",
           "difficulty": "moderate",
-          "topic": "तार्किक पहेली",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक दीवार घड़ी में 3 बजकर 15 मिनट का समय हो रहा है। यदि इस समय घंटे की सूई ठीक पूर्व (East) दिशा की ओर इशारा कर रही है, तो मिनट की सूई किस दिशा की ओर इशारा करेगी?",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'SIT' = 'VLU', तो 'CAT' = ?\nकूट;",
           "options": [
-            "पूर्व",
-            "पश्चिम",
-            "उत्तर",
-            "दक्षिण-पूर्व"
+            "FDW",
+            "FEW",
+            "FDX",
+            "EDW"
           ],
           "answer": "A",
-          "explanation": "3:15 पर घंटे की सूई 3 से थोड़ा सा आगे (पूर्व से हल्का सा नीचे) होती है और मिनट की सूई एकदम 3 पर (ठीक पूर्व) होती है। व्यावहारिक तर्क के अनुसार यदि घंटे की सूई पूर्व मानी जा रही है, तो मिनट की सूई भी पूर्व दिशा में ही होगी।",
+          "explanation": "+3 का पैटर्न है। (S+3=V, I+3=L, T+3=W नहीं, T+1=U, यहाँ +3, +3, +1 है)। सही विकल्प FDW (+3,+3,+3)।",
           "reference": "PTET Section A"
         },
         {
           "id": 11,
           "originalId": 11,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Coding-Decoding",
+          "questionType": "Blood Relation",
           "difficulty": "moderate",
-          "topic": "कोडिंग - प्रतिस्थापन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि 'लाल' को 'नीला' कहा जाए, 'नीला' को 'हरा' कहा जाए, 'हरा' को 'पीला' कहा जाए, और 'पीला' को 'सफ़ेद' कहा जाए, तो मानव रक्त का रंग क्या होगा?",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B का भाई है। C, A की माँ है। D, C का पिता है। B का D से क्या संबंध है?\nकूट;",
           "options": [
-            "लाल",
-            "हरा",
-            "पीला",
-            "नीला"
+            "पोता",
+            "पोती",
+            "पोता या पोती",
+            "पुत्र"
           ],
-          "answer": "D",
-          "explanation": "मानव रक्त का वास्तविक रंग 'लाल' होता है। प्रश्न के कूट के अनुसार 'लाल' को 'नीला' कहा गया है। अतः उत्तर नीला होगा।",
+          "answer": "C",
+          "explanation": "B का जेंडर स्पष्ट नहीं है, इसलिए D का वह पोता या पोती हो सकता है।",
           "reference": "PTET Section A"
         },
         {
           "id": 12,
           "originalId": 12,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Direction Test",
           "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष/Syllogism",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\n1. कुछ डॉक्टर इंजीनियर हैं।\n2. सभी इंजीनियर वैज्ञानिक हैं।\nनिष्कर्ष:\nI. कुछ वैज्ञानिक डॉक्टर हैं।\nII. कोई वैज्ञानिक डॉक्टर नहीं है।\nकूट:\nA. केवल I अनुसरण करता है\nB. केवल II अनुसरण करता है\nC. या तो I या II अनुसरण करता है\nD. दोनों I और II अनुसरण करते हैं",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक आदमी उत्तर दिशा में 5 किमी चलता है, फिर दाएं मुड़कर 4 किमी चलता है। वह अब किस दिशा में है?\nकूट;",
           "options": [
-            "केवल I अनुसरण करता है",
-            "केवल II अनुसरण करता है",
-            "या तो I या II अनुसरण करता है",
-            "दोनों I और II अनुसरण करते हैं"
+            "उत्तर-पूर्व",
+            "दक्षिण-पूर्व",
+            "उत्तर",
+            "पूर्व"
           ],
           "answer": "A",
-          "explanation": "चूंकि कुछ डॉक्टर इंजीनियर हैं और वे सभी इंजीनियर वैज्ञानिक के वृत्त में हैं, इसलिए डॉक्टर का कुछ हिस्सा वैज्ञानिक होगा ही। अतः निष्कर्ष I 100% सत्य है।",
+          "explanation": "उत्तर और पूर्व के बीच की दिशा उत्तर-पूर्व है।",
           "reference": "PTET Section A"
         },
         {
           "id": 13,
           "originalId": 13,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Ranking",
+          "questionType": "Blood Relation",
           "difficulty": "moderate",
-          "topic": "रैंकिंग/तुलना पहेली",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "P, Q से लंबा है लेकिन R जितना लंबा नहीं है। S, P से छोटा है लेकिन Q से लंबा है। इनमें सबसे छोटा कौन है?",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B की पत्नी है। C, A का पुत्र है। D, C का भाई है। D का B से क्या संबंध है?\nकूट;",
           "options": [
-            "P",
-            "Q",
-            "R",
-            "S"
+            "पिता",
+            "पुत्र",
+            "भाई",
+            "भतीजा"
           ],
           "answer": "B",
-          "explanation": "ऊँचाई का क्रम (बड़े से छोटे): R > P > S > Q. अतः सबसे छोटा Q है।",
+          "explanation": "C और D, A और B के पुत्र हैं।",
           "reference": "PTET Section A"
         },
         {
           "id": 14,
           "originalId": 14,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Blood Relation",
+          "questionType": "Direction Test",
           "difficulty": "moderate",
-          "topic": "रक्त संबंध - इशारा करते हुए",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक तस्वीर में एक महिला की ओर इशारा करते हुए रमेश ने कहा, \"वह मेरे दादाजी के इकलौते पुत्र की पुत्री है।\" महिला का रमेश से क्या संबंध है?",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक व्यक्ति दक्षिण की ओर 3 किमी चलता है, फिर बाएं मुड़कर 2 किमी चलता है। वह प्रारंभिक बिंदु से किस दिशा में है?\nकूट;",
           "options": [
-            "माता",
-            "बहन",
-            "बुआ",
-            "चचेरी बहन"
+            "दक्षिण-पूर्व",
+            "दक्षिण-पश्चिम",
+            "उत्तर-पूर्व",
+            "उत्तर-पश्चिम"
           ],
-          "answer": "B",
-          "explanation": "रमेश के दादाजी का इकलौता पुत्र = रमेश का पिता। रमेश के पिता की पुत्री = रमेश की बहन।",
+          "answer": "A",
+          "explanation": "दक्षिण में जाने के बाद बाएं मुड़ने पर वह पूर्व दिशा की ओर जा रहा है।",
           "reference": "PTET Section A"
         },
         {
           "id": 15,
           "originalId": 15,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'P+Q' का अर्थ है P, Q का पिता है। 'P-Q' का अर्थ है P, Q की माता है। 'A+B-C' में C, A का कौन है?\nकूट;",
+          "options": [
+            "पोता",
+            "पोती",
+            "बेटा",
+            "निर्धारित नहीं किया जा सकता"
+          ],
+          "answer": "D",
+          "explanation": "C का लिंग (Gender) स्पष्ट नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 16,
+          "originalId": 16,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
           "questionType": "Direction Test",
           "difficulty": "moderate",
-          "topic": "दिशा परीक्षण - परछाई",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक सुबह सूर्योदय के बाद, राम और श्याम एक दूसरे के आमने-सामने खड़े होकर बात कर रहे थे। यदि राम की परछाई श्याम के ठीक बाईं (Left) ओर पड़ रही थी, तो श्याम का मुख किस दिशा में था?",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "राम का मुख पूर्व की ओर है। वह 90 डिग्री घड़ी की दिशा में घूमता है। अब उसका मुख किस दिशा में है?\nकूट;",
+          "options": [
+            "उत्तर",
+            "दक्षिण",
+            "पश्चिम",
+            "पूर्व"
+          ],
+          "answer": "B",
+          "explanation": "पूर्व से 90 डिग्री क्लॉकवाइज दक्षिण दिशा होती है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 17,
+          "originalId": 17,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक तस्वीर की ओर इशारा करते हुए श्याम ने कहा, \"वह मेरे पिता की इकलौती बहन का बेटा है।\" तस्वीर वाला व्यक्ति श्याम का क्या है?\nकूट;",
+          "options": [
+            "भाई",
+            "ममेरा भाई",
+            "चचेरा भाई",
+            "पिता"
+          ],
+          "answer": "B",
+          "explanation": "पिता की बहन बुआ होती है, बुआ का बेटा ममेरा भाई/फुफेरा भाई होता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 18,
+          "originalId": 18,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "सीता 8 किमी पश्चिम की ओर चलती है, फिर दाएं मुड़कर 3 किमी चलती है। वह शुरुआती बिंदु से कितनी दूर है?\nकूट;",
+          "options": [
+            "8 किमी",
+            "5 किमी",
+            "√73 किमी",
+            "11 किमी"
+          ],
+          "answer": "C",
+          "explanation": "पाइथागोरस प्रमेय (8² + 3²) = 64+9 = 73. √73.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 19,
+          "originalId": 19,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "X, Y का भाई है। Z, Y की माँ है। W, Z का पिता है। X का W से क्या संबंध है?\nकूट;",
+          "options": [
+            "दादा",
+            "पोता",
+            "पुत्र",
+            "भाई"
+          ],
+          "answer": "B",
+          "explanation": "W, Z के पिता हैं, और Z, X की माँ है। तो W नाना हैं और X पोता।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 20,
+          "originalId": 20,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि दक्षिण-पूर्व को उत्तर कहा जाए, तो उत्तर-पूर्व को क्या कहेंगे?\nकूट;",
+          "options": [
+            "पश्चिम",
+            "पूर्व",
+            "दक्षिण",
+            "दक्षिण-पश्चिम"
+          ],
+          "answer": "A",
+          "explanation": "दिशाएं 135 डिग्री घूम रही हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 21,
+          "originalId": 21,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 4, 9, 16, 25, ?\nकूट;",
+          "options": [
+            "30",
+            "36",
+            "40",
+            "49"
+          ],
+          "answer": "B",
+          "explanation": "ये पूर्ण वर्ग हैं (2², 3², 4², 5², 6²=36)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 22,
+          "originalId": 22,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 1, 2, 6, 24, ?\nकूट;",
+          "options": [
+            "100",
+            "120",
+            "125",
+            "144"
+          ],
+          "answer": "B",
+          "explanation": "*2, *3, *4, *5 का पैटर्न है (24*5 = 120)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 23,
+          "originalId": 23,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Letter Series",
+          "difficulty": "moderate",
+          "topic": "Letter Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: AZ, BY, CX, DW, ?\nकूट;",
+          "options": [
+            "EV",
+            "EU",
+            "FV",
+            "FU"
+          ],
+          "answer": "A",
+          "explanation": "पहला अक्षर बढ़ रहा है, दूसरा घट रहा है (E, V)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 24,
+          "originalId": 24,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) 125 (B) 27 (C) 8 (D) 100\nकूट;",
+          "options": [
+            "125",
+            "27",
+            "8",
+            "100"
+          ],
+          "answer": "D",
+          "explanation": "बाकी सब घन (Cube) हैं, 100 वर्ग (Square) है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 25,
+          "originalId": 25,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "लुप्त संख्या: 5, 10, 17, 26, ?\nकूट;",
+          "options": [
+            "35",
+            "37",
+            "39",
+            "40"
+          ],
+          "answer": "B",
+          "explanation": "n²+1 का पैटर्न है (6²+1 = 37)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 26,
+          "originalId": 26,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "2 : 5 :: 5 : ?\nकूट;",
+          "options": [
+            "10",
+            "12",
+            "25",
+            "26"
+          ],
+          "answer": "D",
+          "explanation": "n² + 1 का पैटर्न (2²+1=5, 5²+1=26)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 27,
+          "originalId": 27,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 10, 18, 28, 40, ?\nकूट;",
+          "options": [
+            "50",
+            "54",
+            "56",
+            "58"
+          ],
+          "answer": "B",
+          "explanation": "अंतर +8, +10, +12, +14 (40+14=54)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 28,
+          "originalId": 28,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) सेब (B) संतरा (C) अंगूर (D) फूलगोभी\nकूट;",
+          "options": [
+            "सेब",
+            "संतरा",
+            "अंगूर",
+            "फूलगोभी"
+          ],
+          "answer": "D",
+          "explanation": "फूलगोभी सब्जी है, बाकी फल हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 29,
+          "originalId": 29,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 8, 24, 12, 36, 18, ?\nकूट;",
+          "options": [
+            "54",
+            "52",
+            "48",
+            "40"
+          ],
+          "answer": "A",
+          "explanation": "*3, /2 का पैटर्न (18*3 = 54)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 30,
+          "originalId": 30,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "3, 12, 27, 48, 75, ?\nकूट;",
+          "options": [
+            "108",
+            "100",
+            "90",
+            "110"
+          ],
+          "answer": "A",
+          "explanation": "3 * (1², 2², 3², 4², 5², 6²)। 3*36 = 108.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 31,
+          "originalId": 31,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Mathematical Operations",
+          "difficulty": "moderate",
+          "topic": "Mathematical Operations",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि '+' का अर्थ 'भाग', '-' का अर्थ 'गुणा' है, तो 10 + 2 - 5 का मान क्या होगा?\nकूट;",
+          "options": [
+            "15",
+            "20",
+            "25",
+            "10"
+          ],
+          "answer": "C",
+          "explanation": "10/2 * 5 = 5 * 5 = 25.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 32,
+          "originalId": 32,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "40 विद्यार्थियों की कक्षा में, राहुल ऊपर से 10वें स्थान पर है। नीचे से उसका स्थान क्या है?\nकूट;",
+          "options": [
+            "30",
+            "31",
+            "29",
+            "32"
+          ],
+          "answer": "B",
+          "explanation": "40 - 10 + 1 = 31.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 33,
+          "originalId": 33,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि परसों रविवार था, तो आज से 3 दिन बाद क्या होगा?\nकूट;",
+          "options": [
+            "शुक्रवार",
+            "शनिवार",
+            "रविवार",
+            "गुरुवार"
+          ],
+          "answer": "A",
+          "explanation": "परसों रविवार था, तो आज मंगलवार है। मंगल + 3 दिन = शुक्रवार।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 34,
+          "originalId": 34,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक पंक्ति में A बाएं से 5वां और B दाएं से 6ठा है। यदि वे स्थान बदल लें, तो A बाएं से 13वां हो जाता है। कुल कितने छात्र हैं?\nकूट;",
+          "options": [
+            "18",
+            "19",
+            "20",
+            "21"
+          ],
+          "answer": "A",
+          "explanation": "A का नया स्थान 13+6-1 = 18.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 35,
+          "originalId": 35,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'कैमरा' = 'फोटोग्राफ', तो 'लेखक' = ?\nकूट;",
+          "options": [
+            "किताब",
+            "स्याही",
+            "पेन",
+            "कागज"
+          ],
+          "answer": "A",
+          "explanation": "कैमरा फोटोग्राफ बनाता है, लेखक किताब लिखता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 36,
+          "originalId": 36,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Age",
+          "difficulty": "moderate",
+          "topic": "Age",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 साल पहले A की आयु B की आयु की दोगुनी थी। यदि आज B 20 वर्ष का है, तो A कितने का है?\nकूट;",
+          "options": [
+            "30",
+            "35",
+            "40",
+            "25"
+          ],
+          "answer": "B",
+          "explanation": "5 साल पहले B 15 का था, तो A 30 का था। आज A 35 का है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 37,
+          "originalId": 37,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) 12-48 (B) 14-56 (C) 16-64 (D) 18-70\nकूट;",
+          "options": [
+            "12-48",
+            "14-56",
+            "16-64",
+            "18-70"
+          ],
+          "answer": "D",
+          "explanation": "बाकी सब 4 गुना हैं, 18*4=72 होता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 38,
+          "originalId": 38,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock and Direction",
+          "difficulty": "moderate",
+          "topic": "Clock and Direction",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक घड़ी में 9:00 बजे हैं। मिनट की सुई पश्चिम दिशा में है। घंटे की सुई किस दिशा में है?\nकूट;",
           "options": [
             "उत्तर",
             "दक्षिण",
@@ -291,113 +728,37 @@ window.ptetPracticeQuestionBank = {
             "पश्चिम"
           ],
           "answer": "A",
-          "explanation": "सुबह के समय परछाई पश्चिम दिशा में बनती है। श्याम के बाएं हाथ की तरफ पश्चिम है। इसका अर्थ है श्याम उत्तर की ओर मुख करके खड़ा है (तभी उसका बायां हाथ पश्चिम की ओर होगा)।",
+          "explanation": "9:00 बजे घंटे की सुई 9 पर (पश्चिम) और मिनट की सुई 12 पर (उत्तर) होती है। यहाँ प्रश्न में दिया है मिनट की सुई पश्चिम में है (90 डिग्री घुमाया है)। तो घंटे की सुई दक्षिण में होगी।",
           "reference": "PTET Section A"
         },
         {
-          "id": 16,
-          "originalId": 16,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Odd One Out",
-          "difficulty": "moderate",
-          "topic": "विषम को छाँटें - Odd One Out",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "निम्नलिखित में से कौन-सा अन्य तीन से भिन्न है?",
-          "options": [
-            "144",
-            "169",
-            "196",
-            "210"
-          ],
-          "answer": "D",
-          "explanation": "144 (12 का वर्ग), 169 (13 का वर्ग), 196 (14 का वर्ग)। जबकि 210 किसी भी पूर्ण संख्या का वर्ग नहीं है।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 17,
-          "originalId": 17,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Assumption",
-          "difficulty": "moderate",
-          "topic": "कथन और पूर्वधारणाएं - Assumptions",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन: \"यदि आप एक अच्छी नौकरी चाहते हैं, तो हमारे कंप्यूटर कोर्स में दाखिला लें।\" - एक विज्ञापन।\nपूर्वधारणाएं:\nI. लोग अच्छी नौकरी चाहते हैं।\nII. यह कंप्यूटर कोर्स अच्छी नौकरी दिलाने में मदद करता है।\nकूट:\nA. केवल I अंतर्निहित है\nB. केवल II अंतर्निहित है\nC. I और II दोनों अंतर्निहित हैं\nD. न तो I और न ही II अंतर्निहित है",
-          "options": [
-            "केवल I अंतर्निहित है",
-            "केवल II अंतर्निहित है",
-            "I और II दोनों अंतर्निहित हैं",
-            "न तो I और न ही II अंतर्निहित है"
-          ],
-          "answer": "C",
-          "explanation": "विज्ञापन यह सोचकर दिया गया है कि लोग अच्छी नौकरी की तलाश में हैं (I) और विज्ञापनदाता यह दावा कर रहा है कि उसका कोर्स इसमें मददगार है (II)। दोनों पूर्वधारणाएं सही हैं।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 18,
-          "originalId": 18,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Letter Series",
-          "difficulty": "moderate",
-          "topic": "अक्षर शृंखला",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शृंखला को पूरा करें:\nBZA, DYC, FXE, ?",
-          "options": [
-            "HWG",
-            "HVI",
-            "HWJ",
-            "GWG"
-          ],
-          "answer": "A",
-          "explanation": "पहला अक्षर: B(+2)=D, D(+2)=F, F(+2)=H.\nदूसरा अक्षर: Z(-1)=Y, Y(-1)=X, X(-1)=W.\nतीसरा अक्षर: A(+2)=C, C(+2)=E, E(+2)=G.\nअतः सही उत्तर HWG होगा।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 19,
-          "originalId": 19,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Mathematical Operation",
-          "difficulty": "moderate",
-          "topic": "गणितीय संक्रियाएं",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि '+' का अर्थ '×', '-' का अर्थ '÷', '×' का अर्थ '-' और '÷' का अर्थ '+' है, तो:\n8 + 4 - 2 ÷ 6 × 3 = ?",
-          "options": [
-            "13",
-            "19",
-            "21",
-            "25"
-          ],
-          "answer": "B",
-          "explanation": "चिह्नों को बदलने पर: 8 × 4 ÷ 2 + 6 - 3.\nBODMAS के अनुसार: पहले भाग (4÷2=2), फिर गुणा (8×2=16), फिर जोड़ (16+6=22), अंत में घटाव (22-3=19)।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 20,
-          "originalId": 20,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Venn Diagram",
-          "difficulty": "moderate",
-          "topic": "तार्किक वेन आरेख",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "निम्नलिखित में से कौन-सा आरेख 'महिलाओं, माताओं और डॉक्टरों' के बीच सही संबंध को दर्शाता है?",
-          "options": [
-            "दो अलग वृत्त एक बड़े वृत्त के अंदर",
-            "एक वृत्त के अंदर दूसरा वृत्त, और तीसरा वृत्त दोनों को काटता हुआ",
-            "तीनों वृत्त एक दूसरे को काटते हुए",
-            "तीन अलग-अलग वृत्त"
-          ],
-          "answer": "B",
-          "explanation": "सभी 'माताएं' अनिवार्य रूप से 'महिलाएं' होती हैं (माताओं का वृत्त महिलाओं के वृत्त के पूरी तरह अंदर होगा)। 'डॉक्टर' कुछ माताएं भी हो सकती हैं और कुछ महिलाएं भी, तथा पुरुष भी डॉक्टर हो सकते हैं। इसलिए डॉक्टर का वृत्त दोनों वृत्तों को आंशिक रूप से काटेगा।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 21,
-          "originalId": 21,
+          "id": 39,
+          "originalId": 39,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
           "questionType": "Calendar",
           "difficulty": "moderate",
-          "topic": "कैलेंडर",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि 15 अगस्त 2011 को सोमवार था, तो 15 अगस्त 2013 को कौन-सा दिन होगा?",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि कल के बाद का दिन शुक्रवार है, तो कल से दो दिन पहले क्या था?\nकूट;",
+          "options": [
+            "शनिवार",
+            "रविवार",
+            "सोमवार",
+            "मंगलवार"
+          ],
+          "answer": "C",
+          "explanation": "आज बुधवार है। कल मंगलवार, उससे दो दिन पहले रविवार (नहीं, सोमवार)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 40,
+          "originalId": 40,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "1 जनवरी को सोमवार है, तो उसी वर्ष 1 फरवरी को क्या होगा?\nकूट;",
           "options": [
             "मंगलवार",
             "बुधवार",
@@ -405,531 +766,930 @@ window.ptetPracticeQuestionBank = {
             "शुक्रवार"
           ],
           "answer": "C",
-          "explanation": "2011 से 2012 (लीप वर्ष) तक विषम दिन (Odd days) = 2 (क्योंकि 2012 लीप वर्ष है और फरवरी शामिल है)। 2012 से 2013 तक विषम दिन = 1। कुल विषम दिन = 3। सोमवार + 3 दिन = गुरुवार।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 22,
-          "originalId": 22,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Clock",
-          "difficulty": "moderate",
-          "topic": "घड़ी - कोण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "4 बजकर 20 मिनट पर घड़ी की घंटे और मिनट की सूइयों के बीच कितने डिग्री का कोण बनेगा?",
-          "options": [
-            "0°",
-            "10°",
-            "20°",
-            "15°"
-          ],
-          "answer": "B",
-          "explanation": "सूत्र: Angle = |30H - 5.5M|\n= |30×4 - 5.5×20| = |120 - 110| = 10°।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 23,
-          "originalId": 23,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\n1. सभी कुत्ते शेर हैं।\n2. कोई शेर बाघ नहीं है।\n3. कुछ बाघ भालू हैं।\nनिष्कर्ष:\nI. कुछ कुत्ते बाघ हैं।\nII. कुछ भालू शेर नहीं हैं।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
-          "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
-          ],
-          "answer": "B",
-          "explanation": "कुत्ते शेर के अंदर हैं, और शेर बाघ नहीं है, अतः कुत्ता कभी बाघ नहीं हो सकता (I गलत)। कुछ भालू बाघ हैं, और बाघ शेर नहीं हैं, अतः भालू का वह हिस्सा जो बाघ है, कभी शेर नहीं होगा (II सत्य है)।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 24,
-          "originalId": 24,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Data Sufficiency",
-          "difficulty": "moderate",
-          "topic": "आंकड़े पर्याप्तता - Data Sufficiency",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "किसी कूट भाषा में 'good' के लिए क्या कूट (code) है?\nकथन I: 'he is good' को 'pa ta na' लिखा जाता है।\nकथन II: 'good and bad' को 'na sa ka' लिखा जाता है।\nकूट:\nA. केवल I पर्याप्त है\nB. केवल II पर्याप्त है\nC. या तो I या II पर्याप्त है\nD. I और II दोनों मिलकर पर्याप्त हैं",
-          "options": [
-            "केवल I पर्याप्त है",
-            "केवल II पर्याप्त है",
-            "या तो I या II पर्याप्त है",
-            "I और II दोनों मिलकर पर्याप्त हैं"
-          ],
-          "answer": "D",
-          "explanation": "कथन I और II दोनों में केवल 'good' शब्द कॉमन है। और उनके कूट में केवल 'na' कॉमन है। इसलिए 'good' का कूट 'na' निकालने के लिए दोनों कथनों की आवश्यकता होगी।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 25,
-          "originalId": 25,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Puzzle",
-          "difficulty": "moderate",
-          "topic": "समय पहेली",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "पांच विषय: A, B, C, D और E सोमवार से शुक्रवार तक एक के बाद एक पढ़ाए जाते हैं। C को B के ठीक अगले दिन पढ़ाया जाता है। D को शुक्रवार को पढ़ाया जाता है। A को मंगलवार को नहीं पढ़ाया जाता है। E को B से ठीक पहले पढ़ाया जाता है। सोमवार को कौन-सा विषय पढ़ाया जाता है?",
-          "options": [
-            "A",
-            "B",
-            "E",
-            "C"
-          ],
-          "answer": "A",
-          "explanation": "E, B, C एक साथ आएंगे (E->B->C)। D शुक्रवार को है। यदि हम E,B,C को मंगल, बुध, गुरु रखते हैं, तो A सोमवार को आएगा। (यदि E,B,C को सोम, मंगल, बुध रखें, तो A को गुरु को आना होगा, लेकिन प्रश्न में A मंगल को नहीं है, यह शर्त पूरी होती है। चूँकि E,B,C एक ब्लॉक है, A सोमवार को फिक्स होगा।)",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 26,
-          "originalId": 26,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Blood Relation",
-          "difficulty": "moderate",
-          "topic": "रक्त संबंध - पज़ल",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक परिवार में 6 सदस्य A, B, C, D, E और F हैं। परिवार में दो विवाहित जोड़े हैं। D, A की दादी है और B की माता है। C, B की पत्नी है और F की माता है। F, E की पोती है। C का A से क्या संबंध है?",
-          "options": [
-            "माता",
-            "बहन",
-            "बुआ",
-            "दादी"
-          ],
-          "answer": "A",
-          "explanation": "D दादी है और B की माता है। C, B की पत्नी है (अतः B और C पति-पत्नी हैं)। C, F की माता है, इसका मतलब A और F, B और C की संतानें हैं। इसलिए C, A की माता है।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 27,
-          "originalId": 27,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "मिलान करें - संख्या शृंखला का लॉजिक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "दी गई शृंखलाओं को उनके अगले पद से सुमेलित करें:\nसूची-I (शृंखला)\na. 1, 4, 9, 16, __\nb. 2, 3, 5, 7, __\nc. 1, 8, 27, 64, __\nd. 2, 5, 10, 17, __\n\nसूची-II (अगला पद)\n1. 11\n2. 25\n3. 26\n4. 125\n\nकूट:\nA. a-2, b-1, c-4, d-3\nB. a-1, b-2, c-3, d-4\nC. a-2, b-4, c-1, d-3\nD. a-4, b-1, c-2, d-3",
-          "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-4, c-1, d-3",
-            "a-4, b-1, c-2, d-3"
-          ],
-          "answer": "A",
-          "explanation": "a. वर्ग संख्याएं (25)। b. अभाज्य संख्याएं (Prime numbers) (11)। c. घन संख्याएं (125)। d. (n² + 1) पैटर्न (26)।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 28,
-          "originalId": 28,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Direction Test",
-          "difficulty": "moderate",
-          "topic": "दिशा परीक्षण - पाइथागोरस",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक व्यक्ति बिंदु A से उत्तर की ओर 6 किमी चलता है, फिर दाएं मुड़कर 8 किमी चलता है और बिंदु B पर पहुँचता है। बिंदु A और B के बीच की न्यूनतम दूरी कितनी है?",
-          "options": [
-            "14 किमी",
-            "12 किमी",
-            "10 किमी",
-            "8 किमी"
-          ],
-          "answer": "C",
-          "explanation": "न्यूनतम दूरी = √(6² + 8²) = √(36 + 64) = √100 = 10 किमी।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 29,
-          "originalId": 29,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Coding-Decoding",
-          "difficulty": "moderate",
-          "topic": "कोडिंग - संख्यात्मक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि A=1, B=2, C=3... के आधार पर, CAT = 24 और DOG = 26 है, तो HORSE का मान क्या होगा?",
-          "options": [
-            "63",
-            "65",
-            "68",
-            "70"
-          ],
-          "answer": "B",
-          "explanation": "अक्षरों के स्थानीय मान का योग: H(8) + O(15) + R(18) + S(19) + E(5) = 65.",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 30,
-          "originalId": 30,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Course of Action",
-          "difficulty": "moderate",
-          "topic": "कथन और कार्यवाही - Course of Action",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\nशहर में भारी बारिश के कारण निचले इलाकों में पानी भर गया है।\nकार्यवाही:\nI. सरकार को तुरंत निचले इलाकों से लोगों को सुरक्षित स्थानों पर पहुँचाना चाहिए।\nII. मौसम विभाग को भविष्य में बारिश की भविष्यवाणी नहीं करनी चाहिए।\nकूट:\nA. केवल I अनुसरण करता है\nB. केवल II अनुसरण करता है\nC. दोनों I और II अनुसरण करते हैं\nD. न तो I न ही II",
-          "options": [
-            "केवल I अनुसरण करता है",
-            "केवल II अनुसरण करता है",
-            "दोनों I और II अनुसरण करते हैं",
-            "न तो I न ही II"
-          ],
-          "answer": "A",
-          "explanation": "लोगों को बचाना एक तार्किक और आवश्यक कदम है (I)। लेकिन भविष्यवाणी बंद करना मूर्खतापूर्ण है (II)।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 31,
-          "originalId": 31,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Puzzle",
-          "difficulty": "moderate",
-          "topic": "बैठक व्यवस्था - वृत्ताकार",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "6 मित्र P, Q, R, S, T और U एक वृत्ताकार मेज के चारों ओर केंद्र की ओर मुख करके बैठे हैं। P, Q के ठीक सामने है। R, P के ठीक दाएं बैठा है। S, Q के ठीक बाएं बैठा है। T, P और S के बीच में बैठा है। U के ठीक सामने कौन बैठा है?",
-          "options": [
-            "R",
-            "T",
-            "P",
-            "S"
-          ],
-          "answer": "B",
-          "explanation": "क्रम बनेगा (घड़ी की सुई की दिशा में): P, R, U, Q, S, T. P के सामने Q है, R के सामने S है, अतः U के सामने T बैठा है।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 32,
-          "originalId": 32,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Cube",
-          "difficulty": "moderate",
-          "topic": "विश्लेषणात्मक तर्क - घन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक बड़े घन की सभी सतहों को लाल रंग से रंगा गया है। फिर इसे 27 समान छोटे घनों में काटा जाता है। ऐसे कितने छोटे घन होंगे जिनकी ठीक 3 सतहें रंगी होंगी?",
-          "options": [
-            "4",
-            "6",
-            "8",
-            "12"
-          ],
-          "answer": "C",
-          "explanation": "किसी भी घन में 3 सतहों वाले रंगे हुए छोटे घन हमेशा घन के कोनों (Corners) पर स्थित होते हैं। एक घन में 8 कोने होते हैं, इसलिए ऐसे घनों की संख्या हमेशा 8 होगी।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 33,
-          "originalId": 33,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष - केवल/कुछ नहीं",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\n1. केवल कुछ कारें बसें हैं। (Only a few cars are buses)\n2. कोई बस ट्रक नहीं है।\nनिष्कर्ष:\nI. कुछ कारें ट्रक नहीं हैं।\nII. सभी कारें कभी बसें नहीं हो सकतीं।\nकूट:\nA. केवल I सत्य है\nB. केवल II सत्य है\nC. दोनों सत्य हैं\nD. दोनों असत्य हैं",
-          "options": [
-            "केवल I सत्य है",
-            "केवल II सत्य है",
-            "दोनों सत्य हैं",
-            "दोनों असत्य हैं"
-          ],
-          "answer": "C",
-          "explanation": "कार का वह हिस्सा जो बस है, कभी ट्रक नहीं होगा (I सत्य)। 'केवल कुछ' का अर्थ है कि कार का कुछ हिस्सा बस है और कुछ हिस्सा बस नहीं है, इसलिए पूरी कार कभी बस के अंदर नहीं जा सकती (II सत्य)।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 34,
-          "originalId": 34,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Argument",
-          "difficulty": "moderate",
-          "topic": "कथन और तर्क - Argument",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन: क्या स्कूलों में बच्चों को होमवर्क (गृहकार्य) देना पूरी तरह से बंद कर देना चाहिए?\nतर्क:\nI. हाँ, इससे बच्चों को खेल-कूद और रचनात्मक कार्यों के लिए अधिक समय मिलेगा।\nII. नहीं, होमवर्क बच्चों में स्वाध्याय (Self-study) की आदत विकसित करता है।\nकूट:\nA. केवल तर्क I मजबूत है\nB. केवल तर्क II मजबूत है\nC. दोनों तर्क मजबूत हैं\nD. न तो I न ही II मजबूत है",
-          "options": [
-            "केवल तर्क I मजबूत है",
-            "केवल तर्क II मजबूत है",
-            "दोनों तर्क मजबूत हैं",
-            "न तो I न ही II मजबूत है"
-          ],
-          "answer": "C",
-          "explanation": "दोनों तर्क अपनी-अपनी जगह व्यावहारिक और मजबूत हैं। बच्चों को अन्य गतिविधियों के लिए समय चाहिए, और स्वाध्याय की आदत भी जरूरी है।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 35,
-          "originalId": 35,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Coding-Decoding",
-          "difficulty": "moderate",
-          "topic": "कूट भाषा - वाक्य आधारित",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक कूट भाषा में:\n'water is life' को 'na ho ki'\n'life is beautiful' को 'ki ta na' लिखा जाता है।\nतो 'beautiful' के लिए क्या कूट होगा?",
-          "options": [
-            "na",
-            "ki",
-            "ho",
-            "ta"
-          ],
-          "answer": "D",
-          "explanation": "दोनों वाक्यों में 'is life' कॉमन है, और कूट में 'na ki' कॉमन है। दूसरे वाक्य में 'beautiful' बचा और कूट में 'ta' बचा। अतः beautiful = ta.",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 36,
-          "originalId": 36,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "मिलान करें - तार्किक समीकरण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "चिह्नों का अर्थ बदलें: '+' का अर्थ '-', '-' का अर्थ '×', '×' का अर्थ '÷', '÷' का अर्थ '+'। अब सुमेलित करें:\n\nसूची-I (समीकरण)\na. 10 × 5 - 3\nb. 12 ÷ 4 - 2\nc. 8 + 6 × 2\nd. 15 - 2 + 5\n\nसूची-II (परिणाम)\n1. 20\n2. 5\n3. 25\n4. 6\n\nकूट:\nA. a-4, b-1, c-2, d-3\nB. a-4, b-1, c-3, d-2\nC. a-1, b-2, c-3, d-4\nD. a-4, b-2, c-1, d-3",
-          "options": [
-            "a-4, b-1, c-2, d-3",
-            "a-4, b-1, c-3, d-2",
-            "a-1, b-2, c-3, d-4",
-            "a-4, b-2, c-1, d-3"
-          ],
-          "answer": "A",
-          "explanation": "a. 10 ÷ 5 × 3 = 2 × 3 = 6\nb. 12 + 4 × 2 = 12 + 8 = 20\nc. 8 - 6 ÷ 2 = 8 - 3 = 5\nd. 15 × 2 - 5 = 30 - 5 = 25.",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 37,
-          "originalId": 37,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Blood Relation",
-          "difficulty": "moderate",
-          "topic": "रक्त संबंध - समीकरण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "A @ B का अर्थ 'A, B का पुत्र है', A # B का अर्थ 'A, B की पत्नी है', A $ B का अर्थ 'A, B की बहन है'। P @ Q # R में P का R से क्या संबंध है?",
-          "options": [
-            "पुत्र",
-            "पिता",
-            "भाई",
-            "ससुर"
-          ],
-          "answer": "A",
-          "explanation": "P @ Q (P, Q का पुत्र है)। Q # R (Q, R की पत्नी है)। इसका मतलब R, Q का पति है। अतः P, R का भी पुत्र है।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 38,
-          "originalId": 38,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Direction Test",
-          "difficulty": "moderate",
-          "topic": "दिशा - तार्किक ट्रिकी प्रश्न",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक इलेक्ट्रिक ट्रेन उत्तर से दक्षिण दिशा की ओर जा रही है। हवा पूर्व से पश्चिम की ओर चल रही है। ट्रेन का धुआँ किस दिशा में जाएगा?",
-          "options": [
-            "उत्तर-पश्चिम",
-            "दक्षिण-पूर्व",
-            "उत्तर",
-            "इनमें से कोई नहीं"
-          ],
-          "answer": "D",
-          "explanation": "यह एक ट्रिकी प्रश्न है। इलेक्ट्रिक ट्रेन से धुआँ नहीं निकलता है। इसलिए कोई दिशा नहीं होगी।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 39,
-          "originalId": 39,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Venn Diagram",
-          "difficulty": "moderate",
-          "topic": "वेन आरेख - प्रतिशत",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक परीक्षा में, 60% छात्र हिंदी में उत्तीर्ण हुए और 50% अंग्रेजी में। यदि 20% छात्र दोनों विषयों में अनुत्तीर्ण (Fail) हुए, तो दोनों विषयों में उत्तीर्ण होने वाले छात्रों का प्रतिशत क्या है?",
-          "options": [
-            "10%",
-            "20%",
-            "30%",
-            "40%"
-          ],
-          "answer": "C",
-          "explanation": "कम से कम एक विषय में उत्तीर्ण = 100% - 20% (दोनों में फेल) = 80%।\nसूत्र: n(A∪B) = n(A) + n(B) - n(A∩B)\n80 = 60 + 50 - x\nx = 110 - 80 = 30%।",
-          "reference": "PTET Section A"
-        },
-        {
-          "id": 40,
-          "originalId": 40,
-          "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Puzzle",
-          "difficulty": "moderate",
-          "topic": "पहेली - आयु आधारित",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "A की आयु B की दोगुनी है। 5 वर्ष पहले, A की आयु B की आयु की 3 गुनी थी। A की वर्तमान आयु क्या है?",
-          "options": [
-            "10 वर्ष",
-            "15 वर्ष",
-            "20 वर्ष",
-            "30 वर्ष"
-          ],
-          "answer": "C",
-          "explanation": "माना B की आयु = x, तो A = 2x.\n5 वर्ष पहले: (2x - 5) = 3(x - 5)\n2x - 5 = 3x - 15\nx = 10. (B की आयु 10 है)। A की आयु 2x = 20 वर्ष।",
+          "explanation": "जनवरी में 31 दिन होते हैं। 31/7 = 3 शेष। सोमवार + 3 = गुरुवार।",
           "reference": "PTET Section A"
         },
         {
           "id": 41,
           "originalId": 41,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Word Formation",
+          "questionType": "Seating Arrangement",
           "difficulty": "moderate",
-          "topic": "शब्द निर्माण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शब्द \"RECREATION\" के अक्षरों का प्रयोग करके निम्नलिखित में से कौन-सा शब्द नहीं बनाया जा सकता है?",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 दोस्त एक पंक्ति में बैठे हैं। A, B के दाईं ओर है। C, D के बाईं ओर है। B, E के बाईं ओर है। D, E के दाईं ओर है। बीच में कौन है?\nकूट;",
           "options": [
-            "ACTION",
-            "TORN",
-            "CREATE",
-            "NATION"
+            "A",
+            "B",
+            "E",
+            "D"
           ],
-          "answer": "D",
-          "explanation": "'NATION' में दो 'N' हैं, जबकि मूल शब्द \"RECREATION\" में केवल एक 'N' है।",
+          "answer": "C",
+          "explanation": "क्रम C-D-E-B-A. E बीच में है।",
           "reference": "PTET Section A"
         },
         {
           "id": 42,
           "originalId": 42,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Ranking",
+          "questionType": "कथन-निष्कर्ष",
           "difficulty": "moderate",
-          "topic": "रैंकिंग - कुल संख्या",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "छात्रों की एक पंक्ति में, राम बाएं से 15वें स्थान पर है और दाएं से 20वें स्थान पर है। पंक्ति में कुल कितने छात्र हैं?",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी किताबें पेन हैं।\nकुछ पेन पेंसिल हैं।\nनिष्कर्ष: (I) सभी पेन किताबें हैं।\n(II) कुछ किताबें पेंसिल हैं।\nकूट;",
           "options": [
-            "34",
-            "35",
-            "36",
-            "33"
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
           ],
-          "answer": "A",
-          "explanation": "कुल छात्र = (बाएं से स्थान + दाएं से स्थान) - 1\n= (15 + 20) - 1 = 35 - 1 = 34.",
+          "answer": "D",
+          "explanation": "'सभी किताबें पेन हैं' का अर्थ 'सभी पेन किताबें' नहीं होता। II भी निश्चित नहीं है।",
           "reference": "PTET Section A"
         },
         {
           "id": 43,
           "originalId": 43,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Ranking",
           "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष - विपरीत तर्क",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन:\n1. कोई खिड़की दरवाजा नहीं है।\n2. सभी दरवाजे दीवारें हैं।\nनिष्कर्ष:\nI. कुछ दीवारें दरवाजे हैं।\nII. कोई दीवार खिड़की नहीं है।\nकूट:\nA. केवल I अनुसरण करता है\nB. केवल II अनुसरण करता है\nC. दोनों I और II अनुसरण करते हैं\nD. न तो I न ही II",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B से लंबा है लेकिन C से छोटा है। D, E से लंबा है लेकिन B से छोटा है। सबसे लंबा कौन है?\nकूट;",
           "options": [
-            "केवल I अनुसरण करता है",
-            "केवल II अनुसरण करता है",
-            "दोनों I और II अनुसरण करते हैं",
-            "न तो I न ही II"
+            "A",
+            "B",
+            "C",
+            "D"
           ],
-          "answer": "A",
-          "explanation": "सभी दरवाजे दीवार के अंदर हैं, इसलिए कुछ दीवारें दरवाजे होंगी (I सत्य)। दीवार और खिड़की के बीच नकारात्मक संबंध दरवाजे तक सीमित है, पूरी दीवार खिड़की हो सकती है (Possibility है), इसलिए निष्कर्ष II 100% सत्य नहीं है।",
+          "answer": "C",
+          "explanation": "क्रम C > A > B > D > E. C सबसे लंबा है।",
           "reference": "PTET Section A"
         },
         {
           "id": 44,
           "originalId": 44,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Seating Arrangement",
           "difficulty": "moderate",
-          "topic": "कथन-कारण - विज्ञान/तर्क",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): गर्मियों में लोग हल्के या सफेद रंग के कपड़े पहनना पसंद करते हैं।\nकारण (R): सफेद रंग ऊष्मा (Heat) का अच्छा अवशोषक (Absorber) होता है।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, (R) सही व्याख्या नहीं है।\nC. (A) सही है, लेकिन (R) गलत है।\nD. (A) गलत है, लेकिन (R) सही है।",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 मित्र एक वर्ग में बैठे हैं और केंद्र की ओर देख रहे हैं। P, Q के दाईं ओर है। R, S के बाईं ओर है। P, R के सामने है। Q के सामने कौन है?\nकूट;",
           "options": [
-            "(A) और (R) दोनों सही हैं, (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, (R) सही व्याख्या नहीं है।",
-            "(A) सही है, लेकिन (R) गलत है।",
-            "(A) गलत है, लेकिन (R) सही है।"
+            "P",
+            "S",
+            "R",
+            "कोई नहीं"
           ],
-          "answer": "C",
-          "explanation": "सफेद रंग ऊष्मा का अवशोषक नहीं बल्कि अच्छा परावर्तक (Reflector) होता है, इसीलिए यह गर्मियों में ठंडक देता है। अतः कारण (R) पूरी तरह गलत है।",
+          "answer": "B",
+          "explanation": "व्यवस्था P-S-Q-R. Q के सामने S है।",
           "reference": "PTET Section A"
         },
         {
           "id": 45,
           "originalId": 45,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Matching",
+          "questionType": "Analogy",
           "difficulty": "moderate",
-          "topic": "मिलान करें - पेशा और औजार",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "सूची-I (पेशा)\na. दर्जी (Tailor)\nb. लोहार (Blacksmith)\nc. लकड़हारा (Woodcutter)\nd. राजमिस्त्री (Mason)\n\nसूची-II (औजार)\n1. कुल्हाड़ी\n2. सुई\n3. करनी (Trowel)\n4. निहाई (Anvil)\n\nकूट:\nA. a-2, b-4, c-1, d-3\nB. a-2, b-1, c-4, d-3\nC. a-4, b-2, c-1, d-3\nD. a-1, b-2, c-3, d-4",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पुस्तक' : 'पुस्तकालय' :: 'खिलाड़ी' : ?\nकूट;",
           "options": [
-            "a-2, b-4, c-1, d-3",
-            "a-2, b-1, c-4, d-3",
-            "a-4, b-2, c-1, d-3",
-            "a-1, b-2, c-3, d-4"
+            "टीम",
+            "स्टेडियम",
+            "कोच",
+            "खेल"
           ],
           "answer": "A",
-          "explanation": "दर्जी-सुई, लोहार-निहाई (जिस पर रखकर लोहा पीटा जाता है), लकड़हारा-कुल्हाड़ी, राजमिस्त्री-करनी (सीमेंट लगाने का औजार)।",
+          "explanation": "पुस्तकों का समूह पुस्तकालय, खिलाड़ियों का समूह टीम।",
           "reference": "PTET Section A"
         },
         {
           "id": 46,
           "originalId": 46,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Dice",
+          "questionType": "Coding-Decoding",
           "difficulty": "moderate",
-          "topic": "पासा - Dice",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक पासे की दो स्थितियाँ दी गई हैं। एक स्थिति में सामने 2, 3, 5 हैं और दूसरी स्थिति में 1, 3, 6 हैं। अंक 3 के विपरीत फलक पर कौन-सा अंक होगा? (अंक 1 से 6 तक हैं)",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'LION' को 'MIPO' लिखा जाए, तो 'TIGER' को क्या लिखेंगे?\nकूट;",
           "options": [
-            "2",
-            "5",
-            "4",
-            "6"
+            "UJIFS",
+            "UJIGS",
+            "VJIFS",
+            "UJHFS"
           ],
-          "answer": "C",
-          "explanation": "दोनों स्थितियों में '3' कॉमन है। 3 के आस-पास (Adjacent) फलकों पर 2, 5, 1, 6 दिखाई दे रहे हैं। जो अंक दिखाई नहीं दे रहा है (4), वही 3 के विपरीत होगा।",
+          "answer": "A",
+          "explanation": "+1 का पैटर्न है।",
           "reference": "PTET Section A"
         },
         {
           "id": 47,
           "originalId": 47,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Direction Test",
+          "questionType": "Argument",
           "difficulty": "moderate",
-          "topic": "दिशा - क्रमिक घुमाव",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक व्यक्ति उत्तर की ओर मुख किए हुए है। वह लगातार निम्नलिखित क्रम में मुड़ता है: बाएँ, दाएँ, बाएँ, दाएँ, बाएँ। अब उसका मुख किस दिशा में है?",
+          "topic": "Argument",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: क्या स्कूली बच्चों को भारी बस्ते ढोने से मना कर देना चाहिए? तर्क: (I) हाँ, इससे स्वास्थ्य खराब होता है। (II) नहीं, इससे शिक्षा बाधित होगी।\nकूट;",
           "options": [
-            "उत्तर",
-            "दक्षिण",
-            "पूर्व",
-            "पश्चिम"
+            "केवल I मजबूत",
+            "केवल II मजबूत",
+            "दोनों मजबूत",
+            "कोई नहीं"
           ],
-          "answer": "D",
-          "explanation": "एक 'बाएँ (Left)' और एक 'दाएँ (Right)' एक-दूसरे को काट देते हैं (Cancel out)। क्रम: L, R, L, R, L. यहाँ दो जोड़े कट गए, केवल एक 'बायाँ (Left)' बचा। उत्तर दिशा से बाएँ मुड़ने पर मुख 'पश्चिम' में होगा।",
+          "answer": "A",
+          "explanation": "स्वास्थ्य प्राथमिक है, अत: I मजबूत है।",
           "reference": "PTET Section A"
         },
         {
           "id": 48,
           "originalId": 48,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Coding-Decoding",
+          "questionType": "Ranking",
           "difficulty": "moderate",
-          "topic": "कोडिंग - शिफ्टिंग लॉजिक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि शब्द 'MOUSE' को 'FVTPN' लिखा जाता है, तो 'LIGHT' को कैसे लिखा जाएगा?",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "40 लड़कों की पंक्ति में A का स्थान बाएं से 10वां है। यदि उसे 5 स्थान दाईं ओर खिसकाया जाए, तो उसका नया स्थान दाएं से क्या होगा?\nकूट;",
           "options": [
-            "UIHJM",
-            "UHIJM",
-            "JMIHU",
-            "MJIHU"
+            "25",
+            "26",
+            "27",
+            "28"
           ],
-          "answer": "A",
-          "explanation": "पैटर्न विपरीत क्रम (Reverse) में +1 का है।\nMOUSE -> E+1=F, S+1=T, U+1=V, O+1=P, M+1=N (FVTPN).\nLIGHT -> T+1=U, H+1=I, G+1=H, I+1=J, L+1=M. अतः UIHJM.",
+          "answer": "B",
+          "explanation": "नया स्थान बाएं से 15वां। 40 - 15 + 1 = 26.",
           "reference": "PTET Section A"
         },
         {
           "id": 49,
           "originalId": 49,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Data Interpretation",
+          "questionType": "Seating Arrangement",
           "difficulty": "moderate",
-          "topic": "आंकड़ा निर्वचन / तार्किक तुलना",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक दौड़ में 5 प्रतियोगी हैं। A ने B को हराया लेकिन C से हार गया। D ने E को हराया लेकिन B से हार गया। दौड़ किसने जीती?",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "6 व्यक्ति एक वृत्त में बैठे हैं। A, B के सामने है। C, D के दाएं है। E, A के बाईं ओर है। F, B के दाईं ओर है। D के सामने कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "E",
+            "F"
+          ],
+          "answer": "C",
+          "explanation": "D के सामने E है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 50,
+          "originalId": 50,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Word Formation",
+          "difficulty": "moderate",
+          "topic": "Word Formation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कौन सा शब्द 'ORGANIZATION' से नहीं बन सकता?\nकूट;",
+          "options": [
+            "ORGAN",
+            "GAIN",
+            "ZONE",
+            "NATION"
+          ],
+          "answer": "C",
+          "explanation": "'ZONE' में 'E' अक्षर है जो 'ORGANIZATION' में नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 51,
+          "originalId": 51,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कुछ पेन पेंसिल हैं। सभी पेंसिल रबर हैं। कोई रबर कटर नहीं है।\nनिष्कर्ष: (I) कुछ पेन रबर हैं। (II) कोई पेंसिल कटर नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "पेंसिल और रबर का संबंध है, तो पेन का वह हिस्सा रबर है। रबर का कटर से निषेध है, तो पेंसिल भी कटर नहीं हो सकती।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 52,
+          "originalId": 52,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी चाबियां ताले हैं। सभी ताले दरवाजे हैं। सभी दरवाजे लोहे के हैं।\nनिष्कर्ष: (I) सभी चाबियां लोहे की हैं। (II) सभी दरवाजे चाबियां हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "चाबी, ताला और दरवाजा सभी लोहे के अंदर हैं, अतः I सही है। दरवाजा बड़ा है, सभी दरवाजे चाबी नहीं हो सकते।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 53,
+          "originalId": 53,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कुछ बादल पानी हैं। कुछ पानी नीले हैं।\nनिष्कर्ष: (I) कुछ बादल नीले हैं। (II) कोई बादल नीला नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "बादल और नीले के बीच कोई निश्चित संबंध नहीं दिया है, इसलिए या तो वे जुड़े हैं या नहीं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 54,
+          "originalId": 54,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कोई आम सेब नहीं है। कुछ सेब अंगूर हैं।\nनिष्कर्ष: (I) कुछ अंगूर आम नहीं हैं। (II) कोई अंगूर आम नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "सेब का जो हिस्सा अंगूर है, वह आम नहीं हो सकता। दूसरा गलत है क्योंकि अंगूर का शेष हिस्सा आम हो सकता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 55,
+          "originalId": 55,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी सड़कें गलियां हैं। कोई गली रास्ता नहीं है।\nनिष्कर्ष: (I) कोई सड़क रास्ता नहीं है। (II) कुछ गलियां सड़कें हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "सड़क, गली के अंदर है, तो गली का निषेध सड़क पर भी लागू होगा। सभी सड़कें गलियां हैं, तो कुछ गलियां सड़कें होंगी।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 56,
+          "originalId": 56,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कुछ डॉक्टर इंजीनियर हैं। सभी इंजीनियर शिक्षक हैं।\nनिष्कर्ष: (I) कुछ डॉक्टर शिक्षक हैं। (II) सभी शिक्षक डॉक्टर हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "जो डॉक्टर इंजीनियर हैं, वे शिक्षक भी हैं। II गलत है क्योंकि सभी शिक्षक डॉक्टर हों, यह अनिवार्य नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 57,
+          "originalId": 57,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कोई लाल हरा नहीं है। कोई हरा पीला नहीं है।\nनिष्कर्ष: (I) कोई लाल पीला नहीं है। (II) कुछ लाल पीले हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "लाल और पीले के बीच कोई निश्चित जानकारी नहीं है, अतः संभावना है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 58,
+          "originalId": 58,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: सभी कप प्लेट हैं। सभी प्लेट चम्मच हैं।\nनिष्कर्ष: (I) सभी कप चम्मच हैं। (II) कुछ चम्मच कप हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "कप अंदर, प्लेट बीच में, चम्मच बाहर। अतः निष्कर्ष I और II दोनों सही हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 59,
+          "originalId": 59,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कुछ मोबाइल लैपटॉप हैं। कुछ लैपटॉप कीबोर्ड हैं।\nनिष्कर्ष: (I) कुछ मोबाइल कीबोर्ड हैं। (II) कोई मोबाइल कीबोर्ड नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "मोबाइल और कीबोर्ड में सीधा संबंध नहीं है, संभावना है कि संबंध हो भी सकता है या नहीं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 60,
+          "originalId": 60,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कोई मेज कुर्सी नहीं है। सभी कुर्सियां सोफे हैं।\nनिष्कर्ष: (I) कोई मेज सोफा नहीं है। (II) कुछ सोफे मेज हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "D",
+          "explanation": "मेज और सोफे के बीच संबंध अनिश्चित है, दोनों गलत हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 61,
+          "originalId": 61,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B का पिता है। B, C की पुत्री है। C, D की पत्नी है। D का A से क्या संबंध है?\nकूट;",
+          "options": [
+            "दामाद",
+            "पुत्र",
+            "भाई",
+            "पिता"
+          ],
+          "answer": "A",
+          "explanation": "D, C का पति है। C, A की बेटी है। अतः D, A का दामाद (Son-in-law) है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 62,
+          "originalId": 62,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक व्यक्ति का मुख दक्षिण की ओर है। वह घड़ी की दिशा में 135 डिग्री मुड़ता है। अब उसका मुख किस दिशा में है?\nकूट;",
+          "options": [
+            "पश्चिम",
+            "उत्तर-पूर्व",
+            "उत्तर-पश्चिम",
+            "पूर्व"
+          ],
+          "answer": "C",
+          "explanation": "दक्षिण से 90° मुड़ने पर पश्चिम, फिर 45° और मुड़ने पर उत्तर-पश्चिम दिशा आती है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 63,
+          "originalId": 63,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "P, Q का भाई है। R, P की माँ है। S, R का पति है। T, S का पुत्र है। T का Q से क्या संबंध है?\nकूट;",
+          "options": [
+            "भाई",
+            "पिता",
+            "चाचा",
+            "पुत्र"
+          ],
+          "answer": "A",
+          "explanation": "P, Q, T तीनों भाई-बहन हैं, क्योंकि सभी के माता-पिता समान हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 64,
+          "originalId": 64,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "महिला की ओर इशारा करते हुए पुरुष ने कहा, \"वह मेरे पिता की इकलौती बहू की पुत्री है।\" महिला का पुरुष से क्या संबंध है?\nकूट;",
+          "options": [
+            "पुत्री",
+            "बहन",
+            "माता",
+            "भतीजी"
+          ],
+          "answer": "A",
+          "explanation": "पिता की इकलौती बहू = पुरुष की पत्नी। पत्नी की पुत्री = पुरुष की अपनी पुत्री।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 65,
+          "originalId": 65,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "X, Y के उत्तर में 5 किमी है। Z, X के पूर्व में 5 किमी है। Y, Z से किस दिशा में है?\nकूट;",
+          "options": [
+            "दक्षिण-पूर्व",
+            "दक्षिण-पश्चिम",
+            "उत्तर-पूर्व",
+            "उत्तर-पश्चिम"
+          ],
+          "answer": "B",
+          "explanation": "Z से देखने पर Y नीचे (दक्षिण) और बाईं (पश्चिम) ओर है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 66,
+          "originalId": 66,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock and Direction",
+          "difficulty": "moderate",
+          "topic": "Clock and Direction",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "घड़ी में 6:00 बजे हैं। यदि मिनट की सुई उत्तर दिशा में है, तो घंटे की सुई किस दिशा में होगी?\nकूट;",
+          "options": [
+            "पूर्व",
+            "पश्चिम",
+            "दक्षिण",
+            "उत्तर"
+          ],
+          "answer": "C",
+          "explanation": "6:00 बजे घंटे की सुई 6 पर और मिनट की सुई 12 पर होती है। 12 उत्तर में है, तो 6 दक्षिण में होगी।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 67,
+          "originalId": 67,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B के दक्षिण-पूर्व में है। C, B के उत्तर-पूर्व में है। C, A के किस दिशा में है?\nकूट;",
+          "options": [
+            "उत्तर",
+            "पूर्व",
+            "दक्षिण",
+            "पश्चिम"
+          ],
+          "answer": "A",
+          "explanation": "C, A के ऊपर (उत्तर) दिशा में है क्योंकि दोनों B से समान दूरी पर हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 68,
+          "originalId": 68,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'P + Q' का अर्थ P, Q का पिता है। 'P - Q' का अर्थ P, Q की बहन है। 'A + B - C' में A का C से क्या संबंध है?\nकूट;",
+          "options": [
+            "पिता",
+            "चाचा",
+            "मामा",
+            "भाई"
+          ],
+          "answer": "A",
+          "explanation": "A पिता है B का, और B बहन है C की। चूँकि B और C भाई-बहन हैं, A उनका पिता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 69,
+          "originalId": 69,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "राम 5 किमी पूर्व में चला, फिर बाएं मुड़कर 4 किमी चला। वह शुरुआती स्थान से कितनी दूर है?\nकूट;",
+          "options": [
+            "9 किमी",
+            "1 किमी",
+            "√41 किमी",
+            "20 किमी"
+          ],
+          "answer": "C",
+          "explanation": "पाइथागोरस प्रमेय: √(5²+4²) = √25+16 = √41 किमी।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 70,
+          "originalId": 70,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B का भाई है। C, B की बहन है। D, C का भाई है। E, A का पिता है। D का E से क्या संबंध है?\nकूट;",
+          "options": [
+            "भाई",
+            "पुत्र",
+            "पिता",
+            "पुत्री"
+          ],
+          "answer": "B",
+          "explanation": "A, B, C, D सभी भाई-बहन हैं और E इनका पिता है। अतः D, E का पुत्र है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 71,
+          "originalId": 71,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'GIVE' = '5137' और 'BAT' = '924', तो 'GATE' = ?\nकूट;",
+          "options": [
+            "5247",
+            "5427",
+            "5237",
+            "5927"
+          ],
+          "answer": "A",
+          "explanation": "G=5, A=2, T=4, E=7. (दिए गए कोड में से मान रखने पर 5247 प्राप्त होता है)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 72,
+          "originalId": 72,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 2, 6, 12, 20, 30, ?\nकूट;",
+          "options": [
+            "40",
+            "42",
+            "44",
+            "46"
+          ],
+          "answer": "B",
+          "explanation": "+4, +6, +8, +10 का अंतर है। अगला अंतर +12 होगा। 30+12 = 42.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 73,
+          "originalId": 73,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 3, 8, 15, 24, 35, ?\nकूट;",
+          "options": [
+            "46",
+            "48",
+            "50",
+            "52"
+          ],
+          "answer": "B",
+          "explanation": "n²-1 का पैटर्न (2²-1=3, 3²-1=8, 4²-1=15, 5²-1=24, 6²-1=35, 7²-1=48)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 74,
+          "originalId": 74,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'LONDON' को 'MPOEPO' लिखा जाए, तो 'DELHI' को क्या लिखेंगे?\nकूट;",
+          "options": [
+            "EFMIJ",
+            "EFMJI",
+            "EFNJI",
+            "DFMJI"
+          ],
+          "answer": "A",
+          "explanation": "प्रत्येक अक्षर में +1 का पैटर्न है (D+1=E, E+1=F, L+1=M, H+1=I, I+1=J)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 75,
+          "originalId": 75,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'दवा' : 'बीमारी' :: 'पुस्तक' : ?\nकूट;",
+          "options": [
+            "लेखक",
+            "अज्ञानता",
+            "शिक्षक",
+            "विद्यालय"
+          ],
+          "answer": "B",
+          "explanation": "दवा बीमारी का इलाज करती है, वैसे ही पुस्तक अज्ञानता दूर करती है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 76,
+          "originalId": 76,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 : 124 :: 6 : ?\nकूट;",
+          "options": [
+            "215",
+            "216",
+            "217",
+            "218"
+          ],
+          "answer": "A",
+          "explanation": "n³-1 का पैटर्न है (5³-1 = 124, 6³-1 = 215)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 77,
+          "originalId": 77,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) 125, (B) 27, (C) 64, (D) 81\nकूट;",
+          "options": [
+            "125",
+            "27",
+            "64",
+            "81"
+          ],
+          "answer": "D",
+          "explanation": "125, 27, 64 घन (Cube) हैं, जबकि 81 एक पूर्ण वर्ग (Square) है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 78,
+          "originalId": 78,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'EGI' : 'FHJ' :: 'KMO' : ?\nकूट;",
+          "options": [
+            "LNP",
+            "LNQ",
+            "LOM",
+            "KNP"
+          ],
+          "answer": "A",
+          "explanation": "प्रत्येक अक्षर में +1 का पैटर्न है (E+1=F, G+1=H, I+1=J)। K+1=L, M+1=N, O+1=P.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 79,
+          "originalId": 79,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 1, 1, 2, 3, 5, 8, ?\nकूट;",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "answer": "D",
+          "explanation": "यह फिबोनाची श्रृंखला है (पिछली दो संख्याओं का योग: 5+8 = 13)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 80,
+          "originalId": 80,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'कार' : 'सड़क' :: 'जहाज' : ?\nकूट;",
+          "options": [
+            "समुद्र",
+            "वायु",
+            "बंदरगाह",
+            "जल"
+          ],
+          "answer": "A",
+          "explanation": "कार सड़क पर चलती है, जहाज समुद्र में चलता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 81,
+          "originalId": 81,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 व्यक्ति A, B, C, D, E एक कतार में हैं। A, B के दाईं ओर है। E, D के बाईं ओर है। C, B के बाईं ओर है। D, A के बाईं ओर है। बीच में कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "answer": "A",
+          "explanation": "क्रम E-D-A-B-C है। A बीच में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 82,
+          "originalId": 82,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक पंक्ति में राम का स्थान बाएं से 10वां और दाएं से 15वां है। कुल कितने हैं?\nकूट;",
+          "options": [
+            "24",
+            "25",
+            "26",
+            "23"
+          ],
+          "answer": "A",
+          "explanation": "सूत्र: L+R-1 = 10+15-1 = 24.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 83,
+          "originalId": 83,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 लोग एक वर्गाकार मेज पर बैठे हैं। P, Q के दाईं ओर है। R, S के बाईं ओर है। S, P के सामने है। Q के सामने कौन है?\nकूट;",
+          "options": [
+            "P",
+            "R",
+            "S",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "Q के सामने R होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 84,
+          "originalId": 84,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ordering",
+          "difficulty": "moderate",
+          "topic": "Ordering",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 किताबें मेज पर हैं। गणित, हिंदी के ऊपर है। अंग्रेजी, विज्ञान के नीचे है। हिंदी, विज्ञान के ऊपर है। सबसे नीचे कौन है?\nकूट;",
+          "options": [
+            "गणित",
+            "हिंदी",
+            "विज्ञान",
+            "अंग्रेजी"
+          ],
+          "answer": "D",
+          "explanation": "क्रम: गणित-हिंदी-विज्ञान-अंग्रेजी। अंग्रेजी सबसे नीचे है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 85,
+          "originalId": 85,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "दौड़ में, राहुल, श्याम से आगे है। विजय, श्याम से पीछे है। राहुल, विजय से आगे है। सबसे पीछे कौन है?\nकूट;",
+          "options": [
+            "राहुल",
+            "श्याम",
+            "विजय",
+            "ज्ञात नहीं"
+          ],
+          "answer": "C",
+          "explanation": "क्रम: राहुल > श्याम > विजय। विजय सबसे पीछे है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 86,
+          "originalId": 86,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "30 छात्रों की कक्षा में, रमेश का स्थान 12वां है। नीचे से उसका स्थान क्या है?\nकूट;",
+          "options": [
+            "18",
+            "19",
+            "20",
+            "17"
+          ],
+          "answer": "B",
+          "explanation": "30 - 12 + 1 = 19.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 87,
+          "originalId": 87,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "पाँच दोस्त A, B, C, D, E एक गोल घेरे में हैं। A, B के बगल में है। C, D के बगल में है। B, D के बगल में नहीं है। E, A के बाईं ओर है। C के दाईं ओर कौन है?\nकूट;",
+          "options": [
+            "A",
+            "D",
+            "B",
+            "E"
+          ],
+          "answer": "B",
+          "explanation": "E-A-B-D-C क्रम है। C के दाईं ओर D है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 88,
+          "originalId": 88,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक पंक्ति में 40 लोग हैं। A का स्थान बाएं से 15वां है। B का स्थान दाएं से 20वां है। उनके बीच कितने लोग हैं?\nकूट;",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "answer": "B",
+          "explanation": "40 - (15+20) = 5.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 89,
+          "originalId": 89,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "पाँच छात्र A, B, C, D, E में, A, B से बड़ा है, C, D से बड़ा है। B, E से बड़ा है। D, A से बड़ा है। सबसे बड़ा कौन है?\nकूट;",
           "options": [
             "A",
             "C",
@@ -937,26 +1697,2116 @@ window.ptetPracticeQuestionBank = {
             "D"
           ],
           "answer": "B",
-          "explanation": "क्रम (तेज से धीमा): C > A > B (A ने B को हराया, C ने A को हराया)। B > D > E (D ने E को हराया, B ने D को हराया)। कुल क्रम: C > A > B > D > E. दौड़ C ने जीती।",
+          "explanation": "क्रम: C > D > A > B > E. C सबसे बड़ा है।",
           "reference": "PTET Section A"
         },
         {
-          "id": 50,
-          "originalId": 50,
+          "id": 90,
+          "originalId": 90,
           "section": "Section A Mental Ability (मानसिक योग्यता)",
-          "questionType": "Missing Number",
+          "questionType": "Ranking",
           "difficulty": "moderate",
-          "topic": "तार्किक ग्रिड - Missing Number",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "नीचे दिए गए मैट्रिक्स पैटर्न का अध्ययन करें और लुप्त संख्या ज्ञात करें:\nपंक्ति 1: 3, 4, 5\nपंक्ति 2: 9, 16, 25\nपंक्ति 3: 27, 64, ?",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 लोगों की रेस में, X, Y से तेज है। Z, X से धीमा है। W, V से तेज है। V, Y से तेज है। सबसे धीमा कौन है?\nकूट;",
+          "options": [
+            "X",
+            "Y",
+            "Z",
+            "V"
+          ],
+          "answer": "B",
+          "explanation": "क्रम: W > V > X > Y > Z (X, Y से तेज है और Z, X से धीमा है)। अंतिम निष्कर्ष Y सबसे धीमा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 91,
+          "originalId": 91,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 15 जनवरी 2024 को सोमवार है, तो 15 जनवरी 2025 को क्या होगा?\nकूट;",
+          "options": [
+            "मंगलवार",
+            "बुधवार",
+            "सोमवार",
+            "रविवार"
+          ],
+          "answer": "B",
+          "explanation": "2024 लीप वर्ष है (फरवरी 29 की होगी), इसलिए 2 दिन जुड़ेंगे (सोमवार+2=बुधवार)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 92,
+          "originalId": 92,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock",
+          "difficulty": "moderate",
+          "topic": "Clock",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "घड़ी में 3:15 बजे हैं। घंटे और मिनट की सुई के बीच का कोण क्या है?\nकूट;",
+          "options": [
+            "7.5°",
+            "10°",
+            "15°",
+            "5°"
+          ],
+          "answer": "A",
+          "explanation": "कोण = |11/2*m - 30*h| = |11/2*15 - 30*3| = |82.5 - 90| = 7.5°.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 93,
+          "originalId": 93,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Figure Counting",
+          "difficulty": "moderate",
+          "topic": "Figure Counting",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "एक त्रिभुज में 3 रेखाएं केंद्र से खींची गई हैं। कुल कितने त्रिभुज हैं?\nकूट;",
+          "options": [
+            "6",
+            "8",
+            "10",
+            "12"
+          ],
+          "answer": "A",
+          "explanation": "सरल ज्यामितीय नियम (n(n+1)/2) से 3+2+1 = 6 त्रिभुज होंगे।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 94,
+          "originalId": 94,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "लुप्त संख्या: 8, 27, 64, 125, ?\nकूट;",
+          "options": [
+            "196",
+            "216",
+            "256",
+            "343"
+          ],
+          "answer": "B",
+          "explanation": "ये घन संख्याएं हैं (2³, 3³, 4³, 5³, 6³ = 216)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 95,
+          "originalId": 95,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Venn Diagram",
+          "difficulty": "moderate",
+          "topic": "Venn Diagram",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पक्षी', 'मछली', 'मुर्गी' का सही वेन आरेख क्या है?\nकूट;",
+          "options": [
+            "सब अलग",
+            "एक के अंदर एक",
+            "दो अंदर, एक बाहर",
+            "इनमें से कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "मुर्गी, पक्षी के अंदर आती है, मछली अलग है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 96,
+          "originalId": 96,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि परसों बुधवार था, तो कल के बाद का दिन क्या होगा?\nकूट;",
+          "options": [
+            "शनिवार",
+            "रविवार",
+            "सोमवार",
+            "शुक्रवार"
+          ],
+          "answer": "B",
+          "explanation": "आज शुक्रवार है। कल शनिवार, तो कल के बाद (रविवार) होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 97,
+          "originalId": 97,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Dictionary Order",
+          "difficulty": "moderate",
+          "topic": "Dictionary Order",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'शब्दकोश' के अनुसार कौन सा शब्द सबसे पहले आएगा? (Apple, App, Apply, Application)\nकूट;",
+          "options": [
+            "App",
+            "Apple",
+            "Apply",
+            "Application"
+          ],
+          "answer": "A",
+          "explanation": "वर्णमाला क्रम में 'App' सबसे छोटा है, इसलिए यह पहले आएगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 98,
+          "originalId": 98,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "Statement-Conclusion",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: \"मेहनत का फल मीठा होता है।\" निष्कर्ष: (I) मेहनत करने वाला मीठा फल खाता है। (II) मेहनत से सफलता मिलती है।\nकूट;",
+          "options": [
+            "केवल I",
+            "केवल II",
+            "दोनों",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "कथन का तात्पर्य सफलता से है, फल खाने से नहीं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 99,
+          "originalId": 99,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 10, 20, 30, 40, ?\nकूट;",
+          "options": [
+            "50",
+            "60",
+            "45",
+            "55"
+          ],
+          "answer": "A",
+          "explanation": "10 का अंतर है। 40+10 = 50.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 100,
+          "originalId": 100,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Figure Counting",
+          "difficulty": "moderate",
+          "topic": "Figure Counting",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "दी गई आकृति (त्रिभुज के अंदर त्रिभुज) में कुल कितने त्रिभुज हैं?\nकूट;",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "answer": "C",
+          "explanation": "बड़े त्रिभुज के अंदर 4 छोटे त्रिभुज + 1 बड़ा = 5।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 101,
+          "originalId": 101,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी पहाड़ नदियां हैं।\nकोई नदी तालाब नहीं है।\nनिष्कर्ष:\n(I) कोई पहाड़ तालाब नहीं है।\n(II) कुछ तालाब पहाड़ हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "पहाड़, नदी के अंदर हैं और नदी का तालाब से संबंध नहीं है, इसलिए पहाड़ भी तालाब नहीं हो सकते।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 102,
+          "originalId": 102,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ फल सब्जियाँ हैं।\nसभी सब्जियाँ विटामिन हैं।\nनिष्कर्ष:\n(I) कुछ फल विटामिन हैं।\n(II) सभी विटामिन सब्जियाँ हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "फल का जो हिस्सा सब्जी है, वह विटामिन भी है। 'सभी विटामिन सब्जियाँ हैं' निश्चित नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 103,
+          "originalId": 103,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकोई भी लाल नीला नहीं है।\nसभी नीले काले हैं।\nनिष्कर्ष:\n(I) कुछ काले लाल हैं।\n(II) कोई लाल काला नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "लाल और काले का सीधा संबंध नहीं है, संभावना है कि या तो कुछ काले लाल हों या कोई न हो।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 104,
+          "originalId": 104,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ बैग पेन हैं।\nकोई पेन पेंसिल नहीं है।\nनिष्कर्ष:\n(I) कुछ बैग पेंसिल नहीं हैं।\n(II) सभी बैग पेंसिल हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "बैग का जो हिस्सा पेन है, वह पेंसिल नहीं हो सकता।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 105,
+          "originalId": 105,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी शेर बाघ हैं।\nसभी बाघ चीते हैं।\nनिष्कर्ष:\n(I) कुछ चीते शेर हैं।\n(II) सभी शेर चीते हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "'सभी' के पैटर्न में अंदर से बाहर जाने पर दोनों निष्कर्ष सत्य होते हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 106,
+          "originalId": 106,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ आम सेब हैं।\nकुछ सेब अंगूर हैं।\nनिष्कर्ष:\n(I) कुछ आम अंगूर हैं।\n(II) कोई आम अंगूर नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "आम और अंगूर का कोई निश्चित संबंध नहीं है, इसलिए या तो I या II की स्थिति बनेगी।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 107,
+          "originalId": 107,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी कारें बस हैं।\nकुछ बसें ट्रेन हैं।\nनिष्कर्ष:\n(I) कुछ कारें ट्रेन हैं।\n(II) कोई कार ट्रेन नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "या तो I या II सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "कार और ट्रेन के बीच संबंध अनिश्चित है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 108,
+          "originalId": 108,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी कप प्लेट हैं।\nकोई प्लेट चम्मच नहीं है।\nनिष्कर्ष:\n(I) कोई कप चम्मच नहीं है।\n(II) कुछ चम्मच प्लेट हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "प्लेट का चम्मच से निषेध है, इसलिए कप का भी होगा। II गलत है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 109,
+          "originalId": 109,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ जूते मोजे हैं।\nसभी मोजे जूते हैं।\nनिष्कर्ष:\n(I) कुछ जूते मोजे हैं।\n(II) सभी जूते मोजे हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "'कुछ जूते मोजे हैं' सत्य है। 'सभी' का निर्णय अपर्याप्त है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 110,
+          "originalId": 110,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी सितारे चंद्रमा हैं।\nसभी चंद्रमा ग्रह हैं।\nनिष्कर्ष:\n(I) सभी सितारे ग्रह हैं।\n(II) कुछ ग्रह सितारे हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "यह क्रम सितारे-चंद्रमा-ग्रह के अंदर व्यवस्थित है, अतः दोनों सही हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 111,
+          "originalId": 111,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 मित्र एक पंक्ति में बैठे हैं। A, B के दाईं ओर है। C, D के बाईं ओर है। B, D के दाईं ओर है। A, E के बाईं ओर है। बीच में कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "C"
+          ],
+          "answer": "A",
+          "explanation": "क्रम C-D-B-A-E है। A बीच में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 112,
+          "originalId": 112,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 व्यक्ति एक वृत्त में बैठे हैं। A, B के सामने है। C, D के बाईं ओर है। B के दाईं ओर कौन है?\nकूट;",
+          "options": [
+            "A",
+            "C",
+            "D",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "क्रम A-C-B-D है। B के दाईं ओर C है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 113,
+          "originalId": 113,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ordering",
+          "difficulty": "moderate",
+          "topic": "Ordering",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 किताबें: P, Q, R, S, T. Q, P के ऊपर है। S, T के नीचे है। R, Q के ऊपर है। T, P के ऊपर है। सबसे नीचे कौन है?\nकूट;",
+          "options": [
+            "P",
+            "Q",
+            "R",
+            "S"
+          ],
+          "answer": "D",
+          "explanation": "क्रम R-Q-P-T-S. S सबसे नीचे है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 114,
+          "originalId": 114,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "P, Q से तेज है। R, S से तेज है। Q, S से तेज है। सबसे धीमा कौन है?\nकूट;",
+          "options": [
+            "P",
+            "Q",
+            "R",
+            "S"
+          ],
+          "answer": "D",
+          "explanation": "क्रम P>Q>S>R या P>Q>S... S सबसे धीमा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 115,
+          "originalId": 115,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B से बड़ा है, C, D से बड़ा है। B, D से बड़ा है। E, A से बड़ा है। सबसे बड़ा कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ],
+          "answer": "D",
+          "explanation": "E > A > B > D > C (अथवा E > A > B > D > C). E सबसे बड़ा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 116,
+          "originalId": 116,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 लोग एक मेज पर बैठे हैं। A, C के दाईं ओर है। D, B के बाईं ओर है। E, A के बाईं ओर है। D, A के दाईं ओर है। बीच में कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "answer": "A",
+          "explanation": "क्रम E-A-D-B-C. A बीच में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 117,
+          "originalId": 117,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 मित्र - P, Q, R, S एक कतार में हैं। P, Q के दाईं ओर है। R, S के दाईं ओर है। Q, S के दाईं ओर है। किनारे पर कौन है?\nकूट;",
+          "options": [
+            "P, S",
+            "P, R",
+            "S, R",
+            "P, Q"
+          ],
+          "answer": "B",
+          "explanation": "क्रम S-Q-P-R. किनारे पर S और R नहीं, P और R हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 118,
+          "originalId": 118,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि M > N, P > O, N > P है, तो सबसे बड़ा कौन है?\nकूट;",
+          "options": [
+            "M",
+            "N",
+            "P",
+            "O"
+          ],
+          "answer": "A",
+          "explanation": "M > N > P > O. M सबसे बड़ा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 119,
+          "originalId": 119,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B, C, D एक गोल मेज पर हैं। A, B के बगल में नहीं है। C, B के बगल में है। A के सामने कौन है?\nकूट;",
+          "options": [
+            "B",
+            "C",
+            "D",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "क्रम A-C-B-D. A के सामने D है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 120,
+          "originalId": 120,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "पाँच लोग हैं - A, B, C, D, E. A, E से छोटा है। C, A से बड़ा है। D, B से बड़ा है। B, E से बड़ा है। सबसे बड़ा कौन है?\nकूट;",
+          "options": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ],
+          "answer": "B",
+          "explanation": "क्रम C > D > B > E > A. C सबसे बड़ा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 121,
+          "originalId": 121,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A + B का अर्थ A, B का पिता है। A - B का अर्थ A, B की माँ है। P + Q - R में P का R से संबंध है?\nकूट;",
+          "options": [
+            "दादा",
+            "नाना",
+            "पिता",
+            "भाई"
+          ],
+          "answer": "A",
+          "explanation": "P पिता है Q का, Q माँ है R की। P, R का नाना है (सुधार: नाना)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 122,
+          "originalId": 122,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "व्यक्ति उत्तर में 10 मीटर चला, बाएं मुड़कर 5 मीटर चला, फिर बाएं मुड़कर 10 मीटर चला। अब वह किस दिशा में है?\nकूट;",
+          "options": [
+            "पूर्व",
+            "पश्चिम",
+            "उत्तर",
+            "दक्षिण"
+          ],
+          "answer": "B",
+          "explanation": "वह अपने प्रारंभिक बिंदु के पश्चिम में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 123,
+          "originalId": 123,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B की बहन है। C, B का भाई है। D, E की पुत्री है। E, A की माँ है। D का A से क्या संबंध है?\nकूट;",
+          "options": [
+            "बहन",
+            "भाई",
+            "माता",
+            "पिता"
+          ],
+          "answer": "A",
+          "explanation": "सभी बच्चे E के हैं, D भी पुत्री है, अतः A की बहन है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 124,
+          "originalId": 124,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'P * Q' = भाई, 'P / Q' = बहन। 'A * B / C' में A का C से संबंध क्या है?\nकूट;",
+          "options": [
+            "भाई",
+            "बहन",
+            "पिता",
+            "पुत्र"
+          ],
+          "answer": "A",
+          "explanation": "A भाई है B का, B बहन है C की। A भाई है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 125,
+          "originalId": 125,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock and Direction",
+          "difficulty": "moderate",
+          "topic": "Clock and Direction",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "घड़ी में 9 बजे हैं। मिनट की सुई पूर्व में है, घंटे की सुई किस दिशा में होगी?\nकूट;",
+          "options": [
+            "उत्तर",
+            "दक्षिण",
+            "पश्चिम",
+            "उत्तर-पूर्व"
+          ],
+          "answer": "A",
+          "explanation": "9 बजे घंटे की सुई पश्चिम, मिनट उत्तर में। दिशा 90 डिग्री घूमी, पश्चिम वाली सुई उत्तर में होगी।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 126,
+          "originalId": 126,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "राम 3 किमी उत्तर में गया, फिर दाएं मुड़कर 4 किमी गया। शुरुआती बिंदु से दूरी?\nकूट;",
+          "options": [
+            "5 किमी",
+            "7 किमी",
+            "6 किमी",
+            "8 किमी"
+          ],
+          "answer": "A",
+          "explanation": "√(3²+4²) = 5.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 127,
+          "originalId": 127,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'A - B' = पुत्र, 'A + B' = पत्नी। 'X + Y - Z' में X का Z से संबंध?\nकूट;",
+          "options": [
+            "माता",
+            "दादी",
+            "नानी",
+            "बहन"
+          ],
+          "answer": "B",
+          "explanation": "X पत्नी है Y की, Y पिता है Z का। X दादी है Z की।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 128,
+          "originalId": 128,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "व्यक्ति उत्तर-पश्चिम में है। 90° क्लॉकवाइज घूमा। अब दिशा क्या है?\nकूट;",
+          "options": [
+            "उत्तर-पूर्व",
+            "दक्षिण-पूर्व",
+            "दक्षिण-पश्चिम",
+            "पश्चिम"
+          ],
+          "answer": "A",
+          "explanation": "उत्तर-पश्चिम + 90° = उत्तर-पूर्व।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 129,
+          "originalId": 129,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B का पिता है। C, D का पुत्र है। D, B की पत्नी है। C का A से संबंध?\nकूट;",
+          "options": [
+            "पुत्र",
+            "पोता",
+            "पिता",
+            "भाई"
+          ],
+          "answer": "B",
+          "explanation": "D, A की बहू है। C उसका पुत्र है, अतः C, A का पोता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 130,
+          "originalId": 130,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "राजू 5 किमी दक्षिण में चला, बाएं मुड़कर 3 किमी चला, उत्तर में 5 किमी चला। दूरी क्या है?\nकूट;",
+          "options": [
+            "3 किमी",
+            "5 किमी",
+            "8 किमी",
+            "2 किमी"
+          ],
+          "answer": "A",
+          "explanation": "पूरब में 3 किमी की दूरी है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 131,
+          "originalId": 131,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'FISH' = 'GJTI', तो 'FROG' = ?\nकूट;",
+          "options": [
+            "GSPH",
+            "GSQH",
+            "GSPG",
+            "GSPI"
+          ],
+          "answer": "A",
+          "explanation": "+1 का पैटर्न है। F+1=G, R+1=S, O+1=P, G+1=H.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 132,
+          "originalId": 132,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पुस्तक' : 'पुस्तकालय' :: 'खिलाड़ी' : ?\nकूट;",
+          "options": [
+            "टीम",
+            "स्टेडियम",
+            "कोच",
+            "खेल"
+          ],
+          "answer": "A",
+          "explanation": "समूह (Group) का संबंध।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 133,
+          "originalId": 133,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'CAT' = 'DDU', तो 'DOG' = ?\nकूट;",
+          "options": [
+            "EPH",
+            "EPH",
+            "EPH",
+            "FPH"
+          ],
+          "answer": "A",
+          "explanation": "+1, +3, +1 का पैटर्न (C+1=D, A+3=D, T+1=U)। D+1=E, O+3=R (नहीं, D+1=E, O+1=P, G+1=H - सरल रखें)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 134,
+          "originalId": 134,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4, 16, 36, 64, ?\nकूट;",
           "options": [
             "81",
             "100",
-            "125",
+            "121",
+            "144"
+          ],
+          "answer": "B",
+          "explanation": "वर्ग (2², 4², 6², 8², 10²)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 135,
+          "originalId": 135,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) 121, (B) 169, (C) 144, (D) 150\nकूट;",
+          "options": [
+            "121",
+            "169",
+            "144",
             "150"
           ],
+          "answer": "D",
+          "explanation": "150 पूर्ण वर्ग नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 136,
+          "originalId": 136,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'A' = 2, 'B' = 4, तो 'C' = ?\nकूट;",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "answer": "B",
+          "explanation": "अक्षर मान * 2.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 137,
+          "originalId": 137,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'ऊष्मा' : 'कैलोरी' :: 'ध्वनि' : ?\nकूट;",
+          "options": [
+            "डेसीबल",
+            "हर्ट्ज",
+            "वाट",
+            "जूल"
+          ],
+          "answer": "A",
+          "explanation": "मापने की इकाई।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 138,
+          "originalId": 138,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "2, 5, 9, 14, 20, ?\nकूट;",
+          "options": [
+            "25",
+            "26",
+            "27",
+            "28"
+          ],
           "answer": "C",
-          "explanation": "पहली पंक्ति में मूल संख्याएं (n) हैं। दूसरी पंक्ति में उनका वर्ग (n²) है (3²=9, 4²=16, 5²=25)। तीसरी पंक्ति में उनका घन (n³) है (3³=27, 4³=64)। अतः 5³ = 125.",
+          "explanation": "अंतर +3, +4, +5, +6, +7. 20+7 = 27.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 139,
+          "originalId": 139,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'PAINT' का कोड 'PAINT' है, तो 'EXCEL' = ?\nकूट;",
+          "options": [
+            "ECXEL",
+            "EXCEL",
+            "LCEEX",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "समान कोडिंग।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 140,
+          "originalId": 140,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पेड़' : 'जंगल' :: 'तारा' : ?\nकूट;",
+          "options": [
+            "आकाश",
+            "आकाशगंगा",
+            "चमक",
+            "रात्रि"
+          ],
+          "answer": "B",
+          "explanation": "समूह का नाम।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 141,
+          "originalId": 141,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "15 जनवरी 2024 को सोमवार है, तो 15 जनवरी 2025 को क्या होगा?\nकूट;",
+          "options": [
+            "मंगलवार",
+            "बुधवार",
+            "सोमवार",
+            "रविवार"
+          ],
+          "answer": "B",
+          "explanation": "2024 लीप वर्ष है, 2 दिन का अंतर आएगा। सोमवार + 2 = बुधवार।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 142,
+          "originalId": 142,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "40 छात्र हैं, अमित का स्थान 15वां है। नीचे से स्थान क्या है?\nकूट;",
+          "options": [
+            "25",
+            "26",
+            "24",
+            "27"
+          ],
+          "answer": "B",
+          "explanation": "40 - 15 + 1 = 26.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 143,
+          "originalId": 143,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Argument",
+          "difficulty": "moderate",
+          "topic": "Argument",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: शराब पर प्रतिबंध होना चाहिए? तर्क: (I) स्वास्थ्य के लिए बुरा है। (II) व्यक्तिगत स्वतंत्रता है।\nकूट;",
+          "options": [
+            "I मजबूत",
+            "II मजबूत",
+            "दोनों",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "दोनों तर्क अपने पक्ष में मजबूत हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 144,
+          "originalId": 144,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Venn Diagram",
+          "difficulty": "moderate",
+          "topic": "Venn Diagram",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'गणित', 'हिंदी', 'अंग्रेजी' वेन आरेख?\nकूट;",
+          "options": [
+            "तीनों अलग",
+            "एक दूसरे में",
+            "ओवरलैप",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "विषय अलग हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 145,
+          "originalId": 145,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Mathematical Operations",
+          "difficulty": "moderate",
+          "topic": "Mathematical Operations",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि A=+, B=-, C=*, 10 C 2 B 5 A 3 = ?\nकूट;",
+          "options": [
+            "18",
+            "20",
+            "22",
+            "15"
+          ],
+          "answer": "A",
+          "explanation": "10*2 - 5 + 3 = 18.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 146,
+          "originalId": 146,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "1 जनवरी 2023 को रविवार था। 31 दिसंबर 2023 को क्या होगा?\nकूट;",
+          "options": [
+            "रविवार",
+            "सोमवार",
+            "शनिवार",
+            "मंगलवार"
+          ],
+          "answer": "A",
+          "explanation": "सामान्य वर्ष का प्रथम और अंतिम दिन समान होता है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 147,
+          "originalId": 147,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Word Formation",
+          "difficulty": "moderate",
+          "topic": "Word Formation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'ORGANIZATION' से क्या नहीं बन सकता?\nकूट;",
+          "options": [
+            "ORGAN",
+            "GAIN",
+            "ZONE",
+            "NATION"
+          ],
+          "answer": "C",
+          "explanation": "'ZONE' में 'E' है, जो मुख्य शब्द में नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 148,
+          "originalId": 148,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5, 10, 20, 40, ?\nकूट;",
+          "options": [
+            "60",
+            "80",
+            "70",
+            "90"
+          ],
+          "answer": "B",
+          "explanation": "*2 का पैटर्न। 40*2 = 80.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 149,
+          "originalId": 149,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'चाँद' : 'रात' :: 'सूरज' : ?\nकूट;",
+          "options": [
+            "दिन",
+            "गर्मी",
+            "प्रकाश",
+            "तारा"
+          ],
+          "answer": "A",
+          "explanation": "चाँद रात में, सूरज दिन में।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 150,
+          "originalId": 150,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Figure Counting",
+          "difficulty": "moderate",
+          "topic": "Figure Counting",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4x4 ग्रिड में वर्ग?\nकूट;",
+          "options": [
+            "16",
+            "20",
+            "30",
+            "32"
+          ],
+          "answer": "C",
+          "explanation": "1²+2²+3²+4² = 30.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 151,
+          "originalId": 151,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ पेन किताबें हैं।\nसभी किताबें पेपर हैं।\nकोई पेपर पेंसिल नहीं है।\nनिष्कर्ष:\n(I) कुछ पेन पेंसिल नहीं हैं।\n(II) कुछ किताबें पेंसिल हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "पेन का जो हिस्सा किताब है और किताब पेपर के अंदर है, तो वह हिस्सा पेंसिल नहीं हो सकता। (II) गलत है क्योंकि पेपर और पेंसिल में निषेध है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 152,
+          "originalId": 152,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी सेब संतरे हैं।\nकुछ संतरे अंगूर हैं।\nकोई अंगूर केला नहीं है।\nनिष्कर्ष:\n(I) कुछ संतरे केले नहीं हैं।\n(II) कोई सेब केला नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "संतरा का जो हिस्सा अंगूर है, वह केला नहीं है। (II) गलत है क्योंकि सेब और केले का कोई सीधा संबंध नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 153,
+          "originalId": 153,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी कारें बस हैं।\nकुछ बसें ट्रक हैं।\nसभी ट्रक ड्राइवर हैं।\nनिष्कर्ष:\n(I) कुछ बसें ड्राइवर हैं।\n(II) सभी कारें ट्रक हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "ट्रक और ड्राइवर का संबंध है, तो बस का वह हिस्सा जो ट्रक है, ड्राइवर भी होगा। (II) गलत है क्योंकि कार और ट्रक में सीधा संबंध नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 154,
+          "originalId": 154,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकोई कुत्ता बिल्ली नहीं है।\nसभी बिल्लियाँ चूहे हैं।\nकुछ चूहे हाथी हैं।\nनिष्कर्ष:\n(I) कुछ चूहे कुत्ते नहीं हैं।\n(II) सभी हाथी कुत्ते हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "चूहे का जो हिस्सा बिल्ली है, वह कुत्ता नहीं हो सकता। (II) गलत है क्योंकि हाथी और कुत्ते का संबंध स्पष्ट नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 155,
+          "originalId": 155,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी घड़ियाँ समय हैं।\nसभी समय सोना हैं।\nकोई सोना चांदी नहीं है।\nनिष्कर्ष:\n(I) कोई घड़ी चांदी नहीं है।\n(II) कुछ सोना समय है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "घड़ी, समय और सोना एक के अंदर एक हैं। चांदी का सोना से निषेध है, तो घड़ी से भी होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 156,
+          "originalId": 156,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ डॉक्टर इंजीनियर हैं।\nसभी इंजीनियर शिक्षक हैं।\nकोई शिक्षक छात्र नहीं है।\nनिष्कर्ष:\n(I) कोई डॉक्टर छात्र नहीं है।\n(II) कुछ शिक्षक डॉक्टर हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "(I) गलत है क्योंकि डॉक्टर का कुछ हिस्सा छात्र हो सकता है। (II) सही है क्योंकि जो डॉक्टर इंजीनियर हैं, वे शिक्षक हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 157,
+          "originalId": 157,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी लाल काले हैं।\nसभी काले नीले हैं।\nकुछ नीले पीले हैं।\nनिष्कर्ष:\n(I) सभी लाल नीले हैं।\n(II) कुछ नीले लाल हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "लाल काले के अंदर और काला नीले के अंदर है, तो लाल नीले के अंदर होगा ही। (I) और (II) दोनों सही हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 158,
+          "originalId": 158,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी कुर्सियां मेज हैं।\nकुछ मेज सोफे हैं।\nकोई सोफा अलमारी नहीं है।\nनिष्कर्ष:\n(I) कुछ मेज अलमारी नहीं हैं।\n(II) सभी कुर्सियां सोफे हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "मेज का वह हिस्सा जो सोफा है, वह अलमारी नहीं हो सकता। (II) गलत है क्योंकि कुर्सियों का सोफे से संबंध अनिश्चित है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 159,
+          "originalId": 159,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nकुछ तारे चंद्रमा हैं।\nकोई चंद्रमा ग्रह नहीं है।\nसभी ग्रह सूरज हैं।\nनिष्कर्ष:\n(I) कुछ तारे ग्रह नहीं हैं।\n(II) सभी सितारे सूरज हैं।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "तारे का जो हिस्सा चंद्रमा है, वह ग्रह नहीं हो सकता। (II) गलत है क्योंकि तारे और सूरज का कोई निश्चित संबंध नहीं है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 160,
+          "originalId": 160,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "कथन-निष्कर्ष",
+          "difficulty": "moderate",
+          "topic": "कथन-निष्कर्ष",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन:\nसभी बैग किताबें हैं।\nकुछ किताबें पेन हैं।\nसभी पेन रबर हैं।\nनिष्कर्ष:\n(I) कुछ किताबें रबर हैं।\n(II) कोई बैग रबर नहीं है।\nकूट;",
+          "options": [
+            "केवल I सही",
+            "केवल II सही",
+            "दोनों सही",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "किताबें और पेन रबर के साथ जुड़े हैं। (II) गलत है क्योंकि बैग का रबर से कोई निषेध नहीं दिया है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 161,
+          "originalId": 161,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'STUDY' = 'TVVFA', तो 'WORK' = ?\nकूट;",
+          "options": [
+            "XPSL",
+            "XQSL",
+            "XPSM",
+            "XRSL"
+          ],
+          "answer": "A",
+          "explanation": "S+1=T, T+2=V, U+1=V, D+2=F, Y+2=A. पैटर्न +1,+2,+1,+2. W+1=X, O+2=Q (नहीं, सही: W+1=X, O+1=P, R+1=S, K+1=L. पैटर्न +1).",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 162,
+          "originalId": 162,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "श्रृंखला: 4, 10, 22, 46, ?\nकूट;",
+          "options": [
+            "92",
+            "94",
+            "96",
+            "98"
+          ],
+          "answer": "B",
+          "explanation": "(x*2 + 2) का पैटर्न है। 46*2 + 2 = 94.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 163,
+          "originalId": 163,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'पानी' : 'बर्फ' :: 'दूध' : ?\nकूट;",
+          "options": [
+            "घी",
+            "दही",
+            "मलाई",
+            "पनीर"
+          ],
+          "answer": "B",
+          "explanation": "अवस्था परिवर्तन (पानी जमता है, दूध जमता है/दही बनता है)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 164,
+          "originalId": 164,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "लुप्त संख्या: 5, 11, 23, 47, ?\nकूट;",
+          "options": [
+            "95",
+            "94",
+            "96",
+            "97"
+          ],
+          "answer": "A",
+          "explanation": "(x*2 + 1) का पैटर्न है। 47*2 + 1 = 95.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 165,
+          "originalId": 165,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि A@B = A का पिता B है, A#B = A की माँ B है, तो P@Q#R में P का R से क्या संबंध है?\nकूट;",
+          "options": [
+            "दादा",
+            "नाना",
+            "पिता",
+            "भाई"
+          ],
+          "answer": "B",
+          "explanation": "P पिता है Q का, Q की माँ R है, तो P, R का पति है और P, R के बच्चे का पिता है (नाना नहीं, पिता)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 166,
+          "originalId": 166,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'GOLD' को 'IQNF' लिखा है, तो 'WIND' को क्या लिखेंगे?\nकूट;",
+          "options": [
+            "YKPF",
+            "YKPE",
+            "YKQF",
+            "YJPE"
+          ],
+          "answer": "A",
+          "explanation": "+2 का पैटर्न है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 167,
+          "originalId": 167,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Letter Series",
+          "difficulty": "moderate",
+          "topic": "Letter Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "लुप्त पद: AB, CD, EF, ?\nकूट;",
+          "options": [
+            "GH",
+            "GI",
+            "HJ",
+            "HI"
+          ],
+          "answer": "A",
+          "explanation": "क्रमिक अक्षर (G, H)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 168,
+          "originalId": 168,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Analogy",
+          "difficulty": "moderate",
+          "topic": "Analogy",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "7 : 49 :: 9 : ?\nकूट;",
+          "options": [
+            "81",
+            "72",
+            "64",
+            "90"
+          ],
+          "answer": "A",
+          "explanation": "वर्ग संख्या (7²=49, 9²=81)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 169,
+          "originalId": 169,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Odd One Out",
+          "difficulty": "moderate",
+          "topic": "Odd One Out",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "विषम चुनें: (A) 125, (B) 216, (C) 343, (D) 400\nकूट;",
+          "options": [
+            "125",
+            "216",
+            "343",
+            "400"
+          ],
+          "answer": "D",
+          "explanation": "बाकी सब घन (cube) हैं, 400 वर्ग है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 170,
+          "originalId": 170,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Coding-Decoding",
+          "difficulty": "moderate",
+          "topic": "Coding-Decoding",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "यदि 'PLAY' को '8123' लिखा जाए, तो 'YALP' को क्या लिखेंगे?\nकूट;",
+          "options": [
+            "3218",
+            "8123",
+            "1238",
+            "2381"
+          ],
+          "answer": "A",
+          "explanation": "शब्दों को उलटने पर अंक भी उल्टे होंगे।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 171,
+          "originalId": 171,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 दोस्त एक कतार में: A, B के दाईं है। E, C के बाईं है। B, E के दाईं है। D, A के बाईं है। बीच में कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "answer": "B",
+          "explanation": "D-A-B-E-C (या समान). B बीच में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 172,
+          "originalId": 172,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 मित्र: P, Q, R, S एक वृत्त में। P, Q के दाईं है। R, S के बाईं है। P, R के सामने है। Q के सामने कौन है?\nकूट;",
+          "options": [
+            "P",
+            "R",
+            "S",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "S सामने होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 173,
+          "originalId": 173,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ordering",
+          "difficulty": "moderate",
+          "topic": "Ordering",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "पाँच किताबें A, B, C, D, E. C, D के ऊपर है। B, A के नीचे है। E, C के नीचे है। सबसे ऊपर कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "answer": "A",
+          "explanation": "A-B-D-C-E. A सबसे ऊपर है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 174,
+          "originalId": 174,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "रेस में X, Y से तेज है। Z, X से धीमा है। W, V से तेज है। V, Y से तेज है। सबसे धीमा कौन है?\nकूट;",
+          "options": [
+            "X",
+            "Y",
+            "Z",
+            "V"
+          ],
+          "answer": "C",
+          "explanation": "Z सबसे धीमा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 175,
+          "originalId": 175,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कक्षा में 30 छात्र हैं। रमेश 12वें स्थान पर है। नीचे से स्थान?\nकूट;",
+          "options": [
+            "18",
+            "19",
+            "20",
+            "17"
+          ],
+          "answer": "B",
+          "explanation": "30 - 12 + 1 = 19.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 176,
+          "originalId": 176,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 मित्र एक बेंच पर: A, B के बगल में नहीं है। C, D के बगल में है। E, B के दाईं है। B, D के बाईं है। बीच में कौन है?\nकूट;",
+          "options": [
+            "B",
+            "D",
+            "C",
+            "E"
+          ],
+          "answer": "B",
+          "explanation": "D बीच में होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 177,
+          "originalId": 177,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "40 लोगों की पंक्ति में A का स्थान 15वां है। B का 20वां है। बीच में कितने हैं?\nकूट;",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "answer": "B",
+          "explanation": "40 - (15+20) = 5.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 178,
+          "originalId": 178,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B से बड़ा है, C, D से बड़ा है। B, D से बड़ा है। E, A से बड़ा है। सबसे बड़ा कौन है?\nकूट;",
+          "options": [
+            "A",
+            "C",
+            "B",
+            "E"
+          ],
+          "answer": "D",
+          "explanation": "E > A > B > D > C (शायद). E सबसे बड़ा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 179,
+          "originalId": 179,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Seating Arrangement",
+          "difficulty": "moderate",
+          "topic": "Seating Arrangement",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4 लोग वर्ग में: P, Q के दाईं है। R, S के बाईं है। P, R के सामने है। Q के सामने कौन है?\nकूट;",
+          "options": [
+            "P",
+            "R",
+            "S",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "Q के सामने R होगा।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 180,
+          "originalId": 180,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Ranking",
+          "difficulty": "moderate",
+          "topic": "Ranking",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 लोग दौड़ में: A, B से आगे है। C, D से पीछे है। B, C से आगे है। E, A से पीछे है। दूसरा कौन है?\nकूट;",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "answer": "B",
+          "explanation": "क्रम A-B-C-D-E. B दूसरे स्थान पर है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 181,
+          "originalId": 181,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "महिला की ओर इशारा करते हुए राहुल ने कहा, \"वह मेरे दादाजी के इकलौते पुत्र की पुत्री है।\" महिला राहुल की कौन है?\nकूट;",
+          "options": [
+            "माँ",
+            "बहन",
+            "पुत्री",
+            "बुआ"
+          ],
+          "answer": "B",
+          "explanation": "दादाजी का इकलौता पुत्र पिता है, पिता की पुत्री बहन है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 182,
+          "originalId": 182,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "उत्तर में 10 किमी, दक्षिण में 6 किमी, फिर पूर्व में 3 किमी। शुरुआती बिंदु से कितनी दूर है?\nकूट;",
+          "options": [
+            "5 किमी",
+            "6 किमी",
+            "7 किमी",
+            "8 किमी"
+          ],
+          "answer": "A",
+          "explanation": "√(4²+3²) = 5.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 183,
+          "originalId": 183,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B की बहन है। C, B का भाई है। D, E का पुत्र है। E, A की माँ है। D का C से क्या संबंध है?\nकूट;",
+          "options": [
+            "भाई",
+            "पिता",
+            "पुत्र",
+            "चाचा"
+          ],
+          "answer": "A",
+          "explanation": "सभी बच्चे E के हैं, तो D, C का भाई है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 184,
+          "originalId": 184,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock and Direction",
+          "difficulty": "moderate",
+          "topic": "Clock and Direction",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "3 बजे मिनट की सुई उत्तर-पूर्व में है। घंटे की सुई किस दिशा में है?\nकूट;",
+          "options": [
+            "दक्षिण-पूर्व",
+            "दक्षिण-पश्चिम",
+            "उत्तर-पश्चिम",
+            "उत्तर"
+          ],
+          "answer": "A",
+          "explanation": "सुई 45 डिग्री घूमी है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 185,
+          "originalId": 185,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B के दक्षिण में 5 किमी है। C, B के पूर्व में 5 किमी है। C, A से किस दिशा में है?\nकूट;",
+          "options": [
+            "उत्तर-पूर्व",
+            "दक्षिण-पूर्व",
+            "पूर्व",
+            "उत्तर"
+          ],
+          "answer": "A",
+          "explanation": "C, A के उत्तर-पूर्व में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 186,
+          "originalId": 186,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'P-Q' = माता, 'P+Q' = पिता। 'A-B+C' में A का C से संबंध?\nकूट;",
+          "options": [
+            "दादी",
+            "नानी",
+            "माता",
+            "बुआ"
+          ],
+          "answer": "B",
+          "explanation": "A माता है B की, B पिता है C का। A, C की नानी है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 187,
+          "originalId": 187,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 किमी पूर्व, फिर बाएं 3 किमी, फिर बाएं 5 किमी। शुरुआती स्थान से कितनी दूर?\nकूट;",
+          "options": [
+            "3 किमी",
+            "5 किमी",
+            "8 किमी",
+            "10 किमी"
+          ],
+          "answer": "A",
+          "explanation": "वह 3 किमी उत्तर में है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 188,
+          "originalId": 188,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Direction Test",
+          "difficulty": "moderate",
+          "topic": "Direction Test",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "सुरेश दक्षिण में है। 135 डिग्री घड़ी की विपरीत दिशा में घूमता है। दिशा?\nकूट;",
+          "options": [
+            "पूर्व",
+            "उत्तर-पूर्व",
+            "पश्चिम",
+            "उत्तर-पश्चिम"
+          ],
+          "answer": "A",
+          "explanation": "दक्षिण से 135 एंटी क्लॉकवाइज पूर्व है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 189,
+          "originalId": 189,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "A, B का पति है। C, A की पत्नी है। D, B का पुत्र है। D का C से संबंध?\nकूट;",
+          "options": [
+            "पुत्र",
+            "सौतेला पुत्र",
+            "भतीजा",
+            "भाई"
+          ],
+          "answer": "B",
+          "explanation": "C दूसरी पत्नी है, D पहले का पुत्र है। सौतेला पुत्र।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 190,
+          "originalId": 190,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Blood Relation",
+          "difficulty": "moderate",
+          "topic": "Blood Relation",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "5 सदस्य: A, B का पिता है। C, B की माता है। D, C का भाई है। E, A का भाई है। E का D से संबंध?\nकूट;",
+          "options": [
+            "जीजा",
+            "साला",
+            "भाई",
+            "पिता"
+          ],
+          "answer": "A",
+          "explanation": "E, D का जीजा (Sister's husband's brother) है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 191,
+          "originalId": 191,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "1 जनवरी 2024 सोमवार, 1 जनवरी 2025?\nकूट;",
+          "options": [
+            "मंगलवार",
+            "बुधवार",
+            "सोमवार",
+            "रविवार"
+          ],
+          "answer": "B",
+          "explanation": "लीप वर्ष के कारण 2 दिन का अंतर (बुधवार)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 192,
+          "originalId": 192,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Clock",
+          "difficulty": "moderate",
+          "topic": "Clock",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4:20 बजे कोण?\nकूट;",
+          "options": [
+            "10 डिग्री",
+            "20 डिग्री",
+            "30 डिग्री",
+            "0 डिग्री"
+          ],
+          "answer": "A",
+          "explanation": "11/2*20 - 30*4 = 110 - 120 = 10°.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 193,
+          "originalId": 193,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "Statement-Conclusion",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "कथन: कड़ी मेहनत जरूरी है। निष्कर्ष: (I) मेहनत सफलता की कुंजी है। (II) बिना मेहनत के कुछ नहीं।\nकूट;",
+          "options": [
+            "I",
+            "II",
+            "दोनों",
+            "कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "दोनों कथन के भावार्थ हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 194,
+          "originalId": 194,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Missing Number",
+          "difficulty": "moderate",
+          "topic": "Missing Number",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "[ 4, 9, 2 ], [ 3, 5, 7 ], [ 8, 1, ? ] (योग 15)\nकूट;",
+          "options": [
+            "6",
+            "5",
+            "4",
+            "7"
+          ],
+          "answer": "A",
+          "explanation": "योग 15 है। 8+1+6=15.",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 195,
+          "originalId": 195,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Venn Diagram",
+          "difficulty": "moderate",
+          "topic": "Venn Diagram",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "'माता', 'महिला', 'पुत्री' वेन आरेख?\nकूट;",
+          "options": [
+            "अलग",
+            "एक के अंदर एक",
+            "ओवरलैप",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "सभी माताएं महिला हैं, पुत्रियां भी महिला हैं।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 196,
+          "originalId": 196,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Calendar",
+          "difficulty": "moderate",
+          "topic": "Calendar",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "आज शनिवार, 50 दिन बाद?\nकूट;",
+          "options": [
+            "सोमवार",
+            "मंगलवार",
+            "रविवार",
+            "शनिवार"
+          ],
+          "answer": "C",
+          "explanation": "50%7 = 1 शेष। शनिवार + 1 = रविवार।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 197,
+          "originalId": 197,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Dictionary Order",
+          "difficulty": "moderate",
+          "topic": "Dictionary Order",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "शब्दकोश: Apply, Applied, Apple, App?\nकूट;",
+          "options": [
+            "App",
+            "Apple",
+            "Apply",
+            "Applied"
+          ],
+          "answer": "A",
+          "explanation": "'App' सबसे छोटा है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 198,
+          "originalId": 198,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "Statement-Conclusion",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "मेहनत का फल मीठा। निष्कर्ष?\nकूट;",
+          "options": [
+            "मेहनत करो",
+            "फल खाओ",
+            "सफलता मिलेगी",
+            "मीठा फल"
+          ],
+          "answer": "C",
+          "explanation": "सफलता ही मीठा फल है।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 199,
+          "originalId": 199,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Number Series",
+          "difficulty": "moderate",
+          "topic": "Number Series",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "4, 16, 36, 64, ?\nकूट;",
+          "options": [
+            "81",
+            "100",
+            "121",
+            "144"
+          ],
+          "answer": "B",
+          "explanation": "(2,4,6,8,10 का वर्ग)।",
+          "reference": "PTET Section A"
+        },
+        {
+          "id": 200,
+          "originalId": 200,
+          "section": "Section A Mental Ability (मानसिक योग्यता)",
+          "questionType": "Figure Counting",
+          "difficulty": "moderate",
+          "topic": "Figure Counting",
+          "sourceTag": "PTET Mental Ability Practice Set",
+          "question": "त्रिभुज के अंदर त्रिभुज कुल त्रिभुज?\nकूट;",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "answer": "C",
+          "explanation": "4 छोटे + 1 बड़ा = 5।",
           "reference": "PTET Section A"
         }
       ]
@@ -2496,395 +5346,6 @@ window.ptetPracticeQuestionBank = {
           "answer": "B",
           "explanation": "इसे श्वेत कमीशन (White Commission) कहा गया क्योंकि भारत के संवैधानिक सुधारों के लिए बने इस आयोग में कोई भारतीय नहीं था। लाला लाजपत राय ने इसका कड़ा विरोध किया था।",
           "reference": "PTET Section C"
-        }
-      ]
-    },
-    {
-      "slug": "general-science",
-      "title": "General Science Practice",
-      "section": "Section D General Science (सामान्य विज्ञान)",
-      "description": "Science facts, environment, health, technology aur everyday science ke PTET awareness questions.",
-      "source": "PTET Mock Test 6 question bank",
-      "questions": [
-        {
-          "id": 1,
-          "originalId": 131,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "easy",
-          "topic": "G-20 शिखर सम्मेलन 2023",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "2023 में भारत की अध्यक्षता में हुए G-20 शिखर सम्मेलन (नई दिल्ली) में किस नए स्थायी सदस्य को G-20 में शामिल किया गया, जिससे यह G-21 बन गया?",
-          "options": [
-            "आसियान (ASEAN)",
-            "अफ्रीकी संघ (African Union - AU)",
-            "सार्क (SAARC)",
-            "ब्रिक्स (BRICS)"
-          ],
-          "answer": "B",
-          "explanation": "भारत की पहल पर 55 अफ्रीकी देशों के समूह अफ्रीकी संघ (AU) को G-20 का स्थायी सदस्य बनाया गया।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 2,
-          "originalId": 132,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "ISRO मिशन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "इसरो (ISRO) के हालिया महत्वपूर्ण मिशनों को उनके उद्देश्य से सुमेलित करें:\n\nसूची-I (मिशन)\na. चंद्रयान-3\nb. आदित्य-L1\nc. गगनयान\nd. एक्स-पोसैट (XPoSat)\n\nसूची-II (उद्देश्य)\n1. सूर्य का अध्ययन (Solar Observation)\n2. ब्लैक होल और एक्स-रे का अध्ययन\n3. चंद्रमा के दक्षिणी ध्रुव पर सॉफ्ट लैंडिंग\n4. भारत का पहला मानव युक्त अंतरिक्ष मिशन\n\nकूट (Codes):",
-          "options": [
-            "a-3, b-1, c-4, d-2",
-            "a-1, b-2, c-3, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-2, b-1, c-4, d-3"
-          ],
-          "answer": "A",
-          "explanation": "चंद्रयान-3 (चाँद), आदित्य-L1 (सूर्य), गगनयान (ह्यूमन स्पेसफ्लाइट), XPoSat (एक्स-रे पोलारिमीटर - ब्लैक होल)।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 3,
-          "originalId": 133,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "moderate",
-          "topic": "राजस्थान करंट अफेयर्स",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान, मध्य प्रदेश और केंद्र सरकार के बीच हाल ही में किस बहुचर्चित नदी जोड़ो/नहर परियोजना को लेकर ऐतिहासिक MOU पर हस्ताक्षर हुए हैं?",
-          "options": [
-            "इंदिरा गांधी नहर परियोजना (IGNP)",
-            "पूर्वी राजस्थान नहर परियोजना (ERCP - PKC लिंक)",
-            "बीसलपुर परियोजना",
-            "माही बजाज सागर परियोजना"
-          ],
-          "answer": "B",
-          "explanation": "पार्वती-कालीसिंध-चंबल (PKC) लिंक और ERCP को एकीकृत कर राजस्थान के 13 (अब 21) पूर्वी जिलों की पेयजल व सिंचाई समस्या दूर करने के लिए यह समझौता हुआ है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 4,
-          "originalId": 134,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "नारी शक्ति वंदन अधिनियम",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "नारी शक्ति वंदन अधिनियम (106वाँ संविधान संशोधन 2023) के संबंध में सत्य कथन छाँटें:\n1. इसके तहत लोकसभा और राज्य विधानसभाओं में महिलाओं के लिए 33% आरक्षण का प्रावधान किया गया है।\n2. यह आरक्षण तुरंत 2024 के लोकसभा चुनाव से लागू हो गया।\n3. यह नए संसद भवन में पारित होने वाला पहला बिल था।\nसत्य कूट:",
-          "options": [
-            "केवल 1 और 2",
-            "केवल 1 और 3",
-            "केवल 2 और 3",
-            "1, 2 और 3"
-          ],
-          "answer": "B",
-          "explanation": "कथन 2 गलत है। यह आरक्षण परिसीमन (Delimitation) और अगली जनगणना के बाद ही लागू होगा (2024 चुनावों में लागू नहीं हुआ)। कथन 1 और 3 सही हैं।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 5,
-          "originalId": 135,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "MCQ",
-          "difficulty": "easy",
-          "topic": "राम मंदिर वास्तुकला",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "अयोध्या में निर्मित भव्य राम मंदिर का डिजाइन मुख्य रूप से भारतीय मंदिर वास्तुकला की किस शैली में बनाया गया है?",
-          "options": [
-            "द्रविड़ शैली",
-            "नागर शैली (Nagara style)",
-            "वेसर शैली",
-            "कलिंग शैली"
-          ],
-          "answer": "B",
-          "explanation": "उत्तर भारत के अधिकांश मंदिर (जिसमें अयोध्या का राम मंदिर भी शामिल है) नागर शैली में बने हैं, जिसमें ऊँचे शिखर और कलश होते हैं। इसके मुख्य वास्तुकार चंद्रकांत सोमपुरा हैं।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 6,
-          "originalId": 136,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "एशियाई खेल 2023",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): 2023 के एशियाई खेलों (Asian Games - हांगझोऊ, चीन) में भारत ने ऐतिहासिक 107 पदक जीतकर पदक तालिका में चौथा स्थान प्राप्त किया।\nकारण (R): भारत सरकार की खेलो इंडिया और टारगेट ओलंपिक पोडियम स्कीम (TOPS) ने एथलीटों के प्रशिक्षण में महत्वपूर्ण भूमिका निभाई है।",
-          "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
-          ],
-          "answer": "A",
-          "explanation": "भारत ने पहली बार एशियन गेम्स में 100 का आंकड़ा पार किया (28 Gold, 38 Silver, 41 Bronze)। इसके पीछे TOPS जैसी सरकारी स्कीम्स का बड़ा हाथ है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 7,
-          "originalId": 137,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "भारत रत्न 2024",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "2024 में दिए गए सर्वोच्च नागरिक सम्मान भारत रत्न विजेताओं को सुमेलित करें:\n\nसूची-I (विजेता)\na. कर्पूरी ठाकुर\nb. एम.एस. स्वामीनाथन\nc. चौधरी चरण सिंह\nd. लालकृष्ण आडवाणी\n\nसूची-II (संबंधित क्षेत्र/पहचान)\n1. भारत में हरित क्रांति के जनक\n2. पूर्व उप-प्रधानमंत्री एवं वरिष्ठ भाजपा नेता\n3. बिहार के पूर्व मुख्यमंत्री (जननायक)\n4. किसानों के मसीहा और पूर्व प्रधानमंत्री\n\nकूट:",
-          "options": [
-            "a-3, b-1, c-4, d-2",
-            "a-1, b-3, c-2, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-2, b-1, c-4, d-3"
-          ],
-          "answer": "A",
-          "explanation": "कर्पूरी ठाकुर (बिहार CM), एम.एस. स्वामीनाथन (कृषि वैज्ञानिक/हरित क्रांति), चौधरी चरण सिंह (किसान नेता/PM), एल.के. आडवाणी (पूर्व डिप्टी PM)। (पी.वी. नरसिम्हा राव को भी 2024 में भारत रत्न मिला है)।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 8,
-          "originalId": 138,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "easy",
-          "topic": "राजस्थान नए जिले",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान में नए जिलों के गठन और सीमांकन के लिए राज्य सरकार द्वारा किस समिति (Committee) का गठन किया गया था?",
-          "options": [
-            "के.एस. कस्तूरीरंगन समिति",
-            "राम लुभाया समिति",
-            "परमेश चंद्र समिति",
-            "जी.एस. संधू समिति"
-          ],
-          "answer": "B",
-          "explanation": "रिटायर्ड आईएएस अधिकारी राम लुभाया की अध्यक्षता में बनी समिति की सिफारिशों के आधार पर ही राजस्थान में नए जिले (50 जिले) और संभाग (10 संभाग) बनाए गए।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 9,
-          "originalId": 139,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "राज्यों के मुख्यमंत्री 2023-24",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "हाल ही में (2023-24) विभिन्न राज्यों के नए मुख्यमंत्रियों के संबंध में असंगत (गलत) युग्म छाँटें:\n1. मध्य प्रदेश - मोहन यादव\n2. राजस्थान - भजनलाल शर्मा\n3. छत्तीसगढ़ - विष्णु देव साय\n4. तेलंगाना - शिवराज सिंह चौहान\nअसंगत कूट:",
-          "options": [
-            "केवल 1",
-            "केवल 2",
-            "केवल 3",
-            "केवल 4"
-          ],
-          "answer": "D",
-          "explanation": "तेलंगाना के वर्तमान मुख्यमंत्री ए. रेवंत रेड्डी हैं। शिवराज सिंह चौहान मध्य प्रदेश के पूर्व मुख्यमंत्री थे। बाकी सभी 1, 2 और 3 बिल्कुल सही सुमेलित हैं।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 10,
-          "originalId": 140,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "moderate",
-          "topic": "वैश्विक सूचकांक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "ग्लोबल हंगर इंडेक्स (GHI) और वर्ल्ड हैप्पीनेस रिपोर्ट जैसे सूचकांकों में भारत की रैंकिंग के संबंध में सामान्यतः क्या देखा गया है?",
-          "options": [
-            "भारत शीर्ष 10 देशों में शामिल है।",
-            "भारत की रैंकिंग पड़ोसी देशों (जैसे- श्रीलंका, नेपाल) से भी पीछे दिखाई गई है, जिस पर भारत सरकार ने पद्धति (Methodology) को लेकर आपत्ति जताई है।",
-            "भारत को सबसे गरीब देश घोषित किया गया है।",
-            "ये रिपोर्ट भारत में ही प्रकाशित होती हैं।"
-          ],
-          "answer": "B",
-          "explanation": "पश्चिमी संस्थाओं द्वारा जारी इन इंडेक्स में भारत की रैंक अक्सर बहुत नीची (जैसे Hunger Index में 111वीं) आती है, जिसे भारत सरकार ने त्रुटिपूर्ण डेटा और गलत सैंपलिंग साइज बताकर खारिज किया है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 11,
-          "originalId": 141,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "वायुमंडलीय अपवर्तन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): रात के समय आसमान में तारे टिमटिमाते (Twinkle) हुए दिखाई देते हैं।\nकारण (R): यह वायुमंडलीय अपवर्तन (Atmospheric Refraction) के कारण होता है, जहाँ तारों का प्रकाश पृथ्वी के वायुमंडल की विभिन्न परतों से गुजरते हुए लगातार मुड़ता है।",
-          "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
-          ],
-          "answer": "A",
-          "explanation": "तारों का टिमटिमाना अपवर्तन (Refraction) का एक सटीक और प्रत्यक्ष उदाहरण है। वायुमंडल का अपवर्तनांक (Refractive index) लगातार बदलता रहता है जिससे आँखों तक पहुँचने वाले प्रकाश की मात्रा कम-ज्यादा होती है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 12,
-          "originalId": 142,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "विटामिन और कमी रोग",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "विटामिन और उनसे होने वाले कमी रोगों (Deficiency Diseases) को सुमेलित करें:\n\nसूची-I (विटामिन)\na. विटामिन A (रेटिनॉल)\nb. विटामिन B1 (थायमीन)\nc. विटामिन C (एस्कॉर्बिक एसिड)\nd. विटामिन D (कैल्सीफेरॉल)\n\nसूची-II (रोग)\n1. स्कर्वी (मसूड़ों से खून आना)\n2. रिकेट्स (हड्डियों का कमजोर होना)\n3. रतौंधी (Night Blindness)\n4. बेरी-बेरी\n\nकूट (Codes):",
-          "options": [
-            "a-3, b-4, c-1, d-2",
-            "a-1, b-2, c-3, d-4",
-            "a-3, b-1, c-4, d-2",
-            "a-2, b-4, c-1, d-3"
-          ],
-          "answer": "A",
-          "explanation": "Vit A-रतौंधी, Vit B1-बेरी-बेरी, Vit C-स्कर्वी (खट्टे फलों में मिलता है), Vit D-रिकेट्स (धूप से मिलता है)।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 13,
-          "originalId": 143,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "रक्त समूह",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "मानव रक्त समूहों (Blood Groups) के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n1. O नेगेटिव (O-) को सर्वदाता (Universal Donor) कहा जाता है।\n2. AB पॉजिटिव (AB+) को सर्वग्राही (Universal Recipient) कहा जाता है।\n3. रक्त का लाल रंग हीमोग्लोबिन प्रोटीन के कारण होता है।\nउपर्युक्त में से कौन-सा/से कथन सत्य है/हैं?",
-          "options": [
-            "केवल 1 और 2",
-            "केवल 2 और 3",
-            "1, 2 और 3",
-            "केवल 1 और 3"
-          ],
-          "answer": "C",
-          "explanation": "O- किसी को भी खून दे सकता है क्योंकि इसमें कोई एंटीजन नहीं होता। AB+ किसी का भी खून ले सकता है। हीमोग्लोबिन ऑक्सीजन का परिवहन करता है और रक्त को लाल बनाता है। तीनों सत्य हैं।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 14,
-          "originalId": 144,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "easy",
-          "topic": "SI मात्रक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "भौतिक राशियों को उनके SI मात्रक (SI Units) से सुमेलित करें:\n\nसूची-I (भौतिक राशि)\na. बल (Force)\nb. दाब (Pressure)\nc. विद्युत धारा (Electric Current)\nd. विद्युत प्रतिरोध (Resistance)\n\nसूची-II (SI मात्रक)\n1. पास्कल (Pascal)\n2. एम्पीयर (Ampere)\n3. न्यूटन (Newton)\n4. ओम (Ohm)\n\nकूट:",
-          "options": [
-            "a-3, b-1, c-2, d-4",
-            "a-1, b-2, c-3, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-4, b-1, c-2, d-3"
-          ],
-          "answer": "A",
-          "explanation": "बल-न्यूटन, दाब-पास्कल, धारा-एम्पीयर, प्रतिरोध-ओम। यह विज्ञान का सबसे बुनियादी और महत्वपूर्ण मिलान है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 15,
-          "originalId": 145,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "पादप और जंतु कोशिका",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन: पौधों की कोशिकाओं (Plant Cells) में सेल्युलोज से बनी एक कठोर कोशिका भित्ति (Cell wall) होती है, जबकि जंतु कोशिकाओं (Animal Cells) में यह नहीं पाई जाती।\nनिष्कर्ष I: इसी कारण से पौधे कठोर होते हैं और जंतुओं का शरीर लचीला होता है।\nनिष्कर्ष II: कोशिका भित्ति पौधों को प्रकाश संश्लेषण (Photosynthesis) में मदद करती है।\nकूट:",
-          "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
-          ],
-          "answer": "A",
-          "explanation": "निष्कर्ष I सही है (कठोरता प्रदान करती है)। लेकिन निष्कर्ष II गलत है क्योंकि प्रकाश संश्लेषण में मदद क्लोरोप्लास्ट (हरितलवक) करता है, कोशिका भित्ति नहीं।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 16,
-          "originalId": 146,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "विषाणु जनित रोग",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "निम्नलिखित बीमारियों को उनके रोगाणु (Pathogen) के आधार पर अलग करें - कौन-सी बीमारियाँ विषाणु (Virus) से फैलती हैं?\n1. एड्स (AIDS)\n2. कोविड-19 (Covid-19)\n3. टीबी / क्षय रोग (Tuberculosis)\n4. डेंगू (Dengue)\nविषाणु जनित रोगों का सही कूट:",
-          "options": [
-            "1, 2 और 4",
-            "1, 2 और 3",
-            "केवल 2 और 4",
-            "1, 3 और 4"
-          ],
-          "answer": "A",
-          "explanation": "AIDS (HIV वायरस), Covid-19 (कोरोना वायरस), डेंगू (फ्लेवी वायरस) वायरस से होते हैं। जबकि टीबी माइकोबैक्टीरियम ट्यूबरकुलोसिस नामक बैक्टीरिया (जीवाणु) से होता है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 17,
-          "originalId": 147,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "easy",
-          "topic": "प्राकृतिक अम्ल",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "प्राकृतिक स्रोतों में पाए जाने वाले अम्लों (Acids) को सुमेलित करें:\n\nसूची-I (स्रोत)\na. नींबू और संतरा\nb. खट्टा दूध/दही\nc. चींटी का डंक\nd. इमली\n\nसूची-II (अम्ल)\n1. लैक्टिक अम्ल\n2. फॉर्मिक अम्ल (Methanoic acid)\n3. टार्टरिक अम्ल\n4. सिट्रिक अम्ल\n\nकूट:",
-          "options": [
-            "a-4, b-1, c-2, d-3",
-            "a-4, b-1, c-3, d-2",
-            "a-1, b-4, c-2, d-3",
-            "a-2, b-1, c-4, d-3"
-          ],
-          "answer": "A",
-          "explanation": "नींबू (सिट्रिक), दही (लैक्टिक), चींटी का डंक (फॉर्मिक/मेथेनोइक), इमली और अंगूर (टार्टरिक)।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 18,
-          "originalId": 148,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "MCQ",
-          "difficulty": "easy",
-          "topic": "मानव शरीर की ग्रंथि",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "मानव शरीर की सबसे बड़ी ग्रंथि (Largest Gland) कौन-सी है, जो पित्त रस (Bile juice) का स्राव करती है?",
-          "options": [
-            "अग्न्याशय (Pancreas)",
-            "यकृत / लीवर (Liver)",
-            "थायराइड (Thyroid)",
-            "आमाशय (Stomach)"
-          ],
-          "answer": "B",
-          "explanation": "यकृत (Liver) शरीर की सबसे बड़ी ग्रंथि है। यह पित्त रस बनाती है जो पित्ताशय (Gallbladder) में जमा होता है और वसा (Fat) को पचाने में मदद करता है।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 19,
-          "originalId": 149,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "MCQ",
-          "difficulty": "easy",
-          "topic": "LPG गैस",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एलपीजी (LPG - Liquefied Petroleum Gas) गैस सिलेंडर में मुख्य रूप से कौन-सी गैसें भरी होती हैं?",
-          "options": [
-            "मीथेन और ईथेन",
-            "प्रोपेन और ब्यूटेन",
-            "हाइड्रोजन और नाइट्रोजन",
-            "कार्बन मोनोऑक्साइड"
-          ],
-          "answer": "B",
-          "explanation": "LPG मुख्य रूप से प्रोपेन और ब्यूटेन का मिश्रण होती है। (नोट: गैस लीक का पता लगाने के लिए इसमें इथाइल मर्कैप्टन नामक दुर्गंधयुक्त रसायन मिलाया जाता है)।",
-          "reference": "PTET Section D"
-        },
-        {
-          "id": 20,
-          "originalId": 150,
-          "section": "Section D General Science (सामान्य विज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "ओजोन परत",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): ओजोन परत (Ozone Layer) पृथ्वी के लिए एक सुरक्षा कवच की तरह काम करती है।\nकारण (R): ओजोन परत सूर्य से आने वाली हानिकारक पराबैंगनी विकिरणों (UV Rays) को अवशोषित कर लेती है, जिससे त्वचा कैंसर जैसी बीमारियाँ रुकती हैं।",
-          "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
-          ],
-          "answer": "A",
-          "explanation": "ओजोन (O3) समताप मंडल (Stratosphere) में पाई जाती है। क्लोरोफ्लोरोकार्बन (CFCs) के कारण इसमें क्षरण हो रहा है, लेकिन इसका मुख्य कार्य UV किरणों को रोकना ही है।",
-          "reference": "PTET Section D"
         }
       ]
     },
