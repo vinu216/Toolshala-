@@ -7625,576 +7625,3806 @@ window.ptetPracticeQuestionBank = {
       "title": "General Awareness Practice",
       "section": "Section C General Awareness (सामान्य ज्ञान)",
       "description": "Rajasthan, India, current facts, social awareness, environment aur science-awareness topics par focused practice.",
-      "source": "PTET Mock Test 6 question bank",
+      "source": "PTET General Awareness Practice Set",
       "questions": [
         {
           "id": 1,
-          "originalId": 101,
+          "originalId": 1,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Current Affairs",
+          "questionType": "Multi-statement",
           "difficulty": "moderate",
-          "topic": "नए जिले",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "अप्रत्यक्ष नए जिले का प्रश्न: प्रसिद्ध 'पचपदरा झील' जहाँ से उत्तम श्रेणी का नमक प्राप्त होता है, अब राजस्थान के किस नए जिले में स्थित है?",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के नए जिलों के गठन (रामलुभाया समिति) के संदर्भ में कौन सा कथन सत्य है?\n(A) राजस्थान में अब कुल 50 जिले हैं।\n(B) जयपुर और जोधपुर को दो-दो जिलों में विभाजित किया गया है।\n(C) राजस्थान में अब 10 संभाग हैं।\n(D) उपरोक्त सभी।\nकूट;",
           "options": [
-            "बाड़मेर",
-            "सांचौर",
-            "बालोतरा",
-            "फलौदी"
+            "केवल A और B",
+            "केवल B और C",
+            "A, B और C सभी",
+            "केवल A"
           ],
           "answer": "C",
-          "explanation": "पहले पचपदरा बाड़मेर जिले में आता था, लेकिन नए जिलों के गठन के बाद अब 'पचपदरा' बालोतरा जिले का हिस्सा बन गया है।",
+          "explanation": "राजस्थान में जिलों की संख्या बढ़कर 50 और संभाग 10 हो गए हैं। जयपुर और जोधपुर का विभाजन किया गया है।",
           "reference": "PTET Section C"
         },
         {
           "id": 2,
-          "originalId": 102,
+          "originalId": 2,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
+          "questionType": "Multi-statement",
           "difficulty": "moderate",
-          "topic": "नदियाँ और उद्गम स्थल",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान की नदियों को उनके उद्गम स्थल से सुमेलित करें:\n\nसूची-I (नदी)\na. बनास\nb. लूणी\nc. बाणगंगा\nd. साबरमती\n\nसूची-II (उद्गम स्थल)\n1. नाग पहाड़ (अजमेर)\n2. खमनोर की पहाड़ियाँ (राजसमंद)\n3. बैराठ की पहाड़ियाँ (कोटपूतली-बहरोड़/जयपुर)\n4. पदराड़ा की पहाड़ियाँ (उदयपुर)\n\nकूट (Codes):",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित में से कौन सा नया जिला 'अंतर्राज्यीय सीमा' नहीं बनाता है?\n(A) अनूपगढ़\n(B) कोटपूतली-बहरोड़\n(C) डीडवाना-कुचामन\n(D) गंगापुर सिटी\nकूट;",
           "options": [
-            "a-2, b-1, c-3, d-4",
-            "a-1, b-2, c-4, d-3",
-            "a-3, b-4, c-1, d-2",
-            "a-2, b-3, c-1, d-4"
+            "केवल A",
+            "A और B",
+            "केवल C",
+            "D"
           ],
-          "answer": "A",
-          "explanation": "बनास- खमनोर (राजसमंद), लूणी- नाग पहाड़ (अजमेर), बाणगंगा- बैराठ (अब नया जिला कोटपूतली-बहरोड़ में भी विस्तार), साबरमती- उदयपुर।",
+          "answer": "C",
+          "explanation": "डीडवाना-कुचामन एक अंतर्वर्ती (Landlocked) जिला है, जबकि अनूपगढ़ पाकिस्तान के साथ सीमा बनाता है।",
           "reference": "PTET Section C"
         },
         {
           "id": 3,
-          "originalId": 103,
+          "originalId": 3,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Multi-statement",
+          "questionType": "MCQ",
           "difficulty": "moderate",
-          "topic": "अरावली पर्वतमाला",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कूट: अरावली पर्वतमाला की चोटियों को उनकी ऊँचाई के अनुसार अवरोही (घटते) क्रम में सही ढंग से व्यवस्थित करें:\n1. सेर\n2. गुरु शिखर\n3. अचलगढ़\n4. देलवाड़ा\nसही कूट चुनें:",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के नए जिलों के गठन से पहले 'अंतर्वर्ती' (Landlocked) जिलों की संख्या 8 थी, अब कितनी है?",
           "options": [
-            "2, 1, 4, 3",
-            "2, 4, 1, 3",
-            "2, 1, 3, 4",
-            "1, 2, 4, 3"
+            "20",
+            "22",
+            "19",
+            "25"
           ],
-          "answer": "A",
-          "explanation": "सही क्रम: गुरु शिखर (1722 मी), सेर (1597 मी), देलवाड़ा (1442 मी), अचलगढ़ (1380 मी)।",
+          "answer": "B",
+          "explanation": "अब राजस्थान में कुल 22 जिले ऐसे हैं जिनकी सीमा किसी भी अन्य राज्य या देश से नहीं लगती।",
           "reference": "PTET Section C"
         },
         {
           "id": 4,
-          "originalId": 104,
+          "originalId": 4,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Matching",
           "difficulty": "moderate",
-          "topic": "राजस्थान की जलवायु",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-कारण: राजस्थान की जलवायु:\nकथन (A): पश्चिमी राजस्थान में वर्षा बहुत कम होती है और यह एक मरुस्थलीय क्षेत्र है।\nकारण (R): अरावली पर्वतमाला अरब सागर से आने वाले मानसून के समानांतर (Parallel) स्थित है, जिससे मानसूनी हवाएँ बिना टकराए आगे निकल जाती हैं।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
+          "topic": "राजस्थान की झीलें",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित झीलों और उनके नए जिलों का मिलान कीजिए:\n(a) सांभर झील - (1) दूदू\n(b) पचपदरा झील - (2) बालोतरा\n(c) डीडवाना झील - (3) डीडवाना-कुचामन\nकूट;",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
           ],
           "answer": "A",
-          "explanation": "अरावली का विस्तार दक्षिण-पश्चिम से उत्तर-पूर्व की ओर है, जो अरब सागरीय मानसून की दिशा के एकदम समानांतर है। इसलिए पश्चिमी राजस्थान वृष्टि छाया प्रदेश/सूखा रह जाता है।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 5,
-          "originalId": 105,
+          "originalId": 5,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "moderate",
-          "topic": "गणेश्वर सभ्यता",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "'गणेश्वर सभ्यता' जो कि भारत में ताम्रयुगीन सभ्यताओं की जननी मानी जाती है, कांतली नदी के किनारे स्थित है। वर्तमान में यह किस जिले में आती है?",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान का कौन सा नया जिला 'हरियाणा' के साथ सीमा नहीं बनाता है?",
           "options": [
-            "सीकर",
-            "झुंझुनू",
+            "कोटपूतली-बहरोड़",
+            "खैरथल-तिजारा",
             "नीम का थाना",
-            "कोटपूतली-बहरोड़"
+            "ब्यावर"
           ],
-          "answer": "C",
-          "explanation": "गणेश्वर सभ्यता पहले सीकर जिले में थी, लेकिन अब सीकर और झुंझुनू से अलग होकर बने नए जिले 'नीम का थाना' में स्थित है। यह नए जीके का अहम प्रश्न है।",
+          "answer": "D",
+          "explanation": "ब्यावर एक अंतर्वर्ती जिला है।",
           "reference": "PTET Section C"
         },
         {
           "id": 6,
-          "originalId": 106,
+          "originalId": 6,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "1857 की क्रांति",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "1857 की क्रांति के समय रियासतों और उनके पॉलिटिकल एजेंट (P.A.) को सुमेलित करें:\n\nसूची-I (रियासत)\na. मेवाड़ (उदयपुर)\nb. मारवाड़ (जोधपुर)\nc. कोटा\nd. जयपुर\n\nसूची-II (पॉलिटिकल एजेंट)\n1. मैक मोसन\n2. मेजर बर्टन\n3. कैप्टन शावर्स\n4. कर्नल ईडन\n\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'अरावली की सबसे ऊँची चोटी' गुरु शिखर किस जिले में स्थित है?",
           "options": [
-            "a-3, b-1, c-2, d-4",
-            "a-1, b-2, c-3, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-4, b-1, c-2, d-3"
+            "सिरोही",
+            "उदयपुर",
+            "पाली",
+            "राजसमंद"
           ],
           "answer": "A",
-          "explanation": "मेवाड़-कैप्टन शावर्स, मारवाड़-मैक मोसन (आउवा में सिर काटा गया), कोटा-मेजर बर्टन (कोटा में सिर काटा गया), जयपुर-कर्नल ईडन।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 7,
-          "originalId": 107,
+          "originalId": 7,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "राजस्थान का एकीकरण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कूट: राजस्थान के एकीकरण (Integration of Rajasthan) के चरणों और उनके प्रधानमंत्रियों के सही युग्म का चयन करें:\n1. मत्स्य संघ - शोभाराम कुमावत\n2. पूर्व राजस्थान - गोकुल लाल असावा\n3. संयुक्त राजस्थान - माणिक्य लाल वर्मा\n4. वृहत् राजस्थान - हीरालाल शास्त्री\nसही कूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान का 'मरुस्थलीय प्रदेश' (थार) कितने प्रतिशत भू-भाग पर फैला है?",
           "options": [
-            "केवल 1 और 2",
-            "केवल 1, 3 और 4",
-            "केवल 2 और 4",
-            "1, 2, 3 और 4"
+            "61.11%",
+            "50%",
+            "30%",
+            "40%"
           ],
-          "answer": "D",
-          "explanation": "चारों युग्म बिल्कुल सही हैं। इसे (S-G-M-H) यानी शोभाराम, गोकुललाल, माणिक्यलाल, हीरालाल की ट्रिक से याद रखा जाता है।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 8,
-          "originalId": 108,
+          "originalId": 8,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Current Affairs",
-          "difficulty": "moderate",
-          "topic": "नए जिले",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान के किस नए जिले का गठन उदयपुर से अलग करके किया गया है, जहाँ प्रसिद्ध 'जयसमंद झील' स्थित है?",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'माही नदी' राजस्थान के किस क्षेत्र में बहती है?",
           "options": [
-            "शाहपुरा",
-            "सलूंबर",
-            "डीडवाना-कुचामन",
-            "गंगापुर सिटी"
+            "वागड़ (दक्षिण)",
+            "मारवाड़",
+            "मेवाड़",
+            "ढूँढाड़"
           ],
-          "answer": "B",
-          "explanation": "'जयसमंद झील' (ढेबर झील) जो पहले उदयपुर में थी, अब 'सलूंबर' जिले में आ गई है। सलूंबर को उदयपुर से अलग कर नया जिला बनाया गया है।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 9,
-          "originalId": 109,
+          "originalId": 9,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "प्रजामंडल आंदोलन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-निष्कर्ष: प्रजामंडल आंदोलन:\nकथन: प्रजामंडल आंदोलनों का मुख्य उद्देश्य रियासतों में उत्तरदायी शासन (Responsible Government) की स्थापना करना था।\nनिष्कर्ष I: इसका उद्देश्य राजाओं को गद्दी से हटाकर लोकतंत्र स्थापित करना था।\nनिष्कर्ष II: इसका उद्देश्य रियासतों के लोगों को राजनीतिक अधिकारों के प्रति जागरूक करना था।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान जलवायु",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'सर्वाधिक वर्षा' किस मानसून से होती है?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
+            "बंगाल की खाड़ी का मानसून",
+            "अरब सागर का मानसून",
+            "भूमध्यसागरीय चक्रवात",
+            "शीतकालीन मानसून"
           ],
-          "answer": "B",
-          "explanation": "प्रजामंडलों की प्रारंभिक मांग राजा के अधीन रहते हुए ही जनता को अधिकार देना (उत्तरदायी शासन) था, न कि तुरंत राजा को हटाना। अतः निष्कर्ष II अधिक सटीक है।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 10,
-          "originalId": 110,
+          "originalId": 10,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
+          "questionType": "MCQ",
           "difficulty": "moderate",
-          "topic": "राजस्थान के प्रसिद्ध युद्ध",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "मिलान करें: राजस्थान के प्रसिद्ध युद्धों को उनके वर्ष से सुमेलित करें:\n\nसूची-I (युद्ध)\na. तराइन का प्रथम युद्ध\nb. खानवा का युद्ध\nc. हल्दीघाटी का युद्ध\nd. दिवेर का युद्ध\n\nसूची-II (वर्ष)\n1. 1576 ई.\n2. 1582 ई.\n3. 1191 ई.\n4. 1527 ई.\n\nकूट:",
+          "topic": "राजस्थान की नदियाँ",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित में से कौन सा 'नदी और सहायक नदी' का जोड़ा गलत है?",
           "options": [
-            "a-3, b-4, c-1, d-2",
-            "a-3, b-1, c-4, d-2",
-            "a-4, b-3, c-2, d-1",
-            "a-1, b-2, c-3, d-4"
+            "बनास - बेड़च",
+            "लूनी - जवाई",
+            "चम्बल - साबरमती",
+            "माही - सोम"
           ],
-          "answer": "A",
-          "explanation": "तराइन प्रथम (1191 - पृथ्वीराज चौहान vs गौरी), खानवा (1527 - सांगा vs बाबर), हल्दीघाटी (1576 - प्रताप vs अकबर), दिवेर (1582 - मेवाड़ का मैराथन)।",
+          "answer": "C",
+          "explanation": "साबरमती चम्बल की सहायक नदी नहीं है।",
           "reference": "PTET Section C"
         },
         {
           "id": 11,
-          "originalId": 111,
+          "originalId": 11,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
+          "questionType": "MCQ",
           "difficulty": "moderate",
-          "topic": "लोक देवता",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान के प्रमुख लोक देवताओं को उनके मुख्य थान/मेला स्थल से सुमेलित करें:\n\nसूची-I (लोक देवता)\na. गोगाजी\nb. रामदेवजी\nc. पाबूजी\nd. तेजाजी\n\nसूची-II (मुख्य स्थल/जिला)\n1. रुणीचा (जैसलमेर)\n2. परबतसर (डीडवाना-कुचामन/नागौर)\n3. गोगामेड़ी (हनुमानगढ़)\n4. कोलू मंड (फलौदी)\n\nकूट (Codes):",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'हल्दीघाटी के युद्ध' (1576) के संबंध में कौन सा कथन असत्य है?",
           "options": [
-            "a-3, b-1, c-4, d-2",
-            "a-1, b-3, c-2, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-2, b-1, c-4, d-3"
+            "यह युद्ध अनिर्णायक रहा।",
+            "महाराणा प्रताप की सेना का नेतृत्व हकीम खां सूर ने किया।",
+            "मानसिंह मुगल सेना का मुख्य सेनापति था।",
+            "इस युद्ध में राणा सांगा ने भाग लिया था।"
           ],
-          "answer": "A",
-          "explanation": "गोगाजी-गोगामेड़ी, रामदेवजी-रुणीचा, पाबूजी-कोलू मंड (अब नए जिले फलौदी में), तेजाजी-परबतसर।",
+          "answer": "D",
+          "explanation": "राणा सांगा का संबंध 1527 के खानवा युद्ध से है।",
           "reference": "PTET Section C"
         },
         {
           "id": 12,
-          "originalId": 112,
+          "originalId": 12,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "राजस्थान की हस्तशिल्प कलाएं",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "निम्नलिखित में से कौन-से कथन राजस्थान की हस्तशिल्प कलाओं के बारे में सत्य हैं?\n1. थेवा कला प्रतापगढ़ की प्रसिद्ध है, जिसमें काँच पर सोने का सूक्ष्म चित्रांकन किया जाता है।\n2. ब्लू पॉटरी जयपुर की प्रसिद्ध है, जिसे कृपाल सिंह शेखावत ने विश्व स्तर पर पहचान दिलाई।\n3. उस्ता कला बीकानेर की प्रसिद्ध है, जिसमें ऊँट की खाल पर सोने की मीनाकारी की जाती है।\nसही कूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान स्थापत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'विजय स्तंभ' (चित्तौड़गढ़) के वास्तुकार कौन थे?",
           "options": [
-            "केवल 1 और 2",
-            "केवल 2 और 3",
-            "केवल 1 और 3",
-            "1, 2 और 3"
+            "जैता",
+            "मंडन",
+            "लालचंद उस्ता",
+            "नाथा"
           ],
-          "answer": "D",
-          "explanation": "तीनों कथन कला-संस्कृति की दृष्टि से 100% सत्य हैं।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 13,
-          "originalId": 113,
+          "originalId": 13,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "राजस्थान की चित्रकला",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): किशनगढ़ शैली की 'बणी-ठणी' चित्रकला को भारत की मोनालिसा कहा जाता है।\nकारण (R): यह चित्र राजा सांवत सिंह (नागरीदास) के समय चित्रकार निहालचंद द्वारा बनाया गया था।",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान जनजाति",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'लोक देवता' के रूप में 'भूरिया बाबा' का आराध्य देव कौन सी जनजाति मानती है?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "भील",
+            "मीणा",
+            "सहरिया",
+            "गरासिया"
           ],
-          "answer": "A",
-          "explanation": "एरिक डिक्सन ने बणी-ठणी को भारत की मोनालिसा कहा था। इसका निर्माण निहालचंद ने सांवत सिंह के संरक्षण में किया था।",
+          "answer": "B",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 14,
-          "originalId": 114,
+          "originalId": 14,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "लोक नृत्य",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "अग्नि नृत्य (Fire Dance) राजस्थान के किस संप्रदाय द्वारा फतह-फतह के घोष के साथ किया जाता है?",
+          "topic": "राजस्थान दुर्ग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मेहरानगढ़ दुर्ग' किस पहाड़ी पर स्थित है?",
           "options": [
-            "विश्नोई संप्रदाय",
-            "जसनाथी संप्रदाय",
-            "दादू पंथ",
-            "रामस्नेही संप्रदाय"
+            "चिड़िया टूक",
+            "सुध पहाड़ी",
+            "चित्रकूट",
+            "त्रिकूट"
           ],
-          "answer": "B",
-          "explanation": "बीकानेर के कतरियासर में जसनाथी सिद्धों द्वारा धधकते अंगारों पर यह नृत्य किया जाता है।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 15,
-          "originalId": 115,
+          "originalId": 15,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "राजस्थान के आभूषण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान के आभूषणों को शरीर के अंगों से सुमेलित करें:\n\nसूची-I (आभूषण)\na. रखड़ी / बोरला\nb. चूप / चूँप\nc. टोटी\nd. नेवरी\n\nसूची-II (अंग)\n1. दाँत\n2. सिर (मस्तक)\n3. पैर / टखना\n4. कान\n\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान कुलदेवी",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'बाण माता' किस राजवंश की कुलदेवी हैं?",
           "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-2, b-4, c-1, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-4, b-1, c-3, d-2"
+            "चौहान",
+            "गुहिल (मेवाड़)",
+            "राठौड़",
+            "कछवाहा"
           ],
-          "answer": "A",
-          "explanation": "रखड़ी/बोरला-सिर पर, चूँप-दाँत में, टोटी-कान में, नेवरी-पैर में पहनी जाती है।",
+          "answer": "B",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 16,
-          "originalId": 116,
+          "originalId": 16,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "राजस्थान के दुर्ग",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान के दुर्गों के संबंध में असत्य कथन का चयन करें:\n1. कुंभलगढ़ दुर्ग की दीवार की लंबाई 36 किलोमीटर है।\n2. मेहरानगढ़ दुर्ग को मयूरध्वजगढ़ भी कहा जाता है।\n3. रणथंभौर दुर्ग 'जल दुर्ग' (Water Fort) का उत्कृष्ट उदाहरण है।\n4. गागरोन दुर्ग झालावाड़ में आहू और कालीसिंध नदियों के संगम पर स्थित है।\nअसत्य कथन कूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान मेले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के किस जिले में 'साहवा का मेला' भरता है?",
           "options": [
-            "केवल 1",
-            "केवल 3",
-            "केवल 2 और 4",
-            "केवल 4"
+            "बीकानेर",
+            "चूरू",
+            "सीकर",
+            "झुंझुनू"
           ],
           "answer": "B",
-          "explanation": "रणथंभौर एक 'गिरि/वन दुर्ग' है जो पहाड़ियों से घिरा है। 'जल दुर्ग' (औदक दुर्ग) का उत्कृष्ट उदाहरण गागरोन दुर्ग (झालावाड़) है।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 17,
-          "originalId": 117,
+          "originalId": 17,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "लोक नृत्य",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "चरी नृत्य जो कि गुर्जर महिलाओं द्वारा सिर पर चरी (पीतल का मटका) रखकर किया जाता है, मुख्य रूप से किस क्षेत्र का प्रसिद्ध है?",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मारवाड़ के राठौड़ वंश' का संस्थापक कौन था?",
           "options": [
-            "मेवाड़",
-            "किशनगढ़ (अजमेर)",
-            "मारवाड़",
-            "शेखावाटी"
+            "राव सीहा",
+            "राव जोधा",
+            "राव मालदेव",
+            "राव चंद्रसेन"
           ],
-          "answer": "B",
-          "explanation": "चरी नृत्य अजमेर (किशनगढ़) के गुर्जर समुदाय का विश्व प्रसिद्ध लोक नृत्य है। इसकी प्रसिद्ध नृत्यांगना 'फलकू बाई' हैं।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 18,
-          "originalId": 118,
+          "originalId": 18,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "राजस्थानी साहित्य",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थानी साहित्य और उनके लेखकों को सुमेलित करें:\n\nसूची-I (साहित्य/ग्रंथ)\na. पृथ्वीराज रासो\nb. कान्हड़दे प्रबंध\nc. वेली क्रिसन रुकमणी री\nd. पाथल और पीथल\n\nसूची-II (लेखक)\n1. पद्मनाभ\n2. चंदबरदाई\n3. कन्हैयालाल सेठिया\n4. पृथ्वीराज राठौड़ (बीकानेर)\n\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान लोकगीत",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'ढोला-मारू' लोकगीत किस क्षेत्र का प्रसिद्ध है?",
           "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-4, c-1, d-3",
-            "a-3, b-1, c-4, d-2"
+            "मारवाड़",
+            "मेवाड़",
+            "ढूँढाड़",
+            "हाड़ौती"
           ],
           "answer": "A",
-          "explanation": "पृथ्वीराज रासो-चंदबरदाई, कान्हड़दे प्रबंध-पद्मनाभ, वेली क्रिसन...-पृथ्वीराज राठौड़, पाथल और पीथल-कन्हैयालाल सेठिया।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 19,
-          "originalId": 119,
+          "originalId": 19,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "मेले",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राजस्थान का वह प्रसिद्ध मेला जो हिंदू कैलेंडर के अनुसार भाद्रपद शुक्ल द्वितीया से एकादशी तक भरता है और सांप्रदायिक सद्भाव का प्रतीक है?",
+          "topic": "राजस्थान रीति-रिवाज",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'पढरना' क्या है?",
           "options": [
-            "पुष्कर मेला",
-            "रामदेवरा मेला",
-            "बेणेश्वर मेला",
-            "खाटूश्यामजी मेला"
+            "एक प्रकार का लोक नृत्य",
+            "एक प्रकार का आभूषण",
+            "मृत्यु भोज की रस्म",
+            "वैवाहिक रस्म"
           ],
-          "answer": "B",
-          "explanation": "बाबा रामदेव जी का मेला रुणीचा में भाद्रपद माह (बाबे री बीज) में भरता है, जहाँ हिंदू और मुस्लिम दोनों पूरी श्रद्धा से आते हैं।",
+          "answer": "D",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 20,
-          "originalId": 120,
+          "originalId": 20,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "यूनेस्को विश्व धरोहर",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): जयपुर के जंतर-मंतर को यूनेस्को की विश्व धरोहर सूची में शामिल किया गया है।\nकारण (R): यह सवाई जयसिंह द्वितीय द्वारा निर्मित एक ऐतिहासिक खगोलीय वेधशाला (Astronomical observatory) है, जिसमें दुनिया की सबसे बड़ी पत्थर की सूर्यघड़ी (सम्राट यंत्र) है।",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान उद्योग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान का 'धातु नगरी' किस जिले को कहते हैं?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) सही है लेकिन (R) गलत है।",
-            "(A) गलत है लेकिन (R) सही है।",
-            "दोनों गलत हैं।"
+            "नागौर",
+            "जयपुर",
+            "जोधपुर",
+            "अजमेर"
           ],
           "answer": "A",
-          "explanation": "जंतर-मंतर 2010 में यूनेस्को साइट बना था और इसका कारण इसका अद्वितीय खगोलीय विज्ञान और सम्राट यंत्र का होना है।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 21,
-          "originalId": 121,
+          "originalId": 21,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "Matching",
           "difficulty": "moderate",
-          "topic": "सिंधु घाटी सभ्यता",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "सिंधु घाटी सभ्यता के प्रमुख स्थलों को उनकी नदियों से सुमेलित करें:\n\nसूची-I (स्थल)\na. हड़प्पा\nb. मोहनजोदड़ो\nc. कालीबंगा\nd. लोथल\n\nसूची-II (नदी)\n1. घग्गर\n2. रावी\n3. भोगवा\n4. सिंधु\n\nकूट (Codes):",
+          "topic": "राजस्थान लोक वाद्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "लोक वाद्य और उनके प्रकार का मिलान कीजिए:\n(a) रावणहत्था - (1) तत्व\n(b) अलगोजा - (2) सुषिर\n(c) खड़ताल - (3) घन\nकूट;",
           "options": [
-            "a-2, b-4, c-1, d-3",
-            "a-4, b-2, c-1, d-3",
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-4, c-3, d-2"
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
           ],
           "answer": "A",
-          "explanation": "हड़प्पा-रावी, मोहनजोदड़ो-सिंधु, कालीबंगा-घग्गर (राजस्थान), लोथल-भोगवा (गुजरात)।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 22,
-          "originalId": 122,
+          "originalId": 22,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "बौद्ध और जैन धर्म",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन: बौद्ध धर्म के संस्थापक गौतम बुद्ध और जैन धर्म के 24वें तीर्थंकर महावीर स्वामी दोनों क्षत्रिय राजकुमार थे जिन्होंने वेदों की सर्वोच्चता को अस्वीकार कर दिया।\nनिष्कर्ष I: दोनों धर्मों ने जाति व्यवस्था और कर्मकांडों का विरोध किया।\nनिष्कर्ष II: दोनों धर्मों का उद्भव प्राचीन भारत में ब्राह्मणवादी प्रभुत्व के खिलाफ एक प्रतिक्रिया के रूप में हुआ था।\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान धार्मिक स्थल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'अजमेर' की दरगाह किसके लिए प्रसिद्ध है?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों I और II सही हैं",
-            "दोनों गलत हैं"
+            "ख्वाजा मोइनुद्दीन चिश्ती",
+            "हमीदुद्दीन नागोरी",
+            "निजामुद्दीन औलिया",
+            "सलीम चिश्ती"
           ],
-          "answer": "C",
-          "explanation": "दोनों निष्कर्ष ऐतिहासिक रूप से 100% सत्य हैं। 6ठी शताब्दी ईसा पूर्व में दोनों धर्म सामाजिक समानता के लिए अस्तित्व में आए थे।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 23,
-          "originalId": 123,
+          "originalId": 23,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Chronology",
-          "difficulty": "moderate",
-          "topic": "भारतीय राष्ट्रीय आंदोलन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "भारतीय राष्ट्रीय आंदोलन की प्रमुख घटनाओं को उनके कालक्रमानुसार (Chronological order) व्यवस्थित करें:\n1. भारत छोड़ो आंदोलन (Quit India)\n2. चंपारण सत्याग्रह\n3. सविनय अवज्ञा आंदोलन (Civil Disobedience/Dandi March)\n4. असहयोग आंदोलन (Non-Cooperation)\nसही कूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान चित्रकला",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान की मोनालिसा' किसे कहा जाता है?",
           "options": [
-            "2, 4, 3, 1",
-            "4, 2, 3, 1",
-            "2, 3, 4, 1",
-            "1, 3, 4, 2"
+            "बनी-ठणी",
+            "राधिका",
+            "मीरा",
+            "पन्ना धाय"
           ],
           "answer": "A",
-          "explanation": "चंपारण (1917) -> असहयोग (1920) -> सविनय अवज्ञा/दांडी मार्च (1930) -> भारत छोड़ो (1942)।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 24,
-          "originalId": 124,
+          "originalId": 24,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "भारतीय संविधान के भाग",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "भारतीय संविधान के भागों (Parts) को उनके विषयों से सुमेलित करें:\n\nसूची-I (भाग)\na. भाग II\nb. भाग III\nc. भाग IV\nd. भाग IVA\n\nसूची-II (विषय)\n1. मौलिक अधिकार (Fundamental Rights)\n2. नागरिकता (Citizenship)\n3. मौलिक कर्तव्य (Fundamental Duties)\n4. राज्य के नीति निर्देशक तत्व (DPSP)\n\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान महोत्सव",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कौन सा कथन सत्य है?",
           "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-4, c-1, d-3",
-            "a-3, b-1, c-4, d-2"
+            "ऊंट महोत्सव - बीकानेर",
+            "मरू महोत्सव - जैसलमेर",
+            "थार महोत्सव - बाड़मेर",
+            "उपरोक्त सभी"
           ],
-          "answer": "A",
-          "explanation": "भाग II (नागरिकता), भाग III (मौलिक अधिकार), भाग IV (नीति निर्देशक तत्व), भाग IVA (मौलिक कर्तव्य - 42वें संशोधन द्वारा जोड़े गए)।",
+          "answer": "D",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 25,
-          "originalId": 125,
+          "originalId": 25,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "अनुच्छेद 32",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): भारतीय संविधान के अनुच्छेद 32 को डॉ. बी.आर. अंबेडकर ने संविधान की हृदय और आत्मा कहा था।\nकारण (R): यह अनुच्छेद नागरिकों को उनके मौलिक अधिकारों के हनन की स्थिति में सीधे सर्वोच्च न्यायालय (Supreme Court) जाने का अधिकार (संवैधानिक उपचारों का अधिकार) देता है।",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान साहित्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजप्रशस्ति' के रचयिता कौन थे?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "रणछोड़ भट्ट तैलंग",
+            "मंडन",
+            "जैता",
+            "बांकीदास"
           ],
           "answer": "A",
-          "explanation": "बिना उपचार के मौलिक अधिकार बेकार हैं। इसलिए अनुच्छेद 32 को संविधान की आत्मा माना जाता है क्योंकि यह अधिकारों का रक्षक है (रिट जारी करने की शक्ति)।",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 26,
-          "originalId": 126,
+          "originalId": 26,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "11वीं अनुसूची",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "भारतीय संविधान की 11वीं अनुसूची (11th Schedule) जिसे 73वें संविधान संशोधन अधिनियम 1992 द्वारा जोड़ा गया, किससे संबंधित है?",
+          "topic": "राजस्थान नृत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'कथक' नृत्य का आदिम घराना कौन सा है?",
           "options": [
-            "दलबदल विरोधी कानून (Anti-defection)",
-            "पंचायती राज संस्थाएं (Panchayati Raj)",
-            "नगर पालिकाएं (Municipalities)",
-            "आधिकारिक भाषाएं (Languages)"
+            "जयपुर",
+            "लखनऊ",
+            "बनारस",
+            "रायगढ़"
           ],
-          "answer": "B",
-          "explanation": "73वाँ संशोधन पंचायती राज से जुड़ा है जिसमें 29 विषय हैं। 12वीं अनुसूची (74वाँ संशोधन) नगर पालिकाओं से जुड़ी है।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 27,
-          "originalId": 127,
+          "originalId": 27,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "संविधान के प्रमुख अनुच्छेद",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "संविधान के प्रमुख अनुच्छेदों को सुमेलित करें:\n\nसूची-I (अनुच्छेद)\na. अनुच्छेद 14\nb. अनुच्छेद 17\nc. अनुच्छेद 21\nd. अनुच्छेद 51A\n\nसूची-II (प्रावधान)\n1. अस्पृश्यता का अंत (Abolition of Untouchability)\n2. जीवन और व्यक्तिगत स्वतंत्रता का अधिकार\n3. विधि के समक्ष समानता (Equality before law)\n4. मौलिक कर्तव्य (Fundamental Duties)\n\nकूट:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान आभूषण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'चोप' आभूषण कहाँ पहना जाता है?",
           "options": [
-            "a-3, b-1, c-2, d-4",
-            "a-1, b-2, c-3, d-4",
-            "a-3, b-2, c-1, d-4",
-            "a-4, b-1, c-2, d-3"
+            "नाक",
+            "दांत",
+            "गला",
+            "कान"
           ],
-          "answer": "A",
-          "explanation": "Art 14- समानता, Art 17- अस्पृश्यता (छुआछूत) का अंत, Art 21- जीवन का अधिकार, Art 51A- मौलिक कर्तव्य।",
+          "answer": "B",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 28,
-          "originalId": 128,
+          "originalId": 28,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "राष्ट्रपति शासन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "भारत में राष्ट्रपति शासन (President's Rule) राज्यों में संवैधानिक तंत्र की विफलता के आधार पर किस अनुच्छेद के तहत लगाया जाता है?",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'गुलाबी नगरी' (Pink City) की स्थापना किसने की?",
           "options": [
-            "अनुच्छेद 352",
-            "अनुच्छेद 356",
-            "अनुच्छेद 360",
-            "अनुच्छेद 365"
+            "सवाई जयसिंह II",
+            "सवाई प्रताप सिंह",
+            "मानसिंह",
+            "पृथ्वीराज"
           ],
-          "answer": "B",
-          "explanation": "352 (राष्ट्रीय आपातकाल), 356 (राष्ट्रपति शासन/राज्य आपातकाल), 360 (वित्तीय आपातकाल)।",
+          "answer": "A",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 29,
-          "originalId": 129,
+          "originalId": 29,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "मुगल काल",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "मुगल काल के दौरान निर्मित ऐतिहासिक इमारतों और उनके निर्माताओं के संबंध में असत्य युग्म पहचानें:\n1. लाल किला (दिल्ली) - शाहजहाँ\n2. ताजमहल (आगरा) - शाहजहाँ\n3. फतेहपुर सीकरी - अकबर\n4. बुलंद दरवाजा - बाबर\nअसत्य युग्म:",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान सामाजिक सुधार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'सती प्रथा' सर्वप्रथम किस जिले में गैर-कानूनी घोषित की गई?",
           "options": [
-            "केवल 1",
-            "केवल 2",
-            "केवल 3",
-            "केवल 4"
+            "जयपुर",
+            "बूंदी",
+            "जोधपुर",
+            "बीकानेर"
           ],
-          "answer": "D",
-          "explanation": "फतेहपुर सीकरी का बुलंद दरवाजा अकबर ने गुजरात विजय की स्मृति में बनवाया था, बाबर ने नहीं। अतः 4 असत्य है।",
+          "answer": "B",
+          "explanation": " ",
           "reference": "PTET Section C"
         },
         {
           "id": 30,
-          "originalId": 130,
+          "originalId": 30,
           "section": "Section C General Awareness (सामान्य ज्ञान)",
           "questionType": "MCQ",
           "difficulty": "easy",
-          "topic": "साइमन कमीशन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "1928 में भारत आए साइमन कमीशन (Simon Commission) का पूरे देश में भारी विरोध क्यों हुआ था?",
+          "topic": "राजस्थान बांध",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'भीलवाड़ा' का 'मेजा बांध' किस नदी पर बना है?",
           "options": [
-            "क्योंकि इसने भारत के विभाजन की सिफारिश की थी।",
-            "क्योंकि इसमें एक भी भारतीय सदस्य नहीं था (सभी 7 सदस्य अंग्रेज थे)।",
-            "क्योंकि इसने जलियांवाला बाग हत्याकांड को सही ठहराया था।",
-            "क्योंकि इसने नमक पर कर बढ़ा दिया था।"
+            "कोठारी",
+            "बनास",
+            "चम्बल",
+            "लूणी"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 31,
+          "originalId": 31,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "संविधान सभा के 'स्थायी अध्यक्ष' कौन थे?",
+          "options": [
+            "डॉ. राजेन्द्र प्रसाद",
+            "डॉ. बी.आर. अम्बेडकर",
+            "जवाहरलाल नेहरू",
+            "सच्चिदानंद सिन्हा"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 32,
+          "originalId": 32,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय स्वतंत्रता आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'स्वराज' मेरा जन्मसिद्ध अधिकार है, यह किसने कहा?",
+          "options": [
+            "बाल गंगाधर तिलक",
+            "सुभाष चंद्र बोस",
+            "भगत सिंह",
+            "लाला लाजपत राय"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 33,
+          "originalId": 33,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "मौलिक कर्तव्य किस अनुच्छेद में हैं?",
+          "options": [
+            "51A",
+            "32",
+            "14",
+            "21"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 34,
+          "originalId": 34,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'बौद्ध धर्म' के संस्थापक कौन थे?",
+          "options": [
+            "गौतम बुद्ध",
+            "महावीर स्वामी",
+            "अशोक",
+            "कनिष्क"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 35,
+          "originalId": 35,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राज्यपाल' की नियुक्ति कौन करता है?",
+          "options": [
+            "राष्ट्रपति",
+            "प्रधानमंत्री",
+            "मुख्यमंत्री",
+            "सर्वोच्च न्यायालय"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 36,
+          "originalId": 36,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय सामाजिक सुधार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'सत्यार्थ प्रकाश' के लेखक कौन हैं?",
+          "options": [
+            "दयानंद सरस्वती",
+            "स्वामी विवेकानंद",
+            "राजा राममोहन राय",
+            "महात्मा गांधी"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 37,
+          "originalId": 37,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय स्वतंत्रता आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'भारत छोड़ो आंदोलन' कब शुरू हुआ?",
+          "options": [
+            "1942",
+            "1930",
+            "1920",
+            "1947"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 38,
+          "originalId": 38,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राज्यसभा' के सदस्य का कार्यकाल कितना होता है?",
+          "options": [
+            "5 वर्ष",
+            "6 वर्ष",
+            "4 वर्ष",
+            "2 वर्ष"
           ],
           "answer": "B",
-          "explanation": "इसे श्वेत कमीशन (White Commission) कहा गया क्योंकि भारत के संवैधानिक सुधारों के लिए बने इस आयोग में कोई भारतीय नहीं था। लाला लाजपत राय ने इसका कड़ा विरोध किया था।",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 39,
+          "originalId": 39,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'सिकंदर' का भारत पर आक्रमण कब हुआ?",
+          "options": [
+            "326 ई.पू.",
+            "300 ई.पू.",
+            "250 ई.पू.",
+            "400 ई.पू."
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 40,
+          "originalId": 40,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "सर्वोच्च न्यायालय के न्यायाधीशों की सेवानिवृत्ति आयु क्या है?",
+          "options": [
+            "62 वर्ष",
+            "65 वर्ष",
+            "60 वर्ष",
+            "70 वर्ष"
+          ],
+          "answer": "B",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 41,
+          "originalId": 41,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'इंसुलिन' की कमी से कौन सा रोग होता है?",
+          "options": [
+            "मधुमेह (Diabetes)",
+            "घेंघा",
+            "रिकेट्स",
+            "एनीमिया"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 42,
+          "originalId": 42,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'वायुमंडल' में नाइट्रोजन का प्रतिशत कितना है?",
+          "options": [
+            "78%",
+            "21%",
+            "0.03%",
+            "10%"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 43,
+          "originalId": 43,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'पेंसिल' में प्रयुक्त पदार्थ कौन सा है?",
+          "options": [
+            "ग्रेफाइट",
+            "कोयला",
+            "सिलिकॉन",
+            "सल्फर"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 44,
+          "originalId": 44,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'हृदय' का मुख्य कार्य क्या है?",
+          "options": [
+            "रक्त को पंप करना",
+            "भोजन पचाना",
+            "श्वसन",
+            "उत्सर्जन"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 45,
+          "originalId": 45,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'विटामिन B' की कमी से कौन सा रोग होता है?",
+          "options": [
+            "बेरी-बेरी",
+            "रतौंधी",
+            "स्कर्वी",
+            "रिकेट्स"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 46,
+          "originalId": 46,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'लोहे' में जंग लगना किस प्रकार की प्रक्रिया है?",
+          "options": [
+            "रासायनिक परिवर्तन",
+            "भौतिक परिवर्तन",
+            "दोनों",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 47,
+          "originalId": 47,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'आकाश' का रंग नीला किस कारण होता है?",
+          "options": [
+            "प्रकीर्णन (Scattering)",
+            "अपवर्तन",
+            "परावर्तन",
+            "विक्षेपण"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 48,
+          "originalId": 48,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मानव शरीर' में हड्डियों की कुल संख्या कितनी होती है?",
+          "options": [
+            "206",
+            "200",
+            "300",
+            "180"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 49,
+          "originalId": 49,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'दाढ़ी बनाने' के लिए किस दर्पण का उपयोग होता है?",
+          "options": [
+            "अवतल दर्पण (Concave)",
+            "उत्तल दर्पण",
+            "समतल दर्पण",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 50,
+          "originalId": 50,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'ओजोन परत' (Ozone Layer) किस मंडल में पाई जाती है?",
+          "options": [
+            "समताप मंडल (Stratosphere)",
+            "क्षोभ मंडल",
+            "मध्य मंडल",
+            "आयन मंडल"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 51,
+          "originalId": 51,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित जिलों और उनके 'सीमावर्ती' स्थिति के संबंध में असंगत (गलत) चुनिए:",
+          "options": [
+            "अनूपगढ़ - अंतरराष्ट्रीय सीमा बनाता है।",
+            "ब्यावर - किसी राज्य/देश की सीमा नहीं बनाता।",
+            "कोटपूतली-बहरोड़ - हरियाणा के साथ सीमा बनाता है।",
+            "बालोतरा - पाकिस्तान के साथ सीमा बनाता है।"
+          ],
+          "answer": "D",
+          "explanation": "बालोतरा पाकिस्तान के साथ सीमा नहीं बनाता है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 52,
+          "originalId": 52,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "नए जिलों के गठन के बाद राजस्थान में 'अंतर्वर्ती' (Landlocked) जिलों की संख्या कितनी हो गई है?",
+          "options": [
+            "22",
+            "19",
+            "8",
+            "25"
+          ],
+          "answer": "A",
+          "explanation": "पहले 8 थे, अब 22 जिले ऐसे हैं जो किसी भी राज्य या देश से सीमा नहीं बनाते।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 53,
+          "originalId": 53,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान का 'सांभर झील' क्षेत्र अब केवल जयपुर जिले में नहीं आता।\nकारण (R): दूदू और जयपुर ग्रामीण जिलों के गठन से सांभर झील का प्रशासनिक क्षेत्र बदल गया है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 54,
+          "originalId": 54,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "जिलों को उनके स्थापना काल के अनुसार (प्राचीन से नवीन) क्रम में व्यवस्थित करें:\n(1) प्रतापगढ़ (2) धौलपुर (3) अनूपगढ़\nकूट;",
+          "options": [
+            "2, 1, 3",
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 3, 1"
+          ],
+          "answer": "A",
+          "explanation": "(धौलपुर-1982, प्रतापगढ़-2008, अनूपगढ़-2023)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 55,
+          "originalId": 55,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संभाग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के संभाग और उनमें जिलों की संख्या के संबंध में कौन सा कूट सत्य है?\n(a) जयपुर - 7 जिले\n(b) जोधपुर - 6 जिले\n(c) उदयपुर - 5 जिले\nकूट;",
+          "options": [
+            "केवल a और b",
+            "केवल a और c",
+            "a, b और c तीनों",
+            "केवल b"
+          ],
+          "answer": "C",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 56,
+          "originalId": 56,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान की नदियाँ",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान की नदियों का उनके उद्गम स्थल से मिलान कीजिए:\n(a) बनास - (1) खमनोर की पहाड़ियां\n(b) चम्बल - (2) जानापाव पहाड़ियां\n(c) माही - (3) मेहद झील\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 57,
+          "originalId": 57,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान मरुस्थलीकरण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मरुस्थलीकरण' के विस्तार को रोकने के लिए कौन सा कथन सत्य है?",
+          "options": [
+            "कजरी (CAZRI) संस्थान जोधपुर में है।",
+            "मरुस्थल का विस्तार अरावली के सहारे पूर्व की ओर हो रहा है।",
+            "वनस्पति का रोपण प्रभावी है।",
+            "उपरोक्त सभी।"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 58,
+          "originalId": 58,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संभाग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के किस संभाग में सबसे कम जिले हैं?",
+          "options": [
+            "बांसवाड़ा",
+            "पाली",
+            "सीकर",
+            "अजमेर"
+          ],
+          "answer": "A",
+          "explanation": "(बांसवाड़ा संभाग में 3 जिले हैं)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 59,
+          "originalId": 59,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान जलवायु",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान में वर्षा का वितरण असमान है।\nकारण (R): अरावली पर्वतमाला मानसून की दिशा के समानांतर स्थित है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 60,
+          "originalId": 60,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान भौतिक प्रदेश",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान के भौतिक प्रदेश' का मिलान करें:\n(a) पश्चिमी मरुस्थल - (1) 61.11%\n(b) अरावली - (2) 9%\n(c) पूर्वी मैदान - (3) 23%\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-1, b-3, c-2",
+            "a-2, b-1, c-3"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 61,
+          "originalId": 61,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के ऐतिहासिक युद्धों को कालानुक्रम में व्यवस्थित करें:\n(1) खानवा का युद्ध (2) हल्दीघाटी का युद्ध (3) तराइन का द्वितीय युद्ध\nकूट;",
+          "options": [
+            "3, 1, 2",
+            "1, 2, 3",
+            "2, 1, 3",
+            "3, 2, 1"
+          ],
+          "answer": "A",
+          "explanation": "(1192, 1527, 1576)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 62,
+          "originalId": 62,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान दुर्ग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) युग्म चुनिए:",
+          "options": [
+            "कुंभलगढ़ दुर्ग - राजसमंद",
+            "मेहरानगढ़ - जोधपुर",
+            "जूनागढ़ - बीकानेर",
+            "रणथंभौर - कोटा"
+          ],
+          "answer": "D",
+          "explanation": "(रणथंभौर सवाई माधोपुर में है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 63,
+          "originalId": 63,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक देवता",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'लोक देवताओं' और उनके 'मुख्य स्थान' का मिलान कीजिए:\n(a) रामदेवजी - (1) रामदेवरा\n(b) पाबूजी - (2) कोलू\n(c) गोगाजी - (3) गोगामेड़ी\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-2, b-1, c-3",
+            "a-3, b-2, c-1",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 64,
+          "originalId": 64,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान त्यौहार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'कथन' और 'कारण' पर विचार करें:\nकथन (A): राजस्थान में 'तीज' का त्यौहार सावन में मनाया जाता है।\nकारण (R): तीज को 'हरियाली तीज' के रूप में मनाया जाता है।\nकूट;",
+          "options": [
+            "A और R सही, R व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 65,
+          "originalId": 65,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान हस्तकला",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के 'हस्तकला' केंद्रों का मिलान कीजिए:\n(a) थेवा कला - (1) प्रतापगढ़\n(b) ब्लू पॉटरी - (2) जयपुर\n(c) अजरक प्रिंट - (3) बाड़मेर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 66,
+          "originalId": 66,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक नृत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "गवरी - भील",
+            "वालर - गरासिया",
+            "चरी - गुर्जर",
+            "अग्नि नृत्य - मीणा"
+          ],
+          "answer": "D",
+          "explanation": "(अग्नि नृत्य जसनाथी संप्रदाय का है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 67,
+          "originalId": 67,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में '1857 की क्रांति' के समय 'एजीजी' (AGG) कौन था?",
+          "options": [
+            "जॉर्ज पैट्रिक लॉरेंस",
+            "रॉबर्टसन",
+            "कर्नल ईडन",
+            "बर्टन"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 68,
+          "originalId": 68,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान किसान आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'किसान आंदोलन' के कालानुक्रम का मिलान करें:\n(1) बिजोलिया (2) बेगू (3) नींबूचना\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3",
+            "1, 3, 2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 69,
+          "originalId": 69,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान पर्यटन स्थल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "बाटाडू का कुआं - बाड़मेर",
+            "चांद बावड़ी - आभनेरी (दौसा)",
+            "गलता जी - जयपुर",
+            "सास-बहू मंदिर - जोधपुर"
+          ],
+          "answer": "D",
+          "explanation": "(सास-बहू मंदिर नागदा, उदयपुर में है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 70,
+          "originalId": 70,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राठौड़ वंश' की शाखाओं का सही कूट है:\n(a) बीकानेर (b) जोधपुर (c) किशनगढ़\nकूट;",
+          "options": [
+            "a, b और c सही",
+            "केवल a और b",
+            "केवल c",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 71,
+          "originalId": 71,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'भारतीय संविधान' के स्रोतों का मिलान कीजिए:\n(a) मौलिक अधिकार - (1) अमेरिका\n(b) नीति निदेशक तत्व - (2) आयरलैंड\n(c) आपातकाल - (3) जर्मनी\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-2, b-1, c-3",
+            "a-3, b-2, c-1",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 72,
+          "originalId": 72,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "हड़प्पा सभ्यता",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'हड़प्पा सभ्यता' के स्थलों का उनके राज्य से मिलान कीजिए:\n(a) लोथल - (1) गुजरात\n(b) कालीबंगा - (2) राजस्थान\n(c) रोपड़ - (3) पंजाब\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-2, b-1, c-3",
+            "a-3, b-2, c-1",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 73,
+          "originalId": 73,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संविधान संशोधन' की प्रक्रिया किस अनुच्छेद में है?",
+          "options": [
+            "368",
+            "370",
+            "352",
+            "356"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 74,
+          "originalId": 74,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "भारतीय स्वतंत्रता आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "घटनाओं को कालानुक्रम में व्यवस्थित करें:\n(1) असहयोग आंदोलन (2) सविनय अवज्ञा (3) भारत छोड़ो\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3",
+            "1, 3, 2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 75,
+          "originalId": 75,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय स्वतंत्रता आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "बंगाल विभाजन - 1905",
+            "जलियांवाला बाग - 1919",
+            "काकोरी कांड - 1925",
+            "दांडी मार्च - 1942"
+          ],
+          "answer": "D",
+          "explanation": "(दांडी मार्च 1930 में हुआ था)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 76,
+          "originalId": 76,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राष्ट्रपति' के बारे में कौन सा कथन सत्य है?",
+          "options": [
+            "भारत का प्रथम नागरिक है।",
+            "तीनों सेनाओं का सर्वोच्च सेनापति है।",
+            "महाभियोग द्वारा हटाया जा सकता है।",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 77,
+          "originalId": 77,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संसद' के अंगों का सही कूट है:\n(a) लोकसभा (b) राज्यसभा (c) राष्ट्रपति\nकूट;",
+          "options": [
+            "a, b और c तीनों",
+            "केवल a और b",
+            "केवल a",
+            "केवल b"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 78,
+          "originalId": 78,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मौर्य वंश' के शासकों का कालानुक्रम है:",
+          "options": [
+            "चंद्रगुप्त -> बिंदुसार -> अशोक",
+            "अशोक -> चंद्रगुप्त -> बिंदुसार",
+            "बिंदुसार -> अशोक -> चंद्रगुप्त",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 79,
+          "originalId": 79,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "अनुच्छेद 14 - समानता का अधिकार",
+            "अनुच्छेद 17 - अस्पृश्यता का अंत",
+            "अनुच्छेद 19 - स्वतंत्रता का अधिकार",
+            "अनुच्छेद 21A - संपत्ति का अधिकार"
+          ],
+          "answer": "D",
+          "explanation": "(21A शिक्षा का अधिकार है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 80,
+          "originalId": 80,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संविधान सभा' के संवैधानिक सलाहकार कौन थे?",
+          "options": [
+            "बी.एन. राव",
+            "डॉ. अम्बेडकर",
+            "राजेन्द्र प्रसाद",
+            "के.एम. मुंशी"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 81,
+          "originalId": 81,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'विटामिन' और 'कमी से होने वाले रोग' का मिलान कीजिए:\n(a) विटामिन A - (1) रतौंधी\n(b) विटामिन B - (2) बेरी-बेरी\n(c) विटामिन C - (3) स्कर्वी\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 82,
+          "originalId": 82,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "पित्त का निर्माण - यकृत",
+            "रक्त का शुद्धिकरण - वृक्क (Kidney)",
+            "इंसुलिन - अग्न्याशय",
+            "हीमोग्लोबिन - पेट"
+          ],
+          "answer": "D",
+          "explanation": "(हीमोग्लोबिन रक्त में होता है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 83,
+          "originalId": 83,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'प्रकाश के गुणों' के संबंध में कौन सा कथन सत्य है?",
+          "options": [
+            "प्रकाश सीधी रेखा में चलता है।",
+            "प्रकाश की चाल निर्वात में सर्वाधिक होती है।",
+            "प्रकाश का परावर्तन दर्पण से होता है।",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 84,
+          "originalId": 84,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'परमाणु' के नाभिक में क्या होता है?",
+          "options": [
+            "प्रोटॉन और न्यूट्रॉन",
+            "केवल इलेक्ट्रॉन",
+            "प्रोटॉन और इलेक्ट्रॉन",
+            "केवल न्यूट्रॉन"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 85,
+          "originalId": 85,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "चूना पत्थर - CaCO3",
+            "नमक - NaCl",
+            "बेकिंग सोडा - NaHCO3",
+            "जल - H2SO4"
+          ],
+          "answer": "D",
+          "explanation": "(जल H2O है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 86,
+          "originalId": 86,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'रक्त समूह' (Blood Group) की खोज किसने की?",
+          "options": [
+            "कार्ल लैंडस्टीनर",
+            "लुई पाश्चर",
+            "अलेक्जेंडर फ्लेमिंग",
+            "एडवर्ड जेनर"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 87,
+          "originalId": 87,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'ध्वनि' सबसे तेज किसमें चलती है?",
+          "options": [
+            "ठोस (Solid)",
+            "द्रव (Liquid)",
+            "गैस (Gas)",
+            "निर्वात (Vacuum)"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 88,
+          "originalId": 88,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'न्यूटन का गति का नियम' जो जड़त्व (Inertia) को दर्शाता है?",
+          "options": [
+            "प्रथम नियम",
+            "द्वितीय नियम",
+            "तृतीय नियम",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 89,
+          "originalId": 89,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "ऊर्जा का मात्रक - जूल",
+            "बल का मात्रक - न्यूटन",
+            "कार्य का मात्रक - वाट",
+            "दाब का मात्रक - पास्कल"
+          ],
+          "answer": "C",
+          "explanation": "(कार्य का मात्रक जूल है, वाट शक्ति का है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 90,
+          "originalId": 90,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'हृदय' की धड़कन मापने के लिए किस उपकरण का उपयोग होता है?",
+          "options": [
+            "स्टेथोस्कोप",
+            "बैरोमीटर",
+            "हाइग्रोमीटर",
+            "स्फिग्नोमैनोमीटर"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 91,
+          "originalId": 91,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान एकीकरण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के 'एकीकरण' के चरणों का कालानुक्रम है:\n(1) मतस्य संघ (2) वृहत् राजस्थान (3) संयुक्त राजस्थान\nकूट;",
+          "options": [
+            "1, 3, 2",
+            "1, 2, 3",
+            "2, 1, 3",
+            "3, 2, 1"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 92,
+          "originalId": 92,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान राजनीति",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के 'प्रथम मुख्यमंत्री' कौन थे?",
+          "options": [
+            "हीरालाल शास्त्री",
+            "जयनारायण व्यास",
+            "मोहनलाल सुखाड़िया",
+            "टीकाराम पालीवाल"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 93,
+          "originalId": 93,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान प्रशासन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "राजस्थान उच्च न्यायालय - जोधपुर",
+            "राजस्थान लोक सेवा आयोग - अजमेर",
+            "राजस्थान राजस्व मंडल - बीकानेर",
+            "माध्यमिक शिक्षा बोर्ड - अजमेर"
+          ],
+          "answer": "C",
+          "explanation": "(राजस्व मंडल अजमेर में है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 94,
+          "originalId": 94,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान एकीकरण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान का एकीकरण 7 चरणों में पूरा हुआ।\nकारण (R): अंतिम चरण 1 नवंबर 1956 को पूर्ण हुआ।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 95,
+          "originalId": 95,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राज्य निर्वाचन आयोग' का प्रमुख कार्य है:",
+          "options": [
+            "पंचायती राज चुनाव करवाना",
+            "लोकसभा चुनाव",
+            "विधानसभा चुनाव",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 96,
+          "originalId": 96,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान प्रतीक",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान का राज्य वृक्ष' क्या है?",
+          "options": [
+            "खेजड़ी",
+            "रोहिड़ा",
+            "पीपल",
+            "नीम"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 97,
+          "originalId": 97,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान वन्यजीव",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) चुनिए:",
+          "options": [
+            "केवलादेव अभयारण्य - भरतपुर",
+            "सरिस्का - अलवर",
+            "रणथंभौर - सवाई माधोपुर",
+            "मुकुंदरा हिल्स - जोधपुर"
+          ],
+          "answer": "D",
+          "explanation": "(मुकुंदरा कोटा-झालावाड़ में है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 98,
+          "originalId": 98,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान राजनीति",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान की प्रथम महिला राज्यपाल' कौन थी?",
+          "options": [
+            "प्रतिभा पाटिल",
+            "मार्गरेट अल्वा",
+            "वसुंधरा राजे",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 99,
+          "originalId": 99,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मुख्यमंत्री' की नियुक्ति कौन करता है?",
+          "options": [
+            "राज्यपाल",
+            "राष्ट्रपति",
+            "विधानसभा अध्यक्ष",
+            "मुख्य न्यायाधीश"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 100,
+          "originalId": 100,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान प्रतीक",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान का 'राज्य पशु' (वन्य) कौन सा है?",
+          "options": [
+            "चिंकारा",
+            "ऊँट",
+            "शेर",
+            "बाघ"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 101,
+          "originalId": 101,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "नए जिलों के गठन के पश्चात, राजस्थान का कौन सा जिला अब 'अंतर्राज्यीय' (Inter-state) सीमा नहीं बनाता?\n(A) सांचौर\n(B) अनूपगढ़\n(C) फलोदी\n(D) कोटपूतली\nकूट;",
+          "options": [
+            "केवल A और B",
+            "केवल C",
+            "केवल C और D",
+            "A, B, C, D सभी"
+          ],
+          "answer": "B",
+          "explanation": "सांचौर गुजरात के साथ सीमा बनाता है, अनूपगढ़ पाकिस्तान के साथ, कोटपूतली हरियाणा के साथ, जबकि फलोदी एक अंतर्वर्ती (Landlocked) जिला है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 102,
+          "originalId": 102,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के भौगोलिक मिलान का कूट सही चुनिए:\n(a) सलुम्बर - (1) उदयपुर से अलग\n(b) डीग - (2) भरतपुर से अलग\n(c) दूदू - (3) जयपुर से अलग\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 103,
+          "originalId": 103,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संभाग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): नए जिलों के गठन के बाद राजस्थान के संभागों की संख्या 10 हो गई है।\nकारण (R): सीकर, पाली और बांसवाड़ा नए संभाग बने हैं।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 104,
+          "originalId": 104,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान बांध",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) का चयन करें:",
+          "options": [
+            "बीसलपुर बांध - टोंक (बनास नदी)",
+            "मेजा बांध - भीलवाड़ा (कोठारी नदी)",
+            "जवाई बांध - सुमेरपुर (पाली)",
+            "जाखम बांध - डूंगरपुर"
+          ],
+          "answer": "D",
+          "explanation": "जाखम बांध प्रतापगढ़ में स्थित है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 105,
+          "originalId": 105,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान भौतिक प्रदेश",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित भौतिक प्रदेशों को उनके क्षेत्रफल के आधार पर (बढ़ते से घटते क्रम) में लगाइए:\n(1) अरावली (2) पूर्वी मैदान (3) पश्चिमी मरुस्थल\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "2, 1, 3",
+            "3, 2, 1",
+            "3, 1, 2"
+          ],
+          "answer": "B",
+          "explanation": "(अरावली ~9%, मैदान ~23%, मरुस्थल ~61%)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 106,
+          "originalId": 106,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान की नदियाँ",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (नदी और सहायक नदी):\n(a) चम्बल - (1) पार्वती\n(b) बनास - (2) खारी\n(c) लूणी - (3) जवाई\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 107,
+          "originalId": 107,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान सीमा",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के कौन से नए जिले 'पाकिस्तान' के साथ सीमा बनाते हैं?",
+          "options": [
+            "श्रीगंगानगर, अनूपगढ़, बीकानेर, फलौदी",
+            "श्रीगंगानगर, अनूपगढ़, बीकानेर, जैसलमेर, बाड़मेर",
+            "जैसलमेर, बाड़मेर, जोधपुर, बीकानेर",
+            "केवल जैसलमेर और बाड़मेर"
+          ],
+          "answer": "B",
+          "explanation": "(नोट: फलोदी अब सीमा नहीं बनाता)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 108,
+          "originalId": 108,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान जलवायु",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (जलवायु प्रदेश):",
+          "options": [
+            "शुष्क - जैसलमेर",
+            "अर्द्ध-शुष्क - जोधपुर",
+            "उपाद्र - जयपुर",
+            "आर्द्र - बीकानेर"
+          ],
+          "answer": "D",
+          "explanation": "बीकानेर शुष्क क्षेत्र में आता है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 109,
+          "originalId": 109,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): अरावली पर्वतमाला को 'राजस्थान की जीवन रेखा' कहते हैं।\nकारण (R): अरावली ही राजस्थान को मरुस्थलीय और उपजाऊ भागों में विभाजित करती है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "केवल R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 110,
+          "originalId": 110,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान क्षेत्र",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित में से कौन सा जिला 'हाड़ौती' क्षेत्र में नहीं आता?",
+          "options": [
+            "कोटा",
+            "बूंदी",
+            "झालावाड़",
+            "धौलपुर"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 111,
+          "originalId": 111,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "ऐतिहासिक घटनाओं को कालानुक्रम में व्यवस्थित करें:\n(1) चित्तौड़ का प्रथम साका (2) रणथंभौर का साका (3) सिवाणा का साका\nकूट;",
+          "options": [
+            "2, 3, 1",
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3"
+          ],
+          "answer": "A",
+          "explanation": "(1301, 1308, 1303)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 112,
+          "originalId": 112,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान दुर्ग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (दुर्ग-स्थान):",
+          "options": [
+            "बयाना दुर्ग - भरतपुर",
+            "लोहागढ़ - भरतपुर",
+            "शिवाना - बालोतरा (पूर्व में बाड़मेर)",
+            "कुंभलगढ़ - जोधपुर"
+          ],
+          "answer": "D",
+          "explanation": "कुंभलगढ़ राजसमंद में है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 113,
+          "originalId": 113,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान चित्रकला",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (चित्रकला शैली):\n(a) किशनगढ़ - (1) बनी-ठणी\n(b) मेवाड़ - (2) रागमाला\n(c) मारवाड़ - (3) ढोला-मारू\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 114,
+          "originalId": 114,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): महाराणा प्रताप ने मुगलों की अधीनता कभी स्वीकार नहीं की।\nकारण (R): हल्दीघाटी के युद्ध में उनकी जीत हुई थी।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "B",
+          "explanation": "हल्दीघाटी का युद्ध अनिर्णायक रहा, जीत नहीं हुई थी।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 115,
+          "originalId": 115,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान त्यौहार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (त्यौहार-माह):",
+          "options": [
+            "गणगौर - चैत्र",
+            "छोटी तीज - श्रावण",
+            "होली - फाल्गुन",
+            "दीपावली - कार्तिक"
+          ],
+          "answer": "D",
+          "explanation": "दीपावली कार्तिक में आती है (यह तो सही है, विकल्प में बदलाव: (D) मकर संक्रांति - कार्तिक (गलत है, यह पौष में आती है))।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 116,
+          "originalId": 116,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक वाद्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'वाद्य यंत्र' और 'प्रकार' का मिलान करें:\n(a) रावणहत्था - (1) तत्व\n(b) मोरचंग - (2) सुषिर\n(c) मादल - (3) अवनद्ध\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 117,
+          "originalId": 117,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'मेवाड़' के गुहिल वंश का संस्थापक कौन था?",
+          "options": [
+            "बप्पा रावल",
+            "गुहिल",
+            "महाराणा कुंभा",
+            "सांगा"
+          ],
+          "answer": "B",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 118,
+          "originalId": 118,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान सामान्य ज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "लोक देवता - रामदेवजी",
+            "लोक देवी - करणी माता",
+            "संत - दादू दयाल",
+            "दुर्ग - हवामहल"
+          ],
+          "answer": "D",
+          "explanation": "हवामहल एक महल है, दुर्ग नहीं।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 119,
+          "originalId": 119,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान किसान आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान में 'किसान आंदोलन' के नेतृत्व का मिलान करें:\n(a) बिजोलिया - (1) विजय सिंह पथिक\n(b) बेगू - (2) रामनारायण चौधरी\n(c) बूंदी - (3) नैनूराम शर्मा\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 120,
+          "originalId": 120,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान एकीकरण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान का एकीकरण 7 चरणों में हुआ।\nकारण (R): इसमें 8 वर्ष 7 माह 14 दिन लगे।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 121,
+          "originalId": 121,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय स्वतंत्रता आंदोलन",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "असहयोग आंदोलन - 1920",
+            "सविनय अवज्ञा - 1930",
+            "भारत छोड़ो - 1942",
+            "प्रथम गोलमेज - 1932"
+          ],
+          "answer": "D",
+          "explanation": "प्रथम गोलमेज सम्मेलन 1930 में हुआ था।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 122,
+          "originalId": 122,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (ऐतिहासिक व्यक्ति):\n(a) महात्मा गांधी - (1) चंपारण\n(b) सुभाष चंद्र बोस - (2) आजाद हिंद फौज\n(c) बी.आर. अम्बेडकर - (3) संविधान निर्मात्री सभा\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 123,
+          "originalId": 123,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): भारतीय संविधान एक 'लिखित' संविधान है।\nकारण (R): इसे संविधान सभा द्वारा बनाया गया था।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 124,
+          "originalId": 124,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "अनुच्छेद 14 - समानता",
+            "अनुच्छेद 19 - स्वतंत्रता",
+            "अनुच्छेद 32 - संवैधानिक उपचार",
+            "अनुच्छेद 51 - मौलिक अधिकार"
+          ],
+          "answer": "D",
+          "explanation": "अनुच्छेद 51 मौलिक कर्तव्य है, अधिकार नहीं।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 125,
+          "originalId": 125,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मुगल बादशाहों' को कालानुक्रम में व्यवस्थित करें:\n(1) अकबर (2) बाबर (3) औरंगजेब\nकूट;",
+          "options": [
+            "2, 1, 3",
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 3, 1"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 126,
+          "originalId": 126,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "प्राचीन इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (प्राचीन स्थल):\n(a) हड़प्पा - (1) दयाराम साहनी\n(b) मोहनजोदड़ो - (2) राखालदास बनर्जी\n(c) लोथल - (3) एस.आर. राव\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 127,
+          "originalId": 127,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "मौर्य वंश - चंद्रगुप्त",
+            "गुप्त वंश - श्रीगुप्त",
+            "खिलजी वंश - जलालुद्दीन",
+            "तुगलक वंश - अकबर"
+          ],
+          "answer": "D",
+          "explanation": "तुगलक वंश गयासुद्दीन तुगलक ने शुरू किया था।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 128,
+          "originalId": 128,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राष्ट्रपति' के बारे में कौन सा कथन सत्य है?",
+          "options": [
+            "वह देश का प्रथम नागरिक है।",
+            "वह संसद का अंग है।",
+            "उसकी नियुक्ति 5 वर्ष के लिए होती है।",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 129,
+          "originalId": 129,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संविधान सभा' की पहली बैठक कब हुई?",
+          "options": [
+            "9 दिसंबर 1946",
+            "15 अगस्त 1947",
+            "26 जनवरी 1950",
+            "1 जनवरी 1949"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 130,
+          "originalId": 130,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): लोकसभा को 'निचला सदन' कहते हैं।\nकारण (R): इसका कार्यकाल 5 वर्ष होता है।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "केवल R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 131,
+          "originalId": 131,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "विटामिन A - रतौंधी",
+            "विटामिन B - बेरी-बेरी",
+            "विटामिन C - स्कर्वी",
+            "विटामिन D - एनीमिया"
+          ],
+          "answer": "D",
+          "explanation": "विटामिन D की कमी से रिकेट्स होता है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 132,
+          "originalId": 132,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'विटामिन' और 'रासायनिक नाम' का मिलान करें:\n(a) विटामिन C - (1) एस्कॉर्बिक एसिड\n(b) विटामिन B1 - (2) थायमिन\n(c) विटामिन A - (3) रेटिनोल\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 133,
+          "originalId": 133,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): मनुष्य को जीवित रहने के लिए ऑक्सीजन चाहिए।\nकारण (R): ऑक्सीजन श्वसन प्रक्रिया में ऊर्जा बनाने के लिए आवश्यक है।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 134,
+          "originalId": 134,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "हृदय - रक्त पंप करना",
+            "फेफड़े - गैस विनिमय",
+            "गुर्दा - भोजन पचाना",
+            "यकृत - पित्त बनाना"
+          ],
+          "answer": "C",
+          "explanation": "गुर्दा (Kidney) रक्त शुद्ध करता है, भोजन पाचन का काम पेट/आंत का है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 135,
+          "originalId": 135,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'न्यूटन' के गति के नियमों का मिलान करें:\n(a) प्रथम नियम - (1) जड़त्व\n(b) द्वितीय नियम - (2) F=ma\n(c) तृतीय नियम - (3) क्रिया-प्रतिक्रिया\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 136,
+          "originalId": 136,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (pH मान):",
+          "options": [
+            "रक्त - 7.4",
+            "जल - 7",
+            "सिरका - 2.4",
+            "नींबू - 10"
+          ],
+          "answer": "D",
+          "explanation": "नींबू अम्लीय है, pH 7 से कम होता है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 137,
+          "originalId": 137,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): लोहा पानी में डूब जाता है।\nकारण (R): लोहे का घनत्व पानी से अधिक है।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "A गलत, R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 138,
+          "originalId": 138,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (उपकरण):",
+          "options": [
+            "बैरोमीटर - वायुदाब",
+            "थर्मामीटर - तापमान",
+            "एमीटर - धारा",
+            "वोल्टमीटर - समय"
+          ],
+          "answer": "D",
+          "explanation": "वोल्टमीटर विभवांतर मापता है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 139,
+          "originalId": 139,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (ग्रह):\n(a) पृथ्वी - (1) नीला ग्रह\n(b) मंगल - (2) लाल ग्रह\n(c) बृहस्पति - (3) सबसे बड़ा\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 140,
+          "originalId": 140,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): सूर्य से ऊर्जा का स्रोत नाभिकीय संलयन है।\nकारण (R): सूर्य में हाइड्रोजन का हीलियम में बदलना संलयन है।\nकूट;",
+          "options": [
+            "दोनों सही",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "केवल R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 141,
+          "originalId": 141,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान मेले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (मेला-स्थान):",
+          "options": [
+            "बेणेश्वर मेला - डूंगरपुर",
+            "करणी माता मेला - देशनोक",
+            "बाबा रामदेव मेला - जैसलमेर",
+            "पुष्कर मेला - जोधपुर"
+          ],
+          "answer": "D",
+          "explanation": "पुष्कर मेला अजमेर में है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 142,
+          "originalId": 142,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक नृत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (जाति-नृत्य):\n(a) भील - (1) गवरी\n(b) गरासिया - (2) वालर\n(c) कालबेलिया - (3) इण्डोणी\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 143,
+          "originalId": 143,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान सामाजिक प्रथा",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान में 'पर्दा प्रथा' प्राचीन काल में कम थी।\nकारण (R): पर्दा प्रथा का प्रभाव मुगल काल में बढ़ा।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 144,
+          "originalId": 144,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान आभूषण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (आभूषण):",
+          "options": [
+            "बोरला - सिर",
+            "नथ - नाक",
+            "तिमणिया - गला",
+            "कंदोरा - कान"
+          ],
+          "answer": "D",
+          "explanation": "कंदोरा कमर का आभूषण है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 145,
+          "originalId": 145,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान दुर्ग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (दुर्ग-क्षेत्र):\n(a) चित्तौड़गढ़ - (1) मेसा का पठार\n(b) नाहरगढ़ - (2) जयपुर\n(c) सोनारगढ़ - (3) जैसलमेर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 146,
+          "originalId": 146,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान क्षेत्र",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "मारवाड़ - जोधपुर",
+            "मेवाड़ - उदयपुर",
+            "हाड़ौती - कोटा",
+            "ढूँढाड़ - बीकानेर"
+          ],
+          "answer": "D",
+          "explanation": "ढूँढाड़ जयपुर क्षेत्र को कहते हैं।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 147,
+          "originalId": 147,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक देवता",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान में ऊंटों के देवता पाबूजी हैं।\nकारण (R): पाबूजी ऊंटों को राजस्थान लाए थे।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 148,
+          "originalId": 148,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान वन्यजीव",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "केवलादेव - भरतपुर",
+            "मुकुंदरा - कोटा",
+            "रणथंभौर - सवाई माधोपुर",
+            "सरिस्का - बीकानेर"
+          ],
+          "answer": "D",
+          "explanation": "सरिस्का अलवर में है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 149,
+          "originalId": 149,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संत",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (संत):\n(a) जसनाथजी - (1) कतरियासर\n(b) जाम्भोजी - (2) मुकाम\n(c) दादूदयाल - (3) नारायणा\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 150,
+          "originalId": 150,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान सामान्य ज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "वाद्य यंत्र - रावणहत्था",
+            "आभूषण - मादलिया",
+            "वस्त्र - अंगरखी",
+            "त्यौहार - होली (कार्तिक)"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 151,
+          "originalId": 151,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संभाग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के नए संभागों के गठन के बाद संभाग और जिलों के मेल में 'असंगत' (गलत) क्या है?",
+          "options": [
+            "बांसवाड़ा संभाग - 3 जिले",
+            "सीकर संभाग - 4 जिले",
+            "पाली संभाग - 4 जिले",
+            "जयपुर संभाग - 5 जिले"
+          ],
+          "answer": "D",
+          "explanation": "जयपुर संभाग में अब 7 जिले हैं, न कि 5।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 152,
+          "originalId": 152,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के अंतर्वर्ती (Landlocked) जिलों के संबंध में कौन सा कूट सत्य है?\n(a) दूदू (b) जोधपुर ग्रामीण (c) बालोतरा (d) सांचौर",
+          "options": [
+            "केवल a और b सही",
+            "केवल c और d गलत",
+            "a, b, c, d सभी सत्य",
+            "केवल a सत्य"
+          ],
+          "answer": "A",
+          "explanation": "बालोतरा और सांचौर सीमा बनाते हैं, ये अंतर्वर्ती नहीं हैं।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 153,
+          "originalId": 153,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "निम्नलिखित जिलों को उत्तर से दक्षिण के क्रम में व्यवस्थित करें:\n(1) गंगानगर (2) अनूपगढ़ (3) बीकानेर\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "1, 3, 2",
+            "3, 2, 1",
+            "2, 1, 3"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 154,
+          "originalId": 154,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): फलोदी जिला बनने के बाद राजस्थान का सबसे बड़ा जिला अब जैसलमेर ही है।\nकारण (R): क्षेत्रफल की दृष्टि से फलोदी जिला जैसलमेर से छोटा है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "A गलत, R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 155,
+          "originalId": 155,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान के नए जिले",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (नया जिला - पूर्व में हिस्सा):\n(a) केकड़ी - (1) अजमेर/टोंक\n(b) डीडवाना-कुचामन - (2) नागौर\n(c) गंगापुर सिटी - (3) सवाई माधोपुर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 156,
+          "originalId": 156,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान सीमा",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कौन सा नया जिला 'पाकिस्तान' के साथ सीमा नहीं बनाता है?",
+          "options": [
+            "अनूपगढ़",
+            "बीकानेर",
+            "जैसलमेर",
+            "जोधपुर"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 157,
+          "originalId": 157,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान भूगोल",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "अरावली की पर्वत चोटियों को ऊंचाई के आधार पर (उच्चतम से निम्नतम) व्यवस्थित करें:\n(1) गुरु शिखर (2) शेर (3) अचलगढ़\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3",
+            "1, 3, 2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 158,
+          "originalId": 158,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान झीलें",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'सांभर झील' का प्रशासनिक क्षेत्र किन जिलों में है?",
+          "options": [
+            "जयपुर ग्रामीण, दूदू, अजमेर",
+            "केवल जयपुर",
+            "केवल नागौर",
+            "जोधपुर"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 159,
+          "originalId": 159,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान भौतिक प्रदेश",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के किस भौतिक प्रदेश में 'सर्वाधिक वर्षा' होती है?",
+          "options": [
+            "हाड़ौती पठार",
+            "अरावली",
+            "मरुस्थल",
+            "मैदान"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 160,
+          "originalId": 160,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान की नदियाँ",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (नदी-उद्गम):",
+          "options": [
+            "कांतली - खंडेला की पहाड़ी",
+            "बाणगंगा - बैराठ की पहाड़ी",
+            "लूणी - नाग पहाड़",
+            "कोठारी - गोगुंदा"
+          ],
+          "answer": "D",
+          "explanation": "कोठारी नदी दिवेर की पहाड़ियों (राजसमंद) से निकलती है।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 161,
+          "originalId": 161,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "ऐतिहासिक घटनाओं को कालानुक्रम में व्यवस्थित करें:\n(1) आमेर का मानसिंह शासन (2) हल्दीघाटी युद्ध (3) खानवा का युद्ध\nकूट;",
+          "options": [
+            "3, 2, 1",
+            "1, 2, 3",
+            "2, 1, 3",
+            "3, 1, 2"
+          ],
+          "answer": "A",
+          "explanation": "(1527, 1576, मानसिंह 1589+)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 162,
+          "originalId": 162,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान दुर्ग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' (गलत) का चयन करें (दुर्ग-जिले):",
+          "options": [
+            "नाहरगढ़ - जयपुर",
+            "जैसलमेर दुर्ग - जैसलमेर",
+            "मांडलगढ़ - भीलवाड़ा",
+            "नाहरगढ़ - कोटा"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 163,
+          "originalId": 163,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक वाद्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "लोक वाद्य और उनके वादक/शैली का मिलान करें:\n(a) कामायचा - (1) लंगा/मांगणियार\n(b) रावणहत्था - (2) भोपा\n(c) जंतर - (3) देवनारायण जी के फड़\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 164,
+          "originalId": 164,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान चित्रकला",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान की चित्रकला में 'रागमाला' पर आधारित चित्र अधिक हैं।\nकारण (R): रागमाला भारतीय संगीत और ऋतुओं का चित्रण करती है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 165,
+          "originalId": 165,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान कुलदेवी",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (देवी-कुल):",
+          "options": [
+            "नागणेशी माता - राठौड़",
+            "आवड़ माता - भाटी",
+            "जीण माता - चौहान",
+            "शाकम्भरी माता - मौर्य"
+          ],
+          "answer": "D",
+          "explanation": "शाकम्भरी माता चौहानों (सांभर) की कुलदेवी हैं।",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 166,
+          "originalId": 166,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संत",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "राजस्थान के 'संत' और 'संप्रदाय' का मिलान करें:\n(a) जसनाथजी - (1) जसनाथी\n(b) जाम्भोजी - (2) बिश्नोई\n(c) लालदासजी - (3) लालदासी\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 167,
+          "originalId": 167,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान त्यौहार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान के त्यौहार' और 'माह' का सही मिलान है:",
+          "options": [
+            "गणगौर - चैत्र",
+            "श्रावणी तीज - श्रावण",
+            "दीपावली - कार्तिक",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 168,
+          "originalId": 168,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक नृत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "मादल - नृत्य",
+            "वालर - नृत्य",
+            "चरी - नृत्य",
+            "रावणहत्था - नृत्य"
+          ],
+          "answer": "D",
+          "explanation": "(यह वाद्य यंत्र है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 169,
+          "originalId": 169,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान सांस्कृतिक इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "मारवाड़ के 'सांस्कृतिक इतिहास' में 'पोथीखाना' क्या है?",
+          "options": [
+            "चित्रालय",
+            "पुस्तकालय",
+            "शस्त्रागार",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 170,
+          "originalId": 170,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान स्थापत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (दुर्ग-वास्तुकार):\n(a) हवामहल - (1) लालचंद\n(b) विजय स्तंभ - (2) जैता\n(c) आमेर महल - (3) मानसिंह\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 171,
+          "originalId": 171,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "भारतीय राष्ट्रीय कांग्रेस",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "भारतीय राष्ट्रीय कांग्रेस के अधिवेशनों का कालानुक्रम:\n(1) सूरत अधिवेशन (2) बेलगाम अधिवेशन (3) लाहौर अधिवेशन\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3",
+            "1, 3, 2"
+          ],
+          "answer": "A",
+          "explanation": "(1907, 1924, 1929)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 172,
+          "originalId": 172,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (संविधान अनुच्छेद):",
+          "options": [
+            "अनुच्छेद 17 - अस्पृश्यता का अंत",
+            "अनुच्छेद 18 - उपाधियों का अंत",
+            "अनुच्छेद 20 - गिरफ्तारी से संरक्षण",
+            "अनुच्छेद 25 - संपत्ति का अधिकार"
+          ],
+          "answer": "D",
+          "explanation": "(संपत्ति का अधिकार अनुच्छेद 300A में है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 173,
+          "originalId": 173,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): भारत एक संप्रभु राष्ट्र है।\nकारण (R): भारत के संविधान में 'हम भारत के लोग' शब्द का प्रयोग हुआ है।\nकूट;",
+          "options": [
+            "दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 174,
+          "originalId": 174,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (शासक-वंश):",
+          "options": [
+            "कुतुबुद्दीन ऐबक - गुलाम वंश",
+            "जलालुद्दीन खिलजी - खिलजी वंश",
+            "गयासुद्दीन तुगलक - तुगलक वंश",
+            "इब्राहिम लोदी - मुगल वंश"
+          ],
+          "answer": "D",
+          "explanation": "(लोदी वंश)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 175,
+          "originalId": 175,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "भारतीय सामाजिक सुधार",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (सुधारक-संस्था):\n(a) राजा राममोहन राय - (1) ब्रह्म समाज\n(b) दयानंद सरस्वती - (2) आर्य समाज\n(c) विवेकानंद - (3) रामकृष्ण मिशन\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 176,
+          "originalId": 176,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संविधान' के किस भाग में मौलिक अधिकार हैं?",
+          "options": [
+            "भाग III",
+            "भाग IV",
+            "भाग I",
+            "भाग II"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 177,
+          "originalId": 177,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "भारतीय इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "पानीपत का द्वितीय युद्ध - 1556",
+            "प्लासी का युद्ध - 1757",
+            "बक्सर का युद्ध - 1764",
+            "तराइन का प्रथम युद्ध - 1200"
+          ],
+          "answer": "D",
+          "explanation": "(1191)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 178,
+          "originalId": 178,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'लोकसभा' के लिए न्यूनतम आयु क्या है?",
+          "options": [
+            "25 वर्ष",
+            "30 वर्ष",
+            "35 वर्ष",
+            "18 वर्ष"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 179,
+          "originalId": 179,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'संविधान' का जनक किसे कहा जाता है?",
+          "options": [
+            "डॉ. राजेन्द्र प्रसाद",
+            "डॉ. बी.आर. अम्बेडकर",
+            "जवाहरलाल नेहरू",
+            "के.एम. मुंशी"
+          ],
+          "answer": "B",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 180,
+          "originalId": 180,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "भारतीय राजव्यवस्था",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): भारत में द्विसदनीय व्यवस्था है।\nकारण (R): संसद में लोकसभा और राज्यसभा दो सदन हैं।\nकूट;",
+          "options": [
+            "A और R सही, व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 181,
+          "originalId": 181,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (धातु-गुण):",
+          "options": [
+            "सोना - चमकदार",
+            "पारा - द्रव अवस्था",
+            "लोहा - विद्युत का कुचालक",
+            "सोडियम - चाकू से काटा जा सकता है"
+          ],
+          "answer": "C",
+          "explanation": "(लोहा विद्युत का सुचालक है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 182,
+          "originalId": 182,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (रक्त घटक):\n(a) RBC - (1) ऑक्सीजन परिवहन\n(b) WBC - (2) रोग प्रतिरोधक क्षमता\n(c) प्लेटलेट्स - (3) रक्त का थक्का\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 183,
+          "originalId": 183,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): ठंडी रातों में ओस जमती है।\nकारण (R): वायु में जलवाष्प का संघनन (Condensation) होता है।\nकूट;",
+          "options": [
+            "A और R सही, R सही व्याख्या",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 184,
+          "originalId": 184,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (विटामिन-स्रोत):",
+          "options": [
+            "विटामिन A - गाजर",
+            "विटामिन C - नींबू",
+            "विटामिन D - सूर्य का प्रकाश",
+            "विटामिन E - नमक"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 185,
+          "originalId": 185,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (ईंधन):\n(a) सीएनजी - (1) मिथेन\n(b) एलपीजी - (2) ब्यूटेन/प्रोपेन\n(c) पेट्रोल - (3) हाइड्रोकार्बन\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 186,
+          "originalId": 186,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (उपकरण):",
+          "options": [
+            "हाइड्रोमीटर - द्रव का घनत्व",
+            "हाइग्रोमीटर - आर्द्रता",
+            "पायरोमीटर - उच्च तापमान",
+            "बैरोमीटर - विद्युत धारा"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 187,
+          "originalId": 187,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): बर्फ पानी पर तैरती है।\nकारण (R): बर्फ का घनत्व पानी से कम होता है।\nकूट;",
+          "options": [
+            "दोनों सही, R सही व्याख्या",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 188,
+          "originalId": 188,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'मानव शरीर' की सबसे बड़ी हड्डी कौन सी है?",
+          "options": [
+            "फीमर (जांघ की)",
+            "ह्यूमरस",
+            "टीबिया",
+            "कपाल"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 189,
+          "originalId": 189,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (ग्रंथि):",
+          "options": [
+            "पीयूष ग्रंथि - मास्टर ग्रंथि",
+            "थायरॉइड - गला",
+            "यकृत - पाचन",
+            "फेफड़े - रक्त का थक्का"
+          ],
+          "answer": "D",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 190,
+          "originalId": 190,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "सामान्य विज्ञान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (रासायनिक सूत्र):\n(a) जल - (1) H2O\n(b) नमक - (2) NaCl\n(c) बेकिंग सोडा - (3) NaHCO3\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 191,
+          "originalId": 191,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Multi-statement",
+          "difficulty": "moderate",
+          "topic": "राजस्थान संभाग",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान के नवीनतम संभाग' (कालानुक्रम):\n(1) बांसवाड़ा (2) सीकर (3) पाली\nकूट;",
+          "options": [
+            "1, 2, 3",
+            "3, 2, 1",
+            "2, 1, 3",
+            "1, 3, 2"
+          ],
+          "answer": "A",
+          "explanation": "(तीनों एक साथ घोषित हुए, लेकिन प्रशासनिक क्रम में)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 192,
+          "originalId": 192,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान बांध",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (नदी-बांध):",
+          "options": [
+            "बनास - बीसलपुर",
+            "चम्बल - राणा प्रताप सागर",
+            "माही - बजाज सागर",
+            "लूणी - मेजा बांध"
+          ],
+          "answer": "D",
+          "explanation": "(मेजा कोठारी नदी पर है)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 193,
+          "originalId": 193,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक कला",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (लोक कला):\n(a) फड़ - (1) शाहपुरा\n(b) थेवा - (2) प्रतापगढ़\n(c) कुंदन - (3) जयपुर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 194,
+          "originalId": 194,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "राजस्थान झीलें",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): राजस्थान में खारे पानी की झीलें 'टेथिस सागर' के अवशेष हैं।\nकारण (R): ये झीलें मरुस्थलीय क्षेत्र में पाई जाती हैं।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "दोनों गलत",
+            "केवल R सही"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 195,
+          "originalId": 195,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें (शासक-राजधानी):",
+          "options": [
+            "मेवाड़ - चित्तौड़",
+            "मारवाड़ - जोधपुर",
+            "बीकानेर - बीकानेर",
+            "आमेर - बीकानेर"
+          ],
+          "answer": "D",
+          "explanation": "(आमेर जयपुर)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 196,
+          "originalId": 196,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान स्वतंत्रता संग्राम",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'स्वतंत्रता संग्राम' में शामिल व्यक्ति और क्षेत्र:\n(a) अर्जुनलाल सेठी - (1) जयपुर\n(b) केसरीसिंह बारहठ - (2) मेवाड़\n(c) सागरमल गोपा - (3) जैसलमेर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 197,
+          "originalId": 197,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "भारतीय संविधान",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कथन (A): भारतीय संविधान 26 जनवरी 1950 को लागू हुआ।\nकारण (R): इसी दिन भारत गणतंत्र बना।\nकूट;",
+          "options": [
+            "दोनों सही, R व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 198,
+          "originalId": 198,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "राजस्थान इतिहास",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'असंगत' का चयन करें:",
+          "options": [
+            "पन्ना धाय - बलिदान",
+            "मीराबाई - भक्ति",
+            "महाराणा प्रताप - स्वाधीनता",
+            "अमीर खुसरो - मेवाड़"
+          ],
+          "answer": "D",
+          "explanation": "(अमीर खुसरो दिल्ली सल्तनत से थे)",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 199,
+          "originalId": 199,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "राजस्थान लोक नृत्य",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "कूट का मिलान करें (नृत्य-क्षेत्र):\n(a) गींदड़ - (1) शेखावाटी\n(b) ढोल - (2) जालौर\n(c) अग्नि - (3) बीकानेर\nकूट;",
+          "options": [
+            "a-1, b-2, c-3",
+            "a-3, b-2, c-1",
+            "a-2, b-1, c-3",
+            "a-1, b-3, c-2"
+          ],
+          "answer": "A",
+          "explanation": " ",
+          "reference": "PTET Section C"
+        },
+        {
+          "id": 200,
+          "originalId": 200,
+          "section": "Section C General Awareness (सामान्य ज्ञान)",
+          "questionType": "MCQ",
+          "difficulty": "easy",
+          "topic": "राजस्थान एकीकरण",
+          "sourceTag": "PTET General Awareness Practice Set",
+          "question": "'राजस्थान का एकीकरण' का अंतिम चरण कौन सा था?",
+          "options": [
+            "मत्स्य संघ",
+            "राजस्थान संघ",
+            "वृहत् राजस्थान",
+            "1 नवंबर 1956"
+          ],
+          "answer": "D",
+          "explanation": " ",
           "reference": "PTET Section C"
         }
       ]
