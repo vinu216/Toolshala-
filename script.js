@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'guide.html': 'career.html',
       'career.html': 'career.html',
       'templates.html': 'templates.html',
+      'mock-test.html': 'mock-test.html',
       'about.html': 'about.html',
       'contact.html': 'contact.html',
       'privacy.html': 'index.html',
@@ -133,6 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
         link.setAttribute('aria-current', 'page');
       }
     });
+  };
+
+  const setupPrimaryHeaderNavigation = () => {
+    const base = getRelativeRootPath();
+    const desktopMenu = document.querySelector('header.top-nav [data-menu]');
+    const mobilePanel = document.querySelector('header.top-nav [data-mobile-panel] .space-y-1');
+
+    if (desktopMenu && !desktopMenu.querySelector('a[href$="mock-test.html"]')) {
+      const mockTestLink = document.createElement('a');
+      mockTestLink.className = 'nav-link';
+      mockTestLink.href = `${base}mock-test.html`;
+      mockTestLink.textContent = 'Mock Test';
+
+      const aboutLink = desktopMenu.querySelector('a[href$="about.html"]');
+      const contactLink = desktopMenu.querySelector('a[href$="contact.html"]');
+      desktopMenu.insertBefore(mockTestLink, aboutLink || contactLink || null);
+    }
+
+    if (mobilePanel && !mobilePanel.querySelector('a[href$="mock-test.html"]')) {
+      const mobileMockTestLink = document.createElement('a');
+      mobileMockTestLink.className = 'nav-link mobile-nav-link';
+      mobileMockTestLink.href = `${base}mock-test.html`;
+      mobileMockTestLink.textContent = 'Mock Test';
+
+      const mobileAboutLink = mobilePanel.querySelector('a[href$="about.html"]');
+      const mobileContactLink = mobilePanel.querySelector('a[href$="contact.html"]');
+      mobilePanel.insertBefore(mobileMockTestLink, mobileAboutLink || mobileContactLink || null);
+    }
   };
 
   const setupStickyNavShadow = () => {
@@ -249,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   setupMockTestHeader();
+  setupPrimaryHeaderNavigation();
   setupActiveNavigation();
   setupStickyNavShadow();
   setupTelegramFeedback();
