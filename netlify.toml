@@ -3,6 +3,24 @@
   publish = "."
 
 [[redirects]]
+  from = "http://toolshala.in/*"
+  to = "https://toolshala.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.toolshala.in/*"
+  to = "https://toolshala.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.toolshala.in/*"
+  to = "https://toolshala.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/favicon.ico"
   to = "/favicon.svg"
   status = 200
