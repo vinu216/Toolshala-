@@ -3816,956 +3816,3806 @@ window.ptetPracticeQuestionBank = {
       "title": "Teaching Aptitude Practice",
       "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
       "description": "Child development, classroom approach, teaching methods, teacher role aur evaluation-based PTET practice.",
-      "source": "PTET Mock Test 6 question bank",
+      "source": "PTET Teaching Aptitude Practice Set",
       "questions": [
         {
           "id": 1,
-          "originalId": 51,
+          "originalId": 1,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
+          "questionType": "Assertion-Reason",
           "difficulty": "moderate",
-          "topic": "कूट वाला प्रश्न",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "राष्ट्रीय शिक्षा नीति (NEP) 2020 के अनुसार, एक शिक्षक की भूमिका के संदर्भ में कौन-से कथन सत्य हैं?\n1. शिक्षक केवल ज्ञान का प्रदाता है।\n2. शिक्षक एक 'सुविधादाता' (Facilitator) के रूप में कार्य करेगा।\n3. रटंत विद्या (Rote learning) के बजाय आलोचनात्मक सोच (Critical thinking) पर जोर देना।\n4. बहुभाषिकता को हतोत्साहित करना।\nसही कूट चुनें:",
+          "topic": "NEP 2020",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): NEP 2020 रटने के बजाय अवधारणात्मक समझ पर जोर देती है।\nकारण (R): शिक्षा का उद्देश्य बच्चे को केवल सूचना देना नहीं, बल्कि 'क्रिटिकल थिंकिंग' विकसित करना है।\nकूट;",
           "options": [
-            "केवल 1 और 4",
-            "केवल 2 और 3",
-            "1, 2 और 3",
-            "केवल 3"
+            "A और R दोनों सही हैं, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "A और R दोनों सही, लेकिन R सही व्याख्या नहीं है"
           ],
-          "answer": "B",
-          "explanation": "NEP 2020 शिक्षक को एक मार्गदर्शक/सुविधादाता मानता है, जो बच्चों में आलोचनात्मक सोच विकसित करे। यह रटंत विद्या और एक-भाषा के बजाय 'बहुभाषिकता' (Multilingualism) को प्रोत्साहित करता है।",
+          "answer": "A",
+          "explanation": "NEP 2020 का मुख्य उद्देश्य शिक्षा को अनुभवात्मक और व्यावहारिक बनाना है।",
           "reference": "PTET Section B"
         },
         {
           "id": 2,
-          "originalId": 52,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "कथन-कारण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "व्यावसायिक प्रतिबद्धता:\nकथन (A): एक प्रतिबद्ध शिक्षक को अपने छात्रों को अपनी ही प्राइवेट ट्यूशन पढ़ने के लिए बाध्य नहीं करना चाहिए।\nकारण (R): यह शिक्षक की व्यावसायिक नैतिकता (Professional Ethics) के विरुद्ध है और इससे शिक्षा का व्यवसायीकरण होता है।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
-          "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
-          ],
-          "answer": "A",
-          "explanation": "एक आदर्श शिक्षक का प्राथमिक कर्तव्य कक्षा में अपना शत-प्रतिशत देना है। छात्रों को ट्यूशन के लिए मजबूर करना अनैतिक है।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 3,
-          "originalId": 53,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
-          "difficulty": "moderate",
-          "topic": "कक्षा प्रबंधन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक छात्र कक्षा में अक्सर देरी से आता है। एक आदर्श शिक्षक के रूप में आपकी पहली प्रतिक्रिया क्या होगी?",
-          "options": [
-            "उसे कक्षा के बाहर खड़ा कर देंगे।",
-            "उसे कठोर दंड देंगे ताकि वह भविष्य में देरी न करे।",
-            "देरी से आने के वास्तविक कारण का पता लगाने का प्रयास करेंगे।",
-            "उसे अनदेखा कर देंगे क्योंकि यह उसकी जिम्मेदारी है।"
-          ],
-          "answer": "C",
-          "explanation": "(सर्वश्रेष्ठ 3 अंक) शिक्षक का दृष्टिकोण हमेशा उपचारात्मक और सहानुभूतिपूर्ण होना चाहिए। दंड देने से पहले समस्या का मूल कारण जानना आवश्यक है (जैसे- पारिवारिक समस्या, परिवहन की कमी आदि)।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 4,
-          "originalId": 54,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Matching",
-          "difficulty": "moderate",
-          "topic": "मिलान करें",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शिक्षा से संबंधित प्रमुख संस्थानों को उनके मुख्य कार्य से सुमेलित करें:\n\nसूची-I (संस्थान)\na. NCERT\nb. NCTE\nc. UGC\nd. RCI (Rehabilitation Council of India)\n\nसूची-II (मुख्य कार्य)\n1. शिक्षक शिक्षा (Teacher Education) का नियमन\n2. विशेष/समावेशी शिक्षा (Special Education) का नियमन\n3. स्कूली शिक्षा के लिए पाठ्यक्रम और पाठ्यपुस्तकें\n4. उच्च शिक्षा (Higher Education) का नियमन\n\nकूट (Codes):",
-          "options": [
-            "a-3, b-1, c-4, d-2",
-            "a-1, b-3, c-2, d-4",
-            "a-3, b-4, c-1, d-2",
-            "a-2, b-1, c-4, d-3"
-          ],
-          "answer": "A",
-          "explanation": "NCERT स्कूल पाठ्यक्रम बनाता है, NCTE बीएड/बीएसटीसी (शिक्षक शिक्षा) को रेगुलेट करता है, UGC कॉलेज शिक्षा को, और RCI विशेष आवश्यकता वाले बच्चों की शिक्षा को देखता है।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 5,
-          "originalId": 55,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
-          "difficulty": "moderate",
-          "topic": "Gifted Learner",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि आपकी कक्षा में एक 'प्रतिभाशाली' (Gifted) छात्र है जो सामान्य कार्यों को बहुत जल्दी पूरा कर लेता है और फिर कक्षा में बोरियत महसूस करता है, तो आप क्या करेंगे?",
-          "options": [
-            "उसे उच्च कक्षा में भेज देंगे।",
-            "उसे कक्षा का मॉनिटर बना देंगे।",
-            "उसे संवर्धित और चुनौतीपूर्ण (Enriched and challenging) कार्य देंगे।",
-            "उसे आराम करने को कहेंगे।"
-          ],
-          "answer": "C",
-          "explanation": "प्रतिभाशाली बच्चों की मानसिक भूख शांत करने के लिए उन्हें उनके स्तर के अनुसार चुनौतीपूर्ण प्रोजेक्ट या असाइनमेंट (Enrichment programs) दिए जाने चाहिए।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 6,
-          "originalId": 56,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Statement-Conclusion",
-          "difficulty": "moderate",
-          "topic": "कथन-निष्कर्ष",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "रचनात्मक मूल्यांकन (Formative Assessment) के संबंध में:\nकथन: रचनात्मक मूल्यांकन शिक्षण-अधिगम प्रक्रिया के दौरान निरंतर चलता रहता है।\nनिष्कर्ष I: इसका मुख्य उद्देश्य छात्रों को ग्रेड या रैंक देना है।\nनिष्कर्ष II: इसका मुख्य उद्देश्य शिक्षण प्रक्रिया में सुधार करना और छात्रों को फीडबैक देना है।\nकूट:\nA. केवल निष्कर्ष I सही है\nB. केवल निष्कर्ष II सही है\nC. दोनों I और II सही हैं\nD. न तो I और न ही II सही है",
-          "options": [
-            "केवल निष्कर्ष I सही है",
-            "केवल निष्कर्ष II सही है",
-            "दोनों I और II सही हैं",
-            "न तो I और न ही II सही है"
-          ],
-          "answer": "B",
-          "explanation": "रचनात्मक (Formative) मूल्यांकन सीखने के 'दौरान' सुधार के लिए होता है (जैसे- टेस्ट, क्विज़)। ग्रेड या रैंक देना योगात्मक (Summative - वार्षिक परीक्षा) का काम है।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 7,
-          "originalId": 57,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
-          "difficulty": "moderate",
-          "topic": "NEP 2020",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "NEP 2020 के तहत स्कूली शिक्षा के नए 5+3+3+4 ढांचे में, प्रारंभिक 5 वर्षों (Foundational Stage) में मुख्य रूप से किस पर ध्यान केंद्रित किया गया है?",
-          "options": [
-            "कठिन परीक्षाओं पर",
-            "व्यावसायिक शिक्षा पर",
-            "खेल-आधारित, गतिविधि-आधारित और खोज-आधारित शिक्षा पर",
-            "केवल अंग्रेजी भाषा सीखने पर"
-          ],
-          "answer": "C",
-          "explanation": "फाऊंडेशनल स्टेज (उम्र 3 से 8 वर्ष) में आंगनवाड़ी/बालवाटिका और कक्षा 1-2 शामिल हैं, जहाँ प्ले-वे (Play-way) और गतिविधि-आधारित शिक्षा पर ज़ोर दिया गया है।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 8,
-          "originalId": 58,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
-          "difficulty": "moderate",
-          "topic": "स्थिति आधारित",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि एक शिक्षक को एक ऐसे सुदूर ग्रामीण क्षेत्र में नियुक्त किया जाता है जहाँ के संसाधन बहुत सीमित हैं, तो व्यावसायिक प्रतिबद्धता के अनुसार उसे क्या करना चाहिए?",
-          "options": [
-            "तुरंत अपना तबादला (Transfer) शहर में करवाने का प्रयास करना चाहिए।",
-            "उपलब्ध सीमित संसाधनों का अधिकतम रचनात्मक उपयोग करके शिक्षण कार्य करना चाहिए।",
-            "बिना संसाधनों के शिक्षण कार्य बंद कर देना चाहिए।",
-            "केवल हाजिरी लगाकर समय व्यतीत करना चाहिए।"
-          ],
-          "answer": "B",
-          "explanation": "एक प्रतिबद्ध शिक्षक वही है जो विपरीत परिस्थितियों में भी हार न माने और नवाचार (Innovation) का प्रयोग कर बच्चों का भविष्य संवारे।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 9,
-          "originalId": 59,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
-          "difficulty": "moderate",
-          "topic": "कूट",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक सफल शिक्षक के लिए निम्नलिखित में से कौन-से गुण सबसे महत्वपूर्ण हैं?\n1. विषयवस्तु का गहन ज्ञान\n2. आकर्षक वेशभूषा\n3. प्रभावी संचार कौशल (Communication skill)\n4. कठोर अनुशासन लागू करने की क्षमता\nसही कूट:",
-          "options": [
-            "1 और 4",
-            "1 और 3",
-            "2 और 3",
-            "1, 2 और 4"
-          ],
-          "answer": "B",
-          "explanation": "सफल शिक्षण के लिए विषय का ज्ञान और उसे बच्चों तक पहुँचाने की कला (संचार कौशल) सबसे जरूरी है। अत्यधिक कठोर अनुशासन मनोवैज्ञानिक रूप से अनुचित है।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 10,
-          "originalId": 60,
-          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
-          "difficulty": "moderate",
-          "topic": "कथन-कारण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन (A): शिक्षकों को निरंतर 'व्यावसायिक विकास' (CPD - Continuous Professional Development) कार्यक्रमों में भाग लेना चाहिए।\nकारण (R): शिक्षा के क्षेत्र में नई-नई तकनीकें और शिक्षण विधियां आती रहती हैं, जिनसे अपडेट रहना आवश्यक है।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
-          "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
-          ],
-          "answer": "A",
-          "explanation": "NEP 2020 भी शिक्षकों के लिए प्रतिवर्ष 50 घंटे के CPD की सिफारिश करता है ताकि वे आधुनिक शिक्षण विधियों और शैक्षिक मनोविज्ञान से अपडेट रह सकें।",
-          "reference": "PTET Section B"
-        },
-        {
-          "id": 11,
-          "originalId": 61,
+          "originalId": 2,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
           "topic": "समावेशी शिक्षा",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "'समावेशी शिक्षा' (Inclusive Education) का मूल दर्शन क्या है?",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "समावेशी शिक्षा (Inclusive Education) का अर्थ है:",
           "options": [
-            "विशेष बच्चों को अलग स्कूलों में पढ़ाना।",
-            "केवल होशियार बच्चों पर ध्यान देना।",
-            "शारीरिक, मानसिक और सामाजिक रूप से भिन्न सभी बच्चों को एक ही सामान्य कक्षा में एक साथ पढ़ाना।",
-            "कमजोर बच्चों को घर पर ही शिक्षा देना।"
+            "केवल प्रतिभाशाली बच्चों को पढ़ाना",
+            "विशेष बच्चों के लिए अलग स्कूल बनाना",
+            "सामान्य और विशिष्ट बच्चों को एक साथ एक ही छत के नीचे पढ़ाना",
+            "कमजोर बच्चों को अलग करना"
           ],
           "answer": "C",
-          "explanation": "समावेशी शिक्षा मानती है कि शिक्षा हर बच्चे का मौलिक अधिकार है। 'जीरो रिजेक्शन' पॉलिसी के तहत हर प्रकार के बच्चे (दिव्यांग या सामान्य) को एक ही छत के नीचे समान अवसर दिए जाते हैं।",
+          "explanation": "समावेशी शिक्षा का मूल मंत्र है- 'शिक्षा सभी के लिए', बिना किसी भेदभाव के।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 3,
+          "originalId": 3,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "उपचारात्मक शिक्षण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि आपकी कक्षा में एक बच्चा बार-बार फेल हो रहा है, तो आप क्या करेंगे?",
+          "options": [
+            "उसे अगली कक्षा में नहीं भेजेंगे",
+            "उसे और कड़ी सजा देंगे",
+            "उसकी असफलता के कारणों को जानकर उपचारात्मक शिक्षण (Remedial Teaching) देंगे",
+            "उसे स्कूल से नाम कटवाने के लिए कहेंगे"
+          ],
+          "answer": "C",
+          "explanation": "एक शिक्षक का दायित्व बच्चे की समस्या का समाधान ढूँढना है, न कि उसे दंडित करना।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 4,
+          "originalId": 4,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "मूल्यांकन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षा में 'मूल्यांकन' का मुख्य उद्देश्य क्या होना चाहिए?",
+          "options": [
+            "अंक देना",
+            "बच्चों की कमियां निकालना",
+            "सीखने में आने वाली कठिनाइयों को समझकर सुधार करना",
+            "बच्चों की तुलना करना"
+          ],
+          "answer": "C",
+          "explanation": "मूल्यांकन का उद्देश्य अधिगम प्रक्रिया में सुधार करना है (Formative Assessment)।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 5,
+          "originalId": 5,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "NEP 2020",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "राष्ट्रीय शिक्षा नीति 2020 के अनुसार, स्कूल का नया ढांचा क्या है?",
+          "options": [
+            "10+2",
+            "5+3+3+4",
+            "11+1",
+            "8+4+4"
+          ],
+          "answer": "B",
+          "explanation": "NEP 2020 ने 5+3+3+4 स्ट्रक्चर को लागू किया है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 6,
+          "originalId": 6,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "शिक्षक गुण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए सबसे महत्वपूर्ण गुण क्या है?",
+          "options": [
+            "अच्छी वेशभूषा",
+            "विषय का गहन ज्ञान और बच्चों के प्रति धैर्य",
+            "कड़ा अनुशासन",
+            "बहुत अधिक धनवान होना"
+          ],
+          "answer": "B",
+          "explanation": "धैर्य और विषय-ज्ञान एक आदर्श शिक्षक की पहचान है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 7,
+          "originalId": 7,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सर्जनात्मकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "बच्चों में 'सर्जनात्मकता' (Creativity) विकसित करने के लिए क्या करना चाहिए?",
+          "options": [
+            "उन्हें रटने को कहना चाहिए",
+            "उन्हें मौलिक प्रश्न पूछने और विचार व्यक्त करने के अवसर देने चाहिए",
+            "उनके काम की हमेशा आलोचना करनी चाहिए",
+            "उन पर सख्ती करनी चाहिए"
+          ],
+          "answer": "B",
+          "explanation": "सृजनात्मकता अभिव्यक्ति की स्वतंत्रता से पनपती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 8,
+          "originalId": 8,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "कक्षा वातावरण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को कक्षा में किस प्रकार का वातावरण बनाना चाहिए?",
+          "options": [
+            "पूर्णतः शांत (सन्नाटा)",
+            "लोकतांत्रिक और सहभागी",
+            "डर का वातावरण",
+            "केवल पढ़ाने वाला वातावरण"
+          ],
+          "answer": "B",
+          "explanation": "लोकतांत्रिक वातावरण में छात्र बिना डरे अपनी बात कह सकते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 9,
+          "originalId": 9,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "मातृभाषा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "प्राथमिक स्तर पर शिक्षा का माध्यम क्या होना चाहिए?",
+          "options": [
+            "अंग्रेजी",
+            "मातृभाषा या स्थानीय भाषा",
+            "केवल हिंदी",
+            "कोई भी विदेशी भाषा"
+          ],
+          "answer": "B",
+          "explanation": "NEP 2020 मातृभाषा में शिक्षा पर जोर देती है ताकि बच्चा अवधारणाओं को बेहतर समझ सके।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 10,
+          "originalId": 10,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सामाजिकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आप छात्रों के बीच 'सामाजिकता' कैसे विकसित करेंगे?",
+          "options": [
+            "उन्हें समूह कार्यों (Group Work) में शामिल करके",
+            "केवल भाषण देकर",
+            "चुप रहने को कहकर",
+            "केवल होमवर्क देकर"
+          ],
+          "answer": "A",
+          "explanation": "ग्रुप वर्क सहयोग, टीम भावना और सामाजिक कौशल सिखाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 11,
+          "originalId": 11,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "कक्षा विवाद समाधान",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कक्षा में दो छात्र आपस में लड़ रहे हैं, तो एक शिक्षक के रूप में आपकी क्या प्रतिक्रिया होगी?",
+          "options": [
+            "उन्हें कक्षा से बाहर निकाल देंगे",
+            "तुरंत प्रधानाचार्य को बुलाएंगे",
+            "लड़ाई का कारण जानकर उन्हें आपस में मिलवाएंगे",
+            "उन्हें डांटेंगे"
+          ],
+          "answer": "C",
+          "explanation": "यह शिक्षक का नेतृत्व कौशल है कि वह बच्चों के बीच विवाद को सुलझाए।",
           "reference": "PTET Section B"
         },
         {
           "id": 12,
-          "originalId": 62,
+          "originalId": 12,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Matching",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "मिलान करें",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "अधिगम अक्षमताओं (Learning Disabilities) को उनके अर्थ से सुमेलित करें:\n\nसूची-I (अक्षमता)\na. डिस्लेक्सिया (Dyslexia)\nb. डिसग्राफिया (Dysgraphia)\nc. डिस्कैल्कुलिया (Dyscalculia)\nd. डिस्प्रेक्सिया (Dyspraxia)\n\nसूची-II (लक्षण)\n1. गणितीय गणना संबंधी समस्या\n2. पढ़ने और शब्द पहचानने में कठिनाई\n3. गति समन्वय (Motor skills) संबंधी समस्या\n4. लिखने संबंधी समस्या\n\nकूट:",
+          "topic": "TLM",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में छात्रों का ध्यान आकर्षित करने का सबसे अच्छा तरीका क्या है?",
           "options": [
-            "a-2, b-4, c-1, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-1, c-4, d-3",
-            "a-4, b-3, c-2, d-1"
+            "चिल्लाना",
+            "रोचक शिक्षण विधियों और सहायक सामग्रियों (TLM) का प्रयोग करना",
+            "सजा का डर दिखाना",
+            "चुपचाप बैठ जाना"
           ],
-          "answer": "A",
-          "explanation": "डिस्लेक्सिया (Reading), डिसग्राफिया (Writing/Graph), डिस्कैल्कुलिया (Calculation/Math), डिस्प्रेक्सिया (Motor coordination)। यह समावेशी शिक्षा का अति महत्वपूर्ण प्रश्न है।",
+          "answer": "B",
+          "explanation": "प्रभावी शिक्षण सामग्री छात्रों में जिज्ञासा पैदा करती है।",
           "reference": "PTET Section B"
         },
         {
           "id": 13,
-          "originalId": 63,
+          "originalId": 13,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "कथन-कारण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "समावेशी कक्षा के संदर्भ में:\nकथन (A): एक शिक्षक को कक्षा में सभी छात्रों के साथ बिल्कुल एक जैसा (समान) व्यवहार करना चाहिए।\nकारण (R): प्रत्येक बच्चे की सीखने की गति, क्षमता और आवश्यकताएं अलग-अलग (Individual differences) होती हैं।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) गलत है, लेकिन (R) सही है।\nC. (A) सही है, लेकिन (R) गलत है।\nD. दोनों गलत हैं।",
+          "topic": "अनुशासन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "अनुशासन का सही अर्थ क्या है?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) गलत है, लेकिन (R) सही है।",
-            "(A) सही है, लेकिन (R) गलत है।",
-            "दोनों गलत हैं।"
+            "छात्र का शिक्षक से डरना",
+            "छात्र का अपनी इच्छा से नियमों का पालन करना",
+            "पूरे समय शांत बैठना",
+            "किसी को कुछ न बोलने देना"
           ],
           "answer": "B",
-          "explanation": "यह एक ट्रिकी प्रश्न है। समावेशी शिक्षा में 'समानता (Equality)' के बजाय 'समता (Equity)' पर जोर दिया जाता है। चूँकि बच्चों की आवश्यकताएं अलग हैं (कारण R सही है), इसलिए सबको एक ही डंडे से नहीं हांका जा सकता। किसी को दृश्य माध्यम चाहिए, तो किसी को श्रव्य। अतः कथन A (बिल्कुल एक जैसा व्यवहार) मनोवैज्ञानिक रूप से गलत है।",
+          "explanation": "आत्म-अनुशासन ही वास्तविक अनुशासन है।",
           "reference": "PTET Section B"
         },
         {
           "id": 14,
-          "originalId": 64,
+          "originalId": 14,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "दृष्टिबाधित छात्र",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "आपकी कक्षा में एक दृष्टिबाधित (Visually impaired) छात्र है। आप उसके अधिगम (Learning) को कैसे सुगम बनाएंगे?",
+          "topic": "Individual Differences",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के लिए सबसे बड़ी चुनौती क्या है?",
           "options": [
-            "उसे सबसे पीछे की सीट पर बैठाएंगे।",
-            "उसके लिए केवल ब्रेल लिपि की किताबें ही मंगवाएंगे और कुछ नहीं करेंगे।",
-            "उसे आगे की पंक्ति में बैठाएंगे और शिक्षण में श्रव्य (Audio) सामग्री व स्पष्ट मौखिक निर्देशों का अधिक उपयोग करेंगे।",
-            "उसे कहेंगे कि वह किसी विशेष विद्यालय में चला जाए।"
+            "कक्षा में अनुशासन बनाए रखना",
+            "प्रश्न पत्र तैयार करना",
+            "विद्यार्थियों के विभिन्न सीखने के स्तरों को समझना और उनके अनुरूप पढ़ाना",
+            "स्कूल का प्रशासनिक कार्य करना"
           ],
           "answer": "C",
-          "explanation": "दृष्टिबाधित बच्चे के लिए सुनने की ज्ञानेंद्रिय सबसे सक्रिय होती है। उसे आगे बैठाकर स्पष्ट बोलना और ऑडियो क्लिप्स का उपयोग करना एक समावेशी शिक्षक की निशानी है।",
+          "explanation": "हर बच्चा अलग होता है (Individual Differences), उनके अनुरूप पढ़ाना ही चुनौती है।",
           "reference": "PTET Section B"
         },
         {
           "id": 15,
-          "originalId": 65,
+          "originalId": 15,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "Bullying",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि आपको पता चलता है कि आपकी कक्षा के कुछ छात्र एक शारीरिक रूप से कमजोर छात्र को चिढ़ाते हैं (Bullying), तो आप क्या करेंगे?",
+          "topic": "Scaffolding",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों के गलत उत्तर देने पर आप क्या करेंगे?",
           "options": [
-            "चिढ़ाने वाले छात्रों को पूरी स्कूल के सामने बुरी तरह पीटेंगे।",
-            "चिढ़ाए जाने वाले छात्र को कहेंगे कि वह उन पर ध्यान न दे।",
-            "सभी छात्रों को एक साथ बैठाकर संवेदनशीलता, सहानुभूति और नैतिक मूल्यों पर चर्चा करेंगे।",
-            "सीधे उनके माता-पिता को बुलाकर स्कूल से निकाल देंगे।"
+            "उनका मज़ाक उड़ाएंगे",
+            "उन्हें चुप करा देंगे",
+            "उन्हें सही उत्तर खोजने के लिए मार्गदर्शन (Scaffolding) देंगे",
+            "दूसरे छात्रों से उत्तर पूछेंगे"
           ],
           "answer": "C",
-          "explanation": "सामाजिक परिपक्वता का तकाजा है कि समस्या का समाधान समझ और काउंसलिंग से किया जाए। बच्चों में एम्पैथी (सहानुभूति) जगाना सबसे स्थायी समाधान है।",
+          "explanation": "मार्गदर्शन देकर बच्चे को खुद सीखने के लिए प्रोत्साहित करना सही तरीका है।",
           "reference": "PTET Section B"
         },
         {
           "id": 16,
-          "originalId": 66,
+          "originalId": 16,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "कूट",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "'सहकर्मी शिक्षण' (Peer Tutoring) के समावेशी कक्षा में क्या लाभ हैं?\n1. यह छात्रों के बीच सहयोग और सामाजिकरण को बढ़ाता है।\n2. इससे शिक्षक को आराम करने का मौका मिल जाता है।\n3. कमजोर छात्र अपने ही उम्र के बच्चों से बिना झिझक जल्दी सीखते हैं।\nसही कूट:",
+          "topic": "संप्रेषण कौशल",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में शिक्षक का प्रभाव निर्भर करता है:",
           "options": [
-            "1, 2 और 3",
-            "केवल 1 और 3",
-            "केवल 1",
-            "केवल 2 और 3"
+            "उसके व्यक्तित्व पर",
+            "उसके विषय ज्ञान और संप्रेषण कौशल पर",
+            "उसकी आवाज पर",
+            "उसकी शक्ति पर"
           ],
           "answer": "B",
-          "explanation": "पीयर ट्यूटरिंग (बच्चों द्वारा बच्चों को सिखाना) एक बेहतरीन मनोवैज्ञानिक विधि है। इससे बच्चे झिझक छोड़ते हैं। यह शिक्षक के आराम के लिए नहीं, बल्कि अधिगम को सुगम बनाने के लिए है।",
+          "explanation": "प्रभावी संप्रेषण ही ज्ञान के हस्तांतरण का माध्यम है।",
           "reference": "PTET Section B"
         },
         {
           "id": 17,
-          "originalId": 67,
+          "originalId": 17,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "Gender Bias",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक शिक्षिका अक्सर कक्षा में लड़कों से गणित के प्रश्न पूछती है और लड़कियों से गृहविज्ञान या कला के प्रश्न पूछती है। यह व्यवहार किसे दर्शाता है?",
+          "topic": "गृहकार्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "गृहकार्य (Homework) का उद्देश्य क्या होना चाहिए?",
           "options": [
-            "सामाजिक परिपक्वता को",
-            "लैंगिक पूर्वाग्रह (Gender Bias / Stereotyping) को",
-            "मनोवैज्ञानिक शिक्षण विधि को",
-            "समावेशी शिक्षा को"
+            "बच्चों को व्यस्त रखना",
+            "कक्षा में पढ़ाए गए पाठ का अभ्यास कराना",
+            "बच्चों पर बोझ डालना",
+            "अभिभावकों को खुश करना"
           ],
           "answer": "B",
-          "explanation": "विषयों को जेंडर (लिंग) के आधार पर बांटना 'जेंडर स्टीरियोटाइप' है। एक प्रगतिशील शिक्षक को लड़का-लड़की दोनों को समान चुनौतियाँ देनी चाहिए।",
+          "explanation": "गृहकार्य का अर्थ ही दोहराव और अभ्यास है।",
           "reference": "PTET Section B"
         },
         {
           "id": 18,
-          "originalId": 68,
+          "originalId": 18,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "मूल्य आधारित शिक्षा",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "मूल्य आधारित शिक्षा:\nकथन: स्कूलों में नैतिक और सामाजिक मूल्यों की शिक्षा केवल किताबों से नहीं दी जा सकती।\nनिष्कर्ष I: शिक्षक का स्वयं का आचरण (Role model) बच्चों के लिए सबसे बड़ी नैतिक शिक्षा है।\nनिष्कर्ष II: नैतिक शिक्षा का विषय पूरी तरह बंद कर देना चाहिए।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
+          "topic": "Lifelong Learner",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को 'निरंतर सीखने वाला' (Lifelong Learner) क्यों होना चाहिए?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
+            "वेतन बढ़ाने के लिए",
+            "ताकि वह बच्चों को नवीनतम ज्ञान दे सके",
+            "पदोन्नति के लिए",
+            "खाली समय बिताने के लिए"
           ],
-          "answer": "A",
-          "explanation": "बच्चे अनुकरण (Imitation) से सीखते हैं। यदि शिक्षक ईमानदार और समय का पाबंद है, तो बच्चे स्वतः उसे अपना लेंगे।",
+          "answer": "B",
+          "explanation": "ज्ञान गतिशील है, शिक्षक को अपडेट रहना चाहिए।",
           "reference": "PTET Section B"
         },
         {
           "id": 19,
-          "originalId": 69,
+          "originalId": 19,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "सामाजिक संवेदनशीलता",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "आपकी कक्षा में एक छात्र आर्थिक रूप से बहुत पिछड़े और वंचित समाज से आता है। उसके कपड़े अक्सर मैले होते हैं, जिसके कारण अन्य छात्र उससे दूरी बनाते हैं। आप क्या करेंगे?",
+          "topic": "नैतिक मूल्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "बच्चों में नैतिक मूल्यों का विकास कैसे किया जा सकता है?",
           "options": [
-            "उसे साफ कपड़े पहनकर आने की सख्त चेतावनी देंगे।",
-            "अन्य छात्रों को डांटेंगे कि वे उससे बात क्यों नहीं करते।",
-            "व्यक्तिगत रूप से उससे बात कर उसकी समस्या समझेंगे और कक्षा में समानता व गरिमा का माहौल बनाएंगे।",
-            "इस मामले को पूरी तरह अनदेखा करेंगे।"
+            "भाषण देकर",
+            "शिक्षक के स्वयं के आदर्श आचरण द्वारा",
+            "नैतिक शिक्षा की परीक्षा लेकर",
+            "दंड देकर"
           ],
-          "answer": "C",
-          "explanation": "शिक्षक को संवेदनशीलता दिखानी चाहिए। गरीब बच्चे को सबके सामने टोकना उसे हीन भावना से भर देगा। एकांत में समस्या समझना और कक्षा का माइंडसेट बदलना जरूरी है।",
+          "answer": "B",
+          "explanation": "बच्चे उपदेशों से ज्यादा शिक्षक के आचरण से सीखते हैं।",
           "reference": "PTET Section B"
         },
         {
           "id": 20,
-          "originalId": 70,
+          "originalId": 20,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Education Thinkers",
+          "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "शिक्षा दर्शन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "विद्यालय को 'समाज का लघु रूप' (Miniature of society) किसने कहा है?",
+          "topic": "शिक्षक ईमानदारी",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र आपसे प्रश्न पूछे और आपको उसका उत्तर न पता हो, तो क्या करेंगे?",
           "options": [
-            "जॉन डीवी (John Dewey)",
-            "जीन पियाजे (Jean Piaget)",
-            "रूसो (Rousseau)",
-            "बी.एफ. स्किनर (B.F. Skinner)"
+            "उसे डांटकर बैठा देंगे",
+            "गलत उत्तर दे देंगे",
+            "विनम्रता से कहेंगे कि मैं पता करके कल बताऊंगा",
+            "छात्र को उत्तर पता करने को कहेंगे"
           ],
-          "answer": "A",
-          "explanation": "प्रसिद्ध शिक्षाविद् जॉन डीवी ने कहा था कि स्कूल समाज का एक छोटा रूप है, जहाँ बच्चा वे सभी सामाजिक कौशल सीखता है जो उसे जीवन भर काम आते हैं।",
+          "answer": "C",
+          "explanation": "यह शिक्षक की ईमानदारी और सीखने के प्रति सकारात्मक दृष्टिकोण को दर्शाता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 21,
-          "originalId": 71,
+          "originalId": 21,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "प्रभावी संचार",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कक्षा में एक 'प्रभावी संचार' (Effective Communication) कब माना जाता है?",
+          "topic": "समुदाय संबंध",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आपके समुदाय के साथ संबंध कैसे होने चाहिए?",
           "options": [
-            "जब शिक्षक बहुत धाराप्रवाह और कठिन अंग्रेजी में बोलता हो।",
-            "जब शिक्षक द्वारा भेजा गया संदेश उसी अर्थ और भावना के साथ छात्रों द्वारा ग्रहण कर लिया जाए।",
-            "जब कक्षा में एकदम सन्नाटा (पिन-ड्रॉप साइलेंस) हो।",
-            "जब शिक्षक केवल ब्लैकबोर्ड पर लिखता रहे।"
+            "तटस्थ",
+            "मिलनसार और सहयोगी",
+            "केवल स्कूल तक सीमित",
+            "कोई संबंध नहीं"
           ],
           "answer": "B",
-          "explanation": "संचार तभी पूरा और प्रभावी होता है जब रिसीवर (छात्र) सेंडर (शिक्षक) की बात को उसी अर्थ में समझे जिस अर्थ में कही गई है (Meaningful transfer of idea)।",
+          "explanation": "शिक्षक समुदाय का अभिन्न अंग है, सहयोग जरूरी है।",
           "reference": "PTET Section B"
         },
         {
           "id": 22,
-          "originalId": 72,
+          "originalId": 22,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "संचार के प्रकार",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-कारण:\nकथन (A): कक्षा में शिक्षण 'एक-तरफा' (One-way) संचार के बजाय 'दो-तरफा' (Two-way) संचार होना चाहिए।\nकारण (R): दो-तरफा संचार में छात्रों को प्रश्न पूछने और फीडबैक देने की स्वतंत्रता होती है, जिससे अधिगम अधिक स्थायी होता है।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
+          "topic": "PTM",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "अभिभावक-शिक्षक बैठक (PTM) का मुख्य उद्देश्य क्या है?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "छात्र की शिकायत करना",
+            "छात्र की प्रगति पर चर्चा करना और सहयोग बढ़ाना",
+            "फीस मांगना",
+            "समय का सदुपयोग करना"
           ],
-          "answer": "A",
-          "explanation": "केवल लेक्चर देना वन-वे है जो उबाऊ होता है। चर्चा करना, प्रश्नोत्तर करना टू-वे संचार है जो बाल-केंद्रित शिक्षा का आधार है।",
+          "answer": "B",
+          "explanation": "छात्र के सर्वांगीण विकास के लिए शिक्षक और अभिभावक का संवाद आवश्यक है।",
           "reference": "PTET Section B"
         },
         {
           "id": 23,
-          "originalId": 73,
+          "originalId": 23,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Matching",
+          "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "संचार की बाधाएं",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "संचार की बाधाओं (Barriers of Communication) को उनके उदाहरणों से सुमेलित करें:\n\nसूची-I (बाधा का प्रकार)\na. भौतिक बाधा (Physical barrier)\nb. मनोवैज्ञानिक बाधा (Psychological)\nc. अर्थगत/भाषाई बाधा (Semantic)\nd. सांस्कृतिक बाधा (Cultural)\n\nसूची-II (उदाहरण)\n1. पूर्वाग्रह, तनाव या डर\n2. कक्षा के बाहर से आने वाला भारी शोर\n3. अलग-अलग रीति-रिवाज और मूल्य\n4. अत्यधिक कठिन या तकनीकी शब्दों का प्रयोग\n\nकूट:",
+          "topic": "सहकर्मी संबंध",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि सहकर्मी (Colleague) आपसे ईर्ष्या करे, तो आप क्या करेंगे?",
           "options": [
-            "a-2, b-1, c-4, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-4, c-1, d-3",
-            "a-4, b-3, c-2, d-1"
+            "उससे लड़ेंगे",
+            "अपने कार्य पर ध्यान देंगे और व्यवहार में विनम्र रहेंगे",
+            "उसे नीचा दिखाएंगे",
+            "शिकायत करेंगे"
           ],
-          "answer": "A",
-          "explanation": "शोर भौतिक बाधा है। डर/तनाव मनोवैज्ञानिक है। भाषा/कठिन शब्द अर्थगत (Semantic) बाधा है। रीति-रिवाज सांस्कृतिक बाधा हैं।",
+          "answer": "B",
+          "explanation": "व्यावसायिक परिपक्वता का अर्थ है व्यक्तिगत ईर्ष्या से ऊपर उठकर कार्य करना।",
           "reference": "PTET Section B"
         },
         {
           "id": 24,
-          "originalId": 74,
+          "originalId": 24,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "अशाब्दिक संचार",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कक्षा-शिक्षण के दौरान 'अशाब्दिक संचार' (Non-verbal communication) का सबसे महत्वपूर्ण घटक कौन-सा है?",
+          "topic": "समाज में शिक्षक",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "समाज में शिक्षक की स्थिति कैसी होनी चाहिए?",
           "options": [
-            "शिक्षक का जोर-जोर से बोलना",
-            "शिक्षक के चेहरे के भाव (Facial expressions), आँखों का संपर्क (Eye contact) और शारीरिक हाव-भाव (Body language)",
-            "शिक्षक का ब्लैकबोर्ड पर लिखना",
-            "पाठ्यपुस्तक को पढ़ना"
+            "एक मार्गदर्शक के रूप में",
+            "एक साधारण कर्मचारी के रूप में",
+            "सत्ता के केंद्र के रूप में",
+            "राजनीतिज्ञ के रूप में"
           ],
-          "answer": "B",
-          "explanation": "अशाब्दिक संचार में शब्द नहीं होते। मुस्कुराहट, आँखों का संपर्क (Eye contact), हाथ के इशारे (Gestures) - ये सब अशाब्दिक हैं और बच्चों का ध्यान खींचने में बहुत असरदार होते हैं।",
+          "answer": "A",
+          "explanation": "शिक्षक समाज का पथप्रदर्शक होता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 25,
-          "originalId": 75,
+          "originalId": 25,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "Interpersonal Relations",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "आपकी कक्षा का एक छात्र बहुत शर्मीला है और कक्षा की चर्चाओं में कभी भाग नहीं लेता। उसके साथ अंतःवैयक्तिक संबंध (Interpersonal relations) बेहतर करने के लिए आप क्या करेंगे?",
+          "topic": "समय की पाबंदी",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए 'समय की पाबंदी' का क्या महत्व है?",
           "options": [
-            "उसे जबरदस्ती बोर्ड पर बुलाकर प्रश्न हल करने को कहेंगे।",
-            "उसे उसके हाल पर छोड़ देंगे।",
-            "उससे अकेले में मित्रतापूर्ण बातचीत करेंगे और उसे छोटे-छोटे आसान सवालों का जवाब देने के लिए प्रोत्साहित करेंगे ताकि उसका आत्मविश्वास बढ़े।",
-            "उसके माता-पिता को शिकायत करेंगे कि बच्चा सुस्त है।"
+            "यह अनुशासन का हिस्सा है",
+            "यह बच्चों के लिए उदाहरण बनती है",
+            "इससे नौकरी सुरक्षित रहती है",
+            "A और B दोनों"
           ],
-          "answer": "C",
-          "explanation": "शर्मीले बच्चे को अचानक सबके सामने एक्सपोज़ करना उसे डरा सकता है। छोटे और आसान प्रश्नों से उसका मनोबल बढ़ाना एक अच्छे शिक्षक का गुण है।",
+          "answer": "D",
+          "explanation": "शिक्षक बच्चों का रोल मॉडल है।",
           "reference": "PTET Section B"
         },
         {
           "id": 26,
-          "originalId": 76,
+          "originalId": 26,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
+          "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "सक्रिय श्रवण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक सफल शिक्षक के लिए 'सक्रिय श्रवण' (Active Listening) के क्या फायदे हैं?\n1. यह छात्रों को महसूस कराता है कि उनके विचारों का सम्मान किया जा रहा है।\n2. यह शिक्षक को छात्रों की वास्तविक समस्याओं को समझने में मदद करता है।\n3. यह कक्षा का समय बर्बाद करता है।\nसही कूट:",
+          "topic": "व्यावसायिक नैतिकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "जब कोई छात्र आपको उपहार दे, तो क्या करेंगे?",
           "options": [
-            "केवल 1",
-            "केवल 2",
-            "1 और 2",
-            "1, 2 और 3"
+            "स्वीकार कर लेंगे",
+            "मना कर देंगे क्योंकि शिक्षक के लिए यह नीतिगत नहीं है",
+            "उसे डांटेंगे",
+            "उपहार के बदले कुछ देंगे"
           ],
-          "answer": "C",
-          "explanation": "एक्टिव लिसनिंग (ध्यान से सुनना) से बच्चे जुड़ाव महसूस करते हैं। यह समय की बर्बादी नहीं, बल्कि रिश्ते मजबूत करने की कुंजी है।",
+          "answer": "B",
+          "explanation": "व्यावसायिक नैतिकता के अनुसार शिक्षक को उपहार लेने से बचना चाहिए।",
           "reference": "PTET Section B"
         },
         {
           "id": 27,
-          "originalId": 77,
+          "originalId": 27,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "Teacher-Student Relationship",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक शिक्षक और छात्र के बीच संबंध कैसा होना चाहिए?",
+          "topic": "Gender Bias",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'लिंग भेद' (Gender Bias) को कैसे खत्म करेंगे?",
           "options": [
-            "एक तानाशाह और गुलाम जैसा",
-            "केवल व्यापारी और ग्राहक जैसा",
-            "मित्र, दार्शनिक और मार्गदर्शक (Friend, Philosopher, and Guide) जैसा",
-            "पूरी तरह से उदासीन और औपचारिक"
+            "लड़कों को अलग बिठाकर",
+            "सभी बच्चों को समान अवसर देकर",
+            "भेदभाव की चर्चा ही नहीं करेंगे",
+            "केवल लड़कियों को आगे बिठाकर"
           ],
-          "answer": "C",
-          "explanation": "यह आधुनिक शिक्षा का मूल मंत्र है। शिक्षक डराने वाला नहीं, बल्कि एक दोस्त और उचित मार्गदर्शक होना चाहिए।",
+          "answer": "B",
+          "explanation": "अवसर की समानता ही लिंग भेद मिटाती है।",
           "reference": "PTET Section B"
         },
         {
           "id": 28,
-          "originalId": 78,
+          "originalId": 28,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "PTM",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-निष्कर्ष: पैरेंट-टीचर मीटिंग (PTM):\nकथन: शिक्षक को अभिभावक-शिक्षक बैठक (PTM) में छात्र की कमियों के साथ-साथ उसकी अच्छाइयों पर भी चर्चा करनी चाहिए।\nनिष्कर्ष I: इससे अभिभावकों को यह लगता है कि शिक्षक उनके बच्चे पर ध्यान दे रहा है और वे रक्षात्मक (Defensive) नहीं होते।\nनिष्कर्ष II: इससे अभिभावकों और शिक्षक के बीच एक सकारात्मक और सहयोगात्मक संबंध (Collaborative relationship) बनता है।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
+          "topic": "Team Work",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "टीम वर्क (Team Work) के बारे में आप छात्रों को क्या सिखाएंगे?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
+            "'मैं' से 'हम' की ओर बढ़ना",
+            "अकेले काम करना",
+            "केवल नेता की बात सुनना",
+            "प्रतियोगिता करना"
           ],
-          "answer": "C",
-          "explanation": "'सैंडविच फीडबैक' (पहले तारीफ, फिर कमी, फिर प्रोत्साहन) तकनीक PTM में बहुत कारगर होती है। इससे विवाद नहीं होता और दोनों मिलकर बच्चे के लिए काम करते हैं।",
+          "answer": "A",
+          "explanation": "टीम वर्क सहयोग की भावना पर आधारित है।",
           "reference": "PTET Section B"
         },
         {
           "id": 29,
-          "originalId": 79,
+          "originalId": 29,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "भाषाई बाधा",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि आपकी कक्षा में कुछ छात्र आपकी भाषा/बोली (Regional dialect) को ठीक से नहीं समझ पा रहे हैं, तो आप क्या करेंगे?",
+          "topic": "शिक्षक व्यक्तित्व",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक को कैसा होना चाहिए?",
           "options": [
-            "उन्हें कहेंगे कि वे स्वयं भाषा सीखकर आएं।",
-            "अपनी भाषा को सरल बनाएंगे, स्थानीय भाषा के शब्दों का प्रयोग करेंगे और दृश्य माध्यमों (Visual aids) का सहारा लेंगे।",
-            "उन्हें कक्षा से बाहर कर देंगे।",
-            "शिकायत प्रिंसिपल से करेंगे।"
+            "सख्त",
+            "मित्रवत लेकिन मर्यादा में",
+            "बहुत अधिक बातूनी",
+            "अंतर्मुखी"
           ],
           "answer": "B",
-          "explanation": "संचार को सुगम बनाना शिक्षक का दायित्व है। चित्रों (Visuals) और सरल भाषा का प्रयोग भाषा की बाधा को दूर करता है।",
+          "explanation": "एक शिक्षक सुलभ (Accessible) होना चाहिए लेकिन गरिमा भी बनी रहनी चाहिए।",
           "reference": "PTET Section B"
         },
         {
           "id": 30,
-          "originalId": 80,
+          "originalId": 30,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "Empathy vs Sympathy",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शिक्षक के लिए 'सहानुभूति' (Sympathy) की तुलना में 'तदनुभूति/समानुभूति' (Empathy) अधिक महत्वपूर्ण क्यों है?",
+          "topic": "सीखने का वातावरण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्र को स्कूल में सबसे अधिक क्या आकर्षित करना चाहिए?",
           "options": [
-            "क्योंकि एम्पैथी में शिक्षक छात्र की समस्या को उसी के नजरिए (दृष्टिकोण) से महसूस करता है और गहराई से समझता है।",
-            "क्योंकि दोनों शब्दों का अर्थ एक ही है।",
-            "क्योंकि सहानुभूति से छात्र बिगड़ जाते हैं।",
-            "उपर्युक्त में से कोई नहीं।"
+            "बड़ा खेल का मैदान",
+            "प्रेमपूर्ण और सीखने योग्य वातावरण",
+            "महंगी इमारत",
+            "कैंटीन"
           ],
-          "answer": "A",
-          "explanation": "Sympathy (सहानुभूति) का अर्थ है केवल दया दिखाना। Empathy (समानुभूति) का अर्थ है \"To put yourself in someone else's shoes\" (स्वयं को उसकी जगह रखकर महसूस करना)। एक शिक्षक को एम्पैथेटिक होना चाहिए।",
+          "answer": "B",
+          "explanation": "सीखने का वातावरण ही छात्र को स्कूल से जोड़ता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 31,
-          "originalId": 81,
+          "originalId": 31,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Leadership",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "नेतृत्व शैली",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कक्षा में एक शिक्षक के लिए नेतृत्व की कौन-सी शैली (Leadership Style) सबसे उपयुक्त मानी जाती है?",
+          "topic": "शिक्षक का कार्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का सबसे प्रमुख कार्य है:",
           "options": [
-            "निरंकुश/तानाशाही नेतृत्व (Autocratic)",
-            "अहस्तक्षेपी नेतृत्व (Laissez-faire)",
-            "लोकतांत्रिक/प्रजातांत्रिक नेतृत्व (Democratic)",
-            "करिश्माई नेतृत्व (Charismatic)"
+            "राजनीति करना",
+            "शिक्षण के माध्यम से विद्यार्थियों का सर्वांगीण विकास करना",
+            "स्कूल में छुट्टियां मनाना",
+            "निजी कोचिंग चलाना"
           ],
-          "answer": "C",
-          "explanation": "लोकतांत्रिक नेतृत्व में शिक्षक निर्णय लेने से पहले छात्रों की राय सुनता है और उन्हें चर्चा में शामिल करता है। यह सबसे सकारात्मक माहौल बनाता है।",
+          "answer": "B",
+          "explanation": "शिक्षण और विकास ही मूल कार्य है।",
           "reference": "PTET Section B"
         },
         {
           "id": 32,
-          "originalId": 82,
+          "originalId": 32,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "कक्षा प्रबंधन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-कारण: कक्षा प्रबंधन:\nकथन (A): कक्षा के नियम बनाते समय शिक्षक को छात्रों को भी उस प्रक्रिया में शामिल करना चाहिए।\nकारण (R): जब छात्र स्वयं नियम बनाने में भागीदार होते हैं, तो वे उन नियमों का पालन अधिक जिम्मेदारी और स्वेच्छा से करते हैं।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
+          "topic": "व्यावसायिक नैतिकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "क्या शिक्षक को राजनीति में भाग लेना चाहिए?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "हां, पूरी तरह",
+            "नहीं, शिक्षक को शिक्षा पर ध्यान देना चाहिए",
+            "केवल कभी-कभी",
+            "यह व्यक्तिगत अधिकार है"
           ],
-          "answer": "A",
-          "explanation": "यह बाल-मनोविज्ञान का सिद्धांत है (Ownership of rules)। खुद बनाए गए नियमों को बच्चे थोपे गए नियमों की तुलना में आसानी से मानते हैं।",
+          "answer": "B",
+          "explanation": "शिक्षक की तटस्थता उसकी व्यावसायिक नैतिकता के लिए अनिवार्य है।",
           "reference": "PTET Section B"
         },
         {
           "id": 33,
-          "originalId": 83,
+          "originalId": 33,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "कक्षा नियंत्रण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "आपकी कक्षा बहुत शोर मचा रही है और अशांत है। एक लीडर के रूप में कक्षा को नियंत्रित करने का सबसे प्रभावी तरीका क्या है?",
+          "topic": "Professional Development",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक का लगातार 'व्यावसायिक विकास' (Professional Development) कैसे हो सकता है?",
           "options": [
-            "मेज पर जोर-जोर से डंडा पीटना और चिल्लाना।",
-            "ब्लैकबोर्ड की तरफ मुड़कर चुपचाप पढ़ाना शुरू कर देना।",
-            "कुछ क्षणों के लिए बिल्कुल शांत खड़े हो जाना और सभी छात्रों की आँखों में देखना (Eye contact बनाना)।",
-            "पूरी कक्षा को मैदान में दौड़ा देना।"
+            "सेमिनार और वर्कशॉप में भाग लेकर",
+            "केवल किताबें पढ़कर",
+            "काम से बचकर",
+            "इंटरनेट का उपयोग न करके"
           ],
-          "answer": "C",
-          "explanation": "अचानक उत्पन्न हुई शांति (Strategic Pause) और आई-कांटेक्ट बच्चों का ध्यान तुरंत अपनी ओर खींचते हैं। चिल्लाने से शिक्षक का नियंत्रण कमजोर दिखता है।",
+          "answer": "A",
+          "explanation": "निरंतर प्रशिक्षण से शिक्षण शैली में नवीनता आती है।",
           "reference": "PTET Section B"
         },
         {
           "id": 34,
-          "originalId": 84,
+          "originalId": 34,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Matching",
+          "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "नेतृत्व शैलियां",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "नेतृत्व शैलियों को उनकी विशेषता से सुमेलित करें:\n\nसूची-I (नेतृत्व शैली)\na. निरंकुश (Autocratic)\nb. लोकतांत्रिक (Democratic)\nc. अहस्तक्षेपी (Laissez-Faire)\n\nसूची-II (विशेषता)\n1. नेता कोई निर्देश नहीं देता, समूह स्वयं निर्णय लेता है।\n2. नेता समूह से विचार-विमर्श करके निर्णय लेता है।\n3. नेता सारे निर्णय स्वयं लेता है और कठोरता से लागू करता है।\n\nकूट:",
+          "topic": "व्यावसायिक परिपक्वता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि प्रधानाध्यापक आपको बिना वजह डांटे, तो आप क्या करेंगे?",
           "options": [
-            "a-3, b-2, c-1",
-            "a-1, b-2, c-3",
-            "a-2, b-3, c-1",
-            "a-3, b-1, c-2"
+            "इस्तीफा दे देंगे",
+            "विनम्रता से स्पष्टीकरण मांगेंगे",
+            "बदले में डांटेंगे",
+            "स्कूल जाना बंद कर देंगे"
           ],
-          "answer": "A",
-          "explanation": "निरंकुश में डिक्टेटरशिप होती है (3)। लोकतांत्रिक में सबकी भागीदारी (2)। अहस्तक्षेपी (Laissez-Faire) में नेता बच्चों को एकदम खुला छोड़ देता है (1)।",
+          "answer": "B",
+          "explanation": "यह व्यावसायिक परिपक्वता का उदाहरण है।",
           "reference": "PTET Section B"
         },
         {
           "id": 35,
-          "originalId": 85,
+          "originalId": 35,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "जिम्मेदारी सौंपना",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक शिक्षक अपनी कक्षा के छात्रों को अलग-अलग जिम्मेदारियाँ (जैसे- मॉनिटर, सफाई प्रभारी, पुस्तकालय प्रभारी) सौंपता है। इसका मुख्य उद्देश्य क्या है?",
+          "topic": "शिक्षण उद्देश्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'शिक्षण' (Teaching) का मुख्य उद्देश्य क्या है?",
           "options": [
-            "अपना खुद का काम कम करना।",
-            "छात्रों में नेतृत्व क्षमता (Leadership skills) और जिम्मेदारी की भावना विकसित करना।",
-            "छात्रों को आपस में लड़वाना।",
-            "प्रधानाचार्य को प्रभावित करना।"
+            "परीक्षा पास करवाना",
+            "ज्ञान का हस्तांतरण और व्यवहार परिवर्तन",
+            "स्कूल की प्रसिद्धि",
+            "पाठ्यक्रम पूरा करना"
           ],
           "answer": "B",
-          "explanation": "दायित्व सौंपने (Delegation) से बच्चों में आत्मविश्वास आता है और वे व्यावहारिक जीवन में लीडरशिप सीखते हैं।",
+          "explanation": "व्यवहार में परिवर्तन ही सच्चा अधिगम है।",
           "reference": "PTET Section B"
         },
         {
           "id": 36,
-          "originalId": 86,
+          "originalId": 36,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "विवाद समाधान",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "स्थिति आधारित: यदि कक्षा के दो छात्रों के बीच किसी बात को लेकर गंभीर झगड़ा हो जाता है, तो एक कक्षा-नेता के रूप में आप क्या करेंगे?",
+          "topic": "राष्ट्रीय एकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आप छात्रों के बीच 'राष्ट्रीय एकता' कैसे लाएंगे?",
           "options": [
-            "दोनों को बिना सुने सजा दे देंगे।",
-            "दोनों को एकांत में बुलाकर शांत करेंगे, दोनों पक्षों की बात निष्पक्षता से सुनेंगे और आपसी समझ से विवाद सुलझाएंगे।",
-            "झगड़े को अनदेखा कर देंगे क्योंकि बच्चे अक्सर लड़ते रहते हैं।",
-            "पुलिस को बुला लेंगे।"
+            "देशभक्ति के गाने गाकर",
+            "विविध संस्कृतियों के बारे में बताकर",
+            "अन्य देशों की बुराई करके",
+            "केवल इतिहास पढ़ाकर"
           ],
           "answer": "B",
-          "explanation": "द्वंद्व समाधान (Conflict Resolution) एक अच्छे लीडर का गुण है। इसमें निष्पक्षता (Impartiality) और एक्टिव लिसनिंग सबसे जरूरी है।",
+          "explanation": "'विविधता में एकता' को समझाना ही राष्ट्रीय एकता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 37,
-          "originalId": 87,
+          "originalId": 37,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "कूट",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक अच्छे नेता (शिक्षक) की प्रमुख विशेषताएँ क्या होनी चाहिए?\n1. भावनात्मक बुद्धिमत्ता (Emotional Intelligence)\n2. पूर्वाग्रह से ग्रसित होना (Being biased)\n3. दूरदर्शिता (Visionary)\n4. अनुकूलनशीलता (Adaptability)\nसही कूट:",
+          "topic": "Active Learning",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "क्या कक्षा में छात्रों को 'प्रश्न पूछने' की अनुमति होनी चाहिए?",
           "options": [
-            "1, 3 और 4",
-            "1, 2 और 3",
-            "केवल 3 और 4",
-            "1, 2, 3 और 4"
+            "नहीं, इससे समय खराब होता है",
+            "हां, इससे जिज्ञासा और समझ बढ़ती है",
+            "केवल परीक्षा के समय",
+            "केवल पढ़ने वाले छात्रों को"
           ],
-          "answer": "A",
-          "explanation": "एक शिक्षक को पक्षपाती (Biased) नहीं होना चाहिए। उसे इमोशनल रूप से समझदार, दूरदर्शी और परिस्थितियों के अनुसार ढलने वाला (Adaptable) होना चाहिए।",
+          "answer": "B",
+          "explanation": "प्रश्न पूछना सक्रिय अधिगम (Active Learning) का लक्षण है।",
           "reference": "PTET Section B"
         },
         {
           "id": 38,
-          "originalId": 88,
+          "originalId": 38,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "आंतरिक और बाह्य अभिप्रेरणा",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-निष्कर्ष: आंतरिक और बाह्य अभिप्रेरणा:\nकथन: शिक्षक को छात्रों को केवल चॉकलेट या टॉफी (बाह्य पुरस्कार) देकर काम नहीं करवाना चाहिए।\nनिष्कर्ष I: बाह्य पुरस्कार हमेशा के लिए काम नहीं करते, एक समय बाद बच्चे काम करना बंद कर देते हैं।\nनिष्कर्ष II: शिक्षक का लक्ष्य छात्रों में 'आंतरिक अभिप्रेरणा' (Intrinsic Motivation) जगाना होना चाहिए ताकि वे सीखने के आनंद के लिए पढ़ें।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
+          "topic": "शिक्षक विफलता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक की विफलता का मुख्य कारण क्या है?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
+            "छात्रों का शोर",
+            "शिक्षक का अपने विषय पर कमांड न होना",
+            "स्कूल की कमी",
+            "धन की कमी"
           ],
-          "answer": "C",
-          "explanation": "मनोविज्ञान के अनुसार बाह्य पुरस्कार (टॉफी/ग्रेड) का प्रभाव अल्पकालिक होता है। असली लीडर बच्चों को विषय की रोचकता (Intrinsic) से जोड़ता है।",
+          "answer": "B",
+          "explanation": "ज्ञान की कमी ही विफलता का मुख्य कारण है।",
           "reference": "PTET Section B"
         },
         {
           "id": 39,
-          "originalId": 89,
+          "originalId": 39,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "आत्मविश्वासी शिक्षक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कक्षा शिक्षण के दौरान अचानक स्कूल के प्रधानाचार्य निरीक्षण (Inspection) के लिए आ जाते हैं। एक आत्मविश्वासी शिक्षक के रूप में आप क्या करेंगे?",
+          "topic": "बाल अधिकार",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'बाल अधिकार' के बारे में शिक्षक को कैसा होना चाहिए?",
           "options": [
-            "घबराकर पढ़ाना बंद कर देंगे।",
-            "जो पढ़ा रहे थे उसे छोड़कर कोई आसान विषय पढ़ाने लगेंगे।",
-            "सामान्य और सहज रूप से अपनी पूर्व निर्धारित शिक्षण योजना के अनुसार पढ़ाना जारी रखेंगे।",
-            "छात्रों को कहेंगे कि वे चुपचाप बैठ जाएं।"
+            "जागरूक",
+            "अनभिज्ञ",
+            "उदासीन",
+            "विरोधी"
           ],
-          "answer": "C",
-          "explanation": "एक पेशेवर और प्रतिबद्ध शिक्षक का आत्मविश्वास निरीक्षण के समय भी सामान्य रहता है। वह अपना रूटीन काम पूरी ईमानदारी से करता रहता है।",
+          "answer": "A",
+          "explanation": "शिक्षक को बाल अधिकारों का रक्षक होना चाहिए।",
           "reference": "PTET Section B"
         },
         {
           "id": 40,
-          "originalId": 90,
+          "originalId": 40,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "समूह कार्य",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शिक्षक द्वारा कक्षा में 'समूह कार्य' (Group Work/Project) करवाने का सबसे बड़ा मनोवैज्ञानिक लाभ क्या है?",
+          "topic": "समाज में शिक्षक",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का दायित्व केवल स्कूल तक क्यों नहीं सीमित है?",
           "options": [
-            "सिलेबस जल्दी पूरा हो जाता है।",
-            "बच्चे एक-दूसरे से सहयोग, सहिष्णुता, टीम-वर्क और नेतृत्व के गुण सीखते हैं।",
-            "शिक्षक खाली बैठ सकता है।",
-            "कक्षा में शोरगुल कम होता है।"
+            "क्योंकि उसे पैसे मिलते हैं",
+            "क्योंकि वह समाज का निर्माता है",
+            "क्योंकि उसे घर जाना होता है",
+            "क्योंकि उसे सरकारी काम करना है"
           ],
           "answer": "B",
-          "explanation": "समूह कार्य (Group dynamics) सामाजिकरण और लीडरशिप विकसित करने का सबसे बेहतरीन प्रायोगिक तरीका है।",
+          "explanation": "शिक्षक समाज के लिए एक रोल मॉडल होता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 41,
-          "originalId": 91,
+          "originalId": 41,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Multi-statement",
+          "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "कूट",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "शिक्षा के क्षेत्र में भारत सरकार की नवीनतम डिजिटल पहलों (Digital Initiatives) में कौन-से शामिल हैं?\n1. DIKSHA (डिजिटल इंफ्रास्ट्रक्चर फॉर नॉलेज शेयरिंग)\n2. SWAYAM (स्टडी वेब्स ऑफ एक्टिव-लर्निंग फॉर यंग एस्पायरिंग माइंड्स)\n3. ZOMATO\nसही कूट:",
+          "topic": "छात्र स्वास्थ्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में एक छात्र लगातार सोता है, आप क्या करेंगे?",
           "options": [
-            "केवल 1",
-            "केवल 2",
-            "1 और 2",
-            "1, 2 और 3"
+            "उसे बेंच पर खड़ा करेंगे",
+            "उसके अभिभावकों को बुलाकर स्वास्थ्य व दिनचर्या पूछेंगे",
+            "उसे सजा देंगे",
+            "उसकी उपेक्षा करेंगे"
           ],
-          "answer": "C",
-          "explanation": "DIKSHA (शिक्षकों के लिए डिजिटल प्लेटफॉर्म) और SWAYAM (ऑनलाइन कोर्सेज) दोनों शिक्षा मंत्रालय के बड़े प्रोजेक्ट हैं। Zomato फूड डिलीवरी ऐप है।",
+          "answer": "B",
+          "explanation": "यह किसी समस्या का लक्षण हो सकता है, कारण जानना पहला कदम है।",
           "reference": "PTET Section B"
         },
         {
           "id": 42,
-          "originalId": 92,
+          "originalId": 42,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "मेधावी छात्र की समस्या",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "आपकी कक्षा का एक मेधावी छात्र पिछले कुछ दिनों से गुमसुम रहता है और पढ़ाई में भी पिछड़ रहा है। आप क्या करेंगे?",
+          "topic": "Personal Counseling",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक छात्र कक्षा में असामाजिक बातें करता है, आप क्या करेंगे?",
           "options": [
-            "उसके माता-पिता को स्कूल बुलाकर डांटेंगे।",
-            "उसे अकेले में भरोसे में लेकर उसकी परेशानी का कारण (मानसिक, शारीरिक या पारिवारिक) जानने का प्रयास करेंगे।",
-            "उस पर ध्यान देना बंद कर देंगे।",
-            "उसे पूरी कक्षा के सामने उसकी कमियों के लिए शर्मिंदा करेंगे।"
+            "उसे सबके सामने बेइज्जत करेंगे",
+            "उसे एकांत में समझाएंगे",
+            "प्रधानाचार्य को भेजेंगे",
+            "मारेंगे"
           ],
           "answer": "B",
-          "explanation": "अचानक व्यवहार में बदलाव किसी अवसाद (Depression), दुर्व्यवहार या पारिवारिक समस्या का संकेत हो सकता है। काउंसलिंग (Counseling) शिक्षक का प्राथमिक कर्तव्य है।",
+          "explanation": "व्यक्तिगत सुधार के लिए निजी परामर्श (Personal Counseling) प्रभावी है।",
           "reference": "PTET Section B"
         },
         {
           "id": 43,
-          "originalId": 93,
+          "originalId": 43,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Assertion-Reason",
+          "questionType": "Fact-based",
           "difficulty": "moderate",
-          "topic": "NIPUN भारत मिशन",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-कारण: NIPUN भारत मिशन:\nकथन (A): 'निपुण भारत मिशन' का उद्देश्य कक्षा 3 तक के सभी बच्चों में बुनियादी साक्षरता और संख्या ज्ञान (FLN) प्राप्त करना है।\nकारण (R): यदि बच्चे प्रारंभिक वर्षों में पढ़ना-लिखना और सामान्य गणित नहीं सीख पाते, तो वे आगे की कक्षाओं में स्कूल छोड़ (Drop-out) देते हैं।\nविकल्प:\nA. (A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।\nB. (A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।\nC. (A) सही है, (R) गलत है।\nD. (A) गलत है, (R) सही है।",
+          "topic": "RTE Act 2009",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षा का अधिकार (RTE) अधिनियम, 2009 का उद्देश्य क्या है?",
           "options": [
-            "(A) और (R) दोनों सही हैं, और (R) सही व्याख्या है।",
-            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
-            "(A) सही है, (R) गलत है।",
-            "(A) गलत है, (R) सही है।"
+            "सभी के लिए अनिवार्य और निःशुल्क शिक्षा",
+            "केवल अमीरों के लिए",
+            "केवल लड़कों के लिए",
+            "केवल निजी स्कूलों के लिए"
           ],
           "answer": "A",
-          "explanation": "FLN (Foundational Literacy and Numeracy) NEP 2020 का सबसे महत्वपूर्ण हिस्सा है। बिना बुनियादी ज्ञान के बच्चा आगे का पाठ्यक्रम नहीं समझ सकता।",
+          "explanation": "RTE का मूल उद्देश्य 6-14 वर्ष के बच्चों को मुफ्त शिक्षा देना है।",
           "reference": "PTET Section B"
         },
         {
           "id": 44,
-          "originalId": 94,
+          "originalId": 44,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Matching",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "शिक्षण विधियां और जनक",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "प्रसिद्ध शिक्षण विधियों को उनके जनकों (Propounders) से सुमेलित करें:\n\nसूची-I (शिक्षण विधि)\na. किंडरगार्टन विधि (Kindergarten)\nb. प्रोजेक्ट विधि (Project Method)\nc. खोज/ह्यूरिस्टिक विधि (Heuristic Method)\nd. मोंटेसरी विधि (Montessori Method)\n\nसूची-II (जनक)\n1. आर्मस्ट्रांग (H.E. Armstrong)\n2. फ्रोबेल (Froebel)\n3. मारिया मोंटेसरी (Maria Montessori)\n4. किलपैट्रिक (W.H. Kilpatrick)\n\nकूट:",
+          "topic": "समानता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'समानता' लाने के लिए क्या करना चाहिए?",
           "options": [
-            "a-2, b-4, c-1, d-3",
-            "a-1, b-2, c-3, d-4",
-            "a-2, b-1, c-4, d-3",
-            "a-4, b-3, c-2, d-1"
+            "केवल होनहार बच्चों पर ध्यान देना",
+            "सभी बच्चों को समान भागीदारी के अवसर देना",
+            "बच्चों को उनकी जाति के अनुसार बिठाना",
+            "शिक्षक अपनी पसंद का छात्र चुने"
           ],
-          "answer": "A",
-          "explanation": "किंडरगार्टन (फ्रोबेल), प्रोजेक्ट (किलपैट्रिक), ह्यूरिस्टिक/खोज (आर्मस्ट्रांग), मोंटेसरी (मारिया मोंटेसरी)। यह शैक्षिक जागरूकता का बहुत महत्वपूर्ण प्रश्न है।",
+          "answer": "B",
+          "explanation": "समानता (Equality) का अर्थ है सबको समान अवसर।",
           "reference": "PTET Section B"
         },
         {
           "id": 45,
-          "originalId": 95,
+          "originalId": 45,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Situation-based",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "सकारात्मक प्रतिक्रिया",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "यदि कोई छात्र कक्षा में आपके प्रश्न का गलत उत्तर देता है, तो एक सकारात्मक शिक्षक के रूप में आपकी क्या प्रतिक्रिया होनी चाहिए?",
+          "topic": "सर्वांगीण विकास",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'सर्वांगीण विकास' का अर्थ है:",
           "options": [
-            "\"तुम गधे हो, बैठ जाओ।\"",
-            "उसे उत्तर देने का प्रयास करने के लिए शाबाशी देंगे और फिर सही उत्तर तक पहुँचने में उसकी मदद (Hint देकर) करेंगे।",
-            "दूसरे छात्र को उत्तर देने को कहेंगे और पहले वाले को सजा देंगे।",
-            "खुद तुरंत सही उत्तर बताकर आगे बढ़ जाएंगे।"
+            "केवल शारीरिक विकास",
+            "केवल बौद्धिक विकास",
+            "शारीरिक, मानसिक, संवेगात्मक और सामाजिक विकास",
+            "केवल शिक्षा का विकास"
           ],
-          "answer": "B",
-          "explanation": "गलतियां सीखने की प्रक्रिया का हिस्सा हैं। प्रयास की सराहना करने से बच्चे का आत्मविश्वास टूटता नहीं है। हिंट देकर सही उत्तर निकलवाना (Scaffolding) सबसे अच्छी विधि है।",
+          "answer": "C",
+          "explanation": "सर्वांगीण (Holistic) विकास का अर्थ हर पक्ष से विकास है।",
           "reference": "PTET Section B"
         },
         {
           "id": 46,
-          "originalId": 96,
+          "originalId": 46,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
-          "questionType": "Statement-Conclusion",
+          "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "वैज्ञानिक दृष्टिकोण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "कथन-निष्कर्ष: बच्चों में 'वैज्ञानिक दृष्टिकोण' (Scientific Temper) का विकास:\nकथन: शिक्षक को कक्षा में बच्चों को 'क्यों' और 'कैसे' प्रश्न पूछने के लिए प्रोत्साहित करना चाहिए।\nनिष्कर्ष I: इससे बच्चों में जिज्ञासा (Curiosity) और तर्क करने की क्षमता विकसित होती है।\nनिष्कर्ष II: इससे अंधविश्वास और रूढ़िवादी सोच का नाश होता है।\nकूट:\nA. केवल I सही है\nB. केवल II सही है\nC. दोनों सही हैं\nD. दोनों गलत हैं",
+          "topic": "प्रभावी शिक्षण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का प्रभावी शिक्षण कब माना जाता है?",
           "options": [
-            "केवल I सही है",
-            "केवल II सही है",
-            "दोनों सही हैं",
-            "दोनों गलत हैं"
+            "जब बच्चे शांत बैठे हों",
+            "जब बच्चे पाठ को समझें और प्रयोग करें",
+            "जब परीक्षा में 100% रिजल्ट आए",
+            "जब शिक्षक बहुत तेज पढ़ाए"
           ],
-          "answer": "C",
-          "explanation": "वैज्ञानिक दृष्टिकोण का अर्थ ही है बिना प्रमाण के किसी बात को न मानना। जिज्ञासा और प्रश्न पूछने की आदत ही विज्ञान और तर्क का आधार है।",
+          "answer": "B",
+          "explanation": "समझ और अनुप्रयोग (Application) ही शिक्षा का सही परिणाम है।",
           "reference": "PTET Section B"
         },
         {
           "id": 47,
-          "originalId": 97,
+          "originalId": 47,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "ICT in Teaching",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक शिक्षक कक्षा में ICT (Information and Communication Technology) का उपयोग क्यों करता है?",
+          "topic": "शैक्षिक तकनीक",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "आजकल के छात्रों में 'मोबाइल' के बढ़ते प्रभाव के बारे में आपकी क्या राय है?",
           "options": [
-            "स्वयं को आधुनिक और स्मार्ट दिखाने के लिए।",
-            "बच्चों का मनोरंजन करने के लिए।",
-            "अमूर्त और कठिन अवधारणाओं (Abstract concepts) को दृश्य-श्रव्य (Audio-visual) माध्यम से आसानी से समझाने के लिए।",
-            "स्कूल का बजट खर्च करने के लिए।"
+            "यह केवल बुराई है",
+            "यह एक उपकरण है, इसका उपयोग मार्गदर्शन के साथ होना चाहिए",
+            "इसे तुरंत बंद कर देना चाहिए",
+            "यह छात्रों के लिए वरदान है"
           ],
-          "answer": "C",
-          "explanation": "ICT (जैसे- स्मार्टबोर्ड, प्रोजेक्टर, एनीमेशन) का मुख्य उद्देश्य जटिल विषयों (जैसे- हृदय की कार्यप्रणाली, सौरमंडल) को 3D विजुअल्स के माध्यम से सरल और स्थायी बनाना है।",
+          "answer": "B",
+          "explanation": "शिक्षक को तकनीक का उपयोग सकारात्मक रूप में सिखाना चाहिए।",
           "reference": "PTET Section B"
         },
         {
           "id": 48,
-          "originalId": 98,
+          "originalId": 48,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "पर्यावरण संरक्षण",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "बच्चों को 'पर्यावरण संरक्षण' के प्रति जागरूक करने का सबसे व्यावहारिक तरीका क्या है?",
+          "topic": "संयमित व्यवहार",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र आपसे बदतमीजी करता है, तो आपका व्यवहार होगा:",
           "options": [
-            "पर्यावरण पर लंबा भाषण देना।",
-            "पर्यावरण पर एक निबंध प्रतियोगिता आयोजित करना।",
-            "बच्चों से स्कूल परिसर या घर पर एक पौधा लगवाना और उसकी देखभाल की जिम्मेदारी सौंपना।",
-            "ब्लैकबोर्ड पर पेड़ का चित्र बनाना।"
+            "प्रतिक्रियात्मक (Reactionary)",
+            "धैर्यपूर्ण और संयमित",
+            "आक्रामक",
+            "अपमानजनक"
           ],
-          "answer": "C",
-          "explanation": "शिक्षा में 'Learning by doing' (करके सीखना) सबसे प्रभावी होता है। पौधा लगाने का व्यावहारिक अनुभव बच्चे को पर्यावरण से भावनात्मक रूप से जोड़ता है।",
+          "answer": "B",
+          "explanation": "शिक्षक को हमेशा संयमित रहना चाहिए, प्रतिक्रिया से स्थिति और बिगड़ सकती है।",
           "reference": "PTET Section B"
         },
         {
           "id": 49,
-          "originalId": 99,
+          "originalId": 49,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Conceptual",
           "difficulty": "moderate",
-          "topic": "शिक्षा का लक्ष्य",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "एक शिक्षक का सबसे महत्वपूर्ण और अंतिम लक्ष्य क्या होना चाहिए?",
+          "topic": "खेलकूद",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "खेलकूद (Sports) का शिक्षा में क्या स्थान है?",
           "options": [
-            "छात्रों को परीक्षा में 100% अंक दिलाना।",
-            "स्कूल का अनुशासन बनाए रखना।",
-            "छात्रों का 'सर्वांगीण विकास' (Holistic Development - शारीरिक, मानसिक, सामाजिक और नैतिक) करना।",
-            "अच्छी सैलरी प्राप्त करना।"
+            "समय की बर्बादी",
+            "सर्वांगीण विकास का हिस्सा",
+            "केवल मनोरंजन",
+            "केवल शारीरिक विकास"
           ],
-          "answer": "C",
-          "explanation": "आधुनिक शिक्षा शास्त्र के अनुसार शिक्षा का एकमात्र उद्देश्य बच्चे के केवल दिमाग का ही नहीं, बल्कि शरीर और आत्मा (होलिस्टिक/3H - Head, Heart, Hand) का विकास करना है।",
+          "answer": "B",
+          "explanation": "खेल से अनुशासन, टीम भावना और शारीरिक स्वास्थ्य मिलता है।",
           "reference": "PTET Section B"
         },
         {
           "id": 50,
-          "originalId": 100,
+          "originalId": 50,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "शिक्षक गुण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "अंत में, एक शिक्षक को क्या होना चाहिए?",
+          "options": [
+            "एक अच्छा वक्ता",
+            "एक अच्छा श्रोता",
+            "एक अच्छा मार्गदर्शक",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": "एक आदर्श शिक्षक में ये सभी गुण होने चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 51,
+          "originalId": 51,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "FLN",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 के अंतर्गत 'FLN' का पूर्ण रूप क्या है?",
+          "options": [
+            "Foundational Literacy and Numeracy",
+            "Functional Literacy and Nurturing",
+            "Foundational Learning and Nature",
+            "Functional Learning and Number"
+          ],
+          "answer": "A",
+          "explanation": "NEP 2020 का प्राथमिक लक्ष्य कक्षा 3 तक बुनियादी साक्षरता और संख्या ज्ञान (FLN) प्राप्त करना है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 52,
+          "originalId": 52,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Learning Outcome",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में \"सीखने का प्रतिफल\" (Learning Outcome) का क्या अर्थ है?",
+          "options": [
+            "परीक्षा के अंक",
+            "पाठ्यक्रम पूरा करना",
+            "बच्चा जो सीखता है और उसे व्यावहारिक जीवन में लागू करता है",
+            "शिक्षक की शिक्षण विधि"
+          ],
+          "answer": "C",
+          "explanation": "लर्निंग आउटकम का अर्थ है कि पाठ के अंत में छात्र में अपेक्षित कौशल और ज्ञान विकसित हुआ है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 53,
+          "originalId": 53,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Multilingualism",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आप कक्षा में 'बहुभाषिता' (Multilingualism) को कैसे देखते हैं?",
+          "options": [
+            "एक बाधा",
+            "एक संसाधन (Resource)",
+            "अनावश्यक",
+            "केवल एक औपचारिकता"
+          ],
+          "answer": "B",
+          "explanation": "NEP 2020 बहुभाषिता को सीखने के संसाधन के रूप में देखती है, जो बच्चों में समझ को गहरा करती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 54,
+          "originalId": 54,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Formative Assessment",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "रचनात्मक मूल्यांकन (Formative Assessment) का सबसे महत्वपूर्ण गुण क्या है?",
+          "options": [
+            "साल के अंत में परीक्षा लेना",
+            "सीखने के दौरान निरंतर फीडबैक देना",
+            "केवल पास/फेल निर्धारित करना",
+            "छात्रों को दंडित करना"
+          ],
+          "answer": "B",
+          "explanation": "रचनात्मक मूल्यांकन का उद्देश्य शिक्षण प्रक्रिया में सुधार के लिए निरंतर फीडबैक देना है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 55,
+          "originalId": 55,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Child-Centric Approach",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षा का 'बाल-केंद्रित' (Child-Centric) उपागम क्या है?",
+          "options": [
+            "शिक्षक जो कहे वही करना",
+            "बच्चों की रुचि, क्षमता और आवश्यकताओं के अनुसार शिक्षण",
+            "केवल किताबी ज्ञान देना",
+            "बच्चों को नियंत्रित रखना"
+          ],
+          "answer": "B",
+          "explanation": "बाल-केंद्रित शिक्षा में बच्चा केंद्र में होता है, न कि पाठ्यपुस्तक या शिक्षक।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 56,
+          "originalId": 56,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Experiential Learning",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "अनुभवजन्य अधिगम (Experiential Learning) का महत्व है:",
+          "options": [
+            "केवल रटना",
+            "स्वयं करके सीखना",
+            "केवल व्याख्यान सुनना",
+            "केवल पढ़ना"
+          ],
+          "answer": "B",
+          "explanation": "करके सीखने से ज्ञान स्थायी और गहरा होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 57,
+          "originalId": 57,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Digital Literacy",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को 'डिजिटल साक्षर' (Digital Literacy) क्यों होना चाहिए?",
+          "options": [
+            "केवल आधुनिक दिखने के लिए",
+            "आधुनिक शिक्षण उपकरणों और संसाधनों का उपयोग करने के लिए",
+            "छात्रों के फोन चेक करने के लिए",
+            "केवल टाइपिंग के लिए"
+          ],
+          "answer": "B",
+          "explanation": "तकनीक का उपयोग शिक्षण को अधिक रोचक और सुलभ बनाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 58,
+          "originalId": 58,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "CCE",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'सतत एवं व्यापक मूल्यांकन' (CCE) का मुख्य लाभ क्या है?",
+          "options": [
+            "छात्रों का मानसिक तनाव कम करना",
+            "छात्रों को अधिक होमवर्क देना",
+            "शिक्षक का काम आसान करना",
+            "छात्रों को स्कूल न आने देना"
+          ],
+          "answer": "A",
+          "explanation": "CCE केवल परीक्षा पर केंद्रित नहीं होता, इसलिए तनाव कम होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 59,
+          "originalId": 59,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Coding",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'कोडिंग' को स्कूल स्तर पर जोड़ने का उद्देश्य क्या है?",
+          "options": [
+            "बच्चों को सॉफ्टवेयर इंजीनियर बनाना",
+            "बच्चों में तार्किक और विश्लेषणात्मक क्षमता (Logical Thinking) का विकास करना",
+            "बच्चों को खेल खिलाना",
+            "केवल कंप्यूटर पढ़ाना"
+          ],
+          "answer": "B",
+          "explanation": "कोडिंग समस्या समाधान (Problem Solving) कौशल विकसित करती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 60,
+          "originalId": 60,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "NEP 2020 शिक्षक भूमिका",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 के अनुसार, शिक्षक की भूमिका होनी चाहिए:",
+          "options": [
+            "एक डिक्टेटर की",
+            "केवल जानकारी देने वाले की",
+            "एक सुविधाप्रदाता (Facilitator) की",
+            "एक निरीक्षक (Inspector) की"
+          ],
+          "answer": "C",
+          "explanation": "शिक्षक का काम बच्चे को सीखने में मदद करना और उसे सुविधा प्रदान करना है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 61,
+          "originalId": 61,
           "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
           "questionType": "Situation-based",
           "difficulty": "moderate",
-          "topic": "संवेदनशील हस्तक्षेप",
-          "sourceTag": "PTET Mock Test 6",
-          "question": "स्थिति आधारित: यदि एक बच्चा अक्सर आपकी कक्षा में सो जाता है, तो आप क्या करेंगे?",
+          "topic": "Bullying",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि एक छात्र कक्षा में लगातार 'बुलिंग' (धौंस जमाना) कर रहा है, तो आप क्या करेंगे?",
           "options": [
-            "उस पर पानी डाल देंगे।",
-            "उसे कक्षा से बाहर कर देंगे।",
-            "शारीरिक थकान, बीमारी, या रात में काम करने जैसे कारणों को जानने के लिए उससे या उसके अभिभावक से सहानुभूतिपूर्वक बात करेंगे।",
-            "उसे पीछे की सीट पर सोने देंगे ताकि कक्षा डिस्टर्ब न हो।"
+            "उसे स्कूल से निकाल देंगे",
+            "उसे डांटेंगे",
+            "उसे उसकी आक्रामकता के कारणों को समझने के लिए काउंसलर से मिलवाएंगे",
+            "उसे कक्षा में अकेले बैठा देंगे"
           ],
           "answer": "C",
-          "explanation": "कक्षा में सोना किसी भी अंतर्निहित समस्या (पोषण की कमी, अनिद्रा, पारिवारिक बाल-मजदूरी) का लक्षण हो सकता है। एक संवेदनशील शिक्षक हमेशा कारण जानकर समाधान की ओर बढ़ता है।",
+          "explanation": "समस्या के मूल कारण (Behavioral Issue) को समझना सुधार का पहला कदम है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 62,
+          "originalId": 62,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Slow Learners",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'धीमी गति से सीखने वाले' (Slow Learners) छात्रों के लिए क्या करना चाहिए?",
+          "options": [
+            "उन्हें छोड़ देना चाहिए",
+            "उन्हें अलग स्कूल भेजना चाहिए",
+            "व्यक्तिगत ध्यान (Individual Attention) देना चाहिए",
+            "उन्हें अधिक होमवर्क देना चाहिए"
+          ],
+          "answer": "C",
+          "explanation": "व्यक्तिगत भिन्नताओं के कारण हर बच्चा अलग गति से सीखता है, उसे अतिरिक्त समर्थन की आवश्यकता होती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 63,
+          "originalId": 63,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "कक्षा प्रबंधन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में छात्रों के शोर मचाने पर एक शिक्षक को क्या करना चाहिए?",
+          "options": [
+            "चिल्लाकर चुप कराना",
+            "चुपचाप बैठ जाना (शांति प्रभाव)",
+            "शोर के कारणों को समझना और गतिविधि में उन्हें व्यस्त करना",
+            "दंड देना"
+          ],
+          "answer": "C",
+          "explanation": "छात्र शोर तब मचाते हैं जब वे व्यस्त नहीं होते। गतिविधि आधारित शिक्षण इसका समाधान है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 64,
+          "originalId": 64,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Self-confidence",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों में 'आत्म-विश्वास' (Self-confidence) कैसे बढ़ाया जा सकता है?",
+          "options": [
+            "उन्हें कठिन प्रश्न देकर",
+            "उनके छोटे प्रयासों की सराहना करके",
+            "उन्हें अन्य बच्चों से कम बताकर",
+            "होमवर्क कम करके"
+          ],
+          "answer": "B",
+          "explanation": "सकारात्मक सुदृढ़ीकरण (Positive Reinforcement) आत्मविश्वास बढ़ाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 65,
+          "originalId": 65,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Attitude",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण के दौरान 'दृष्टिकोण' (Attitude) की भूमिका क्या है?",
+          "options": [
+            "कोई भूमिका नहीं",
+            "शिक्षक का सकारात्मक दृष्टिकोण छात्रों को सीखने के लिए प्रेरित करता है",
+            "केवल शिक्षक के लिए जरूरी",
+            "केवल प्रिंसिपल के लिए जरूरी"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक का उत्साह छात्रों में संक्रामक होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 66,
+          "originalId": 66,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "प्रश्न पूछना",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्र यदि प्रश्न पूछने से झिझकते हैं, तो आप क्या करेंगे?",
+          "options": [
+            "डांटेंगे",
+            "उन्हें सहज वातावरण देंगे और पूछने के लिए प्रोत्साहित करेंगे",
+            "प्रश्न पूछना बंद कर देंगे",
+            "केवल पाठ पढ़ाएंगे"
+          ],
+          "answer": "B",
+          "explanation": "झिझक भय या लज्जा के कारण होती है, इसे दूर करना शिक्षक का कार्य है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 67,
+          "originalId": 67,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "बैठने की व्यवस्था",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में बैठने की व्यवस्था कैसी होनी चाहिए?",
+          "options": [
+            "रैंडम (कहीं भी)",
+            "लचीली (कभी समूह में, कभी पंक्तियों में)",
+            "हमेशा एक जैसी",
+            "केवल लड़के आगे, लड़कियां पीछे"
+          ],
+          "answer": "B",
+          "explanation": "गतिविधि के अनुसार व्यवस्था बदलने से सहभागिता बढ़ती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 68,
+          "originalId": 68,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "गृहकार्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक छात्र होमवर्क करके नहीं लाया, आप क्या करेंगे?",
+          "options": [
+            "शारीरिक दंड देंगे",
+            "उसे कक्षा से बाहर निकाल देंगे",
+            "कारण पूछेंगे और उसे पूरा करने में सहायता देंगे",
+            "उसे जीरो मार्क्स देंगे"
+          ],
+          "answer": "C",
+          "explanation": "दंड किसी भी समस्या का समाधान नहीं है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 69,
+          "originalId": 69,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Competition",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों के बीच प्रतिस्पर्धा (Competition) कैसी होनी चाहिए?",
+          "options": [
+            "अस्वास्थ्यकर (एक-दूसरे को नीचा दिखाने वाली)",
+            "स्वास्थ्यकर (स्वयं को बेहतर बनाने वाली)",
+            "नहीं होनी चाहिए",
+            "केवल इनाम के लिए होनी चाहिए"
+          ],
+          "answer": "B",
+          "explanation": "स्वस्थ प्रतिस्पर्धा आत्म-सुधार की प्रेरणा देती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 70,
+          "originalId": 70,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "खाली समय",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'खाली समय' मिलने पर आप क्या करेंगे?",
+          "options": [
+            "गपशप करेंगे",
+            "बच्चों से उनके अनुभव पूछेंगे या कहानी सुनाएंगे",
+            "बैठकर अपना काम करेंगे",
+            "उन्हें खेलने के लिए बाहर भेज देंगे"
+          ],
+          "answer": "B",
+          "explanation": "खाली समय का उपयोग छात्रों के साथ जुड़ाव (Bonding) बनाने के लिए करना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 71,
+          "originalId": 71,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Leadership",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के नेतृत्व का सबसे अच्छा उदाहरण क्या है?",
+          "options": [
+            "हुक्म चलाना",
+            "उदाहरण प्रस्तुत करना (Lead by Example)",
+            "दूसरों की आलोचना करना",
+            "केवल आदेश देना"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को जो गुण छात्रों में चाहिए, उसे स्वयं अपनाना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 72,
+          "originalId": 72,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सहकर्मी संबंध",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "सहकर्मी (Colleagues) के साथ अच्छा संबंध बनाने के लिए क्या आवश्यक है?",
+          "options": [
+            "स्वार्थ",
+            "सहयोग और सम्मान",
+            "प्रतिस्पर्धा",
+            "दूरी बनाए रखना"
+          ],
+          "answer": "B",
+          "explanation": "एक सकारात्मक स्कूल संस्कृति सहयोग पर टिकी होती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 73,
+          "originalId": 73,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Professional Commitment",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'व्यावसायिक प्रतिबद्धता' (Professional Commitment) का क्या अर्थ है?",
+          "options": [
+            "केवल वेतन के लिए काम करना",
+            "अपने कार्य के प्रति पूरी ईमानदारी और जिम्मेदारी रखना",
+            "केवल समय बिताना",
+            "शिक्षण को बोझ समझना"
+          ],
+          "answer": "B",
+          "explanation": "प्रतिबद्धता अपने कर्तव्य के प्रति निष्ठा है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 74,
+          "originalId": 74,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Communication",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "संचार (Communication) प्रभावी कब होता है?",
+          "options": [
+            "जब शिक्षक बहुत तेज बोले",
+            "जब शिक्षक अपनी बात स्पष्ट कहे और छात्र समझें (Feedback)",
+            "जब शिक्षक बहुत लंबा भाषण दे",
+            "जब कोई प्रश्न न पूछे"
+          ],
+          "answer": "B",
+          "explanation": "संचार 'द्वि-मार्गी' (Two-way) होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 75,
+          "originalId": 75,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Team Spirit",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि स्कूल में कोई बड़ा आयोजन हो, तो आपकी भूमिका क्या होगी?",
+          "options": [
+            "केवल दूर से देखना",
+            "जिम्मेदारी लेना और सहयोग करना",
+            "बहाना बनाना",
+            "दूसरे शिक्षक को काम देना"
+          ],
+          "answer": "B",
+          "explanation": "यह शिक्षक की टीम भावना (Team Spirit) को दर्शाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 76,
+          "originalId": 76,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "प्रभावी शिक्षक",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक प्रभावी शिक्षक की सबसे बड़ी पहचान क्या है?",
+          "options": [
+            "प्रभावशाली व्यक्तित्व",
+            "छात्रों की समस्याओं का समाधान करने की क्षमता",
+            "बहुत अधिक डिग्री",
+            "उच्च पद"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक का कार्य छात्रों की सफलता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 77,
+          "originalId": 77,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "छात्र हित",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "निर्णय लेते समय शिक्षक को क्या ध्यान रखना चाहिए?",
+          "options": [
+            "अपना लाभ",
+            "छात्रों का हित",
+            "प्रधानाचार्य की इच्छा",
+            "समाज का डर"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षा में 'छात्र हित' सर्वोपरि है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 78,
+          "originalId": 78,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Active Listening",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'सक्रिय श्रवण' (Active Listening) क्या है?",
+          "options": [
+            "बस सुनना",
+            "वक्ता को ध्यान से सुनकर समझना और प्रतिक्रिया देना",
+            "बीच में टोकना",
+            "दूसरे काम करना"
+          ],
+          "answer": "B",
+          "explanation": "प्रभावी संचार के लिए सक्रिय श्रवण आवश्यक है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 79,
+          "originalId": 79,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "अनुशासन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का 'अनुशासनप्रिय' होना कब फायदेमंद है?",
+          "options": [
+            "जब वह केवल सजा देता है",
+            "जब वह नियमों के प्रति स्पष्ट और न्यायपूर्ण है",
+            "जब वह बच्चों को डराता है",
+            "जब वह बहुत कड़ा है"
+          ],
+          "answer": "B",
+          "explanation": "नियम बच्चों की सुरक्षा और विकास के लिए होने चाहिए, डर के लिए नहीं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 80,
+          "originalId": 80,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Empathy",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण के दौरान 'सहानुभूति' (Empathy) का क्या अर्थ है?",
+          "options": [
+            "छात्र के साथ रोना",
+            "छात्र की स्थिति को उसकी नजर से समझना",
+            "छात्र को विशेष छूट देना",
+            "दया दिखाना"
+          ],
+          "answer": "B",
+          "explanation": "सहानुभूति छात्र को बेहतर समझने में मदद करती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 81,
+          "originalId": 81,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "समावेशी कक्षा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'समावेशी कक्षा' में शिक्षक को क्या करना चाहिए?",
+          "options": [
+            "सभी छात्रों को एक ही विधि से पढ़ाना",
+            "विभिन्नता के अनुसार शिक्षण विधियों में बदलाव (Differentiation) करना",
+            "अक्षम बच्चों को पीछे बैठाना",
+            "केवल प्रतिभाशाली बच्चों पर ध्यान देना"
+          ],
+          "answer": "B",
+          "explanation": "हर बच्चे की सीखने की गति अलग होती है, शिक्षण विधि लचीली होनी चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 82,
+          "originalId": 82,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Visually Impaired",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक नेत्रहीन (Visually Impaired) छात्र के लिए शिक्षक क्या करेगा?",
+          "options": [
+            "उसे कक्षा से बाहर बैठाएगा",
+            "ब्रेल लिपि या ऑडियो एड्स का उपयोग करेगा",
+            "उसे कहेगा कि वह नहीं पढ़ सकता",
+            "केवल जोर से बोलेगा"
+          ],
+          "answer": "B",
+          "explanation": "समावेशी शिक्षा में संसाधनों का अनुकूलन (Adaptation) आवश्यक है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 83,
+          "originalId": 83,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सामाजिक परिपक्वता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "सामाजिक परिपक्वता का क्या लक्षण है?",
+          "options": [
+            "हर समय गुस्सा करना",
+            "दूसरों के दृष्टिकोण को समझना और सहनशीलता रखना",
+            "केवल अपनी बात मनवाना",
+            "एकांत में रहना"
+          ],
+          "answer": "B",
+          "explanation": "सामाजिक परिपक्वता आपसी तालमेल से आती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 84,
+          "originalId": 84,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Gender Equality",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में लड़का-लड़की के बीच 'समानता' (Gender Equality) कैसे बढ़ाएं?",
+          "options": [
+            "लड़कों को भारी काम दें",
+            "लड़कियों को केवल घरेलू काम करने दें",
+            "लिंग आधारित कार्य न बांटकर समान अवसर दें",
+            "दोनों को अलग बिठाएं"
+          ],
+          "answer": "C",
+          "explanation": "लिंग आधारित रूढ़िवादिता (Stereotyping) को खत्म करना शिक्षक का दायित्व है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 85,
+          "originalId": 85,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "CWSN",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'विशेष आवश्यकता वाले बच्चों' (CWSN) के साथ कैसा व्यवहार हो?",
+          "options": [
+            "दया का",
+            "सहानुभूति का",
+            "सम्मान और समावेश का",
+            "उपेक्षा का"
+          ],
+          "answer": "C",
+          "explanation": "उन्हें सामान्य बच्चों के समान सम्मान और अवसर मिलना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 86,
+          "originalId": 86,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "सांस्कृतिक विविधता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "किसी छात्र की संस्कृति का सम्मान करने के लिए आप क्या करेंगे?",
+          "options": [
+            "उसकी भाषा का मजाक उड़ाएंगे",
+            "कक्षा में उसकी संस्कृति के सकारात्मक पहलुओं को साझा करेंगे",
+            "उसे स्कूल न आने देंगे",
+            "उसे चुप कराएंगे"
+          ],
+          "answer": "B",
+          "explanation": "सांस्कृतिक विविधता कक्षा को समृद्ध बनाती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 87,
+          "originalId": 87,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Peer Tutoring",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'पीयर ट्यूटरिंग' (Peer Tutoring) क्या है?",
+          "options": [
+            "शिक्षक द्वारा पढ़ाना",
+            "छात्रों द्वारा एक-दूसरे को पढ़ाना",
+            "अभिभावकों द्वारा पढ़ाना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "छात्र एक-दूसरे से अधिक सहजता से सीख सकते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 88,
+          "originalId": 88,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "स्वच्छता अभियान",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "स्कूल में स्वच्छता अभियान का महत्व क्या है?",
+          "options": [
+            "केवल सफाई करना",
+            "छात्रों में नागरिक जिम्मेदारी और स्वास्थ्य के प्रति जागरूकता लाना",
+            "केवल सजा देना",
+            "समय काटना"
+          ],
+          "answer": "B",
+          "explanation": "यह सामाजिक उत्तरदायित्व सिखाने का तरीका है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 89,
+          "originalId": 89,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "धर्मनिरपेक्षता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि स्कूल में किसी त्योहार का आयोजन हो, तो क्या करेंगे?",
+          "options": [
+            "छुट्टी मनाएंगे",
+            "सभी धर्मों/संस्कृतियों के त्योहारों को समान महत्व देकर आयोजन करेंगे",
+            "केवल एक धर्म का आयोजन करेंगे",
+            "मना कर देंगे"
+          ],
+          "answer": "B",
+          "explanation": "स्कूल धर्मनिरपेक्षता का उदाहरण होना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 90,
+          "originalId": 90,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Emotional Intelligence",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'भावनात्मक बुद्धि' (Emotional Intelligence) का शिक्षक के लिए क्या उपयोग है?",
+          "options": [
+            "केवल भावुक होना",
+            "अपने और छात्रों के संवेगों को नियंत्रित और समझना",
+            "बच्चों को डराना",
+            "काम से बचना"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को छात्रों की भावनाओं के प्रति संवेदनशील होना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 91,
+          "originalId": 91,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "खेल-आधारित शिक्षण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): छोटे बच्चों के लिए खेल-आधारित शिक्षण प्रभावी है।\nकारण (R): बच्चे स्वाभाविक रूप से खेल-खेल में अधिक सीखते हैं।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "खेल बाल-विकास का अभिन्न अंग है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 92,
+          "originalId": 92,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "अनुशासन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): शिक्षक को कक्षा में बहुत सख्त होना चाहिए।\nकारण (R): सख्ती से ही अनुशासन आता है।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "A और R दोनों गलत"
+          ],
+          "answer": "D",
+          "explanation": "सख्ती से अनुशासन नहीं आता, डर आता है। अनुशासन प्रेम और नियमों से आता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 93,
+          "originalId": 93,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "Rote Learning",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): रटने (Rote Learning) से बच्चा बुद्धिमान बनता है।\nकारण (R): रटने से मस्तिष्क तेज होता है।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A और R दोनों गलत",
+            "A गलत, R सही"
+          ],
+          "answer": "C",
+          "explanation": "रटना समझ (Understanding) के विकास में बाधा है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 94,
+          "originalId": 94,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "प्रश्न पूछना",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): शिक्षक को छात्रों से प्रश्न पूछने के लिए प्रोत्साहित करना चाहिए।\nकारण (R): प्रश्न पूछना सीखने की प्रक्रिया का एक सक्रिय हिस्सा है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "प्रश्न पूछने से 'जिज्ञासा' और 'समझ' का पता चलता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 95,
+          "originalId": 95,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "Community",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): स्कूल को समुदाय (Community) से जुड़ा होना चाहिए।\nकारण (R): स्कूल समाज का दर्पण है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "शिक्षा समाज के लिए है, इसलिए जुड़ाव जरूरी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 96,
+          "originalId": 96,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "व्यवहार समस्या",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र कक्षा में बार-बार झूठ बोलता है, तो आप:",
+          "options": [
+            "उसे सबके सामने झूठ बोलने वाला कहेंगे",
+            "उसे अकेला छोड़ देंगे",
+            "उसके झूठ के कारणों (डर, ध्यान आकर्षण) को समझेंगे",
+            "उसे मारेंगे"
+          ],
+          "answer": "C",
+          "explanation": "झूठ बोलना अक्सर किसी गहरे भय या ध्यान पाने का प्रयास होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 97,
+          "originalId": 97,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "आदर्श व्यक्तित्व",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का 'आदर्श व्यक्तित्व' क्या है?",
+          "options": [
+            "केवल ज्ञान",
+            "केवल शक्ल-सूरत",
+            "ज्ञान और चरित्र का सामंजस्य",
+            "केवल धन"
+          ],
+          "answer": "C",
+          "explanation": "शिक्षक ज्ञान देता है और चरित्र का निर्माण करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 98,
+          "originalId": 98,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Blackboard",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण में 'ब्लैकबोर्ड' का महत्व क्या है?",
+          "options": [
+            "सजावट",
+            "मुख्य बिंदुओं को रेखांकित करना",
+            "खड़िया (chalk) खर्च करना",
+            "कोई महत्व नहीं"
+          ],
+          "answer": "B",
+          "explanation": "दृश्य सामग्री (Visual Aid) के रूप में यह महत्वपूर्ण है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 99,
+          "originalId": 99,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Profession and Mission",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "क्या शिक्षण एक 'पेशा' (Profession) है या 'मिशन'?",
+          "options": [
+            "केवल पेशा",
+            "केवल मिशन",
+            "यह पेशा भी है और मिशन भी",
+            "न पेशा, न मिशन"
+          ],
+          "answer": "C",
+          "explanation": "यह आजीविका भी है और राष्ट्र निर्माण का मिशन भी।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 100,
+          "originalId": 100,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "शिक्षण लक्ष्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण का अंतिम लक्ष्य क्या है?",
+          "options": [
+            "पाठ्यक्रम पूरा करना",
+            "बच्चे का सर्वांगीण विकास",
+            "परीक्षा पास करना",
+            "स्कूल का नाम करना"
+          ],
+          "answer": "B",
+          "explanation": "बच्चे को एक जिम्मेदार और सक्षम नागरिक बनाना ही शिक्षण का अंतिम लक्ष्य है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 101,
+          "originalId": 101,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "NEP 2020 मातृभाषा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 के अनुसार, कक्षा 5 तक शिक्षा का माध्यम क्या होना चाहिए?",
+          "options": [
+            "अंग्रेजी",
+            "मातृभाषा / स्थानीय भाषा",
+            "केवल हिंदी",
+            "कोई भी विदेशी भाषा"
+          ],
+          "answer": "B",
+          "explanation": "NEP 2020 जोर देती है कि शुरुआती वर्षों में बच्चा अपनी मातृभाषा में अवधारणाओं को बेहतर समझता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 102,
+          "originalId": 102,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Constructivism",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'रचनात्मकता' (Constructivism) का अर्थ शिक्षण में क्या है?",
+          "options": [
+            "शिक्षक द्वारा ज्ञान देना",
+            "छात्र का अपने अनुभवों से स्वयं ज्ञान का निर्माण करना",
+            "रटकर सीखना",
+            "अनुशासन बनाए रखना"
+          ],
+          "answer": "B",
+          "explanation": "रचनावादी दृष्टिकोण मानता है कि ज्ञान बाहरी रूप से नहीं थोपा जा सकता, बच्चा इसे निर्मित करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 103,
+          "originalId": 103,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "समावेशी शिक्षा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): समावेशी शिक्षा केवल दिव्यांग बच्चों के लिए है।\nकारण (R): समावेशी शिक्षा का अर्थ है हर बच्चे को उनकी क्षमता के अनुसार समान अवसर देना।\nकूट;",
+          "options": [
+            "A और R दोनों सही",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "C",
+          "explanation": "समावेशी शिक्षा सभी बच्चों (सामान्य, दिव्यांग, प्रतिभाशाली) को एक साथ पढ़ाने पर जोर देती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 104,
+          "originalId": 104,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Portfolio",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक को 'पोर्टफोलियो' (Portfolio) का उपयोग क्यों करना चाहिए?",
+          "options": [
+            "बच्चे की प्रगति का क्रमिक रिकॉर्ड रखने के लिए",
+            "स्कूल का रिकॉर्ड बढ़ाने के लिए",
+            "बच्चे को डराने के लिए",
+            "केवल होमवर्क देने के लिए"
+          ],
+          "answer": "A",
+          "explanation": "पोर्टफोलियो बच्चे के प्रदर्शन और सुधार का एक व्यवस्थित रिकॉर्ड होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 105,
+          "originalId": 105,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Collaborative Learning",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'सहयोगात्मक शिक्षण' (Collaborative Learning) क्यों जरूरी है?",
+          "options": [
+            "इससे समय बचता है",
+            "इससे सामाजिक कौशल और टीम भावना का विकास होता है",
+            "इससे शिक्षक को पढ़ाना नहीं पड़ता",
+            "इससे अनुशासन बना रहता है"
+          ],
+          "answer": "B",
+          "explanation": "सहयोगात्मक शिक्षण बच्चों में एक-दूसरे को समझने और मिल-जुलकर कार्य करने की क्षमता पैदा करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 106,
+          "originalId": 106,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Counseling",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए 'परामर्श' (Counseling) कौशल क्यों आवश्यक है?",
+          "options": [
+            "केवल छात्रों को डांटने के लिए",
+            "छात्रों की व्यक्तिगत और भावनात्मक समस्याओं को हल करने में मदद के लिए",
+            "केवल फीस वसूलने के लिए",
+            "स्कूल का नाम करने के लिए"
+          ],
+          "answer": "B",
+          "explanation": "कई बार शैक्षिक प्रदर्शन का कारण भावनात्मक समस्या होता है, जिसे परामर्श से सुलझाया जा सकता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 107,
+          "originalId": 107,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Gifted Child",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'विशिष्ट बालक' (Gifted Child) के लिए सबसे उपयुक्त शिक्षण विधि क्या है?",
+          "options": [
+            "उन्हें सामान्य काम में उलझाए रखना",
+            "उन्हें संवर्धन (Enrichment) कार्यक्रम और कठिन चुनौतियाँ देना",
+            "उन्हें चुप रहने को कहना",
+            "उन्हें अतिरिक्त होमवर्क देना"
+          ],
+          "answer": "B",
+          "explanation": "प्रतिभाशाली बच्चों को उनकी मानसिक क्षमता के अनुसार चुनौतीपूर्ण कार्य मिलने चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 108,
+          "originalId": 108,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Multidisciplinary",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 में 'बहु-विषयक' (Multidisciplinary) दृष्टिकोण का अर्थ है:",
+          "options": [
+            "केवल एक विषय पढ़ना",
+            "विषयों के बीच की सीमाओं को तोड़कर आपस में जोड़कर पढ़ाना",
+            "केवल विज्ञान पढ़ाना",
+            "स्कूल बंद कर देना"
+          ],
+          "answer": "B",
+          "explanation": "आधुनिक शिक्षा विषयों को अलग-अलग नहीं, बल्कि एकीकृत (Integrated) तरीके से पढ़ाने पर जोर देती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 109,
+          "originalId": 109,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Reflective Practice",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए 'चिंतनशील अभ्यास' (Reflective Practice) का क्या अर्थ है?",
+          "options": [
+            "पढ़ाकर भूल जाना",
+            "अपने शिक्षण कार्य पर विचार करना और सुधार करना",
+            "केवल सिलेबस पूरा करना",
+            "छात्रों की नकल करना"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को स्वयं का विश्लेषण करना चाहिए कि उसका पढ़ाया हुआ तरीका कितना सफल रहा।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 110,
+          "originalId": 110,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "ECCE",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "प्रारंभिक बाल्यावस्था देखभाल (ECCE) का मुख्य केंद्र क्या है?",
+          "options": [
+            "रटकर याद करना",
+            "खेल-खेल में सर्वांगीण विकास",
+            "परीक्षा की तैयारी",
+            "लिखना सिखाना"
+          ],
+          "answer": "B",
+          "explanation": "ECCE (3-6 वर्ष) का मुख्य उद्देश्य खेल के माध्यम से बुनियादी कौशल और जिज्ञासा विकसित करना है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 111,
+          "originalId": 111,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "मोबाइल उपयोग",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र कक्षा में बार-बार मोबाइल का उपयोग कर रहा है, तो आप क्या करेंगे?",
+          "options": [
+            "मोबाइल छीनकर तोड़ देंगे",
+            "उसे कक्षा से निकाल देंगे",
+            "मोबाइल के उपयोग के नियमों पर चर्चा करेंगे और सकारात्मक उपयोग बताएंगे",
+            "प्रधानाचार्य को भेजेंगे"
+          ],
+          "answer": "C",
+          "explanation": "तकनीक का निषेध करने के बजाय उसका सही उपयोग सिखाना ज्यादा प्रभावी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 112,
+          "originalId": 112,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "अंतर्मुखी छात्र",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक बच्चा जो कक्षा में बहुत शांत रहता है और घुलता-मिलता नहीं है, उसके लिए क्या करेंगे?",
+          "options": [
+            "उसकी उपेक्षा करेंगे",
+            "उसके शांत रहने के कारणों का पता लगाएंगे और उसे गतिविधियों में शामिल करेंगे",
+            "उसे डांटेंगे",
+            "उसे क्लास मॉनिटर बना देंगे"
+          ],
+          "answer": "B",
+          "explanation": "यह अंतर्मुखी स्वभाव या किसी मानसिक चिंता का लक्षण हो सकता है, शिक्षक को सहायता करनी चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 113,
+          "originalId": 113,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "PTM Feedback",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "अभिभावक PTM में आकर शिकायत करते हैं कि आप अच्छा नहीं पढ़ाते, तो आप क्या करेंगे?",
+          "options": [
+            "बहस करेंगे",
+            "विनम्रता से उनकी चिंता सुनेंगे और अपने शिक्षण सुधार के प्रति आश्वस्त करेंगे",
+            "उसे स्कूल से निकालने को कहेंगे",
+            "कहेंगे कि अपना बच्चा कहीं और पढ़ा लो"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को धैर्यवान होना चाहिए और अभिभावकों के फीडबैक को सकारात्मक लेना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 114,
+          "originalId": 114,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Empathy",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में एक छात्र दूसरे छात्र का मजाक उड़ाता है, आप क्या करेंगे?",
+          "options": [
+            "उसे सबके सामने बेइज्जत करेंगे",
+            "उसे एकांत में बुलाकर समझाएंगे कि सहानुभूति (Empathy) क्यों जरूरी है",
+            "उसे सजा देंगे",
+            "कुछ नहीं कहेंगे"
+          ],
+          "answer": "B",
+          "explanation": "अपमान करना समस्या बढ़ाता है, निजी परामर्श से दृष्टिकोण में परिवर्तन लाना प्रभावी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 115,
+          "originalId": 115,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "ICT",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए 'ICT' (Information and Communication Technology) का उपयोग क्या है?",
+          "options": [
+            "केवल समय पास करना",
+            "कठिन अवधारणाओं को सरल और रोचक बनाना",
+            "केवल वीडियो गेम खेलना",
+            "छात्रों को डराना"
+          ],
+          "answer": "B",
+          "explanation": "ICT से जटिल विषयों को चित्रों और एनिमेशन के माध्यम से आसानी से समझाया जा सकता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 116,
+          "originalId": 116,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Group Work",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "समूह कार्य (Group Work) के दौरान एक बच्चा काम नहीं कर रहा, आप क्या करेंगे?",
+          "options": [
+            "उसे हटा देंगे",
+            "उसकी जिम्मेदारी तय करेंगे और उसे प्रेरित करेंगे",
+            "उसे डांटेंगे",
+            "खुद काम करेंगे"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक का काम बच्चे को काम में शामिल करना है, न कि उसे बाहर करना।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 117,
+          "originalId": 117,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Remedial Teaching",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक छात्र को गणित समझ नहीं आता, आप क्या करेंगे?",
+          "options": [
+            "उसे गणित लेना छोड़ने को कहेंगे",
+            "उसे अलग से अतिरिक्त सहायता (Remedial Teaching) देंगे",
+            "उसे फेल कर देंगे",
+            "कहेंगे कि यह कठिन विषय है"
+          ],
+          "answer": "B",
+          "explanation": "उपचारात्मक शिक्षण (Remedial Teaching) कमजोर छात्रों के लिए अनिवार्य है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 118,
+          "originalId": 118,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "शिक्षा उद्देश्य",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): शिक्षा का उद्देश्य केवल नौकरी प्राप्त करना है।\nकारण (R): शिक्षा व्यक्ति के चरित्र और व्यक्तित्व का निर्माण करती है।\nकूट;",
+          "options": [
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों सही",
+            "दोनों गलत"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षा केवल आर्थिक उद्देश्य नहीं, बल्कि सर्वांगीण विकास का साधन है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 119,
+          "originalId": 119,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "व्यावसायिक प्रतिबद्धता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि स्कूल की कोई गतिविधि आपको समझ नहीं आ रही, तो आप क्या करेंगे?",
+          "options": [
+            "भाग नहीं लेंगे",
+            "प्रधानाचार्य से स्पष्टीकरण मांगेंगे",
+            "आलोचना करेंगे",
+            "छुट्टी ले लेंगे"
+          ],
+          "answer": "B",
+          "explanation": "स्पष्टीकरण मांगना व्यावसायिक प्रतिबद्धता है, न कि कमजोरी।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 120,
+          "originalId": 120,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "व्यवहार और वातावरण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक छात्र स्कूल में बहुत अनुशासित है लेकिन घर पर विपरीत, इसका अर्थ है?",
+          "options": [
+            "शिक्षक डरपोक है",
+            "विद्यालय और घर के वातावरण में अंतर है",
+            "बच्चा पाखंडी है",
+            "विद्यालय खराब है"
+          ],
+          "answer": "B",
+          "explanation": "बच्चा वातावरण के अनुसार व्यवहार करता है, इसे समझने की जरूरत है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 121,
+          "originalId": 121,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Leadership",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक प्रभावी शिक्षक 'नेता' (Leader) की तरह कैसे कार्य करता है?",
+          "options": [
+            "आदेश देकर",
+            "उदाहरण प्रस्तुत करके और छात्रों को प्रेरित करके",
+            "छात्रों को नियंत्रित करके",
+            "केवल पढ़ाकर"
+          ],
+          "answer": "B",
+          "explanation": "नेतृत्व का अर्थ है दूसरों को सकारात्मक दिशा में प्रेरित करना।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 122,
+          "originalId": 122,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "व्यावसायिक प्रतिबद्धता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "व्यावसायिक प्रतिबद्धता का सबसे बड़ा सबूत क्या है?",
+          "options": [
+            "समय पर वेतन लेना",
+            "छात्रों के सर्वांगीण विकास के लिए अतिरिक्त प्रयास करना",
+            "केवल कोर्स पूरा करना",
+            "किसी का विरोध न करना"
+          ],
+          "answer": "B",
+          "explanation": "अपनी जिम्मेदारी से बढ़कर छात्र-हित में कार्य करना ही प्रतिबद्धता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 123,
+          "originalId": 123,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "स्कूल विकास",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "स्कूल के विकास में शिक्षक की क्या भूमिका होनी चाहिए?",
+          "options": [
+            "केवल पढ़ने की",
+            "एक सक्रिय सदस्य के रूप में",
+            "किसी की बात न मानने की",
+            "राजनीति करने की"
+          ],
+          "answer": "B",
+          "explanation": "स्कूल एक टीम है, शिक्षक को सक्रिय योगदान देना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 124,
+          "originalId": 124,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Stress",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'तनाव' (Stress) के दौरान शिक्षक का व्यवहार कैसा होना चाहिए?",
+          "options": [
+            "चिड़चिड़ा",
+            "शांत और संयमित",
+            "आक्रामक",
+            "पलायनवादी"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक का व्यवहार छात्रों को प्रभावित करता है, इसलिए धैर्य जरूरी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 125,
+          "originalId": 125,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Curiosity",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों में 'जिज्ञासा' (Curiosity) को कैसे बनाए रखें?",
+          "options": [
+            "रटने के लिए मजबूर करके",
+            "प्रश्न पूछने के लिए प्रोत्साहित करके",
+            "उन्हें हतोत्साहित करके",
+            "उन्हें चुप करवाकर"
+          ],
+          "answer": "B",
+          "explanation": "जिज्ञासा ही सीखने की पहली सीढ़ी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 126,
+          "originalId": 126,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "विवाद समाधान",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि दो छात्रों में विवाद हो, तो शिक्षक का व्यवहार होना चाहिए:",
+          "options": [
+            "पक्षपाती",
+            "निष्पक्ष और न्यायपूर्ण",
+            "अनदेखा करना",
+            "जोर से चिल्लाना"
+          ],
+          "answer": "B",
+          "explanation": "न्यायपूर्ण व्यवहार से ही विश्वास कायम होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 127,
+          "originalId": 127,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Professional Development",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "व्यावसायिक विकास के लिए शिक्षक को क्या करना चाहिए?",
+          "options": [
+            "केवल अनुभव पर निर्भर रहना",
+            "नई शिक्षण पद्धतियों को सीखना (Training)",
+            "पुराना ज्ञान ही देना",
+            "कुछ नया नहीं करना"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षण क्षेत्र निरंतर बदल रहा है, अपडेट रहना जरूरी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 128,
+          "originalId": 128,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सक्रिय भागीदारी",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'सक्रिय भागीदारी' सुनिश्चित करने का तरीका क्या है?",
+          "options": [
+            "प्रश्न पूछना",
+            "व्याख्यान देना",
+            "पाठ पढ़ाना",
+            "चुप रहना"
+          ],
+          "answer": "A",
+          "explanation": "प्रश्न पूछने से छात्र सक्रिय होते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 129,
+          "originalId": 129,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Leadership",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'नेतृत्व' (Leadership) के लिए आवश्यक गुण है:",
+          "options": [
+            "साहस",
+            "दूसरों को समझने की क्षमता",
+            "संचार कौशल",
+            "उपरोक्त सभी"
+          ],
+          "answer": "D",
+          "explanation": "नेतृत्व के लिए ये सभी गुण आवश्यक हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 130,
+          "originalId": 130,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Work Culture",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आपकी कार्य संस्कृति (Work Culture) कैसी होनी चाहिए?",
+          "options": [
+            "आलसी",
+            "कर्तव्यनिष्ठ और समयबद्ध",
+            "केवल दिखावटी",
+            "उदासीन"
+          ],
+          "answer": "B",
+          "explanation": "कर्तव्यनिष्ठता ही शिक्षक की विश्वसनीयता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 131,
+          "originalId": 131,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Communication",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में संचार (Communication) प्रभावी कब होता है?",
+          "options": [
+            "जब शिक्षक केवल हिंदी में बोले",
+            "जब शिक्षक अपनी बात को छात्रों के स्तर पर लाकर समझाए",
+            "जब शिक्षक बहुत कठिन शब्दों का उपयोग करे",
+            "जब कोई न बोले"
+          ],
+          "answer": "B",
+          "explanation": "छात्र की भाषा और समझ के स्तर पर संचार सबसे प्रभावी होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 132,
+          "originalId": 132,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Non-verbal communication",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'गैर-मौखिक संचार' (Non-verbal communication) का क्या महत्व है?",
+          "options": [
+            "कोई महत्व नहीं",
+            "हाव-भाव और चेहरे के भाव से संदेश को प्रभावशाली बनाना",
+            "केवल शोर मचाना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "पढ़ाते समय हाव-भाव (Body language) शब्दों से ज्यादा प्रभाव छोड़ते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 133,
+          "originalId": 133,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "जागरूकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विद्यालय में 'जागरूकता' का क्या अर्थ है?",
+          "options": [
+            "केवल अखबार पढ़ना",
+            "समाज और दुनिया की घटनाओं के प्रति संवेदनशील होना",
+            "केवल अपने काम से मतलब रखना",
+            "घर के बारे में जानना"
+          ],
+          "answer": "B",
+          "explanation": "एक शिक्षक को समाज की समस्याओं और प्रवृत्तियों के प्रति जागरूक रहना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 134,
+          "originalId": 134,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सभ्य संचार",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों को 'सभ्य संचार' कैसे सिखाएंगे?",
+          "options": [
+            "डांटकर",
+            "स्वयं विनम्र भाषा का प्रयोग करके (Role Model)",
+            "सजा देकर",
+            "चुप कराकर"
+          ],
+          "answer": "B",
+          "explanation": "बच्चे शिक्षक का अनुकरण (Imitate) करते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 135,
+          "originalId": 135,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Interpersonal relationship",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों के साथ 'अंतःवैयक्तिक संबंध' (Interpersonal relationship) कैसे होने चाहिए?",
+          "options": [
+            "बहुत सख्त",
+            "प्रेमपूर्ण, गरिमापूर्ण और व्यावसायिक",
+            "बहुत अधिक अनौपचारिक",
+            "दूरी वाले"
+          ],
+          "answer": "B",
+          "explanation": "एक शिक्षक को मित्रवत होना चाहिए लेकिन अपनी मर्यादा (प्रोफेशनल लिमिट) का ध्यान रखना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 136,
+          "originalId": 136,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सूचना संचार",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में सूचना देते समय क्या ध्यान रखना चाहिए?",
+          "options": [
+            "सूचना स्पष्ट और सटीक होनी चाहिए",
+            "सूचना बहुत लंबी होनी चाहिए",
+            "सूचना गुप्त होनी चाहिए",
+            "सूचना का कोई अर्थ नहीं होना चाहिए"
+          ],
+          "answer": "A",
+          "explanation": "स्पष्टता संचार का आधार है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 137,
+          "originalId": 137,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Active Listening",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'सक्रिय श्रवण' (Active Listening) के लिए क्या आवश्यक है?",
+          "options": [
+            "बीच में बोलना",
+            "धैर्यपूर्वक सुनना और समझना",
+            "ध्यान न देना",
+            "केवल अपना उत्तर तैयार करना"
+          ],
+          "answer": "B",
+          "explanation": "सुनने का अर्थ है - समझना।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 138,
+          "originalId": 138,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "विद्यालय और समाज",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विद्यालय को समाज का 'लघु रूप' क्यों कहते हैं?",
+          "options": [
+            "क्योंकि यहाँ लोग मिलते हैं",
+            "क्योंकि यहाँ समाज की संस्कृति और मूल्यों का विकास होता है",
+            "क्योंकि यहाँ पढ़ाई होती है",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "समाज के मूल्य स्कूल के वातावरण में प्रतिबिंबित होते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 139,
+          "originalId": 139,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "असहमति",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र आपसे असहमति प्रकट करे, तो क्या करेंगे?",
+          "options": [
+            "उसे चुप करा देंगे",
+            "उसके तर्क को सुनेंगे और चर्चा करेंगे",
+            "उसे सजा देंगे",
+            "उसकी उपेक्षा करेंगे"
+          ],
+          "answer": "B",
+          "explanation": "असहमति का सम्मान करना ही लोकतंत्र का आधार है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 140,
+          "originalId": 140,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Humor",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण में 'हास्य' (Humor) का क्या महत्व है?",
+          "options": [
+            "अनुशासनहीनता बढ़ाना",
+            "तनाव कम करना और कक्षा को जीवंत बनाना",
+            "समय बर्बाद करना",
+            "कोई महत्व नहीं"
+          ],
+          "answer": "B",
+          "explanation": "हल्का हास्य पढ़ाई को बोझ नहीं बनने देता।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 141,
+          "originalId": 141,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "आत्म-विश्लेषण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि प्रधानाध्यापक आपके काम में हमेशा कमियां निकालें, तो क्या करेंगे?",
+          "options": [
+            "झगड़ा करेंगे",
+            "काम छोड़ देंगे",
+            "अपनी कार्यशैली का आत्म-विश्लेषण करेंगे और सुधार करेंगे",
+            "उन्हें गलत ठहराएंगे"
+          ],
+          "answer": "C",
+          "explanation": "पेशेवर व्यक्ति हमेशा अपनी कमियों को सुधारने का प्रयास करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 142,
+          "originalId": 142,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "RTE",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षा का अधिकार अधिनियम (RTE) के अनुसार, शिक्षक का कर्तव्य क्या है?",
+          "options": [
+            "केवल कोर्स पूरा करना",
+            "बच्चों को शारीरिक दंड न देना और उनका सर्वांगीण विकास करना",
+            "केवल पढ़ाना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "RTE दंड को अपराध मानता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 143,
+          "originalId": 143,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "समावेशी पाठ्यक्रम",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'समावेशी शिक्षा' में पाठ्यक्रम (Curriculum) कैसा होना चाहिए?",
+          "options": [
+            "बहुत कठिन",
+            "लचीला और विविध आवश्यकताओं के अनुकूल",
+            "केवल सामान्य बच्चों के लिए",
+            "केवल किताबों पर आधारित"
+          ],
+          "answer": "B",
+          "explanation": "समावेशी शिक्षा में सभी की जरूरतों का ध्यान रखना होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 144,
+          "originalId": 144,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Self-esteem",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक का 'आत्म-सम्मान' (Self-esteem) कब बढ़ता है?",
+          "options": [
+            "जब बच्चे उसका डर मानें",
+            "जब बच्चे उसके पढ़ाने से अच्छा परिणाम प्राप्त करें",
+            "जब वेतन बढ़े",
+            "जब स्कूल का नाम हो"
+          ],
+          "answer": "B",
+          "explanation": "छात्रों की सफलता ही शिक्षक का सबसे बड़ा सम्मान है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 145,
+          "originalId": 145,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सतत मूल्यांकन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'सतत मूल्यांकन' का क्या अर्थ है?",
+          "options": [
+            "केवल बोर्ड परीक्षा",
+            "शिक्षण के दौरान लगातार मूल्यांकन",
+            "कभी न होना",
+            "केवल साल में एक बार"
+          ],
+          "answer": "B",
+          "explanation": "सतत (Continuous) मूल्यांकन का अर्थ है शिक्षण के हर चरण पर जांच।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 146,
+          "originalId": 146,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "पाठ्यपुस्तक",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'पाठ्यपुस्तक' का क्या स्थान है?",
+          "options": [
+            "अंतिम सत्य",
+            "ज्ञान का एक साधन (Tool), न कि एकमात्र स्रोत",
+            "बेकार है",
+            "रटने के लिए"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को पाठ्यपुस्तक से आगे बढ़कर उदाहरण देने चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 147,
+          "originalId": 147,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Optimist",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को 'आशावादी' (Optimist) क्यों होना चाहिए?",
+          "options": [
+            "ताकि वह भविष्य के लिए प्रेरित कर सके",
+            "ताकि वह सच न बोले",
+            "केवल खुश रहने के लिए",
+            "कोई नहीं"
+          ],
+          "answer": "A",
+          "explanation": "आशा ही सीखने और विकास का आधार है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 148,
+          "originalId": 148,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "प्रश्न-उत्तर",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'प्रश्न-उत्तर' सत्र का लाभ क्या है?",
+          "options": [
+            "शिक्षक को आराम मिलता है",
+            "छात्र की झिझक खुलती है और तार्किक क्षमता बढ़ती है",
+            "समय कट जाता है",
+            "कुछ नहीं"
+          ],
+          "answer": "B",
+          "explanation": "यह संवादात्मक शिक्षण का हिस्सा है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 149,
+          "originalId": 149,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "अच्छा स्कूल",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक अच्छे स्कूल की पहचान क्या है?",
+          "options": [
+            "अच्छी इमारत",
+            "अच्छा और प्रेरणादायक वातावरण",
+            "महंगी फीस",
+            "बहुत सारे बच्चे"
+          ],
+          "answer": "B",
+          "explanation": "विद्यालय का वातावरण ही सीखने की गुणवत्ता तय करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 150,
+          "originalId": 150,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "उदाहरण",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण के दौरान 'दिए गए उदाहरण' कैसे होने चाहिए?",
+          "options": [
+            "बहुत कठिन",
+            "वास्तविक जीवन से संबंधित",
+            "काल्पनिक",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "वास्तविक जीवन के उदाहरणों से छात्र जल्दी समझते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 151,
+          "originalId": 151,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Professional Commitment",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "व्यावसायिक प्रतिबद्धता (Professional Commitment) का अर्थ क्या है?",
+          "options": [
+            "स्कूल के घंटों में केवल अपना काम करना",
+            "बिना किसी बाहरी दबाव के अपने कार्य और छात्रों के प्रति पूर्ण निष्ठा रखना",
+            "प्रधानाचार्य के डर से काम करना",
+            "केवल वेतन पाने के लिए काम करना"
+          ],
+          "answer": "B",
+          "explanation": "वास्तविक प्रतिबद्धता स्व-प्रेरित होती है और इसका लक्ष्य छात्र-हित होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 152,
+          "originalId": 152,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Leadership",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक को एक अच्छा नेता (Leader) माना जाता है, यदि वह:",
+          "options": [
+            "अपनी टीम पर कड़ा शासन करे",
+            "दूसरों के लिए उदाहरण प्रस्तुत करे और सहयोग को बढ़ावा दे",
+            "काम बांटकर स्वयं खाली बैठा रहे",
+            "केवल अपनी बात मनवाए"
+          ],
+          "answer": "B",
+          "explanation": "नेतृत्व का अर्थ है उदाहरण (Example) के द्वारा मार्गदर्शन करना।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 153,
+          "originalId": 153,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "ज्ञान अद्यतन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): शिक्षक को निरंतर अपने ज्ञान का अद्यतन (Update) करते रहना चाहिए।\nकारण (R): ज्ञान निरंतर बदल रहा है और पुरानी विधियाँ हमेशा प्रभावी नहीं होतीं।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "शिक्षण एक गतिशील प्रक्रिया है, जिसमें अपडेट रहना अनिवार्य है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 154,
+          "originalId": 154,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "संसाधन कमी",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि स्कूल में संसाधनों (Resources) की कमी है, तो एक प्रतिबद्ध शिक्षक क्या करेगा?",
+          "options": [
+            "पढ़ाना बंद कर देगा",
+            "कम संसाधनों में ही सृजनात्मकता के साथ शिक्षण करेगा",
+            "प्रधानाचार्य को इस्तीफा देगा",
+            "छात्रों को घर भेज देगा"
+          ],
+          "answer": "B",
+          "explanation": "एक अच्छा शिक्षक संसाधनों का रोना नहीं रोता, बल्कि उनका वैकल्पिक उपयोग ढूँढता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 155,
+          "originalId": 155,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "विवाद में भूमिका",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विद्यालय में होने वाले किसी विवाद में शिक्षक की भूमिका कैसी होनी चाहिए?",
+          "options": [
+            "तटस्थ और निष्पक्ष",
+            "अपने पसंदीदा छात्र का पक्ष लेने वाली",
+            "विवाद से दूर भागने वाली",
+            "केवल तमाशा देखने वाली"
+          ],
+          "answer": "A",
+          "explanation": "शिक्षक को न्यायपूर्ण और निष्पक्ष होना चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 156,
+          "originalId": 156,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Professional Ethics",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'व्यावसायिक नैतिकता' (Professional Ethics) के अनुसार शिक्षक को क्या नहीं करना चाहिए?",
+          "options": [
+            "छात्रों को सही राह दिखाना",
+            "छात्रों का निजी ट्यूशन पढ़ाना (यदि अनुमति न हो)",
+            "समय पर आना",
+            "सहयोग करना"
+          ],
+          "answer": "B",
+          "explanation": "निजी ट्यूशन व्यावसायिक नैतिकता के विरुद्ध माना जाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 157,
+          "originalId": 157,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "कार्य-संस्कृति",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के रूप में आपकी कार्य-संस्कृति होनी चाहिए:",
+          "options": [
+            "केवल आत्म-केंद्रित",
+            "सहयोगपूर्ण और समावेशी",
+            "प्रतिस्पर्धात्मक (नकारात्मक)",
+            "केवल आज्ञाकारी"
+          ],
+          "answer": "B",
+          "explanation": "स्कूल एक टीम है, यहाँ सहयोग की संस्कृति आवश्यक है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 158,
+          "originalId": 158,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Leadership Skill",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "नेतृत्व कौशल का विकास छात्रों में कैसे किया जा सकता है?",
+          "options": [
+            "उन्हें चुप कराकर",
+            "उन्हें समूह गतिविधियों और प्रोजेक्ट्स का उत्तरदायित्व सौंपकर",
+            "उन्हें केवल किताबी ज्ञान देकर",
+            "उन्हें दंड देकर"
+          ],
+          "answer": "B",
+          "explanation": "जिम्मेदारी देने से ही नेतृत्व क्षमता विकसित होती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 159,
+          "originalId": 159,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Professional Competence",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को 'व्यावसायिक रूप से दक्ष' (Professionally Competent) होने के लिए क्या आवश्यक है?",
+          "options": [
+            "केवल डिग्री प्राप्त करना",
+            "शिक्षण कौशल में सुधार के लिए प्रशिक्षण लेना",
+            "केवल पढ़ना",
+            "कुछ न करना"
+          ],
+          "answer": "B",
+          "explanation": "दक्षता निरंतर सीखने और प्रशिक्षण (Training) से आती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 160,
+          "originalId": 160,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "जिम्मेदारी",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि आपको कोई कठिन जिम्मेदारी दी जाए, तो आपका दृष्टिकोण होगा:",
+          "options": [
+            "उसे स्वीकार करके मेहनत करना",
+            "मना कर देना",
+            "किसी और को सौंप देना",
+            "बहाने बनाना"
+          ],
+          "answer": "A",
+          "explanation": "चुनौती स्वीकार करना विकास का अवसर है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 161,
+          "originalId": 161,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "समावेशी शिक्षा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "समावेशी शिक्षा में शिक्षक को किस सिद्धांत का पालन करना चाहिए?",
+          "options": [
+            "'एक आकार सभी के लिए' (One size fits all)",
+            "'विभिन्नता का सम्मान और अनुकूलन' (Differentiation)",
+            "'प्रतिभाशाली बच्चों पर ध्यान'",
+            "'केवल कमजोर बच्चों को पढ़ाना'"
+          ],
+          "answer": "B",
+          "explanation": "समावेशी शिक्षा विविधताओं को स्वीकार करती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 162,
+          "originalId": 162,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "सामाजिक समानता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): कक्षा में जाति-आधारित भेदभाव का कोई स्थान नहीं है।\nकारण (R): शिक्षा का उद्देश्य सामाजिक समानता लाना है।\nकूट;",
+          "options": [
+            "A और R दोनों सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "शिक्षा सामाजिक भेदभाव को समाप्त करने का सबसे बड़ा अस्त्र है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 163,
+          "originalId": 163,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सामाजिक परिपक्वता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "सामाजिक रूप से परिपक्व छात्र की पहचान क्या है?",
+          "options": [
+            "वह अपनी बात मनवाने के लिए झगड़ता है",
+            "वह दूसरों की भावनाओं का सम्मान करता है",
+            "वह किसी से बात नहीं करता",
+            "वह केवल शिक्षकों से बात करता है"
+          ],
+          "answer": "B",
+          "explanation": "दूसरों के दृष्टिकोण को समझना सामाजिक परिपक्वता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 164,
+          "originalId": 164,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "बहुभाषिता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक छात्र के घर की भाषा स्कूल की भाषा से अलग है, आप क्या करेंगे?",
+          "options": [
+            "उसे अपनी भाषा छोड़ने को कहेंगे",
+            "उसकी भाषा का सम्मान करेंगे और सेतु (Bridge) के रूप में उपयोग करेंगे",
+            "उसका मजाक उड़ाएंगे",
+            "उसे डांटेंगे"
+          ],
+          "answer": "B",
+          "explanation": "बहुभाषिता को संसाधन के रूप में प्रयोग करना समावेशी शिक्षा का अंग है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 165,
+          "originalId": 165,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Accommodations",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विकलांग बच्चों के लिए कक्षा में शिक्षक को क्या करना चाहिए?",
+          "options": [
+            "उन्हें विशेष ध्यान और अवसर देना (Accommodations)",
+            "उनकी उपेक्षा करना",
+            "उन्हें सामान्य बच्चों से दूर रखना",
+            "उन्हें स्कूल न बुलाना"
+          ],
+          "answer": "A",
+          "explanation": "विशेष आवश्यकता वाले बच्चों को सहायक उपकरणों की आवश्यकता होती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 166,
+          "originalId": 166,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सामाजिक परिपक्वता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "सामाजिक परिपक्वता का अर्थ है:",
+          "options": [
+            "समाज के साथ तालमेल बिठाना",
+            "समाज की बुराई करना",
+            "समाज से अलग रहना",
+            "केवल दिखावा करना"
+          ],
+          "answer": "A",
+          "explanation": "समाज में समायोजन ही परिपक्वता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 167,
+          "originalId": 167,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Gender Equality",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'लिंग समानता' (Gender Equality) का सबसे अच्छा उदाहरण क्या है?",
+          "options": [
+            "लड़कों और लड़कियों के काम अलग करना",
+            "लड़कों और लड़कियों को समान खेल और अवसर देना",
+            "केवल लड़कों को लीडर बनाना",
+            "लड़कियों को चुप रहने को कहना"
+          ],
+          "answer": "B",
+          "explanation": "समान अवसर देना ही लिंग समानता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 168,
+          "originalId": 168,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सामुदायिक जागरूकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक को 'सामुदायिक जागरूकता' क्यों होनी चाहिए?",
+          "options": [
+            "ताकि वह राजनीति कर सके",
+            "ताकि वह स्थानीय समस्याओं को शिक्षण का आधार बना सके",
+            "ताकि वह लोगों पर रौब दिखा सके",
+            "इसका कोई महत्व नहीं है"
+          ],
+          "answer": "B",
+          "explanation": "स्थानीय परिवेश से जुड़कर पढ़ाना अधिक प्रभावी होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 169,
+          "originalId": 169,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Peer Tutoring",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "समावेशी कक्षा में 'सहपाठी शिक्षण' (Peer Tutoring) के क्या लाभ हैं?",
+          "options": [
+            "शिक्षक को काम नहीं करना पड़ेगा",
+            "बच्चों में सामाजिक सहयोग और आपसी समझ बढ़ती है",
+            "बच्चे शोर मचाएंगे",
+            "यह समय की बर्बादी है"
+          ],
+          "answer": "B",
+          "explanation": "पीयर ट्यूटरिंग से बच्चों का आत्मविश्वास और सामाजिक जुड़ाव बढ़ता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 170,
+          "originalId": 170,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "स्वाभिमान",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कक्षा में कोई बच्चा गरीब है, तो आप क्या करेंगे?",
+          "options": [
+            "उसे सबके सामने टोकेंगे",
+            "उसे किसी अन्य की सहायता से चुपचाप मदद करेंगे",
+            "उसे स्कूल से निकाल देंगे",
+            "उसे कम अंक देंगे"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को बच्चे के स्वाभिमान की रक्षा करनी चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 171,
+          "originalId": 171,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "NEP 2020 मूल्यांकन",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 में 'मूल्यांकन' का नया तरीका क्या है?",
+          "options": [
+            "केवल वार्षिक परीक्षा",
+            "360-डिग्री होलिस्टिक प्रोग्रेस कार्ड",
+            "केवल रटना",
+            "कोई मूल्यांकन नहीं"
+          ],
+          "answer": "B",
+          "explanation": "360-डिग्री रिपोर्ट कार्ड में बच्चे का समग्र विकास (शैक्षिक, सह-शैक्षिक, व्यवहार) देखा जाता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 172,
+          "originalId": 172,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "स्किल-आधारित शिक्षा",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'स्किल-आधारित शिक्षा' का क्या उद्देश्य है?",
+          "options": [
+            "छात्र को डिग्री दिलाना",
+            "छात्र को आत्मनिर्भर बनाना",
+            "छात्र को केवल पढ़ाना",
+            "छात्र को स्कूल में रोकना"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षा का लक्ष्य जीवनोपयोगी कौशल सिखाना है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 173,
+          "originalId": 173,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "CUET",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 के अनुसार, उच्च शिक्षा में प्रवेश के लिए कौन सी परीक्षा प्रस्तावित है?",
+          "options": [
+            "NEET",
+            "CUET",
+            "IIT",
+            "SSC"
+          ],
+          "answer": "B",
+          "explanation": "CUET (Central University Entrance Test) का प्रस्ताव है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 174,
+          "originalId": 174,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Art Integrated Learning",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'आर्ट इंटीग्रेटेड लर्निंग' (Art Integrated Learning) का अर्थ है:",
+          "options": [
+            "चित्र बनाना",
+            "कला के माध्यम से अन्य विषयों को पढ़ाना",
+            "केवल नाच-गाना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "यह शिक्षण को रोचक बनाने का एक साधन है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 175,
+          "originalId": 175,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Learning Environment",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक के लिए 'सीखने का वातावरण' (Learning Environment) कैसा होना चाहिए?",
+          "options": [
+            "भयमुक्त",
+            "डरावना",
+            "सख्त",
+            "बहुत औपचारिक"
+          ],
+          "answer": "A",
+          "explanation": "भयमुक्त वातावरण में ही मस्तिष्क रचनात्मक कार्य कर सकता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 176,
+          "originalId": 176,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Fact-based",
+          "difficulty": "moderate",
+          "topic": "NEP 2020",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "NEP 2020 किस पर जोर देती है?",
+          "options": [
+            "रट्टाफिकेशन",
+            "वैचारिक समझ (Conceptual Understanding)",
+            "केवल सिलेबस",
+            "अंकों की दौड़"
+          ],
+          "answer": "B",
+          "explanation": "NEP रटने की आदत को जड़ से खत्म करना चाहती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 177,
+          "originalId": 177,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Vocational Education",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'व्यावसायिक शिक्षा' (Vocational Education) को कक्षा 6 से जोड़ने का लाभ क्या है?",
+          "options": [
+            "बच्चे पढ़ना छोड़ देंगे",
+            "बच्चे कौशल सीखेंगे और आत्मनिर्भर बनेंगे",
+            "स्कूल की फीस बढ़ेगी",
+            "बच्चे काम करेंगे"
+          ],
+          "answer": "B",
+          "explanation": "यह शिक्षा को दुनिया के काम के साथ जोड़ने का तरीका है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 178,
+          "originalId": 178,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Digital India",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'डिजिटल इंडिया' का शिक्षण में उपयोग क्या है?",
+          "options": [
+            "छात्रों को इंटरनेट का आदी बनाना",
+            "ऑनलाइन संसाधनों से अधिगम को सुलभ बनाना",
+            "किताबें जलाना",
+            "समय काटना"
+          ],
+          "answer": "B",
+          "explanation": "डिजिटल माध्यम सीखने के दायरे को व्यापक बनाते हैं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 179,
+          "originalId": 179,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Critical Thinking",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'क्रिटिकल थिंकिंग' (Critical Thinking) का क्या अर्थ है?",
+          "options": [
+            "किसी भी बात को आँख मूंदकर मान लेना",
+            "तथ्यों का विश्लेषण कर तर्कपूर्ण निर्णय लेना",
+            "रटना",
+            "चुप रहना"
+          ],
+          "answer": "B",
+          "explanation": "प्रश्न करना और विश्लेषण करना ही आधुनिक शिक्षा का आधार है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 180,
+          "originalId": 180,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Self-assessment",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक को 'स्वयं का मूल्यांकन' (Self-assessment) क्यों करना चाहिए?",
+          "options": [
+            "दूसरों को दोष देने के लिए",
+            "अपनी शिक्षण त्रुटियों को सुधारने के लिए",
+            "केवल समय काटने के लिए",
+            "वेतन बढ़ाने के लिए"
+          ],
+          "answer": "B",
+          "explanation": "आत्म-सुधार एक अच्छे शिक्षक की अनिवार्य शर्त है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 181,
+          "originalId": 181,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Silence",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में 'मौन' (Silence) का क्या महत्व है?",
+          "options": [
+            "बच्चों को डराना",
+            "सोचने और चिंतन करने का अवसर देना",
+            "अनुशासन दिखाना",
+            "शिक्षक को आराम देना"
+          ],
+          "answer": "B",
+          "explanation": "कभी-कभी मौन, शब्दों से अधिक प्रभाव डालता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 182,
+          "originalId": 182,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Feedback",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "संचार में 'फीडबैक' (Feedback) क्या है?",
+          "options": [
+            "वक्ता का संदेश",
+            "श्रोता की प्रतिक्रिया",
+            "शोर",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "फीडबैक ही बताता है कि संचार सफल हुआ या नहीं।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 183,
+          "originalId": 183,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "छात्र संवाद",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक को छात्रों के साथ कैसे बात करनी चाहिए?",
+          "options": [
+            "अहंकार के साथ",
+            "सम्मान और स्पष्टता के साथ",
+            "केवल आदेश देकर",
+            "कभी नहीं"
+          ],
+          "answer": "B",
+          "explanation": "सम्मान ही अच्छे संबंधों की नींव है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 184,
+          "originalId": 184,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Methodology",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि छात्र आपकी बात नहीं समझ रहे, तो क्या करेंगे?",
+          "options": [
+            "उन्हें डांटेंगे",
+            "अपना तरीका (Methodology) बदलेंगे",
+            "पढ़ाना बंद करेंगे",
+            "उसे छोड़ देंगे"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक को अपनी शैली छात्र की समझ के अनुसार बदलनी चाहिए।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 185,
+          "originalId": 185,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "सूचना बोर्ड",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विद्यालय में 'सूचना बोर्ड' का क्या महत्व है?",
+          "options": [
+            "यह केवल सजावट है",
+            "यह प्रभावी संचार का माध्यम है",
+            "यह कागज की बर्बादी है",
+            "इसका कोई उपयोग नहीं है"
+          ],
+          "answer": "B",
+          "explanation": "यह सूचनाओं के प्रसार का साधन है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 186,
+          "originalId": 186,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Body Language",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा में शिक्षक का 'हाव-भाव' (Body Language) कैसा होना चाहिए?",
+          "options": [
+            "बहुत सख्त",
+            "उत्साहजनक और खुले (Open)",
+            "डरा हुआ",
+            "उदासीन"
+          ],
+          "answer": "B",
+          "explanation": "उत्साह छात्रों को जुड़ने के लिए प्रेरित करता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 187,
+          "originalId": 187,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "अंतःवैयक्तिक संबंध",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'अंतःवैयक्तिक संबंध' सुधारने का सबसे अच्छा तरीका?",
+          "options": [
+            "अपनी बात मनवाना",
+            "दूसरों को सुनना और समझना",
+            "बहस करना",
+            "दूरी रखना"
+          ],
+          "answer": "B",
+          "explanation": "सहानुभूतिपूर्ण श्रवण ही संबंध सुधारता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 188,
+          "originalId": 188,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "सहानुभूति",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि कोई छात्र परेशान है, तो शिक्षक की क्या प्रतिक्रिया होनी चाहिए?",
+          "options": [
+            "\"क्या हुआ, बताओ?\" (सहानुभूतिपूर्ण)",
+            "\"तुम परेशान क्यों हो?\" (डांटना)",
+            "अनदेखा करना",
+            "कहना कि रोओ मत"
+          ],
+          "answer": "A",
+          "explanation": "परेशानी का कारण पूछना उसे सुरक्षित महसूस कराता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 189,
+          "originalId": 189,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Informal Communication",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "विद्यालय में संचार का 'अनौपचारिक' (Informal) माध्यम क्या है?",
+          "options": [
+            "नोटिस बोर्ड",
+            "शिक्षकों का आपस में लंच टेबल पर चर्चा करना",
+            "मीटिंग",
+            "परीक्षा"
+          ],
+          "answer": "B",
+          "explanation": "अनौपचारिक बातचीत आपसी तालमेल बढ़ाती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 190,
+          "originalId": 190,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Effective Listening",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "छात्रों को 'प्रभावी ढंग से सुनने' के लिए कैसे प्रेरित करें?",
+          "options": [
+            "चुप रहने का आदेश देकर",
+            "रोचक कहानियाँ सुनाकर और प्रश्न पूछकर",
+            "सजा देकर",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "रोचकता ही सुनने के लिए प्रेरित करती है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 191,
+          "originalId": 191,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "जागरूकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "'जागरूकता' का अर्थ क्या है?",
+          "options": [
+            "केवल पढ़ा-लिखा होना",
+            "अपने अधिकारों और कर्तव्यों के प्रति सचेत होना",
+            "भीड़ के साथ चलना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "जागरूक नागरिक अपने समाज के प्रति जिम्मेदार होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 192,
+          "originalId": 192,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "पर्यावरण जागरूकता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "स्कूल में 'पर्यावरण जागरूकता' कैसे बढ़ाएं?",
+          "options": [
+            "केवल पढ़ाकर",
+            "पेड़ लगाकर और कचरा प्रबंधन सिखाकर (Action)",
+            "सजा देकर",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "पर्यावरणीय मूल्यों को आचरण में लाना जरूरी है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 193,
+          "originalId": 193,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "समाज निर्माता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कथन (A): शिक्षक समाज का निर्माता है।\nकारण (R): शिक्षक भावी पीढ़ी को संस्कार और ज्ञान देता है।\nकूट;",
+          "options": [
+            "A और R सही, R सही व्याख्या है",
+            "A सही, R गलत",
+            "A गलत, R सही",
+            "दोनों गलत"
+          ],
+          "answer": "A",
+          "explanation": "भावी पीढ़ी ही समाज की नींव है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 194,
+          "originalId": 194,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Teaching Time",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "एक शिक्षक के लिए सबसे महत्वपूर्ण 'समय' क्या है?",
+          "options": [
+            "छुट्टी का समय",
+            "पढ़ाते समय (Teaching Time)",
+            "मीटिंग का समय",
+            "लंच का समय"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षक का प्राथमिक उत्तरदायित्व शिक्षण है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 195,
+          "originalId": 195,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "Logical Consequences",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "बच्चों को 'गलत काम' करने पर आप कैसे रोकेंगे?",
+          "options": [
+            "मारेंगे",
+            "उसे गलत काम का परिणाम समझाएंगे",
+            "सबके सामने नीचा दिखाएंगे",
+            "स्कूल से निकाल देंगे"
+          ],
+          "answer": "B",
+          "explanation": "तर्कसंगत परिणामों (Logical Consequences) से बच्चा सीखता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 196,
+          "originalId": 196,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Student-centered Classroom",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "कक्षा का वातावरण कैसा होना चाहिए?",
+          "options": [
+            "शिक्षक प्रधान",
+            "छात्र प्रधान (Student-centered)",
+            "अनुशासन प्रधान",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "छात्र प्रधान वातावरण में विकास तीव्र होता है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 197,
+          "originalId": 197,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Curiosity",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "बच्चों के 'कौतूहल' (Curiosity) का क्या करना चाहिए?",
+          "options": [
+            "उसे दबा देना चाहिए",
+            "उसे शांत करना चाहिए",
+            "उसे पोषण देकर और बढ़ाना चाहिए",
+            "उसे अनदेखा करना चाहिए"
+          ],
+          "answer": "C",
+          "explanation": "कौतूहल ही वैज्ञानिक और रचनात्मक सोच का जनक है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 198,
+          "originalId": 198,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "Service",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षण एक 'सेवा' (Service) है, इसका क्या मतलब है?",
+          "options": [
+            "पैसा नहीं लेना चाहिए",
+            "इसका उद्देश्य लाभ कमाना नहीं, बल्कि राष्ट्र निर्माण है",
+            "केवल मुफ्त पढ़ाना",
+            "कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "शिक्षण एक पवित्र व्यवसाय है जिसका उद्देश्य परोपकार और निर्माण है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 199,
+          "originalId": 199,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Situation-based",
+          "difficulty": "moderate",
+          "topic": "नकल",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "यदि छात्र परीक्षा में नकल करे, तो क्या करेंगे?",
+          "options": [
+            "उसे स्कूल से निकाल देंगे",
+            "उसे पकड़कर कारण समझेंगे और भविष्य में ऐसा न करने की चेतावनी देंगे",
+            "उसे मारेंगे",
+            "उसे नकल करने देंगे"
+          ],
+          "answer": "B",
+          "explanation": "सुधारात्मक कदम उठाना शिक्षक का कर्तव्य है।",
+          "reference": "PTET Section B"
+        },
+        {
+          "id": 200,
+          "originalId": 200,
+          "section": "Section B Teaching Attitude & Aptitude Test (शिक्षण अभिक्षमता)",
+          "questionType": "Conceptual",
+          "difficulty": "moderate",
+          "topic": "छात्र सफलता",
+          "sourceTag": "PTET Teaching Aptitude Practice Set",
+          "question": "शिक्षक का सबसे बड़ा 'पुरस्कार' क्या है?",
+          "options": [
+            "पदोन्नति",
+            "वेतन वृद्धि",
+            "छात्र की सफलता और विकास",
+            "लंबी छुट्टी"
+          ],
+          "answer": "C",
+          "explanation": "छात्र की सफलता ही शिक्षक के परिश्रम की असली उपलब्धि है।",
           "reference": "PTET Section B"
         }
       ]
