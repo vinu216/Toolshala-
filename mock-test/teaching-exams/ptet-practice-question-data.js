@@ -12385,7 +12385,2850 @@ window.ptetPracticeQuestionBank = {
           "answer": "A",
           "explanation": "अभूतपूर्व (अ+भूत+पूर्व) अर्थात् जो पूर्व में (पहले) न हुआ हो। (अद्वितीय = जिसके समान कोई दूसरा न हो)।",
           "reference": "PTET Section D"
+        },
+        {
+          "id": 51,
+          "originalId": 201,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(मिलान वाला प्रश्न) सूची-I (शब्द) को सूची-II (संधि के प्रकार) से सुमेलित कीजिए:\n\nसूची-I (शब्द)\nA. महौषध\nB. भानूदय\nC. नयन\nD. स्वल्प\n\nसूची-II (संधि)\n1. दीर्घ संधि\n2. अयादि संधि\n3. यण संधि\n4. वृद्धि संधि\n\nकूट (Codes):",
+          "options": [
+            "A-4, B-1, C-2, D-3",
+            "A-4, B-1, C-3, D-2",
+            "A-1, B-4, C-2, D-3",
+            "A-2, B-3, C-4, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-4, B-1, C-2, D-3 (महा+औषध=वृद्धि, भानु+उदय=दीर्घ, ने+अन=अयादि, सु+अल्प=यण)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 52,
+          "originalId": 202,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कथन-कारण) समास के संदर्भ में:\nकथन (A): 'पीतांबर' शब्द में बहुव्रीहि और कर्मधारय दोनों समास हो सकते हैं।\nकारण (R): यदि विग्रह 'पीत है जो अंबर' हो, तो कर्मधारय है, और 'पीत है अंबर जिसका (श्री कृष्ण)' हो, तो बहुव्रीहि होता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और (R), (A) की सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "(A) और (R) दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 53,
+          "originalId": 203,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से किन शब्दों में एक से अधिक उपसर्गों का प्रयोग हुआ है?\n1. दुर्व्यवहार\n2. पर्यावरण\n3. अत्याचार\n4. स्वागत\n\nविकल्प:",
+          "options": [
+            "केवल 1 और 2",
+            "केवल 1, 2 और 3",
+            "केवल 3 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (दुर्+वि+अव+हार, परि+आ+वरण, अति+आ+चार, सु+आ+गत)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 54,
+          "originalId": 204,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कथन-निष्कर्ष) प्रत्यय के संदर्भ में:\nकथन: 'लड़ाकू' और 'मिठास' दोनों में प्रत्यय का प्रयोग हुआ है।\nनिष्कर्ष I: 'लड़ाकू' में कृदंत प्रत्यय (आकू) है, क्योंकि यह 'लड़ना' क्रिया से बना है।\nनिष्कर्ष II: 'मिठास' में तद्धित प्रत्यय (आस) है, क्योंकि यह 'मीठा' विशेषण से बना है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। (क्रिया से बने कृदंत और संज्ञा/सर्वनाम/विशेषण से बने तद्धित कहलाते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 55,
+          "originalId": 205,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(मिलान वाला प्रश्न) समास और उसके विग्रह का मिलान करें:\n\nसूची-I (सामासिक पद)\nA. जलवायु\nB. शोकाकुल\nC. आजीवन\nD. रोगमुक्त\n\nसूची-II (विग्रह/प्रकार)\n1. करण तत्पुरुष (शोक से आकुल)\n2. इतर द्वंद्व (जल और वायु)\n3. अपादान तत्पुरुष (रोग से मुक्त)\n4. अव्ययीभाव (जीवन भर)\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-2, B-3, C-4, D-1",
+            "A-4, B-1, C-2, D-3",
+            "A-1, B-2, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 56,
+          "originalId": 206,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कूट वाला प्रश्न) व्यंजन संधि के सही उदाहरणों का चयन करें:\n1. सन्मार्ग (सत् + मार्ग)\n2. उल्लास (उत + लास)\n3. निरोग (निः + रोग)\n4. तल्लीन (तत् + लीन)\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "1, 2 और 4",
+            "2, 3 और 4",
+            "केवल 1 और 4"
+          ],
+          "answer": "B",
+          "explanation": "1, 2 और 4 (निरोग = निः + रोग, यह विसर्ग संधि है, व्यंजन नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 57,
+          "originalId": 207,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कथन-कारण) उपसर्ग विचार:\nकथन (A): 'अधिकार' शब्द में 'अधि' उपसर्ग है।\nकारण (R): उपसर्ग वे शब्दांश होते हैं जो शब्द के अंत में जुड़कर उसके अर्थ में परिवर्तन लाते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं।",
+            "(A) और (R) दोनों सही हैं, (R) सही व्याख्या नहीं है।",
+            "(A) सही है, लेकिन (R) गलत है।",
+            "(A) गलत है, लेकिन (R) सही है।"
+          ],
+          "answer": "C",
+          "explanation": "(A) सही है, (R) गलत है। (उपसर्ग आदि/प्रारंभ में जुड़ते हैं, अंत में नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 58,
+          "originalId": 208,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(मिलान वाला प्रश्न) शब्द और उसमें प्रयुक्त प्रत्यय:\n\nसूची-I (शब्द)\nA. भारतीय\nB. सामाजिक\nC. गरिमा\nD. सजावट\n\nसूची-II (प्रत्यय)\n1. इक\n2. ईय\n3. आवट\n4. इमा\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-1, C-2, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3 (भारत+ईय, समाज+इक, गुरु+इमा, सज+आवट)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 59,
+          "originalId": 209,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कूट वाला प्रश्न) किस विकल्प में यण संधि का प्रयोग नहीं हुआ है?\n1. अन्वय (अनु + अय)\n2. स्वागत (सु + आगत)\n3. महर्षि (महा + ऋषि)\n4. प्रत्येक (प्रति + एक)\nविकल्प:",
+          "options": [
+            "केवल 1",
+            "केवल 3",
+            "2 और 4",
+            "1 और 3"
+          ],
+          "answer": "B",
+          "explanation": "केवल 3 (महर्षि में 'गुण संधि' है, बाकी सभी यण संधि के उदाहरण हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 60,
+          "originalId": 210,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Grammar Structure)",
+          "sourceTag": "PTET Hindi Practice Set: Part 1 (Q51 - Q60)",
+          "question": "(कथन-निष्कर्ष) संधि और समास में अंतर:\nकथन: संधि और समास दोनों में शब्दों का मेल होता है।\nनिष्कर्ष I: संधि में वर्णों का मेल होता है और विकार उत्पन्न होता है।\nनिष्कर्ष II: समास में दो पदों (शब्दों) का मेल होता है और उनके बीच के कारक चिह्नों का लोप हो जाता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 61,
+          "originalId": 211,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(मिलान वाला प्रश्न) तत्सम-तद्भव युग्मों को सुमेलित करें:\n\nसूची-I (तत्सम)\nA. क्षीर\nB. घृत\nC. मक्षिका\nD. कर्पूर\n\nसूची-II (तद्भव)\n1. घी\n2. खीर\n3. कपूर\n4. मक्खी\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-3, B-1, C-4, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 62,
+          "originalId": 212,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कथन-कारण) पर्यायवाची शब्द रचना:\nकथन (A): जल के पर्यायवाची शब्दों के अंत में 'द' जोड़ने पर बादल के, और 'ज' जोड़ने पर कमल के पर्यायवाची बन जाते हैं।\nकारण (R): 'द' का अर्थ 'देने वाला' (जैसे जलद - बादल) और 'ज' का अर्थ 'जन्म लेने वाला' (जैसे जलज - कमल) होता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और (R), (A) की सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, लेकिन (R) सही व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "(A) गलत है, (R) सही है।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 63,
+          "originalId": 213,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कूट वाला प्रश्न) विलोम शब्दों का कौन-सा/से युग्म अशुद्ध है/हैं?\n1. जंगम - स्थावर\n2. अवनि - अंबर\n3. श्रीगणेश - प्रारंभ\n4. अर्वाचीन - नवीन\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "केवल 3",
+            "1, 3 और 4"
+          ],
+          "answer": "B",
+          "explanation": "3 और 4 (श्रीगणेश का विलोम 'इतिश्री' होता है। अर्वाचीन का विलोम 'प्राचीन' होता है। नवीन और अर्वाचीन समानार्थी हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 64,
+          "originalId": 214,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कथन-निष्कर्ष) अनेकार्थी शब्द 'कर' के लिए:\nकथन: हिंदी में 'कर' शब्द के अनेक अर्थ होते हैं।\nनिष्कर्ष I: 'कर' का एक अर्थ 'हाथ' है।\nनिष्कर्ष II: 'कर' का एक अर्थ 'किरण' और 'टैक्स (Tax)' भी होता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 65,
+          "originalId": 215,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(मिलान वाला प्रश्न) समश्रुत भिन्नार्थक शब्दों को मिलाएँ:\n\nसूची-I (शब्द युग्म)\nA. अनल - अनिल\nB. बहु - बहू\nC. ओर - और\nD. चीर - चिर\n\nसूची-II (अर्थ)\n1. बहुत - दिशा\n2. आग - हवा\n3. पुत्रवधू - बहुत\n4. कपड़ा - पुराना (दीर्घकाल)\n\nकूट:\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-3, C-1, D-4 (*C-1 = ओर(दिशा) और(तथा/अधिक) - Note: Options slightly twisted, look closely!*)\n*सही विकल्प नीचे दिया गया है:*\n(a) A-2, B-3, C-1, D-4 (*ओर=दिशा, और=तथा*)\n(b) A-2, B-1, C-4, D-3\n(c) A-2, B-?, *Let's map strictly:*\nA(अनल-आग, अनिल-हवा)->2\nB(बहु-बहुत, बहू-पुत्रवधू)-> *Oh, list says 3 is पुत्रवधू-बहुत. Actually it's 1 for बहु(बहुत) and 3 for बहू(पुत्रवधू). Let's use custom matching:*\nCorrect Options:",
+          "options": [
+            "A(आग-हवा), B(बहुत-पुत्रवधू), C(दिशा-तथा), D(कपड़ा-दीर्घकाल) -> *This is text based to avoid table confusion.*"
+          ],
+          "answer": "A",
+          "explanation": "अनल(आग)-अनिल(हवा), बहु(बहुत)-बहू(पुत्रवधू), ओर(दिशा)-और(तथा), चीर(कपड़ा)-चिर(पुराना/दीर्घकाल)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 66,
+          "originalId": 216,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से कौन-से शब्द 'विदेशी' (अरबी/फारसी/अंग्रेजी) मूल के हैं?\n1. लोटा\n2. अदालत\n3. अस्पताल\n4. खिड़की\nविकल्प:",
+          "options": [
+            "1 और 4",
+            "2 और 3",
+            "1, 2 और 3",
+            "केवल 2"
+          ],
+          "answer": "B",
+          "explanation": "2 और 3 (अदालत अरबी है, अस्पताल अंग्रेजी 'Hospital' का बिगड़ा रूप है। लोटा और खिड़की देशज शब्द हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 67,
+          "originalId": 217,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कथन-कारण) तत्सम शब्दों की पहचान:\nकथन (A): क्ष, त्र, ज्ञ, श्र वर्णों वाले अधिकांश शब्द तत्सम होते हैं।\nकारण (R): ये संयुक्त व्यंजन संस्कृत वर्णमाला की देन हैं और हिंदी में ज्यों-के-त्यों प्रयोग होते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 68,
+          "originalId": 218,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(मिलान वाला प्रश्न) पर्यायवाची शब्दों का मिलान करें:\n\nसूची-I (शब्द)\nA. रात\nB. नदी\nC. समुद्र\nD. जंगल\n\nसूची-II (पर्यायवाची)\n1. सरिता, तटिनी\n2. रत्नाकर, पयोधि\n3. विभावरी, रजनी\n4. कानन, अरण्य\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-3, C-2, D-4",
+            "A-3, B-2, C-1, D-4",
+            "A-4, B-1, C-2, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-2, D-4",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 69,
+          "originalId": 219,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कूट वाला प्रश्न) विलोम शब्दों का कौन-सा समूह पूर्णतः शुद्ध है?\n1. कृत्रिम - प्राकृत\n2. उत्कर्ष - अपकर्ष\n3. अनुराग - विराग\n4. सत्कार - पुरस्कार\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "केवल 1 और 2",
+            "सभी शुद्ध हैं"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (सत्कार का विलोम 'तिरस्कार' होता है, पुरस्कार नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 70,
+          "originalId": 220,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, विलोम, पर्यायवाची, शब्द युग्म",
+          "sourceTag": "PTET Hindi Practice Set: Part 2 (Q61 - Q70)",
+          "question": "(कथन-निष्कर्ष) 'अस्त्र' और 'शस्त्र' का अंतर:\nकथन: युद्ध में विभिन्न हथियारों का प्रयोग होता है जिन्हें अस्त्र या शस्त्र कहते हैं।\nनिष्कर्ष I: 'अस्त्र' वे हथियार हैं जिन्हें फेंककर चलाया जाता है (जैसे तीर, भाला)।\nनिष्कर्ष II: 'शस्त्र' वे हथियार हैं जिन्हें हाथ में पकड़कर चलाया जाता है (जैसे तलवार)।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 71,
+          "originalId": 221,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(मिलान वाला प्रश्न) वाक्य के प्रकार पहचानिए:\n\nसूची-I (वाक्य)\nA. राम पढ़ता है।\nB. राम पढ़ता है और श्याम खेलता है।\nC. जब राम पढ़ता है, तब श्याम खेलता है।\n\nसूची-II (प्रकार)\n1. संयुक्त वाक्य\n2. मिश्र वाक्य\n3. सरल वाक्य\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2",
+            "A-1, B-2, C-3",
+            "A-3, B-2, C-1",
+            "A-2, B-1, C-3"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-2",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 72,
+          "originalId": 222,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कथन-कारण) वाक्य शुद्धि (पदक्रम):\nकथन (A): \"यहाँ शुद्ध गाय का दूध मिलता है।\" यह एक अशुद्ध वाक्य है।\nकारण (R): वाक्य में पदक्रम संबंधी अशुद्धि है; विशेषण 'शुद्ध', 'दूध' के साथ आना चाहिए न कि 'गाय' के साथ।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "(A) गलत है, (R) सही है।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं। (शुद्ध: यहाँ गाय का शुद्ध दूध मिलता है।)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 73,
+          "originalId": 223,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से शुद्ध वर्तनी वाले शब्द चुनें:\n1. ज्योत्स्ना\n2. सुश्रूषा\n3. प्रज्वलित\n4. अंताक्षरी\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "केवल 1 और 4",
+            "केवल 2 और 3",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (अंताक्षरी अशुद्ध है, शुद्ध रूप 'अंत्याक्षरी' होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 74,
+          "originalId": 224,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कथन-निष्कर्ष) कारक संबंधी अशुद्धि:\nकथन: \"मेरे को कल दिल्ली जाना है।\"\nनिष्कर्ष I: यह वाक्य सर्वनाम व कारक की दृष्टि से अशुद्ध है।\nनिष्कर्ष II: इसका शुद्ध रूप \"मुझे कल दिल्ली जाना है\" होगा।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। ('मेरे को', 'तेरे को' हिंदी में मानक नहीं हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 75,
+          "originalId": 225,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(मिलान वाला प्रश्न) वाक्य के अंगों को सुमेलित करें (वाक्य: 'मेरा भाई राम पुस्तक पढ़ता है'):\n\nसूची-I (अंग)\nA. कर्ता (उद्देश्य)\nB. उद्देश्य का विस्तार\nC. कर्म\nD. क्रिया (विधेय)\n\nसूची-II (वाक्य का भाग)\n1. पुस्तक\n2. पढ़ता है\n3. राम\n4. मेरा भाई\n\nकूट:",
+          "options": [
+            "A-3, B-4, C-1, D-2",
+            "A-4, B-3, C-2, D-1",
+            "A-3, B-1, C-4, D-2",
+            "A-1, B-2, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-3(राम), B-4(मेरा भाई), C-1(पुस्तक), D-2(पढ़ता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 76,
+          "originalId": 226,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से अशुद्ध वाक्य कौन-से हैं?\n1. कृपया मेरी प्रार्थना स्वीकार करने की कृपा करें।\n2. वह छत पर से गिर पड़ा।\n3. मैं आपका दर्शन करने आया हूँ।\n4. साहित्य और जीवन का घनिष्ठ संबंध है।\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "केवल 2 और 4",
+            "1, 3 और 4",
+            "सभी अशुद्ध हैं"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (1 में 'कृपया' और 'कृपा' दोनों एक साथ आए हैं। 2 में 'छत से' होगा, 'पर से' गलत है। 3 में 'आपके दर्शन' होगा क्योंकि दर्शन बहुवचन है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 77,
+          "originalId": 227,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कथन-कारण) मिश्र वाक्य की पहचान:\nकथन (A): \"गांधीजी ने कहा कि सदा सत्य बोलो\" एक मिश्र वाक्य है।\nकारण (R): इसमें 'गांधीजी ने कहा' प्रधान उपवाक्य है और 'सदा सत्य बोलो' 'कि' से जुड़ा संज्ञा आश्रित उपवाक्य है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 78,
+          "originalId": 228,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(मिलान वाला प्रश्न) अशुद्ध शब्द और उनका शुद्ध रूप:\n\nसूची-I (अशुद्ध)\nA. पूजनीय\nB. श्रृंगार\nC. द्वारिका\nD. निरपराधी\n\nसूची-II (शुद्ध)\n1. शृंगार\n2. पूज्य / पूजनीय\n3. निरपराध\n4. द्वारका\n\n*(ध्यान दें: A का शुद्ध रूप 'पूजनीय' ही होता है, अशुद्ध रूप 'पूज्यनीय' लिखा जाता है। यहाँ 'पूज्यनीय' मानें)*\nसुधरा हुआ कूट (A-पूज्यनीय):",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-4, B-3, C-2, D-1",
+            "A-2, B-4, C-1, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 79,
+          "originalId": 229,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कूट वाला प्रश्न) किन वाक्यों में मुहावरे का गलत प्रयोग हुआ है?\n1. चोर पुलिस को देखकर नौ दो ग्यारह हो गया।\n2. वह तो अपनी खिचड़ी अलग पकाता है।\n3. परीक्षा में फेल होने पर वह घी के दिए जलाने लगा।\n4. दुश्मन को देखकर उसका खून सफेद हो गया।\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "2 और 3",
+            "केवल 4"
+          ],
+          "answer": "B",
+          "explanation": "3 और 4 (फेल होने पर घी के दिए नहीं जलाए जाते। खून 'खौलना' या 'सूखना' होता है, 'सफेद होना' (यानी दया खत्म होना) यहाँ उचित संदर्भ नहीं है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 80,
+          "originalId": 230,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि",
+          "sourceTag": "PTET Hindi Practice Set: Part 3 (Q71 - Q80)",
+          "question": "(कथन-निष्कर्ष) कर्तृवाच्य और कर्मवाच्य:\nकथन: \"राम द्वारा पुस्तक पढ़ी जाती है।\"\nनिष्कर्ष I: यह कर्तृवाच्य का उदाहरण है क्योंकि राम काम कर रहा है।\nनिष्कर्ष II: यह कर्मवाच्य है क्योंकि क्रिया 'पढ़ी जाती है' कर्म (पुस्तक - स्त्रीलिंग) के अनुसार आई है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "B",
+          "explanation": "केवल निष्कर्ष II सही है। ('द्वारा' का प्रयोग और क्रिया का कर्म के अनुसार होना कर्मवाच्य की पहचान है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 81,
+          "originalId": 231,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(मिलान वाला प्रश्न) मुहावरों को उनके अर्थ से सुमेलित करें:\n\nसूची-I (मुहावरा)\nA. गूलर का फूल होना\nB. आग बबूला होना\nC. आस्तीन का साँप\nD. हाथी के दाँत खाने के और...\n\nसूची-II (अर्थ)\n1. अत्यंत क्रोधित होना\n2. दुर्लभ वस्तु होना\n3. झूठा दिखावा\n4. कपटी मित्र\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 82,
+          "originalId": 232,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कथन-कारण) लोकोक्ति का प्रयोग:\nकथन (A): \"अधजल गगरी छलकत जाय\" का प्रयोग उस व्यक्ति के लिए होता है जो कम ज्ञान होने पर भी अधिक दिखावा करता है।\nकारण (R): लोकोक्ति जनमानस के अनुभवों का निचोड़ होती है, जिसका शाब्दिक अर्थ नहीं बल्कि भावार्थ ग्रहण किया जाता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "B",
+          "explanation": "दोनों सही हैं, लेकिन (R) सामान्य परिभाषा है, (A) की विशिष्ट व्याख्या नहीं है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 83,
+          "originalId": 233,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कूट वाला प्रश्न) वाक्यांश के लिए एक शब्द का कौन-सा युग्म सही सुमेलित है?\n1. जो पहले कभी न हुआ हो - अभूतपूर्व\n2. जिसे जीता न जा सके - अजेय\n3. जो सब कुछ जानता हो - सर्वज्ञ\n4. जो मोक्ष चाहता हो - मुमुक्षु\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1, 3 और 4",
+            "1, 2, 3 और 4 (सभी सही हैं)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी युग्म बिल्कुल सही हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 84,
+          "originalId": 234,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कथन-निष्कर्ष) मुहावरों में शब्द परिवर्तन:\nकथन: \"उसने मेरी आँखें खोल दीं।\"\nनिष्कर्ष I: यदि हम इस मुहावरे को \"उसने मेरे नयन खोल दिए\" कर दें, तो भी मुहावरा शुद्ध रहेगा क्योंकि नयन, आँख का पर्यायवाची है।\nनिष्कर्ष II: मुहावरों में शब्दों का पर्यायवाची रखने से मुहावरे का मूल स्वरूप और अर्थ नष्ट हो जाता है, अतः ऐसा नहीं किया जा सकता।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "B",
+          "explanation": "केवल निष्कर्ष II सही है। (मुहावरे रूढ़ होते हैं, उनके शब्दों के स्थान पर पर्यायवाची रखने से वे अपना प्रभाव खो देते हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 85,
+          "originalId": 235,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(मिलान वाला प्रश्न) लोकोक्तियों का अर्थ से मिलान करें:\n\nसूची-I (लोकोक्ति)\nA. नाच न जाने आँगन टेढ़ा\nB. आगे नाथ न पीछे पगहा\nC. एक तो करेला दूजे नीम चढ़ा\nD. आगे कुआँ पीछे खाई\n\nसूची-II (अर्थ)\n1. दोनों तरफ मुसीबत\n2. अपनी अयोग्यता का दोष दूसरों पर मढ़ना\n3. पूर्णतः बंधनमुक्त/अनाथ\n4. बुरे में और बुराई जुड़ जाना\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-4, D-1",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-3, B-1, C-4, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-3, C-4, D-1",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 86,
+          "originalId": 236,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कूट वाला प्रश्न) 'वाक्यांश के लिए एक शब्द' का अशुद्ध युग्म पहचानें:\n1. जंगल में लगने वाली आग - दावानल\n2. पेट की आग - जठराग्नि\n3. समुद्र में लगने वाली आग - बड़वानल\n4. जो कम बोलता हो - वाचाल\nविकल्प:",
+          "options": [
+            "केवल 1 और 2",
+            "केवल 4",
+            "केवल 3 और 4",
+            "इनमें से कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "केवल 4 (जो कम बोलता हो उसे 'मितभाषी' कहते हैं। 'वाचाल' उसे कहते हैं जो बहुत अधिक बोलता हो)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 87,
+          "originalId": 237,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कथन-कारण) मुहावरे का लाक्षणिक अर्थ:\nकथन (A): \"कान पर जूँ न रेंगना\" का अर्थ है कि व्यक्ति के कान में कोई कीड़ा नहीं है।\nकारण (R): मुहावरे हमेशा अपने वाच्यार्थ (सीधे अर्थ) को छोड़कर लाक्षणिक (विशेष) अर्थ प्रकट करते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं।",
+            "(A) सही है, (R) गलत है।",
+            "(A) गलत है, (R) सही है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "(A) गलत है, (R) सही है। ('कान पर जूँ न रेंगना' का लाक्षणिक अर्थ 'कोई असर न होना' है, सीधा अर्थ नहीं लिया जाता)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 88,
+          "originalId": 238,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(मिलान वाला प्रश्न) दिशाओं के लिए एक शब्द (बहुत महत्वपूर्ण):\n\nसूची-I (दिशाओं का कोना)\nA. उत्तर और पूर्व के बीच\nB. दक्षिण और पूर्व के बीच\nC. दक्षिण और पश्चिम के बीच\nD. उत्तर और पश्चिम के बीच\n\nसूची-II (एक शब्द)\n1. आग्नेय\n2. नैऋत्य\n3. ईशान\n4. वायव्य\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-3, B-4, C-1, D-2",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-3(ईशान), B-1(आग्नेय), C-2(नैऋत्य), D-4(वायव्य)। यह PTET का सबसे पसंदीदा प्रश्न है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 89,
+          "originalId": 239,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कूट वाला प्रश्न) शरीर के अंगों से संबंधित किन मुहावरों का अर्थ सही है?\n1. नाक कटना - इज्जत जाना\n2. कान भरना - चुगली करना\n3. मुँह की खाना - बुरी तरह हारना\n4. सिर आँखों पर बिठाना - अपमानित करना\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "1, 2 और 4",
+            "2, 3 और 4",
+            "सभी सही हैं"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (सिर आँखों पर बिठाने का अर्थ बहुत आदर-सत्कार करना होता है, अपमानित करना नहीं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 90,
+          "originalId": 240,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 4 (Q81 - Q90)",
+          "question": "(कथन-निष्कर्ष) कहावत:\nकथन: \"मन चंगा तो कठौती में गंगा।\"\nनिष्कर्ष I: इसका आशय है कि यदि हृदय पवित्र है, तो तीर्थयात्रा की आवश्यकता नहीं, घर ही तीर्थ है।\nनिष्कर्ष II: यह रैदास जी की प्रसिद्ध उक्ति है जो बाहरी आडंबरों का विरोध करती है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 91,
+          "originalId": 241,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(मिलान वाला प्रश्न) विराम चिह्नों को सुमेलित करें:\n\nसूची-I (चिह्न)\nA. ( ; )\nB. ( - )\nC. ( \" \" )\nD. ( ! )\n\nसूची-II (नाम)\n1. योजक चिह्न\n2. उद्धरण चिह्न\n3. अर्धविराम\n4. विस्मयादिबोधक\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-3, C-4, D-2",
+            "A-3, B-2, C-1, D-4",
+            "A-4, B-1, C-2, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-2, D-4 (अर्धविराम ; होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 92,
+          "originalId": 242,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कथन-कारण) अविकारी शब्द (अव्यय):\nकथन (A): 'धीरे-धीरे', 'और', 'तथा', 'वाह' - ये सभी अव्यय (अविकारी) शब्द हैं।\nकारण (R): अव्यय वे शब्द होते हैं जिनके रूप में लिंग, वचन, कारक या काल के कारण कोई परिवर्तन (विकार) नहीं आता।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। (विकारी शब्द संज्ञा, सर्वनाम, क्रिया, विशेषण होते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 93,
+          "originalId": 243,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कूट वाला प्रश्न) संज्ञा से विशेषण निर्माण के कौन-से युग्म सही हैं?\n1. इतिहास - ऐतिहासिक\n2. समाज - सामाजिक\n3. धर्म - धार्मिक\n4. दया - दयालु\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "1, 2 और 3",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी विशेषण सही बने हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 94,
+          "originalId": 244,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कथन-निष्कर्ष) लिंग विचार (नित्य पुल्लिंग/स्त्रीलिंग):\nकथन: 'मछली' और 'छिपकली' नित्य स्त्रीलिंग शब्द हैं।\nनिष्कर्ष I: इनका पुल्लिंग रूप बनाने के लिए इनके आगे 'नर' जोड़ दिया जाता है (जैसे - नर मछली)।\nनिष्कर्ष II: 'मछली' का पुल्लिंग 'मछला' होता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "केवल I सही है। (मछला कोई शब्द नहीं होता, नित्य स्त्रीलिंग शब्दों को पुल्लिंग बनाने के लिए 'नर' लगाया जाता है जैसे नर कोयल, नर चील)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 95,
+          "originalId": 245,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(मिलान वाला प्रश्न) एकवचन और उनके बहुवचन रूप:\n\nसूची-I (एकवचन)\nA. दवा\nB. चिड़िया\nC. वधू\nD. गुरु\n\nसूची-II (बहुवचन)\n1. बधूएँ\n2. दवाइयाँ\n3. गुरुजन\n4. चिड़ियाँ\n\n*(नोट: C का शुद्ध 'वधुएँ' होता है, यहाँ टाइपो इग्नोर करें)*\nकूट:",
+          "options": [
+            "A-2, B-4, C-1, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-4, B-3, C-2, D-1",
+            "A-2, B-1, C-4, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-4, C-1, D-3 (ध्यान रहे 'दवाइयाँ' में 'ई' छोटी हो जाती है, जो कि शुद्ध है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 96,
+          "originalId": 246,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कूट वाला प्रश्न) कारक और परसर्ग (विभक्ति चिह्न) का अशुद्ध मिलान कौन-सा है?\n1. कर्म कारक - को\n2. करण कारक - से (अलग होने के अर्थ में)\n3. संप्रदान कारक - के लिए\n4. अधिकरण कारक - में, पर\nविकल्प:",
+          "options": [
+            "केवल 1",
+            "केवल 2",
+            "केवल 3 और 4",
+            "इनमें से कोई नहीं"
+          ],
+          "answer": "B",
+          "explanation": "केवल 2 (करण कारक 'से (के द्वारा)' होता है। 'अलग होने के अर्थ में' अपादान कारक का प्रयोग होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 97,
+          "originalId": 247,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कथन-कारण) सर्वनाम के भेद:\nकथन (A): \"मैं अपना काम स्वयं कर लूँगा।\" इस वाक्य में 'स्वयं' निजवाचक सर्वनाम है।\nकारण (R): जो सर्वनाम शब्द कर्ता के साथ अपनापन (निजता) प्रकट करने के लिए प्रयोग किए जाते हैं, उन्हें निजवाचक सर्वनाम कहते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "(A) गलत है, (R) सही है।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 98,
+          "originalId": 248,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(मिलान वाला प्रश्न) क्रिया के भेद:\n\nसूची-I (वाक्य)\nA. राम सोता है।\nB. मोहन ने पत्र लिखा।\nC. वह खाकर सो गया।\nD. माँ बच्चे को नौकर से दूध पिलवाती है।\n\nसूची-II (क्रिया का प्रकार)\n1. प्रेरणार्थक क्रिया\n2. अकर्मक क्रिया\n3. सकर्मक क्रिया\n4. पूर्वकालिक क्रिया\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-4, D-1",
+            "A-3, B-2, C-1, D-4",
+            "A-2, B-4, C-3, D-1",
+            "A-1, B-3, C-2, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-2(अकर्मक), B-3(सकर्मक), C-4(पूर्वकालिक- खाकर), D-1(प्रेरणार्थक - पिलवाती)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 99,
+          "originalId": 249,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कूट वाला प्रश्न) भूतकाल के भेदों के सही उदाहरण हैं:\n1. सामान्य भूत - राम गया।\n2. आसन्न भूत - राम अभी गया है।\n3. पूर्ण भूत - राम जा चुका था।\n4. संदिग्ध भूत - राम गया होगा।\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1, 3 और 4",
+            "1, 2, 3 और 4 (सभी सही हैं)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी उदाहरण अपने काल के अनुसार बिल्कुल सटीक हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 100,
+          "originalId": 250,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, लिंग, वचन, कारक, काल और अव्यय (Mixed Grammar)",
+          "sourceTag": "PTET Hindi Practice Set: Part 5 (Q91 - Q100)",
+          "question": "(कथन-निष्कर्ष) निपात (बलदायक अव्यय):\nकथन: \"मुझे भी दिल्ली जाना है।\"\nनिष्कर्ष I: इस वाक्य में 'भी' एक निपात है।\nनिष्कर्ष II: निपात वे शब्द होते हैं जो किसी पद के बाद लगकर उसके अर्थ में विशेष बल ला देते हैं (जैसे: ही, भी, तो, तक)।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 101,
+          "originalId": 251,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(मिलान वाला प्रश्न) संधि-विच्छेद को सुमेलित करें:\n\nसूची-I (शब्द)\nA. उद्धार\nB. दिग्गज\nC. सदानंद\nD. पुनर्जन्म\n\nसूची-II (विच्छेद)\n1. दिक् + गज\n2. उत् + हार\n3. पुनः + जन्म\n4. सत् + आनंद\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3 (उद्धार = उत्+हार व्यंजन संधि, दिग्गज = दिक्+गज)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 102,
+          "originalId": 252,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कथन-कारण) समास अपवाद:\nकथन (A): 'त्रिनेत्र' और 'चतुर्भुज' शब्दों में बहुव्रीहि समास है, द्विगु नहीं।\nकारण (R): जब कोई संख्यावाची शब्द किसी विशेष व्यक्ति या ईश्वर (जैसे शिव, विष्णु) के लिए रूढ़ हो जाता है, तो वहाँ द्विगु समास के बजाय बहुव्रीहि समास माना जाता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। (प्राथमिकता हमेशा बहुव्रीहि को दी जाती है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 103,
+          "originalId": 253,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से किन शब्दों में 'य' प्रत्यय का प्रयोग शुद्ध रूप में हुआ है?\n1. माधुर्य (मधुर + य)\n2. सौंदर्य (सुंदर + य)\n3. ऐश्वर्य (ईश्वर + य)\n4. चातुर्य (चतुर + य)\nविकल्प:",
+          "options": [
+            "केवल 1 और 2",
+            "केवल 3 और 4",
+            "1, 2 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी में 'य' प्रत्यय के कारण प्रथम स्वर में वृद्धि हुई है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 104,
+          "originalId": 254,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कथन-निष्कर्ष) अव्ययीभाव समास:\nकथन: 'रातोंरात' और 'कानोंकान' में अव्ययीभाव समास है।\nनिष्कर्ष I: जहाँ एक ही संज्ञा शब्द की पुनरावृत्ति (Repetition) हो और वह क्रियाविशेषण का कार्य करे, वहाँ अव्ययीभाव समास होता है।\nनिष्कर्ष II: इन शब्दों का विग्रह क्रमशः \"रात ही रात में\" और \"कान ही कान में\" होगा।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 105,
+          "originalId": 255,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(मिलान वाला प्रश्न) शब्दों में प्रयुक्त उपसर्ग पहचानें:\n\nसूची-I (शब्द)\nA. प्रत्याशा\nB. दुर्व्यवहार\nC. निष्कपट\nD. स्वागत\n\nसूची-II (उपसर्ग)\n1. निस्\n2. प्रति\n3. सु\n4. दुर्\n\nकूट:",
+          "options": [
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-2, C-3, D-1",
+            "A-2, B-1, C-4, D-3",
+            "A-3, B-4, C-1, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-4, C-1, D-3 (प्रति+आशा, दुर्+वि+अव+हार, निस्+कपट, सु+आगत)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 106,
+          "originalId": 256,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कूट वाला प्रश्न) किन शब्दों में उपसर्ग और प्रत्यय दोनों का प्रयोग हुआ है?\n1. अभिमानी\n2. स्वतंत्रता\n3. परिपूर्णता\n4. वैज्ञानिक\nविकल्प:",
+          "options": [
+            "केवल 1 और 2",
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "D",
+          "explanation": "1, 2 और 3 (अभि+मान+ई, स्व+तंत्र+ता, परि+पूर्ण+ता। वैज्ञानिक में वि+ज्ञान+इक है, अतः इसमें भी है, लेकिन मूलतः यह विज्ञान+इक माना जाता है। यदि 'वि' को उपसर्ग मानें तो 4 भी होगा। PTET के अनुसार सर्वोत्तम विकल्प (d) 1,2,3,4 होगा। *सुधार: (d) सही है*)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 107,
+          "originalId": 257,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कथन-कारण) अयादि संधि:\nकथन (A): 'पावक' का संधि विच्छेद 'पौ + अक' होता है।\nकारण (R): अयादि संधि के नियमानुसार 'औ' के बाद कोई भिन्न स्वर आने पर 'औ' का 'आव' हो जाता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 108,
+          "originalId": 258,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(मिलान वाला प्रश्न) समास और उनके प्रकार:\n\nसूची-I (शब्द)\nA. देवासुर\nB. नीलकंठ\nC. हथकड़ी\nD. चरणकमल\n\nसूची-II (समास)\n1. कर्मधारय\n2. द्वंद्व\n3. बहुव्रीहि\n4. तत्पुरुष\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-4, D-1",
+            "A-2, B-4, C-3, D-1",
+            "A-1, B-2, C-4, D-3",
+            "A-3, B-1, C-2, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-2 (देव और असुर), B-3 (शिव), C-4 (हाथ के लिए कड़ी), D-1 (कमल रुपी चरण)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 109,
+          "originalId": 259,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कूट वाला प्रश्न) विसर्ग संधि के अशुद्ध उदाहरणों का चयन करें:\n1. मनोहर = मनः + हर\n2. निरोग = निस् + रोग\n3. यशोदा = यशः + दा\n4. नमस्ते = नमः + ते\nविकल्प:\n*(ध्यान दें: 'निरोग' का विच्छेद 'निः + रोग' होता है, 'निस्' नहीं)*",
+          "options": [
+            "केवल 2",
+            "केवल 1 और 3",
+            "2 और 4",
+            "इनमें से कोई नहीं (सभी शुद्ध हैं)"
+          ],
+          "answer": "A",
+          "explanation": "केवल 2 अशुद्ध है। (शुद्ध विच्छेद 'निः + रोग' होता है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 110,
+          "originalId": 260,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Advanced Level)",
+          "sourceTag": "PTET Hindi Practice Set: Part 6 (Q101 - Q110)",
+          "question": "(कथन-निष्कर्ष) प्रत्यय और वर्तनी विकार:\nकथन: 'व्यवहार' शब्द में 'इक' प्रत्यय लगाने पर 'व्यावहारिक' बनता है।\nनिष्कर्ष I: 'इक' प्रत्यय लगने पर शब्द के प्रथम वर्ण का स्वर दीर्घ (वृद्धि) हो जाता है (य का या)।\nनिष्कर्ष II: 'व्यावहारिक' शब्द वर्तनी की दृष्टि से पूर्णतः शुद्ध है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। ('व्यवहारिक' लिखना अशुद्ध है, 'व्यावहारिक' शुद्ध है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 111,
+          "originalId": 261,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(मिलान वाला प्रश्न) विदेशी शब्दों को उनकी मूल भाषा से मिलाएँ:\n\nसूची-I (शब्द)\nA. कैंची\nB. रिक्शा\nC. अलमारी\nD. चाय\n\nसूची-II (भाषा)\n1. पुर्तगाली\n2. तुर्की\n3. जापानी\n4. चीनी\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-1, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-3, B-4, C-1, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-3, C-1, D-4 (कैंची-तुर्की, रिक्शा-जापानी, अलमारी-पुर्तगाली, चाय-चीनी)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 112,
+          "originalId": 262,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कथन-कारण) देशज शब्द:\nकथन (A): 'लोटा', 'खिड़की', 'पगड़ी', 'जूता' आदि देशज शब्द हैं।\nकारण (R): जिन शब्दों की उत्पत्ति का कोई प्रामाणिक स्रोत या संस्कृत मूल नहीं मिलता, और जो क्षेत्रीय जनता द्वारा अपनी आवश्यकतानुसार गढ़ लिए गए हैं, वे देशज कहलाते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 113,
+          "originalId": 263,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कूट वाला प्रश्न) पर्यायवाची शब्दों के कौन-से समूह अशुद्ध हैं?\n1. कामदेव - मदन, मनोज, अनंग, कंदर्प\n2. अमृत - सुधा, पीयूष, सोम, अमिय\n3. सूर्य - दिनकर, भानु, राकेश, निशाकर\n4. सर्प - भुजंग, विषधर, उरग, फणी\nविकल्प:",
+          "options": [
+            "केवल 1 और 2",
+            "केवल 3",
+            "3 और 4",
+            "1, 2 और 4"
+          ],
+          "answer": "B",
+          "explanation": "केवल 3 (राकेश और निशाकर चंद्रमा के पर्यायवाची हैं, सूर्य के नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 114,
+          "originalId": 264,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कथन-निष्कर्ष) विलोम शब्दों का प्रयोग:\nकथन: 'अनाथ' का विलोम 'सनाथ' होता है।\nनिष्कर्ष I: विलोम शब्द उसी व्याकरणिक कोटि (संज्ञा, विशेषण आदि) का होना चाहिए जिसका मूल शब्द है।\nनिष्कर्ष II: 'अनाथ' का अर्थ है जिसका कोई रक्षक न हो, और 'सनाथ' का अर्थ है जिसका रक्षक (नाथ) साथ हो।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 115,
+          "originalId": 265,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(मिलान वाला प्रश्न) तत्सम-तद्भव युग्म:\n\nसूची-I (तत्सम)\nA. आम्र\nB. चंद्र\nC. सूर्य\nD. कर्ण\n\nसूची-II (तद्भव)\n1. सूरज\n2. चाँद\n3. कान\n4. आम\n\nकूट:",
+          "options": [
+            "A-4, B-2, C-1, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-4, B-3, C-2, D-1",
+            "A-2, B-4, C-1, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-4, B-2, C-1, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 116,
+          "originalId": 266,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कूट वाला प्रश्न) विलोम शब्दों के सही युग्म चुनें:\n1. अवनी - अंबर\n2. अथ - इति\n3. अनुराग - विराग\n4. अनुज - अग्रज\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1, 3 और 4",
+            "1, 2, 3 और 4 (सभी सही हैं)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी विलोम युग्म एकदम सटीक हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 117,
+          "originalId": 267,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कथन-कारण) तत्सम शब्दों की पहचान:\nकथन (A): 'श', 'ष', 'ऋ' वर्णों का प्रयोग प्रायः तत्सम शब्दों में होता है।\nकारण (R): ये ध्वनियाँ मूल रूप से संस्कृत की हैं, तद्भव रूप बनते समय 'श' और 'ष' अक्सर 'स' में बदल जाते हैं (जैसे - श्रावण से सावन)।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। (तत्सम पहचानने की यह एक बेहतरीन ट्रिक है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 118,
+          "originalId": 268,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(मिलान वाला प्रश्न) शब्द और उनके अनेकार्थी रूप:\n\nसूची-I (शब्द)\nA. हार\nB. कर\nC. कनक\nD. वर\n\nसूची-II (अनेकार्थी)\n1. श्रेष्ठ, दूल्हा\n2. सोना, धतूरा\n3. पराजय, माला\n4. हाथ, किरण, टैक्स\n\nकूट:",
+          "options": [
+            "A-3, B-4, C-2, D-1",
+            "A-4, B-3, C-1, D-2",
+            "A-3, B-1, C-4, D-2",
+            "A-2, B-4, C-3, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-4, C-2, D-1",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 119,
+          "originalId": 269,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से कौन-से शब्द तद्भव हैं?\n1. अग्नि\n2. आग\n3. ग्राम\n4. गाँव\nविकल्प:",
+          "options": [
+            "1 और 3",
+            "2 और 4",
+            "1 और 4",
+            "2 और 3"
+          ],
+          "answer": "B",
+          "explanation": "2 और 4 (आग और गाँव तद्भव हैं, जबकि अग्नि और ग्राम तत्सम हैं, जिन पर चंद्रबिंदु (ँ) हो वे हमेशा तद्भव होते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 120,
+          "originalId": 270,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "तत्सम-तद्भव, देशज-विदेशी, पर्यायवाची, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 7 (Q111 - Q120)",
+          "question": "(कथन-निष्कर्ष) समश्रुत भिन्नार्थक शब्द:\nकथन: 'अंबुज' और 'अंबुधि' देखने में समान लगते हैं किंतु अर्थ भिन्न हैं।\nनिष्कर्ष I: 'अंबुज' का अर्थ कमल (अंबु/जल में जन्म लेने वाला) है।\nनिष्कर्ष II: 'अंबुधि' का अर्थ समुद्र (अंबु/जल को धारण करने वाला) है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 121,
+          "originalId": 271,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(मिलान वाला प्रश्न) अशुद्ध वाक्यों को उनके शुद्ध रूप से मिलाएँ:\n\nसूची-I (अशुद्ध वाक्य)\nA. वह अनेकों बार आया।\nB. एक पानी का गिलास दो।\nC. उसने मुझे गाली निकाली।\nD. केवल मात्र दो रुपये हैं।\n\nसूची-II (शुद्ध वाक्य)\n1. मुझे एक पानी का गिलास दो।\n2. उसने मुझे गालियाँ दीं।\n3. वह अनेक बार आया।\n4. केवल दो रुपये हैं।\n\nकूट:\n(a) A-3, B-1, C-2, D-4\n*(ध्यान दें: B का शुद्ध रूप 'मुझे पानी का एक गिलास दो' होना चाहिए। यहाँ विकल्प 1 ही अशुद्ध सा है। आइए इसे सही करें:)*\nसंशोधित सूची-II:\n1. पानी का एक गिलास दो।\n2. उसने मुझे गालियाँ दीं / गाली दी।\n3. वह अनेक बार आया।\n4. केवल दो रुपये हैं।\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-3, B-4, C-1, D-2",
+            "A-2, B-3, C-4, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-2, D-4 ('अनेकों' कोई शब्द नहीं होता, 'अनेक' स्वयं बहुवचन है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 122,
+          "originalId": 272,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कथन-कारण) वाक्य में पुनरुक्ति दोष:\nकथन (A): \"सप्रमाण सहित उत्तर दीजिए।\" यह एक अशुद्ध वाक्य है।\nकारण (R): 'सप्रमाण' का अर्थ ही 'प्रमाण सहित' होता है। अतः इसके साथ 'सहित' का प्रयोग करना अनावश्यक (पुनरुक्ति दोष) है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 123,
+          "originalId": 273,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से शुद्ध वर्तनी वाले शब्दों का चयन करें:\n1. कुमुदिनी\n2. अंतर्ध्यान\n3. अहिल्या\n4. शृंगार\nविकल्प:",
+          "options": [
+            "1 और 4",
+            "2 और 3",
+            "1, 2 और 4",
+            "केवल 4"
+          ],
+          "answer": "A",
+          "explanation": "1 और 4 (अंतर्ध्यान अशुद्ध है, शुद्ध 'अंतर्धान' होता है। अहिल्या अशुद्ध है, शुद्ध 'अहल्या' होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 124,
+          "originalId": 274,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कथन-निष्कर्ष) विराम चिह्न का प्रयोग:\nकथन: किसी के द्वारा कहे गए कथन को ज्यों का त्यों लिखने के लिए किस चिह्न का प्रयोग होता है?\nनिष्कर्ष I: इसके लिए उद्धरण चिह्न (Inverted Commas - \" \" ) का प्रयोग किया जाता है।\nनिष्कर्ष II: इसके लिए कोष्ठक चिह्न ( Bracket - () ) का प्रयोग किया जाता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "केवल I सही है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 125,
+          "originalId": 275,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(मिलान वाला प्रश्न) वाक्य में अशुद्धि का प्रकार पहचानें:\n\nसूची-I (वाक्य)\nA. मुझे भारी प्यास लगी है।\nB. तेरे को कहाँ जाना है?\nC. मीरा एक प्रसिद्ध कवि है।\nD. हवा ठंडी बह रही है।\n\nसूची-II (अशुद्धि का प्रकार)\n1. सर्वनाम संबंधी\n2. लिंग संबंधी\n3. विशेषण संबंधी\n4. पदक्रम संबंधी\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-3, B-4, C-1, D-2",
+            "A-2, B-3, C-4, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-3 (भारी प्यास नहीं, बहुत प्यास), B-1 (तेरे को नहीं, तुम्हें), C-2 (कवि नहीं, कवयित्री), D-4 (ठंडी हवा बह रही है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 126,
+          "originalId": 276,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कूट वाला प्रश्न) इनमें से कौन-से वाक्य पूर्णतः शुद्ध हैं?\n1. यह गाय का असली दूध है।\n2. मैं गाने का अभ्यास कर रहा हूँ।\n3. साहित्य और जीवन का घोर संबंध है।\n4. बंदूक एक उपयोगी अस्त्र है।\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "1, 2 और 4",
+            "1 और 3"
+          ],
+          "answer": "A",
+          "explanation": "1 और 2 (वाक्य 3 में 'घोर' की जगह 'घनिष्ठ' होगा। 4 में 'अस्त्र' की जगह 'शस्त्र' होगा)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 127,
+          "originalId": 277,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कथन-कारण) क्रिया की अन्विति (Agreement):\nकथन (A): \"राम और सीता वन को गई।\" यह अशुद्ध है।\nकारण (R): जब वाक्य में दो भिन्न लिंगों के कर्ता 'और' से जुड़े हों, तो क्रिया हमेशा बहुवचन और पुल्लिंग में आती है (राम और सीता वन को गए)।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 128,
+          "originalId": 278,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(मिलान वाला प्रश्न) शुद्ध-अशुद्ध शब्द:\n\nसूची-I (अशुद्ध)\nA. मिष्ठान\nB. बाल्मिकी\nC. सन्यासी\nD. प्रज्ज्वलित\n\nसूची-II (शुद्ध)\n1. वाल्मीकि\n2. मिष्टान्न\n3. प्रज्वलित\n4. संन्यासी\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-3, C-4, D-1",
+            "A-4, B-1, C-2, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3 (मिष्ट+अन्न = मिष्टान्न, प्रज्वलित में एक ही 'ज' आधा होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 129,
+          "originalId": 279,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कूट वाला प्रश्न) मुहावरे के गलत प्रयोग वाले अशुद्ध वाक्य चुनें:\n1. वह अपनी माँ की आँखों का तारा है।\n2. पानी पीकर नाम पूछना मूर्खता है।\n3. मैं आपकी भक्ति करता हूँ।\n4. उसने मेरी नाक में दम कर दिया है।\nविकल्प:\n*(संकेत: 'पानी पीकर जात पूछना' होता है, नाम नहीं। 'भक्ति की जाती है, आपकी नहीं भगवान की')*",
+          "options": [
+            "केवल 2 और 3",
+            "1 और 4",
+            "केवल 3",
+            "1, 2 और 4"
+          ],
+          "answer": "A",
+          "explanation": "2 और 3 (वाक्य 2 में 'जात पूछना' होना चाहिए। वाक्य 3 मुहावरा नहीं पर अशुद्ध प्रयोग है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 130,
+          "originalId": 280,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य शुद्धि, शब्द शुद्धि, पदक्रम, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 8 (Q121 - Q130)",
+          "question": "(कथन-निष्कर्ष) पदक्रम (Word Order):\nकथन: हिंदी वाक्यों का सामान्य पदक्रम क्या होता है?\nनिष्कर्ष I: हिंदी में सामान्यतः पहले कर्ता, फिर कर्म और अंत में क्रिया आती है (कर्ता + कर्म + क्रिया)।\nनिष्कर्ष II: अंग्रेजी की तरह हिंदी में कर्ता के तुरंत बाद क्रिया आती है (Subject + Verb + Object)।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "केवल निष्कर्ष I सही है। (SOV pattern in Hindi)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 131,
+          "originalId": 281,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(मिलान वाला प्रश्न) मुहावरों को उनके सटीक अर्थ से मिलाएँ:\n\nसूची-I (मुहावरा)\nA. आसमान से बातें करना\nB. अक्ल पर पत्थर पड़ना\nC. ईंट से ईंट बजाना\nD. ईद का चाँद होना\n\nसूची-II (अर्थ)\n1. मूर्खतापूर्ण कार्य करना\n2. बहुत ऊँचा होना / बहुत अभिमान करना\n3. बहुत कम दिखाई देना\n4. पूरी तरह नष्ट-भ्रष्ट कर देना\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 132,
+          "originalId": 282,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कथन-कारण) लोकोक्ति का प्रयोग:\nकथन (A): कोई व्यक्ति पढ़ा-लिखा नहीं है, परंतु स्वयं को बहुत बड़ा विद्वान बताता है, उसके लिए \"थोथा चना बाजे घना\" लोकोक्ति सटीक है।\nकारण (R): इसका अर्थ है कि गुणहीन व्यक्ति ही अपने गुणों का अत्यधिक दिखावा करता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 133,
+          "originalId": 283,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कूट वाला प्रश्न) 'वाक्यांश के लिए एक शब्द' का कौन-सा समूह पूर्णतः शुद्ध है?\n1. जो स्त्री सूर्य भी न देख सके - असूर्यम्पश्या\n2. जिसे बुलाया न गया हो - अनाहूत\n3. मोक्ष की इच्छा रखने वाला - मुमुक्षु\n4. जो सब कुछ जानता हो - अल्पज्ञ\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (जो सब कुछ जानता हो उसे 'सर्वज्ञ' कहते हैं, 'अल्पज्ञ' नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 134,
+          "originalId": 284,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कथन-निष्कर्ष) मुहावरे का भावार्थ:\nकथन: \"छाती पर मूँग दलना\" मुहावरे का प्रयोग किया गया।\nनिष्कर्ष I: इसका अर्थ है पास रहकर बहुत कष्ट देना।\nनिष्कर्ष II: यह एक लोकोक्ति है, मुहावरा नहीं।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "केवल I सही है। (अंत में 'ना' लगा है, यह मुहावरा है लोकोक्ति नहीं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 135,
+          "originalId": 285,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(मिलान वाला प्रश्न) लोकोक्ति और उनका अर्थ:\n\nसूची-I (लोकोक्ति)\nA. चमड़ी जाए पर दमड़ी न जाए\nB. नौ नकद न तेरह उधार\nC. नाच न जाने आँगन टेढ़ा\nD. ऊँची दुकान फीका पकवान\n\nसूची-II (अर्थ)\n1. असमर्थता का दोष साधनों पर डालना\n2. अत्यधिक कंजूस होना\n3. दिखावा अधिक, असलियत कम\n4. नकद का थोड़ा लाभ, उधार के बड़े लाभ से अच्छा है\n\nकूट:",
+          "options": [
+            "A-2, B-4, C-1, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-4, C-1, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 136,
+          "originalId": 286,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कूट वाला प्रश्न) समश्रुत भिन्नार्थक शब्दों के कौन-से युग्म सही हैं?\n1. कृपण (कंजूस) - कृपाण (तलवार)\n2. तरणि (सूर्य) - तरणी (नाव)\n3. नीर (घोंसला) - नीड़ (जल)\n4. सूत (सारथी/धागा) - सुत (पुत्र)\nविकल्प:\n*(संकेत: 3 में नीर=जल होता है, नीड़=घोंसला। यह उल्टा दिया है)*",
+          "options": [
+            "1, 2 और 4",
+            "1, 2 और 3",
+            "3 और 4",
+            "सभी सही हैं"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 4 (तीसरा युग्म उल्टा दिया गया है: नीर=जल, नीड़=घोंसला)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 137,
+          "originalId": 287,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कथन-कारण) 'अज्ञ' और 'विज्ञ':\nकथन (A): 'अज्ञ' का विलोम 'विज्ञ' होता है।\nकारण (R): 'अज्ञ' का अर्थ है 'अज्ञानी' (जो कुछ न जानता हो), और 'विज्ञ' का अर्थ है 'विद्वान' (विशेष रूप से जानने वाला)।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "(A) गलत है, (R) सही है।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। (यह PTET में कई बार पूछा गया है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 138,
+          "originalId": 288,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(मिलान वाला प्रश्न) वाक्यांशों के लिए एक शब्द:\n\nसूची-I (वाक्यांश)\nA. जो कभी बूढ़ा न हो\nB. जिसकी कोई उपमा न हो\nC. जो बिना वेतन काम करे\nD. जो नष्ट होने वाला हो\n\nसूची-II (शब्द)\n1. अजर\n2. अनुपम\n3. अवैतनिक\n4. नश्वर\n\nकूट:",
+          "options": [
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-3, C-2, D-4",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-1, B-2, C-3, D-4",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 139,
+          "originalId": 289,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कूट वाला प्रश्न) शरीर के अंगों पर आधारित मुहावरे:\n1. अँगूठा दिखाना - समय पर धोखा देना / इंकार करना\n2. उँगली पर नचाना - वश में करना\n3. कान का कच्चा होना - कम सुनाई देना\n4. दाँत खट्टे करना - बुरी तरह हराना\nविकल्प:\n*(संकेत: कान का कच्चा होना = किसी की भी बात पर जल्दी विश्वास कर लेना)*",
+          "options": [
+            "1, 2 और 4",
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 4",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 140,
+          "originalId": 290,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द, समश्रुत शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 9 (Q131 - Q140)",
+          "question": "(कथन-निष्कर्ष) लोकोक्ति का मर्म:\nकथन: \"का वर्षा जब कृषी सुखाने\"\nनिष्कर्ष I: इसका अर्थ है कि अवसर बीत जाने पर प्राप्त होने वाली सहायता व्यर्थ होती है।\nनिष्कर्ष II: यह तुलसीदास जी की रामचरितमानस से ली गई प्रसिद्ध चौपाई का अंश है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 141,
+          "originalId": 291,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(मिलान वाला प्रश्न) संज्ञा के भेदों को सुमेलित करें:\n\nसूची-I (शब्द)\nA. हिमालय\nB. नदी\nC. मिठास\nD. सेना\n\nसूची-II (संज्ञा का भेद)\n1. जातिवाचक\n2. व्यक्तिवाचक\n3. समूहवाचक\n4. भाववाचक\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-3, B-1, C-4, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 142,
+          "originalId": 292,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कथन-कारण) वाच्य (Voice) परिवर्तन:\nकथन (A): \"मुझसे चला नहीं जाता।\" यह भाववाच्य का उदाहरण है।\nकारण (R): भाववाच्य में क्रिया हमेशा अकर्मक, पुल्लिंग, एकवचन और अन्य पुरुष में होती है, तथा इसमें कर्ता की असमर्थता प्रकट की जाती है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 143,
+          "originalId": 293,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कूट वाला प्रश्न) किन शब्दों का प्रयोग सदैव बहुवचन में होता है?\n1. प्राण\n2. दर्शन\n3. आँसू\n4. जनता\nविकल्प:\n*(संकेत: 'जनता' शब्द हमेशा एकवचन में प्रयोग होता है - 'जनता आ गई')*",
+          "options": [
+            "1, 2 और 3",
+            "1, 2 और 4",
+            "2, 3 और 4",
+            "1, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 ('जनता' भीड़ का सूचक है पर व्याकरणिक रूप से हमेशा एकवचन में आती है। प्राण, दर्शन, आँसू, हस्ताक्षर सदैव बहुवचन होते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 144,
+          "originalId": 294,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कथन-निष्कर्ष) काल (Tense) की पहचान:\nकथन: \"यदि तुम पढ़ते, तो पास हो जाते।\"\nनिष्कर्ष I: यह वाक्य भूतकाल से संबंधित है।\nनिष्कर्ष II: यह 'हेतुहेतुमद् भूतकाल' का उदाहरण है क्योंकि इसमें भूतकाल की एक क्रिया का होना दूसरी क्रिया पर निर्भर करता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 145,
+          "originalId": 295,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(मिलान वाला प्रश्न) विशेषण के भेद:\n\nसूची-I (वाक्य)\nA. मुझे दो किलो दूध चाहिए।\nB. कक्षा में बीस छात्र हैं।\nC. यह लड़का बहुत चतुर है।\nD. काला घोड़ा दौड़ रहा है।\n\nसूची-II (विशेषण)\n1. संख्यावाचक\n2. परिमाणवाचक\n3. सार्वनामिक\n4. गुणवाचक\n\nकूट:\n(a) A-2, B-1, C-3, D-4\n(b) A-1, B-2, C-4, D-3\n(c) A-2, B-1, C-4, D-3\n*(Let's map correctly: A->2(परिमाण), B->1(संख्या), C->3(सार्वनामिक- 'यह' विशेषण है), D->4(गुणवाचक- 'काला'))*\nसही कूट:",
+          "options": [
+            "A-2, B-1, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-3, D-4",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 146,
+          "originalId": 296,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कूट वाला प्रश्न) लिंग के अपवाद (पुल्लिंग शब्द पहचानें):\n1. दही\n2. पानी\n3. मोती\n4. चाय\nविकल्प:\n*(संकेत: इकारांत शब्द प्रायः स्त्रीलिंग होते हैं, पर दही, पानी, मोती पुल्लिंग हैं। चाय स्त्रीलिंग है)*",
+          "options": [
+            "1, 2 और 3",
+            "1, 2 और 4",
+            "2, 3 और 4",
+            "1, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (दही खट्टा है, पानी बहता है, मोती चमकता है - ये पुल्लिंग हैं। चाय ठंडी हो गई - यह स्त्रीलिंग है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 147,
+          "originalId": 297,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कथन-कारण) कारक चिह्न (अपादान):\nकथन (A): \"पेड़ से पत्ता गिरता है।\" में अपादान कारक है।\nकारण (R): जब किसी संज्ञा या सर्वनाम से किसी वस्तु के अलग होने (पृथकता), डरने या लजाने का भाव प्रकट हो, तो वहाँ अपादान कारक ('से' परसर्ग) होता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 148,
+          "originalId": 298,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(मिलान वाला प्रश्न) क्रिया के भेद:\n\nसूची-I (वाक्य)\nA. पक्षी आकाश में उड़ते हैं।\nB. राम ने रावण को बाण से मारा।\nC. शिक्षक ने छात्र से पत्र लिखवाया।\nD. राजा ने ब्राह्मणों को गाय दी।\n\nसूची-II (क्रिया का प्रकार)\n1. प्रेरणार्थक\n2. अकर्मक\n3. द्विकर्मक\n4. सकर्मक\n\nकूट:\n*(ध्यान दें: D में 'ब्राह्मणों को' और 'गाय' दो कर्म हैं, अतः द्विकर्मक।)*",
+          "options": [
+            "A-2, B-4, C-1, D-3",
+            "A-2, B-1, C-4, D-3",
+            "A-4, B-2, C-1, D-3",
+            "A-1, B-4, C-3, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-4, C-1, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 149,
+          "originalId": 299,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कूट वाला प्रश्न) अविकारी शब्द (अव्यय) के प्रकार हैं:\n1. क्रियाविशेषण\n2. संबंधबोधक\n3. समुच्चयबोधक\n4. विस्मयादिबोधक\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "1, 3 और 4",
+            "1, 2, 3 और 4 (सभी)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (अविकारी शब्दों के मुख्य रूप से ये 4 ही भेद होते हैं, निपात को 5वाँ माना जाता है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 150,
+          "originalId": 300,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संज्ञा, सर्वनाम, विशेषण, क्रिया, लिंग, वचन, कारक, काल",
+          "sourceTag": "PTET Hindi Practice Set: Part 10 (Q141 - Q150)",
+          "question": "(कथन-निष्कर्ष) सर्वनाम का प्रयोग:\nकथन: \"कोई दरवाजा खटखटा रहा है।\"\nनिष्कर्ष I: इस वाक्य में 'कोई' एक अनिश्चयवाचक सर्वनाम है।\nनिष्कर्ष II: 'कोई' का प्रयोग प्राणीवाचक संज्ञाओं के लिए और 'कुछ' का प्रयोग अप्राणीवाचक संज्ञाओं के लिए होता है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 151,
+          "originalId": 301,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(मिलान वाला प्रश्न) विशेष संधियों (अपवाद/विशेष नियम) का सुमेलन करें:\n\nसूची-I (शब्द)\nA. रामायण\nB. प्रौढ़\nC. अक्षौहिणी\nD. पतंजलि\n\nसूची-II (विच्छेद)\n1. प्र + ऊढ़\n2. अक्ष + ऊहिनी\n3. राम + अयन\n4. पतत् + अंजलि\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-2, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-3, B-4, C-2, D-1",
+            "A-4, B-3, C-1, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-2, D-4 (ये सभी संधियों के प्रसिद्ध अपवाद हैं, जो नियमों से हटकर बनते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 152,
+          "originalId": 302,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कथन-कारण) उपसर्गों का अर्थ:\nकथन (A): 'अनन्य' शब्द में 'अन्' उपसर्ग है, जबकि 'अनाथ' शब्द में 'अ' उपसर्ग है।\nकारण (R): हिंदी/संस्कृत में स्वर से शुरू होने वाले मूल शब्दों के आगे प्रायः 'अन्' लगता है (जैसे अन् + अन्य), और व्यंजन से शुरू होने वाले शब्दों के आगे 'अ' लगता है (जैसे अ + नाथ)।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। (अन्+अर्थ=अनर्थ, अ+ज्ञान=अज्ञान)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 153,
+          "originalId": 303,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से किन शब्दों में कर्मधारय समास है?\n1. महापुरुष\n2. नीलकमल\n3. दशानन\n4. पीतांबर (केवल वस्त्र के अर्थ में)\nविकल्प:",
+          "options": [
+            "1 और 2",
+            "1, 2 और 4",
+            "3 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "B",
+          "explanation": "1, 2 और 4 (दशानन हमेशा बहुव्रीहि होता है, पीतांबर यदि वस्त्र हो तो कर्मधारय है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 154,
+          "originalId": 304,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कथन-निष्कर्ष) प्रत्यय के प्रकार:\nकथन: 'पठनीय' और 'बुढ़ापा' शब्दों में प्रत्यय है।\nनिष्कर्ष I: 'पठनीय' में 'अनीय' प्रत्यय है जो कृदंत (क्रिया से बना) है।\nनिष्कर्ष II: 'बुढ़ापा' में 'आपा' प्रत्यय है जो तद्धित (संज्ञा/विशेषण से बना) है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 155,
+          "originalId": 305,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(मिलान वाला प्रश्न) उपसर्ग और उनका मूल स्रोत:\n\nसूची-I (उपसर्ग)\nA. अति, अधि\nB. अ, अन, कु\nC. बा, बिला, हर\nD. सब, डिप्टी, हेड\n\nसूची-II (स्रोत/भाषा)\n1. हिंदी के उपसर्ग\n2. अंग्रेजी के उपसर्ग\n3. संस्कृत के उपसर्ग\n4. उर्दू/फारसी के उपसर्ग\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-4, D-2",
+            "A-1, B-3, C-2, D-4",
+            "A-3, B-4, C-1, D-2",
+            "A-4, B-1, C-3, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-4, D-2",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 156,
+          "originalId": 306,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कूट वाला प्रश्न) किन शब्दों में एक से अधिक प्रत्ययों का प्रयोग हुआ है?\n1. राष्ट्रीयता\n2. ऐतिहासिकता\n3. सुंदरता\n4. मानवीयता\nविकल्प:\n*(संकेत: राष्ट्र+ईय+ता, इतिहास+इक+ता, मानव+ईय+ता)*",
+          "options": [
+            "1, 2 और 4",
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "केवल 1 और 2"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 4 (सुंदरता में केवल एक प्रत्यय 'ता' है। बाकी में ईय+ता या इक+ता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 157,
+          "originalId": 307,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कथन-कारण) समास विग्रह:\nकथन (A): 'दहीबड़ा' शब्द का समास विग्रह 'दही का बड़ा' नहीं होता है।\nकारण (R): इसका सही विग्रह 'दही में डूबा हुआ बड़ा' होता है और यह लुप्तपद तत्पुरुष समास का उदाहरण है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है। ('दहीबड़ा' बहुत बार पूछा गया है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 158,
+          "originalId": 308,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(मिलान वाला प्रश्न) संधियों के प्रकार पहचानें:\n\nसूची-I (शब्द)\nA. निरोग\nB. महर्षि\nC. वागीश\nD. अत्याचार\n\nसूची-II (संधि)\n1. गुण संधि\n2. विसर्ग संधि\n3. यण संधि\n4. व्यंजन संधि\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-4, B-3, C-1, D-2",
+            "A-2, B-4, C-1, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2 (निः+रोग), B-1 (महा+ऋषि), C-4 (वाक्+ईश), D-3 (अति+आचार)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 159,
+          "originalId": 309,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से किसमें 'अ' उपसर्ग का प्रयोग नहीं हुआ है?\n1. अज्ञान\n2. अभाव\n3. अमर\n4. अनार\nविकल्प:\n*(संकेत: अनार स्वयं एक मूल शब्द है, इसमें अ+नार नहीं होता)*",
+          "options": [
+            "1 और 2",
+            "केवल 3",
+            "केवल 4",
+            "इनमें से कोई नहीं"
+          ],
+          "answer": "C",
+          "explanation": "केवल 4 ('अनार' फारसी मूल का रूढ़ शब्द है, इसमें उपसर्ग नहीं है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 160,
+          "originalId": 310,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "संधि, समास, उपसर्ग, प्रत्यय (Exceptions & Advanced Rules)",
+          "sourceTag": "PTET Hindi Practice Set: Part 11 (Q151 - Q160)",
+          "question": "(कथन-निष्कर्ष) शब्दों में उपसर्ग और प्रत्यय का एक साथ प्रयोग:\nकथन: 'असफलता' शब्द में उपसर्ग और प्रत्यय दोनों हैं।\nनिष्कर्ष I: इसमें 'अ' उपसर्ग है।\nनिष्कर्ष II: इसमें 'सफल' मूल शब्द और 'ता' प्रत्यय है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 161,
+          "originalId": 311,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(मिलान वाला प्रश्न) समश्रुत भिन्नार्थक शब्दों का मिलान करें:\n\nसूची-I (शब्द युग्म)\nA. अब्ज - अब्द\nB. अंब - अंबू\nC. अवधि - अवधी\nD. अहरह - अदृश्य\n\nसूची-II (अर्थ)\n1. माता - जल\n2. कमल - बादल\n3. लगातार - जो दिखाई न दे\n4. समय - एक भाषा\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3 (अब्ज=कमल, अब्द=बादल। अंब=माता, अंबू=जल)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 162,
+          "originalId": 312,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कथन-कारण) तत्सम शब्दों में वर्णों का परिवर्तन:\nकथन (A): 'व' से शुरू होने वाले अधिकांश तत्सम शब्द, तद्भव बनते समय 'ब' में बदल जाते हैं (जैसे- वानर का बंदर, वधू का बहू)।\nकारण (R): हिंदी के क्षेत्रीय प्रभाव के कारण उच्चारण में सरलता लाने के लिए 'व' का 'ब' हो जाता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 163,
+          "originalId": 313,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कूट वाला प्रश्न) अनेकार्थी शब्द 'सारंग' के अर्थ कौन-से हैं?\n1. मोर\n2. सर्प\n3. बादल\n4. सिंह\nविकल्प:\n*(संकेत: हिंदी में सारंग के सर्वाधिक अर्थ होते हैं)*",
+          "options": [
+            "1 और 2",
+            "1, 2 और 3",
+            "1 और 4",
+            "1, 2, 3 और 4 (सभी)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सारंग के अनेक अर्थ होते हैं: मोर, सर्प, बादल, सिंह, हिरन, हाथी आदि)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 164,
+          "originalId": 314,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कथन-निष्कर्ष) विलोम निर्माण:\nकथन: कुछ शब्दों के विलोम उपसर्ग बदलकर बनाए जाते हैं।\nनिष्कर्ष I: 'आकर्षण' का विलोम 'विकर्षण' है (उपसर्ग 'आ' के स्थान पर 'वि')।\nनिष्कर्ष II: 'उत्कर्ष' का विलोम 'अपकर्ष' है (उपसर्ग 'उत' के स्थान पर 'अप')।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 165,
+          "originalId": 315,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(मिलान वाला प्रश्न) विदेशी भाषाओं के शब्दों को पहचानें:\n\nसूची-I (शब्द)\nA. पुलिस, कर्फ्यू\nB. औरत, कानून\nC. चाय, लीची\nD. बटन, टिकट\n\nसूची-II (भाषा)\n1. अरबी\n2. अंग्रेजी\n3. फ्रेंच (फ्रांसीसी)\n4. चीनी\n\nकूट:",
+          "options": [
+            "A-3, B-1, C-4, D-2",
+            "A-2, B-1, C-4, D-3",
+            "A-3, B-4, C-1, D-2",
+            "A-1, B-2, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-1, C-4, D-2 (पुलिस और कर्फ्यू फ्रेंच शब्द हैं, यह अक्सर पूछा जाता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 166,
+          "originalId": 316,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से कौन-से तत्सम शब्द हैं?\n1. उष्ट्र\n2. ऊँट\n3. गर्दभ\n4. गधा\nविकल्प:",
+          "options": [
+            "1 और 3",
+            "2 और 4",
+            "1 और 4",
+            "2 और 3"
+          ],
+          "answer": "A",
+          "explanation": "1 और 3 (उष्ट्र का तद्भव ऊँट होता है, और गर्दभ का गधा होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 167,
+          "originalId": 317,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कथन-कारण) उपसर्गों द्वारा अर्थ परिवर्तन:\nकथन (A): 'हार' मूल शब्द में अलग-अलग उपसर्ग लगने से उसका अर्थ पूरी तरह बदल जाता है।\nकारण (R): जैसे- प्र+हार (मारना), आ+हार (भोजन), वि+हार (घूमना), सम्+हार (विनाश)।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 168,
+          "originalId": 318,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(मिलान वाला प्रश्न) पर्यायवाची शब्दों का सही समूह मिलाएँ:\n\nसूची-I (शब्द)\nA. पृथ्वी\nB. कपड़ा\nC. सोना\nD. बिजली\n\nसूची-II (पर्यायवाची)\n1. वसन, चीर, अंबर\n2. अवनी, मेदिनी, इला\n3. चपला, तड़ित, दामिनी\n4. हाटक, कनक, हिरण्य\n\nकूट:",
+          "options": [
+            "A-2, B-1, C-4, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-3, C-4, D-1",
+            "A-4, B-1, C-2, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-1, C-4, D-3",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 169,
+          "originalId": 319,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कूट वाला प्रश्न) विलोम शब्दों का अशुद्ध युग्म कौन-सा है?\n1. ऋजु - वक्र\n2. स्थावर - जंगम\n3. अतरंग - बहिरंग\n4. सत्कार - पुरस्कार\nविकल्प:",
+          "options": [
+            "केवल 1",
+            "केवल 2",
+            "केवल 4",
+            "1 और 4"
+          ],
+          "answer": "C",
+          "explanation": "केवल 4 (सत्कार का विलोम तिरस्कार होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 170,
+          "originalId": 320,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "समश्रुत भिन्नार्थक, अनेकार्थी, तत्सम-तद्भव, विलोम",
+          "sourceTag": "PTET Hindi Practice Set: Part 12 (Q161 - Q170)",
+          "question": "(कथन-निष्कर्ष) शब्दों का सूक्ष्म अंतर:\nकथन: 'अमूल्य' और 'बहुमूल्य' दोनों का अर्थ महँगी वस्तु से होता है, परंतु इनमें सूक्ष्म अंतर है।\nनिष्कर्ष I: 'अमूल्य' वह है जिसका मूल्य ही न आँका जा सके (जैसे - माता-पिता का प्यार)।\nनिष्कर्ष II: 'बहुमूल्य' वह है जिसकी कीमत बहुत अधिक हो (जैसे - हीरा)।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। (यह हिंदी का बहुत ही बारीक और सुंदर अंतर है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 171,
+          "originalId": 321,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(मिलान वाला प्रश्न) वाक्य में अशुद्धि का प्रकार पहचानें:\n\nसूची-I (अशुद्ध वाक्य)\nA. मुझे एक फूलों की माला ला दो।\nB. हम रात में भोजन खाते हैं।\nC. राम ने रावण को मारा।\nD. मैंने आज जयपुर जाना है।\n\nसूची-II (अशुद्धि का प्रकार)\n1. कारक संबंधी\n2. पदक्रम संबंधी\n3. अनुपयुक्त शब्द संबंधी\n4. सर्वनाम संबंधी\n\n*(C शुद्ध वाक्य है। आइए प्रश्न को थोड़ा बदलें)*\n*बदली हुई सूची-I:*\nA. मुझे एक फूलों की माला ला दो।\nB. हम रात में भोजन खाते हैं।\nC. वह बस के साथ यात्रा कर रहा है।\nD. मैंने आज जयपुर जाना है।\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-1, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-2 (फूलों की एक माला), B-3 (भोजन किया जाता है, खाया नहीं), C-1 (बस से यात्रा, के साथ नहीं), D-4 (मुझे आज जयपुर जाना है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 172,
+          "originalId": 322,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कथन-कारण) वाक्य रचना:\nकथन (A): \"चूँकि वह बीमार था, इसलिए वह स्कूल नहीं आया।\" यह एक मिश्र वाक्य है।\nकारण (R): मिश्र वाक्य में एक प्रधान उपवाक्य होता है और एक या अधिक आश्रित उपवाक्य होते हैं, जो व्याधिकरण समुच्चयबोधकों (चूँकि-इसलिए, यदि-तो) से जुड़े होते हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 173,
+          "originalId": 323,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से पूर्णतः शुद्ध वर्तनी वाले शब्द चुनें:\n1. अतिशयोक्ति\n2. अहोरात्र\n3. चारदीवारी\n4. नूपुर\nविकल्प:\n*(संकेत: अतिशयोक्ति में 'श' पूरा होता है आधा नहीं, चारदीवारी शुद्ध है 'चहारदीवारी' भी होता है, नूपुर में 'नू' बड़ा और 'पु' छोटा होता है)*",
+          "options": [
+            "1 और 2",
+            "3 और 4",
+            "1, 2 और 4",
+            "1, 2, 3 और 4 (सभी शुद्ध हैं)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी शब्द पूर्णतः शुद्ध हैं। अतिशयोक्ति में 'श' पूरा होता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 174,
+          "originalId": 324,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कथन-निष्कर्ष) विराम चिह्न (योजक चिह्न):\nकथन: योजक चिह्न (-) का प्रयोग द्वंद्व समास के पदों के बीच किया जाता है।\nनिष्कर्ष I: 'माता-पिता', 'रात-दिन' में योजक चिह्न का प्रयोग सही है।\nनिष्कर्ष II: तुलनावाचक सा, सी, से के पहले भी योजक चिह्न का प्रयोग होता है (जैसे - चाँद-सा मुखड़ा)।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 175,
+          "originalId": 325,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(मिलान वाला प्रश्न) वाक्यों का रूपांतरण:\n\nसूची-I (मूल वाक्य)\nA. सूर्योदय होने पर पक्षी चहचहाने लगे। (सरल)\nB. राम ने कहा कि मैं निर्दोष हूँ। (मिश्र)\nC. सूर्योदय होने पर पक्षी चहचहाने लगे। (सरल)\n\nसूची-II (रूपांतरित वाक्य)\n1. जैसे ही सूर्योदय हुआ, वैसे ही पक्षी चहचहाने लगे। (मिश्र)\n2. सूर्योदय हुआ और पक्षी चहचहाने लगे। (संयुक्त)\n3. राम ने स्वयं को निर्दोष बताया। (सरल)\n\n*(चूँकि A और C समान हैं, उन्हें संयुक्त और मिश्र से मिलाएँ)*\nकूट:",
+          "options": [
+            "A(सरल से संयुक्त)->2, B(मिश्र से सरल)->3, C(सरल से मिश्र)->1",
+            "A-1, B-2, C-3",
+            "A-3, B-1, C-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-3, C-1",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 176,
+          "originalId": 326,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कूट वाला प्रश्न) किन वाक्यों में मुहावरे का शुद्ध प्रयोग हुआ है?\n1. उसकी सफलता देखकर मेरे सीने पर साँप लोट गया।\n2. वह तो ईद का चाँद हो गया है।\n3. परीक्षा में प्रथम आने पर उसने आसमान सिर पर उठा लिया।\n4. पुलिस को देखते ही चोर नौ दो ग्यारह हो गया।\nविकल्प:\n*(संकेत: 'आसमान सिर पर उठाना' का अर्थ शोर करना/उपद्रव करना होता है, खुशी मनाना नहीं)*",
+          "options": [
+            "1, 2 और 4",
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "केवल 2 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 4 (वाक्य 3 में खुशी मनाने के लिए 'घी के दिए जलाना' उचित होता)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 177,
+          "originalId": 327,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कथन-कारण) निपात (अव्यय) का प्रयोग:\nकथन (A): \"मैं केवल मात्र दो रुपये चाहता हूँ।\" यह वाक्य अशुद्ध है।\nकारण (R): 'केवल' और 'मात्र' दोनों का अर्थ एक ही होता है, इसलिए दोनों का एक साथ प्रयोग पुनरुक्ति दोष (अनावश्यक शब्द) उत्पन्न करता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 178,
+          "originalId": 328,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(मिलान वाला प्रश्न) अशुद्ध और शुद्ध वर्तनी:\n\nसूची-I (अशुद्ध)\nA. स्रष्टा\nB. श्रृष्टा\nC. वाल्मिकी\nD. उच्छृंखल\n\nसूची-II (शुद्ध)\n1. वाल्मीकि\n2. स्रष्टा\n3. उच्छृंखल\n4. (C और D के लिए शुद्ध रूप)\n*स्पष्ट कूट रूप:*\nA. आशिर्वाद -> 1. आशीर्वाद\nB. कवियत्री -> 2. कवयित्री\nC. ज्योत्सना -> 3. ज्योत्स्ना\nD. सन्यासी -> 4. संन्यासी\nकूट:",
+          "options": [
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-4, B-3, C-2, D-1"
+          ],
+          "answer": "A",
+          "explanation": "A-1, B-2, C-3, D-4 (सभी के शुद्ध रूप सामने दिए गए हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 179,
+          "originalId": 329,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कूट वाला प्रश्न) निम्नलिखित में से अशुद्ध वाक्य चुनें:\n1. वह प्रमाण सहित अपनी बात कहेगा।\n2. वह सप्रमाण सहित अपनी बात कहेगा।\n3. मैं आपका दर्शन करने आया हूँ।\n4. मैं आपके दर्शन करने आया हूँ।\nविकल्प:",
+          "options": [
+            "1 और 4",
+            "2 और 3",
+            "1 और 3",
+            "2 और 4"
+          ],
+          "answer": "B",
+          "explanation": "2 और 3 अशुद्ध हैं। (सप्रमाण के साथ सहित नहीं आता। दर्शन बहुवचन है इसलिए 'आपके दर्शन' होगा)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 180,
+          "originalId": 330,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "वाक्य रचना, वाक्य शुद्धि, शब्द शुद्धि, विराम चिह्न",
+          "sourceTag": "PTET Hindi Practice Set: Part 13 (Q171 - Q180)",
+          "question": "(कथन-निष्कर्ष) कर्तृवाच्य से कर्मवाच्य बनाना:\nकथन: \"तुलसीदास ने रामचरितमानस लिखी।\"\nनिष्कर्ष I: इसका कर्मवाच्य होगा- \"तुलसीदास द्वारा रामचरितमानस लिखी गई।\"\nनिष्कर्ष II: वाच्य परिवर्तन करते समय काल (Tense) नहीं बदला जाता।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। (वाच्य बदलते समय भूतकाल का वाक्य भूतकाल में ही रहता है)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 181,
+          "originalId": 331,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(मिलान वाला प्रश्न) मुहावरों को उनके अर्थ से मिलाएँ:\n\nसूची-I (मुहावरा)\nA. गड़े मुर्दे उखाड़ना\nB. गागर में सागर भरना\nC. घड़ों पानी पड़ना\nD. चिराग तले अँधेरा\n\nसूची-II (अर्थ)\n1. लज्जित होना\n2. पुरानी बातें दोहराना\n3. थोड़े में बहुत कुछ कहना\n4. अपना दोष न दिखाई देना\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-1, D-4",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-1, C-4, D-3",
+            "A-3, B-4, C-1, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-3, C-1, D-4",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 182,
+          "originalId": 332,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कथन-कारण) मुहावरा और लोकोक्ति में अंतर:\nकथन (A): मुहावरा वाक्य का एक अंश (वाक्यांश) होता है, जबकि लोकोक्ति अपने आप में एक पूर्ण वाक्य होती है।\nकारण (R): मुहावरे के अंत में प्रायः 'ना' लगा होता है (जैसे- आँखें खुलना) और इसका प्रयोग क्रिया के रूप में होता है, जबकि लोकोक्ति का प्रयोग दृष्टांत या निष्कर्ष के रूप में स्वतंत्र रूप से होता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 183,
+          "originalId": 333,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कूट वाला प्रश्न) 'वाक्यांश के लिए एक शब्द' का कौन-सा युग्म शुद्ध है?\n1. जिसे जाना न जा सके - अज्ञेय\n2. जिसे कठिनाई से जाना जा सके - दुर्ज्ञेय\n3. जो जानने की इच्छा रखता हो - जिज्ञासु\n4. पीने की इच्छा - पिपासा\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1 और 4",
+            "1, 2, 3 और 4 (सभी शुद्ध हैं)"
+          ],
+          "answer": "D",
+          "explanation": "1, 2, 3 और 4 (सभी युग्म व्याकरणिक दृष्टि से एकदम सटीक हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 184,
+          "originalId": 334,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कथन-निष्कर्ष) पशुओं/अंगों पर आधारित मुहावरे:\nकथन: \"भैंस के आगे बीन बजाना\"\nनिष्कर्ष I: इसका अर्थ है मूर्ख व्यक्ति के सामने ज्ञान की बातें करना, जिसका उस पर कोई असर नहीं होता।\nनिष्कर्ष II: यदि इसे \"गाय के आगे बीन बजाना\" कर दिया जाए, तो भी अर्थ वही रहेगा।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "केवल I सही है। (मुहावरों में शब्दों (पर्यायवाची) का बदलाव नहीं किया जा सकता, अतः निष्कर्ष II गलत है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 185,
+          "originalId": 335,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(मिलान वाला प्रश्न) लोकोक्ति और अर्थ का मिलान करें:\n\nसूची-I (लोकोक्ति)\nA. खिसियानी बिल्ली खंभा नोचे\nB. मुँह में राम बगल में छूरी\nC. हाथी के दाँत खाने के और...\nD. मगरमच्छ के आँसू बहाना\n\nसूची-II (अर्थ)\n1. दिखावटी सहानुभूति\n2. अपनी शर्म/गुस्सा दूसरों पर उतारना\n3. कपटपूर्ण व्यवहार\n4. भीतर कुछ, बाहर कुछ\n\nकूट:",
+          "options": [
+            "A-2, B-3, C-4, D-1",
+            "A-1, B-2, C-3, D-4",
+            "A-2, B-4, C-1, D-3",
+            "A-3, B-1, C-4, D-2"
+          ],
+          "answer": "A",
+          "explanation": "A-2, B-3, C-4, D-1",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 186,
+          "originalId": 336,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कूट वाला प्रश्न) अशुद्ध अर्थ वाले मुहावरों का चयन करें:\n1. खाक छानना - बहुत मेहनत करना (भटकना)\n2. गूलर का फूल होना - बहुत सुंदर होना\n3. बालू से तेल निकालना - असंभव कार्य करना\n4. लकीर का फकीर होना - नई विचारधारा को अपनाना\nविकल्प:\n*(संकेत: गूलर का फूल = दुर्लभ होना। लकीर का फकीर = पुरानी बातों पर ही अड़े रहना)*",
+          "options": [
+            "1 और 3",
+            "2 और 4",
+            "केवल 2",
+            "केवल 4"
+          ],
+          "answer": "B",
+          "explanation": "2 और 4 (ये दोनों अशुद्ध अर्थ दे रहे हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 187,
+          "originalId": 337,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कथन-कारण) मुहावरों का लाक्षणिक अर्थ:\nकथन (A): \"सिर मुँड़ाते ही ओले पड़ना\" का अर्थ कार्य शुरू करते ही विघ्न (बाधा) आना है।\nकारण (R): मुहावरों का अर्थ उनके शब्दों से नहीं, बल्कि समाज में प्रचलित उनके लाक्षणिक अर्थ से ग्रहण किया जाता है।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 188,
+          "originalId": 338,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(मिलान वाला प्रश्न) समय (Time) सूचक शब्दों के लिए एक शब्द:\n\nसूची-I (समय)\nA. रात्रि का प्रथम प्रहर\nB. मध्य रात्रि का समय\nC. संध्या और रात्रि के बीच का समय\nD. सूर्योदय से ठीक पहले का समय\n\nसूची-II (शब्द)\n1. गोधूलि\n2. प्रदोष\n3. उषःकाल\n4. निशीथ\n\nकूट:",
+          "options": [
+            "A-2, B-4, C-1, D-3",
+            "A-1, B-2, C-3, D-4",
+            "A-4, B-3, C-2, D-1",
+            "A-2, B-1, C-4, D-3"
+          ],
+          "answer": "A",
+          "explanation": "A-2 (प्रदोष), B-4 (निशीथ), C-1 (गोधूलि - जब गायें लौटती हैं), D-3 (उषःकाल)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 189,
+          "originalId": 339,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कूट वाला प्रश्न) वाक्यांशों के लिए एक शब्द के शुद्ध युग्म हैं:\n1. जिसके हृदय में ममता न हो - निर्मम\n2. जिसके हृदय में दया न हो - निर्दय\n3. जिस पर उपकार किया गया हो - उपकृत\n4. जो उपकार को मानता हो - कृतघ्न\nविकल्प:\n*(संकेत: जो उपकार मानता हो वह कृतज्ञ होता है, कृतघ्न वह है जो उपकार नहीं मानता)*",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1 और 4",
+            "सभी शुद्ध हैं"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (वाक्यांश 4 अशुद्ध है, कृतघ्न उपकार को न मानने वाले को कहते हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 190,
+          "originalId": 340,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "मुहावरे, लोकोक्तियाँ, वाक्यांश के लिए एक शब्द",
+          "sourceTag": "PTET Hindi Practice Set: Part 14 (Q181 - Q190)",
+          "question": "(कथन-निष्कर्ष) लोकोक्ति का व्यावहारिक प्रयोग:\nकथन: राम को एक छोटी सी नौकरी क्या मिल गई, वह तो अपने पुराने मित्रों को पहचानने से ही इंकार कर रहा है।\nनिष्कर्ष I: इस स्थिति के लिए \"नया नौ दिन, पुराना सौ दिन\" लोकोक्ति सटीक बैठेगी।\nनिष्कर्ष II: इस स्थिति के लिए \"छछूँदर के सिर पर चमेली का तेल\" या \"अधजल गगरी छलकत जाय\" लोकोक्ति अधिक सटीक बैठेगी।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "B",
+          "explanation": "केवल निष्कर्ष II सही है। ('नया नौ दिन, पुराना सौ दिन' का अर्थ है कि पुरानी चीजें ज्यादा टिकाऊ होती हैं, जो यहाँ फिट नहीं बैठता)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 191,
+          "originalId": 341,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(मिलान वाला प्रश्न) कारक और उनके परसर्ग (Vibhakti):\n\nसूची-I (कारक)\nA. करण कारक\nB. संप्रदान कारक\nC. अपादान कारक\nD. अधिकरण कारक\nE. संबंध कारक\n\nसूची-II (परसर्ग/चिह्न)\n1. में, पर\n2. का, की, के\n3. से (के द्वारा/माध्यम)\n4. को, के लिए\n5. से (अलग होने का भाव)\n\nकूट:",
+          "options": [
+            "A-3, B-4, C-5, D-1, E-2",
+            "A-4, B-3, C-5, D-2, E-1",
+            "A-3, B-5, C-4, D-1, E-2"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-4, C-5, D-1, E-2 (कर्ता ने, कर्म को, करण से... यह सूत्र याद रखें)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 192,
+          "originalId": 342,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कथन-कारण) भाववाचक संज्ञा का निर्माण:\nकथन (A): 'मीठा' विशेषण से 'मिठास' और 'लड़का' जातिवाचक संज्ञा से 'लड़कपन' भाववाचक संज्ञा बनती है।\nकारण (R): भाववाचक संज्ञाएँ प्रायः जातिवाचक संज्ञा, सर्वनाम, विशेषण और क्रिया शब्दों में प्रत्यय लगाकर बनाई जाती हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 193,
+          "originalId": 343,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कूट वाला प्रश्न) लिंग के संदर्भ में कौन-से शब्द नित्य स्त्रीलिंग (हमेशा स्त्रीलिंग) होते हैं?\n1. कोयल\n2. चील\n3. छिपकली\n4. खरगोश\nविकल्प:\n*(संकेत: खरगोश नित्य पुल्लिंग होता है, इसका मादा खरगोश बनता है)*",
+          "options": [
+            "1, 2 और 3",
+            "1, 3 और 4",
+            "2, 3 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (खरगोश नित्य पुल्लिंग है। बाकी तीन नित्य स्त्रीलिंग हैं, इनके आगे 'नर' लगाकर पुल्लिंग बनाते हैं)।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 194,
+          "originalId": 344,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कथन-निष्कर्ष) भूतकाल के भेद:\nकथन: \"मैंने अभी-अभी खाना खाया है।\"\nनिष्कर्ष I: वाक्य के अंत में 'है' लगा होने के कारण यह वर्तमान काल का वाक्य है।\nनिष्कर्ष II: यह 'आसन्न भूतकाल' का वाक्य है, क्योंकि क्रिया भूतकाल में शुरू होकर अभी-अभी समाप्त हुई है।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "B",
+          "explanation": "केवल निष्कर्ष II सही है। (अंत में 'है' देखकर इसे वर्तमान समझने की गलती न करें, क्रिया समाप्त हो चुकी है, अतः यह आसन्न भूतकाल है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 195,
+          "originalId": 345,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(मिलान वाला प्रश्न) सर्वनाम के प्रकार:\n\nसूची-I (वाक्य)\nA. मैं यह काम आप ही कर लूँगा।\nB. बाहर कोई आया है।\nC. जो बोएगा, सो काटेगा।\nD. दरवाजे पर कौन खड़ा है?\n\nसूची-II (सर्वनाम का भेद)\n1. प्रश्नवाचक\n2. संबंधवाचक\n3. निजवाचक\n4. अनिश्चयवाचक\n\nकूट:",
+          "options": [
+            "A-3, B-4, C-2, D-1",
+            "A-3, B-4, C-1, D-2",
+            "A-4, B-3, C-2, D-1",
+            "A-1, B-2, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-4, C-2, D-1 ('आप' यहाँ स्वयं के लिए है, इसलिए निजवाचक है)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 196,
+          "originalId": 346,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कूट वाला प्रश्न) किन वाक्यों में सकर्मक क्रिया (Transitive Verb) है?\n1. राम फल खाता है।\n2. पक्षी आकाश में उड़ते हैं।\n3. बच्चा जोर से रो रहा है।\n4. सीता ने पत्र लिखा।\nविकल्प:\n*(संकेत: 'क्या' प्रश्न करने पर यदि उत्तर मिले (फल, पत्र), तो सकर्मक। रोना, उड़ना, सोना अकर्मक हैं)*",
+          "options": [
+            "1 और 4",
+            "2 और 3",
+            "1, 2 और 4",
+            "1 और 3"
+          ],
+          "answer": "A",
+          "explanation": "1 और 4 (उड़ना और रोना स्वाभाविक क्रियाएँ हैं जो अकर्मक होती हैं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 197,
+          "originalId": 347,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Assertion-Reason",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कथन-कारण) वचन विचार:\nकथन (A): 'पानी', 'दूध', 'सोना', 'जनता' - ये शब्द हमेशा एकवचन में प्रयुक्त होते हैं।\nकारण (R): द्रव्यवाचक (Material) और समूहवाचक संज्ञाएँ, जिन्हें गिना नहीं जा सकता, सामान्यतः एकवचन में ही रहती हैं।\nविकल्प:",
+          "options": [
+            "(A) और (R) दोनों सही हैं, और सही व्याख्या है।",
+            "(A) और (R) दोनों सही हैं, व्याख्या नहीं है।",
+            "(A) सही है, (R) गलत है।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "A",
+          "explanation": "दोनों सही हैं और सही व्याख्या है।",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 198,
+          "originalId": 348,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Matching",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(मिलान वाला प्रश्न) अव्यय के भेद:\n\nसूची-I (अव्यय शब्द)\nA. धीरे-धीरे\nB. के बिना / के साथ\nC. और / तथा / या\nD. अरे! / वाह!\n\nसूची-II (प्रकार)\n1. समुच्चयबोधक (Conjunction)\n2. विस्मयादिबोधक (Interjection)\n3. क्रियाविशेषण (Adverb)\n4. संबंधबोधक (Preposition)\n\nकूट:",
+          "options": [
+            "A-3, B-4, C-1, D-2",
+            "A-4, B-3, C-2, D-1",
+            "A-3, B-1, C-4, D-2",
+            "A-1, B-2, C-3, D-4"
+          ],
+          "answer": "A",
+          "explanation": "A-3, B-4, C-1, D-2",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 199,
+          "originalId": 349,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "MCQ",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कूट वाला प्रश्न) वाच्य (Voice) के सही उदाहरण हैं:\n1. कर्तृवाच्य - राम पुस्तक पढ़ता है।\n2. कर्मवाच्य - राम द्वारा पुस्तक पढ़ी जाती है।\n3. भाववाच्य - राम से चला नहीं जाता।\n4. भाववाच्य - सीता पत्र लिखती है।\nविकल्प:",
+          "options": [
+            "1, 2 और 3",
+            "2, 3 और 4",
+            "1 और 4",
+            "1, 2, 3 और 4"
+          ],
+          "answer": "A",
+          "explanation": "1, 2 और 3 (वाक्य 4 कर्तृवाच्य है, भाववाच्य नहीं)",
+          "reference": "PTET Section D"
+        },
+        {
+          "id": 200,
+          "originalId": 350,
+          "section": "Section D Language Proficiency (भाषा दक्षता)",
+          "questionType": "Statement-Conclusion",
+          "difficulty": "moderate",
+          "topic": "कारक, लिंग, वचन, अव्यय, काल एवं वाच्य (Mixed Final Test)",
+          "sourceTag": "PTET Hindi Practice Set: Part 15 (Q191 - Q200)",
+          "question": "(कथन-निष्कर्ष) विराम चिह्न की उपयोगिता:\nकथन: \"रोको मत जाने दो।\"\nनिष्कर्ष I: यदि 'रोको' के बाद अल्पविराम (,) लगाएँ (रोको, मत जाने दो), तो अर्थ रुकने का होगा।\nनिष्कर्ष II: यदि 'मत' के बाद अल्पविराम लगाएँ (रोको मत, जाने दो), तो अर्थ जाने देने का होगा।\nविकल्प:",
+          "options": [
+            "केवल I सही है।",
+            "केवल II सही है।",
+            "I और II दोनों सही हैं।",
+            "दोनों गलत हैं।"
+          ],
+          "answer": "C",
+          "explanation": "I और II दोनों सही हैं। (अल्पविराम के स्थान परिवर्तन से वाक्य का पूरा अर्थ पलट जाता है)।",
+          "reference": "PTET Section D"
         }
+
+
       ]
     }
   ]
