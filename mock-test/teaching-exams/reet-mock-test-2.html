@@ -44,12 +44,16 @@
       .empty-review { border:1px dashed rgb(203 213 225); border-radius:.9rem; padding:1rem; color:rgb(71 85 105); background:rgb(248 250 252); }
       .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
       .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
-      .matching-list-content { display:grid; gap:.25rem; }
+      .matching-list-content { display:block; }
+      .matching-item { margin:.2rem 0; line-height:1.75; }
       .matching-code { margin-top:.75rem; border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:#fff; }
       .math-inline { white-space:nowrap; }
       .math-fraction { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; vertical-align:middle; line-height:1.1; margin:0 .08rem; }
       .math-fraction .math-num { border-bottom:1px solid currentColor; padding:0 .16rem .05rem; }
       .math-fraction .math-den { padding:.05rem .16rem 0; }
+      .math-root { display:inline-flex; align-items:flex-start; vertical-align:middle; white-space:nowrap; margin:0 .08rem; }
+      .math-radical { font-size:1.12em; line-height:1; padding-right:.02rem; }
+      .math-radicand { border-top:1px solid currentColor; padding:.02rem .08rem 0 .08rem; line-height:1.25; }
       #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
       @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
     </style>
@@ -2856,35 +2860,99 @@
       const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
       const normalizeLatexSymbols=(value='')=>String(value)
         .replace(/\$([^$]+)\$/gs,'$1')
-        .replace(/\\text\{([^{}]*)\}/g,'$1')
+        .replace(/\\\[/g,'')
+        .replace(/\\\]/g,'')
+        .replace(/\\\(/g,'')
+        .replace(/\\\)/g,'')
         .replace(/\\times/g,'×')
         .replace(/\\div/g,'÷')
+        .replace(/\\cdot/g,'·')
         .replace(/\\implies/g,'⇒')
         .replace(/\\rightarrow/g,'→')
         .replace(/\\leq/g,'≤')
         .replace(/\\geq/g,'≥')
         .replace(/\\neq/g,'≠')
         .replace(/\\%/g,'%')
-        .replace(/\^\s*\\circ/g,'°')
-        .replace(/\\\(/g,'')
-        .replace(/\\\)/g,'');
-      const renderMathPart=(value='')=>escapeHtml(normalizeLatexSymbols(value).trim())
-        .replace(/([A-Za-z])_([A-Za-z0-9]+)/g,'$1<sub>$2</sub>')
-        .replace(/([A-Za-z0-9])\^(\d+)/g,'$1<sup>$2</sup>');
-      const formatPreservedText=(value='')=>{
-        const fractions=[];
-        const tokenized=normalizeLatexSymbols(value).replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g,(_,num,den)=>{
-          const token=`@@MATHFRAC${fractions.length}@@`;
-          fractions.push(`<span class="math-inline math-fraction"><span class="math-num">${renderMathPart(num)}</span><span class="math-den">${renderMathPart(den)}</span></span>`);
-          return token;
-        });
-        return escapeHtml(tokenized)
-          .replace(/&lt;br\s*\/?&gt;/gi,'<br>')
-          .replace(/@@MATHFRAC(\d+)@@/g,(_,idx)=>fractions[Number(idx)]||'')
-          .replace(/([A-Za-z])_([A-Za-z0-9]+)/g,'$1<sub>$2</sub>')
-          .replace(/([A-Za-z0-9])\^(\d+)/g,'$1<sup>$2</sup>')
-          .replace(/\r?\n/g,'<br>');
+        .replace(/\^\s*\\circ/g,'°');
+      const applySimpleMathMarkup=(value='')=>escapeHtml(value)
+        .replace(/([^\s<>])_\{([^{}]+)\}/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^\{([^{}]+)\}/g,'$1<sup>$2</sup>')
+        .replace(/([^\s<>])_([A-Za-z0-9]+)/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^(\d+)/g,'$1<sup>$2</sup>');
+      const readBracedArgument=(source,startIndex)=>{
+        let index=startIndex;
+        while(/\s/.test(source[index]||'')) index+=1;
+        if(source[index]!=='{') return null;
+        let depth=0;
+        let content='';
+        for(let i=index;i<source.length;i+=1){
+          const char=source[i];
+          if(char==='{'){
+            if(depth>0) content+=char;
+            depth+=1;
+            continue;
+          }
+          if(char==='}'){
+            depth-=1;
+            if(depth===0) return {content,end:i+1};
+            content+=char;
+            continue;
+          }
+          content+=char;
+        }
+        return null;
       };
+      const readScriptSuffix=(source,startIndex)=>{
+        if(source[startIndex]!=='^' && source[startIndex]!=='_') return {html:'',end:startIndex};
+        const tag=source[startIndex]==='^'?'sup':'sub';
+        const braced=readBracedArgument(source,startIndex+1);
+        if(braced) return {html:`<${tag}>${renderMathExpression(braced.content)}</${tag}>`,end:braced.end};
+        const match=source.slice(startIndex+1).match(/^[^\s{}]+/);
+        if(!match) return {html:'',end:startIndex};
+        return {html:`<${tag}>${applySimpleMathMarkup(match[0])}</${tag}>`,end:startIndex+1+match[0].length};
+      };
+      const renderMathExpression=(value='')=>{
+        const source=normalizeLatexSymbols(value);
+        let html='';
+        for(let i=0;i<source.length;){
+          if(source.startsWith('\\frac',i)){
+            const numerator=readBracedArgument(source,i+5);
+            const denominator=numerator?readBracedArgument(source,numerator.end):null;
+            if(numerator && denominator){
+              const script=readScriptSuffix(source,denominator.end);
+              html+=`<span class="math-inline math-fraction"><span class="math-num">${renderMathExpression(numerator.content)}</span><span class="math-den">${renderMathExpression(denominator.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\sqrt',i)){
+            const radicand=readBracedArgument(source,i+5);
+            if(radicand){
+              const script=readScriptSuffix(source,radicand.end);
+              html+=`<span class="math-root"><span class="math-radical">√</span><span class="math-radicand">${renderMathExpression(radicand.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\text',i)){
+            const textArg=readBracedArgument(source,i+5);
+            if(textArg){
+              const script=readScriptSuffix(source,textArg.end);
+              html+=applySimpleMathMarkup(normalizeLatexSymbols(textArg.content))+script.html;
+              i=script.end;
+              continue;
+            }
+          }
+          const nextCommand=[source.indexOf('\\frac',i+1),source.indexOf('\\sqrt',i+1),source.indexOf('\\text',i+1)].filter((idx)=>idx>=0).sort((a,b)=>a-b)[0] ?? source.length;
+          html+=applySimpleMathMarkup(source.slice(i,nextCommand));
+          i=nextCommand;
+        }
+        return html;
+      };
+      const formatPreservedText=(value='')=>renderMathExpression(value)
+        .replace(/&lt;br\s*\/?&gt;/gi,'<br>')
+        .replace(/\r?\n/g,'<br>');
+      const formatMatchingLines=(value='')=>String(value).split(/\r?\n/).filter((line)=>line.trim()).map((line)=>`<div class="matching-item">${formatPreservedText(line.trim())}</div>`).join('');
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statement:m[3].trim(),reason:m[5].trim()};};
       const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statements:m[3].trim(),conclusions:m[5].trim()};};
@@ -2909,7 +2977,7 @@
         const matching=normalizedQuestionType.includes('matching')?parseMatching(questionRaw):null;
         if(matching){
           questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
-          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatPreservedText(matching.l2)}</div></div></div>${matching.code?`<div class="matching-code"><strong>कूट:</strong><div class="mt-2">${formatPreservedText(matching.code)}</div></div>`:''}`;
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>${matching.code?`<div class="matching-code"><strong>कूट:</strong><div class="mt-2">${formatPreservedText(matching.code)}</div></div>`:''}`;
           return;
         }
         questionText.innerHTML=formatPreservedText(questionRaw);
