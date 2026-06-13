@@ -58,7 +58,7 @@
           </ul>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
             <button id="start-test" class="btn-primary" type="button">Start Test</button>
-            <p id="timer" class="btn-secondary !cursor-default">Time Left: 180:00</p>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 03:00:00</p>
           </div>
         </article>
         <noscript>
@@ -1730,7 +1730,7 @@ III. चौराहा`, options: ['केवल I और II', 'केवल II
       const state = { started:false,current:0,answers:{},remaining:180*60,timerId:null };
       const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
       const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-      const formatTime=(sec)=>`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+      const formatTime=(sec)=>{const safeSec=Math.max(0,Number(sec)||0);const hours=Math.floor(safeSec/3600);const minutes=Math.floor((safeSec%3600)/60);const seconds=safeSec%60;return `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;};
       const formatPreservedText=(value='')=>escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
