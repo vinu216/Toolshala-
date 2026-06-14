@@ -1,0 +1,3054 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>REET Mock Test 6 | ToolShala</title>
+    <meta name="description" content="REET Mock Test 6 with 150 questions, 150 marks, 150-minute timer, section-wise practice, result summary, answer key, and explanations." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <style>
+      .question-card { border: 1px solid rgb(226 232 240); border-radius: 1rem; padding: 1rem; background: #fff; }
+      .question-title { font-weight: 700; line-height: 1.7; color: rgb(15 23 42); word-break: break-word; white-space: normal; }
+      .question-structured { display: grid; gap: .75rem; line-height: 1.75; word-break: break-word; }
+      .question-block { border: 1px solid rgb(226 232 240); border-radius: .75rem; padding: .75rem; background: rgb(248 250 252); }
+      .question-block-title { display: block; font-weight: 700; margin-bottom: .4rem; }
+      .question-lines { margin: 0; padding-left: 1.1rem; }
+      .question-lines li { margin: .2rem 0; }
+      .section-chip { display: inline-flex; align-items: center; border-radius: 9999px; background: rgb(224 231 255); color: rgb(55 48 163); padding: .35rem .75rem; font-size: .75rem; font-weight: 700; letter-spacing: .01em; }
+      .option-item { display:block; border:1px solid rgb(203 213 225); border-radius:.85rem; padding:.8rem .9rem; font-size:.97rem; line-height:1.6; background:#fff; }
+      .option-item.selected { border-color: rgb(99 102 241); background: rgb(238 242 255); }
+      .option-item .option-code { font-weight:700; color: rgb(51 65 85); }
+      .result-block { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; }
+      .summary-card { border:1px solid rgb(226 232 240); border-radius:.9rem; padding:1rem; background:#fff; transition:all .2s ease; text-align:left; width:100%; }
+      .summary-card.is-clickable { cursor:pointer; }
+      .summary-card.is-clickable:hover { border-color: rgb(148 163 184); }
+      .summary-card.active { border-color: rgb(79 70 229); background: rgb(238 242 255); }
+      .review-card { border:1px solid rgb(226 232 240); border-radius:1rem; padding:1rem; background:#fff; }
+      .status-badge { display:inline-flex; padding:.2rem .6rem; border-radius:9999px; font-size:.75rem; font-weight:700; }
+      .status-correct { background:rgb(220 252 231); color:rgb(22 101 52); }
+      .status-wrong { background:rgb(254 226 226); color:rgb(153 27 27); }
+      .status-attempted { background:rgb(254 243 199); color:rgb(146 64 14); }
+      .answer-pill { display:inline-block; margin-right:.4rem; margin-top:.3rem; padding:.2rem .55rem; border-radius:.5rem; font-size:.82rem; border:1px solid rgb(203 213 225); }
+      .answer-pill.user-wrong { border-color:rgb(239 68 68); background:rgb(254 226 226); color:rgb(153 27 27); }
+      .answer-pill.correct { border-color:rgb(34 197 94); background:rgb(220 252 231); color:rgb(22 101 52); }
+      .answer-pill.skipped { border-color:rgb(245 158 11); background:rgb(254 243 199); color:rgb(146 64 14); }
+      .empty-review { border:1px dashed rgb(203 213 225); border-radius:.9rem; padding:1rem; color:rgb(71 85 105); background:rgb(248 250 252); }
+      .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
+      .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      .matching-list-content { display:block; }
+      .matching-item { margin:.2rem 0; line-height:1.75; }
+      .matching-code { margin-top:.75rem; border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:#fff; }
+      .math-inline { white-space:nowrap; }
+      .math-fraction { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; vertical-align:middle; line-height:1.1; margin:0 .08rem; }
+      .math-fraction .math-num { border-bottom:1px solid currentColor; padding:0 .16rem .05rem; }
+      .math-fraction .math-den { padding:.05rem .16rem 0; }
+      .math-root { display:inline-flex; align-items:flex-start; vertical-align:middle; white-space:nowrap; margin:0 .08rem; }
+      .math-radical { font-size:1.12em; line-height:1; padding-right:.02rem; }
+      .math-radicand { border-top:1px solid currentColor; padding:.02rem .08rem 0 .08rem; line-height:1.25; }
+      .math-overline { text-decoration: overline; text-decoration-thickness: 1px; }
+      #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
+      @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800">
+    <header class="top-nav sticky top-0 z-50"><nav class="nav-shell" aria-label="Main navigation"><a href="../../index.html" class="brand-logo" aria-label="ToolShala home"><span class="brand-mark">ToolShala</span><span class="brand-dot" aria-hidden="true"></span></a><div class="hidden items-center gap-2 md:flex"><a class="nav-link" href="../../index.html">Home</a><a class="nav-link nav-active" href="../../mock-test.html">Mock Test</a><a class="nav-link" href="../../about.html">About</a><a class="nav-link" href="../../contact.html">Contact</a></div></nav></header>
+    <main id="main-content">
+      <section class="page-hero border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">राजस्थान REET तैयारी</p>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">REET Mock Test 6</h1>
+          <p class="mt-4 max-w-3xl text-slate-600">150 प्रश्नों वाला full-length REET Level 1 practice paper.</p>
+          <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
+            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p><p class="feature-card !m-0 !p-4"><strong>Total Marks:</strong> 150</p><p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 150 मिनट</p><p class="feature-card !m-0 !p-4"><strong>Type:</strong> REET Level 1</p>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrap" id="intro-area">
+        <article id="test-intro" class="feature-card reveal visible">
+          <h2 class="text-2xl font-bold">निर्देश / Instructions</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
+            <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
+            <li>Navigation के लिए <strong>पिछला / Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। इस mock test में negative marking नहीं है।</li>
+            <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
+          </ul>
+          <div class="template-actions mt-6 flex flex-wrap gap-2">
+            <button id="start-test" class="btn-primary" type="button">Start Test</button>
+            <p id="timer" class="btn-secondary !cursor-default">Time Left: 02:30:00</p>
+          </div>
+        </article>
+        <noscript>
+          <p class="mt-3 text-sm text-slate-600">JavaScript is disabled. Instructions, Start Test button, and timer are shown as static content.</p>
+        </noscript>
+      </section>
+      <section class="section-wrap hidden" id="test-area"><article class="feature-card reveal"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="question-meta" class="text-xl font-bold"></h2><p id="section-tag" class="section-chip"></p></div><div class="question-card mt-4"><p id="question-text" class="question-title text-base sm:text-lg"></p><div id="matching-block"></div></div><div id="options" class="mt-5 grid gap-3 sm:gap-4"></div><div class="template-actions mt-6 flex flex-wrap gap-2"><button id="prev-btn" class="btn-secondary" type="button">Previous</button><button id="next-btn" class="btn-primary" type="button">Next</button><button id="submit-btn" class="btn-secondary" type="button">Submit Test</button></div></article><article class="feature-card reveal mt-6"><h3 class="text-xl font-bold">Question Palette</h3><div id="palette" class="mt-4 grid grid-cols-5 gap-2 sm:grid-cols-8 lg:grid-cols-12"></div></article></section>
+      <section class="section-wrap hidden" id="result-area"><article class="feature-card reveal"><h2 class="text-2xl font-bold">Result Summary</h2><div id="result-summary" class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5"></div><div id="section-summary" class="mt-5 grid gap-3 md:grid-cols-2"></div></article><article class="feature-card reveal mt-6" id="review-panel"><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="text-2xl font-bold">Filtered Review</h2><p id="review-meta" class="text-sm text-slate-600"></p></div><div id="review-list" class="mt-4 space-y-4"></div></article><article class="feature-card reveal mt-6"><h2 class="text-2xl font-bold">Answer Key</h2><div id="answer-key" class="mt-4 space-y-4"></div></article></section>
+    </main>
+
+    <script>
+      const reetMockTest6 = {
+        paperTitle: 'REET Mock Test 6',
+        examName: 'REET Level 1',
+        totalQuestions: 150,
+        totalMarks: 150,
+        marksPerQuestion: 1,
+        durationMinutes: 150,
+        negativeMarking: 'No',
+        difficulty: 'REET Level 1',
+        latestPattern: true,
+        includePYQ: true,
+        sections: [
+          {
+            section: 'REET Level 1 Full Paper',
+            startId: 1,
+            endId: 150,
+            questionTypesAllowed: ['MCQ', 'Assertion-Reason', 'Statement-Conclusion', 'Matching', 'Multi-statement', 'Case Study'],
+            questions: [
+              {
+              "id": 1,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "विकास की प्रकृति",
+              "sourceTag": "User Chunk 1",
+              "question": "कथन (A): विकास की प्रक्रिया को एक निरंतर चलने वाली धारा माना जाता है, परंतु कुछ प्रमुख सिद्धांतकार इसे विशिष्ट चरणों में विभाजित करके विच्छिन्न (Discontinuous) भी मानते हैं।\nकारण (R): जीन पियाजे और सिगमंड फ्रायड जैसे मनोवैज्ञानिकों का मानना है कि विकास गुणात्मक परिवर्तनों के माध्यम से अचानक नए चरणों में प्रवेश करता है, जो जैविक परिपक्वता से गहराई से संचालित होता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) गलत है, लेकिन (R) सही है।"
+              ],
+              "answer": "A",
+              "explanation": "विकास के सिद्धांतों में निरंतरता बनाम विच्छिन्नता (Continuity vs Discontinuity) का द्वंद्व प्रसिद्ध है। पियाजे और फ्रायड मानते हैं कि विकास क्रमिक न होकर विशिष्ट अवस्थाओं (Stages) में गुणात्मक रूप से बदलता है, जो जैविक परिपक्वता पर आधारित है। अतः कथन-कारण दोनों सत्य हैं और कारण सही व्याख्या प्रस्तुत करता है।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 2,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "पियाजे का संज्ञानात्मक विकास सिद्धांत",
+              "sourceTag": "User Chunk 1",
+              "question": "जीन पियाजे के संज्ञानात्मक विकास सिद्धांत के अनुसार, निम्नलिखित में से कौन-सी विशेषताएं बालक की 'औपचारिक संक्रियात्मक अवस्था' (Formal Operational Stage) से संबंधित हैं?\nI. परिकल्पनिक-निगमनात्मक तर्क (Hypothetico-deductive reasoning) का विकास होना।\nII. किशोरावस्था आत्म-केंद्रितता (Adolescent Egocentrism) जिसके अंतर्गत 'काल्पनिक दर्शक' (Imaginary Audience) की भावना प्रबल होती है।\nIII. संरक्षण (Conservation) और क्रमबद्धता (Seriation) के संप्रत्यय को पहली बार सीखना।\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल II और III",
+                            "(3) केवल I और III",
+                            "(4) I, II और III सभी"
+              ],
+              "answer": "A",
+              "explanation": "अमूर्त चिंतन की अवस्था (11 वर्ष के बाद) में परिकल्पनात्मक तर्क और किशोरावस्था आत्म-केंद्रितता (काल्पनिक दर्शक/व्यक्तिगत आख्यान) का विकास होता है (कथन I और II सत्य)। संरक्षण और क्रमबद्धता मूर्त-संक्रियात्मक अवस्था (7 से 11 वर्ष) की विशेषताएं हैं, औपचारिक की नहीं (कथन III असत्य)।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 3,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "स्टर्नबर्ग का त्रिचापीय सिद्धांत",
+              "sourceTag": "User Chunk 1",
+              "question": "राबर्ट स्टर्नबर्ग के बुद्धि के 'त्रिचापीय सिद्धांत' (Triarchic Theory of Intelligence) के घटकों को उनके सही व्यावहारिक अर्थों से सुमेलित कीजिए:\n\nसूची-I (बुद्धि घटक)\nA. घटकीय / विश्लेषणात्मक बुद्धि\nB. आनुभविक / सृजनात्मक बुद्धि\nC. संदर्भात्मक / व्यावहारिक बुद्धि\n\nसूची-II (व्यावहारिक अर्थ)\n1. नवीन परिस्थितियों और समस्याओं के समाधान हेतु रचनात्मक रूप से पुराने अनुभवों का उपयोग करना।\n2. दैनिक जीवन में पर्यावरण के साथ अनुकूलन करना या उसे अपने अनुसार बदलना ('सड़क की समझ' या व्यावहारिक बुद्धि)।\n3. अमूर्त और विश्लेषणात्मक चिंतन करना, समस्या समाधान हेतु सूचनाओं का मानसिक प्रसंस्करण करना।\n\nकूट:\n    A  B  C",
+              "options": [
+                            "(1) 3  1  2",
+                            "(2) 1  3  2",
+                            "(3) 3  2  1",
+                            "(4) 2  1  3"
+              ],
+              "answer": "A",
+              "explanation": "स्टर्नबर्ग के अनुसार बुद्धि के तीन रूप हैं: घटकीय बुद्धि अकादमिक और विश्लेषणात्मक चिंतन से जुड़ी है (A->3); आनुभविक बुद्धि नवीन सृजनशीलता से जुड़ी है (B->1); और संदर्भात्मक बुद्धि व्यावहारिक बुद्धिमत्ता या व्यावहारिक जीवन प्रबंधन से जुड़ी है (C->2)।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 4,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "वाइगोत्स्की का सामाजिक निर्मितिवाद",
+              "sourceTag": "User Chunk 1",
+              "question": "कथन: लेव वाइगोत्स्की के सामाजिक निर्मितिवाद के अनुसार, 'पारस्परिक शिक्षण' (Reciprocal Teaching) एक ऐसी छात्र-केंद्रित गतिविधि है जो बालकों के संज्ञानात्मक विकास को गति देती है।\nनिष्कर्ष:\nI. पारस्परिक शिक्षण में शिक्षक और छात्र मिलकर संवाद करते हैं, जिसमें प्रश्न पूछना, स्पष्ट करना, पूर्वानुमान लगाना और सारांश प्रस्तुत करना जैसी चार रणनीतियाँ शामिल हैं।\nII. यह गतिविधि बालकों के व्यक्तिगत रटने की प्रवृत्ति को सर्वोच्च प्राथमिकता देती है और सामाजिक अंतःक्रिया को पूरी तरह नकारती है।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) न तो I और न ही II सही है।"
+              ],
+              "answer": "A",
+              "explanation": "पारस्परिक शिक्षण (Reciprocal Teaching) एक सहयोगी सामाजिक गतिविधि है जिसमें चार रणनीतियों (Predicting, Questioning, Clarifying, Summarizing) द्वारा ज्ञान का सह-निर्माण होता है। यह रटने का विरोध करती है, इसलिए केवल निष्कर्ष I सही है।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 5,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "एरिक्सन का मनोसामाजिक विकास सिद्धांत",
+              "sourceTag": "User Chunk 1",
+              "question": "एरिक एरिक्सन के मनोसामाजिक विकास सिद्धांत (Psychosocial Theory) के चरणों और उनसे संबंधित बालकों की आयु अवधियों के कौन-से युग्म सही सुमेलित हैं?\nI. विश्वास बनाम अविश्वास (Trust vs Mistrust) - शैशवावस्था (0 से 1 वर्ष)\nII. स्वायत्तता बनाम शर्म (Autonomy vs Shame) - प्रारंभिक बाल्यावस्था (1 से 3 वर्ष)\nIII. पहल बनाम ग्लानि (Initiative vs Guilt) - खेल की आयु / प्री-स्कूल (3 से 6 वर्ष)\nIV. उद्योग बनाम हीनता (Industry vs Inferiority) - उत्तर बाल्यावस्था / स्कूली आयु (6 से 12 वर्ष)\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल III और IV",
+                            "(3) केवल I, II और IV",
+                            "(4) I, II, III और IV सभी"
+              ],
+              "answer": "D",
+              "explanation": "एरिक्सन के मनोसामाजिक सिद्धांत के ये चारों प्रारंभिक चरण और उनकी आयु अवधियाँ मनोवैज्ञानिक रूप से पूर्णतः प्रामाणिक और सही सुमेलित हैं।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 6,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "संवेगात्मक बुद्धि",
+              "sourceTag": "User Chunk 1",
+              "question": "कथन (A): संवेगात्मक बुद्धि (Emotional Intelligence - EQ) व्यावहारिक और सामाजिक जीवन की सफलता में सामान्य बुद्धि लब्धि (IQ) की तुलना में अधिक महत्वपूर्ण भूमिका निभा सकती है।\nकारण (R): संवेगात्मक बुद्धि के अंतर्गत आत्म-जागरूकता, संवेगों का स्व-नियमन और परानुभूति (Empathy) जैसी क्षमताएं शामिल होती हैं, जो अंतःवैयक्तिक संबंधों को सुदृढ़ करती हैं।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है。",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "डैनियल गोलमैन के अनुसार, जीवन की सफलता में 80% योगदान संवेगात्मक बुद्धि का और केवल 20% योगदान IQ का होता है। संवेगात्मक बुद्धि व्यक्ति को खुद के और दूसरों के संवेगों को संभालने की क्षमता देती है, जिससे सामाजिक अनुकूलन बेहतर होता है। कारण कथन की सही व्याख्या है।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 7,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "गिलिगन की कोहलबर्ग सिद्धांत पर आलोचना",
+              "sourceTag": "User Chunk 1",
+              "question": "कथन: कैरल गिलिगन (Carol Gilligan) ने लॉरेंस कोहलबर्ग के नैतिक विकास सिद्धांत की आलोचना करते हुए तर्क दिया कि यह सिद्धांत 'लैंगिक पूर्वाग्रह' (Gender Bias) से ग्रसित है।\nनिष्कर्ष:\nI. कोहलबर्ग का सिद्धांत पुरुषों के 'न्याय की नैतिकता' (Morality of Justice) वाले दृष्टिकोण पर आधारित है और महिलाओं के 'देखभाल की नैतिकता' (Morality of Care) वाले संबंधों पर आधारित परिप्रेक्ष्य की उपेक्षा करता है।\nII. गिलिगन के अनुसार महिलाओं का नैतिक विकास पुरुषों की तुलना में जैविक रूप से बहुत कमजोर और संकुचित होता है।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) दोनों निष्कर्ष गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "कैरल गिलिगन ने कोहलबर्ग के केवल पुरुषों पर किए गए प्रयोगों की आलोचना की थी। उन्होंने कहा कि महिलाएं संबंधों, परोपकार और देखभाल (Care) को नैतिकता का आधार मानती हैं, जिसकी कोहलबर्ग के न्याय-केंद्रित पदानुक्रम में उपेक्षा की गई है। उन्होंने महिलाओं को कमजोर नहीं कहा, अतः निष्कर्ष II गलत है।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 8,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "व्यक्तित्व मापन की प्रक्षेप्य तकनीकें",
+              "sourceTag": "User Chunk 1",
+              "question": "व्यक्तित्व मापन की प्रक्षेप्य तकनीकों (Projective Techniques) को उनके सही मनोवैज्ञानिक प्रवर्तकों से सुमेलित कीजिए:\n\nसूची-I (व्यक्तित्व मापन तकनीक)\nA. रोर्शाक स्याही धब्बा परीक्षण (IBT)\nB. प्रासंगिक अन्तर्बोध परीक्षण (TAT)\nC. बाल अन्तर्बोध परीक्षण (CAT)\nD. शब्द साहचर्य परीक्षण (WAT)\n\nसूची-II (मनोवैज्ञानिक प्रवर्तक)\n1. हेनरी मरे और मॉर्गन (30 सचित्र कार्डों का उपयोग)\n2. हरमन रोर्शाक (10 स्याही के धब्बों वाले कार्डों का उपयोग)\n3. फ्रांसिस गाल्टन और कार्ल जुंग (उद्दीपक शब्दों पर अनुक्रिया)\n4. लियोपोल्ड बेलक (पशुओं के चित्रों वाले 10 कार्डों का उपयोग)\n\nकूट:\n    A  B  C  D",
+              "options": [
+                            "(1) 2  1  4  3",
+                            "(2) 1  2  4  3",
+                            "(3) 2  4  1  3",
+                            "(4) 3  1  4  2"
+              ],
+              "answer": "A",
+              "explanation": "IBT का प्रतिपादन हरमन रोर्शाक (1921) ने किया; TAT का मॉर्गन एवं मरे (1935) ने; CAT का बच्चों के लिए लियोपोल्ड बेलक (1948) ने किया; और WAT का व्यवस्थित मनोवैज्ञानिक उपयोग सर्वप्रथम गाल्टन और बाद में जुंग ने किया था।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 9,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "आनुवंशिकता के नियम",
+              "sourceTag": "User Chunk 1",
+              "question": "मानव विकास पर आनुवंशिकता (Heredity) के प्रभावों को स्पष्ट करने वाले निम्नलिखित जैव-वैज्ञानिक नियमों पर विचार कीजिए:\nI. समानता का नियम (Law of Similarity) - जैसे माता-पिता होते हैं, वैसी ही उनकी संतान होती है।\nII. प्रत्यागमन का नियम (Law of Regression) - प्रतिभावान माता-पिता की संतान का मंदबुद्धि होना अर्थात् माता-पिता के विपरीत गुणों का अंतरण होना।\nIII. जीव सांख्यिकी नियम (Biometric Law) - फ्रांसिस गाल्टन द्वारा प्रतिपादित, जिसके अनुसार बालक को गुण केवल माता-पिता से नहीं बल्कि पिछली पीढ़ियों (दादा-दादी) से भी मिलते हैं।\n\nउपरोक्त में से कौन-से नियम सत्य हैं?",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल II और III",
+                            "(3) केवल I और III",
+                            "(4) I, II और III सभी"
+              ],
+              "answer": "D",
+              "explanation": "आनुवंशिकता के ये तीनों नियम (समानता, प्रत्यागमन और गाल्टन का जीव सांख्यिकी नियम) वंशानुक्रम के सिद्धांतों की सही और वैज्ञानिक व्याख्या प्रस्तुत करते हैं।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 10,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "समीप-दूराभिमुख विकास सिद्धांत",
+              "sourceTag": "User Chunk 1",
+              "question": "कथन (A): विकास के समीप-दूराभिमुख (Proximodistal) सिद्धांत के अनुसार, एक शिशु पहले अपने पूरे हाथ का संचालन सीखता है, उसके बाद अपनी उंगलियों पर सूक्ष्म नियंत्रण प्राप्त करता है।\nकारण (R): गत्यात्मक विकास की दिशा हमेशा शरीर के केंद्र (रीढ़ की हड्डी) से शुरू होकर बाहरी अंगों की ओर क्रमिक रूप से विस्तारित होती है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "समीप-दूराभिमुख (Proximodistal) क्रम यह स्पष्ट करता है कि शारीरिक नियंत्रण केंद्र से परिधि या बाहर की ओर बढ़ता है। यही कारण है कि बच्चा पहले कंधे, फिर हाथ और अंत में उंगलियों का समन्वय (Grasp) सीखता है। कथन-कारण दोनों सत्य हैं और व्याख्या सही है।",
+              "reference": "REET Mock Test 6 Chunk 1"
+},
+{
+              "id": 11,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "गुथरी का समीपता सिद्धांत",
+              "sourceTag": "User Chunk 2",
+              "question": "कथन (A): एडविन गुथरी के समीपता के सिद्धांत (Contiguity Theory) के अनुसार, अधिगम के सुदृढ़ होने के लिए किसी भी प्रकार के पुनर्बलन (Reinforcement) या पुरस्कार की कोई आवश्यकता नहीं होती।\nकारण (R): गुथरी का मानना है कि यदि एक उद्दीपक और एक अनुक्रिया एक साथ घटित होते हैं, तो उनके बीच का साहचर्य एक ही प्रयास (One-trial learning) में पूरी तरह स्थापित हो जाता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) गलत है, लेकिन (R) सही है।"
+              ],
+              "answer": "A",
+              "explanation": "गुथरी का समीपता का सिद्धांत व्यवहारवाद में एक अपवाद है जो थॉर्नडाइक या स्किनर के पुनर्बलन को नकारता है। वे मानते हैं कि उद्दीपक और अनुक्रिया का समय के आधार पर एक साथ होना (समीपता) ही सीखने के लिए काफी है और यह एक ही बार में सीख लिया जाता है। कथन-कारण दोनों सही हैं और कारण सही व्याख्या प्रस्तुत करता है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 12,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "अधिगम स्थानांतरण",
+              "sourceTag": "User Chunk 2",
+              "question": "अधिगम स्थानांतरण (Transfer of Learning) के मनोवैज्ञानिक सिद्धांतों और उनके प्रतिपादकों के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:\nI. समान तत्वों का सिद्धांत (Theory of Identical Elements) - एडवर्ड थॉर्नडाइक द्वारा प्रतिपादित, जिसके अनुसार दो कार्यों में जितनी अधिक समानता होगी, स्थानांतरण उतना ही अधिक होगा।\nII. समानीकरण का सिद्धांत (Theory of Generalization) - सी.एच. जड (Charles Judd) द्वारा प्रतिपादित, जिसके अनुसार यदि छात्र किसी सिद्धांत को सामान्यीकृत कर लेता है, तो उसका उपयोग अन्य परिस्थितियों में आसानी से कर सकता है।\n\nसही विकल्प चुनिए:",
+              "options": [
+                            "(1) केवल I सत्य है।",
+                            "(2) केवल II सत्य है।",
+                            "(3) I और II दोनों सत्य हैं।",
+                            "(4) दोनों ही असत्य हैं।"
+              ],
+              "answer": "C",
+              "explanation": "अधिगम स्थानांतरण के ये दोनों सिद्धांत अत्यंत महत्वपूर्ण हैं। थॉर्नडाइक समान तत्वों (जैसे साइकिल और मोटरसाइकिल का बैलेंस) पर बल देते हैं और जड नियमों के सामान्यीकरण (जैसे पानी में प्रकाश के अपवर्तन का सिद्धांत सीखकर मछली का शिकार करना) पर बल देते हैं। दोनों कथन सत्य हैं।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 13,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "क्लार्क हल का नोद-न्यूनता सिद्धांत",
+              "sourceTag": "User Chunk 2",
+              "question": "क्लार्क हल (Clark Hull) के 'नोद-न्यूनता सिद्धांत' (Drive Reduction Theory) के अंतर्गत आने वाले प्रेरक तत्वों को उनके सही अर्थों से सुमेलित कीजिए:\n\nसूची-I (प्रेरक तत्व)\nA. आवश्यकता (Need)\nB. अंतर्नोद / नोद (Drive)\nC. प्रोत्साहन / लक्ष्य (Incentive)\n\nसूची-II (सटीक अर्थ)\n1. जैविक कमी के कारण उत्पन्न आंतरिक तनाव या सक्रियता की स्थिति (जैसे भूख या प्यास)।\n2. पर्यावरण में मौजूद वह वस्तु या लक्ष्य जो आंतरिक तनाव को शांत करता है (जैसे भोजन या पानी)।\n3. शरीर के भीतर किसी जैविक तत्व या ऊर्जा की कमी होना (जैसे पानी या भोजन की कमी)।\n\nकूट:\n    A  B  C",
+              "options": [
+                            "(1) 3  1  2",
+                            "(2) 1  3  2",
+                            "(3) 3  2  1",
+                            "(4) 2  1  3"
+              ],
+              "answer": "A",
+              "explanation": "क्लार्क हल के अनुसार, अधिगम का आधार जैविक संतुलन (Homeostasis) बनाना है। शरीर में कमी होना आवश्यकता है (A->3); उससे उत्पन्न तनाव अंतर्नोद है (B->1); और उसे शांत करने वाला पर्यावरण का लक्ष्य प्रोत्साहन है (C->2)।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 14,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "अधिगम वक्र और पठार",
+              "sourceTag": "User Chunk 2",
+              "question": "कथन: अधिगम वक्र (Learning Curves) के दौरान एक ऐसी स्थिति आती है जहाँ अभ्यास करने के बावजूद सीखने की गति में कोई दृश्य सुधार दिखाई नहीं देता, जिसे 'अधिगम का पठार' (Learning Plateau) कहा जाता है।\nनिष्कर्ष:\nI. अधिगम का पठार यह सिद्ध करता है कि व्यक्ति के मस्तिष्क की क्षमता हमेशा के लिए समाप्त हो गई है और अब वह जीवन में कभी कुछ नया नहीं सीख सकता।\nII. शारीरिक थकान, अरुचि, कार्य की अत्यधिक जटिलता या अनुपयुक्त शिक्षण विधि के कारण अधिगम में अस्थाई रूप से पठार आ सकता है।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) दोनों निष्कर्ष गलत हैं।"
+              ],
+              "answer": "B",
+              "explanation": "अधिगम पठार सीखने की प्रक्रिया में एक अस्थाई ठहराव (Arrest) को दर्शाता है, यह स्थायी अंत नहीं है। इसे प्रेरणा देकर या शिक्षण विधि बदलकर तोड़ा जा सकता है, अतः निष्कर्ष II सही है और निष्कर्ष I सर्वथा गलत है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 15,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "आत्म-प्रभावकारिता",
+              "sourceTag": "User Chunk 2",
+              "question": "अल्बर्ट बांडुरा के अनुसार, 'आत्म-प्रभावकारिता' (Self-Efficacy) संप्रत्यय का अधिगम और अभिप्रेरणा पर गहरा प्रभाव पड़ता है। आत्म-प्रभावकारिता के विकास के चार मुख्य स्रोत कौन-से हैं?\nI. सक्रिय उपलब्धि / व्यक्तिगत अनुभव (Mastery Experiences)\nII. प्रतिनियुक्त अनुभव / दूसरों को देखकर सीखना (Vicarious Experiences)\nIII. सामाजिक अनुनय / शाब्दिक प्रोत्साहन (Social Persuasion)\nIV. शारीरिक और संवेगात्मक उत्तेजना (Physiological/Emotional States)\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल I, II और III",
+                            "(3) केवल II, III और IV",
+                            "(4) I, II, III और IV सभी"
+              ],
+              "answer": "D",
+              "explanation": "बांडुरा के अनुसार, आत्म-प्रभावकारिता (Self-Efficacy) व्यक्ति का खुद के सामर्थ्य पर विश्वास है। यह चार स्रोतों से बनती है: खुद की पिछली सफलताएं (I), दूसरों की सफलता देखना (II), समाज द्वारा मिला प्रोत्साहन (III) और संवेगात्मक संतुलन (IV)। अतः चारों स्रोत सत्य हैं।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 16,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "आसुबेल का सार्थक शाब्दिक अधिगम सिद्धांत",
+              "sourceTag": "User Chunk 2",
+              "question": "कथन (A): डेविड आसुबेल के 'सार्थक शाब्दिक अधिगम सिद्धांत' के अनुसार, नया ज्ञान देने से पहले छात्रों के सामने 'अग्रवर्ती आयोजक' (Advance Organizers) प्रस्तुत करना अधिगम को अत्यधिक स्थायी बनाता है।\nकारण (R): अग्रवर्ती आयोजक एक वैचारिक पुल (Bridge) का निर्माण करते हैं जो छात्र के मौजूदा संज्ञानात्मक ढांचे (Prior Knowledge) को नई आने वाली अमूर्त सामग्री से प्रभावी रूप से जोड़ देता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "आसुबेल का Advance Organizer Model संज्ञानात्मक निर्मितिवाद का हिस्सा है। यह नया कठिन पाठ शुरू करने से पहले एक व्यापक रूपरेखा (खिड़की) देता है जिससे नया ज्ञान आसानी से पुराने ज्ञान में संचित (Anchor) हो जाता है। कथन-कारण दोनों सही हैं और व्याख्या सटीक है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 17,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "अधिगम की आधुनिक कठिनाइयाँ",
+              "sourceTag": "User Chunk 2",
+              "question": "अधिगम की आधुनिक तंत्रिकीय और संवेगात्मक कठिनाइयों (Modern Learning & Psychological Difficulties) को उनके विशिष्ट लक्षणों से सुमेलित कीजिए:\n\nसूची-I (कठिनाई / विकार)\nA. डिस्प्रैक्सिया (Dyspraxia)\nB. डिस्फेजिया (Dysphasia)\nC. डिस्टीमिया (Dysthymia)\nD. ए.डी.एच.डी. (ADHD)\n\nसूची-II (विशिष्ट लक्षण)\n1. मस्तिष्क की क्षति के कारण मौखिक भाषा को समझने और स्वयं के विचारों को व्यक्त करने में आने वाली अक्षमता।\n2. ध्यान केंद्रित न रख पाना, अत्यधिक अतिसक्रियता और बिना सोचे-समझे आवेगी व्यवहार (Impulsive) प्रदर्शित करना।\n3. सूक्ष्म मोटर समन्वय (जैसे पेंसिल पकड़ना, बटन लगाना, जूतों के फीते बांधना) में गंभीर गत्यात्मक कठिनाई।\n4. एक हल्का लेकिन दीर्घकालिक मानसिक अवसाद या निराशा की स्थिति जो छात्र की सीखने की प्रेरणा को कुंठित करती है।\n\nकूट:\n    A  B  C  D",
+              "options": [
+                            "(1) 3  1  4  2",
+                            "(2) 3  2  1  4",
+                            "(3) 1  3  2  4",
+                            "(4) 4  1  2  3"
+              ],
+              "answer": "A",
+              "explanation": "डिस्प्रैक्सिया गामक समन्वय विकार है (A->3); डिस्फेजिया वाक्/सम्प्रेषण अक्षमता है (B->1); डिस्टीमिया गंभीर दीर्घकालिक अवसाद है (C->4); और ADHD ध्यान की कमी व अतिसक्रियता का विकार है (D->2)। कूट (1) सही है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 18,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "संप्रत्यय निर्माण",
+              "sourceTag": "User Chunk 2",
+              "question": "कथन: संज्ञानात्मक मनोविज्ञान के अंतर्गत 'संप्रत्यय निर्माण' (Concept Formation) एक उच्च मानसिक प्रक्रिया है जो बालकों में तार्किक श्रेणियों के विकास का आधार बनती है।\nनिष्कर्ष:\nI. संप्रत्यय निर्माण के चरणों का सही तार्किक क्रम है: प्रत्यक्षीकरण/अवलोकन -> तुलना -> पृथक्करण (Abstraction) -> समानीकरण (Generalization)।\nII. संप्रत्यय निर्माण केवल जन्मजात होता है और इसका बाह्य वातावरण के अनुभवों या वस्तुओं के वर्गीकरण से कोई संबंध नहीं होता।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) दोनों निष्कर्ष गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "संप्रत्यय निर्माण अनुभवों से सीखी जाने वाली क्रमिक प्रक्रिया है, यह जन्मजात नहीं होती (निष्कर्ष II गलत)। इसके चरणों में पहले वस्तु को देखना (अवलोकन), फिर समानताएं खोजना (तुलना), विशिष्ट गुणों को अलग करना (पृथक्करण) और अंत में एक नियम बनाना (समानीकरण) शामिल है, अतः निष्कर्ष I सही है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 19,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "वूम का प्रत्याशा सिद्धांत",
+              "sourceTag": "User Chunk 2",
+              "question": "विक्टर वूम (Victor Vroom) के अभिप्रेरणा के 'प्रत्याशा सिद्धांत' (Expectancy Theory) के अनुसार, किसी कार्य को करने की अभिप्रेरणा का स्तर तीन चरों के गुणनफल पर निर्भर करता है। वे तीन चर कौन-से हैं?\nI. प्रत्याशा (Expectancy - यह विश्वास कि प्रयास से प्रदर्शन बेहतर होगा)\nII. साधनता (Instrumentality - यह विश्वास कि अच्छे प्रदर्शन से पुरस्कार मिलेगा)\nIII. वैलेंस / आकर्षण (Valence - प्राप्त होने वाले पुरस्कार का व्यक्ति के लिए मूल्य)\nIV. अंतर्नोद (Drive - शारीरिक तनाव की स्थिति)\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल I, II और III",
+                            "(3) केवल II, III और IV",
+                            "(4) I, II, III और IV सभी"
+              ],
+              "answer": "B",
+              "explanation": "वूम का अभिप्रेरणा सूत्र $Motivation = Expectancy \\times Instrumentality \\times Valence$ है। इसमें अंतर्नोद (IV) शामिल नहीं है, वह क्लार्क हल के सिद्धांत का हिस्सा है। अतः केवल I, II और III सत्य हैं।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 20,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "फ्रायड का दमन सिद्धांत",
+              "sourceTag": "User Chunk 2",
+              "question": "कथन (A): सिगमंड फ्रायड के विस्मरण के दमन सिद्धांत (Theory of Repression) के अनुसार विस्मरण एक निष्क्रिय मानसिक प्रक्रिया है जहाँ यादें समय बीतने के साथ स्वतः धुंधली हो जाती हैं।\nकारण (R): दमन एक अचेतन रक्षा प्रणाली है जो दुःखद, अपमानजनक या दर्दनाक यादों को जानबूझकर चेतन मन से ढकेलकर अचेतन मन (Unconscious mind) में दबा देती है ताकि व्यक्ति चिंता से बच सके।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं।",
+                            "(2) (A) सही है, लेकिन (R) गलत है।",
+                            "(3) (A) गलत है, लेकिन (R) सही है।",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "C",
+              "explanation": "कथन (A) गलत है क्योंकि फ्रायड विस्मरण को निष्क्रिय नहीं बल्कि 'सक्रिय मानसिक प्रक्रिया' (Active process) मानते थे। समय के साथ यादों का स्वतः धुंधला होना 'अनाभ्यास का नियम' (Decay theory) कहलाता है। कारण (R) दमन की बिल्कुल सही मनोवैज्ञानिक परिभाषा देता है, अतः कारण सत्य है।",
+              "reference": "REET Mock Test 6 Chunk 2"
+},
+{
+              "id": 21,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "समावेशी शिक्षा और LRE",
+              "sourceTag": "User Chunk 3",
+              "question": "कथन (A): समावेशी शिक्षा (Inclusive Education) के अंतर्गत विशेष आवश्यकता वाले बालकों (CWSN) को हमेशा सामान्य स्कूल के भीतर 'कम से कम प्रतिबंधात्मक वातावरण' (Least Restrictive Environment - LRE) में पढ़ाया जाना चाहिए।\nकारण (R): बालकों को सामान्य बच्चों से अलग करके विशेष स्कूलों में भेजना (Segregation) उनमें हीन भावना पैदा करता है और उन्हें सामाजिक अंतःक्रिया के मुख्य अवसरों से पूरी तरह वंचित कर देता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) गलत है, लेकिन (R) सही है।"
+              ],
+              "answer": "A",
+              "explanation": "LRE का संप्रत्यय यह सुनिश्चित करता है कि दिव्यांग या विशेष बच्चों को समाज की मुख्यधारा से न काटा जाए। उन्हें सामान्य बच्चों के साथ ही लचीले पाठ्यक्रम के साथ पढ़ाया जाना चाहिए क्योंकि पृथक्करण मनोवैज्ञानिक रूप से हानिकारक है। कथन-कारण दोनों सही हैं और कारण सही व्याख्या है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 22,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "प्रतिभाशाली बालकों की शिक्षा",
+              "sourceTag": "User Chunk 3",
+              "question": "प्रतिभाशाली बालकों (Gifted Children) की विशिष्ट शैक्षणिक आवश्यकताओं को पूरा करने के लिए आधुनिक शिक्षाशास्त्र में कौन-सी रणनीतियाँ सबसे प्रासंगिक मानी जाती हैं?\nI. त्वरण (Acceleration) - छात्र की शैक्षणिक प्रगति को तेज करना, जैसे एक कक्षा को छोड़कर सीधे अगली उच्च कक्षा में प्रोन्नत (Double Promotion) करना।\nII. संवर्द्धन / समृद्धिकरण (Enrichment) - सामान्य पाठ्यक्रम के अलावा उच्च बौद्धिक चुनौतियाँ, शोध प्रोजेक्ट और व्यापक गहन सामग्री उपलब्ध कराना।\nIII. पृथक्करण (Segregation) - प्रतिभाशाली बच्चों को सामान्य बच्चों से दूर हमेशा के लिए अलग विशिष्ट विद्यालयों में बंद रखना।\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल II और III",
+                            "(3) केवल I और III",
+                            "(4) I, II और III सभी"
+              ],
+              "answer": "A",
+              "explanation": "प्रतिभाशाली बच्चों के लिए त्वरण (Acceleration) और संवर्द्धन (Enrichment) सर्वोत्तम शैक्षणिक नीतियां हैं (I और II सही)। अलग सेक्शन या अलग स्कूल बनाना (Segregation) समावेशन के सिद्धांतों के खिलाफ है, अतः कथन III गलत है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 23,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "सृजनात्मकता परीक्षण",
+              "sourceTag": "User Chunk 3",
+              "question": "सृजनात्मकता (Creativity) के आकलन हेतु निर्मित विभिन्न मनोवैज्ञानिक परीक्षणों को उनके सही लक्षणों से सुमेलित कीजिए:\n\nसूची-I (सृजनात्मकता परीक्षण)\nA. टोरेंस सृजनात्मक चिंतन परीक्षण (TTCT)\nB. बाकर मेहंदी सृजनात्मकता परीक्षण\nC. पासी सृजनात्मकता परीक्षण (B.K. Passi)\n\nसूची-II (विशिष्ट लक्षण / प्रणेता)\n1. भारत में निर्मित एक व्यापक परीक्षण जिसमें पहेलियाँ, चित्रों के नवीन उपयोग और समस्याओं के लीक से हटकर समाधान खोजना शामिल है।\n2. ई.पी. टोरेंस द्वारा निर्मित, जिसमें शाब्दिक और अशाब्दिक (जैसे अपूर्ण चित्रों को पूरा करना) दोनों प्रकार के उप-परीक्षण शामिल हैं।\n3. भारतीय सांस्कृतिक संदर्भों के अनुकूल निर्मित सबसे लोकप्रिय शाब्दिक व अशाब्दिक परीक्षण जो प्रवाह, लचीलापन और मौलिकता मापता है।\n\nकूट:\n    A  B  C",
+              "options": [
+                            "(1) 2  3  1",
+                            "(2) 1  2  3",
+                            "(3) 2  1  3",
+                            "(4) 3  1  2"
+              ],
+              "answer": "A",
+              "explanation": "टोरेंस का परीक्षण (TTCT) वैश्विक स्तर पर सबसे प्रसिद्ध है जिसमें चित्र पूर्ति शामिल है (A->2); बाकर मेहंदी का परीक्षण भारतीय संदर्भ में अत्यंत लोकप्रिय शाब्दिक-अशाब्दिक टेस्ट है (B->3); और बी.के. पासी का परीक्षण पहेलियों और नवीन उपयोगों पर आधारित भारतीय टेस्ट है (C->1)।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 24,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "NEP 2020 मूल्यांकन",
+              "sourceTag": "User Chunk 3",
+              "question": "कथन: राष्ट्रीय शिक्षा नीति 2020 (NEP 2020) प्राथमिक स्तर पर मूल्यांकन प्रणाली को पूरी तरह से योग्यता-आधारित (Competency-based) बनाने और रटंत प्रणाली को समाप्त करने की वकालत करती है।\nनिष्कर्ष:\nI. 'परख' (PARAKH) एक नया राष्ट्रीय मूल्यांकन केंद्र है जो बोर्ड परीक्षाओं के लिए मानक, दिशानिर्देश और योग्यता-आधारित मूल्यांकन का खाका तैयार करेगा।\nII. नया 360 डिग्री समग्र प्रगति पत्रक (Holistic Progress Card) केवल शिक्षक द्वारा दिए गए अंकों को मान्य रखेगा, छात्र का अपना कोई स्व-मूल्यांकन या सहपाठी मूल्यांकन इसमें शामिल नहीं होगा।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) दोनों निष्कर्ष गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "NEP 2020 के तहत 'परख' की स्थापना की गई है (निष्कर्ष I सही है)। नया 360 डिग्री होलिस्टिक कार्ड बहुआयामी है, जिसमें शिक्षक मूल्यांकन के साथ-साथ छात्र का स्व-मूल्यांकन (Self) और उसके दोस्तों का मूल्यांकन (Peer) भी अनिवार्य रूप से शामिल है, अतः निष्कर्ष II गलत है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 25,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "RTE Act 2009 SMC",
+              "sourceTag": "User Chunk 3",
+              "question": "निशुल्क और अनिवार्य बाल शिक्षा का अधिकार अधिनियम, 2009 (RTE Act, 2009) की धारा 21 के अनुसार गठित 'विद्यालय प्रबंधन समिति' (SMC) के कानूनी प्रावधानों के संबंध में कौन-से कथन सत्य हैं?\nI. समिति के कुल सदस्यों में से कम से कम 75 प्रतिशत सदस्य बालकों के माता-पिता या अभिभावकों में से होने अनिवार्य हैं।\nII. समिति के कुल सदस्यों में से कम से कम 50 प्रतिशत महिला सदस्यों का होना कानूनी रूप से अनिवार्य है।\nIII. एसएमसी (SMC) का सबसे मुख्य कार्य 'विद्यालय विकास योजना' (School Development Plan) तैयार करना है।\n\nकूट:",
+              "options": [
+                            "(1) केवल I और II",
+                            "(2) केवल II और III",
+                            "(3) केवल I और III",
+                            "(4) I, II और III सभी"
+              ],
+              "answer": "D",
+              "explanation": "RTE की धारा 21 के तहत सरकारी स्कूलों में SMC बनती है। इसमें 75% अभिभावक (I), 50% महिलाएं (II) होना जरूरी है और इसका मुख्य कार्य धारा 22 के तहत स्कूल विकास योजना बनाना है (III)। अतः तीनों कथन सत्य हैं।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 26,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "क्रियात्मक अनुसंधान",
+              "sourceTag": "User Chunk 3",
+              "question": "कथन (A): क्रियात्मक अनुसंधान (Action Research) में निर्मित होने वाली 'क्रियात्मक परिकल्पना' (Action Hypothesis) समस्या समाधान के लिए शिक्षक द्वारा किया जाने वाला एक तात्कालिक तार्किक अनुमान है।\nकारण (R): क्रियात्मक अनुसंधान के तहत प्राप्त निष्कर्षों को पूरे देश या राज्य के सभी विद्यालयों पर एक सार्वभौमिक नियम के रूप में लागू (Generalize) कर दिया जाता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं।",
+                            "(2) (A) सही है, लेकिन (R) गलत है।",
+                            "(3) (A) गलत है, लेकिन (R) सही है।",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "C",
+              "explanation": "कथन (A) क्रियात्मक परिकल्पना की सही विशेषता बताता है। परंतु कारण (R) गलत है क्योंकि क्रियात्मक अनुसंधान का उद्देश्य स्थानीय समस्याओं (जैसे किसी विशिष्ट कक्षा की वर्तनी अशुद्धि) को दूर करना होता है। इसके निष्कर्षों का सार्वभौमिक सामान्यीकरण नहीं किया जा सकता, वे केवल उसी स्थानीय विद्यालय के लिए मान्य होते हैं।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 27,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Matching",
+              "difficulty": "medium",
+              "topic": "CCE गुणात्मक उपकरण",
+              "sourceTag": "User Chunk 3",
+              "question": "सतत एवं व्यापक मूल्यांकन (CCE) के अंतर्गत प्रयुक्त होने वाले गुणात्मक उपकरणों (Qualitative Assessment Tools) को उनके सही वर्णनों से सुमेलित कीजिए:\n\nसूची-I (CCE उपकरण)\nA. जाँच सूची (Checklist)\nB. रेटिंग स्केल (Rating Scale)\nC. पोर्टफोलियो (Portfolio)\nD. उपाख्यानात्मक रिकॉर्ड (Anecdotal)\n\nसूची-II (सटीक शैक्षणिक वर्णन)\n1. किसी विशिष्ट व्यवहार या कौशल की उपस्थिति या अनुपस्थिति को केवल 'हाँ' या 'ना' (Yes/No) कूटों में अंकित करना।\n2. छात्र के भाषायी या व्यावहारिक कौशल के स्तर को गुणात्मक श्रेणियों (जैसे—उत्कृष्ट, औसत, कमजोर) पर मापना।\n3. छात्र के जीवन की किसी विशिष्ट घटना, संकट या व्यवहार का शिक्षक द्वारा लिखा गया निष्पक्ष विवरणात्मक नोट।\n4. छात्र के सर्वश्रेष्ठ रचनात्मक कार्यों, कलाकृतियों और प्रगति का एक व्यवस्थित क्रमिक संग्रह।\n\nकूट:\n    A  B  C  D",
+              "options": [
+                            "(1) 1  2  4  3",
+                            "(2) 2  1  4  3",
+                            "(3) 1  4  2  3",
+                            "(4) 4  3  1  2"
+              ],
+              "answer": "A",
+              "explanation": "चेकलिस्ट द्विमार्गी (हाँ/ना) होती है (A->1); रेटिंग स्केल गुणवत्ता की सीमा या स्तर मापता है (B->2); पोर्टफोलियो छात्र के चुनिंदा कार्यों का संग्रह है (C->4); और अनेक्डोटल रिकॉर्ड किसी विशिष्ट घटना का विवरणात्मक नोट होता है (D->3)। कूट (1) सही है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 28,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Statement-Conclusion",
+              "difficulty": "medium",
+              "topic": "NCF 2005 शिक्षक की भूमिका",
+              "sourceTag": "User Chunk 3",
+              "question": "कथन: राष्ट्रीय पाठ्यचर्या रूपरेखा (NCF 2005) के मार्गदर्शी सिद्धांतों के अनुसार, स्कूल में शिक्षक की भूमिका ज्ञान के तानाशाह दाता के स्थान पर एक 'सुविधादाता' (Facilitator) के रूप में होनी चाहिए।\nनिष्कर्ष:\nI. सुविधादाता के रूप में शिक्षक को कक्षा में ऐसा भयमुक्त वातावरण बनाना चाहिए जहाँ बच्चे स्वयं प्रयोगों, चर्चाओं और गतिविधियों द्वारा अपने ज्ञान का सक्रिय निर्माण कर सकें।\nII. शिक्षक की मुख्य भूमिका केवल पाठ्यपुस्तक की पंक्तियों को जोर-जोर से पढ़कर बच्चों को उन्हें चुपचाप रटने के लिए मजबूर करना है।",
+              "options": [
+                            "(1) केवल निष्कर्ष I सही है।",
+                            "(2) केवल निष्कर्ष II सही है।",
+                            "(3) निष्कर्ष I और II दोनों सही हैं।",
+                            "(4) दोनों निष्कर्ष गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "NCF 2005 निर्मितिवाद (Constructivism) पर आधारित है, जो बच्चे को सक्रिय ज्ञान निर्माता मानता है और शिक्षक को केवल एक मार्गदर्शक या सुविधादाता (Facilitator) का स्थान देता है। रटने पर ज़ोर देना (निष्कर्ष II) इसके पूर्णतः विरुद्ध है, अतः केवल निष्कर्ष I सही है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 29,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Multi-statement",
+              "difficulty": "medium",
+              "topic": "संशोधित ब्लूम वर्गीकरण",
+              "sourceTag": "User Chunk 3",
+              "question": "बेंजामिन ब्लूम के संशोधित संज्ञानात्मक क्षेत्र (Revised Cognitive Domain by Anderson & Krathwohl) के अंतर्गत मानसिक प्रक्रियाओं (Cognitive Processes) का निचले से उच्च क्रम (Bottom to Top) में सही पदानुक्रम क्या है?\nI. याद रखना (Remembering)\nII. समझना (Understanding)\nIII. अनुप्रयोग करना (Applying)\nIV. विश्लेषण करना (Analyzing)\nV. मूल्यांकन करना (Evaluating)\nVI. सृजन करना (Creating)\n\nकूट:",
+              "options": [
+                            "(1) I -> II -> III -> IV -> V -> VI",
+                            "(2) I -> II -> III -> IV -> VI -> V",
+                            "(3) II -> I -> III -> IV -> V -> VI",
+                            "(4) I -> III -> II -> IV -> VI -> V"
+              ],
+              "answer": "A",
+              "explanation": "वर्ष 2001 के संशोधित ब्लूम वर्गीकरण में क्रम संज्ञानात्मक क्रियाओं के रूप में बदल गया था, जिसका सही निचला से ऊपरी क्रम है: याद रखना -> समझना -> अनुप्रयोग -> विश्लेषण -> मूल्यांकन -> सृजन (Creating सर्वोच्च स्तर है)। अतः क्रम (1) पूर्णतः शुद्ध है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 30,
+              "section": "Child Development & Pedagogy",
+              "questionType": "Assertion-Reason",
+              "difficulty": "medium",
+              "topic": "समस्या-समाधान विधि",
+              "sourceTag": "User Chunk 3",
+              "question": "कथन (A): प्राथमिक स्तर पर समस्या-समाधान विधि (Problem-Solving Method) का उपयोग करते समय शिक्षकों को बालकों के सामने 'असंरचित समस्याएं' (Ill-structured problems) प्रस्तुत करनी चाहिए।\nकारण (R): असंरचित समस्याओं का कोई एक निश्चित, बंद-अंत वाला या रटा-रटाया उत्तर नहीं होता, जिससे बच्चों में अपसारी चिंतन (Divergent Thinking), परिकल्पना निर्माण और आलोचनात्मक सोच का वास्तविक विकास होता है।",
+              "options": [
+                            "(1) (A) और (R) दोनों सही हैं और (R), (A) की सही व्याख्या करता है।",
+                            "(2) (A) और (R) दोनों सही हैं, लेकिन (R), (A) की सही व्याख्या नहीं करता है।",
+                            "(3) (A) सही है, लेकिन (R) गलत है।",
+                            "(4) (A) और (R) दोनों गलत हैं।"
+              ],
+              "answer": "A",
+              "explanation": "शिक्षाशास्त्र में 'Ill-structured Problem' वे समस्याएं हैं जो खुली होती हैं (जैसे—\"यदि आपके गाँव का तालाब प्रदूषित हो जाए, तो आप उसे साफ करने के लिए क्या कदम उठाएंगे?\")। ऐसी समस्याओं का कोई एक सीधा उत्तर गाइड में नहीं मिलता। बच्चे विभिन्न दिशाओं में सोचते हैं, जिससे उनकी आलोचनात्मक सोच सुदृढ़ होती है। कथन-कारण दोनों सही हैं और कारण सही व्याख्या प्रस्तुत करता है।",
+              "reference": "REET Mock Test 6 Chunk 3"
+},
+{
+              "id": 31,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "संख्या 743,529 में अंक '4' के स्थानीय मान और अंक '5' के जातीय मान (अंकित मान) का गुणनफल क्या होगा?",
+              "options": [
+                            "(A) 20,000",
+                            "(B) 200,000",
+                            "(C) 2,000",
+                            "(D) 40,005"
+              ],
+              "answer": "B",
+              "explanation": "4 का स्थानीय मान = 40,000 और 5 का जातीय मान = 5 है। गुणनफल = 40,000 × 5 = 200,000 होगा।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 32,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "दो सह-अभाज्य संख्याओं (Co-prime numbers) का महत्तम समापवर्तक (HCF) और लघुत्तम समापवर्त्य (LCM) क्रमशः क्या होता है?",
+              "options": [
+                            "(A) 0 और उनका योगफल",
+                            "(B) 1 और उनका अंतर",
+                            "(C) 1 और उनका गुणनफल",
+                            "(D) स्वयं वे संख्याएँ"
+              ],
+              "answer": "C",
+              "explanation": "सह-अभाज्य संख्याओं में कोई उभयनिष्ठ गुणनखंड नहीं होता, इसलिए HCF हमेशा 1 और LCM उनका गुणनफल होता है।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 33,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "यदि भिन्न 3/5, 7/9, 11/13 और 5/7 को आरोही क्रम (Ascending order) में व्यवस्थित किया जाए, तो दूसरे स्थान पर कौन सी भिन्न आएगी?",
+              "options": [
+                            "(A) 3/5",
+                            "(B) 5/7",
+                            "(C) 7/9",
+                            "(D) 11/13"
+              ],
+              "answer": "B",
+              "explanation": "दशमलव मान: 3/5 = 0.60, 5/7 ≈ 0.71, 7/9 ≈ 0.77, 11/13 ≈ 0.84। आरोही क्रम में दूसरा स्थान 5/7 का है।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 34,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "राम ने एक साइकिल ₹4,500 में खरीदी और उसकी मरम्मत पर ₹500 खर्च किए। यदि वह उसे 15% लाभ पर बेचना चाहता है, तो विक्रय मूल्य क्या होना चाहिए?",
+              "options": [
+                            "(A) ₹5,175",
+                            "(B) ₹5,675",
+                            "(C) ₹5,750",
+                            "(D) ₹5,500"
+              ],
+              "answer": "C",
+              "explanation": "कुल क्रय मूल्य = 4500 + 500 = ₹5,000। विक्रय मूल्य = 5000 × (115/100) = ₹5,750।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 35,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "कितने वर्षों में ₹8,000 की राशि 10% वार्षिक साधारण ब्याज की दर से ₹12,000 हो जाएगी?",
+              "options": [
+                            "(A) 4 वर्ष",
+                            "(B) 5 वर्ष",
+                            "(C) 6 वर्ष",
+                            "(D) 3 वर्ष"
+              ],
+              "answer": "B",
+              "explanation": "साधारण ब्याज = 12000 - 8000 = ₹4,000। समय (T) = (ब्याज × 100) / (मूलधन × दर) = (4000 × 100) / (8000 × 10) = 5 वर्ष।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 36,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "गणित में प्रयुक्त \"BODMAS\" नियम के अनुसार, सबसे पहले किस कोष्ठक (Bracket) को हल किया जाता है?",
+              "options": [
+                            "(A) मंझला कोष्ठक { }",
+                            "(B) बड़ा कोष्ठक [ ]",
+                            "(C) छोटा कोष्ठक ( )",
+                            "(D) रेखा कोष्ठक (Bar / —)"
+              ],
+              "answer": "D",
+              "explanation": "कोष्ठक हल करने का सही क्रम: रेखा कोष्ठक (—) → छोटा ( ) → मंझला { } → बड़ा [ ] होता है।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 37,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "एक आयताकार मैदान का परिमाप 120 मीटर है। यदि इसकी लंबाई 40 मीटर है, तो इस मैदान का क्षेत्रफल कितना होगा?",
+              "options": [
+                            "(A) 800 वर्ग मीटर",
+                            "(B) 1600 वर्ग मीटर",
+                            "(C) 400 वर्ग मीटर",
+                            "(D) 1200 वर्ग मीटर"
+              ],
+              "answer": "A",
+              "explanation": "परिमाप = 2(L + B) = 120 → 40 + B = 60 → B = 20 मीटर। क्षेत्रफल = L × B = 40 × 20 = 800 वर्ग मीटर।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 38,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "1 से 50 तक की प्राकृत संख्याओं में कुल कितनी अभाज्य संख्याएँ (Prime Numbers) होती हैं?",
+              "options": [
+                            "(A) 25",
+                            "(B) 15",
+                            "(C) 10",
+                            "(D) 12"
+              ],
+              "answer": "B",
+              "explanation": "1 से 50 तक कुल 15 अभाज्य संख्याएँ होती हैं (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47)।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 39,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "यदि 15 मजदूर किसी काम को 8 दिन में पूरा कर सकते हैं, तो उसी काम को 6 दिन में पूरा करने के लिए कितने मजदूरों की आवश्यकता होगी?",
+              "options": [
+                            "(A) 20 मजदूर",
+                            "(B) 18 मजदूर",
+                            "(C) 25 मजदूर",
+                            "(D) 12 मजदूर"
+              ],
+              "answer": "A",
+              "explanation": "सूत्र M1 × D1 = M2 × D2 से, 15 × 8 = M2 × 6 → M2 = 120 / 6 = 20 मजदूर।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 40,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 4",
+              "question": "चार लगातार सम संख्याओं का औसत 27 है। इनमें से सबसे बड़ी संख्या कौन सी होगी?",
+              "options": [
+                            "(A) 28",
+                            "(B) 32",
+                            "(C) 30",
+                            "(D) 26"
+              ],
+              "answer": "C",
+              "explanation": "संख्याएँ होंगी: 24, 26, 28, 30। इनका मध्य बिंदु (औसत) 27 है। अतः सबसे बड़ी संख्या 30 है।",
+              "reference": "REET Mock Test 6 Chunk 4"
+},
+{
+              "id": 41,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "एक पासे (Dice) को फेंकने पर एक अभाज्य संख्या (Prime Number) आने की प्रायिकता (Probability) क्या होगी?",
+              "options": [
+                            "(A) 1/6",
+                            "(B) 1/2",
+                            "(C) 2/3",
+                            "(D) 1/3"
+              ],
+              "answer": "B",
+              "explanation": "पासे पर कुल परिणाम = {1, 2, 3, 4, 5, 6} = 6। अभाज्य संख्याएँ = {2, 3, 5} = 3। प्रायिकता = 3/6 = 1/2।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 42,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "5 लीटर 250 मिलीलीटर में से 2 लीटर 750 मिलीलीटर घटाने पर क्या शेष बचेगा?",
+              "options": [
+                            "(A) 2 लीटर 500 मिलीलीटर",
+                            "(B) 3 लीटर 500 मिलीलीटर",
+                            "(C) 2 लीटर 250 मिलीलीटर",
+                            "(D) 1 लीटर 500 मिलीलीटर"
+              ],
+              "answer": "A",
+              "explanation": "5250 ml - 2750 ml = 2500 ml अर्थात् 2 लीटर 500 मिलीलीटर।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 43,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "दो पूरक कोणों (Complementary angles) का अनुपात 2:3 है। बड़े कोण का मान ज्ञात कीजिए:",
+              "options": [
+                            "(A) 54°",
+                            "(B) 36°",
+                            "(C) 108°",
+                            "(D) 72°"
+              ],
+              "answer": "A",
+              "explanation": "पूरक कोणों का योग 90° होता है। 2x + 3x = 90° → 5x = 90° → x = 18°। बड़ा कोण = 3 × 18 = 54°।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 44,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "एक घन (Cube) का संपूर्ण पृष्ठीय क्षेत्रफल 216 वर्ग सेमी है। इस घन का आयतन (Volume) कितना होगा?",
+              "options": [
+                            "(A) 144 घन सेमी",
+                            "(B) 216 घन सेमी",
+                            "(C) 512 घन सेमी",
+                            "(D) 36 घन सेमी"
+              ],
+              "answer": "B",
+              "explanation": "पृष्ठीय क्षेत्रफल = 6a² = 216 → a² = 36 → भुजा (a) = 6 सेमी। आयतन = a³ = 6³ = 216 घन सेमी।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 45,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "120 gram, 3 kilogram का कितने प्रतिशत है?",
+              "options": [
+                            "(A) 40%",
+                            "(B) 4%",
+                            "(C) 0.4%",
+                            "(D) 2.5%"
+              ],
+              "answer": "B",
+              "explanation": "3 किलोग्राम = 3000 ग्राम। प्रतिशत = (120 / 3000) × 100 = 4%।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 46,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "किसी त्रिभुज के तीनों बाह्य कोणों (Exterior angles) का योगफल हमेशा कितना होता है?",
+              "options": [
+                            "(A) 180°",
+                            "(B) 270°",
+                            "(C) 360°",
+                            "(D) 90°"
+              ],
+              "answer": "C",
+              "explanation": "किसी भी बहुभुज (Polygon) के सभी बाह्य कोणों का योग हमेशा 360° होता है।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 47,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "घड़ी में दोपहर के 3:00 बजे घंटे और मिनट की सुइयों के बीच कितने डिग्री का कोण बनता है?",
+              "options": [
+                            "(A) 45°",
+                            "(B) 60°",
+                            "(C) 90°",
+                            "(D) 120°"
+              ],
+              "answer": "C",
+              "explanation": "प्रत्येक घंटे में सुइयां 30° का कोण बनाती हैं। 3 बजे दूरी 3 घंटे की है, अतः 3 × 30° = 90° (समकोण)।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 48,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "₹10 के एक नोट का आकार और ज्यामितीय स्वरूप निम्नलिखित में से किस आकृति के समान होता है?",
+              "options": [
+                            "(A) वर्ग (Square)",
+                            "(B) आयत (Rectangle)",
+                            "(C) घनाभ (Cuboid)",
+                            "(D) बेलन (Cylinder)"
+              ],
+              "answer": "B",
+              "explanation": "नोट एक समतल द्विविमीय (2D) आकृति है जिसकी लंबाई और चौड़ाई अलग होती है, अतः यह एक आयत है।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 49,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "यदि किसी वृत्त की त्रिज्या (Radius) को दोगुना कर दिया जाए, तो उसकी परिधि (Circumference) मूल परिधि की कितनी गुनी हो जाएगी?",
+              "options": [
+                            "(A) चार गुनी",
+                            "(B) आधी",
+                            "(C) समान रहेगी",
+                            "(D) दोगुनी"
+              ],
+              "answer": "D",
+              "explanation": "परिधि (2πr) त्रिज्या के सीधे समानुपाती होती है, इसलिए त्रिज्या दोगुनी होने पर परिधि भी दोगुनी होगी।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 50,
+              "section": "Mathematics",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित",
+              "sourceTag": "User Chunk 5",
+              "question": "एक बस जयपुर से प्रातः 8:45 बजे रवाना होती है और दोपहर 2:15 बजे जोधपुर पहुँचती है। इस यात्रा में कुल कितना समय लगा?",
+              "options": [
+                            "(A) 5 घंटे 30 मिनट",
+                            "(B) 6 घंटे 15 मिनट",
+                            "(C) 5 घंटे 45 मिनट",
+                            "(D) 6 घंटे"
+              ],
+              "answer": "A",
+              "explanation": "8:45 AM से 12:00 PM = 3 घंटे 15 मिनट। 12:00 PM से 2:15 PM = 2 घंटे 15 मिनट। कुल समय = 5 घंटे 30 मिनट।",
+              "reference": "REET Mock Test 6 Chunk 5"
+},
+{
+              "id": 51,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "गणित शिक्षण की किस विधि में हम \"विशिष्ट से सामान्य की ओर\" (Specific to General) और \"उदाहरण से नियम की ओर\" बढ़ते हैं?",
+              "options": [
+                            "(A) निगमन विधि (Deductive Method)",
+                            "(B) आगमन विधि (Inductive Method)",
+                            "(C) विश्लेषण विधि (Analytical Method)",
+                            "(D) संश्लेषण विधि (Synthetic Method)"
+              ],
+              "answer": "B",
+              "explanation": "आगमन विधि में बालकों के सामने पहले विशिष्ट उदाहरण प्रस्तुत किए जाते हैं, फिर उनके आधार पर सामान्य नियम निकलवाए जाते हैं।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 52,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "प्रसिद्ध मनोवैज्ञानिक 'हॉगवेन' (Hogben) के अनुसार: \"गणित सभ्यता और संस्कृति का दर्पण है।\" यह कथन गणित शिक्षण के किस मूल्य से संबंधित है?",
+              "options": [
+                            "(A) व्यावहारिक मूल्य",
+                            "(B) अनुशासनात्मक मूल्य",
+                            "(C) सांस्कृतिक मूल्य",
+                            "(D) कलात्मक मूल्य"
+              ],
+              "answer": "C",
+              "explanation": "हॉगवेन का यह कथन सीधे तौर पर गणित के सांस्कृतिक और सामाजिक महत्व को उजागर करता है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 53,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "राष्ट्रीय पाठ्यचर्या रूपरेखा (NCF-2005) के अनुसार, प्राथमिक स्तर पर गणित शिक्षण का मुख्य उद्देश्य क्या होना चाहिए?",
+              "options": [
+                            "(A) बच्चों में गणितीय गणना की क्षमता बढ़ाना",
+                            "(B) बच्चों के चिंतन का गणितीयकरण करना",
+                            "(C) केवल पाठ्यपुस्तक के प्रश्नों को हल कराना",
+                            "(D) रोजगार हेतु तैयार करना"
+              ],
+              "answer": "B",
+              "explanation": "NCF-2005 के अनुसार गणित शिक्षा का मुख्य लक्ष्य बच्चे की विचार प्रक्रिया का गणितीयकरण (Mathematization) करना है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 54,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "प्राथमिक स्तर पर 'ज्यामितीय आकृतियों' (जैसे- त्रिभुज, वर्ग) के गुणों को समझने के लिए वैन हीले (Van Hiele) के सिद्धांत का कौन सा स्तर 'विश्लेषण' (Analysis) कहलाता है?",
+              "options": [
+                            "(A) स्तर 0 (Visualisation)",
+                            "(B) स्तर 1 (Analysis)",
+                            "(C) स्तर 2 (Informal Deduction)",
+                            "(D) स्तर 3 (Formal Deduction)"
+              ],
+              "answer": "B",
+              "explanation": "वैन हीले के अनुसार स्तर 1 पर बच्चे आकृतियों को उनकी बनावट और विशेषताओं (गुणों) के आधार पर खोजना व विश्लेषण करना शुरू करते हैं।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 55,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "\"त्रुटियों का विश्लेषण\" (Error Analysis) गणित शिक्षण में किस हेतु अत्यंत सहायक होता है?",
+              "options": [
+                            "(A) छात्रों को दंडित करने में",
+                            "(B) छात्रों के सोचने के पैटर्न और अधिगम अंतराल को समझने में",
+                            "(C) केवल परीक्षा परिणाम सुधारने में",
+                            "(D) मेधावी छात्रों की पहचान करने में"
+              ],
+              "answer": "B",
+              "explanation": "गणित में गलतियाँ अधिगम का हिस्सा हैं, जो यह बताती हैं कि बच्चा किस प्रकार संप्रत्यय (Concept) को समझ रहा है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 56,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "गणित में कमजोर छात्रों के लिए \"उपचारात्मक शिक्षण\" (Remedial Teaching) कब शुरू किया जाना चाहिए?",
+              "options": [
+                            "(A) वार्षिक परीक्षा के अंत में",
+                            "(B) निदानात्मक परीक्षण (Diagnostic Test) के बाद",
+                            "(C) सत्र के प्रारंभ में",
+                            "(D) बिना किसी कारण के कभी भी"
+              ],
+              "answer": "B",
+              "explanation": "पहले निदान (कमियों को जानना) किया जाता है, उसके पश्चात ही उपचार (कमियों को दूर करना) किया जाता है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 57,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "प्राथमिक विद्यालय के बच्चों को 'स्थानीय मान' (Place Value) की संकल्पना आसानी से सिखाने के लिए निम्नलिखित में से कौन सी शिक्षण सहायक सामग्री (TLM) सर्वश्रेष्ठ है?",
+              "options": [
+                            "(A) जियोबोर्ड (Geoboard)",
+                            "(B) डीन्स ब्लॉक (Dienes Blocks) या एबाकस",
+                            "(C) ग्राफ पेपर",
+                            "(D) पाई चार्ट"
+              ],
+              "answer": "B",
+              "explanation": "डीन्स ब्लॉक और एबाकस (गिनतारा) का प्रयोग प्राथमिक स्तर पर बुनियादी संक्रियाओं और स्थानीय मान की समझ विकसित करने के लिए किया जाता है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 58,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "गणित शिक्षण के दौरान 'मूल्यांकन' (Evaluation) का प्राथमिक उद्देश्य क्या होता है?",
+              "options": [
+                            "(A) बालकों को श्रेणियों/रैंक में विभाजित करना",
+                            "(B) शिक्षण-अधिगम प्रक्रिया में सुधार और बालकों की प्रगति जानना",
+                            "(C) गृहकार्य की जाँच करना",
+                            "(D) विद्यालय का रिकॉर्ड बनाए रखना"
+              ],
+              "answer": "B",
+              "explanation": "सतत एवं व्यापक मूल्यांकन (CCE) का मुख्य उद्देश्य शिक्षण विधियों और बालक के सीखने के स्तर में गुणात्मक सुधार करना है।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 59,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "गणित की प्रकृति के संबंध में निम्नलिखित में से कौन सा कथन असत्य है?",
+              "options": [
+                            "(A) गणित की अपनी एक विशिष्ट भाषा और संकेत होते हैं।",
+                            "(B) गणितीय ज्ञान तार्किक और संचयी (Cumulative) होता है।",
+                            "(C) गणित अमूर्त (Abstract) विचारों को मूर्त रूप में समझने में सहायक है।",
+                            "(D) गणित का ज्ञान पूरी तरह से काल्पनिक और अस्थिर होता है।"
+              ],
+              "answer": "D",
+              "explanation": "गणित की प्रकृति तार्किक, निश्चित, यथार्थ और सार्वभौमिक होती है, यह काल्पनिक या अस्थिर नहीं होता।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 60,
+              "section": "Mathematics Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गणित शिक्षण",
+              "sourceTag": "User Chunk 6",
+              "question": "एक छात्र गणितीय समस्याओं को हल करते समय सूत्रों को रट लेता है लेकिन उनका अनुप्रयोग नहीं कर पाता। ब्लूम के संज्ञानात्मक उद्देश्य (Bloom's Taxonomy) के अनुसार वह किस स्तर पर अटका हुआ है?",
+              "options": [
+                            "(A) ज्ञान (Knowledge)",
+                            "(B) अनुप्रयोग (Application)",
+                            "(C) समझ/बोध (Understanding)",
+                            "(D) विश्लेषण (Analysis)"
+              ],
+              "answer": "A",
+              "explanation": "सूत्रों को रटना या याद रखना 'ज्ञान' स्तर के अंतर्गत आता है। जब तक वह अर्थ नहीं समझेगा तब तक 'बोध' या 'अनुप्रयोग' स्तर पर नहीं पहुँच सकता।",
+              "reference": "REET Mock Test 6 Chunk 6"
+},
+{
+              "id": 61,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "\"बाल विवाह निषेध अधिनियम, 2006\" (Child Marriage Prohibition Act) पूरे भारत में किस तिथि से प्रभावी हुआ था?",
+              "options": [
+                            "(A) 1 नवंबर 2007",
+                            "(B) 2 अक्टूबर 2006",
+                            "(C) 26 जनवरी 2007",
+                            "(D) 1 अप्रैल 2008"
+              ],
+              "answer": "A",
+              "explanation": "यह अधिनियम वर्ष 2006 में पारित हुआ था, लेकिन इसे देश भर में 1 नवंबर 2007 से लागू किया गया था।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 62,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "संयुक्त परिवार (Joint Family) का निम्नलिखित में से कौन सा एक मुख्य लाभ नहीं है?",
+              "options": [
+                            "(A) बच्चों का समुचित सामाजिकरण",
+                            "(B) वृद्धावस्था में सुरक्षा एवं सहयोग",
+                            "(C) श्रम विभाजन की सुविधा",
+                            "(D) व्यक्तिगत स्वतंत्रता (Individual Freedom) में अत्यधिक वृद्धि"
+              ],
+              "answer": "D",
+              "explanation": "संयुक्त परिवार में सभी सदस्य मिलकर रहते हैं और सामूहिक निर्णय होते हैं, जिससे व्यक्तिगत स्वतंत्रता थोड़ी सीमित होती है। बाकी तीनों संयुक्त परिवार के लाभ हैं।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 63,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "राजस्थान के किस प्रसिद्ध मेले को \"आदिवासियों का महाकुंभ\" कहा जाता है?",
+              "options": [
+                            "(A) पुष्कर मेला (अजमेर)",
+                            "(B) बेणेश्वर मेला (डूंगरपुर)",
+                            "(C) जीण माता मेला (सीकर)",
+                            "(D) तेजाजी मेला (परबतसर)"
+              ],
+              "answer": "B",
+              "explanation": "डूंगरपुर जिले के नवाटापरा में माही, सोम और जाखम नदियों के संगम पर आयोजित होने वाले बेणेश्वर मेले को आदिवासियों का कुंभ कहा जाता है।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 64,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "कश्मीर घाटी में पाई जाने वाली स्थानीय नाव जैसी तैरती हुई बस्तियों (Houseboats) को स्थानीय भाषा में क्या कहा जाता है?",
+              "options": [
+                            "(A) इग्लू (Igloo)",
+                            "(B) टिपि (Tipi)",
+                            "(C) डोंगा (Donga)",
+                            "(D) क्राल (Kral)"
+              ],
+              "answer": "C",
+              "explanation": "कश्मीर में डल झील और झेलम नदी में पाए जाने वाले बिना कमरों के तैरते मकानों/नावों को स्थानीय लोग 'डोंगा' कहते हैं।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 65,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "राजस्थान की पारंपरिक हस्तशिल्प कला के संदर्भ में 'पोमचा' (Pomcha) मूलतः क्या है?",
+              "options": [
+                            "(A) एक प्रकार का ओढ़नी/वस्त्र",
+                            "(B) एक प्रकार का मिट्टी का बर्तन",
+                            "(C) ऊनी कालीन",
+                            "(D) लकड़ी के खिलौने"
+              ],
+              "answer": "A",
+              "explanation": "पोमचा कमल के फूल के अभिप्राय वाली एक विशेष ओढ़नी है जो नवजात शिशु की माता को पीहर पक्ष द्वारा दी जाती है (लड़के के जन्म पर पीला और लड़की के जन्म पर गुलाबी पोमचा)।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 66,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "\"भारत की महान दीवार\" (The Great Wall of India) के नाम से प्रसिद्ध दीवार राजस्थान के किस दुर्ग में स्थित है?",
+              "options": [
+                            "(A) चित्तौड़गढ़ दुर्ग",
+                            "(B) कुंभलगढ़ दुर्ग",
+                            "(C) मेहरानगढ़ दुर्ग",
+                            "(D) रणथंभौर दुर्ग"
+              ],
+              "answer": "B",
+              "explanation": "कुंभलगढ़ दुर्ग की परकोटे की दीवार 36 किमी लंबी है, जिसे चीन की दीवार के बाद दुनिया की दूसरी सबसे लंबी दीवार और 'भारत की महान दीवार' कहा जाता है।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 67,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "उपभोक्ता संरक्षण अधिनियम, 2019 (Consumer Protection Act, 2019) के तहत जिला आयोग (District Commission) कितनी राशि तक के मामलों की सुनवाई कर सकता है?",
+              "options": [
+                            "(A) ₹20 लाख तक",
+                            "(B) ₹50 लाख तक",
+                            "(C) ₹1 करोड़ तक",
+                            "(D) ₹5 करोड़ तक"
+              ],
+              "answer": "C",
+              "explanation": "नए उपभोक्ता संरक्षण अधिनियम, 2019 के अनुसार, जिला मंच/आयोग की वित्तीय सीमा बढ़ाकर ₹1 करोड़ तक कर दी गई है।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 68,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "यातायात संकेतों के संदर्भ में, यदि सड़क पर \"त्रिकोण\" (Triangle) आकृति के अंदर कोई चिन्ह बना है, तो वह किस प्रकार का संकेत है?",
+              "options": [
+                            "(A) अनिवार्य संकेत (Mandatory)",
+                            "(B) सूचनात्मक संकेत (Informational)",
+                            "(C) सचेतक/चेतावनी संकेत (Cautionary)",
+                            "(D) निषेधात्मक संकेत (Prohibitory)"
+              ],
+              "answer": "C",
+              "explanation": "त्रिकोणीय आकृति वाले संकेत चालक को आगे आने वाले खतरों या सड़क की स्थिति के प्रति सचेत (Warn) करते हैं।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 69,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "राजस्थान सरकार द्वारा घोषित राज्य खेल (State Sport) निम्नलिखित में से कौन सा है और इसे कब घोषित किया गया?",
+              "options": [
+                            "(A) हॉकी (1956)",
+                            "(B) बास्केटबॉल (1948)",
+                            "(C) कबड्डी (1951)",
+                            "(D) खो-खो (1960)"
+              ],
+              "answer": "B",
+              "explanation": "राजस्थान का राज्य खेल बास्केटबॉल है, जिसे वर्ष 1948 में राज्य खेल का दर्जा दिया गया था।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 70,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 7",
+              "question": "'खिजड़ी' (खेजड़ी) वृक्ष का वैज्ञानिक नाम (Scientific Name) क्या है, जिसे राजस्थान का राज्य वृक्ष कहा जाता है?",
+              "options": [
+                            "(A) टेकोमेला उण्डुलेटा",
+                            "(B) प्रोसोपिस सिनेरेरिया",
+                            "(C) गज़ेला बेनेटी",
+                            "(D) कर्डियोटिस नाइग्रिसेप्स"
+              ],
+              "answer": "B",
+              "explanation": "खेजड़ी (जांटी) का वैज्ञानिक नाम प्रोसोपिस सिनेरेरिया (Prosopis cineraria) है। टेकोमेला उण्डुलेटा रोहिड़ा का नाम है।",
+              "reference": "REET Mock Test 6 Chunk 7"
+},
+{
+              "id": 71,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "निम्नलिखित में से कौन सा रोग दूषित जल (Contaminated Water) के सेवन से फैलता है?",
+              "options": [
+                            "(A) मलेरिया (Malaria)",
+                            "(B) टिटनेस (Tetanus)",
+                            "(C) हैजा (Cholera)",
+                            "(D) तपेदिक / टी.बी. (Tuberculosis)"
+              ],
+              "answer": "C",
+              "explanation": "हैजा 'विब्रियो कोलेरी' नामक जीवाणु से होता है, जो दूषित पानी और मक्खियों द्वारा दूषित भोजन से फैलता है। मलेरिया मच्छर के काटने से फैलता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 72,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "बच्चों में 'रिकेट्स' (Rickets/सूखा रोग) नामक बीमारी किस विटामिन की कमी के कारण होती है?",
+              "options": [
+                            "(A) विटामिन A",
+                            "(B) विटामिन B",
+                            "(C) विटामिन C",
+                            "(D) विटामिन D"
+              ],
+              "answer": "D",
+              "explanation": "विटामिन D की कमी से बच्चों की हड्डियां कमजोर और टेढ़ी हो जाती हैं, जिसे रिकेट्स कहा जाता है। इसके लिए सूर्य का प्रकाश सबसे अच्छा स्रोत है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 73,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "पौधों में 'प्रकाश संश्लेषण' (Photosynthesis) की क्रिया के दौरान कौन सी गैस वायुमंडल से अवशोषित (Absorb) की जाती है और कौन सी मुक्त की जाती है?",
+              "options": [
+                            "(A) ऑक्सीजन अवशोषित, कार्बन डाइऑक्साइड मुक्त",
+                            "(B) नाइट्रोजन अवशोषित, ऑक्सीजन मुक्त",
+                            "(C) कार्बन डाइऑक्साइड अवशोषित, ऑक्सीजन मुक्त",
+                            "(D) कार्बन डाइऑक्साइड अवशोषित, नाइट्रोजन मुक्त"
+              ],
+              "answer": "C",
+              "explanation": "प्रकाश संश्लेषण में पौधे सूर्य के प्रकाश की उपस्थिति में $CO_2$ ग्रहण करते हैं और कार्बोहाइड्रेट बनाने के साथ-साथ $O_2$ (ऑक्सीजन) गैस बाहर निकालते हैं।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 74,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "जब कपूर (Camphor) या अमोनियम क्लोराइड को गर्म किया जाता है, तो वह ठोस अवस्था से सीधे गैस अवस्था में बदल जाता है। इस प्रक्रिया को क्या कहते हैं?",
+              "options": [
+                            "(A) वाष्पीकरण (Evaporation)",
+                            "(B) संघनन (Condensation)",
+                            "(C) उर्ध्वपातन (Sublimation)",
+                            "(D) विसरण (Diffusion)"
+              ],
+              "answer": "C",
+              "explanation": "किसी ठोस पदार्थ का बिना द्रव में बदले सीधे गैस में बदलना और गैस से सीधे ठोस में बदलना उर्ध्वपातन कहलाता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 75,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "सौरमंडल के किस ग्रह को 'भोर का तारा' (Morning Star) या 'सांझ का तारा' (Evening Star) कहा जाता है, जो सबसे चमकीला ग्रह भी है?",
+              "options": [
+                            "(A) मंगल (Mars)",
+                            "(B) बुद्ध (Mercury)",
+                            "(C) बृहस्पति (Jupiter)",
+                            "(D) शुक्र (Venus)"
+              ],
+              "answer": "D",
+              "explanation": "शुक्र ग्रह वायुमंडल के सघन बादलों के कारण सूर्य के प्रकाश को अत्यधिक परावर्तित करता है, जिससे यह सुबह और शाम को सबसे चमकीला दिखाई देता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 76,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "निम्नलिखित में से कौन सा ऊर्जा का 'नवीकरणीय स्रोत' (Renewable / Non-conventional Source) है, जो कभी समाप्त नहीं होता?",
+              "options": [
+                            "(A) कोयला (Coal)",
+                            "(B) सौर ऊर्जा (Solar Energy)",
+                            "(C) पेट्रोलियम (Petroleum)",
+                            "(D) प्राकृतिक गैस (Natural Gas)"
+              ],
+              "answer": "B",
+              "explanation": "सौर ऊर्जा, पवन ऊर्जा और जल ऊर्जा नवीकरणीय स्रोत हैं। कोयला और पेट्रोलियम अनवीकरणीय (समाप्य) स्रोत हैं।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 77,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "'केंचुआ' (Earthworm) अपने पर्यावरण से गैसों का आदान-प्रदान (श्वसन) मुख्य रूप से शरीर के किस अंग द्वारा करता है?",
+              "options": [
+                            "(A) फेफड़े ( lungs)",
+                            "(B) गलफड़े (Gills)",
+                            "(C) नम त्वचा (Moist Skin)",
+                            "(D) श्वास नली (Trachea)"
+              ],
+              "answer": "C",
+              "explanation": "केंचुए में फेफड़े नहीं होते, वह अपनी पतली और नम त्वचा के माध्यम से सीधे विसरण द्वारा ऑक्सीजन अवशोषित करता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 78,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "राजस्थान के शेखावाटी और पश्चिमी क्षेत्रों में वर्षा जल को एकत्रित करने के लिए बनाए गए गहरे पक्के कुओं को स्थानीय भाषा में क्या कहा जाता है?",
+              "options": [
+                            "(A) बावड़ी (Stepwell)",
+                            "(B) टाँका (Tanka)",
+                            "(C) जोहड़ / नाड़ी",
+                            "(D) खड़ीन (Khadin)"
+              ],
+              "answer": "C",
+              "explanation": "वर्षा जल संग्रहण के लिए शेखावाटी में कच्चे-पक्के कुओं को 'जोहड़' कहा जाता है। जबकि घरों के आंगन में बना पक्का गड्ढा 'टाँका' कहलाता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 79,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "वायुमंडल की किस परत (Layer) में मौसम संबंधी सभी घटनाएँ (जैसे- बादल बनना, वर्षा, आंधी, तूफान) घटित होती हैं?",
+              "options": [
+                            "(A) समतापमंडल (Stratosphere)",
+                            "(B) क्षोभमंडल (Troposphere)",
+                            "(C) मध्यमंडल (Mesosphere)",
+                            "(D) आयनमंडल (Ionosphere)"
+              ],
+              "answer": "B",
+              "explanation": "क्षोभमंडल वायुमंडल की सबसे निचली और घनी परत है। मौसम की सभी हलचलें इसी परत में होती हैं। समतापमंडल जेट विमानों के लिए आदर्श है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 80,
+              "section": "Environmental Studies",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन",
+              "sourceTag": "User Chunk 8",
+              "question": "जैव-अपघटनीय अपशिष्ट (Biodegradable Waste जैसे- फल-सब्जियों के छिलके, बचा भोजन) को फेंकने के लिए किस रंग के कचरा पात्र (Dustbin) का उपयोग किया जाता है?",
+              "options": [
+                            "(A) नीला (Blue)",
+                            "(B) हरा (Green)",
+                            "(C) लाल (Red)",
+                            "(D) पीला (Yellow)"
+              ],
+              "answer": "B",
+              "explanation": "हरे रंग के डस्टबिन का उपयोग गीले/जैव-अपघटनीय कचरे के लिए किया जाता है और नीले रंग का उपयोग सूखे/पुनर्चक्रण योग्य (जैसे प्लास्टिक, कांच) कचरे के लिए होता है।",
+              "reference": "REET Mock Test 6 Chunk 8"
+},
+{
+              "id": 81,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "प्राथमिक स्तर पर पर्यावरण अध्ययन (EVS) की प्रकृति कैसी है?",
+              "options": [
+                            "(A) एकल-विषयक (Single-subject)",
+                            "(B) एकीकृत (Integrated)",
+                            "(C) पृथक-पृथक (Disciplinary)",
+                            "(D) केवल सैद्धांतिक"
+              ],
+              "answer": "B",
+              "explanation": "प्राथमिक स्तर (कक्षा 3 से 5) पर पर्यावरण अध्ययन में विज्ञान, सामाजिक विज्ञान और पर्यावरण शिक्षा को एक साथ जोड़कर 'एकीकृत' रूप में पढ़ाया जाता है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 82,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "प्राथमिक स्तर के बालकों को 'स्थानीय पेड़-पौधों और वनस्पतियों' की जानकारी देने के लिए सबसे प्रभावी शिक्षण विधि कौन सी होगी?",
+              "options": [
+                            "(A) व्याख्यान विधि (Lecture Method)",
+                            "(B) पाठ्यपुस्तक पठन",
+                            "(C) क्षेत्र भ्रमण विधि (Field Trip Method)",
+                            "(D) निबंध लेखन"
+              ],
+              "answer": "C",
+              "explanation": "क्षेत्र भ्रमण से बच्चे पेड़-पौधों को प्रत्यक्ष रूप से देखकर, छूकर अनुभव करते हैं, जिससे उनका ज्ञान स्थायी और व्यावहारिक बनता है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 83,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "राष्ट्रीय पाठ्यचर्या रूपरेखा (NCF-2005) के अनुसार, प्राथमिक स्तर पर पर्यावरण अध्ययन के पाठ्यक्रम को कितने मुख्य विषयों/थीम्स (Themes) में बांटा गया है?",
+              "options": [
+                            "(A) 4 थीम्स",
+                            "(B) 6 थीम्स",
+                            "(C) 8 थीम्स",
+                            "(D) 5 थीम्स"
+              ],
+              "answer": "B",
+              "explanation": "NCF-2005 ने EVS को 6 थीम्स में विभाजित किया है: 1. परिवार और मित्र, 2. भोजन, 3. आश्रय (आवास), 4. पानी, 5. यात्रा, 6. चीजें जो हम बनाते हैं और करते हैं।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 84,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण अध्ययन में \"सतत एवं व्यापक मूल्यांकन\" (CCE) के अंतर्गत 'व्यापक' (Comprehensive) शब्द का सही अर्थ क्या है?",
+              "options": [
+                            "(A) केवल लिखित परीक्षाओं का आयोजन करना",
+                            "(B) बालक के शैक्षिक (Scholastic) और सह-शैक्षिक (Co-scholastic) दोनों क्षेत्रों का मूल्यांकन",
+                            "(C) वर्ष के अंत में केवल एक बड़ी परीक्षा लेना",
+                            "(D) छात्रों के केवल खेलकूद का मूल्यांकन करना"
+              ],
+              "answer": "B",
+              "explanation": "'व्यापक' का अर्थ है बच्चे के सर्वांगीण विकास का मूल्यांकन, जिसमें विषयों के ज्ञान के साथ-साथ उसकी आदतें, रुचियां, खेलकूद और सामाजिक कौशल भी शामिल हैं।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 85,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण की कक्षा में 'जंगल और वन्यजीव संरक्षण' विषय को रुचिपूर्ण तरीके से समझाने के लिए कौन सी दृश्य-श्रव्य सामग्री (Audio-Visual Aid) सर्वोत्तम होगी?",
+              "options": [
+                            "(A) ब्लैकबोर्ड पर बनाया गया चित्र",
+                            "(B) पाठ्यपुस्तक में छपी कहानी",
+                            "(C) वन्यजीवों पर आधारित एक लघु वृत्तचित्र (Documentary Short-Film)",
+                            "(D) केवल वन्यजीवों के नाम का चार्ट"
+              ],
+              "answer": "C",
+              "explanation": "लघु फिल्म (Documentary) देखने और सुनने दोनों इंद्रियों को सक्रिय करती है, जिससे वन्यजीवों की वास्तविक स्थिति को समझना बच्चों के लिए सबसे आसान हो जाता है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 86,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण अध्ययन शिक्षण का मुख्य उद्देश्य बालकों में निम्नलिखित में से किस कौशल का विकास करना है?",
+              "options": [
+                            "(A) पर्यावरण के प्रति संवेदनशीलता और पर्यावरण संरक्षण की आदत का विकास करना",
+                            "(B) तकनीकी शब्दों की परिभाषाएं रटाना",
+                            "(C) चित्रकला की प्रतियोगिताएं जीतना",
+                            "(D) अधिक से अधिक अंक प्राप्त करना"
+              ],
+              "answer": "A",
+              "explanation": "EVS का मूल उद्देश्य बच्चे को उसके परिवेश के प्रति जागरूक और संवेदनशील बनाना है ताकि वह पर्यावरण संरक्षण में अपना योगदान दे सके।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 87,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण अध्ययन की कक्षा में यदि कुछ छात्र लगातार गृहकार्य नहीं कर रहे हैं, तो एक शिक्षक के रूप में आपकी सबसे पहली प्रतिक्रिया क्या होनी चाहिए?",
+              "options": [
+                            "(A) छात्र को कक्षा से बाहर निकाल देना",
+                            "(B) छात्र को डांटना और शारीरिक दंड देना",
+                            "(C) कारण जानने के लिए छात्र से व्यक्तिगत बात करना और सुधारात्मक उपाय करना",
+                            "(D) प्राचार्य से शिकायत करके छात्र का नाम कटवाना"
+              ],
+              "answer": "C",
+              "explanation": "आधुनिक शिक्षा बाल-केंद्रित है। शिक्षक को समस्या के पीछे छिपे वास्तविक कारण का पता लगाकर (निदान) उपचारात्मक कदम उठाने चाहिए।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 88,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "'किंडरगार्टन' (Kindergarten) शिक्षण पद्धति के जनक कौन हैं, जो खेल-खेल में प्रकृति के साथ सीखने पर बल देती है?",
+              "options": [
+                            "(A) जॉन डीवी (John Dewey)",
+                            "(B) फ्रेडरिक फ्रोबेल (Friedrich Froebel)",
+                            "(C) विलियम किलपैट्रिक (Kilpatrick)",
+                            "(D) अरस्तू"
+              ],
+              "answer": "B",
+              "explanation": "जर्मनी के प्रसिद्ध शिक्षाशास्त्री फ्रोबेल ने किंडरगार्टन (बालोद्यान/बच्चों का बगीचा) पद्धति दी, जिसमें बच्चों को खेल, उपहार और गीतों के माध्यम से सिखाया जाता है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 89,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण अध्ययन में 'परियोजना विधि' (Project Method) के उपयोग का मुख्य दार्शनिक आधार क्या है?",
+              "options": [
+                            "(A) आदर्शवाद (Idealism)",
+                            "(B) प्रयोजनवाद / प्रगतिवाद (Pragmatism)",
+                            "(C) यथार्थवाद (Realism)",
+                            "(D) प्रकृतिवाद (Naturalism)"
+              ],
+              "answer": "B",
+              "explanation": "परियोजना विधि प्रसिद्ध प्रयोजनवादी 'जॉन डीवी' के विचारों पर आधारित है, जिसका प्रतिपादन उनके शिष्य 'किलपैट्रिक' ने किया था। यह \"करके सीखने\" (Learning by Doing) पर बल देती है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 90,
+              "section": "Environmental Studies Pedagogy",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पर्यावरण अध्ययन शिक्षण",
+              "sourceTag": "User Chunk 9",
+              "question": "पर्यावरण शिक्षण के दौरान बच्चों के पूर्व ज्ञान, त्रुटियों और सीखने के स्तर की दैनिक प्रगति को रिकॉर्ड करने के लिए शिक्षक द्वारा उपयोग किए जाने वाले टूल को क्या कहते हैं?",
+              "options": [
+                            "(A) संचयी अभिलेख (Cumulative Record)",
+                            "(B) पोर्टफोलियो (Portfolio)",
+                            "(C) उपाख्यानात्मक अभिलेख (Anecdotal Record)",
+                            "(D) रेटिंग स्केल (Rating Scale)"
+              ],
+              "answer": "B",
+              "explanation": "पोर्टफोलियो किसी छात्र के कार्यों, प्रगतियों और उपलब्धियों का एक व्यवस्थित और क्रमिक संग्रह होता है, जो छात्र के विकास की पूरी तस्वीर दिखाता है।",
+              "reference": "REET Mock Test 6 Chunk 9"
+},
+{
+              "id": 91,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और व्याकरण",
+              "sourceTag": "User Chunk 10",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 91 से 95 तक के उत्तर दीजिए:\n\"शिक्षा का वास्तविक उद्देश्य केवल साक्षरता प्राप्त करना नहीं है, बल्कि मनुष्य के भीतर छिपे मानवीय गुणों को जाग्रत करना है। चरित्र निर्माण के बिना शिक्षा अधूरी और व्यर्थ है। आज के युग में नैतिक मूल्यों का ह्रास चिंता का विषय है। समाज को स्वावलंबन और परोपकार की भावना से ही सुदृढ़ बनाया जा सकता है।\"\n\nगद्यांश में प्रयुक्त 'चरित्र' शब्द व्याकरण की दृष्टि से किस कोटि का शब्द है?",
+              "options": [
+                            "(A) तत्सम शब्द",
+                            "(B) तद्भव शब्द",
+                            "(C) देशज शब्द",
+                            "(D) विदेशी शब्द"
+              ],
+              "answer": "A",
+              "explanation": "'चरित्र' संस्कृत का मूल शब्द है जो हिंदी में बिना किसी परिवर्तन के प्रयुक्त होता है, अतः यह तत्सम है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 92,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और संधि",
+              "sourceTag": "User Chunk 10",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 91 से 95 तक के उत्तर दीजिए:\n\"शिक्षा का वास्तविक उद्देश्य केवल साक्षरता प्राप्त करना नहीं है, बल्कि मनुष्य के भीतर छिपे मानवीय गुणों को जाग्रत करना है। चरित्र निर्माण के बिना शिक्षा अधूरी और व्यर्थ है। आज के युग में नैतिक मूल्यों का ह्रास चिंता का विषय है। समाज को स्वावलंबन और परोपकार की भावना से ही सुदृढ़ बनाया जा सकता है।\"\n\nगद्यांश में आए शब्द 'परोपकार' का सही संधि-विच्छेद क्या होगा?",
+              "options": [
+                            "(A) परो + पकार",
+                            "(B) पर + उपकार",
+                            "(C) परा + उपकार",
+                            "(D) परो + कार"
+              ],
+              "answer": "B",
+              "explanation": "पर + उपकार = परोपकार (अ + उ = ओ), यह गुण स्वर संधि का उदाहरण है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 93,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और उपसर्ग",
+              "sourceTag": "User Chunk 10",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 91 से 95 तक के उत्तर दीजिए:\n\"शिक्षा का वास्तविक उद्देश्य केवल साक्षरता प्राप्त करना नहीं है, बल्कि मनुष्य के भीतर छिपे मानवीय गुणों को जाग्रत करना है। चरित्र निर्माण के बिना शिक्षा अधूरी और व्यर्थ है। आज के युग में नैतिक मूल्यों का ह्रास चिंता का विषय है। समाज को स्वावलंबन और परोपकार की भावना से ही सुदृढ़ बनाया जा सकता है।\"\n\n'स्वावलंबन' शब्द में प्रयुक्त मूल शब्द और उपसर्ग का सही विकल्प चुनिए:",
+              "options": [
+                            "(A) सु + अवलंबन",
+                            "(B) स्व + अवलंबन",
+                            "(C) स्वा + अवलंबन",
+                            "(D) स्वः + अवलंबन"
+              ],
+              "answer": "B",
+              "explanation": "'स्वावलंबन' में 'स्व' (अपना) उपसर्ग है और 'अवलंबन' मूल शब्द है। दीर्घ संधि के नियम से 'स्व+अवलंबन' बनता है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 94,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और प्रत्यय",
+              "sourceTag": "User Chunk 10",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 91 से 95 तक के उत्तर दीजिए:\n\"शिक्षा का वास्तविक उद्देश्य केवल साक्षरता प्राप्त करना नहीं है, बल्कि मनुष्य के भीतर छिपे मानवीय गुणों को जाग्रत करना है। चरित्र निर्माण के बिना शिक्षा अधूरी और व्यर्थ है। आज के युग में नैतिक मूल्यों का ह्रास चिंता का विषय है। समाज को स्वावलंबन और परोपकार की भावना से ही सुदृढ़ बनाया जा सकता है।\"\n\nगद्यांश में प्रयुक्त 'मानवीय' शब्द में कौन सा प्रत्यय प्रयुक्त हुआ है?",
+              "options": [
+                            "(A) य",
+                            "(B) ईय",
+                            "(C) नीय",
+                            "(D) वीय"
+              ],
+              "answer": "B",
+              "explanation": "मानव + ईय = मानवीय। यहाँ मूल शब्द 'मानव' और प्रत्यय 'ईय' है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 95,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और वचन",
+              "sourceTag": "User Chunk 10",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 91 से 95 तक के उत्तर दीजिए:\n\"शिक्षा का वास्तविक उद्देश्य केवल साक्षरता प्राप्त करना नहीं है, बल्कि मनुष्य के भीतर छिपे मानवीय गुणों को जाग्रत करना है। चरित्र निर्माण के बिना शिक्षा अधूरी और व्यर्थ है। आज के युग में नैतिक मूल्यों का ह्रास चिंता का विषय है। समाज को स्वावलंबन और परोपकार की भावना से ही सुदृढ़ बनाया जा सकता है।\"\n\nगद्यांश में प्रयुक्त 'मूल्यों' शब्द का सही एकवचन रूप क्या होगा?",
+              "options": [
+                            "(A) मूल्या",
+                            "(B) मूल्यवान",
+                            "(C) मूल्य",
+                            "(D) अमूल्य"
+              ],
+              "answer": "C",
+              "explanation": "'मूल्यों' बहुवचन रूप है, जिसका मूल एकवचन रूप 'मूल्य' होता है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 96,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषायी कौशल",
+              "sourceTag": "User Chunk 10",
+              "question": "भाषायी कौशलों (Language Skills) के विकास का सही मनोवैज्ञानिक क्रम क्या है?",
+              "options": [
+                            "(A) बोलना, सुनना, लिखना, पढ़ना",
+                            "(B) सुनना, बोलना, पढ़ना, लिखना",
+                            "(C) पढ़ना, लिखना, सुनना, बोलना",
+                            "(D) सुनना, पढ़ना, बोलना, लिखना"
+              ],
+              "answer": "B",
+              "explanation": "मनोवैज्ञानिक रूप से बालक सबसे पहले सुनता है (L), फिर बोलता है (S), फिर पढ़ता है (R) और अंत में लिखता है (W)।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 97,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा मूल्यांकन",
+              "sourceTag": "User Chunk 10",
+              "question": "प्राथमिक स्तर पर बच्चों की भाषाई दक्षता और प्रगति का आकलन करने का सबसे प्रामाणिक साधन कौन सा है?",
+              "options": [
+                            "(A) लिखित परीक्षा",
+                            "(B) पोर्टफोलियो (Portfolio)",
+                            "(C) गृहकार्य की पुस्तिका",
+                            "(D) मौखिक प्रश्नोत्तरी"
+              ],
+              "answer": "B",
+              "explanation": "पोर्टफोलियो में बच्चे के भाषाई विकास का क्रमिक और व्यवस्थित रिकॉर्ड होता है, जो प्रगति का सबसे सटीक आकलन करता है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 98,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा शिक्षण विधि",
+              "sourceTag": "User Chunk 10",
+              "question": "भाषा शिक्षण की किस विधि में मातृभाषा (Mother Tongue) को बिना मध्यस्थ बनाए, सीधे द्वितीय भाषा सिखाई जाती है?",
+              "options": [
+                            "(A) व्याकरण-अनुवाद विधि",
+                            "(B) प्रत्यक्ष विधि (Direct Method)",
+                            "(C) द्विभाषी विधि",
+                            "(D) सूत्र विधि"
+              ],
+              "answer": "B",
+              "explanation": "प्रत्यक्ष विधि में बालक को सीधे लक्ष्य भाषा के माहौल में रखकर सिखाया जाता है, इसमें मातृभाषा का प्रयोग वर्जित होता है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 99,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "वाचन कौशल",
+              "sourceTag": "User Chunk 10",
+              "question": "प्राथमिक स्तर पर 'मौन वाचन' (Silent Reading) की तुलना में 'सस्वर वाचन' (Aloud Reading) को अधिक महत्व क्यों दिया जाता है?",
+              "options": [
+                            "(A) इससे समय की बचत होती है।",
+                            "(B) इससे बच्चों के उच्चारण की शुद्धता की जाँच और सुधार होता है।",
+                            "(C) इससे कक्षा में अनुशासन बना रहता है।",
+                            "(D) यह बहुत सरल विधा है।"
+              ],
+              "answer": "B",
+              "explanation": "प्राथमिक स्तर पर बच्चे बोलना सीख रहे होते हैं, सस्वर वाचन से उनके उच्चारण दोष और झिझक दूर होती है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 100,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "उपचारात्मक शिक्षण",
+              "sourceTag": "User Chunk 10",
+              "question": "उपचारात्मक शिक्षण (Remedial Teaching) का मुख्य उद्देश्य क्या होता है?",
+              "options": [
+                            "(A) मेधावी छात्रों को अधिक गृहकार्य देना।",
+                            "(B) बालकों की अधिगम संबंधी कठिनाइयों और त्रुटियों को दूर करना।",
+                            "(C) केवल परीक्षा में अच्छे अंक दिलाना।",
+                            "(D) नई पाठ्यपुस्तकों का निर्माण करना।"
+              ],
+              "answer": "B",
+              "explanation": "निदानात्मक परीक्षण द्वारा पहचानी गई छात्रों की कमियों और सीखने के अंतरालों को उपचारात्मक शिक्षण द्वारा दूर किया जाता है।",
+              "reference": "REET Mock Test 6 Chunk 10"
+},
+{
+              "id": 101,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और विलोम",
+              "sourceTag": "User Chunk 11",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 101 से 105 तक के उत्तर दीजिए:\n\"प्रकृति हमारी सहचरी है। मानव ने अपनी असीमित इच्छाओं की पूर्ति के लिए वनों का अंधाधुंध विनाश किया है। इससे पर्यावरण का संतुलन बिगड़ गया है। यदि हम अब भी सचेत नहीं हुए, तो आने वाली पीढ़ियों को भयंकर संकट का सामना करना पड़ेगा। वृक्षारोपण ही इस समस्या का एकमात्र स्थाई समाधान है।\"\n\nगद्यांश में प्रयुक्त 'विनाश' शब्द का सही विलोम शब्द क्या होगा?",
+              "options": [
+                            "(A) विध्वंस",
+                            "(B) सृजन / निर्माण",
+                            "(C) अवनति",
+                            "(D) ह्रास"
+              ],
+              "answer": "B",
+              "explanation": "विनाश का अर्थ नष्ट करना होता है, जिसका विलोम शब्द 'सृजन' या 'निर्माण' होता है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 102,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और पर्यायवाची",
+              "sourceTag": "User Chunk 11",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 101 से 105 तक के उत्तर दीजिए:\n\"प्रकृति हमारी सहचरी है। मानव ने अपनी असीमित इच्छाओं की पूर्ति के लिए वनों का अंधाधुंध विनाश किया है। इससे पर्यावरण का संतुलन बिगड़ गया है। यदि हम अब भी सचेत नहीं हुए, तो आने वाली पीढ़ियों को भयंकर संकट का सामना करना पड़ेगा। वृक्षारोपण ही इस समस्या का एकमात्र स्थाई समाधान है।\"\n\nनिम्नलिखित में से कौन सा शब्द गद्यांश में आए 'वृक्ष' शब्द का पर्यायवाची नहीं है?",
+              "options": [
+                            "(A) पादप",
+                            "(B) विटप",
+                            "(C) विहग",
+                            "(D) तरु"
+              ],
+              "answer": "C",
+              "explanation": "'विहग' पक्षी का पर्यायवाची है, जबकि पादप, विटप और तरु—यह तीनों वृक्ष (पेड़) के पर्यायवाची हैं।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 103,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और कारक",
+              "sourceTag": "User Chunk 11",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 101 से 105 तक के उत्तर दीजिए:\n\"प्रकृति हमारी सहचरी है। मानव ने अपनी असीमित इच्छाओं की पूर्ति के लिए वनों का अंधाधुंध विनाश किया है। इससे पर्यावरण का संतुलन बिगड़ गया है। यदि हम अब भी सचेत नहीं हुए, तो आने वाली पीढ़ियों को भयंकर संकट का सामना करना पड़ेगा। वृक्षारोपण ही इस समस्या का एकमात्र स्थाई समाधान है।\"\n\n\"मानव ने अपनी असीमित इच्छाओं की...\" रेखांकित वाक्य में 'ने' किस कारक का विभक्ति चिन्ह (प्रसर्ग) है?",
+              "options": [
+                            "(A) कर्म कारक",
+                            "(B) कर्ता कारक",
+                            "(C) करण कारक",
+                            "(D) संबंध कारक"
+              ],
+              "answer": "B",
+              "explanation": "क्रिया को करने वाले को कर्ता कहते हैं, और कर्ता कारक का चिन्ह 'ने' होता है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 104,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और अव्यय",
+              "sourceTag": "User Chunk 11",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 101 से 105 तक के उत्तर दीजिए:\n\"प्रकृति हमारी सहचरी है। मानव ने अपनी असीमित इच्छाओं की पूर्ति के लिए वनों का अंधाधुंध विनाश किया है। इससे पर्यावरण का संतुलन बिगड़ गया है। यदि हम अब भी सचेत नहीं हुए, तो आने वाली पीढ़ियों को भयंकर संकट का सामना करना पड़ेगा। वृक्षारोपण ही इस समस्या का एकमात्र स्थाई समाधान है।\"\n\nगद्यांश में प्रयुक्त वाक्य \"यदि हम अब भी सचेत नहीं हुए, तो...\" में 'यदि-तो' किस प्रकार के अव्यय शब्द हैं?",
+              "options": [
+                            "(A) विस्मयादिबोधक",
+                            "(B) क्रियाविशेषण",
+                            "(C) समुच्चयबोधक (संबधवाचक)",
+                            "(D) निपात"
+              ],
+              "answer": "C",
+              "explanation": "दो उपवाक्यों को आपस में जोड़ने वाले शर्तबोधक अव्यय 'यदि-तो' समुच्चयबोधक अव्यय के अंतर्गत आते हैं।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 105,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और काल",
+              "sourceTag": "User Chunk 11",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 101 से 105 तक के उत्तर दीजिए:\n\"प्रकृति हमारी सहचरी है। मानव ने अपनी असीमित इच्छाओं की पूर्ति के लिए वनों का अंधाधुंध विनाश किया है। इससे पर्यावरण का संतुलन बिगड़ गया है। यदि हम अब भी सचेत नहीं हुए, तो आने वाली पीढ़ियों को भयंकर संकट का सामना करना पड़ेगा। वृक्षारोपण ही इस समस्या का एकमात्र स्थाई समाधान है।\"\n\n\"...संकट का सामना करना पड़ेगा\" यह क्रियापद किस काल का बोध कराता है?",
+              "options": [
+                            "(A) सामान्य भूतकाल",
+                            "(B) सामान्य भविष्यत् काल",
+                            "(C) तात्कालिक वर्तमान काल",
+                            "(D) संभाव्य भविष्यत् काल"
+              ],
+              "answer": "B",
+              "explanation": "वाक्य से स्पष्ट है कि क्रिया आने वाले समय में सामान्य रूप से घटित होगी, अतः यह सामान्य भविष्यत् काल है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 106,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "कविता शिक्षण",
+              "sourceTag": "User Chunk 11",
+              "question": "प्राथमिक स्तर पर कविता शिक्षण (Poetry Teaching) के लिए निम्नलिखित में से कौन सी विधि सर्वश्रेष्ठ मानी जाती है?",
+              "options": [
+                            "(A) व्याख्या विधि",
+                            "(B) गीत एवं अभिनय विधि",
+                            "(C) तुलना विधि",
+                            "(D) समीक्षा विधि"
+              ],
+              "answer": "B",
+              "explanation": "छोटे बच्चे लय, ताल और अभिनय से जल्दी आकर्षित होते हैं, इसलिए प्राथमिक स्तर पर कविता को गाकर और हाव-भाव के साथ सिखाना सर्वोत्तम है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 107,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा प्रयोगशाला",
+              "sourceTag": "User Chunk 11",
+              "question": "'भाषा प्रयोगशाला' (Language Laboratory) का मुख्य उपयोग भाषायी कौशलों के किस विकास हेतु किया जाता है?",
+              "options": [
+                            "(A) केवल लेखन कौशल सुधारने में",
+                            "(B) शुद्ध उच्चारण, श्रवण और भाषण कौशल के विकास में",
+                            "(C) व्याकरण के नियमों को रटने में",
+                            "(D) मूक वाचन की गति बढ़ाने में"
+              ],
+              "answer": "B",
+              "explanation": "भाषा प्रयोगशाला में हेडफोन और ऑडियो टूल्स होते हैं जो छात्रों के सुनने और शुद्ध बोलने (उच्चारण) के अभ्यास में सहायक होते हैं।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 108,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा मूल्यांकन",
+              "sourceTag": "User Chunk 11",
+              "question": "सतत एवं व्यापक मूल्यांकन (CCE) के अनुसार, प्राथमिक स्तर पर भाषा का मूल्यांकन होना चाहिए:",
+              "options": [
+                            "(A) केवल सत्र के अंत में लिखित परीक्षा द्वारा।",
+                            "(B) प्रतिदिन की अनौपचारिक गतिविधियों और सम्भाषण के माध्यम से निरंतर।",
+                            "(C) केवल जिला स्तर पर बोर्ड परीक्षा द्वारा।",
+                            "(D) वर्ष में केवल दो बार मौखिक परीक्षा द्वारा।"
+              ],
+              "answer": "B",
+              "explanation": "सतत मूल्यांकन का अर्थ ही यही है कि बच्चे के सीखने की प्रक्रिया का दैनिक जीवन और कक्षा की गतिविधियों के दौरान लगातार आकलन हो।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 109,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "त्रिभाषा सूत्र",
+              "sourceTag": "User Chunk 11",
+              "question": "'त्रिभाषा सूत्र' (Three-Language Formula) की संस्तुति के अनुसार प्राथमिक स्तर पर शिक्षा का माध्यम अनिवार्यतः क्या होना चाहिए?",
+              "options": [
+                            "(A) अंग्रेजी भाषा",
+                            "(B) राष्ट्रभाषा (हिन्दी)",
+                            "(C) बालक की मातृभाषा या क्षेत्रीय भाषा",
+                            "(D) कोई भी विदेशी भाषा"
+              ],
+              "answer": "C",
+              "explanation": "कोठारी आयोग और राष्ट्रीय शिक्षा नीतियों के अनुसार प्राथमिक स्तर पर बच्चे के संज्ञानात्मक विकास के लिए मातृभाषा में शिक्षा देना आवश्यक है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 110,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "बोलना कौशल",
+              "sourceTag": "User Chunk 11",
+              "question": "'बोलना कौशल' (Speaking Skill) के विकास में सबसे महत्वपूर्ण और प्रभावी गतिविधि कौन सी है?",
+              "options": [
+                            "(A) पाठ्यपुस्तक के पाठ को जोर-जोर से दोहराना।",
+                            "(B) बच्चों को संदर्भ और आवश्यकता के अनुसार अपनी बात कहने के अवसर देना।",
+                            "(C) कठिन शब्दों के अर्थ याद करवाना।",
+                            "(D) सुलेख और श्रुतलेख लिखना।"
+              ],
+              "answer": "B",
+              "explanation": "जब बच्चे वास्तविक परिस्थितियों में अपनी अभिव्यक्ति करते हैं, तो उनका बोलना कौशल वास्तविक रूप से समृद्ध होता है।",
+              "reference": "REET Mock Test 6 Chunk 11"
+},
+{
+              "id": 111,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और मुहावरा",
+              "sourceTag": "User Chunk 12",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 111 से 115 तक के उत्तर दीजिए:\n\"सफलता का मूल मंत्र कठिन परिश्रम और दृढ़ इच्छाशक्ति है। जो व्यक्ति भाग्य के भरोसे बैठा रहता है, वह जीवन में कभी उन्नति नहीं कर सकता। आलस्य मनुष्य का सबसे बड़ा शत्रु है। कर्मठ व्यक्ति विपरीत परिस्थितियों में भी अपना मार्ग स्वयं बना लेता है और समाज के लिए प्रेरणास्रोत बनता है।\"\n\nगद्यांश में आए वाक्यांश 'भाग्य के भरोसे बैठना' मुहावरे का सही अर्थ क्या है?",
+              "options": [
+                            "(A) बहुत अधिक पूजा-पाठ करना",
+                            "(B) कर्म न करके केवल भाग्य पर निर्भर रहना (निष्क्रिय होना)",
+                            "(C) भाग्यशाली होना",
+                            "(D) दूसरों की सहायता करना"
+              ],
+              "answer": "B",
+              "explanation": "भाग्य के भरोसे बैठने का अर्थ है बिना मेहनत किए सब कुछ भाग्य पर छोड़ देना।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 112,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और समास",
+              "sourceTag": "User Chunk 12",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 111 से 115 तक के उत्तर दीजिए:\n\"सफलता का मूल मंत्र कठिन परिश्रम और दृढ़ इच्छाशक्ति है। जो व्यक्ति भाग्य के भरोसे बैठा रहता है, वह जीवन में कभी उन्नति नहीं कर सकता। आलस्य मनुष्य का सबसे बड़ा शत्रु है। कर्मठ व्यक्ति विपरीत परिस्थितियों में भी अपना मार्ग स्वयं बना लेता है और समाज के लिए प्रेरणास्रोत बनता है।\"\n\nगद्यांश में प्रयुक्त शब्द 'इच्छाशक्ति' में कौन सा समास निहित है?",
+              "options": [
+                            "(A) अव्ययीभाव समास",
+                            "(B) तत्पुरुष समास",
+                            "(C) द्वंद्व समास",
+                            "(D) बहुव्रीहि समास"
+              ],
+              "answer": "B",
+              "explanation": "इच्छाशक्ति का समास विग्रह 'इच्छा की शक्ति' होता है। यहाँ संबंध तत्पुरुष समास है क्योंकि इसमें 'की' विभक्ति का लोप है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 113,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और संज्ञा",
+              "sourceTag": "User Chunk 12",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 111 से 115 तक के उत्तर दीजिए:\n\"सफलता का मूल मंत्र कठिन परिश्रम और दृढ़ इच्छाशक्ति है। जो व्यक्ति भाग्य के भरोसे बैठा रहता है, वह जीवन में कभी उन्नति नहीं कर सकता। आलस्य मनुष्य का सबसे बड़ा शत्रु है। कर्मठ व्यक्ति विपरीत परिस्थितियों में भी अपना मार्ग स्वयं बना लेता है और समाज के लिए प्रेरणास्रोत बनता है।\"\n\nगद्यांश में प्रयुक्त 'उन्नति' शब्द व्याकरण की दृष्टि से किस प्रकार की संज्ञा का उदाहरण है?",
+              "options": [
+                            "(A) जातिवाचक संज्ञा",
+                            "(B) व्यक्तिवाचक संज्ञा",
+                            "(C) भाववाचक संज्ञा",
+                            "(D) द्रव्यवाचक संज्ञा"
+              ],
+              "answer": "C",
+              "explanation": "'उन्नति' एक अमूर्त भाव या दशा को दर्शाता है जिसे केवल अनुभव किया जा सकता है, देखा या छुआ नहीं जा सकता, अतः यह भाववाचक संज्ञा है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 114,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और प्रत्यय",
+              "sourceTag": "User Chunk 12",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 111 से 115 तक के उत्तर दीजिए:\n\"सफलता का मूल मंत्र कठिन परिश्रम और दृढ़ इच्छाशक्ति है। जो व्यक्ति भाग्य के भरोसे बैठा रहता है, वह जीवन में कभी उन्नति नहीं कर सकता। आलस्य मनुष्य का सबसे बड़ा शत्रु है। कर्मठ व्यक्ति विपरीत परिस्थितियों में भी अपना मार्ग स्वयं बना लेता है और समाज के लिए प्रेरणास्रोत बनता है।\"\n\n'कर्मठ' शब्द में प्रयुक्त मूल शब्द तथा प्रत्यय का सही संयोजन क्या होगा?",
+              "options": [
+                            "(A) कर + मठ",
+                            "(B) कर्म + ठ",
+                            "(C) कर्म + अठ",
+                            "(D) कर्मा + ठ"
+              ],
+              "answer": "B",
+              "explanation": "'कर्म' मूल शब्द में 'ठ' प्रत्यय जुड़ने से 'कर्मठ' (कार्य में कुशल) शब्द बनता है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 115,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "गद्यांश और विशेषण",
+              "sourceTag": "User Chunk 12",
+              "question": "निम्नलिखित गद्यांश को पढ़कर प्रश्न संख्या 111 से 115 तक के उत्तर दीजिए:\n\"सफलता का मूल मंत्र कठिन परिश्रम और दृढ़ इच्छाशक्ति है। जो व्यक्ति भाग्य के भरोसे बैठा रहता है, वह जीवन में कभी उन्नति नहीं कर सकता। आलस्य मनुष्य का सबसे बड़ा शत्रु है। कर्मठ व्यक्ति विपरीत परिस्थितियों में भी अपना मार्ग स्वयं बना लेता है और समाज के लिए प्रेरणास्रोत बनता है।\"\n\n\"विप्रित परिस्थितियों में भी अपना मार्ग...\" इस वाक्यांश में 'विपरीत' शब्द व्याकरणिक कोटि के अनुसार क्या है?",
+              "options": [
+                            "(A) सर्वनाम",
+                            "(B) गुणवाचक विशेषण",
+                            "(C) क्रियाविशेषण",
+                            "(D) भाववाचक संज्ञा"
+              ],
+              "answer": "B",
+              "explanation": "'विपरीत' शब्द यहाँ 'परिस्थितियों' (संज्ञा) की विशेषता या गुण-दशा बता रहा है, इसलिए यह गुणवाचक विशेषण है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 116,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा पाठ्यपुस्तक",
+              "sourceTag": "User Chunk 12",
+              "question": "प्राथमिक स्तर की हिंदी की पाठ्यपुस्तक में दिए गए रंगीन चित्रों का मुख्य उद्देश्य क्या होता है?",
+              "options": [
+                            "(A) पाठ्यपुस्तक को केवल आकर्षक और सुंदर बनाना।",
+                            "(B) बच्चों की अमूर्त संकल्पनाओं और विचारों को समझने में सहायता करना।",
+                            "(C) बच्चों का मनोरंजन करना।",
+                            "(D) पाठ की लंबाई बढ़ाना।"
+              ],
+              "answer": "B",
+              "explanation": "प्राथमिक स्तर पर बच्चे अमूर्त बातों को चित्रों के माध्यम से आसानी से जोड़कर (Visualise करके) समझ पाते हैं।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 117,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा अर्जन और अधिगम",
+              "sourceTag": "User Chunk 12",
+              "question": "'भाषा सीखने' (Language Learning) और 'भाषा अर्जित करने' (Language Acquisition) में मुख्य अंतर का आधार क्या है?",
+              "options": [
+                            "(A) पाठ्यपुस्तक की जटिलता",
+                            "(B) भाषाई परिवेश (Environment) की उपलब्धता",
+                            "(C) भाषा का व्याकरण",
+                            "(D) शिक्षक की योग्यता"
+              ],
+              "answer": "B",
+              "explanation": "भाषा अर्जन स्वाभाविक और सहज परिवेश में होता है (जैसे मातृभाषा), जबकि भाषा अधिगम/सीखना नियमबद्ध और औपचारिक परिवेश (जैसे विद्यालय) में होता है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 118,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषाई मूल्यांकन",
+              "sourceTag": "User Chunk 12",
+              "question": "प्रसिद्ध शिक्षाशास्त्री डॉ. ब्लूम के अनुसार, भाषाई मूल्यांकन के तीन मुख्य आयाम/उद्देश्य कौन से हैं?",
+              "options": [
+                            "(A) पढ़ना, लिखना, बोलना",
+                            "(B) ज्ञानात्मक, भावात्मक, क्रियात्मक",
+                            "(C) सरल, मध्यम, कठिन",
+                            "(D) स्कूल, शिक्षक, छात्र"
+              ],
+              "answer": "B",
+              "explanation": "ब्लूम की टैक्सोनॉमी के अनुसार शैक्षिक उद्देश्यों को तीन क्षेत्रों में बांटा गया है—ज्ञानात्मक (Cognitive), भावात्मक (Affective) और क्रियात्मक/गामक (Psychomotor)।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 119,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "व्याकरण शिक्षण",
+              "sourceTag": "User Chunk 12",
+              "question": "व्याकरण शिक्षण की 'निगमन विधि' (Deductive Method) का सही सोपान क्रम क्या होता है?",
+              "options": [
+                            "(A) उदाहरण $\\rightarrow$ नियम $\\rightarrow$ निरीक्षण $\\rightarrow$ सत्यापन",
+                            "(B) नियम $\\rightarrow$ उदाहरण $\\rightarrow$ प्रयोग $\\rightarrow$ सत्यापन",
+                            "(C) खेल $\\rightarrow$ नियम $\\rightarrow$ उदाहरण $\\rightarrow$ निष्कर्ष",
+                            "(D) वाचन $\\rightarrow$ लेखन $\\rightarrow$ नियम $\\rightarrow$ परीक्षण"
+              ],
+              "answer": "B",
+              "explanation": "निगमन विधि में शिक्षक सबसे पहले सामान्य नियम या सूत्र बताता है, उसके बाद उदाहरण देकर उसका प्रयोग व सत्यापन करवाता है।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 120,
+              "section": "Language I (Hindi)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा त्रुटि विश्लेषण",
+              "sourceTag": "User Chunk 12",
+              "question": "यदि प्राथमिक स्तर का कोई छात्र पढ़ते समय सामान्य वर्तनी की अशुद्धियाँ (Spelling Mistakes) करता है, तो भाषा शिक्षक के रूप में आपकी क्या सोच होनी चाहिए?",
+              "options": [
+                            "(A) छात्र पढ़ाई में पूरी तरह लापरवाह है।",
+                            "(B) त्रुटियाँ भाषा सीखने की प्रक्रिया का एक स्वाभाविक और अस्थाई हिस्सा हैं।",
+                            "(C) छात्र को कठोर दंड मिलना चाहिए।",
+                            "(D) उसे हिंदी भाषा का कोई ज्ञान नहीं है।"
+              ],
+              "answer": "B",
+              "explanation": "आधुनिक बाल मनोविज्ञान मानता है कि गलतियाँ सीखने का संकेतक हैं। जैसे-जैसे बच्चा अभ्यास करेगा, ये अशुद्धियाँ स्वतः दूर हो जाएँगी।",
+              "reference": "REET Mock Test 6 Chunk 12"
+},
+{
+              "id": 121,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और सन्धि",
+              "sourceTag": "User Chunk 13",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 121 तः 125 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"परिश्रमः एव मनुष्यस्य परमं मित्रम् अस्ति। परिश्रमेणैव सर्वाणि कार्याणि सिध्यन्ति, न तु मनोरथैः। आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः। यः जनः सदा परिश्रमं करोति, सः जीवने सुखं प्राप्नोति। अतः अस्माभिः आलस्यं त्यक्त्वा सर्वदा श्रमः करणीयः।\"\n\nगद्यांशे प्रयुक्तस्य 'परिश्रमेणैव' इति पदस्य शुद्धः सन्धि-विच्छेदः कः भविष्यति?",
+              "options": [
+                            "(A) परिश्रम + एव",
+                            "(B) परिश्रमेण + एव",
+                            "(C) परिश्रमे + एव",
+                            "(D) परिश्रमेणा + इव"
+              ],
+              "answer": "B",
+              "explanation": "'परिश्रमेण + एव' इत्यत्र अ + ए = ऐ भूत्वा 'परिश्रमेणैव' पदं सिध्यति। एषा वृद्धि स्वरसन्धिः अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 122,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और समास",
+              "sourceTag": "User Chunk 13",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 121 तः 125 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"परिश्रमः एव मनुष्यस्य परमं मित्रम् अस्ति। परिश्रमेणैव सर्वाणि कार्याणि सिध्यन्ति, न तु मनोरथैः। आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः। यः जनः सदा परिश्रमं करोति, सः जीवने सुखं प्राप्नोति। अतः अस्माभिः आलस्यं त्यक्त्वा सर्वदा श्रमः करणीयः।\"\n\n'परममित्रम्' इत्यस्मिन् पदे कः समासः वर्तते?",
+              "options": [
+                            "(A) अव्ययीभाव समासः",
+                            "(B) तत्पुरुष समासः",
+                            "(C) कर्मधारय समासः",
+                            "(D) द्वन्द्व समासः"
+              ],
+              "answer": "C",
+              "explanation": "'परमं मित्रम्' इति विग्रहे विशेषण-विशेष्यभावात् अत्र कर्मधारयः समासः अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 123,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और विभक्ति",
+              "sourceTag": "User Chunk 13",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 121 तः 125 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"परिश्रमः एव मनुष्यस्य परमं मित्रम् अस्ति। परिश्रमेणैव सर्वाणि कार्याणि सिध्यन्ति, न तु मनोरथैः। आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः। यः जनः सदा परिश्रमं करोति, सः जीवने सुखं प्राप्नोति। अतः अस्माभिः आलस्यं त्यक्त्वा सर्वदा श्रमः करणीयः।\"\n\nगद्यांशे प्रयुक्तस्य 'परिश्रमेण' इति पदे का विभक्तिः अस्ति?",
+              "options": [
+                            "(A) द्वितीया विभक्तिः",
+                            "(B) तृतीया विभक्तिः",
+                            "(C) चतुर्थी विभक्तिः",
+                            "(D) षष्ठी विभक्तिः"
+              ],
+              "answer": "B",
+              "explanation": "'परिश्रम' शब्दस्य तृतीया विभक्तेः एकवचने 'परिश्रमेण' इति रूपं भवति (साधकतमं करणम्)।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 124,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और प्रत्यय",
+              "sourceTag": "User Chunk 13",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 121 तः 125 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"परिश्रमः एव मनुष्यस्य परमं मित्रम् अस्ति। परिश्रमेणैव सर्वाणि कार्याणि सिध्यन्ति, न तु मनोरथैः। आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः। यः जनः सदा परिश्रमं करोति, सः जीवने सुखं प्राप्नोति। अतः अस्माभिः आलस्यं त्यक्त्वा सर्वदा श्रमः करणीयः।\"\n\n'त्यक्त्वा' इत्यत्र मूलधातुः कः कश्च प्रत्ययः प्रयुक्तः?",
+              "options": [
+                            "(A) त्यज् + क्त",
+                            "(B) त्यज् + क्त्वा",
+                            "(C) त्यक् + क्त्वा",
+                            "(D) त्यज् + ल्युट्"
+              ],
+              "answer": "B",
+              "explanation": "'त्यज्' धातौ 'क्त्वा' प्रत्ययं योजयित्वा 'त्यक्त्वा' (छोड़कर) इति रूपं निष्पद्यते।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 125,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और लकार",
+              "sourceTag": "User Chunk 13",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 121 तः 125 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"परिश्रमः एव मनुष्यस्य परमं मित्रम् अस्ति। परिश्रमेणैव सर्वाणि कार्याणि सिध्यन्ति, न तु मनोरथैः। आलस्यं हि मनुष्याणां शरीरस्थो महान् रिपुः। यः जनः सदा परिश्रमं करोति, सः जीवने सुखं प्राप्नोति। अतः अस्माभिः आलस्यं त्यक्त्वा सर्वदा श्रमः करणीयः।\"\n\n'प्राप्नोति' इति क्रियापदे कः लकारः वर्तते?",
+              "options": [
+                            "(A) लट् लकारः",
+                            "(B) लृट् लकारः",
+                            "(C) लङ् लकारः",
+                            "(D) लोट् लकारः"
+              ],
+              "answer": "A",
+              "explanation": "प्र + आप् धातौ प्रथमपुरुषस्य एकवचने वर्तमानकाले 'लट्लकारः' भवति।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 126,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत शिक्षण विधि",
+              "sourceTag": "User Chunk 13",
+              "question": "संस्कृतशिक्षणे 'आगमनविधेः' (Inductive Method) प्रथमं सोपानं किम् अस्ति?",
+              "options": [
+                            "(A) नियमोद्बोधनम्",
+                            "(B) उदाहरणप्रस्तुतीकरणम्",
+                            "(C) निरीक्षणम्",
+                            "(D) परीक्षणम्"
+              ],
+              "answer": "B",
+              "explanation": "आगमनविधौ सर्वप्रथमं छात्राणां सम्मुखे विशिष्टानि उदाहरणानि उपस्थाप्यन्ते।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 127,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषाकौशल क्रम",
+              "sourceTag": "User Chunk 13",
+              "question": "भाषाकौशलानां (Language Skills) शुद्धः मनोवैज्ञानिकः क्रमः कः वर्तते?",
+              "options": [
+                            "(A) भाषण-श्रवण-पठन-लेखनम्",
+                            "(B) श्रवण-भाषण-पठन-लेखनम्",
+                            "(C) पठन-लेखन-श्रवण-भाषणम्",
+                            "(D) श्रवण-पठन-लेखन-भाषणम्"
+              ],
+              "answer": "B",
+              "explanation": "'श्रुत्वा भाषते, पठित्वा लिखति' इति क्रमेण (LSRW) इति भाषाशिक्षणस्य स्वाभाविकः क्रमः अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 128,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "प्रत्यक्ष विधि",
+              "sourceTag": "User Chunk 13",
+              "question": "कस्यां शिक्षणविधौ मातृभाषायाः (Mother Tongue) प्रयोगः सर्वथा वर्जितः अस्ति?",
+              "options": [
+                            "(A) व्याकरण-अनुवादविधौ",
+                            "(B) प्रत्यक्षविधौ (Direct Method)",
+                            "(C) पाठ्यपुस्तकविधौ",
+                            "(D) व्याख्याविधौ"
+              ],
+              "answer": "B",
+              "explanation": "प्रत्यक्षविधौ (निर्बाधविधौ) संस्कृतं संस्कृतमाध्यमेन एव पाठ्यते, अत्र मातृभाषायाः साहाय्यं न गृह्यते।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 129,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषाकौशल",
+              "sourceTag": "User Chunk 13",
+              "question": "चतुर्विधभाषाकौशलेषु 'अन्तिमं कौशलं' किम् अस्ति?",
+              "options": [
+                            "(A) श्रवणकौशले",
+                            "(B) भाषणकौशले",
+                            "(C) पठनकौशले",
+                            "(D) लेखनकौशले"
+              ],
+              "answer": "D",
+              "explanation": "श्रवणं प्रथमं कौशलं वर्तते तथा च लेखनं चतुर्थम् अर्थात् अन्तिमं कौशलं मन्यते।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 130,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "वाचन कौशल",
+              "sourceTag": "User Chunk 13",
+              "question": "प्राथमिकस्तरे छात्रेषु उच्चारणशुद्धतायै कः वाचनः श्रेष्ठः मन्यते?",
+              "options": [
+                            "(A) आदर्शवाचनम्",
+                            "(B) अनुकरणवाचनम् / सस्वरवाचनम्",
+                            "(C) मौनवाचनम्",
+                            "(D) द्रुतवाचनम्"
+              ],
+              "answer": "B",
+              "explanation": "प्राथमिकस्तरे शिक्ष कस्य पश्चात् बालकैः क्रियमाणं सस्वर-अनुकरणवाचनं उच्चारणदोषनिवारणाय उत्तमं भवति।",
+              "reference": "REET Mock Test 6 Chunk 13"
+},
+{
+              "id": 131,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और सन्धि",
+              "sourceTag": "User Chunk 14",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 131 तः 135 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"अस्माकं देशः भारतवर्षम् अस्ति। एषा देवभूमिः कथ्यते। अत्रानेकाः नद्यः प्रवहन्ति, तासु गङ्गा पवित्रतमा नदी मन्यते। हिमालयः भारतस्य उत्तरदिशि मुकुटमिव शोभते। भारतस्य संस्कृतिः विश्वस्मिन् जगति श्रेष्ठा वर्तते। अतः वयं स्वदेशं प्रति गौरवं अनुभवामः।\"\n\nगद्यांशे प्रयुक्तस्य 'अत्रानेकाः' इत्यस्य पदस्य सन्धि-विच्छेदः कः?",
+              "options": [
+                            "(A) अत्र + अनेकाः",
+                            "(B) अत्रा + एकाः",
+                            "(C) अत्र + एकाः",
+                            "(D) अत्र + आनेकाः"
+              ],
+              "answer": "A",
+              "explanation": "अत्र + अनेकाः (अ + अ = आ) इति दीर्घ स्वरसन्धिः अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 132,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और समास",
+              "sourceTag": "User Chunk 14",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 131 तः 135 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"अस्माकं देशः भारतवर्षम् अस्ति। एषा देवभूमिः कथ्यते। अत्रानेकाः नद्यः प्रवहन्ति, तासु गङ्गा पवित्रतमा नदी मन्यते। हिमालयः भारतस्य उत्तरदिशि मुकुटमिव शोभते। भारतस्य संस्कृतिः विश्वस्मिन् जगति श्रेष्ठा वर्तते। अतः वयं स्वदेशं प्रति गौरवं अनुभवामः।\"\n\n'देवभूमिः' इति पदस्य समासविग्रहः कः भविष्यति?",
+              "options": [
+                            "(A) देवाय भूमिः",
+                            "(B) देवानाम भूमिः",
+                            "(C) देवे भूमिः",
+                            "(D) देवस्य भूमिः"
+              ],
+              "answer": "B",
+              "explanation": "'देवानाम भूमिः = देवभूमिः' इति षष्ठी-तत्पुरुष समासस्य उदाहरणम् अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 133,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और वचन",
+              "sourceTag": "User Chunk 14",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 131 तः 135 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"अस्माकं देशः भारतवर्षम् अस्ति। एषा देवभूमिः कथ्यते। अत्रानेकाः नद्यः प्रवहन्ति, तासु गङ्गा पवित्रतमा नदी मन्यते। हिमालयः भारतस्य उत्तरदिशि मुकुटमिव शोभते। भारतस्य संस्कृतिः विश्वस्मिन् जगति श्रेष्ठा वर्तते। अतः वयं स्वदेशं प्रति गौरवं अनुभवामः।\"\n\nगद्यांशे आगतं 'नद्यः' इति पदं कस्मिन् वचने प्रयुक्तम्?",
+              "options": [
+                            "(A) एकवचने",
+                            "(B) द्विवचने",
+                            "(C) बहुवचने",
+                            "(D) कस्यापि न"
+              ],
+              "answer": "C",
+              "explanation": "'नदी' शब्दस्य ईकारान्तस्त्रीलिङ्गस्य प्रथमाविभक्तेः रूपं 'नदी, नद्यौ, नद्यः' इति बहुवचनं भवति।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 134,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और विलोम",
+              "sourceTag": "User Chunk 14",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 131 तः 135 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"अस्माकं देशः भारतवर्षम् अस्ति। एषा देवभूमिः कथ्यते। अत्रानेकाः नद्यः प्रवहन्ति, तासु गङ्गा पवित्रतमा नदी मन्यते। हिमालयः भारतस्य उत्तरदिशि मुकुटमिव शोभते। भारतस्य संस्कृतिः विश्वस्मिन् जगति श्रेष्ठा वर्तते। अतः वयं स्वदेशं प्रति गौरवं अनुभवामः।\"\n\n'पवित्रतमा' इति पदस्य शुद्धं विलोमपदं किम् अस्ति?",
+              "options": [
+                            "(A) शुद्धा",
+                            "(B) अपवित्रा / मलिना",
+                            "(C) श्रेष्ठा",
+                            "(D) विपुला"
+              ],
+              "answer": "B",
+              "explanation": "पवित्रतमा (सबसे पवित्र) इत्यस्य विलोमपदं अपवित्रा अथवा मलिना भवति।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 135,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और विभक्ति",
+              "sourceTag": "User Chunk 14",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 131 तः 135 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"अस्माकं देशः भारतवर्षम् अस्ति। एषा देवभूमिः कथ्यते। अत्रानेकाः नद्यः प्रवहन्ति, तासु गङ्गा पवित्रतमा नदी मन्यते। हिमालयः भारतस्य उत्तरदिशि मुकुटमिव शोभते। भारतस्य संस्कृतिः विश्वस्मिन् जगति श्रेष्ठा वर्तते। अतः वयं स्वदेशं प्रति गौरवं अनुभवामः।\"\n\n'भारतस्य' इत्यत्र का विभक्तिः कश्च वचनः अस्ति?",
+              "options": [
+                            "(A) पञ्चमी विभक्तिः, एकवचनम्",
+                            "(B) षष्ठी विभक्तिः, एकवचनम्",
+                            "(C) सप्तमी विभक्तिः, बहुवचनम्",
+                            "(D) द्वितीया विभक्तिः, एकवचनम्"
+              ],
+              "answer": "B",
+              "explanation": "अकारान्तपुल्लिङ्ग 'भारत' शब्दस्य षष्ठी एकवचने 'भारतस्य' रूपं भवति (सम्बन्धे षष्ठी)।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 136,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत शिक्षण सिद्धांत",
+              "sourceTag": "User Chunk 14",
+              "question": "संस्कृतभाषाशिक्षणस्य स्वाभाविकतापद्धतेः (Principle of Naturalness) कः अर्थः?",
+              "options": [
+                            "(A) छात्रः केवलं रटनं कुर्यात्।",
+                            "(B) भाषाशिक्षणं मानवस्य स्वाभाविकी योग्यता अस्ति, अतः श्रवण-भाषणैः आरम्भः भवेत्।",
+                            "(C) नियमलेखनम् अनिवार्यम्।",
+                            "(D) केवलं कठिनशब्दानां ज्ञानम्।"
+              ],
+              "answer": "B",
+              "explanation": "शिशुः यथा प्रकृत्या सर्वप्रथमं शृणोति वदति च, तथैव वर्गेऽपि स्वाभाविकरूपेण शिक्षणं स्यात्।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 137,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत पाठ्यपुस्तक",
+              "sourceTag": "User Chunk 14",
+              "question": "प्राथमिकस्तरे पाठ्यपुस्तके निर्मितानि चित्राणि किमर्थं साहाय्यं कुर्वन्ति?",
+              "options": [
+                            "(A) अमूर्तसङ्कल्पनानां अवबोधनाय",
+                            "(B) पुस्तकस्य शोभां वर्धयितुम्",
+                            "(C) पुस्तकस्य मूल्यं वर्धयितुम्",
+                            "(D) छात्रस्य मनोरंजनार्थम्"
+              ],
+              "answer": "A",
+              "explanation": "बालकाः चित्रं दृष्ट्वा अमूर्तविचाराणां (Abstract Concepts) चिन्तनं सहजतया कर्तुं शक्नुवन्ति।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 138,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "निदानात्मक परीक्षण",
+              "sourceTag": "User Chunk 14",
+              "question": "छात्रस्य भाषागतदोषान् तथा च अधिगम-अन्तरालं (Learning Gaps) ज्ञातुं कः परीक्षणः क्रियते?",
+              "options": [
+                            "(A) उपचारात्मक-परीक्षणम्",
+                            "(B) निदानात्मक-परीक्षणम् (Diagnostic Test)",
+                            "(C) उपलब्धि-परीक्षणम्",
+                            "(D) वार्षिक-परीक्षणम्"
+              ],
+              "answer": "B",
+              "explanation": "निदानस्य कार्यं कारणज्ञानम् अस्ति, येन छात्रस्य दौर्बल्यं ज्ञायते।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 139,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "त्रिभाषासूत्र",
+              "sourceTag": "User Chunk 14",
+              "question": "'त्रिभाषासूत्रे' प्राथमिकस्तरे कया भाषया शिक्षणं भवेत् इति संस्तुतिः अस्ति?",
+              "options": [
+                            "(A) आङ्ग्लभाषया",
+                            "(B) संस्कृतभाषया",
+                            "(C) मातृभाषया / प्रादेशिकभाषया",
+                            "(D) केवलं हिन्दीभाषया"
+              ],
+              "answer": "C",
+              "explanation": "राष्ट्रियशिक्षानीति अनुसारं प्राथमिकस्तरे बालकस्य मातृभाषा एव शिक्षणस्य माध्यमं भवेत्।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 140,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "निगमन विधि",
+              "sourceTag": "User Chunk 14",
+              "question": "कः विधिः \"नियमतः उदाहरणं प्रति\" (Rules to Examples) अग्रसरः भवति?",
+              "options": [
+                            "(A) आगमनविधिः",
+                            "(B) निगमनविधिः (Deductive Method)",
+                            "(C) सूत्रविधिः",
+                            "(D) भाषासंसर्गविधिः"
+              ],
+              "answer": "B",
+              "explanation": "निगमनविधौ सर्वप्रथमं सामान्यनियमाः कथ्यन्ते, तदनन्तरं तेषां स्पष्टीकरणाय उदाहरणानि दीयन्ते।",
+              "reference": "REET Mock Test 6 Chunk 14"
+},
+{
+              "id": 141,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और सन्धि",
+              "sourceTag": "User Chunk 15",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 141 तः 145 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"सत्संगतिः मानवजीवने महतीं भूमिकां वहति। सतां संगतिः सत्संगतिः उच्यते। दुष्टानां संसर्गेण मानवः दुराचारी भवति, किन्तु सज्जनानां सहवासेन जनः सद्गुणी जायते। अतः बुद्धिमान् जनः कुसंगतिं परित्यज्य सर्वदा सत्पुरुषैः सह तिष्ठेत्। संसारे सज्जनानां सान्निध्यम् एव श्रेयस्करं भवति।\"\n\nगद्यांशे प्रयुक्तस्य 'सज्जनानाम्' इत्यत्र कः सन्धिः अस्ति?",
+              "options": [
+                            "(A) स्वरसन्धिः",
+                            "(B) व्यञ्जनसन्धिः (श्चुत्व सन्धिः)",
+                            "(C) विसर्गसन्धिः",
+                            "(D) प्रकृतिभावः"
+              ],
+              "answer": "B",
+              "explanation": "सत् + जनानाम् = सज्जनानाम्। अत्र 'तोः श्चुना श्चुः' सूत्रेण तकारस्य जकारः भवति।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 142,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और समास",
+              "sourceTag": "User Chunk 15",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 141 तः 145 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"सत्संगतिः मानवजीवने महतीं भूमिकां वहति। सतां संगतिः सत्संगतिः उच्यते। दुष्टानां संसर्गेण मानवः दुराचारी भवति, किन्तु सज्जनानां सहवासेन जनः सद्गुणी जायते। अतः बुद्धिमान् जनः कुसंगतिं परित्यज्य सर्वदा सत्पुरुषैः सह तिष्ठेत्। संसारे सज्जनानां सान्निध्यम् एव श्रेयस्करं भवति।\"\n\n'कुसंगतिम्' इत्यत्र कः समासः वर्तते?",
+              "options": [
+                            "(A) प्रादितत्पुरुषः / कर्मधारय समासः",
+                            "(B) अव्ययीभाव समासः",
+                            "(C) द्वन्द्व समासः",
+                            "(D) बहुव्रीहि समासः"
+              ],
+              "answer": "A",
+              "explanation": "'कुत्सिता संगतिः = कुसंगतिः' इति प्रादि-तत्पुरुषः अथवा कर्मधारय समासस्य रूपम् अस्ति।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 143,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और प्रत्यय",
+              "sourceTag": "User Chunk 15",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 141 तः 145 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"सत्संगतिः मानवजीवने महतीं भूमिकां वहति। सतां संगतिः सत्संगतिः उच्यते। दुष्टानां संसर्गेण मानवः दुराचारी भवति, किन्तु सज्जनानां सहवासेन जनः सद्गुणी जायते। अतः बुद्धिमान् जनः कुसंगतिं परित्यज्य सर्वदा सत्पुरुषैः सह तिष्ठेत्। संसारे सज्जनानां सान्निध्यम् एव श्रेयस्करं भवति।\"\n\n'परित्यज्य' इत्यस्मिन् पदे कः प्रत्ययः प्रयुक्तः?",
+              "options": [
+                            "(A) क्त्वा प्रत्ययः",
+                            "(B) ल्यप् प्रत्ययः",
+                            "(C) तुमुन् प्रत्ययः",
+                            "(D) घञ् प्रत्ययः"
+              ],
+              "answer": "B",
+              "explanation": "परि (उपसर्ग) + त्यज् (धातु) + ल्यप् (प्रत्यय) = परित्यज्य (त्याग करके)। उपसर्गयोगे क्त्वा स्थाने ल्यप् भवति।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 144,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और लकार",
+              "sourceTag": "User Chunk 15",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 141 तः 145 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"सत्संगतिः मानवजीवने महतीं भूमिकां वहति। सतां संगतिः सत्संगतिः उच्यते। दुष्टानां संसर्गेण मानवः दुराचारी भवति, किन्तु सज्जनानां सहवासेन जनः सद्गुणी जायते। अतः बुद्धिमान् जनः कुसंगतिं परित्यज्य सर्वदा सत्पुरुषैः सह तिष्ठेत्। संसारे सज्जनानां सान्निध्यम् एव श्रेयस्करं भवति।\"\n\n'तिष्ठेत्' इति क्रियापदे कः लकारः अस्ति?",
+              "options": [
+                            "(A) लट् लकारः",
+                            "(B) लोट् लकारः",
+                            "(C) विधिलिङ् लकारः",
+                            "(D) लङ् लकारः"
+              ],
+              "answer": "C",
+              "explanation": "स्था (तिष्ठ्) धातौ विधिलिङ् लकारे प्रथमपुरुषस्य एकवचने 'तिष्ठेत्' इति रूपं भवति (चाहिए अर्थे)।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 145,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "संस्कृत गद्यांश और विभक्ति",
+              "sourceTag": "User Chunk 15",
+              "question": "अधोलिखितं गद्यांशं पठित्वा प्रश्नसंख्या 141 तः 145 पर्यन्तं प्रश्नानाम् उत्तराणि देयानि:\n\"सत्संगतिः मानवजीवने महतीं भूमिकां वहति। सतां संगतिः सत्संगतिः उच्यते। दुष्टानां संसर्गेण मानवः दुराचारी भवति, किन्तु सज्जनानां सहवासेन जनः सद्गुणी जायते। अतः बुद्धिमान् जनः कुसंगतिं परित्यज्य सर्वदा सत्पुरुषैः सह तिष्ठेत्। संसारे सज्जनानां सान्निध्यम् एव श्रेयस्करं भवति।\"\n\n\"...सत्पुरुषैः सह तिष्ठेत्\" इत्यत्र 'सह' इति अव्यययोगे का विभक्तिः प्रयुक्ता?",
+              "options": [
+                            "(A) द्वितीया विभक्तिः",
+                            "(B) तृतीया विभक्तिः",
+                            "(C) चतुर्थी विभक्तिः",
+                            "(D) पञ्चमी विभक्तिः"
+              ],
+              "answer": "B",
+              "explanation": "'सहयुक्तेऽप्रधाने' सूत्रानुसारं सह, साकं, सार्धं, समं योगे अप्रधाने तृतीया विभक्तिः भवति (सत्पुरुषैः)।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 146,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "सतत एवं व्यापक मूल्यांकन",
+              "sourceTag": "User Chunk 15",
+              "question": "\"सतत-एवं-व्यापक-मूल्याङ्कने\" (CCE) 'व्यापक' इत्यस्य शब्दस्य कः अभिप्रायः?",
+              "options": [
+                            "(A) केवलं शैक्षिकक्षेत्रस्य मूल्याङ्कनम्।",
+                            "(B) छात्रस्य शैक्षिक-सहशैक्षिकयोः उभयोः क्षेत्रयोः मूल्याङ्कनम्।",
+                            "(C) केवलं क्रीडाक्षेत्रस्य परीक्षा।",
+                            "(D) वर्षान्ते एका परीक्षा।"
+              ],
+              "answer": "B",
+              "explanation": "व्यापकत्वं नाम छात्रस्य संज्ञान-भावना-कौशलादीनां सर्वाङ्गीणपक्षाणां मूल्याङ्कनम्।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 147,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "पठन कौशल",
+              "sourceTag": "User Chunk 15",
+              "question": "प्राथमिकस्तरे पठनकौशलस्य (Reading Skill) विकासाय का पद्धतिः सर्वश्रेष्ठ मन्यते?",
+              "options": [
+                            "(A) वर्णमाला पद्धतिः",
+                            "(B) वाक्यपद्धतिः / कथापद्धतिः",
+                            "(C) केवलं शब्दरटन पद्धतिः",
+                            "(D) लेखन पद्धतिः"
+              ],
+              "answer": "B",
+              "explanation": "प्राथमिकस्तरे बालकाः पूर्णवाक्यैः अथवा कथामाध्यमेन अर्थग्रहणं सहजतया कुर्वन्ति, अतः एषा पद्धतिः श्रेष्ठा।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 148,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "भाषा प्रयोगशाला",
+              "sourceTag": "User Chunk 15",
+              "question": "'भाषाप्रयोगशालायाः' (Language Lab) मुख्यं श्रव्य-साधनं किम् अस्ति?",
+              "options": [
+                            "(A) श्यामपट्टः",
+                            "(B) चित्रपटः",
+                            "(C) ध्वनिपञ्जिका (Tape Recorder) / शिरोभागयन्त्रम् (Headphone)",
+                            "(D) मानचित्रम्"
+              ],
+              "answer": "C",
+              "explanation": "भाषाप्रयोगशालायाम् छात्राः शुद्धध्वनिं श्रुत्वा स्वयं उच्चारणाभ्यासं कुर्वन्ति।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 149,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "लेखन कौशल",
+              "sourceTag": "User Chunk 15",
+              "question": "छात्रस्य लेखनकलायाः गतेः तथा च शुद्धतायाः विकासाय कः अभ्यासः आवश्यकः?",
+              "options": [
+                            "(A) सुलेखः",
+                            "(B) श्रुतलेखः (Dictation)",
+                            "(C) अनुलेखः",
+                            "(D) मौनपठनम्"
+              ],
+              "answer": "B",
+              "explanation": "श्रुतलेखनेन (सुनकर लिखना) छात्राणां श्रवणकौशलं वर्तनीशुद्धता तथा लेखनगतिः वर्धते।",
+              "reference": "REET Mock Test 6 Chunk 15"
+},
+{
+              "id": 150,
+              "section": "Language II (Sanskrit)",
+              "questionType": "MCQ",
+              "difficulty": "medium",
+              "topic": "किण्डरगार्टन पद्धति",
+              "sourceTag": "User Chunk 15",
+              "question": "\"क्रीडनकैः (Toys/Games) शिक्षणम्\" प्राथमिकस्तरे कस्यां पद्धतौ प्रमुखं भवति?",
+              "options": [
+                            "(A) किण्डरगार्टन-पद्धतौ (Kindergarten)",
+                            "(B) व्याख्यानपद्धतौ",
+                            "(C) पाठ्यपुस्तकपद्धतौ",
+                            "(D) वादविवादपद्धतौ"
+              ],
+              "answer": "A",
+              "explanation": "फ्रोबेल महोदयस्य किण्डरगार्टन पद्धतौ बालकाः खेल-खेल मध्ये प्रकृति सान्निध्ये शिक्षन्ते।",
+              "reference": "REET Mock Test 6 Chunk 15"
+}
+            ]
+          }
+        ],
+        questionTemplate: {
+          id: 1,
+          section: '',
+          questionType: '',
+          difficulty: 'hard',
+          topic: '',
+          sourceTag: 'PYQ / New',
+          question: ``,
+          options: ['', '', '', ''],
+          answer: '',
+          explanation: ``,
+          reference: ''
+        }
+      };
+
+      const testConfig = window.reetMockTest6 || reetMockTest6;
+      const reetLevel1Sections = [
+        { section: 'Child Development & Pedagogy', startId: 1, endId: 30 },
+        { section: 'Language I (Hindi)', startId: 31, endId: 60 },
+        { section: 'Language II (English)', startId: 61, endId: 90 },
+        { section: 'Mathematics', startId: 91, endId: 120 },
+        { section: 'Environmental Studies', startId: 121, endId: 150 }
+      ];
+      const sectionForQuestionId=(id)=>reetLevel1Sections.find((section)=>id>=section.startId && id<=section.endId)?.section || 'REET Level 1';
+      const data = (testConfig?.sections || []).flatMap((section) => (section?.questions || [])).filter(Boolean).slice(0, testConfig?.totalQuestions || 150).map((question, index) => {
+        const id=question?.id ?? index + 1;
+        return {
+          ...question,
+          id,
+          section: String(question?.sourceTag || '').startsWith('Provided') && question?.section ? question.section : sectionForQuestionId(id),
+          difficulty: question?.difficulty || testConfig?.difficulty || 'medium',
+          questionType: question?.questionType || 'MCQ',
+          options: Array.isArray(question?.options) ? question.options : []
+        };
+      });
+
+      const sections = [...new Set(data.map((q) => q.section))];
+      const letters = ['A','B','C','D'];
+      const state = { started:false,current:0,answers:{},remaining:(testConfig?.durationMinutes || 150)*60,timerId:null,activeFilter:'all' };
+      const filterLabels={all:'All',attempted:'Attempted',correct:'Correct',wrong:'Wrong'};
+      const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
+      const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+      const formatTime=(sec)=>{const safeSec=Math.max(0,Number(sec)||0);const hours=Math.floor(safeSec/3600);const minutes=Math.floor((safeSec%3600)/60);const seconds=safeSec%60;return `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;};
+      const normalizeLatexSymbols=(value='')=>String(value)
+        .replace(/\$([^$]+)\$/gs,'$1')
+        .replace(/\\\[/g,'')
+        .replace(/\\\]/g,'')
+        .replace(/\\\(/g,'')
+        .replace(/\\\)/g,'')
+        .replace(/\\times/g,'×')
+        .replace(/\\div/g,'÷')
+        .replace(/\\cdot/g,'·')
+        .replace(/\\implies/g,'⇒')
+        .replace(/\\rightarrow/g,'→')
+        .replace(/\\leq/g,'≤')
+        .replace(/\\geq/g,'≥')
+        .replace(/\\neq/g,'≠')
+        .replace(/\\approx/g,'≈')
+        .replace(/\\\{/g,'{')
+        .replace(/\\\}/g,'}')
+        .replace(/\\%/g,'%')
+        .replace(/\^\s*\\circ/g,'°');
+      const applySimpleMathMarkup=(value='')=>escapeHtml(value)
+        .replace(/([^\s<>])_\{([^{}]+)\}/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^\{([^{}]+)\}/g,'$1<sup>$2</sup>')
+        .replace(/([^\s<>])_([A-Za-z0-9]+)/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^(\d+)/g,'$1<sup>$2</sup>');
+      const readBracedArgument=(source,startIndex)=>{
+        let index=startIndex;
+        while(/\s/.test(source[index]||'')) index+=1;
+        if(source[index]!=='{') return null;
+        let depth=0;
+        let content='';
+        for(let i=index;i<source.length;i+=1){
+          const char=source[i];
+          if(char==='{'){
+            if(depth>0) content+=char;
+            depth+=1;
+            continue;
+          }
+          if(char==='}'){
+            depth-=1;
+            if(depth===0) return {content,end:i+1};
+            content+=char;
+            continue;
+          }
+          content+=char;
+        }
+        return null;
+      };
+      const readScriptSuffix=(source,startIndex)=>{
+        if(source[startIndex]!=='^' && source[startIndex]!=='_') return {html:'',end:startIndex};
+        const tag=source[startIndex]==='^'?'sup':'sub';
+        const braced=readBracedArgument(source,startIndex+1);
+        if(braced) return {html:`<${tag}>${renderMathExpression(braced.content)}</${tag}>`,end:braced.end};
+        const match=source.slice(startIndex+1).match(/^[^\s{}]+/);
+        if(!match) return {html:'',end:startIndex};
+        return {html:`<${tag}>${applySimpleMathMarkup(match[0])}</${tag}>`,end:startIndex+1+match[0].length};
+      };
+      const renderMathExpression=(value='')=>{
+        const source=normalizeLatexSymbols(value);
+        let html='';
+        for(let i=0;i<source.length;){
+          if(source.startsWith('\\frac',i)){
+            const numerator=readBracedArgument(source,i+5);
+            const denominator=numerator?readBracedArgument(source,numerator.end):null;
+            if(numerator && denominator){
+              const script=readScriptSuffix(source,denominator.end);
+              html+=`<span class="math-inline math-fraction"><span class="math-num">${renderMathExpression(numerator.content)}</span><span class="math-den">${renderMathExpression(denominator.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\sqrt',i)){
+            const radicand=readBracedArgument(source,i+5);
+            if(radicand){
+              const script=readScriptSuffix(source,radicand.end);
+              html+=`<span class="math-root"><span class="math-radical">√</span><span class="math-radicand">${renderMathExpression(radicand.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\text',i)){
+            const textArg=readBracedArgument(source,i+5);
+            if(textArg){
+              const script=readScriptSuffix(source,textArg.end);
+              html+=applySimpleMathMarkup(normalizeLatexSymbols(textArg.content))+script.html;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\overline',i)){
+            const overlineArg=readBracedArgument(source,i+9);
+            if(overlineArg){
+              const script=readScriptSuffix(source,overlineArg.end);
+              html+=`<span class="math-overline">${renderMathExpression(overlineArg.content)}</span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          const nextCommand=[source.indexOf('\\frac',i+1),source.indexOf('\\sqrt',i+1),source.indexOf('\\text',i+1),source.indexOf('\\overline',i+1)].filter((idx)=>idx>=0).sort((a,b)=>a-b)[0] ?? source.length;
+          html+=applySimpleMathMarkup(source.slice(i,nextCommand));
+          i=nextCommand;
+        }
+        return html;
+      };
+      const formatPreservedText=(value='')=>renderMathExpression(value)
+        .replace(/&lt;br\s*\/?&gt;/gi,'<br>')
+        .replace(/\r?\n/g,'<br>');
+      const formatMatchingLines=(value='')=>String(value).split(/\r?\n/).filter((line)=>line.trim()).map((line)=>`<div class="matching-item">${formatPreservedText(line.trim())}</div>`).join('');
+      const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
+      const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statement:m[3].trim(),reason:m[5].trim()};};
+      const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statements:m[3].trim(),conclusions:m[5].trim()};};
+      const splitMatchingCode=(content='')=>{const matchPattern=new RegExp('([\\s\\S]*?)(?:^|\\n)\\s*((?:कदम\\s*)?कूट(?:म्)?)\\s*[-–—:：]\\s*([\\s\\S]*)$','im');const m=String(content).match(matchPattern);if(!m) return {main:String(content).trim(),code:'',codeLabel:'कूट'};return {main:m[1].trim(),code:m[3].trim(),codeLabel:m[2].trim()};};
+      const isMatchingHeading=(line,side)=>new RegExp(`^\\s*(?:सूची|pool)-\\s*(?:${side})(?:\\s*\\([^\\n]*\\))?\\s*[:：]?\\s*$`,'i').test(line);
+      const parseMatching=(q='')=>{const lines=String(q).split(/\r?\n/);let first=-1;let second=-1;for(let i=0;i<lines.length;i+=1){if(first<0 && isMatchingHeading(lines[i],'1|I+')){first=i;continue;}if(first>=0 && isMatchingHeading(lines[i],'2|II')){second=i;break;}}if(first<0||second<0) return null;const intro=lines.slice(0,first).join('\n').trim();const title1=lines[first].replace(/[:：]\s*$/,'').trim();const title2=lines[second].replace(/[:：]\s*$/,'').trim();const l1=lines.slice(first+1,second).join('\n').trim();const right=splitMatchingCode(lines.slice(second+1).join('\n'));return {intro,title1,l1,title2,l2:right.main,code:right.code,codeLabel:right.codeLabel};};
+      function renderStructuredQuestion(q){
+        const questionRaw=String(q.question||'');
+        const normalizedQuestionType=String(q.questionType||'').toLowerCase();
+        const assertionData=normalizedQuestionType.includes('assertion-reason')?parseAssertionReason(questionRaw):null;
+        if(assertionData){
+          questionText.innerHTML=`<div class="question-structured">${assertionData.intro?`<div>${formatPreservedText(assertionData.intro)}</div>`:''}${renderLabelBlock('कथन (A):',assertionData.statement)}${renderLabelBlock('कारण (R):',assertionData.reason)}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const statementData=normalizedQuestionType.includes('statement-conclusion')?parseStatementConclusion(questionRaw):null;
+        if(statementData){
+          questionText.innerHTML=`<div class="question-structured">${statementData.intro?`<div>${formatPreservedText(statementData.intro)}</div>`:''}${renderLabelBlock('कथन:',statementData.statements)}${renderLabelBlock('निष्कर्ष:',statementData.conclusions)}</div>`;
+          matchingBlock.innerHTML='';
+          return;
+        }
+        const matching=normalizedQuestionType.includes('matching')?parseMatching(questionRaw):null;
+        if(matching){
+          questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>${matching.code?`<div class="matching-code"><strong>${formatPreservedText(matching.codeLabel||'कूट')}:</strong><div class="mt-2">${formatPreservedText(matching.code)}</div></div>`:''}`;
+          return;
+        }
+        questionText.innerHTML=formatPreservedText(questionRaw);
+        matchingBlock.innerHTML='';
+      }
+      function renderPalette(){if(!palette) return; palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
+      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
+      function showQuiz(){
+        resultArea.classList.add('hidden');
+        testArea.classList.remove('hidden');
+        testArea.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function initQuizState(){
+        state.started=true;
+        state.current=0;
+        state.answers={};
+        state.remaining=(testConfig?.durationMinutes || 150)*60;
+        clearInterval(state.timerId);
+        startBtn.disabled=true;
+        timerEl.textContent=`Time Left: ${formatTime(state.remaining)}`;
+      }
+      function startTimer(){
+        state.timerId=setInterval(()=>{state.remaining-=1; timerEl.textContent=`Time Left: ${formatTime(Math.max(state.remaining,0))}`; if(state.remaining<=0) submitTest();},1000);
+      }
+      function startTestFlow(){
+        if(state.started) return;
+        if(!data.length){questionMeta.textContent='Questions unavailable';questionText.textContent='Question data could not be loaded.';console.error('REET Mock Test: Question data array is empty.',{testConfig});return;}
+        showQuiz();
+        initQuizState();
+        const rendered=renderQuestion();
+        if(!rendered){console.error('REET Mock Test: Rendering failed, timer not started.');return;}
+        renderPalette();
+        startTimer();
+      }
+      function answerText(question,answer){if(!answer) return 'Skipped / Not answered';const optionText=question.options?.[letters.indexOf(answer)]||'';return optionText?`${answer}. ${optionText}`:answer;}
+      function normalizeReviewItem(q){const selectedAnswer=state.answers[q.id]||null;const attempted=Boolean(selectedAnswer);const isCorrect=attempted && selectedAnswer===q.answer;const status=isCorrect?'correct':(attempted?'wrong':'unattempted');return {...q,selectedAnswer,attempted,isCorrect,status,correctAnswer:q.answer,explanation:q.explanation||'Explanation available नहीं है।'};}
+      function getReviewItems(){return data.map(normalizeReviewItem);}
+      function getFilteredReviewItems(items,filter){if(filter==='correct') return items.filter((i)=>i.isCorrect); if(filter==='wrong') return items.filter((i)=>i.attempted && !i.isCorrect); if(filter==='attempted') return items.filter((i)=>i.attempted); return items;}
+      function reviewCardHtml(item){const statusClass=item.isCorrect?'status-correct':(item.attempted?'status-wrong':'status-attempted');const statusLabel=item.isCorrect?'Correct':(item.attempted?'Wrong':'Skipped');const userPillClass=item.isCorrect?'correct':(item.attempted?'user-wrong':'skipped');return `<article class="review-card"><div class="flex flex-wrap items-center justify-between gap-2"><p class="font-bold">Q${item.id}</p><span class="status-badge ${statusClass}">${statusLabel}</span></div><p class="mt-2">${formatPreservedText(item.question)}</p>${(item.options||[]).length?`<div class="mt-3 grid gap-2">${item.options.map((opt,idx)=>`<p class="answer-pill ${letters[idx]===item.correctAnswer?'correct':(letters[idx]===item.selectedAnswer && !item.isCorrect?'user-wrong':'')}"><strong>${letters[idx]}.</strong> ${formatPreservedText(opt)}</p>`).join('')}</div>`:''}<p class="mt-3 text-sm"><strong>Your Answer:</strong> <span class="answer-pill ${userPillClass}">${formatPreservedText(answerText(item,item.selectedAnswer))}</span></p><p class="mt-2 text-sm"><strong>Correct Answer:</strong> <span class="answer-pill correct">${formatPreservedText(answerText(item,item.correctAnswer))}</span></p><p class="mt-3 text-sm"><strong>Explanation:</strong> ${formatPreservedText(item.explanation)}</p></article>`;}
+      function renderReview(filter='all',shouldScroll=false){const items=getReviewItems();const filtered=getFilteredReviewItems(items,filter);state.activeFilter=filter;const reviewMeta=document.getElementById('review-meta');const reviewList=document.getElementById('review-list');if(reviewMeta) reviewMeta.textContent=`${filterLabels[filter]||'All'} Review • ${filtered.length} question(s)`;if(reviewList){reviewList.innerHTML=filtered.length?filtered.map(reviewCardHtml).join(''):`<div class="empty-review">No questions found in <strong>${filterLabels[filter]||'All'}</strong> filter.</div>`;}document.querySelectorAll('[data-filter-card]').forEach((card)=>card.classList.toggle('active',card.dataset.filterCard===filter));if(shouldScroll){document.getElementById('review-panel')?.scrollIntoView({behavior:'smooth',block:'start'});}}
+      function bindSummaryFilters(){document.querySelectorAll('[data-filter-card]').forEach((card)=>{if(card.dataset.bound==='1') return;card.dataset.bound='1';card.addEventListener('click',()=>renderReview(card.dataset.filterCard||'all',true));});}
+      function renderAnswerKey(){const answerKey=document.getElementById('answer-key');if(!answerKey) return;answerKey.innerHTML=getReviewItems().map(reviewCardHtml).join('');}
+      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).filter((id)=>state.answers[id]).length;const correct=data.filter((q)=>state.answers[q.id]===q.answer).length;const wrong=attempted-correct;const score=correct*(testConfig?.marksPerQuestion||1);document.getElementById('result-summary').innerHTML=[['Total',data.length,'all'],['Attempted',attempted,'attempted'],['Correct',correct,'correct'],['Wrong',wrong,'wrong']].map(([k,v,f])=>`<button type="button" data-filter-card="${f}" class="summary-card is-clickable ${f==='all'?'active':''}"><strong>${k}:</strong> ${v}</button>`).join('')+`<p class="summary-card"><strong>Marks:</strong> ${score}/${testConfig?.totalMarks||data.length}</p>`;document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section);const c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');bindSummaryFilters();renderReview('all',false);renderAnswerKey();}
+      document.addEventListener('DOMContentLoaded',()=>{
+        const prevBtn=document.getElementById('prev-btn');
+        const nextBtn=document.getElementById('next-btn');
+        const submitBtn=document.getElementById('submit-btn');
+        if(!startBtn || !timerEl || !testArea || !resultArea || !testIntro || !questionMeta || !sectionTag || !questionText || !optionsWrap || !palette || !matchingBlock || !prevBtn || !nextBtn || !submitBtn){
+          console.error('REET Mock Test 6: Required DOM elements are missing.');
+          return;
+        }
+        prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});
+        nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});
+        submitBtn.addEventListener('click',submitTest);
+        testArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        resultArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));
+        startBtn.addEventListener('click',startTestFlow);
+      });
+    </script>
+  </body>
+</html>
