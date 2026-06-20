@@ -15,7 +15,12 @@ window.mockTestData = (() => {
   const exams = {
     bstc: createExam('bstc', 'BSTC', 'Teaching Exams', 'Beginner', 180, 200),
     ptet: createExam('ptet', 'PTET', 'Teaching Exams', 'Intermediate', 180, 200),
-    reet: createExam('reet', 'REET', 'Teaching Exams'),
+    reet: {
+      ...createExam('reet', 'REET', 'Teaching Exams', 'Intermediate', 150, 150),
+      description: 'REET Level 1 and Level 2 full-length mock tests with Child Development & Pedagogy, Language, Mathematics, EVS, Science and Social Studies practice.',
+      practiceIntro: 'Attempt REET full-length mock tests with 150 questions and a 150-minute timer to build exam speed, section balance, and confidence.',
+      ctaLink: './teaching-exams/reet.html'
+    },
     ctet: createExam('ctet', 'CTET', 'Teaching Exams'),
     '3rd-grade': createExam('3rd-grade', '3rd GRADE', 'Teaching Exams'),
     '2nd-grade': createExam('2nd-grade', '2nd Grade', 'Teaching Exams', 'Advanced', 75, 60),
