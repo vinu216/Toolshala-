@@ -318,6 +318,8 @@
           ? './reet-mock-test-8.html'
           : teachingExamSlug === 'reet' && testNumber === 9
           ? './reet-mock-test-9.html'
+          : teachingExamSlug === 'reet' && testNumber === 10
+          ? './reet-mock-test-10.html'
           : teachingExamSlug === 'bstc' && testNumber === 1
           ? './bstc-mock-test-1.html'
           : teachingExamSlug === 'bstc' && testNumber === 2
