@@ -138,6 +138,19 @@
 
 
 
+  const reetMockDescriptions = {
+    1: 'REET Level 1/2 full-length mock with 150 questions covering CDP, Language I-II, Mathematics, EVS, Science and Social Studies for exam-pattern practice.',
+    2: 'REET mock test for improving speed and accuracy with balanced pedagogy, language, maths and environmental studies question coverage.',
+    3: 'Section-balanced REET practice paper designed to strengthen Child Development, teaching methods, language skills and subject knowledge.',
+    4: 'REET full paper simulation with 150 MCQs and 150-minute timing to practise attempt order, accuracy and syllabus-based revision.',
+    5: 'REET preparation mock focused on exam endurance, topic recall and mixed-difficulty questions across all major teacher eligibility sections.',
+    6: 'REET revision test for identifying weak areas in pedagogy, language, maths, EVS, science and social studies before final practice.',
+    7: 'REET exam-style mock test to build confidence with full-length timing, section-wise coverage and answer review support.',
+    8: 'Advanced REET practice set for consistent scoring, better time management and focused revision across the complete syllabus.',
+    9: 'Near-exam REET mock simulation for refining final strategy, reducing guesswork and checking readiness with 150 questions.',
+    10: 'Final REET full-length mock test for complete self-assessment with exam-pattern questions, timer discipline and detailed review.'
+  };
+
   const ptetMockDescriptions = {
     1: 'PTET exam-pattern full-length mock to balance reasoning, teaching aptitude, language skills, and Rajasthan awareness in one attempt.',
     2: 'Focused PTET practice set for improving speed and accuracy with mixed-difficulty questions across all key sections.',
@@ -261,11 +274,23 @@
     const exam = data.exams[teachingExamSlug];
     if (!exam) return;
 
-    document.title = `${exam.title} Mock Tests | Teaching Exams | ToolShala`;
+    const teachingSeo = teachingExamSlug === 'reet'
+      ? {
+          title: 'REET Mock Tests 1-10 | 150 Questions, 150 Minutes | ToolShala',
+          description: 'Practice REET Mock Test 1 to 10 with 150 questions, 150-minute timer, section-wise pedagogy, language, maths, EVS, science and social studies coverage on ToolShala.'
+        }
+      : {
+          title: `${exam.title} Mock Tests | Teaching Exams | ToolShala`,
+          description: `Practice ${exam.title} with 10 full-length mock tests, timed questions, and exam-focused preparation on ToolShala.`
+        };
+
+    document.title = teachingSeo.title;
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', `Practice ${exam.title} with 10 full-length mock tests, timed questions, and exam-focused preparation on ToolShala.`);
+      metaDescription.setAttribute('content', teachingSeo.description);
     }
+    setSeoMetaContent('meta[property="og:title"]', teachingSeo.title);
+    setSeoMetaContent('meta[property="og:description"]', teachingSeo.description);
     setCanonicalUrl(`${SITE_ORIGIN}/mock-test/teaching-exams/${encodeURIComponent(teachingExamSlug)}.html`);
 
     const examTitle = document.getElementById('teaching-exam-title');
@@ -274,7 +299,9 @@
     const mockList = document.getElementById('teaching-exam-mocks');
 
     if (examTitle) examTitle.textContent = `${exam.title} Mock Tests`;
-    if (examIntro) examIntro.textContent = `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
+    if (examIntro) examIntro.textContent = teachingExamSlug === 'reet'
+      ? 'Prepare for REET with 10 full-length mock tests. Each paper follows a 150-question, 150-minute practice format for pedagogy, language and subject-wise revision.'
+      : `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
     if (examOverview) examOverview.textContent = `${exam.title} practice pack includes 10 mock tests with ${exam.questionsCount || 50} questions each and ${exam.duration || '60 min'} duration.`;
 
     if (mockList) {
@@ -349,7 +376,9 @@
             ? (bstcMockDescriptions[testNumber] || `BSTC full-length practice set ${testNumber} for exam-ready revision and timed preparation.`)
             : teachingExamSlug === 'ptet'
               ? (ptetMockDescriptions[testNumber] || `PTET full-length practice set ${testNumber} for exam-focused revision and timed preparation.`)
-              : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
+              : teachingExamSlug === 'reet'
+                ? (reetMockDescriptions[testNumber] || `REET Mock Test ${testNumber} with 150 questions and a 150-minute timer for full-length exam practice.`)
+                : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
         });
       }).join('');
     }
