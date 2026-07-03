@@ -49,6 +49,7 @@
       .empty-review { border:1px dashed rgb(203 213 225); border-radius:.9rem; padding:1rem; color:rgb(71 85 105); background:rgb(248 250 252); }
       .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
       .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      .matching-options-label { margin:.75rem 0 .35rem; font-weight:700; color:rgb(51 65 85); }
       .matching-list-content { display:block; }
       .matching-item { margin:.2rem 0; line-height:1.75; }
       .matching-code { margin-top:.75rem; border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:#fff; }
@@ -2998,14 +2999,14 @@
         const matching=normalizedQuestionType.includes('matching')?parseMatching(questionRaw):null;
         if(matching){
           questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
-          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>${matching.code?`<div class="matching-code"><strong>${formatPreservedText(matching.codeLabel||'कूट')}:</strong><div class="mt-2">${formatPreservedText(matching.code)}</div></div>`:''}`;
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>`;
           return;
         }
         questionText.innerHTML=formatPreservedText(questionRaw);
         matchingBlock.innerHTML='';
       }
       function renderPalette(){if(!palette) return; palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
-      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
+      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);const isMatchingQuestion=String(q.questionType||'').toLowerCase().includes('matching');optionsWrap.innerHTML=`${isMatchingQuestion?'<div class="matching-options-label">कूट:</div>':''}`+(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
       function showQuiz(){
         resultArea.classList.add('hidden');
         testArea.classList.remove('hidden');
