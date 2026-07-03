@@ -49,6 +49,7 @@
       .empty-review { border:1px dashed rgb(203 213 225); border-radius:.9rem; padding:1rem; color:rgb(71 85 105); background:rgb(248 250 252); }
       .matching-grid { display:grid; gap:.75rem; margin-top:.75rem; }
       .matching-list { border:1px solid rgb(226 232 240); border-radius:.75rem; padding:.75rem; background:rgb(248 250 252); }
+      .matching-options-label { margin:.75rem 0 .35rem; font-weight:700; color:rgb(51 65 85); }
       #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
       @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
     </style>
@@ -2457,11 +2458,122 @@ II: इसके लिए केवल औपचारिक लिखित �
       const startBtn=document.getElementById('start-test'); const timerEl=document.getElementById('timer'); const testArea=document.getElementById('test-area'); const resultArea=document.getElementById('result-area'); const testIntro=document.getElementById('test-intro'); const questionMeta=document.getElementById('question-meta'); const sectionTag=document.getElementById('section-tag'); const questionText=document.getElementById('question-text'); const optionsWrap=document.getElementById('options'); const palette=document.getElementById('palette'); const matchingBlock=document.getElementById('matching-block');
       const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
       const formatTime=(sec)=>{const safeSec=Math.max(0,Number(sec)||0);const hours=Math.floor(safeSec/3600);const minutes=Math.floor((safeSec%3600)/60);const seconds=safeSec%60;return `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;};
-      const formatPreservedText=(value='')=>escapeHtml(value).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/\r?\n/g,'<br>');
+      const normalizeLatexSymbols=(value='')=>String(value)
+        .replace(/\$([^$]+)\$/gs,'$1')
+        .replace(/\\\[/g,'')
+        .replace(/\\\]/g,'')
+        .replace(/\\\(/g,'')
+        .replace(/\\\)/g,'')
+        .replace(/\\times/g,'×')
+        .replace(/\\div/g,'÷')
+        .replace(/\\cdot/g,'·')
+        .replace(/\\propto/g,'∝')
+        .replace(/\\pm/g,'±')
+        .replace(/\\infty/g,'∞')
+        .replace(/\\implies/g,'⇒')
+        .replace(/\\rightarrow/g,'→')
+        .replace(/\\leq/g,'≤')
+        .replace(/\\geq/g,'≥')
+        .replace(/\\neq/g,'≠')
+        .replace(/\\approx/g,'≈')
+        .replace(/\\\{/g,'{')
+        .replace(/\\\}/g,'}')
+        .replace(/\\%/g,'%')
+        .replace(/\^\s*\\circ/g,'°');
+      const applySimpleMathMarkup=(value='')=>escapeHtml(value)
+        .replace(/([^\s<>])_\{([^{}]+)\}/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^\{([^{}]+)\}/g,'$1<sup>$2</sup>')
+        .replace(/([^\s<>])_([A-Za-z0-9]+)/g,'$1<sub>$2</sub>')
+        .replace(/([^\s<>])\^(\d+)/g,'$1<sup>$2</sup>');
+      const readBracedArgument=(source,startIndex)=>{
+        let index=startIndex;
+        while(/\s/.test(source[index]||'')) index+=1;
+        if(source[index]!=='{') return null;
+        let depth=0;
+        let content='';
+        for(let i=index;i<source.length;i+=1){
+          const char=source[i];
+          if(char==='{'){
+            if(depth>0) content+=char;
+            depth+=1;
+            continue;
+          }
+          if(char==='}'){
+            depth-=1;
+            if(depth===0) return {content,end:i+1};
+            content+=char;
+            continue;
+          }
+          content+=char;
+        }
+        return null;
+      };
+      const readScriptSuffix=(source,startIndex)=>{
+        if(source[startIndex]!=='^' && source[startIndex]!=='_') return {html:'',end:startIndex};
+        const tag=source[startIndex]==='^'?'sup':'sub';
+        const braced=readBracedArgument(source,startIndex+1);
+        if(braced) return {html:`<${tag}>${renderMathExpression(braced.content)}</${tag}>`,end:braced.end};
+        const match=source.slice(startIndex+1).match(/^[^\s{}]+/);
+        if(!match) return {html:'',end:startIndex};
+        return {html:`<${tag}>${applySimpleMathMarkup(match[0])}</${tag}>`,end:startIndex+1+match[0].length};
+      };
+      const renderMathExpression=(value='')=>{
+        const source=normalizeLatexSymbols(value);
+        let html='';
+        for(let i=0;i<source.length;){
+          if(source.startsWith('\\frac',i)){
+            const numerator=readBracedArgument(source,i+5);
+            const denominator=numerator?readBracedArgument(source,numerator.end):null;
+            if(numerator && denominator){
+              const script=readScriptSuffix(source,denominator.end);
+              html+=`<span class="math-inline math-fraction"><span class="math-num">${renderMathExpression(numerator.content)}</span><span class="math-den">${renderMathExpression(denominator.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\sqrt',i)){
+            const radicand=readBracedArgument(source,i+5);
+            if(radicand){
+              const script=readScriptSuffix(source,radicand.end);
+              html+=`<span class="math-root"><span class="math-radical">√</span><span class="math-radicand">${renderMathExpression(radicand.content)}</span></span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\text',i)){
+            const textArg=readBracedArgument(source,i+5);
+            if(textArg){
+              const script=readScriptSuffix(source,textArg.end);
+              html+=applySimpleMathMarkup(normalizeLatexSymbols(textArg.content))+script.html;
+              i=script.end;
+              continue;
+            }
+          }
+          if(source.startsWith('\\overline',i)){
+            const overlineArg=readBracedArgument(source,i+9);
+            if(overlineArg){
+              const script=readScriptSuffix(source,overlineArg.end);
+              html+=`<span class="math-overline">${renderMathExpression(overlineArg.content)}</span>${script.html}`;
+              i=script.end;
+              continue;
+            }
+          }
+          const nextCommand=[source.indexOf('\\frac',i+1),source.indexOf('\\sqrt',i+1),source.indexOf('\\text',i+1),source.indexOf('\\overline',i+1)].filter((idx)=>idx>=0).sort((a,b)=>a-b)[0] ?? source.length;
+          html+=applySimpleMathMarkup(source.slice(i,nextCommand));
+          i=nextCommand;
+        }
+        return html;
+      };
+      const formatPreservedText=(value='')=>renderMathExpression(value)
+        .replace(/&lt;br\s*\/?&gt;/gi,'<br>')
+        .replace(/\r?\n/g,'<br>');
+      const formatMatchingLines=(value='')=>String(value).split(/\r?\n/).filter((line)=>line.trim()).map((line)=>`<div class="matching-item">${formatPreservedText(line.trim())}</div>`).join('');
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatPreservedText(content)}</div></div>`;
-      const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statement:m[3],reason:m[5]};};
-      const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1],statements:m[3],conclusions:m[5]};};
-      const parseMatching=(q='')=>{const m=String(q).match(/(.*?)(?:^|\n)(सूची-\s*(?:1|I+)(?:\s*\([^)]*\))?)\s*[:：]?\s*(.*?)(?:^|\n)(सूची-\s*(?:2|II)(?:\s*\([^)]*\))?)\s*[:：]?\s*(.*)$/ims);if(!m) return null;return {intro:m[1],l1:m[3],l2:m[5]};};
+      const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*\(A\)\s*[:：])(.*?)(कारण\s*\(R\)\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statement:m[3].trim(),reason:m[5].trim()};};
+      const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statements:m[3].trim(),conclusions:m[5].trim()};};
+      const splitMatchingCode=(content='')=>{const matchPattern=new RegExp('([\\s\\S]*?)(?:^|\\n)\\s*((?:कदम\\s*)?कूट(?:म्)?)\\s*[-–—:：]\\s*([\\s\\S]*)$','im');const m=String(content).match(matchPattern);if(!m) return {main:String(content).trim(),code:'',codeLabel:'कूट'};return {main:m[1].trim(),code:m[3].trim(),codeLabel:m[2].trim()};};
+      const isMatchingHeading=(line,side)=>new RegExp(`^\\s*(?:सूची|pool)-\\s*(?:${side})(?:\\s*\\([^\\n]*\\))?\\s*[:：]?\\s*$`,'i').test(line);
+      const parseMatching=(q='')=>{const lines=String(q).split(/\r?\n/);let first=-1;let second=-1;for(let i=0;i<lines.length;i+=1){if(first<0 && isMatchingHeading(lines[i],'1|I+')){first=i;continue;}if(first>=0 && isMatchingHeading(lines[i],'2|II')){second=i;break;}}if(first<0||second<0) return null;const intro=lines.slice(0,first).join('\n').trim();const title1=lines[first].replace(/[:：]\s*$/,'').trim();const title2=lines[second].replace(/[:：]\s*$/,'').trim();const l1=lines.slice(first+1,second).join('\n').trim();const right=splitMatchingCode(lines.slice(second+1).join('\n'));return {intro,title1,l1,title2,l2:right.main,code:right.code,codeLabel:right.codeLabel};};
       function renderStructuredQuestion(q){
         const questionRaw=String(q.question||'');
         const normalizedQuestionType=String(q.questionType||'').toLowerCase();
@@ -2480,14 +2592,14 @@ II: इसके लिए केवल औपचारिक लिखित �
         const matching=normalizedQuestionType.includes('matching')?parseMatching(questionRaw):null;
         if(matching){
           questionText.innerHTML=matching.intro?formatPreservedText(matching.intro):'';
-          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>सूची-1:</strong><div class="mt-2">${formatPreservedText(matching.l1)}</div></div><div class="matching-list"><strong>सूची-2:</strong><div class="mt-2">${formatPreservedText(matching.l2)}</div></div></div>`;
+          matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatPreservedText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatPreservedText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>`;
           return;
         }
         questionText.innerHTML=formatPreservedText(questionRaw);
         matchingBlock.innerHTML='';
       }
       function renderPalette(){if(!palette) return; palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join(''); palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
-      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);optionsWrap.innerHTML=(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
+      function renderQuestion(){const q=data[state.current];if(!q){questionMeta.textContent='Questions unavailable';sectionTag.textContent='';questionText.textContent='Unable to load question data. Please refresh the page.';optionsWrap.innerHTML='';matchingBlock.innerHTML='';return false;}questionMeta.textContent=`प्रश्न / Question ${q.id} of ${data.length}`;sectionTag.textContent=`${q.section} • ${q.difficulty} • ${q.questionType}`;renderStructuredQuestion(q);const isMatchingQuestion=String(q.questionType||'').toLowerCase().includes('matching');optionsWrap.innerHTML=`${isMatchingQuestion?'<div class="matching-options-label">कूट:</div>':''}`+(q.options||[]).map((opt,idx)=>{const k=letters[idx];return `<label class="option-item cursor-pointer ${state.answers[q.id]===k?'selected':''}"><input class="mr-2 mt-1 align-top" type="radio" name="option" value="${k}" ${state.answers[q.id]===k?'checked':''}/> <span class="option-code">${k}.</span> <span>${formatPreservedText(opt)}</span></label>`}).join(''); optionsWrap.querySelectorAll('input').forEach((i)=>i.addEventListener('change',(e)=>{state.answers[q.id]=e.target.value;renderPalette();renderQuestion();}));return true;}
       function showQuiz(){
         resultArea.classList.add('hidden');
         testArea.classList.remove('hidden');
