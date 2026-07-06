@@ -341,6 +341,8 @@
           ? './ctet-mock-test-7.html'
           : teachingExamSlug === 'ctet' && testNumber === 8
           ? './ctet-mock-test-8.html'
+          : teachingExamSlug === 'ctet' && testNumber === 9
+          ? './ctet-mock-test-9.html'
           : teachingExamSlug === 'ctet' && testNumber === 6
           ? './ctet-mock-test-6.html'
           : teachingExamSlug === 'reet' && testNumber === 1
