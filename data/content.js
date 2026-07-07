@@ -34,6 +34,20 @@ window.ToolShalaContent = {
         url: './transcription-tool.html'
       },
       {
+        id: 'tool-text-to-speech',
+        slug: 'text-to-speech',
+        title: 'Free Hindi English Text to Speech Converter',
+        category: 'ai',
+        categoryLabel: 'AI / Voice Tool',
+        description: 'Convert Hindi or English text into voice instantly with your browser’s built-in Web Speech API.',
+        metaDescription: 'Convert Hindi and English text into voice for free using Toolshala’s online text to speech converter. No login required.',
+        publishedAt: '2026-07-07',
+        featured: true,
+        tags: ['Hindi text to speech', 'English text to speech', 'AI voice generator', 'free TTS tool'],
+        ctaLabel: 'Open TTS Tool',
+        url: './text-to-speech.html'
+      },
+      {
         id: 'tool-ats-resume-optimizer',
         slug: 'ats-resume-optimizer',
         title: 'ATS Resume Optimizer',
