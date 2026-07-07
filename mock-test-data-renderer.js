@@ -343,6 +343,8 @@
           ? './ctet-mock-test-8.html'
           : teachingExamSlug === 'ctet' && testNumber === 9
           ? './ctet-mock-test-9.html'
+          : teachingExamSlug === 'ctet' && testNumber === 10
+          ? './ctet-mock-test-10.html'
           : teachingExamSlug === 'ctet' && testNumber === 6
           ? './ctet-mock-test-6.html'
           : teachingExamSlug === 'reet' && testNumber === 1
@@ -388,7 +390,7 @@
               : `../exam.html?exam=${exam.slug}`;
         return cardForExam({
           ...exam,
-          ...(teachingExamSlug === 'ctet' && ((testNumber >= 1 && testNumber <= 5) || testNumber === 7) ? { questionsCount: 150, duration: '150 min' } : {}),
+          ...(teachingExamSlug === 'ctet' ? { questionsCount: 150, duration: '150 min' } : {}),
           ctaLink: customCtaLink,
           title: `${exam.title} Mock Test ${testNumber}`,
           description: teachingExamSlug === 'bstc'
