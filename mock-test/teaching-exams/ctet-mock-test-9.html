@@ -101,7 +101,7 @@
     </main>
 
     <script>
-      const ctetMockTest8 = {
+      const ctetMockTest9 = {
         paperTitle: 'CTET Mock Test 9',
         examName: 'CTET',
         totalQuestions: 150,
@@ -2868,7 +2868,7 @@
         }
       };
 
-      const testConfig = window.ctetMockTest8 || ctetMockTest8;
+      const testConfig = window.ctetMockTest9 || ctetMockTest9;
       const ctetSections = [
         { section: 'Child Development & Pedagogy', startId: 1, endId: 30 },
         { section: 'Language I (Hindi)', startId: 31, endId: 60 },
@@ -2897,13 +2897,22 @@
       const escapeHtml=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
       const formatTime=(sec)=>{const safeSec=Math.max(0,Number(sec)||0);const hours=Math.floor(safeSec/3600);const minutes=Math.floor((safeSec%3600)/60);const seconds=safeSec%60;return `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;};
       const normalizeLatexSymbols=(value='')=>String(value)
+        .replace(/\$\$([\s\S]*?)\$\$/g,'$1')
         .replace(/\$([^$]+)\$/gs,'$1')
+        .replace(/\\begin\{array\}\{[^}]*\}([\s\S]*?)\\end\{array\}/g,(_,body)=>body
+          .replace(/\\hline/g,'')
+          .split(/\\\\/)
+          .map((row)=>row.trim())
+          .filter(Boolean)
+          .join('\n'))
         .replace(/\\quad\b/g,' ')
         .replace(/\\dl\b/g,'dL')
         .replace(/\\\[/g,'')
         .replace(/\\\]/g,'')
         .replace(/\\\(/g,'')
         .replace(/\\\)/g,'')
+        .replace(/\\left\b/g,'')
+        .replace(/\\right\b/g,'')
         .replace(/\\times/g,'×')
         .replace(/\\div/g,'÷')
         .replace(/\\cdot/g,'·')
@@ -2911,7 +2920,10 @@
         .replace(/\\pm/g,'±')
         .replace(/\\infty/g,'∞')
         .replace(/\\implies/g,'⇒')
+        .replace(/\\Rightarrow/g,'⇒')
+        .replace(/\\longrightarrow/g,'→')
         .replace(/\\rightarrow/g,'→')
+        .replace(/\\dots/g,'…')
         .replace(/\\leq/g,'≤')
         .replace(/\\geq/g,'≥')
         .replace(/\\neq/g,'≠')
