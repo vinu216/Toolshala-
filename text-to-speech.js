@@ -1,6 +1,5 @@
 (function setupTextToSpeechTool() {
   const textInput = document.getElementById('ttsText');
-  const languageModeSelect = document.getElementById('ttsLanguageMode');
   const voiceSelect = document.getElementById('ttsVoice');
   const rateInput = document.getElementById('ttsRate');
   const pitchInput = document.getElementById('ttsPitch');
@@ -8,9 +7,7 @@
   const pitchValue = document.getElementById('ttsPitchValue');
   const message = document.getElementById('ttsMessage');
   const warning = document.getElementById('ttsSupportWarning');
-  const hindiWarning = document.getElementById('ttsHindiWarning');
   const languageNode = document.getElementById('ttsLanguage');
-  const selectedLanguageNode = document.getElementById('ttsSelectedLanguage');
   const chunksNode = document.getElementById('ttsChunks');
   const statusNode = document.getElementById('ttsStatus');
   const playButton = document.getElementById('ttsPlay');
@@ -18,240 +15,156 @@
   const resumeButton = document.getElementById('ttsResume');
   const stopButton = document.getElementById('ttsStop');
 
-  if (!textInput || !languageModeSelect || !voiceSelect || !rateInput || !pitchInput || !playButton || !pauseButton || !resumeButton || !stopButton) return;
+  if (!textInput || !voiceSelect || !rateInput || !pitchInput || !playButton || !pauseButton || !resumeButton || !stopButton) return;
 
   const synth = window.speechSynthesis;
-  const SpeechUtterance = window.SpeechSynthesisUtterance;
-  const HINDI_VOICE_WARNING = 'Your browser/device does not have a Hindi voice installed. Please try Chrome on Android, Microsoft Edge, or install Hindi language/voice support in your device settings.';
   let voices = [];
-  let speechQueue = [];
-  let queueIndex = 0;
+  let chunks = [];
+  let chunkIndex = 0;
   let activeVoice = null;
-  let activeLanguage = 'en-IN';
-  let isStopped = true;
 
   const setStatus = (value) => { if (statusNode) statusNode.textContent = value; };
   const setMessage = (value) => { if (message) message.textContent = value; };
-  const setHindiWarning = (value) => {
-    if (!hindiWarning) return;
-    hindiWarning.textContent = value || '';
-    hindiWarning.classList.toggle('hidden', !value);
-  };
-
-  const containsDevanagari = (text) => /[\u0900-\u097F]/.test(text);
-  const detectLanguage = (text) => (containsDevanagari(text) ? 'hi-IN' : 'en-IN');
-
-  const hasHindiVoice = () => voices.some((voice) => {
-    const lang = (voice.lang || '').toLowerCase();
-    const name = (voice.name || '').toLowerCase();
-    return lang === 'hi-in' || lang.startsWith('hi') || name.includes('hindi') || (voice.name || '').includes('हिन्दी');
-  });
-
-  const resolveLanguage = (text) => {
-    if (languageModeSelect.value === 'hi-IN') return 'hi-IN';
-    if (languageModeSelect.value === 'en-IN') return 'en-IN';
-    return detectLanguage(text);
-  };
-
-  const getLanguageLabel = (language) => (language === 'hi-IN' ? 'Hindi' : 'English');
-
-  const splitLongPart = (part, maxLength) => {
-    const pieces = [];
-    let remaining = part.trim();
-    while (remaining.length > maxLength) {
-      const searchWindow = remaining.slice(0, maxLength + 1);
-      const commaIndex = Math.max(searchWindow.lastIndexOf(','), searchWindow.lastIndexOf('،'));
-      const spaceIndex = searchWindow.lastIndexOf(' ');
-      const splitIndex = commaIndex > 80 ? commaIndex + 1 : (spaceIndex > 80 ? spaceIndex : maxLength);
-      pieces.push(remaining.slice(0, splitIndex).trim());
-      remaining = remaining.slice(splitIndex).trim();
-    }
-    if (remaining) pieces.push(remaining);
-    return pieces;
-  };
+  const hasHindiText = (text) => /[\u0900-\u097F]/.test(text);
+  const getDetectedLang = (text) => (hasHindiText(text) ? 'hi-IN' : 'en-IN');
 
   const splitTextIntoChunks = (text, maxLength = 200) => {
-    const normalized = text.replace(/\r\n/g, '\n').replace(/[ \t]+/g, ' ').trim();
+    const normalized = text.replace(/\s+/g, ' ').trim();
     if (!normalized) return [];
-    const sentenceParts = normalized
-      .split(/(?<=[।.!?])\s+|\n+/g)
-      .flatMap((part) => splitLongPart(part, maxLength));
-    const chunks = [];
+    const sentences = normalized.match(/[^।.!?\n]+[।.!?]?/g) || [normalized];
+    const result = [];
     let current = '';
-    sentenceParts.forEach((part) => {
-      const cleanPart = part.trim();
-      if (!cleanPart) return;
-      const candidate = current ? `${current} ${cleanPart}` : cleanPart;
-      if (candidate.length <= maxLength) {
-        current = candidate;
+
+    sentences.forEach((sentence) => {
+      const part = sentence.trim();
+      if (!part) return;
+      if ((current + ' ' + part).trim().length <= maxLength) {
+        current = (current + ' ' + part).trim();
         return;
       }
-      if (current) chunks.push(current);
-      if (cleanPart.length > maxLength) chunks.push(...splitLongPart(cleanPart, maxLength));
-      else current = cleanPart;
+      if (current) result.push(current);
+      if (part.length <= maxLength) {
+        current = part;
+        return;
+      }
+      for (let start = 0; start < part.length; start += maxLength) {
+        result.push(part.slice(start, start + maxLength).trim());
+      }
+      current = '';
     });
-    if (current) chunks.push(current);
-    return chunks.filter(Boolean);
+
+    if (current) result.push(current);
+    return result;
   };
 
-  const getBestVoiceForLanguage = (availableVoices, language) => {
-    if (!availableVoices.length) return null;
-    const normalized = availableVoices.map((voice) => ({
-      voice,
-      lang: (voice.lang || '').toLowerCase(),
-      name: (voice.name || '').toLowerCase(),
-      originalName: voice.name || ''
-    }));
-    if (language === 'hi-IN') {
-      return normalized.find((item) => item.lang === 'hi-in')?.voice
-        || normalized.find((item) => item.lang.startsWith('hi'))?.voice
-        || normalized.find((item) => item.name.includes('hindi'))?.voice
-        || normalized.find((item) => item.originalName.includes('हिन्दी'))?.voice
-        || normalized.find((item) => item.name.includes('india') && item.lang.startsWith('en'))?.voice
-        || availableVoices[0];
-    }
-    return normalized.find((item) => item.lang === 'en-in')?.voice
-      || normalized.find((item) => item.name.includes('india'))?.voice
-      || normalized.find((item) => item.lang === 'en-us')?.voice
-      || normalized.find((item) => item.lang.startsWith('en'))?.voice
-      || availableVoices[0];
+  const scoreVoice = (voice, detectedLang) => {
+    const name = `${voice.name || ''} ${voice.lang || ''}`.toLowerCase();
+    const lang = (voice.lang || '').toLowerCase();
+    let score = 0;
+    if (detectedLang === 'hi-IN' && lang === 'hi-in') score += 100;
+    if (detectedLang !== 'hi-IN' && lang === 'en-in') score += 95;
+    if (lang === 'hi-in') score += 85;
+    if (lang === 'en-in') score += 80;
+    if (name.includes('hindi')) score += 75;
+    if (name.includes('indian')) score += 60;
+    if (lang.startsWith('hi')) score += 50;
+    if (lang.startsWith('en')) score += 35;
+    if (lang === 'en-us') score += 25;
+    return score;
   };
 
-  const populateVoiceDropdown = (preferredVoice) => {
-    const previousVoiceUri = activeVoice?.voiceURI || voiceSelect.selectedOptions[0]?.dataset.voiceUri || '';
+  const choosePreferredVoice = (detectedLang) => voices.slice().sort((a, b) => scoreVoice(b, detectedLang) - scoreVoice(a, detectedLang))[0] || null;
+
+  const populateVoices = () => {
+    voices = synth ? synth.getVoices() : [];
+    const previousValue = voiceSelect.value;
     voiceSelect.innerHTML = '';
+
     if (!voices.length) {
       voiceSelect.innerHTML = '<option value="">Voices are loading...</option>';
       return;
     }
+
     voices.forEach((voice, index) => {
       const option = document.createElement('option');
       option.value = String(index);
-      option.dataset.voiceUri = voice.voiceURI || '';
-      option.textContent = `${voice.name || 'Browser voice'} — ${voice.lang || 'default'}`;
+      option.textContent = `${voice.name} (${voice.lang || 'default'})`;
       voiceSelect.appendChild(option);
     });
-    const preferredIndex = voices.indexOf(preferredVoice);
-    const previousIndex = voices.findIndex((voice) => voice.voiceURI && voice.voiceURI === previousVoiceUri);
-    voiceSelect.value = String(preferredIndex >= 0 ? preferredIndex : (previousIndex >= 0 ? previousIndex : 0));
+
+    const preferred = previousValue && voices[Number(previousValue)] ? Number(previousValue) : voices.indexOf(choosePreferredVoice(getDetectedLang(textInput.value)));
+    voiceSelect.value = String(preferred >= 0 ? preferred : 0);
     activeVoice = voices[Number(voiceSelect.value)] || null;
   };
 
-  const updateLanguageUi = () => {
-    activeLanguage = resolveLanguage(textInput.value);
-    const bestVoice = getBestVoiceForLanguage(voices, activeLanguage);
-    populateVoiceDropdown(bestVoice);
-    const label = getLanguageLabel(activeLanguage);
-    if (languageNode) languageNode.textContent = `${label} (${activeLanguage})`;
-    if (selectedLanguageNode) selectedLanguageNode.textContent = label;
-    if (chunksNode) chunksNode.textContent = String(splitTextIntoChunks(textInput.value).length);
-    if (activeLanguage === 'hi-IN' && voices.length && !hasHindiVoice()) {
-      setHindiWarning(HINDI_VOICE_WARNING);
-      setStatus('Hindi voice not available');
-    } else {
-      setHindiWarning('');
-      if (!synth.speaking && !synth.paused) setStatus('Ready');
-    }
-  };
-
-  const loadVoices = () => {
-    voices = synth ? synth.getVoices() : [];
-    updateLanguageUi();
-    return voices;
-  };
-
-  const speakQueue = () => {
-    if (!synth || isStopped) return;
-    if (queueIndex >= speechQueue.length) {
-      setStatus('Ready');
-      setMessage('Playback finished.');
+  const speakNextChunk = () => {
+    if (!synth || chunkIndex >= chunks.length) {
+      setStatus('Finished');
       return;
     }
-    const utterance = new SpeechUtterance(speechQueue[queueIndex]);
-    utterance.lang = activeLanguage === 'en-IN' && activeVoice?.lang === 'en-US' ? 'en-US' : activeLanguage;
+
+    const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
+    utterance.lang = getDetectedLang(textInput.value);
     utterance.rate = Number(rateInput.value) || 1;
     utterance.pitch = Number(pitchInput.value) || 1;
     if (activeVoice) utterance.voice = activeVoice;
     utterance.onend = () => {
-      if (isStopped) return;
-      queueIndex += 1;
-      speakQueue();
+      chunkIndex += 1;
+      if (chunkIndex < chunks.length) speakNextChunk();
+      else setStatus('Finished');
     };
-    utterance.onerror = () => {
-      if (isStopped) return;
-      setStatus('Stopped');
-      setMessage('Playback stopped because this browser voice could not read the text. Please try another voice.');
-    };
-    setStatus('Speaking...');
-    setMessage(`Speaking chunk ${queueIndex + 1} of ${speechQueue.length}.`);
+    utterance.onerror = () => setStatus('Playback error. Please try another browser voice.');
+    setStatus(`Speaking chunk ${chunkIndex + 1} of ${chunks.length}`);
     synth.speak(utterance);
   };
 
-  const handlePlay = () => {
+  const refreshDetectedInfo = () => {
+    const detected = getDetectedLang(textInput.value);
+    if (languageNode) languageNode.textContent = detected === 'hi-IN' ? 'Hindi (hi-IN)' : 'English / default (en-IN)';
+    if (chunksNode) chunksNode.textContent = String(splitTextIntoChunks(textInput.value).length);
+  };
+
+  if (!synth) {
+    if (warning) {
+      warning.classList.remove('hidden');
+      warning.textContent = 'Your browser does not support SpeechSynthesis. Please try the latest Chrome, Edge, or Safari browser.';
+    }
+    [playButton, pauseButton, resumeButton, stopButton, voiceSelect, rateInput, pitchInput].forEach((element) => { element.disabled = true; });
+    return;
+  }
+
+  populateVoices();
+  if ('onvoiceschanged' in synth) synth.addEventListener('voiceschanged', populateVoices);
+
+  textInput.addEventListener('input', () => {
+    refreshDetectedInfo();
+    const preferred = choosePreferredVoice(getDetectedLang(textInput.value));
+    if (preferred) voiceSelect.value = String(voices.indexOf(preferred));
+  });
+  voiceSelect.addEventListener('change', () => { activeVoice = voices[Number(voiceSelect.value)] || null; });
+  rateInput.addEventListener('input', () => { if (rateValue) rateValue.textContent = Number(rateInput.value).toFixed(1); });
+  pitchInput.addEventListener('input', () => { if (pitchValue) pitchValue.textContent = Number(pitchInput.value).toFixed(1); });
+
+  playButton.addEventListener('click', () => {
     const text = textInput.value.trim();
     if (!text) {
       setMessage('Please enter Hindi or English text first.');
-      setStatus('Ready');
+      setStatus('Waiting for text');
       textInput.focus();
       return;
     }
     synth.cancel();
-    loadVoices();
-    activeLanguage = resolveLanguage(text);
-    activeVoice = voices[Number(voiceSelect.value)] || getBestVoiceForLanguage(voices, activeLanguage);
-    speechQueue = splitTextIntoChunks(text);
-    queueIndex = 0;
-    isStopped = false;
-    updateLanguageUi();
-    if (activeLanguage === 'hi-IN' && voices.length && !hasHindiVoice()) {
-      setHindiWarning(HINDI_VOICE_WARNING);
-      setStatus('Hindi voice not available');
-    }
-    speakQueue();
-  };
+    chunks = splitTextIntoChunks(text);
+    chunkIndex = 0;
+    activeVoice = voices[Number(voiceSelect.value)] || choosePreferredVoice(getDetectedLang(text));
+    refreshDetectedInfo();
+    setMessage('Playing with your selected browser voice.');
+    speakNextChunk();
+  });
 
-  const handlePause = () => {
-    if (!synth.speaking) return;
-    synth.pause();
-    setStatus('Paused');
-  };
-
-  const handleResume = () => {
-    if (!synth.paused) return;
-    synth.resume();
-    setStatus('Speaking...');
-  };
-
-  const handleStop = () => {
-    isStopped = true;
-    speechQueue = [];
-    queueIndex = 0;
-    synth.cancel();
-    setStatus('Stopped');
-    setMessage('Playback stopped.');
-    if (chunksNode) chunksNode.textContent = String(splitTextIntoChunks(textInput.value).length);
-  };
-
-  if (!synth || !SpeechUtterance) {
-    if (warning) {
-      warning.classList.remove('hidden');
-      warning.textContent = 'Your browser does not support Text to Speech. Please try Google Chrome, Microsoft Edge, or another modern browser.';
-    }
-    setStatus('Browser not supported');
-    [playButton, pauseButton, resumeButton, stopButton, languageModeSelect, voiceSelect, rateInput, pitchInput].forEach((element) => { element.disabled = true; });
-    return;
-  }
-
-  loadVoices();
-  synth.onvoiceschanged = loadVoices;
-  textInput.addEventListener('input', updateLanguageUi);
-  languageModeSelect.addEventListener('change', updateLanguageUi);
-  voiceSelect.addEventListener('change', () => { activeVoice = voices[Number(voiceSelect.value)] || null; });
-  rateInput.addEventListener('input', () => { if (rateValue) rateValue.textContent = Number(rateInput.value).toFixed(1); });
-  pitchInput.addEventListener('input', () => { if (pitchValue) pitchValue.textContent = Number(pitchInput.value).toFixed(1); });
-  playButton.addEventListener('click', handlePlay);
-  pauseButton.addEventListener('click', handlePause);
-  resumeButton.addEventListener('click', handleResume);
-  stopButton.addEventListener('click', handleStop);
-  window.addEventListener('beforeunload', handleStop);
+  pauseButton.addEventListener('click', () => { synth.pause(); setStatus('Paused'); });
+  resumeButton.addEventListener('click', () => { synth.resume(); setStatus('Speaking'); });
+  stopButton.addEventListener('click', () => { synth.cancel(); setStatus('Stopped'); });
+  window.addEventListener('beforeunload', () => synth.cancel());
+  refreshDetectedInfo();
 })();
