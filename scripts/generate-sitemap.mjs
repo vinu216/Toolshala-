@@ -4,7 +4,7 @@ import vm from 'node:vm';
 
 const SITE_ORIGIN = 'https://toolshala.in';
 const ROOT = process.cwd();
-const TODAY = '2026-06-03';
+const TODAY = '2026-07-07';
 
 const context = { window: {}, console };
 vm.createContext(context);
