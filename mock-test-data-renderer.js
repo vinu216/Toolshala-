@@ -279,7 +279,12 @@
           title: 'REET Mock Tests 1-10 | 150 Questions, 150 Minutes | ToolShala',
           description: 'Practice REET Mock Test 1 to 10 with 150 questions, 150-minute timer, section-wise pedagogy, language, maths, EVS, science and social studies coverage on ToolShala.'
         }
-      : {
+      : teachingExamSlug === 'ctet'
+        ? {
+            title: 'CTET Mock Test 2026 | Online Practice Tests in Hindi & English | ToolShala',
+            description: 'Practice CTET mock test online with 10 full-length CTET practice sets, 150-question timer, answer review, syllabus focus, and Hindi-English exam preparation support.'
+          }
+        : {
           title: `${exam.title} Mock Tests | Teaching Exams | ToolShala`,
           description: `Practice ${exam.title} with 10 full-length mock tests, timed questions, and exam-focused preparation on ToolShala.`
         };
@@ -301,7 +306,9 @@
     if (examTitle) examTitle.textContent = `${exam.title} Mock Tests`;
     if (examIntro) examIntro.textContent = teachingExamSlug === 'reet'
       ? 'Prepare for REET with 10 full-length mock tests. Each paper follows a 150-question, 150-minute practice format for pedagogy, language and subject-wise revision.'
-      : `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
+      : teachingExamSlug === 'ctet'
+        ? 'Prepare for CTET exam preparation with full-length CTET mock test practice, Hindi-English questions, timed online tests, answer review, and syllabus-focused revision.'
+        : `Prepare for ${exam.title} with structured practice. Attempt all 10 mock tests in sequence to improve speed, accuracy, and exam confidence.`;
     if (examOverview) examOverview.textContent = `${exam.title} practice pack includes 10 mock tests with ${exam.questionsCount || 50} questions each and ${exam.duration || '60 min'} duration.`;
 
     if (mockList) {
@@ -399,7 +406,9 @@
               ? (ptetMockDescriptions[testNumber] || `PTET full-length practice set ${testNumber} for exam-focused revision and timed preparation.`)
               : teachingExamSlug === 'reet'
                 ? (reetMockDescriptions[testNumber] || `REET Mock Test ${testNumber} with 150 questions and a 150-minute timer for full-length exam practice.`)
-                : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
+                : teachingExamSlug === 'ctet'
+                  ? `CTET Mock Test ${testNumber} online practice with 150 questions, 150-minute timer, answer key, explanations, and syllabus-focused exam preparation.`
+                  : `Mock Test ${testNumber} for ${exam.title} with exam-pattern questions and balanced difficulty coverage.`
         });
       }).join('');
     }
