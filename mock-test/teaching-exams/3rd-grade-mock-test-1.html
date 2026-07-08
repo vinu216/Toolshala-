@@ -70,6 +70,9 @@
       .math-array-cell { display:table-cell; padding:.08rem .35rem; text-align:center; }
       .math-array-row.math-hline .math-array-cell { border-top:1px solid currentColor; }
       #test-intro { display:block; visibility:visible; opacity:1; position:relative; z-index:1; }
+      #main-content > .section-wrap { padding-top: clamp(1.5rem, 4vw, 2.5rem); padding-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+      #intro-area.section-wrap { padding-top: clamp(1rem, 3vw, 1.75rem); }
+      #result-area.section-wrap { padding-top: clamp(1.5rem, 4vw, 2.5rem); }
       @media (min-width: 640px) { .matching-grid { grid-template-columns: 1fr 1fr; } }
     </style>
   </head>
@@ -83,7 +86,7 @@
           <p class="mt-4 max-w-3xl text-slate-600">3rd Grade Mock Test 1 REET Mains Level 1 syllabus ke according Rajasthan GK, school subjects, pedagogy, educational psychology aur IT basics par focused online practice set hai.</p>
           <div class="mt-6 flex flex-wrap gap-3"><a href="./3rd-grade.html" class="btn-secondary">Back to 3rd Grade Mock Tests</a><a href="#intro-area" class="btn-primary">Read Instructions</a></div>
           <div class="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-4">
-            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p><p class="feature-card !m-0 !p-4"><strong>Total Marks:</strong> 150</p><p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 150 मिनट</p><p class="feature-card !m-0 !p-4"><strong>Type:</strong> 3rd Grade Level 1</p>
+            <p class="feature-card !m-0 !p-4"><strong>Total Questions:</strong> 150</p><p class="feature-card !m-0 !p-4"><strong>Total Marks:</strong> 300</p><p class="feature-card !m-0 !p-4"><strong>Duration:</strong> 150 मिनट</p><p class="feature-card !m-0 !p-4"><strong>Type:</strong> 3rd Grade Level 1</p>
           </div>
         </div>
       </section>
@@ -93,7 +96,7 @@
           <ul class="mt-3 list-disc space-y-2 pl-6 text-slate-700">
             <li><strong>Test Start</strong> पर क्लिक करते ही timer शुरू होगा और आप प्रश्न हल कर पाएंगे।</li>
             <li>Navigation के लिए <strong>Previous / Next</strong> इस्तेमाल करें और question palette से सीधे किसी भी प्रश्न पर जाएँ।</li>
-            <li>हर प्रश्न का केवल एक सही विकल्प है। Practice scoring में negative marking लागू नहीं की गई है; actual exam में 1/3 negative marking को ध्यान में रखें।</li>
+            <li>हर प्रश्न का केवल एक सही विकल्प है। Scoring: सही उत्तर पर +2 marks, गलत उत्तर पर -2/3 mark, और unattempted पर 0 marks मिलेंगे।</li>
             <li><strong>Submit Test</strong> करने पर score, section summary, answer key और explanations दिखेंगे।</li>
           </ul>
           <div class="template-actions mt-6 flex flex-wrap gap-2">
@@ -124,7 +127,7 @@
     </main>
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"3rd Grade Mock Test 1 | REET Mains Level 1 Practice | ToolShala","description":"Attempt 3rd Grade Mock Test 1 with syllabus-based practice, timer, answer key and explanations.","url":"https://toolshala.in/mock-test/teaching-exams/3rd-grade-mock-test-1.html","isPartOf":{"@type":"CollectionPage","name":"3rd Grade Mock Tests","url":"https://toolshala.in/mock-test/teaching-exams/3rd-grade.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolshala.in/"},{"@type":"ListItem","position":2,"name":"Mock Test","item":"https://toolshala.in/mock-test.html"},{"@type":"ListItem","position":3,"name":"3rd Grade Mock Tests","item":"https://toolshala.in/mock-test/teaching-exams/3rd-grade.html"},{"@type":"ListItem","position":4,"name":"3rd Grade Mock Test 1","item":"https://toolshala.in/mock-test/teaching-exams/3rd-grade-mock-test-1.html"}]}]}</script>
     <script>
-      const thirdGradeMockTest1 = { paperTitle:'3rd Grade Mock Test 1', examName:'3rd Grade REET Mains Level 1', totalQuestions:150, totalMarks:150, marksPerQuestion:1, durationMinutes:150, negativeMarking:'Practice mode: No', difficulty:'Level 1', sections:[{ section:'Syllabus Based Practice', questions:[
+      const thirdGradeMockTest1 = { paperTitle:'3rd Grade Mock Test 1', examName:'3rd Grade REET Mains Level 1', totalQuestions:150, totalMarks:300, marksPerQuestion:2, negativeMarksPerWrong:2/3, durationMinutes:150, negativeMarking:'Yes: -2/3 mark per wrong answer', difficulty:'Level 1', sections:[{ section:'Syllabus Based Practice', questions:[
             {
                         "id": 1,
                         "section": "राजस्थान का इतिहास एवं स्थापत्य",
@@ -2573,7 +2576,7 @@
             const over=readBrace(source,i+9);
             if(over.end>i+9){html+=`<span class="math-overline">${renderLatexMath(over.content)}</span>`;i=over.end-1;continue;}
           }
-          const commands={"\\times":"×","\\div":"÷","\\cdot":"·","\\quad":"&nbsp;&nbsp;","\\propto":"∝","\\pi":"π","\\circ":"°","\\implies":"⇒","\\hline":""};
+          const commands={"\\times":"×","\\div":"÷","\\cdot":"·","\\quad":"&nbsp;&nbsp;","\\propto":"∝","\\pi":"π","\\circ":"°","\\cric":"°","\\implies":"⇒","\\hline":""};
           const command=Object.keys(commands).find((key)=>source.startsWith(key,i));
           if(command){html+=commands[command];i+=command.length-1;continue;}
           if(source[i]==='^' || source[i]==='_'){
@@ -2582,7 +2585,7 @@
           }
           if(source[i]==='\\'){
             const match=source.slice(i).match(/^\\([a-zA-Z]+)/);
-            if(match){html+=escapeHtml(match[1]);i+=match[0].length-1;continue;}
+            if(match){i+=match[0].length-1;continue;}
           }
           html+=escapeHtml(source[i]);
         }
@@ -2600,8 +2603,8 @@
       const renderLabelBlock=(title,content='')=>`<div class="question-block"><span class="question-block-title">${title}</span><div>${formatText(content)}</div></div>`;
       const parseAssertionReason=(q='')=>{const m=String(q).match(/(.*?)(कथन|अभिकथन)\s*\(A\)\s*[:：](.*?)(कारण|तर्क)\s*\(R\)\s*[:：](.*)$/is);if(!m) return null;return {intro:m[1].trim(),statementLabel:`${m[2].trim()} (A):`,statement:m[3].trim(),reasonLabel:`${m[4].trim()} (R):`,reason:m[5].trim()};};
       const parseStatementConclusion=(q='')=>{const m=String(q).match(/(.*?)(कथन\s*[:：])(.*?)(निष्कर्ष\s*[:：])(.*)$/is);if(!m) return null;return {intro:m[1].trim(),statements:m[3].trim(),conclusions:m[5].trim()};};
-      const splitMatchingCode=(content='')=>{const matchPattern=/([\s\S]*?)(?:^|\n)\s*((?:कदम\s*)?कूट(?:म्)?)\s*[-–—:：]?\s*([\s\S]*)$/im;const m=String(content).match(matchPattern);if(!m) return {main:String(content).trim(),code:'',codeLabel:'कूट'};return {main:m[1].trim(),code:m[3].trim(),codeLabel:m[2].trim()};};
-      const isMatchingHeading=(line,side)=>new RegExp(String.raw`^\s*(?:सूची|pool)\s*[-–—]?\s*(?:${side})(?:\s*\([^\n]*\))?\s*[:：]?\s*$`,'i').test(line);
+      const splitMatchingCode=(content='')=>{const matchPattern=/([\s\S]*?)(?:^|\n)\s*((?:(?:कदम\s*)?कूट(?:म्)?|Options?))\s*[-–—:：]?\s*([\s\S]*)$/im;const m=String(content).match(matchPattern);if(!m) return {main:String(content).trim(),code:'',codeLabel:'कूट'};return {main:m[1].trim(),code:m[3].trim(),codeLabel:m[2].trim()};};
+      const isMatchingHeading=(line,side)=>new RegExp(String.raw`^\s*(?:सूची|list|pool)\s*[-–—]?\s*(?:${side})(?:\s*\([^\n]*\))?\s*[:：]?\s*$`,'i').test(line);
       const parseMatching=(q='')=>{const lines=String(q).split(/\r?\n/);let first=-1,second=-1;for(let i=0;i<lines.length;i+=1){if(first<0&&isMatchingHeading(lines[i],'1|I+')){first=i;continue;}if(first>=0&&isMatchingHeading(lines[i],'2|II')){second=i;break;}}if(first<0||second<0) return null;const intro=lines.slice(0,first).join('\n').trim();const title1=lines[first].replace(/[:：]\s*$/,'').trim();const title2=lines[second].replace(/[:：]\s*$/,'').trim();const l1=lines.slice(first+1,second).join('\n').trim();const right=splitMatchingCode(lines.slice(second+1).join('\n'));return {intro,title1,l1,title2,l2:right.main,code:right.code,codeLabel:right.codeLabel};};
       function renderStructuredQuestion(q){const questionRaw=String(q.question||'');const normalizedQuestionType=String(q.questionType||'').toLowerCase();const assertionData=normalizedQuestionType.includes('assertion-reason')?parseAssertionReason(questionRaw):null;if(assertionData){questionText.innerHTML=`<div class="question-structured">${assertionData.intro?`<div>${formatText(assertionData.intro)}</div>`:''}${renderLabelBlock(assertionData.statementLabel||'कथन (A):',assertionData.statement)}${renderLabelBlock(assertionData.reasonLabel||'कारण (R):',assertionData.reason)}</div>`;matchingBlock.innerHTML='';return;}const statementData=normalizedQuestionType.includes('statement-conclusion')?parseStatementConclusion(questionRaw):null;if(statementData){questionText.innerHTML=`<div class="question-structured">${statementData.intro?`<div>${formatText(statementData.intro)}</div>`:''}${renderLabelBlock('कथन:',statementData.statements)}${renderLabelBlock('निष्कर्ष:',statementData.conclusions)}</div>`;matchingBlock.innerHTML='';return;}const matching=normalizedQuestionType.includes('matching')?parseMatching(questionRaw):null;if(matching){questionText.innerHTML=matching.intro?formatText(matching.intro):'';matchingBlock.innerHTML=`<div class="matching-grid"><div class="matching-list"><strong>${formatText(matching.title1)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l1)}</div></div><div class="matching-list"><strong>${formatText(matching.title2)}:</strong><div class="matching-list-content mt-2">${formatMatchingLines(matching.l2)}</div></div></div>`;return;}questionText.innerHTML=formatText(questionRaw);matchingBlock.innerHTML='';}
       function renderPalette(){palette.innerHTML=data.map((q,idx)=>`<button type="button" data-idx="${idx}" class="rounded-md border px-2 py-1 text-xs ${state.answers[q.id]?'bg-indigo-100 border-indigo-400':'border-slate-300'}">${q.id}</button>`).join('');palette.querySelectorAll('button').forEach((b)=>b.addEventListener('click',()=>{state.current=Number(b.dataset.idx)||0;renderQuestion();}));}
@@ -2615,7 +2618,9 @@
       function renderReview(filter='all',shouldScroll=false){const items=getReviewItems(),filtered=getFilteredReviewItems(items,filter);state.activeFilter=filter;document.getElementById('review-meta').textContent=`${filterLabels[filter]||'All'} Review • ${filtered.length} question(s)`;document.getElementById('review-list').innerHTML=filtered.length?filtered.map(reviewCardHtml).join(''):`<div class="empty-review">No questions found in <strong>${filterLabels[filter]||'All'}</strong> filter.</div>`;document.querySelectorAll('[data-filter-card]').forEach((card)=>card.classList.toggle('active',card.dataset.filterCard===filter));if(shouldScroll) document.getElementById('review-panel')?.scrollIntoView({behavior:'smooth',block:'start'});}
       function bindSummaryFilters(){document.querySelectorAll('[data-filter-card]').forEach((card)=>{if(card.dataset.bound==='1') return;card.dataset.bound='1';card.addEventListener('click',()=>renderReview(card.dataset.filterCard||'all',true));});}
       function renderAnswerKey(){document.getElementById('answer-key').innerHTML=getReviewItems().map(reviewCardHtml).join('');}
-      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const attempted=Object.keys(state.answers).filter((id)=>state.answers[id]).length,correct=data.filter((q)=>state.answers[q.id]===q.answer).length,wrong=attempted-correct,score=correct*testConfig.marksPerQuestion;document.getElementById('result-summary').innerHTML=[['Total',data.length,'all'],['Attempted',attempted,'attempted'],['Correct',correct,'correct'],['Wrong',wrong,'wrong']].map(([k,v,f])=>`<button type="button" data-filter-card="${f}" class="summary-card is-clickable ${f==='all'?'active':''}"><strong>${k}:</strong> ${v}</button>`).join('')+`<p class="summary-card"><strong>Marks:</strong> ${score}/${testConfig.totalMarks}</p>`;document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section),c=list.filter((q)=>state.answers[q.id]===q.answer).length;return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${c}/${list.length} correct</p>`;}).join('');bindSummaryFilters();renderReview('all',false);renderAnswerKey();resultArea.scrollIntoView({behavior:'smooth',block:'start'});}
+      const formatMarks=(value)=>{const rounded=Math.round((Number(value)||0)*100)/100;return Number.isInteger(rounded)?String(rounded):rounded.toFixed(2);};
+      const calculateScore=(questions)=>{const marksPerCorrect=Number(testConfig.marksPerQuestion)||1,negativePerWrong=Number(testConfig.negativeMarksPerWrong)||0;const attempted=questions.filter((q)=>state.answers[q.id]).length,correct=questions.filter((q)=>state.answers[q.id]===q.answer).length,wrong=attempted-correct,score=(correct*marksPerCorrect)-(wrong*negativePerWrong),maxMarks=questions.length*marksPerCorrect;return {attempted,correct,wrong,score,maxMarks};};
+      function submitTest(){clearInterval(state.timerId);testArea.classList.add('hidden');resultArea.classList.remove('hidden');const totals=calculateScore(data),totalMarks=Number(testConfig.totalMarks)||totals.maxMarks;document.getElementById('result-summary').innerHTML=[['Total',data.length,'all'],['Attempted',totals.attempted,'attempted'],['Correct',totals.correct,'correct'],['Wrong',totals.wrong,'wrong']].map(([k,v,f])=>`<button type="button" data-filter-card="${f}" class="summary-card is-clickable ${f==='all'?'active':''}"><strong>${k}:</strong> ${v}</button>`).join('')+`<p class="summary-card"><strong>Marks:</strong> ${formatMarks(totals.score)}/${formatMarks(totalMarks)}</p>`;document.getElementById('section-summary').innerHTML=sections.map((section)=>{const list=data.filter((q)=>q.section===section),sectionScore=calculateScore(list);return `<p class="feature-card !m-0 !p-4"><strong>${section}</strong><br>${formatMarks(sectionScore.score)}/${formatMarks(sectionScore.maxMarks)} marks • ${sectionScore.correct}/${list.length} correct</p>`;}).join('');bindSummaryFilters();renderReview('all',false);renderAnswerKey();resultArea.scrollIntoView({behavior:'smooth',block:'start'});}
       document.addEventListener('DOMContentLoaded',()=>{const prevBtn=document.getElementById('prev-btn'),nextBtn=document.getElementById('next-btn'),submitBtn=document.getElementById('submit-btn');prevBtn.addEventListener('click',()=>{if(state.current>0){state.current-=1;renderQuestion();}});nextBtn.addEventListener('click',()=>{if(state.current<data.length-1){state.current+=1;renderQuestion();}});submitBtn.addEventListener('click',submitTest);testArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));resultArea.querySelectorAll('.reveal').forEach((el)=>el.classList.add('visible'));startBtn.addEventListener('click',startTestFlow);});
     </script>
   </body>
