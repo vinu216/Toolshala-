@@ -316,6 +316,8 @@
         const testNumber = index + 1;
         const customCtaLink = teachingExamSlug === '3rd-grade' && testNumber === 1
           ? './3rd-grade-mock-test-1.html'
+          : teachingExamSlug === '3rd-grade' && testNumber === 2
+          ? './3rd-grade-mock-test-2.html'
           : teachingExamSlug === 'ptet' && testNumber === 1
           ? './ptet-mock-test-1.html'
           : teachingExamSlug === 'ptet' && testNumber === 2
