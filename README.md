@@ -65,6 +65,17 @@ Tagline: **AI Tools, Career Help, Opportunities & Templates**
 6. Preview the production build locally:
    `npm run preview`
 
+
+## AI Generation API Configuration
+
+`POST /api/generate` is served by `netlify/functions/generate.js`. Configure at least one text-generation provider in production:
+
+- `NVIDIA_API_KEY` for NVIDIA NIM chat completions. Optional: `NVIDIA_MODEL` (defaults to `openai/gpt-oss-20b`).
+- `OPENAI_API_KEY` as a fallback/alternative provider. Optional: `OPENAI_MODEL` (defaults to `gpt-4.1-mini`).
+- Optional `AI_PROVIDER` can be set to `nvidia` or `openai` to choose the first provider attempted when both keys are present.
+
+The function returns JSON errors for invalid requests, missing provider configuration, provider authentication failures, provider outages, and timeouts instead of crashing into a platform `502`.
+
 ## Quick Troubleshooting
 
 - If styles look broken, hard refresh the browser to clear cached CSS.
