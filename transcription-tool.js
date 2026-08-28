@@ -51,14 +51,30 @@
   };
 
   async function callTranscribe(payload) {
-    for (const route of API_ROUTES) {
-      const res = await fetch(route, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      if (res.status === 404) continue;
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const signal = controller?.signal;
+
+    const promises = API_ROUTES.map(async (route) => {
+      const res = await fetch(route, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal });
+      if (res.status === 404) throw new Error('Route 404');
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || 'Transcription failed.');
       return data;
+    });
+
+    try {
+      const data = await Promise.any(promises);
+      controller?.abort();
+      return data;
+    } catch (err) {
+      controller?.abort();
+      if (err instanceof AggregateError) {
+        const nonNotFoundError = err.errors.find((e) => e.message !== 'Route 404' && e.name !== 'AbortError');
+        if (nonNotFoundError) throw nonNotFoundError;
+        throw new Error('Server transcription route not available. Configure /api/transcribe or /.netlify/functions/transcribe on the server.');
+      }
+      throw err;
     }
-    throw new Error('Server transcription route not available. Configure /api/transcribe or /.netlify/functions/transcribe on the server.');
   }
 
   el.mediaInput.addEventListener('change', () => {
