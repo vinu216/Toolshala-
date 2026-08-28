@@ -423,9 +423,17 @@
     return tools
       .filter((entry) => entry?.slug && entry.slug !== tool.id && entry.url)
       .map((entry) => {
-        const entryTags = [entry.category, entry.categoryLabel, ...(entry.tags || []), entry.title]
-          .map((item) => String(item || '').toLowerCase());
-        const score = entryTags.reduce((sum, item) => sum + (tags.has(item) ? 2 : 0), entry.category === category ? 3 : 0) + (entry.featured ? 1 : 0);
+        let score = (entry.category === category ? 3 : 0) + (entry.featured ? 1 : 0);
+        if (entry.category && tags.has(String(entry.category).toLowerCase())) score += 2;
+        if (entry.categoryLabel && tags.has(String(entry.categoryLabel).toLowerCase())) score += 2;
+        if (entry.title && tags.has(String(entry.title).toLowerCase())) score += 2;
+        const entryTags = entry.tags;
+        if (entryTags) {
+          for (let i = 0; i < entryTags.length; i += 1) {
+            const tag = entryTags[i];
+            if (tag && tags.has(String(tag).toLowerCase())) score += 2;
+          }
+        }
         return { entry, score };
       })
       .filter((item) => item.score > 0)
@@ -2270,14 +2278,32 @@ ${senderName}`;
         fresher: 'As a fresher,'
       };
 
+      const lowerStrengths = strengths.map((skill) => skill.toLowerCase());
+
       const scored = roleLibrary
         .map((role) => {
-          const keywordHits = role.tags.reduce((score, tag) => (interests.includes(tag) ? score + 2 : score), 0);
+          let keywordHits = 0;
+          for (let i = 0; i < role.tags.length; i++) {
+            if (interests.includes(role.tags[i])) {
+              keywordHits += 2;
+            }
+          }
           const styleFit = role.styles.includes(workStyle) ? 3 : 0;
           const codingFit = codingPreference
             ? ((codingPreference === 'yes' && role.coding !== 'no') || (codingPreference === 'no' && role.coding !== 'yes') ? 2 : -1)
             : 1;
-          const strengthFit = strengths.reduce((score, skill) => (role.tags.some((tag) => skill.toLowerCase().includes(tag)) ? score + 1 : score), 0);
+
+          let strengthFit = 0;
+          for (let i = 0; i < lowerStrengths.length; i++) {
+            const skill = lowerStrengths[i];
+            for (let j = 0; j < role.tags.length; j++) {
+              if (skill.includes(role.tags[j])) {
+                strengthFit += 1;
+                break;
+              }
+            }
+          }
+
           return {
             ...role,
             totalScore: keywordHits + styleFit + codingFit + strengthFit
