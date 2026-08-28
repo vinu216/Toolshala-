@@ -9,7 +9,8 @@
     "lint": "node --check data/articles.js",
     "preview": "vite preview",
     "start": "vite preview",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "clsx": "2.1.1",
@@ -26,6 +27,7 @@
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
     "vite": "7.2.4",
-    "vite-plugin-singlefile": "2.3.0"
+    "vite-plugin-singlefile": "2.3.0",
+    "vitest": "^4.1.11"
   }
 }
