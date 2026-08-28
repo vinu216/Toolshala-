@@ -48,13 +48,7 @@
     ideasBank.innerHTML = IDEA_BANK.map((idea) => `<li>${idea}</li>`).join('');
   };
 
-  const setFeedback = (message, isError = false) => {
-    if (!feedback) return;
-    feedback.textContent = message;
-    feedback.classList.remove('hidden');
-    feedback.classList.toggle('text-red-600', isError);
-    feedback.classList.toggle('text-emerald-700', !isError);
-  };
+  const setFeedback = (message, isError = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedback, message, isError, 2600);
 
   const getActive = () => VIEWS.find((v) => v.id === activeView) || VIEWS[0];
 
