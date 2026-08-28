@@ -52,14 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getActiveStyle = () => sopStyles.find((style) => style.id === activeStyleId) || sopStyles[0];
 
-  const setFeedback = (message, isError = false) => {
-    if (!feedbackNode) return;
-    feedbackNode.textContent = message;
-    feedbackNode.classList.remove('hidden');
-    feedbackNode.classList.toggle('text-emerald-700', !isError);
-    feedbackNode.classList.toggle('text-rose-700', isError);
-    window.setTimeout(() => feedbackNode.classList.add('hidden'), 2500);
-  };
+  const setFeedback = (message, isError = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedbackNode, message, isError, 2500);
 
   const hydrateFields = (values) => {
     fields.forEach((field) => {

@@ -40,14 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getActiveVersion = () => salaryVersions.find((version) => version.id === activeVersionId) || salaryVersions[0];
 
-  const setFeedback = (message, isError = false) => {
-    if (!feedbackNode) return;
-    feedbackNode.textContent = message;
-    feedbackNode.classList.remove('hidden');
-    feedbackNode.classList.toggle('text-emerald-700', !isError);
-    feedbackNode.classList.toggle('text-rose-700', isError);
-    window.setTimeout(() => feedbackNode.classList.add('hidden'), 2600);
-  };
+  const setFeedback = (message, isError = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedbackNode, message, isError, 2600);
 
   const hydrateFields = (values) => {
     fields.forEach((field) => {
