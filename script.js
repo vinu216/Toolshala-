@@ -230,6 +230,19 @@ document.addEventListener('DOMContentLoaded', () => {
     return showToast;
   };
 
+const setTemplateFeedback = (feedbackNode, message, isError = false, timeoutMs = 2600) => {
+  if (!feedbackNode) return;
+  feedbackNode.textContent = message;
+  feedbackNode.classList.remove('hidden');
+  feedbackNode.classList.toggle('text-emerald-700', !isError);
+  feedbackNode.classList.toggle('text-rose-700', isError);
+  window.setTimeout(() => feedbackNode.classList.add('hidden'), timeoutMs);
+};
+
+window.ToolShalaTemplateFeedback = {
+  setFeedback: setTemplateFeedback
+};
+
   const showToast = setupToastSystem();
 
   const setupTelegramFeedback = () => {
