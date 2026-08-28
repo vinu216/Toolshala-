@@ -9,6 +9,7 @@
     "lint": "node --check data/articles.js",
     "preview": "vite preview",
     "start": "vite preview",
+    "test": "node --test",
     "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
