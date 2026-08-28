@@ -423,9 +423,17 @@
     return tools
       .filter((entry) => entry?.slug && entry.slug !== tool.id && entry.url)
       .map((entry) => {
-        const entryTags = [entry.category, entry.categoryLabel, ...(entry.tags || []), entry.title]
-          .map((item) => String(item || '').toLowerCase());
-        const score = entryTags.reduce((sum, item) => sum + (tags.has(item) ? 2 : 0), entry.category === category ? 3 : 0) + (entry.featured ? 1 : 0);
+        let score = (entry.category === category ? 3 : 0) + (entry.featured ? 1 : 0);
+        if (entry.category && tags.has(String(entry.category).toLowerCase())) score += 2;
+        if (entry.categoryLabel && tags.has(String(entry.categoryLabel).toLowerCase())) score += 2;
+        if (entry.title && tags.has(String(entry.title).toLowerCase())) score += 2;
+        const entryTags = entry.tags;
+        if (entryTags) {
+          for (let i = 0; i < entryTags.length; i += 1) {
+            const tag = entryTags[i];
+            if (tag && tags.has(String(tag).toLowerCase())) score += 2;
+          }
+        }
         return { entry, score };
       })
       .filter((item) => item.score > 0)
