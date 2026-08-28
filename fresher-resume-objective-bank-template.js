@@ -33,13 +33,7 @@
   const categories = ['All', ...new Set(OBJECTIVES.map((o) => o.category))];
   let activeCategory = 'All';
 
-  const setFeedback = (msg, isError = false) => {
-    if (!feedback) return;
-    feedback.textContent = msg;
-    feedback.classList.remove('hidden');
-    feedback.classList.toggle('text-red-600', isError);
-    feedback.classList.toggle('text-emerald-700', !isError);
-  };
+  const setFeedback = (msg, isError = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedback, msg, isError, 2600);
 
   const getVisible = () => activeCategory === 'All' ? OBJECTIVES : OBJECTIVES.filter((o) => o.category === activeCategory);
 
