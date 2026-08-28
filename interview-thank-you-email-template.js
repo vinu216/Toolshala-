@@ -57,13 +57,7 @@
 
   let activeVersion = VERSIONS[0].id;
 
-  const setFeedback = (message, error = false) => {
-    if (!feedback) return;
-    feedback.classList.remove('hidden');
-    feedback.classList.toggle('text-red-600', error);
-    feedback.classList.toggle('text-emerald-700', !error);
-    feedback.textContent = message;
-  };
+  const setFeedback = (message, error = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedback, message, error, 2600);
 
   const getActive = () => VERSIONS.find((v) => v.id === activeVersion) || VERSIONS[0];
 

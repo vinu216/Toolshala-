@@ -24,14 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = document.getElementById('resetKeywords');
   let keywordBank = JSON.parse(JSON.stringify(defaultKeywordBank));
 
-  const setFeedback = (message, isError = false) => {
-    if (!feedbackNode) return;
-    feedbackNode.textContent = message;
-    feedbackNode.classList.remove('hidden');
-    feedbackNode.classList.toggle('text-emerald-700', !isError);
-    feedbackNode.classList.toggle('text-rose-700', isError);
-    window.setTimeout(() => feedbackNode.classList.add('hidden'), 2600);
-  };
+  const setFeedback = (message, isError = false) => window.ToolShalaTemplateFeedback?.setFeedback(feedbackNode, message, isError, 2600);
 
   const categoryText = (key) => `${labels[key]}:\n${(keywordBank[key] || []).join(', ')}`;
   const fullText = () => Object.keys(keywordBank).map((key) => categoryText(key)).join('\n\n').trim();
